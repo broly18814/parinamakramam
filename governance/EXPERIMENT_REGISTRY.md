@@ -1,41 +1,99 @@
-# Experiment registry
+# Experiment registry: our lab notebook
 
-Every experiment gets an entry *before* it runs, and the entry is updated with results. Baselines are never overwritten; negative results are kept.
-*In plain words: a lab notebook. We write down what we expect **before** we look, so we can't fool ourselves afterwards.*
+**The rules:**
+- Every experiment is written down here **before** it runs: what we expect, and what would count as success or failure. Then we add what actually happened.
+- We **never rub out** an old result, and we **keep failures**.
+
+This is how we stop ourselves from fooling ourselves. Words are explained in the [Glossary](../docs/GLOSSARY.md).
 
 ---
 
-## EXP-001 — Fixed vs composition vs growing vs evolving primitive substrates
-- **Status:** ✅ completed 2026-11-08 · **Result:** core hypothesis not supported; benchmark validated
-- **Question:** Under a fixed search budget, does evolving the primitive set and the composition grammar solve more held-out tasks than composing a fixed set, and does that depend on latent structure in the tasks?
-- **Related work:** DreamCoder, Stitch, babble, LILO, AbstractBeam, Probe, Momennejad & Raileanu 2026, Prospective Compression 2026 (R001 §1)
-- **Code:** `research/pevo` v0.1.0. File hashes are recorded in `experiments/EXP-001/results/summary.json → meta.code_sha256_16`. Not yet under git (see OI-1).
-- **Data:** synthetic and generated deterministically from the seed (`pevo/tasks.py`). D-struct and D-flat; 99 train / 60 test tasks per seed.
-- **Config:** B = 30,000 values/round, 5 rounds, K = 3, α = 1, val_frac = 0.2, max_holes = 2, max_depth = 3, search_top_m = 8
-- **Seeds:** calibration 100; evaluation 0–9
-- **Compute:** M4, ~91 s wall-clock for the full grid (parallel), < 1 GB RAM, ₹0
-- **Environment:** Python 3.14.6, macOS 27.2 arm64
-- **Tests:** 11/11 passing (`research/pevo/tests`)
-- **Results (D-struct, held-out solve rate):** C0 58.0 · C1 56.3 · C2 56.7 · C2r 55.2 · C3 57.8 · C4 60.7 (15× compute) · Oracle 76.5 · C0@5× 68.2 · C0@15× 76.3
-- **Hypotheses:** H0 PASS (+18.5 pp) · H1 FAIL · H2 FAIL · H3 PASS · H4 FAIL · H5 FAIL (+4.0 pp, CI>0, below the 5 pp threshold)
-- **Exploratory:** function-typed holes +3.3 pp [+1.3, +5.7] on struct only; the gate protects (+4.3 pp on flat); grammar fitting hurts; pruning never fired (component untested)
-- **Artifacts:** `experiments/EXP-001/results/` (raw JSON per run, summary.md, summary.json), `results_compute_matched_B150000/`, `results_compute_matched_B450000/`, `hypothesis_tests.txt`, `analysis.py`
-- **Conclusion:** The right primitives are worth ≈ 15× search in this domain; current discovery methods capture ≈ none of that value. The research problem is *discovery*, not representation.
-- **Follow-up decision:** D-008 → EXP-002
+## EXP-001: Fixed blocks vs. learning habits vs. saving shortcuts vs. your full idea
 
-## EXP-002 — Prospective primitive discovery (planned)
-- **Question:** Can candidates generated from near-miss programs on *unsolved* tasks, scored by a cheap search-benefit proxy, close the C0→oracle gap?
-- **Baselines:** C0, C2, C4, Oracle from EXP-001 (frozen code path), plus compute-matched C0
-- **Primary metric:** fraction of the gap closed, (Acc − Acc_C0) / (Acc_Oracle − Acc_C0), and the "worth-N×-search" exchange rate, at ≤ 2× C0 compute
-- **Success:** ≥ 30% of the gap closed, CI excludes 0, at ≤ 2× compute, on new evaluation seeds 10–19
-- **Failure:** < 10% of the gap → test the reverse hypothesis that a richer search prior (a neural recognition model) is the missing ingredient (EXP-003)
-- **Stop condition:** two consecutive discovery variants close < 10% → move the effort to EXP-005 (engineering traces) and write up the negative result
+- **Status:** ✅ finished on 8 November 2026.
+- **Result:**
+  - Your core prediction was **not supported** in this first test.
+  - The exam itself was shown to work.
+  - We learned exactly where the problem is.
+- **The question:** If every version of the computer gets exactly the same amount of time, does a computer that **changes its own building blocks and joining rules** solve more *new* puzzles than one that only combines a fixed set? And does that depend on whether the puzzles contain hidden patterns?
+- **Related work:** DreamCoder, Stitch, babble, LILO, AbstractBeam, Probe, Momennejad & Raileanu 2026, and "Prospective Compression" 2026 (see [R001](../docs/research/R001-primitive-evolution-prior-art-and-thesis.md), section 2).
+- **Code:** `research/pevo`, version 0.1.0. It is saved in git snapshot `a200f19`, so anyone can get back the exact code.
+- **Puzzles:**
+  - Made up by the computer, so no one's private data is involved.
+  - Two kinds: *patterned* and *random*.
+  - About 100 practice puzzles and 60 test puzzles per exam paper.
+- **Settings:**
+  - 30,000 tries per round, over 5 rounds.
+  - Up to 3 new shortcuts per round.
+  - Shortcuts can have up to 2 blanks.
+- **Exam papers:**
+  - Paper 100 was used for practice and fixing.
+  - Papers 0–9 were the real exam, kept unseen until the end.
+- **Cost:** about 1.5 minutes on the MacBook, less than 1 GB of memory, ₹0.
+- **Self-checks:** 11 out of 11 passing.
 
-## EXP-003 — Search prior without overfitting (planned)
-Mixed uniform/fitted grammar; later a tiny MLX recognition model (≤ 1M params) conditioned on I/O examples.
+### Results: patterned puzzles, average score out of 100
 
-## EXP-004 — Real substrate operators (planned)
-Shared-variable holes, split/merge, ablation-based deprecation (fixes OI-2).
+| A: never learns | B: habits | C: shortcuts | C-random | D: full idea | E: test first (15× effort) | Cheat | A with 5× time | A with 15× time |
+|---|---|---|---|---|---|---|---|---|
+| 58.0 | 56.3 | 56.7 | 55.2 | 57.8 | 60.7 | **76.5** | 68.2 | 76.3 |
 
-## EXP-005 — Engineering primitives from verification traces (planned, after the product alpha)
-Public, permissively licensed repositories only.
+### Predictions written in advance, and what happened
+
+| | Prediction | Verdict |
+|---|---|---|
+| 0 | The exam can detect improvement. The cheat student scored 18.5 more and won on all 10 papers. | ✅ Passed |
+| 1 | Saving shortcuts beats learning habits only. | ❌ Failed |
+| 2 | **Core idea:** your full idea beats ordinary shortcut-saving. | ❌ Failed |
+| 3 | Random shortcuts don't help. | ✅ Passed |
+| 4 | Your idea helps more where there are patterns. | ❌ Failed |
+| 5 | Testing shortcuts first beats shortening. It was 4 points better on 9 of 10 papers, but below the 5-point bar we set. | ❌ Officially failed (a real but small effect) |
+
+### Extra observations (leads, not proof)
+
+- **Action slots** helped by 3.3 points, and only on patterned puzzles.
+- **The undo rule** protected the score on random puzzles (by 4.3 points).
+- **Learned habits hurt.**
+- **"Remove unused shortcuts" never activated**, so that feature is untested.
+
+### Where everything is
+
+- **Raw data:** `experiments/EXP-001/` (see its [README](../experiments/EXP-001/README.md)).
+
+### Conclusion and what we did next
+
+- **Conclusion:** the right building blocks are worth about 15 times more thinking time, but our current ways of discovering them capture almost none of that value. **The research problem is discovery.**
+- **Next:** decision D-008 led to EXP-002.
+
+---
+
+## EXP-002: Looking forward, not back (planned)
+
+- **Question:** If we invent shortcuts by studying puzzles the computer *almost* solved but didn't, and judge them with a cheap estimate of "would this help?", can we close the gap between 58 and 76.5?
+- **Compared against:**
+  - Students A, C and E and the cheat student, all from EXP-001, with their code unchanged.
+  - Student A given equal extra time.
+- **Main measure:**
+  - **How much of the gap we close**: 0% means no better than A, and 100% means as good as the cheat student.
+  - **"Worth N times more thinking"**: how much extra time Student A would need to match us.
+- **Success:**
+  - Close at least **30%** of the gap.
+  - The result must clearly not be luck.
+  - Use at most **twice** Student A's effort.
+  - Tested on **new, unseen exam papers 10–19**.
+- **Failure:** closing less than 10% of the gap. Then we test the opposite idea: that what's missing is better *habits* (EXP-003), not better blocks.
+- **When to stop:** if two different discovery methods in a row each close less than 10%, we move our effort to EXP-005 (real software) and write up the failure honestly.
+
+## EXP-003: Better habits without over-learning (planned)
+
+Blend learned "what to try first" habits with "try everything equally". Later, possibly a very small AI model that looks at a puzzle's examples and suggests which blocks to try.
+
+## EXP-004: Real changes to the joining rules (planned)
+
+- Shortcuts where the same blank appears twice.
+- Splitting and merging shortcuts.
+- Fixing "remove unused shortcuts": remove one if the score doesn't drop without it.
+
+## EXP-005: Building blocks from real software work (planned, after the product's first version)
+
+Use records from our checker tool. Only public code whose licence allows it.

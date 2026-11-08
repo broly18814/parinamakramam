@@ -1,57 +1,87 @@
-# Project state — read this first in any new session
+# Project state: read this first
 
-**Last updated:** 2026-11-08 · **Phase:** Day 1 of the 90-day plan
+**Last updated:** 8 November 2026 · **Stage:** day 1 of the 90-day plan
 
-## Completed
-- Prior-art research, verified against primary sources (R001 §1): Momennejad & Raileanu 2026, DreamCoder, Stitch, babble, LILO, AbstractBeam, Voyager, Probe, Prospective Compression 2026, TheoryCoder-2; Sakana: model-merging recipes (Nat. Mach. Intell. 2025), CycleQD, M2N2, AI Scientist v1/v2, TRINITY (affiliation unverified); adjacent: Darwin Gödel Machine.
-- Thesis critique and formal definitions (R001 §2–3).
-- EXP-001 built, tested (11/11) and run (R001 §5–6, EXPERIMENT_REGISTRY).
-- Commercial wedge chosen from public evidence (P001).
+This file says where everything stands right now, so anyone (you, or a new Claude session) can continue without guessing. Words are explained in the [Glossary](../docs/GLOSSARY.md). To learn all the ideas from zero, use the [course](../docs/LEARN.md).
 
-## Current implementation
-- `research/pevo/` — DSL, bottom-up enumerator, task generators, library learning, 10 conditions, runner, tests. Pure Python 3.14, no dependencies except pytest.
+## Done so far
 
-## Confirmed facts (ours, toy domain)
-- Oracle primitives: +18.5 pp held-out ≈ 15× search budget.
-- MDL-based library growth and our substrate changes: no significant gain.
-- Learned unigram grammar weights hurt (−1.7 / −4.3 pp).
+**Research**
+- Read and checked the earlier work by others: DreamCoder, Stitch, babble, LILO, AbstractBeam, Voyager, Probe, TheoryCoder-2, the two 2026 papers, Sakana AI's work, and the Darwin Gödel Machine. See [R001](../docs/research/R001-primitive-evolution-prior-art-and-thesis.md), section 2.
+- Gave a critique of your idea and named its parts precisely (R001, sections 3–4).
+- **Experiment EXP-001** built, self-checked (11 out of 11 pass) and run. Results are in R001 section 6 and the [registry](EXPERIMENT_REGISTRY.md).
 
-## Open hypotheses
-- Prospective / search-benefit selection closes the gap (EXP-002).
-- Function-typed slots are the useful substrate change (+3.3 pp exploratory).
-- Independent verification of AI changes is a payable need (P001).
+**Product**
+- Chose the first product from public evidence: an independent checker for AI-written code ([P001](../docs/product/P001-first-workflow-public-evidence.md)).
+- **Checker tool (`pkv`), first part built:** it reads what changed, maps which files use which, and picks the tests that could break, with a reason for each. **27 out of 27 self-checks pass.** We also tried it on our own project, which found one mistake. It's now fixed and guarded by a check. See [product/verify/README.md](../product/verify/README.md).
 
-## Failed experiments
-- EXP-001 H1, H2, H4, H5 (see registry). Kept.
+**Company habits**
+- **Version control:** the project is saved with git. The first snapshot is `a200f19`.
+- **Plain language:** every document is now in plain language, with a [Glossary](../docs/GLOSSARY.md) and a learn-from-zero [course](../docs/LEARN.md). The exact maths is in a separate [technical appendix](../docs/research/R001-technical-appendix.md).
 
-## Open issues
-- **OI-1:** the project is not under git. Run `git init` and make a first commit so experiments can cite commit hashes instead of file hashes.
-- **OI-2:** C3 deprecation never fires (abstractions are used ≥ 2 times by construction). Replace it with ablation-based pruning (EXP-004).
-- **OI-3:** the validation gate accepts ties; consider requiring strict improvement or a tie-break by library size.
-- **OI-4:** TRINITY's affiliation is unverified; the Stack Overflow numbers came via secondary sources, so read the primary report before quoting them publicly.
+## What's in the project
 
-## Risk register (top 5)
-| Risk | Likelihood | Impact | Mitigation |
+| Folder | What it holds |
+|---|---|
+| `research/pevo/` | The puzzle-world experiment: building blocks, search, puzzle maker, shortcut learner, 10 "students", self-checks. Plain Python. |
+| `product/verify/` | The checker tool `pkv`: change reader, fingerprint, code map, test finder, command, self-checks. Uses only Python's built-in parts. |
+| `experiments/EXP-001/` | All results from the first experiment, with a [guide to reading them](../experiments/EXP-001/README.md). |
+| `docs/` | Research report, product report, glossary, course. |
+| `governance/` | This file, the decision log, and the experiment registry. |
+
+## What we know (our own results, in the toy puzzle world only)
+
+- 🧪 The right building blocks are worth about **15 times more thinking time** (58 → 76.5 out of 100).
+- 🧪 Our methods for *discovering* building blocks recovered almost none of that.
+- 🧪 Learning "what to try first" from easy puzzles made things worse.
+- 🧪 Shortcuts with action slots gave a small, real gain (+3.3), and only on patterned puzzles. This was an extra observation, not one of our advance predictions.
+
+## Ideas still to test 💡
+
+- Choosing building blocks by whether they help with *unsolved* puzzles closes the gap (EXP-002).
+- Action slots are the useful kind of joining-rule change.
+- Programmers will use, and later pay for, an independent checker (P001).
+
+## Failed predictions (kept, never deleted)
+
+- EXP-001 predictions 1, 2, 4 and 5 (see the registry).
+
+## Open problems
+
+- ~~**OI-1:** project not saved with git.~~ ✅ Fixed (snapshot `a200f19`, decision D-013).
+- **OI-2:** "remove unused shortcuts" never activates, because every saved shortcut is used at least twice by design. Fix in EXP-004 by removing a shortcut if the score doesn't drop without it.
+- **OI-3:** the undo rule keeps changes that make no difference. Consider requiring a real improvement, or preferring the smaller set of shortcuts when scores tie.
+- **OI-4:** TRINITY's link to Sakana isn't confirmed, and the Stack Overflow numbers came from news reports. Read the original sources before quoting them publicly.
+- **OI-5 (your decision):** which **licence** the checker tool is published under. The usual choices are MIT or Apache-2.0, which let anyone use it, including companies. [Course lesson 21](../docs/LEARN.md) explains the difference. It's needed before the tool goes public (around day 10).
+- **OI-6:** the checker finds test files only by pytest's default naming, and can't see links made by reading data files. Both are documented. Revisit after trying it on real public projects (day 5).
+
+## Top 5 risks
+
+| Risk | How likely | How bad | What we do about it |
 |---|---|---|---|
-| Agent vendors build native verification | High | High | Be agent-agnostic and CI-enforced; ship fast; open source |
-| Research burns time with no product progress | Medium | High | Fixed weekly split (≈ 60% product / 40% research); stop conditions in the registry |
-| Toy results don't transfer | High | Medium | EXP-005 on real engineering traces |
-| Solo-founder overload | High | High | Weekly plan below; automate; one workflow only |
-| Licence/data misuse | Low | High | Synthetic and permissively licensed data only; dataset registry from the first dataset |
+| AI tool makers build their own checker | High | High | Work with *every* AI tool, run inside CI, publish openly, move fast |
+| Research eats all the time and the product stalls | Medium | High | Fixed weekly split (about 60% product, 40% research), plus stop rules in the registry |
+| Toy-world results don't carry over to real problems | High | Medium | EXP-005 on records from real software |
+| Too much for one person | High | High | The weekly plan below; automate; one product only |
+| Misusing someone's code or data | Low | High | Only made-up data and public code whose licence allows it; a list of every dataset from the first one |
 
-## Next exact actions
-1. `git init` the project and commit (OI-1).
-2. Create the `pkv` (Parinama Verify) package skeleton under `product/verify/`: diff model + import-graph affected-test selection + a subprocess runner with tree-hash staleness check. Tests first.
-3. Build a synthetic tamper corpus (20 small repos × known tampering types) as the product's first benchmark.
-4. Draft EXP-002 code: near-miss candidate generation (closest enumerated values to unsolved targets).
+## Next steps, in order
 
-## Week 1 plan (≈ 6 h/day, one person)
-| Day | Product (Verify) | Research | Admin |
+1. ~~Set up git.~~ ✅
+2. ~~Checker: change reader, code map, test finder.~~ ✅
+3. **Checker: test runner.** Actually run the chosen tests in a separate, sealed-off process with a time limit; record the command, result and timing; record the fingerprint before and after, and mark the result *stale* if it changed.
+4. **Checker: cheating detector, version 0.** Spot deleted tests, fewer assertions, new skip markers, `assert True`, changed shared test settings, and changed sensitive folders.
+5. **A practice set for the checker:** 20 small made-up projects with known, planted cheating. This becomes the product's own benchmark.
+6. **EXP-002 code:** invent shortcuts from near-miss attempts on unsolved puzzles. Practice paper 100 only, until the design is frozen.
+
+## Week 1 plan (about 6 hours a day, one person)
+
+| Day | Product (checker) | Research | Admin and learning |
 |---|---|---|---|
-| 1 (today) | — | EXP-001 ✅ | git init; read R001/P001 |
-| 2 | diff model + import graph + tests | — | check domain/handle availability for "parinamakramam" / "parinama" |
-| 3 | pytest runner, staleness check, JSON evidence | — | create the GitHub org (free) |
-| 4 | tamper detectors v0 (removed tests, asserts, skip/xfail) | — | — |
-| 5 | Markdown report; run on 3 public Python repos with a planted tamper | EXP-002 design doc | — |
-| 6 | — | EXP-002 near-miss generator + tests | — |
-| 7 | review week; update this file and the logs | run EXP-002 calibration (seed 100 only) | — |
+| 1 (today) | change reader, code map, test finder ✅ | EXP-001 ✅ | git ✅; course lessons 1–4 |
+| 2 | test runner + staleness check | — | lessons 5–8; check whether the name "parinamakramam" / "parinama" is free as a website and handle |
+| 3 | evidence saved as a file (JSON) | — | lessons 9–12; create the free GitHub organisation |
+| 4 | cheating detector, version 0 | — | lessons 13–16; **decide the licence (OI-5)** |
+| 5 | readable report; try it on 3 public Python projects with planted cheating | EXP-002 design | lessons 17–20 |
+| 6 | — | EXP-002 near-miss shortcut maker + self-checks | lessons 21–23 |
+| 7 | review the week; update this file and the logs | EXP-002 practice run (paper 100 only) | reread R001 and P001 |

@@ -1,23 +1,39 @@
-# Parinamakramam (పరిణామక్రమం)
+# Parinamakramam (పరిణామక్రమం, "the course of evolution")
 
-An independent AI research and product company, started from ₹0 on one MacBook Pro M4.
+An independent AI research and product company, started with ₹0 on one MacBook.
 
-- **Research question:** can a system discover, stabilise and evolve its own computational building blocks, and when does that beat composing a fixed set?
-- **First product:** an independent verifier for AI-written code changes (P001).
+- **The research question:** can a computer invent, keep and improve its *own* building blocks for thinking? And when is that better than cleverly combining a fixed set?
+- **The first product:** **Parinama Verify** (`pkv`), an independent checker that confirms whether code written by an AI really works, and catches it when the tests were skipped, out of date, or quietly edited.
 
-| Where | What |
+## Where to start
+
+| If you want to… | Open |
 |---|---|
-| `governance/PROJECT_STATE.md` | **Start here.** Current state, next actions, risks |
-| `governance/DECISION_LOG.md` | Every important decision and why |
-| `governance/EXPERIMENT_REGISTRY.md` | Every experiment, pre-registered, with results |
-| `docs/research/R001-…` | Prior art, thesis critique, formal definitions, EXP-001 results |
-| `docs/product/P001-…` | First commercial workflow, from public evidence |
-| `research/pevo/` | Primitive Evolution Engine prototype (EXP-001 code + tests) |
-| `experiments/EXP-001/` | Raw results, summaries, analysis script |
+| See where everything stands and what's next | [governance/PROJECT_STATE.md](governance/PROJECT_STATE.md) |
+| **Learn every idea from zero**, step by step | [docs/LEARN.md](docs/LEARN.md) |
+| Look up a word | [docs/GLOSSARY.md](docs/GLOSSARY.md) |
+| Read the research and the first experiment's results | [docs/research/R001…](docs/research/R001-primitive-evolution-prior-art-and-thesis.md) |
+| Read why we chose this product | [docs/product/P001…](docs/product/P001-first-workflow-public-evidence.md) |
+| See every important decision and why | [governance/DECISION_LOG.md](governance/DECISION_LOG.md) |
+| See every experiment: predictions, then results | [governance/EXPERIMENT_REGISTRY.md](governance/EXPERIMENT_REGISTRY.md) |
+| Use or read the checker tool | [product/verify/](product/verify/README.md) |
+| See the experiment code | `research/pevo/` |
+| See the raw results | [experiments/EXP-001/](experiments/EXP-001/README.md) |
+
+## Re-run everything (Terminal commands)
+
+Research self-checks (11) and the full experiment (about 1.5 minutes):
 
 ```bash
 cd research/pevo
-uv run --python 3.14 --with pytest python -m pytest -q tests
+uv run --no-project --python 3.14 --with pytest python -m pytest -q tests
 python3 run_exp001.py --seeds 0-9 --out ../../experiments/EXP-001/results
 python3 ../../experiments/EXP-001/analysis.py
+```
+
+Checker tool self-checks (27):
+
+```bash
+cd product/verify
+PYTHONPATH=. uv run --no-project --python 3.14 --with pytest python -m pytest -q tests
 ```

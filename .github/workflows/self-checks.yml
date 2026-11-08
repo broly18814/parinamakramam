@@ -1,0 +1,36 @@
+# GitHub's robot (GitHub Actions) runs all our self-checks on every upload.
+# Plain words: an automatic second pair of eyes that never gets tired.
+name: self-checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.12", "3.14"]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install pytest
+      - name: Research self-checks (puzzle world)
+        working-directory: research/pevo
+        run: python -m pytest -q tests
+      - name: Checker tool self-checks (pkv)
+        working-directory: product/verify
+        env:
+          PYTHONPATH: .
+        run: |
+          git config --global user.name "ci"
+          git config --global user.email "ci@example.invalid"
+          python -m pytest -q tests
