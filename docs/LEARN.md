@@ -469,7 +469,14 @@ The Darwin Gödel Machine applies evolution to an agent's own code, and keeps on
 - **`NOTICE` file:** a short file naming the project and its copyright holder. Apache-2.0 requires anyone who redistributes the work to keep it.
 - **Copyright holder:** who owns the work. Ours says "The Parinamakramam Authors" until the company is registered.
 - **SPDX identifier:** a standard short name for a licence, like `Apache-2.0`. A line `# SPDX-License-Identifier: Apache-2.0` at the top of a file lets tools know its licence without reading the whole text.
-- **Licensed is not the same as public.** The licence says what people *may* do once they have the code. Our repository is still private, so nobody else has it yet.
+- **Licensed is not the same as public.** The licence says what people *may* do once they have the code; making the repository public is what gives them the code. Ours went public on 8 November 2026 (D-026).
+
+🧰 **How to go public safely (what we did, in order).**
+1. **Scan every snapshot, not just today's files.** Going public publishes the whole history, so an old password deleted months ago would be visible too. We searched all 17 snapshots for keys, tokens and private data.
+2. **Remove anything private before the switch.** Our project-state file named the founder's other GitHub account, so we rewrote just the two snapshots that contained it. The older snapshots keep their fingerprints, so our pre-registration proofs still hold.
+3. **Remove leftover links.** GitHub's records of old automatic-check runs pointed to the removed snapshots, so we deleted those records.
+4. **Switch on the free protections.** **Secret scanning** looks for passwords and keys in the code. **Push protection** refuses an upload that contains one. **Private vulnerability reporting** gives people a private form for security problems.
+5. **Test the public install** in a fresh, empty environment, exactly as a stranger would.
 - Licences also matter for research data. **Never train on code whose licence doesn't allow it**, and never on private customer code without permission. That's one of our founding rules.
 
 ## Lesson 22. How a free tool becomes a business

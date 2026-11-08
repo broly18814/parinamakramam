@@ -71,6 +71,7 @@ If a word in any Parinamakramam document confuses you, look it up here. The word
 | **Reproducibility** | Getting exactly the same results again from the same code and data. |
 | **Script injection** | Untrusted text pasted into a command so it becomes part of the command. Prevented by passing inputs as environment variables. |
 | **Search prior / habits** | Which building blocks the computer tries first. |
+| **Secret scanning / push protection** | GitHub features that look for passwords and keys in code. Push protection goes further and refuses an upload that contains one. |
 | **Seed / exam paper** | A number that generates one particular set of puzzles. The same number always produces the same puzzles, so results can be repeated exactly. |
 | **Semantic Versioning** | Version numbers MAJOR.MINOR.PATCH: PATCH for fixes, MINOR for features, MAJOR for breaking changes. |
 | **SPDX identifier** | A standard short name for a licence, such as `Apache-2.0`, written at the top of a file so tools know its licence. |

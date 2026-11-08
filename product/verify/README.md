@@ -71,17 +71,25 @@ Exit code 2 means pkv itself couldn't complete, for example because the folder i
 
 ## Use it on your computer
 
-From inside a Python project that uses git, with pytest installed:
+Install it into the same Python environment as your project's tests. It needs Python 3.10 or newer, and pytest:
 
 ```bash
-PYTHONPATH=/Volumes/projects/hope/parinamakramam/product/verify python3 -m pkv check --json .pkv/receipt.json --md .pkv/receipt.md
+python -m pip install "git+https://github.com/broly18814/parinamakramam@main#subdirectory=product/verify"
 ```
 
-Then, later:
+Then, from inside a Python project that uses git:
 
 ```bash
-PYTHONPATH=/Volumes/projects/hope/parinamakramam/product/verify python3 -m pkv fresh .pkv/receipt.json
+pkv check --json .pkv/receipt.json --md .pkv/receipt.md
 ```
+
+Later, to see whether the receipt still matches the code:
+
+```bash
+pkv fresh .pkv/receipt.json
+```
+
+`python -m pkv …` works the same as `pkv …`.
 
 `pkv fresh` answers **FRESH** or **STALE**: does the receipt still match the code exactly?
 
@@ -118,7 +126,8 @@ Add these steps to a workflow (`.github/workflows/*.yml`). The project's depende
 The receipt appears on the run's summary page and is kept as a downloadable file (`pkv-receipt`). The verdict is also available to later steps as `steps.<id>.outputs.verdict`.
 
 **Two notes:**
-- The repository is currently **private**, so only its owner can use this action. Other projects can use it once the founder makes the repository public. The licence is already chosen (Apache-2.0, decision D-025).
+- The repository is **public**, so any GitHub project can use this action. For a fixed, reviewable version, pin it to a full snapshot hash instead of `@main`; that's GitHub's own security advice for third-party actions.
+- It isn't listed in GitHub's Marketplace yet. The Marketplace requires `action.yml` at the top of a repository, and ours lives in `product/verify/`.
 - This repository uses its own action on every upload, so pkv checks pkv (the `dogfood` job in `.github/workflows/self-checks.yml`).
 
 ## Safety rules

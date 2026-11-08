@@ -8,7 +8,8 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 
 - **On this Mac:** `/Volumes/projects/hope/parinamakramam`
 - **Online:** https://github.com/broly18814/parinamakramam
-  - **Private**; it's the only repository in the account.
+  - **Public** since 8 November 2026 (D-026); it's the only repository in the account.
+  - Turned on: secret scanning, push protection, and private vulnerability reporting.
   - This project always uploads as `broly18814`. The Mac's default GitHub account is unchanged.
 - **Backup of the 14 deleted repositories:** `/Volumes/projects/hope/github-backup-broly18814-2026-11-08` (verified; see D-020 and D-021).
 - **Every upload is checked automatically:**
@@ -49,7 +50,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 - **Pre-registration:** every experiment and benchmark is pre-registered and committed before it runs.
 - **Plain language:** all documents, with a glossary, a course, and a technical appendix for specialists.
 - **Git history:** shows only the founder as author.
-- **Licence:** Apache License 2.0 ([LICENSE](../LICENSE), decision D-025). This closes open problem OI-5. The repository is still private.
+- **Licence:** Apache License 2.0 ([LICENSE](../LICENSE), decision D-025). This closes open problem OI-5.
 
 ## What we know (our own results)
 
@@ -83,8 +84,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 
 ## Next steps, in order
 
-1. **Your decision: make the repository public?** The licence is chosen, so this is the only step left before other projects can use the GitHub Action. It's one switch in GitHub's settings, and it is publishing, so it waits for your clear yes.
-2. **Real-world evidence for pkv.** Run it, read-only and in a sandboxed copy, on a few public Python projects whose licences allow it, and record what it finds. (Downloading those projects needs your go-ahead.)
-3. **BENCH-003:** a fresh held-out set *before* tackling the known misses in OI-8.
-4. **EXP-002b:** the one remaining near-miss variant, pre-registered (structure-based). If it closes < 10% of the gap, stop and move to EXP-005.
-5. **Publish more widely:** after the repository is public, add the Action to GitHub's Marketplace, tag a release, and watch install counts (no interviews; D-002).
+1. **Real-world evidence for pkv.** Run it, read-only and in a sandboxed copy, on a few public Python projects whose licences allow it, and record what it finds. (Downloading those projects needs your go-ahead.)
+2. **BENCH-003:** a fresh held-out set *before* tackling the known misses in OI-8.
+3. **EXP-002b:** the one remaining near-miss variant, pre-registered (structure-based). If it closes < 10% of the gap, stop and move to EXP-005.
+4. **Publish more widely:** tag a first release (`pkv-v0.1.0`), and decide how to reach GitHub's Marketplace, which needs `action.yml` at the top of a repository (either a small separate repository for the action, or moving the file). Then watch install counts (no interviews; D-002).
