@@ -63,3 +63,8 @@ Before version 1.0, anything may still change.
 
 ### 2026-11-08: EXP-001
 - First experiment: fixed vs composition vs growing vs evolving building blocks. See `docs/research/R001…` and `governance/EXPERIMENT_REGISTRY.md`.
+
+### 2026-11-08: EXP-002 (negative result)
+- Added near-miss discovery (`pevo/nearmiss.py`, condition `C5_prospective`, in `EXP002_CONDITIONS`), and an optional `return_bank` for the enumerator.
+- EXP-001 still reproduces identically (all 200 result files).
+- Pre-registered evaluation on seeds 10–19: no improvement (H6 and H7 fail, H8 passes). See `docs/research/EXP-002-design.md`, section 6.

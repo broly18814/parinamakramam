@@ -66,3 +66,35 @@ All tests use **D-struct** (patterned puzzles), **evaluation seeds 10–19**, wh
 ## 5. Stop rule (from the registry)
 
 If C5 and one further near-miss variant both close **< 10%** of the gap, stop this line of work. Write up the negative result, and move the research effort to EXP-005 (building blocks from real engineering records).
+
+---
+
+## 6. Results (evaluation seeds 10–19, run once after the freeze in D-023)
+
+Source: `experiments/EXP-002/results/` and `experiments/EXP-002/hypothesis_tests.txt`. Reproduce with `python3 experiments/EXP-002/analysis.py`.
+
+### Average puzzles solved out of 100
+
+| Puzzles | A (C0) | D (C3) | **C5, near misses** | Cheat |
+|---|---|---|---|---|
+| Patterned (D-struct) | 55.3 | 54.8 | **52.5** | 71.3 |
+| Random (D-flat) | 67.3 | 65.2 | 65.3 | 62.3 |
+
+### Pre-registered tests
+
+| | Result | Verdict |
+|---|---|---|
+| **H6** C5 − C3 (struct) | −2.3 points [−5.5, +0.7]; C5 won 3 papers, lost 6 | ❌ **FAIL** |
+| **H7** share of the gap closed | −17.7% [−35.6%, −2.3%] | ❌ **FAIL**. Below 10%, so the stop rule applies. |
+| **H8** C5 − C0 (flat) ≤ +2 | −2.0 points | ✅ PASS |
+
+### What else we learned
+
+- **The exam still works.** The cheat student led by +16.0 points [+13.0, +18.7] on all 10 papers. The benchmark can detect good building blocks; our learners still can't find them.
+- **My prior was wrong in direction.** I guessed 0 to +4 points; the result is about −2.3.
+- **A hidden cost.** The near-miss scan admits no new values, so the *search budget* is identical. But it costs **11×** more CPU time (22.9 s vs 2.0 s per run) in this pure-Python implementation. The budget measure alone would have hidden that.
+- **Why it probably failed (diagnosis from the calibration seed only, a lead rather than a conclusion).** Near misses chosen by **output similarity** were mostly `filter` / `map` / `concat` programs: programs that produce roughly the right *numbers*. The hidden concepts are compositions like "sort, then remove duplicates". Output-close is not structure-close.
+
+### Decision
+
+Per the stop rule, **one** further near-miss variant may be tested. It must be pre-registered and must address the diagnosed weakness, for example near misses chosen by whether one more step of search can reach the target. If it also closes < 10% of the gap, this line stops and research effort moves to EXP-005. Recorded as D-024.

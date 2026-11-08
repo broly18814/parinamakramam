@@ -1,0 +1,13 @@
+EXP-002 on evaluation seeds 10-19 (never run before the design was frozen)
+
+H6  C5 - C3 (struct)  [primary]                        -2.3 pts  [-5.5, +0.7]  won/lost 3/6  -> FAIL
+H7  gap closed (C5 - C0) / (oracle - C0)              -17.7 %    [-35.6, -2.3]  -> FAIL  (below 10%: stop rule applies)
+H8  C5 - C0 (flat), success if <= +2 pts               -2.0 pts  [-3.8, -0.3]  won/lost 0/4  -> PASS
+
+For context (not pre-registered tests)
+    C3_evolve - C0_fixed (struct)                      -0.5 pts  [-3.7, +2.3]  won/lost 4/3  -> CI spans 0
+    C5_prospective - C0_fixed (struct)                 -2.8 pts  [-5.3, -0.3]  won/lost 2/6  -> CI<0
+    O_oracle - C0_fixed (struct)                      +16.0 pts  [+13.0, +18.7]  won/lost 10/0  -> CI>0
+    O_oracle - C0_fixed (flat)                         -5.0 pts  [-6.7, -3.3]  won/lost 0/9  -> CI<0
+
+CPU time per run, D-struct: C3 2.0 s, C5 22.9 s (11.28x). Search budget (values admitted) is identical: the near-miss scan admits no new values.

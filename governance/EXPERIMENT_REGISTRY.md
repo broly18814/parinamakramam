@@ -67,7 +67,8 @@ This is how we stop ourselves from fooling ourselves. Words are explained in the
 
 ---
 
-## EXP-002: Looking forward, not back (pre-registered)
+## EXP-002: Looking forward, not back
+- **Status:** ✅ completed 8 November 2026. **Result: negative**, pre-registered. Near-miss discovery (C5) scored −2.3 points vs C3 [−5.5, +0.7] and closed −17.7% of the gap. The stop rule now applies (one more variant allowed). Full results are in the design document, section 6.
 - **Design document (committed before any code):** [docs/research/EXP-002-design.md](../docs/research/EXP-002-design.md). New condition C5_prospective learns from the *near misses of unsolved puzzles* instead of the solutions of solved ones. Everything else is identical to C3. Primary hypothesis H6: C5 − C3 ≥ +5 points on evaluation seeds 10–19. Calibration on seed 100 only, at most two recorded changes, then freeze.
 
 - **Question:** If we invent shortcuts by studying puzzles the computer *almost* solved but didn't, and judge them with a cheap estimate of "would this help?", can we close the gap between 58 and 76.5?
