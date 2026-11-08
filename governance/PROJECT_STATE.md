@@ -94,5 +94,5 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 
 1. **Watch adoption, with no interviews (D-002).** pkv is on PyPI as `parinama-verify` 0.2.1 (D-032). Track installs from public numbers only: PyPI's download statistics, GitHub stars, and use of the Action.
 2. **BENCH-004:** a fresh held-out set, written *before* tackling the remaining known misses in OI-8 (`pytest.raises(AssertionError)`, a skip on one table row, an early `return`) and the extra move spellings in OI-13.
-3. **EXP-005 (research):** pre-register learning building blocks from real engineering records (public, licence-permitting commits, such as the REAL-001 projects), now that the near-miss line is closed (D-035). Decide first what "building block" means for real code, and how to measure it fairly.
+3. **EXP-005 (research):** pre-registered ([design](../docs/research/EXP-005-design.md)): do building blocks learned from a real project's past compress its future code? Next: build it on tomli (calibration only), freeze, then run the three evaluation projects once.
 4. **Publish more widely:** the first release is out (`pkv-v0.2.0`, D-030). Next, decide how to reach GitHub's Marketplace, which needs `action.yml` at the top of a repository (either a small separate repository for the action, or moving the file). Then watch install counts (no interviews; D-002).

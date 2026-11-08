@@ -96,9 +96,13 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
 - Splitting and merging shortcuts.
 - Fixing "remove unused shortcuts": remove one if the score doesn't drop without it.
 
-## EXP-005: Building blocks from real software work (planned, after the product's first version)
+## EXP-005: Building blocks learned from real code history
 
-Use records from our checker tool. Only public code whose licence allows it.
+- **Status:** 📝 pre-registered on 9 November 2026, **not yet run**. Committed before any code.
+- **Design and predictions:** [EXP-005-design.md](../docs/research/EXP-005-design.md).
+- **The question:** does a library of building blocks learned from a project's *past* code describe its *future* code more compactly than random fragments (H13, primary), or than blocks learned from other projects (H14)?
+- **Data:** the REAL-001 projects (click, more-itertools, boltons; tomli for calibration only), read through git. Nothing is executed, and no model is trained.
+- **Cost:** minutes on the MacBook, ₹0.
 
 ---
 
