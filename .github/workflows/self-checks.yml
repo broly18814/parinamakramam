@@ -36,7 +36,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python: ["3.10", "3.12", "3.14"]
+        python: ["3.10", "3.11", "3.12", "3.13", "3.14"]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -69,6 +69,19 @@ jobs:
           python benchmark/run_benchmark.py --set bench001 --check --out /tmp/bench001
           python benchmark/run_benchmark.py --set bench002 --check --out /tmp/bench002
           python benchmark/run_benchmark.py --set bench003 --check --out /tmp/bench003
+
+  package:
+    name: package builds, passes PyPI's checks, and installs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv build --out-dir dist product/verify
+      - run: uvx twine check --strict dist/*
+      - run: |
+          python3 -m venv /tmp/fresh
+          /tmp/fresh/bin/pip install dist/*.whl
+          /tmp/fresh/bin/pkv --version
 
   dogfood:
     name: pkv checks this change (dogfooding the GitHub Action)

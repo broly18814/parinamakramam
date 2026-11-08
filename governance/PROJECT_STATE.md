@@ -14,7 +14,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 - **Backup of the 14 deleted repositories:** `/Volumes/projects/hope/github-backup-broly18814-2026-11-08` (verified; see D-020 and D-021).
 - **Every upload is checked automatically:**
   - lint and strict types;
-  - tests on Python 3.10, 3.12 and 3.14;
+  - tests on Python 3.10, 3.11, 3.12, 3.13 and 3.14;
   - both practice sets as a regression gate;
   - pkv checking its own change.
 - **Run the same checks locally:** `scripts/check-all.sh`.
@@ -71,6 +71,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 - **OI-3:** the undo rule keeps changes that make no difference.
 - **OI-4:** read the original TRINITY and Stack Overflow sources before quoting them publicly.
 - **OI-6:** pkv finds tests by pytest's default naming only, and can't trace code that reads data files by name.
+- **OI-14:** pkv's Python module is called `pkv`, the same as an unrelated PyPI package (`pkv`, a key-value store). The two can't be installed together. Renaming the module would break existing use, so it waits for a 1.0 decision.
 - **OI-13:** more equivalent check spellings for the move rule (for example `assertIsInstance` and `assert isinstance`). Found on seen data, so they need a fresh held-out set with real moves before they're added (D-029).
 - **OI-11:** a cheap whole-suite load check (`pytest --collect-only`), so a receipt can say when test files outside the selection can't even load. Found in REAL-001's held-out set (tomli #58).
 - **OI-12:** replay studies should install the test tools each commit was written for. In REAL-001, 25 old commits failed only because of today's pytest or a missing old test package.
@@ -90,7 +91,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 
 ## Next steps, in order
 
-1. **Your decision: PyPI.** Publishing pkv to PyPI, the public Python package index, would let people run `pip install parinama-verify`. It needs a PyPI account and is another publishing step, so it waits for your yes.
+1. **Your steps for PyPI** ([runbook](../docs/product/PYPI.md)): create a PyPI account with two-factor authentication, and add the pending trusted publisher. Then approve releasing `pkv-v0.2.1`, which uploads it to PyPI automatically (D-031).
 2. **BENCH-003:** a fresh held-out set *before* tackling the known misses in OI-8.
 3. **EXP-002b:** the one remaining near-miss variant, pre-registered (structure-based). If it closes < 10% of the gap, stop and move to EXP-005.
 4. **Publish more widely:** the first release is out (`pkv-v0.2.0`, D-030). Next, decide how to reach GitHub's Marketplace, which needs `action.yml` at the top of a repository (either a small separate repository for the action, or moving the file). Then watch install counts (no interviews; D-002).

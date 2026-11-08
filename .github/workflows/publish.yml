@@ -1,0 +1,118 @@
+# Publish Parinama Verify to PyPI, the public Python package index.
+#
+# Plain words: when a pkv release is published on GitHub, build the package
+# from that exact tag, check it, send it to PyPI, and attach the very same
+# files to the GitHub release, so both places offer identical bytes.
+#
+# Security: this uses PyPI's "Trusted Publishing". PyPI is told, once, to
+# trust this one workflow in this one repository, and GitHub proves the
+# workflow's identity on each run (OpenID Connect). No password or API token
+# is stored anywhere. The publishing jobs run in GitHub "environments"
+# (pypi, testpypi), which the founder can protect with a required approval.
+#
+# Rehearsal: run this workflow by hand ("Run workflow", target: testpypi) to
+# publish to TestPyPI, PyPI's practice copy, without touching the real index.
+# Setup steps for the founder: docs/product/PYPI.md.
+name: publish
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Where to publish: testpypi (a rehearsal) or pypi (the real index)"
+        required: true
+        default: testpypi
+        type: choice
+        options: [testpypi, pypi]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: build and check the package
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, 'pkv-v')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: The release tag must match the package version
+        if: github.event_name == 'release'
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          version="$(python3 -c 'import tomllib; print(tomllib.load(open("product/verify/pyproject.toml", "rb"))["project"]["version"])')"
+          if [ "$TAG" != "pkv-v$version" ]; then
+            echo "::error title=publish::tag $TAG does not match package version $version"
+            exit 1
+          fi
+      - run: uv build --out-dir dist product/verify
+      - name: Check the files the way PyPI will
+        run: uvx twine check --strict dist/*
+      - name: Install the wheel in a clean environment and run it
+        run: |
+          python3 -m venv /tmp/fresh
+          /tmp/fresh/bin/pip install dist/*.whl
+          /tmp/fresh/bin/pkv --version
+      - run: cd dist && sha256sum *.whl *.tar.gz > SHA256SUMS && cat SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  pypi:
+    name: publish to PyPI
+    needs: build
+    if: github.event_name == 'release' || inputs.target == 'pypi'
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/project/parinama-verify/
+    permissions:
+      id-token: write   # lets GitHub prove this workflow's identity to PyPI
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - run: rm dist/SHA256SUMS   # PyPI takes only the packages
+      - uses: pypa/gh-action-pypi-publish@release/v1
+
+  testpypi:
+    name: publish to TestPyPI (rehearsal)
+    needs: build
+    if: github.event_name == 'workflow_dispatch' && inputs.target == 'testpypi'
+    runs-on: ubuntu-latest
+    environment:
+      name: testpypi
+      url: https://test.pypi.org/project/parinama-verify/
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - run: rm dist/SHA256SUMS
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+
+  attach:
+    name: attach the same files to the GitHub release
+    needs: pypi
+    if: github.event_name == 'release'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.release.tag_name }}
+        run: gh release upload "$TAG" dist/* --clobber --repo "$GITHUB_REPOSITORY"

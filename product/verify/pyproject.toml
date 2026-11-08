@@ -1,12 +1,38 @@
 [project]
 name = "parinama-verify"
-version = "0.2.0"
-description = "Independent, agent-agnostic verification of AI-written code changes"
-readme = "README.md"
+version = "0.2.1"
+description = "Independent checker for code changes: runs the affected tests and flags weakened tests"
+readme = "PYPI_README.md"  # the PyPI page; README.md is the full guide on GitHub
 license = "Apache-2.0"
 license-files = ["LICENSE", "NOTICE"]
 requires-python = ">=3.10"
 dependencies = []  # standard library only (decision D-014)
+authors = [{ name = "The Parinamakramam Authors" }]
+keywords = ["testing", "pytest", "verification", "ci", "code-review", "ai-agents", "test-tampering"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Framework :: Pytest",
+    "Intended Audience :: Developers",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+]
+
+[project.urls]
+Homepage = "https://github.com/broly18814/parinamakramam/tree/main/product/verify"
+Documentation = "https://github.com/broly18814/parinamakramam/blob/main/product/verify/README.md"
+Source = "https://github.com/broly18814/parinamakramam"
+Changelog = "https://github.com/broly18814/parinamakramam/blob/main/CHANGELOG.md"
+Issues = "https://github.com/broly18814/parinamakramam/issues"
 
 [project.scripts]
 pkv = "pkv.cli:main"

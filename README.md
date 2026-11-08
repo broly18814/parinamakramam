@@ -16,7 +16,7 @@ An independent AI research and product company, started with ₹0 on one MacBook
 | Read why we chose this product | [docs/product/P001…](docs/product/P001-first-workflow-public-evidence.md) |
 | See every important decision and why | [governance/DECISION_LOG.md](governance/DECISION_LOG.md) |
 | See every experiment: predictions, then results | [governance/EXPERIMENT_REGISTRY.md](governance/EXPERIMENT_REGISTRY.md) |
-| Use or read the checker tool (version 0.2.0) | [product/verify/](product/verify/README.md) |
+| Use or read the checker tool (version 0.2.0; 0.2.1 prepared for PyPI) | [product/verify/](product/verify/README.md) |
 | See every change, version by version | [CHANGELOG.md](CHANGELOG.md) |
 | Report a security problem | [SECURITY.md](SECURITY.md) |
 | Rules for changing the code | [CONTRIBUTING.md](CONTRIBUTING.md) |

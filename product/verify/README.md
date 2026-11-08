@@ -82,6 +82,8 @@ Exit code 2 means pkv itself couldn't complete, for example because the folder i
 - a test that compares a value with itself (`x == x`);
 - selected tests that weren't run, when nothing in the change could have removed them (the project leaves them out on purpose).
 
+**Good to know:** pkv installs a Python module named `pkv`, the same name as an unrelated PyPI package. Don't install both in one environment (OI-14).
+
 **Known misses (measured):**
 - An expected answer edited to *match* a bug. This is indistinguishable from an honest fix without knowing the intended behaviour.
 - `pytest.raises(AssertionError)` wrapped around a check.
@@ -171,7 +173,7 @@ The receipt appears on the run's summary page and is kept as a downloadable file
 
 - **Lint and types:** `ruff` lint and `mypy --strict`, both clean.
 - **Self-checks:**
-  - 102 product self-checks, on Python 3.10, 3.12 and 3.14;
+  - 102 product self-checks, on Python 3.10, 3.11, 3.12, 3.13 and 3.14;
   - every bug fix has a regression test that fails before the fix;
   - each detection rule was **mutation-tested**: breaking it makes a self-check fail.
 - **Regression gate:** all three practice sets; CI fails if any scenario's verdict changes.

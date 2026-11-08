@@ -9,6 +9,19 @@ Before version 1.0, anything may still change.
 
 ## Parinama Verify (`pkv`)
 
+### [0.2.1]: not released yet (prepared for PyPI)
+
+There are no changes to what pkv does. This release is for publishing on PyPI.
+
+#### Added
+- PyPI metadata: author, keywords, classifiers (Alpha; macOS and Linux; Python 3.10–3.14; Pytest) and project links.
+- `PYPI_README.md`: the PyPI page, with links that work outside the repository.
+- `.github/workflows/publish.yml`: publishing with Trusted Publishing (no stored tokens). It runs on a `pkv-v…` release, checks the tag matches the version, checks and installs the package, uploads to PyPI, and attaches the same files and `SHA256SUMS` to the GitHub release. There's also a TestPyPI rehearsal by hand.
+- CI job `package`: on every upload, the package must build, pass PyPI's strict checks (`twine check --strict`), install in a clean environment and run. `scripts/check-all.sh` does the same.
+
+#### Changed
+- CI now tests on Python 3.10, 3.11, 3.12, 3.13 and 3.14, every version the package claims to support. 3.11 and 3.13 were also checked on the Mac before the claim was made.
+
 ### [0.2.0]: 2026-11-09
 
 #### Added

@@ -30,4 +30,9 @@ for set in bench001 bench002 bench003; do
   echo "$set: every verdict matches its prediction"
 done
 
+step "package (builds and passes PyPI's checks)"
+dist="$(mktemp -d)"
+uv build --quiet --out-dir "$dist" product/verify
+uvx twine check --strict "$dist"/*.whl "$dist"/*.tar.gz
+
 printf '\nAll checks passed.\n'
