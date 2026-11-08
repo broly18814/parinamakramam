@@ -66,3 +66,19 @@ jobs:
         run: |
           python benchmark/run_benchmark.py --set bench001 --check --out /tmp/bench001
           python benchmark/run_benchmark.py --set bench002 --check --out /tmp/bench002
+
+  dogfood:
+    name: pkv checks this change (dogfooding the GitHub Action)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - run: python -m pip install pytest
+      - run: |
+          git config --global user.name "ci"
+          git config --global user.email "ci@example.invalid"
+      - uses: ./product/verify

@@ -1,0 +1,106 @@
+# Parinama Verify as a GitHub Action.
+#
+# Plain words: a ready-made step for a GitHub workflow. On every pull request
+# or upload it works out which tests the change could affect, runs them,
+# looks for signs the tests were weakened, and puts the receipt on the run's
+# summary page. The job fails if the verdict is one you choose to block on.
+#
+# Security: every input is passed to the shell through environment variables,
+# never pasted into a command, so a crafted branch name or input can't inject
+# commands ("script injection"). pkv uses no network and no AI.
+name: Parinama Verify
+description: Independent check of a code change. Runs the affected tests, flags weakened tests, and posts a receipt.
+author: Parinamakramam
+branding:
+  icon: check-circle
+  color: green
+
+inputs:
+  base:
+    description: >-
+      Branch or commit to compare with. Default: the pull request's base branch,
+      or the previous commit on a push.
+    required: false
+    default: ""
+  fail-on:
+    description: Comma-separated verdicts that fail the job.
+    required: false
+    default: "FAILED,SUSPICIOUS,UNVERIFIED"
+  python:
+    description: >-
+      Python command that runs pkv and your tests. It must have pytest and your
+      project's dependencies installed.
+    required: false
+    default: python
+  timeout:
+    description: Seconds before the tests are stopped.
+    required: false
+    default: "600"
+
+outputs:
+  verdict:
+    description: VERIFIED, FAILED, UNVERIFIED or SUSPICIOUS (or ERROR if pkv could not complete).
+    value: ${{ steps.check.outputs.verdict }}
+
+runs:
+  using: composite
+  steps:
+    - id: base
+      name: Work out what to compare with
+      shell: bash
+      env:
+        INPUT_BASE: ${{ inputs.base }}
+        EVENT_NAME: ${{ github.event_name }}
+        BASE_REF: ${{ github.base_ref }}
+        BEFORE: ${{ github.event.before }}
+      run: |
+        if [ -n "$INPUT_BASE" ]; then
+          base="$INPUT_BASE"
+        elif [ "$EVENT_NAME" = "pull_request" ] || [ "$EVENT_NAME" = "pull_request_target" ]; then
+          git fetch --no-tags --quiet origin "$BASE_REF" || true
+          base="origin/$BASE_REF"
+        elif [ -n "$BEFORE" ] && [ "$BEFORE" != "0000000000000000000000000000000000000000" ] \
+             && git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
+          base="$BEFORE"
+        else
+          base="HEAD~1"
+        fi
+        echo "Comparing with: $base"
+        echo "base=$base" >> "$GITHUB_OUTPUT"
+
+    - id: check
+      name: Run Parinama Verify
+      shell: bash
+      env:
+        PYTHONPATH: ${{ github.action_path }}
+        PKV_BASE: ${{ steps.base.outputs.base }}
+        PKV_PYTHON: ${{ inputs.python }}
+        PKV_TIMEOUT: ${{ inputs.timeout }}
+        PKV_FAIL_ON: ${{ inputs.fail-on }}
+      run: |
+        # Never report a receipt left over from an earlier run on this machine.
+        rm -f .pkv/receipt.json .pkv/receipt.md
+        set +e
+        "$PKV_PYTHON" -m pkv check --base "$PKV_BASE" --timeout "$PKV_TIMEOUT" \
+          --json .pkv/receipt.json --md .pkv/receipt.md
+        code=$?
+        set -e
+        if [ -f .pkv/receipt.md ]; then cat .pkv/receipt.md >> "$GITHUB_STEP_SUMMARY"; fi
+        verdict="$("$PKV_PYTHON" -c 'import json; print(json.load(open(".pkv/receipt.json"))["verdict"])' 2>/dev/null || echo ERROR)"
+        echo "verdict=$verdict" >> "$GITHUB_OUTPUT"
+        if [ "$verdict" = "ERROR" ] || [ "$code" = "2" ]; then
+          echo "::error title=Parinama Verify::pkv could not complete the check (exit code $code)"
+          exit 2
+        fi
+        case ",$PKV_FAIL_ON," in
+          *",$verdict,"*) echo "::error title=Parinama Verify::verdict $verdict"; exit 1 ;;
+        esac
+        echo "::notice title=Parinama Verify::verdict $verdict"
+
+    - name: Keep the receipt
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: pkv-receipt
+        path: .pkv/
+        if-no-files-found: ignore
