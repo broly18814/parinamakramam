@@ -233,3 +233,12 @@ Use records from our checker tool. Only public code whose licence allows it.
 - **Held out:** a further 120 older changes, run only after any fixes are frozen.
 - **Primary prediction (R2):** at most 6 of 120 commits get a false alarm. **Safety prediction (R3):** no false all-clears.
 - **Cost:** a few hours on the MacBook, ₹0. The projects' own tests are run unchanged, and nothing of theirs is copied into this repository.
+
+---
+
+## BENCH-003 and REAL-002: telling a moved test from a deleted one (defect D4)
+
+- **Status:** 📝 pre-registered on 9 November 2026. Committed before pkv 0.2.0's move-aware comparison was written, before BENCH-003 ran, and before the REAL-002 commits were opened.
+- **Design and predictions:** [D4-design.md](../docs/product/D4-design.md).
+- **BENCH-003:** 10 honest reorganisations and 12 cheats disguised as moves, in a third practice project. **Safety criterion:** all 12 cheats are caught. At most 1 honest false alarm (M09, predicted).
+- **REAL-002:** 120 fresh real commits (positions 61–90 of the REAL-001 projects), analysed read-only. 0.1.2's findings are classified by hand first; then 0.2.0 is compared. **Primary (Q1):** no real or intended weakening is excused. **Q2:** at least half of the move false alarms are cleared.

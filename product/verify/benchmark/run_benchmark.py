@@ -26,11 +26,12 @@ sys.path.insert(0, str(HERE))         # scenarios.py
 
 import scenarios as bench001  # noqa: E402
 import scenarios_bench002 as bench002  # noqa: E402
+import scenarios_bench003 as bench003  # noqa: E402
 from pkv import __version__  # noqa: E402
 from pkv.cli import main as pkv_main  # noqa: E402
 from scenarios import Scenario  # noqa: E402
 
-SETS = {"bench001": bench001, "bench002": bench002}
+SETS = {"bench001": bench001, "bench002": bench002, "bench003": bench003}
 
 
 def git(repo: Path, *args: str) -> str:

@@ -15,6 +15,12 @@ Usage (from product/verify; WORK must be outside this repository):
     python realworld/run_real.py run     --work WORK --set study|heldout [--only NAME]
     python realworld/run_real.py summary --set study|heldout [--dir FOLDER]
     python realworld/run_real.py rescore --work WORK --set study|heldout
+    python realworld/run_real.py static  --work WORK --set fresh [--pkv-dir DIR]
+
+`static` (REAL-002) runs only pkv's weakened-test rules, which read code
+through git: nothing from the projects is installed or executed. --pkv-dir
+picks which pkv to use (default: this one), so two versions can be compared
+on exactly the same commits.
 
 `rescore` recomputes every verdict with the *current* pkv from the saved
 receipts, without running anything from the projects: pkv's weakened-test
@@ -44,7 +50,8 @@ HERE = Path(__file__).resolve().parent
 PKV_DIR = HERE.parent
 PROJECTS = json.loads((HERE / "projects.json").read_text())
 RESULTS = HERE / "results"
-SETS = {"study": (0, 30), "heldout": (30, 60)}  # positions in the commit list
+SETS = {"study": (0, 30), "heldout": (30, 60), "fresh": (60, 90)}  # positions in the commit list
+# "fresh" is REAL-002: read-only analysis of 120 further commits (docs/product/D4-design.md).
 TIMEOUT_S = 600
 # The full-suite comparison runs with the same kind of minimal environment pkv uses.
 FULL_ENV = {"PATH": os.environ.get("PATH", "/usr/bin:/bin"), "HOME": os.environ.get("HOME", "/tmp"),
@@ -210,6 +217,39 @@ def rescore(work: Path, which: str) -> None:
         (out_dir / f"{p['name']}.json").write_text(json.dumps(records, indent=1) + "\n")
 
 
+def static(work: Path, which: str, pkv_dir: Path | None) -> None:
+    sys.path.insert(0, str(pkv_dir or PKV_DIR))
+    from pkv import __version__
+    from pkv.gitdiff import changed_files
+    from pkv.imports import build_graph
+    from pkv.tamper import find_tampering
+
+    lo, hi = SETS[which]
+    out_dir = RESULTS / f"{which}-static-pkv-{__version__}"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for p in PROJECTS:
+        repo, _ = paths(work, p)
+        records = []
+        for i, sha in enumerate(commits(repo, p["commit"])[lo:hi], start=lo + 1):
+            git(repo, "checkout", "-q", "--detach", "-f", sha)
+            git(repo, "clean", "-q", "-f", "-d")
+            parent = git(repo, "rev-parse", f"{sha}^1").strip()
+            rec: dict[str, Any] = {"project": p["name"], "position": i, "commit": sha, "parent": parent,
+                                   "subject": git(repo, "log", "-1", "--format=%s", sha).strip()[:120],
+                                   "pkv": __version__}
+            try:
+                changes = changed_files(repo, parent)
+                rec["findings"] = [f.to_dict() for f in find_tampering(repo, changes, parent, build_graph(repo))]
+            except Exception as e:  # a crash is a result to report, not to hide
+                rec["error"] = f"{type(e).__name__}: {e}"
+            records.append(rec)
+        git(repo, "checkout", "-q", "--detach", "-f", p["commit"])
+        (out_dir / f"{p['name']}.json").write_text(json.dumps(records, indent=1) + "\n")
+        bad = sum(any(f["severity"] == "suspicious" for f in r.get("findings", [])) for r in records)
+        print(f"{p['name']}: {len(records)} commits, {bad} with a suspicious finding, "
+              f"{sum('error' in r for r in records)} errors (pkv {__version__})")
+
+
 def summary(which: str, folder: str | None = None) -> None:
     rows = []
     for p in PROJECTS:
@@ -242,11 +282,12 @@ def summary(which: str, folder: str | None = None) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("command", choices=["setup", "list", "run", "summary", "rescore"])
+    ap.add_argument("command", choices=["setup", "list", "run", "summary", "rescore", "static"])
     ap.add_argument("--work", type=Path)
     ap.add_argument("--set", choices=list(SETS), default="study")
     ap.add_argument("--only")
     ap.add_argument("--dir", help="results sub-folder to summarise (default: the set's own)")
+    ap.add_argument("--pkv-dir", type=Path, help="for static: the product/verify folder of the pkv to use")
     a = ap.parse_args()
     if a.command != "summary":
         if a.work is None:
@@ -266,6 +307,8 @@ def main() -> None:
         run(work, a.set, a.only)
     elif a.command == "rescore":
         rescore(work, a.set)
+    elif a.command == "static":
+        static(work, a.set, a.pkv_dir)
     else:
         summary(a.set, a.dir)
 

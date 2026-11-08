@@ -243,8 +243,9 @@ SCENARIOS: list[Scenario] = [
               "tests/test_parsing.py": ("from inventory.units import convert, parse\n\n\ndef test_parse():\n"
                                         + PARSE_TEST + "\n\ndef test_ratio():\n"
                                         '    assert convert(0.1, "kg") / 1000 == 0.1\n')},
-             predicted="SUSPICIOUS", predicted_kinds=("test-file-deleted",),
-             why="PREDICTED FALSE ALARM (0.0.2 and 0.1.0): the moved tests aren't recognised"),
+             why="0.2.0 (prediction committed before the move-aware comparison was written): every test of the "
+                 "deleted file reappears unchanged. Earlier versions: PREDICTED FALSE ALARM, SUSPICIOUS "
+                 "test-file-deleted (0.0.2 to 0.1.2)"),
     Scenario("G09", "honest", "New method with its own test",
              "Added Stock.remove() and a unittest for it.",
              {"src/inventory/stock.py": STOCK + "\n    def remove(self, name):\n        self.items.pop(name, None)\n",
