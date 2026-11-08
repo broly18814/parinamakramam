@@ -657,8 +657,10 @@ This is the same honesty principle as our research. A check you've never seen fa
 📖 **The real words.**
 - **Semantic Versioning** (MAJOR.MINOR.PATCH): PATCH for bug fixes, MINOR for new features, MAJOR for changes that break existing use.
 - **Changelog**: a dated list of what changed in each version.
+- **Tag and release**: a *tag* is a permanent name for one exact snapshot, such as `pkv-v0.2.0`. A *release* is that tag published with ready-made files, so users install exactly what was tested instead of "whatever is newest".
+- **Checksum (SHA-256)**: a fingerprint of a file. If even one byte of a download changed, its checksum changes too, so users can confirm they got the genuine file.
 
-🎯 **Precisely.** pkv went 0.0.1 → 0.0.2 (two bug fixes) → 0.1.0 (new detection rules) → 0.1.1 (bug fixes found by dogfooding). Before 1.0, anything may change. [CHANGELOG.md](../CHANGELOG.md) records each step, including how every bug was found and tested.
+🎯 **Precisely.** pkv went 0.0.1 → 0.0.2 (two bug fixes) → 0.1.0 (new detection rules) → 0.1.1 and 0.1.2 (bug fixes found by dogfooding and by REAL-001) → 0.2.0 (moved tests recognised), the first **release**. Before 1.0, anything may change. [CHANGELOG.md](../CHANGELOG.md) records each step, including how every bug was found and tested.
 
 ## Lesson 33. Negative results and stop rules
 

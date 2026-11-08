@@ -69,6 +69,7 @@ If a word in any Parinamakramam document confuses you, look it up here. The word
 | **Receipt (evidence)** | pkv's record of a check: what changed, which tests ran, the results, the fingerprint, and the verdict. Saved as JSON and Markdown. |
 | **Regression gate** | A CI check that fails if quality drops, e.g. if any practice-set verdict changes. |
 | **Regression test** | A test added because a bug was found, so that bug can never quietly come back. |
+| **Release (tag)** | A permanent name for one exact snapshot (for example `pkv-v0.2.0`), published with ready-made files, so people install exactly what was tested. |
 | **Replay study** | Checking real changes that real people made, one at a time, as if each were new. REAL-001 is ours. |
 | **Repository (repo)** | A project folder tracked by git, usually stored on GitHub. |
 | **Reproducibility** | Getting exactly the same results again from the same code and data. |

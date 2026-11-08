@@ -38,6 +38,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
   - BENCH-001: 15 of 16 cheats caught, 0 of 12 false alarms;
   - **BENCH-002 (held out): 10 of 13 caught, 1 of 10 false alarms.**
 - **GitHub Action:** `product/verify/action.yml`. This repository uses it on itself.
+- **First release:** `pkv-v0.2.0` on GitHub Releases, with the wheel, the source archive and checksums (D-030).
 - **Quality:**
   - 102 product self-checks and 16 research self-checks;
   - `mypy --strict` clean;
@@ -89,7 +90,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 
 ## Next steps, in order
 
-1. **Publish a first release** (`pkv-v0.2.0`). Moved-test false alarms are handled (D-029), and every limit is documented.
+1. **Your decision: PyPI.** Publishing pkv to PyPI, the public Python package index, would let people run `pip install parinama-verify`. It needs a PyPI account and is another publishing step, so it waits for your yes.
 2. **BENCH-003:** a fresh held-out set *before* tackling the known misses in OI-8.
 3. **EXP-002b:** the one remaining near-miss variant, pre-registered (structure-based). If it closes < 10% of the gap, stop and move to EXP-005.
-4. **Publish more widely:** tag a first release (`pkv-v0.2.0`), and decide how to reach GitHub's Marketplace, which needs `action.yml` at the top of a repository (either a small separate repository for the action, or moving the file). Then watch install counts (no interviews; D-002).
+4. **Publish more widely:** the first release is out (`pkv-v0.2.0`, D-030). Next, decide how to reach GitHub's Marketplace, which needs `action.yml` at the top of a repository (either a small separate repository for the action, or moving the file). Then watch install counts (no interviews; D-002).

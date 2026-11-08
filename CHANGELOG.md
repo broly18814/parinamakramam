@@ -27,6 +27,10 @@ Before version 1.0, anything may still change.
 - BENCH-003: 22/22 predictions correct. 12/12 disguised cheats caught and named. Honest false alarms 1/10 (0.1.2: 10/10).
 - REAL-002 (120 fresh real commits, read only): findings identical to 0.1.2's. No accurate alarm was lost, and there were no crashes. There were no moves in this set, so the benefit on real code is still unmeasured.
 
+#### Packaging
+- First tagged release: git tag `pkv-v0.2.0`. GitHub Releases has the wheel, the source archive and `SHA256SUMS`, all built from that tag.
+- The source archive now holds only the package, its README and the licence files (`MANIFEST.in`). Before, it had part of the self-checks without the files they need.
+
 #### Known, not fixed
 - Some equivalent spellings aren't recognised yet, for example `self.assertIsInstance(x, T)` and `assert isinstance(x, T)` (OI-13). Tests rewritten in terms of table columns, or generalised while renamed, are still flagged.
 
