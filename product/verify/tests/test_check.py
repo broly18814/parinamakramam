@@ -269,3 +269,107 @@ def test_label_without_value_does_not_crash_the_detector():
     # value, and the detector used to crash on it instead of giving a verdict.
     tests, module_skips = read_tests("pytestmark: list\n\ndef test_a():\n    assert 1 == 1\n")
     assert module_skips == 0 and tests["test_a"].asserts == 1
+
+
+# ---------- rules added in 0.1.0 (each with an honest look-alike) ----------
+
+def _info(src: str, name: str = "test_x"):
+    return read_tests(src)[0][name]
+
+
+def test_swallowed_failures_are_counted_and_honest_try_is_not():
+    hidden = "def test_x():\n    try:\n        assert f() == 1\n    except AssertionError:\n        pass\n"
+    broad = "def test_x():\n    try:\n        assert f() == 1\n    except Exception:\n        pass\n"
+    suppress = ("import contextlib\ndef test_x():\n    with contextlib.suppress(AssertionError):\n"
+                "        assert f() == 1\n")
+    reraised = "def test_x():\n    try:\n        assert f() == 1\n    except AssertionError:\n        raise\n"
+    expects_error = ("import pytest\ndef test_x():\n    try:\n        parse('x')\n    except ValueError:\n"
+                     "        pass\n    else:\n        pytest.fail('no error')\n")
+    cleanup = "def test_x():\n    try:\n        assert f() == 1\n    finally:\n        close()\n"
+    assert _info(hidden).swallowed == 1 and _info(broad).swallowed == 1 and _info(suppress).swallowed == 1
+    assert _info(reraised).swallowed == 0 and _info(expects_error).swallowed == 0
+    assert _info(cleanup).swallowed == 0
+
+
+def test_exact_and_loose_checks_are_told_apart():
+    assert _info("def test_x():\n    assert f() == 90\n").exact == 1
+    assert _info("def test_x():\n    assert f() > 0\n").exact == 0
+    assert _info("def test_x():\n    assert f() is not None\n").exact == 0
+    assert _info("def test_x():\n    assert f() == pytest.approx(0.1)\n").exact == 1
+    tuple_merge = _info("def test_x():\n    assert (f(1), f(2)) == (3, 4)\n")
+    assert tuple_merge.asserts == 2 and tuple_merge.exact == 2  # two exact checks, not one
+    src = ("import unittest\nclass TestX(unittest.TestCase):\n    def test_x(self):\n"
+           "        self.assertEqual(f(), 0)\n        self.assertTrue(g())\n")
+    info = read_tests(src)[0]["TestX::test_x"]
+    assert info.asserts == 2 and info.exact == 1
+
+
+def test_parametrize_cases_are_counted():
+    three = ("import pytest\n@pytest.mark.parametrize('a, b', [(1, 1), (2, 2), pytest.param(3, 3, id='c')])\n"
+             "def test_x(a, b):\n    assert a == b\n")
+    stacked = ("import pytest\n@pytest.mark.parametrize('a', [1, 2])\n@pytest.mark.parametrize('b', [1, 2, 3])\n"
+               "def test_x(a, b):\n    assert a\n")
+    computed = "import pytest\n@pytest.mark.parametrize('a', make_cases())\ndef test_x(a):\n    assert a\n"
+    assert _info(three).cases == 3 and _info(stacked).cases == 6 and _info(computed).cases is None
+    assert _info("def test_x():\n    assert 1 == 1\n").cases == 1
+
+
+def test_weakened_swallowed_and_trimmed_tests_are_suspicious_in_a_real_change(repo):
+    write(repo, {"tests/test_cases.py": (
+        "import pytest\nfrom app.utils import slug\n\n"
+        "@pytest.mark.parametrize('s, out', [('A', 'a'), ('B', 'b'), ('C', 'c')])\n"
+        "def test_table(s, out):\n    assert slug(s) == out\n\n"
+        "def test_exact():\n    assert slug('X') == 'x'\n\n"
+        "def test_guarded():\n    assert slug('Y') == 'y'\n")})
+    commit(repo, "more tests")
+    write(repo, {"tests/test_cases.py": (
+        "import pytest\nfrom app.utils import slug\n\n"
+        "@pytest.mark.parametrize('s, out', [('A', 'a'), ('B', 'b')])\n"
+        "def test_table(s, out):\n    assert slug(s) == out\n\n"
+        "def test_exact():\n    assert slug('X') is not None\n\n"
+        "def test_guarded():\n    try:\n        assert slug('Y') == 'y'\n    except Exception:\n        pass\n")})
+    assert {"fewer-cases", "check-weakened", "failure-swallowed"} <= kinds(repo, "suspicious")
+
+
+def test_test_deleted_with_its_code_is_a_notice_but_alone_is_suspicious(repo):
+    (repo / "app/utils.py").unlink()
+    (repo / "tests/test_utils.py").unlink()
+    assert "test-deleted-with-code" in kinds(repo, "notice")
+    assert "test-file-deleted" not in kinds(repo, "suspicious")
+    git(repo, "checkout", "--", "app/utils.py")
+    assert "test-file-deleted" in kinds(repo, "suspicious")  # the code it tested still exists
+
+
+def test_tests_removed_by_settings_are_caught_at_run_time(repo, capsys):
+    write(repo, {"app/utils.py": "def slug(s):\n    return s\n",  # breaks test_slug
+                 "pyproject.toml": "[tool.pytest.ini_options]\naddopts = \"-k 'not slug'\"\n"})
+    assert check(repo) == 4
+    out = capsys.readouterr().out
+    assert "test_slug in tests/test_utils.py was selected but pytest never ran it" in out
+
+
+def test_tests_dropped_by_a_conftest_hook_are_caught_at_run_time(repo, capsys):
+    write(repo, {"app/utils.py": "def slug(s):\n    return s\n",
+                 "tests/conftest.py": ("def pytest_collection_modifyitems(items):\n"
+                                       "    items[:] = [i for i in items if 'slug' not in i.name]\n")})
+    assert check(repo) == 4
+    assert "never ran it" in capsys.readouterr().out
+
+
+def test_conftest_hook_that_only_labels_tests_is_not_flagged(repo, capsys):
+    write(repo, {"tests/conftest.py": ("def pytest_collection_modifyitems(items):\n"
+                                       "    for i in items:\n        i.add_marker('fast')\n"),
+                 "pyproject.toml": "[tool.pytest.ini_options]\nmarkers = ['fast: quick tests']\n"})
+    assert check(repo) == 0
+    assert "never ran" not in capsys.readouterr().out
+
+
+def test_whole_file_skipped_on_purpose_is_not_reported_as_not_run(repo, capsys):
+    write(repo, {"app/utils.py": "def slug(s):\n    return s.lower()  # same\n",
+                 "tests/test_utils.py": ("import pytest\npytest.importorskip('no_such_module_xyz')\n"
+                                         "from app.utils import slug\n\ndef test_slug():\n"
+                                         "    assert slug('A') == 'a'\n")})
+    assert check(repo) == 3
+    out = capsys.readouterr().out
+    assert "never ran" not in out  # a deliberate whole-file skip is not "removed"
+    assert "pytest found no tests to run" in out

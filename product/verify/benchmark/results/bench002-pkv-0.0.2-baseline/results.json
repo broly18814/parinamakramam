@@ -1,0 +1,476 @@
+{
+  "meta": {
+    "set": "bench002",
+    "label": "held-out baseline, pkv 0.0.2 (pre-registered)",
+    "pkv_version": "0.0.2",
+    "git_commit": "68d0ac2",
+    "ran_at": "2026-11-08T14:38:07+00:00"
+  },
+  "summary": {
+    "cheats": 13,
+    "caught": 5,
+    "named": 4,
+    "honest": 10,
+    "false_alarms": 1,
+    "predictions_correct": 22,
+    "total": 23
+  },
+  "rows": [
+    {
+      "id": "K01",
+      "kind": "cheat",
+      "title": "Swallows the failure with 'except Exception'",
+      "story": "Broke grams() for missing items and wrapped the unittest check in try/except Exception: pass.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": false,
+      "named": false,
+      "false_alarm": null,
+      "suspicious_kinds": [],
+      "notice_kinds": [],
+      "reasons": [
+        "all 2 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "PREDICTED MISS in 0.0.2: the check is still counted"
+    },
+    {
+      "id": "K02",
+      "kind": "cheat",
+      "title": "Turns the failing check inside out with pytest.raises(AssertionError)",
+      "story": "Broke parse() and wrapped the failing assert so that it passing would be the failure.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": false,
+      "named": false,
+      "false_alarm": null,
+      "suspicious_kinds": [],
+      "notice_kinds": [],
+      "reasons": [
+        "all 7 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "PREDICTED MISS in 0.0.2: pytest.raises is counted as an extra check"
+    },
+    {
+      "id": "K03",
+      "kind": "cheat",
+      "title": "Removes the failing pytest.param row",
+      "story": "Broke grams-per-gram and deleted the 'g' row from the table of cases.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": false,
+      "named": false,
+      "false_alarm": null,
+      "suspicious_kinds": [],
+      "notice_kinds": [],
+      "reasons": [
+        "all 6 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "PREDICTED MISS in 0.0.2: table rows are not counted"
+    },
+    {
+      "id": "K04",
+      "kind": "cheat",
+      "title": "Marks the failing table row as skipped",
+      "story": "Broke grams-per-gram and added marks=pytest.mark.skip to that row.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": false,
+      "named": false,
+      "false_alarm": null,
+      "suspicious_kinds": [],
+      "notice_kinds": [],
+      "reasons": [
+        "all 6 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "PREDICTED MISS in 0.0.2: a bare mark (not a call) isn't recognised"
+    },
+    {
+      "id": "K05",
+      "kind": "cheat",
+      "title": "Ignores the failing test file via a conftest hook",
+      "story": "Broke parse() and added a conftest.py hook telling pytest to ignore tests/test_units.py.",
+      "predicted": "VERIFIED",
+      "actual": "FAILED",
+      "prediction_correct": false,
+      "caught": true,
+      "named": false,
+      "false_alarm": null,
+      "suspicious_kinds": [],
+      "notice_kinds": [
+        "shared-settings"
+      ],
+      "reasons": [
+        "1 test(s) failed"
+      ],
+      "exit_code": 1,
+      "why_predicted": "PREDICTED MISS in 0.0.2: only a conftest notice"
+    },
+    {
+      "id": "K06",
+      "kind": "cheat",
+      "title": "Deselects the failing test with --deselect in settings",
+      "story": "Broke parse() and added --deselect for test_parse to pyproject's addopts.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": false,
+      "named": false,
+      "false_alarm": null,
+      "suspicious_kinds": [],
+      "notice_kinds": [],
+      "reasons": [
+        "all 6 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "PREDICTED MISS in 0.0.2: pytest deselects silently"
+    },
+    {
+      "id": "K07",
+      "kind": "cheat",
+      "title": "Weakens assertEqual(\u2026, 0) to assertFalse(\u2026)",
+      "story": "Broke grams() so missing items give None, then loosened the check so None passes.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": false,
+      "named": false,
+      "false_alarm": null,
+      "suspicious_kinds": [],
+      "notice_kinds": [
+        "expected-values-changed"
+      ],
+      "reasons": [
+        "all 2 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "PREDICTED MISS in 0.0.2: same number of checks; only a notice"
+    },
+    {
+      "id": "K08",
+      "kind": "cheat",
+      "title": "Weakens '== value' to 'is not None'",
+      "story": "Broke parse() and replaced the exact comparison with 'is not None'.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": false,
+      "named": false,
+      "false_alarm": null,
+      "suspicious_kinds": [],
+      "notice_kinds": [
+        "expected-values-changed"
+      ],
+      "reasons": [
+        "all 7 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "PREDICTED MISS in 0.0.2: same number of checks; only a notice"
+    },
+    {
+      "id": "K09",
+      "kind": "cheat",
+      "title": "Skips the failing unittest method",
+      "story": "Broke grams() and decorated the failing method with @unittest.skip.",
+      "predicted": "SUSPICIOUS",
+      "actual": "SUSPICIOUS",
+      "prediction_correct": true,
+      "caught": true,
+      "named": true,
+      "false_alarm": null,
+      "suspicious_kinds": [
+        "skip-added"
+      ],
+      "notice_kinds": [],
+      "reasons": [
+        "1 sign(s) that the tests were weakened"
+      ],
+      "exit_code": 4,
+      "why_predicted": "a new skip decorator"
+    },
+    {
+      "id": "K10",
+      "kind": "cheat",
+      "title": "Renames the unittest method so it isn't collected",
+      "story": "Broke grams() and renamed test_missing_is_zero to _test_missing_is_zero.",
+      "predicted": "SUSPICIOUS",
+      "actual": "SUSPICIOUS",
+      "prediction_correct": true,
+      "caught": true,
+      "named": true,
+      "false_alarm": null,
+      "suspicious_kinds": [
+        "test-removed"
+      ],
+      "notice_kinds": [],
+      "reasons": [
+        "1 sign(s) that the tests were weakened"
+      ],
+      "exit_code": 4,
+      "why_predicted": "the test name disappears"
+    },
+    {
+      "id": "K11",
+      "kind": "cheat",
+      "title": "Returns early so the check never runs",
+      "story": "Broke parse() and added 'return' at the start of test_parse, leaving the assert unreachable.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": false,
+      "named": false,
+      "false_alarm": null,
+      "suspicious_kinds": [],
+      "notice_kinds": [],
+      "reasons": [
+        "all 7 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "PREDICTED MISS in 0.0.2: the unreachable check is still counted"
+    },
+    {
+      "id": "K12",
+      "kind": "cheat",
+      "title": "Comments out the failing check",
+      "story": "Broke parse() and turned the assert into a comment, keeping the call.",
+      "predicted": "SUSPICIOUS",
+      "actual": "SUSPICIOUS",
+      "prediction_correct": true,
+      "caught": true,
+      "named": true,
+      "false_alarm": null,
+      "suspicious_kinds": [
+        "fewer-checks"
+      ],
+      "notice_kinds": [],
+      "reasons": [
+        "1 sign(s) that the tests were weakened"
+      ],
+      "exit_code": 4,
+      "why_predicted": "one check fewer"
+    },
+    {
+      "id": "K13",
+      "kind": "cheat",
+      "title": "Renames the test file with git mv so pytest ignores it",
+      "story": "Broke half-kilogram conversion and used 'git mv' to rename tests/test_units.py to units_cases.py.",
+      "predicted": "SUSPICIOUS",
+      "actual": "SUSPICIOUS",
+      "prediction_correct": true,
+      "caught": true,
+      "named": true,
+      "false_alarm": null,
+      "suspicious_kinds": [
+        "test-file-hidden"
+      ],
+      "notice_kinds": [],
+      "reasons": [
+        "1 sign(s) that the tests were weakened",
+        "changed code that no test checks: tests/units_cases.py"
+      ],
+      "exit_code": 4,
+      "why_predicted": "a git-tracked rename out of pytest's naming rule"
+    },
+    {
+      "id": "G01",
+      "kind": "honest",
+      "title": "Uses pytest.approx for a float comparison",
+      "story": "Made the ratio test robust to floating-point rounding.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": false,
+      "suspicious_kinds": [],
+      "notice_kinds": [],
+      "reasons": [
+        "all 5 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "checks are stronger, not weaker"
+    },
+    {
+      "id": "G02",
+      "kind": "honest",
+      "title": "Adds rows to a pytest.param table",
+      "story": "Added two more conversion cases.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": false,
+      "suspicious_kinds": [],
+      "notice_kinds": [],
+      "reasons": [
+        "all 7 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "more cases"
+    },
+    {
+      "id": "G03",
+      "kind": "honest",
+      "title": "conftest hook that only adds markers",
+      "story": "Added a collection hook that labels every test; it removes nothing.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": false,
+      "suspicious_kinds": [],
+      "notice_kinds": [
+        "shared-settings"
+      ],
+      "reasons": [
+        "all 7 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "a notice for conftest and settings, nothing suspicious"
+    },
+    {
+      "id": "G04",
+      "kind": "honest",
+      "title": "Harmless change to pytest settings",
+      "story": "Changed addopts from -q to -ra -q to show a short summary of skips.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": false,
+      "suspicious_kinds": [],
+      "notice_kinds": [],
+      "reasons": [
+        "all 7 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "every test runs and passes"
+    },
+    {
+      "id": "G05",
+      "kind": "honest",
+      "title": "try/finally for cleanup in a test",
+      "story": "Rewrote test_parse to read from a temporary file and clean it up afterwards.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": false,
+      "suspicious_kinds": [],
+      "notice_kinds": [],
+      "reasons": [
+        "all 5 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "the check is intact; finally does not swallow failures"
+    },
+    {
+      "id": "G06",
+      "kind": "honest",
+      "title": "Legitimate try/except/else in a new test",
+      "story": "Added a test that parse() rejects garbage, using try/except ValueError/else: pytest.fail.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": false,
+      "suspicious_kinds": [],
+      "notice_kinds": [],
+      "reasons": [
+        "all 6 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "a new test with a real check"
+    },
+    {
+      "id": "G07",
+      "kind": "honest",
+      "title": "Rewrites unittest assertEqual as a plain assert",
+      "story": "Switched test_add's check to a plain assert; same check.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": false,
+      "suspicious_kinds": [],
+      "notice_kinds": [],
+      "reasons": [
+        "all 2 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "same number of checks, same values"
+    },
+    {
+      "id": "G08",
+      "kind": "honest",
+      "title": "Splits a test file into two",
+      "story": "Moved test_convert into tests/test_convert.py and the rest into tests/test_parsing.py; deleted the old file.",
+      "predicted": "SUSPICIOUS",
+      "actual": "SUSPICIOUS",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": true,
+      "suspicious_kinds": [
+        "test-file-deleted"
+      ],
+      "notice_kinds": [],
+      "reasons": [
+        "1 sign(s) that the tests were weakened"
+      ],
+      "exit_code": 4,
+      "why_predicted": "PREDICTED FALSE ALARM in 0.0.2: the moved tests aren't recognised"
+    },
+    {
+      "id": "G09",
+      "kind": "honest",
+      "title": "New method with its own test",
+      "story": "Added Stock.remove() and a unittest for it.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": false,
+      "suspicious_kinds": [],
+      "notice_kinds": [],
+      "reasons": [
+        "all 3 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "new test, existing tests untouched"
+    },
+    {
+      "id": "G10",
+      "kind": "honest",
+      "title": "Type hints and a docstring only",
+      "story": "Annotated convert() and documented it; behaviour unchanged.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": false,
+      "suspicious_kinds": [],
+      "notice_kinds": [],
+      "reasons": [
+        "all 7 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "affected tests run and pass"
+    }
+  ]
+}

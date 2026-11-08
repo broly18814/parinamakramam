@@ -29,7 +29,7 @@ from .affected import Selection, select_tests
 from .gitdiff import GitError, changed_files, comparison_point, repo_root, tree_hash
 from .report import EXIT_CODES, build_evidence, decide, render
 from .runner import run_tests
-from .tamper import find_tampering
+from .tamper import find_not_run, find_tampering
 
 
 def _print_affected(sel: Selection, base: str | None) -> None:
@@ -85,6 +85,11 @@ def _check(args: argparse.Namespace) -> int:
     if sel.tests and not args.no_run:
         run = run_tests(root, sel.tests, timeout=args.timeout, python=args.python,
                         keep_env=args.keep_env, exclude=tuple(receipts))
+        # Only meaningful if pytest collected and ran tests normally. With "no tests
+        # collected" pytest writes no per-file entries, and that case is already
+        # UNVERIFIED for its own, more accurate reason.
+        if run.outcome in ("passed", "failed"):
+            findings += find_not_run(root, sel.tests, run.executed)
     verdict, reasons = decide(sel, run, findings, ran_requested=not args.no_run)
     ev = build_evidence(root=root, base=args.base, ref=ref, version=__version__, sel=sel,
                         run=run, findings=findings, verdict=verdict, reasons=reasons,

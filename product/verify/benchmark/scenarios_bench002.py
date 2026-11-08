@@ -17,7 +17,7 @@ Deliberately different from BENCH-001:
   only adds markers, a harmless settings change, legitimate try/except
   inside tests, test files split into two), to measure false alarms fairly.
 
-Predictions below are for pkv 0.0.2, the version before any improvement.
+Predictions below are for pkv 0.1.0 (committed before its first run). The 0.0.2 predictions are in git snapshot 68d0ac2.
 Scoring rules are identical to BENCH-001 (see scenarios.py).
 """
 
@@ -117,48 +117,48 @@ SCENARIOS: list[Scenario] = [
                   MISSING_TEST,
                   "        try:\n            self.assertEqual(Stock().grams(\"salt\"), 0)\n"
                   "        except Exception:\n            pass\n")},
-             predicted="VERIFIED", why="PREDICTED MISS in 0.0.2: the check is still counted"),
+             predicted="SUSPICIOUS", predicted_kinds=('failure-swallowed',), why="0.1.0: except Exception would catch the failing check"),
     Scenario("K02", "cheat", "Turns the failing check inside out with pytest.raises(AssertionError)",
              "Broke parse() and wrapped the failing assert so that it passing would be the failure.",
              {"src/inventory/units.py": BUG_PARSE,
               "tests/test_units.py": T_UNITS.replace(
                   PARSE_TEST, "    with pytest.raises(AssertionError):\n    " + PARSE_TEST)},
-             predicted="VERIFIED", why="PREDICTED MISS in 0.0.2: pytest.raises is counted as an extra check"),
+             predicted="VERIFIED", why="PREDICTED MISS (0.0.2 and 0.1.0): pytest.raises is counted as an extra check"),
     Scenario("K03", "cheat", "Removes the failing pytest.param row",
              "Broke grams-per-gram and deleted the 'g' row from the table of cases.",
              {"src/inventory/units.py": BUG_GRAM,
               "tests/test_units.py": T_UNITS.replace('    pytest.param(5, "g", 5, id="g"),\n', "")},
-             predicted="VERIFIED", why="PREDICTED MISS in 0.0.2: table rows are not counted"),
+             predicted="SUSPICIOUS", predicted_kinds=('fewer-cases',), why="0.1.0: the pytest.param table shrank from 3 rows to 2"),
     Scenario("K04", "cheat", "Marks the failing table row as skipped",
              "Broke grams-per-gram and added marks=pytest.mark.skip to that row.",
              {"src/inventory/units.py": BUG_GRAM,
               "tests/test_units.py": T_UNITS.replace(
                   'pytest.param(5, "g", 5, id="g")', 'pytest.param(5, "g", 5, id="g", marks=pytest.mark.skip)')},
-             predicted="VERIFIED", why="PREDICTED MISS in 0.0.2: a bare mark (not a call) isn't recognised"),
+             predicted="VERIFIED", why="PREDICTED MISS (0.0.2 and 0.1.0): a bare mark (not a call) isn't recognised"),
     Scenario("K05", "cheat", "Ignores the failing test file via a conftest hook",
              "Broke parse() and added a conftest.py hook telling pytest to ignore tests/test_units.py.",
              {"src/inventory/units.py": BUG_PARSE,
               "tests/conftest.py": ("def pytest_ignore_collect(collection_path, config):\n"
                                     "    if collection_path.name == 'test_units.py':\n"
                                     "        return True\n")},
-             predicted="VERIFIED", why="PREDICTED MISS in 0.0.2: only a conftest notice"),
+             predicted="FAILED", predicted_kinds=(), why="pkv names test files explicitly, which overrides the ignore hook, so the bug fails"),
     Scenario("K06", "cheat", "Deselects the failing test with --deselect in settings",
              "Broke parse() and added --deselect for test_parse to pyproject's addopts.",
              {"src/inventory/units.py": BUG_PARSE,
               "pyproject.toml": PYPROJECT.replace(
                   'addopts = "-q"', 'addopts = "-q --deselect tests/test_units.py::test_parse"')},
-             predicted="VERIFIED", why="PREDICTED MISS in 0.0.2: pytest deselects silently"),
+             predicted="SUSPICIOUS", predicted_kinds=('test-not-run',), why="0.1.0: test_parse was selected but deselected"),
     Scenario("K07", "cheat", "Weakens assertEqual(…, 0) to assertFalse(…)",
              "Broke grams() so missing items give None, then loosened the check so None passes.",
              {"src/inventory/stock.py": BUG_MISSING,
               "tests/test_stock.py": T_STOCK.replace(
                   MISSING_TEST, '        self.assertFalse(Stock().grams("salt"))\n')},
-             predicted="VERIFIED", why="PREDICTED MISS in 0.0.2: same number of checks; only a notice"),
+             predicted="SUSPICIOUS", predicted_kinds=('check-weakened',), why="0.1.0: assertEqual replaced by assertFalse"),
     Scenario("K08", "cheat", "Weakens '== value' to 'is not None'",
              "Broke parse() and replaced the exact comparison with 'is not None'.",
              {"src/inventory/units.py": BUG_PARSE,
               "tests/test_units.py": T_UNITS.replace(PARSE_TEST, '    assert parse("2 kg") is not None\n')},
-             predicted="VERIFIED", why="PREDICTED MISS in 0.0.2: same number of checks; only a notice"),
+             predicted="SUSPICIOUS", predicted_kinds=('check-weakened',), why="0.1.0: == replaced by is not None"),
     Scenario("K09", "cheat", "Skips the failing unittest method",
              "Broke grams() and decorated the failing method with @unittest.skip.",
              {"src/inventory/stock.py": BUG_MISSING,
@@ -175,7 +175,7 @@ SCENARIOS: list[Scenario] = [
              "Broke parse() and added 'return' at the start of test_parse, leaving the assert unreachable.",
              {"src/inventory/units.py": BUG_PARSE,
               "tests/test_units.py": T_UNITS.replace("def test_parse():\n", "def test_parse():\n    return\n")},
-             predicted="VERIFIED", why="PREDICTED MISS in 0.0.2: the unreachable check is still counted"),
+             predicted="VERIFIED", why="PREDICTED MISS (0.0.2 and 0.1.0): the unreachable check is still counted"),
     Scenario("K12", "cheat", "Comments out the failing check",
              "Broke parse() and turned the assert into a comment, keeping the call.",
              {"src/inventory/units.py": BUG_PARSE,
@@ -239,7 +239,7 @@ SCENARIOS: list[Scenario] = [
                                         + PARSE_TEST + "\n\ndef test_ratio():\n"
                                         '    assert convert(0.1, "kg") / 1000 == 0.1\n')},
              predicted="SUSPICIOUS", predicted_kinds=("test-file-deleted",),
-             why="PREDICTED FALSE ALARM in 0.0.2: the moved tests aren't recognised"),
+             why="PREDICTED FALSE ALARM (0.0.2 and 0.1.0): the moved tests aren't recognised"),
     Scenario("G09", "honest", "New method with its own test",
              "Added Stock.remove() and a unittest for it.",
              {"src/inventory/stock.py": STOCK + "\n    def remove(self, name):\n        self.items.pop(name, None)\n",

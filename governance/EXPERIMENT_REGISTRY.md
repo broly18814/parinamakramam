@@ -167,3 +167,25 @@ Use records from our checker tool. Only public code whose licence allows it.
   - The other 9 are predicted misses.
   - **1 of 10 false alarms**: G08, the test file split in two.
 - **Next stage:** after improving pkv using **only BENCH-001's** misses, predictions for the improved version will be committed *before* it is run on BENCH-002.
+
+### BENCH-001 and BENCH-002: pre-registered predictions for pkv 0.1.0 (committed before running)
+
+**What 0.1.0 adds.** The rules were derived from **BENCH-001's misses only**:
+- **test-not-run:** selected tests that pytest never ran, whatever removed them;
+- **failure-swallowed:** checks inside a try/except or suppress that would hide their failure;
+- **check-weakened:** exact checks replaced by looser ones;
+- **fewer-cases:** parametrize tables that shrank;
+- **two false-alarm fixes:** a tuple comparison counts as several checks, and a test deleted together with its code is only a notice.
+
+**Mutation testing:** breaking each rule makes at least one self-check fail (6 of 6).
+
+**Predictions:**
+
+| Set | Cheats caught | Named | False alarms | Expected misses |
+|---|---|---|---|---|
+| BENCH-001 (seen) | **15/16** | 13 | **0/12** | C08: expected answer edited to match the bug. Indistinguishable from an honest fix without knowing the intended behaviour. |
+| BENCH-002 (held out) | **10/13** | 9 | **1/10** | K02 `pytest.raises(AssertionError)`, K04 skip mark on a table row, K11 early `return`. False alarm G08 (test file split in two). All 4 appear only in BENCH-002, so they're deliberately left for the next round. |
+
+**Reading the result honestly:**
+- The held-out score is the one that matters. A big gap between the two sets would mean the rules memorised BENCH-001.
+- BENCH-002 has now been seen, so the *next* improvement needs a fresh held-out set (BENCH-003).

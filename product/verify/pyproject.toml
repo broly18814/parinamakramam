@@ -1,6 +1,6 @@
 [project]
 name = "parinama-verify"
-version = "0.0.2"
+version = "0.1.0"
 description = "Independent, agent-agnostic verification of AI-written code changes"
 readme = "README.md"
 requires-python = ">=3.10"

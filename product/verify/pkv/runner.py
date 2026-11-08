@@ -86,6 +86,7 @@ class RunRecord:
     timed_out: bool
     counts: dict[str, int] = field(default_factory=dict)
     failed_tests: list[str] = field(default_factory=list)
+    executed: list[list[str]] = field(default_factory=list)  # [class name, test name, outcome] per test
     tree_hash_before: str = ""
     tree_hash_after: str = ""
     files_changed_during_run: list[str] = field(default_factory=list)
@@ -142,11 +143,12 @@ def _overall(outcomes: list[str]) -> str:
     return outcomes[0] if outcomes else "no-tests"
 
 
-def read_junit(path: Path) -> tuple[dict[str, int], list[str]]:
+def read_junit(path: Path) -> tuple[dict[str, int], list[str], list[list[str]]]:
     counts = {"passed": 0, "failed": 0, "errors": 0, "skipped": 0, "xfailed": 0}
     failed: list[str] = []
+    executed: list[list[str]] = []
     if not path.exists() or path.stat().st_size == 0:
-        return counts, failed
+        return counts, failed, executed
     root = ET.parse(path).getroot()
     for case in root.iter("testcase"):
         name = f"{case.get('classname', '')}::{case.get('name', '')}"
@@ -154,17 +156,23 @@ def read_junit(path: Path) -> tuple[dict[str, int], list[str]]:
         if "failure" in kids:
             counts["failed"] += 1
             failed.append(name)
+            outcome = "failed"
         elif "error" in kids:
             counts["errors"] += 1
             failed.append(name)
+            outcome = "error"
         elif "skipped" in kids:
             if "xfail" in (kids["skipped"].get("type") or "").lower():
                 counts["xfailed"] += 1
+                outcome = "xfailed"
             else:
                 counts["skipped"] += 1
+                outcome = "skipped"
         else:
             counts["passed"] += 1
-    return counts, failed
+            outcome = "passed"
+        executed.append([case.get("classname", ""), case.get("name", ""), outcome])
+    return counts, failed, executed
 
 
 def _run_one(root: Path, cmd: list[str], env: dict[str, str], timeout: float) -> tuple[int | None, bool, str]:
@@ -197,6 +205,7 @@ def run_tests(root: str | os.PathLike[str], tests: list[str], *, timeout: float 
     outcomes: list[str] = []
     tails: list[str] = []
     failed: list[str] = []
+    executed: list[list[str]] = []
     counts = {"passed": 0, "failed": 0, "errors": 0, "skipped": 0, "xfailed": 0}
     timed_out = False
     with tempfile.TemporaryDirectory() as td:
@@ -206,7 +215,8 @@ def run_tests(root: str | os.PathLike[str], tests: list[str], *, timeout: float 
                    f"--junitxml={junit}", *(extra_args or []), "--", *group]
             left = timeout - (time.monotonic() - t0)
             code, hung, text = _run_one(root, cmd, env, left)
-            c, f = read_junit(junit)
+            c, f, ran = read_junit(junit)
+            executed += ran
             for k in counts:
                 counts[k] += c[k]
             failed += f
@@ -234,7 +244,7 @@ def run_tests(root: str | os.PathLike[str], tests: list[str], *, timeout: float 
     return RunRecord(
         commands=commands, exit_codes=codes, python=py, started_at=started,
         finished_at=now_iso(), duration_s=duration, outcome=_overall(outcomes),
-        timed_out=timed_out, counts=counts, failed_tests=failed,
+        timed_out=timed_out, counts=counts, failed_tests=failed, executed=executed,
         tree_hash_before=before, tree_hash_after=after, files_changed_during_run=changed,
         output_tail="\n\n".join(bad or tails),
     )
