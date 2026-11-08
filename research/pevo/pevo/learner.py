@@ -48,15 +48,17 @@ from .dsl import (
 )
 from .enumerate import enumerate_programs
 from .nearmiss import near_misses
+from .onestep import completions
 
 
 @dataclass
 class Condition:
     name: str
     learn_grammar: bool = False
-    abstraction: str | None = None  # None | "data" | "all" | "random" | "search" | "oracle" | "prospective"
+    abstraction: str | None = None  # None | "data" | "all" | "random" | "search" | "oracle" | "prospective" | "onestep"
     prune: bool = False
     gate: bool = False
+    budget_mult: int = 1  # EXP-002b control C3_2x: search budget per wake = budget_mult * B
 
 
 CONDITIONS = {
@@ -79,7 +81,17 @@ EXP002_CONDITIONS = {
     # near misses of UNSOLVED learn-tasks, not from solved ones.
     "C5_prospective": Condition("C5_prospective", True, "prospective", prune=True, gate=True),
 }
-ALL_CONDITIONS = {**CONDITIONS, **EXP002_CONDITIONS}
+# EXP-002b (docs/research/EXP-002b-design.md): near misses chosen by structure,
+# and a compute-matched control.
+EXP002B_CONDITIONS = {
+    # Identical to C5_prospective except that each unsolved learn-task's near miss
+    # is a bank program that ONE fixed operation turns into its exact outputs.
+    "C6_onestep": Condition("C6_onestep", True, "onestep", prune=True, gate=True),
+    # C3_evolve with twice the search budget in every wake: the same total effort
+    # as C6's maximum.
+    "C3_2x": Condition("C3_2x", True, "all", prune=True, gate=True, budget_mult=2),
+}
+ALL_CONDITIONS = {**CONDITIONS, **EXP002_CONDITIONS, **EXP002B_CONDITIONS}
 
 
 @dataclass
@@ -95,6 +107,8 @@ class RunConfig:
     search_top_m: int = 8
     nearmiss_k: int = 1               # EXP-002: near misses per unsolved task
     nearmiss_w_elements: float = 0.5  # EXP-002: list distance weight on "same elements"
+    onestep_order: str = "frontier"   # EXP-002b: bank order, "frontier" (highest cost first) or "cheapest"
+    onestep_concat: bool = True       # EXP-002b: include concat(e, x) and concat(x, e)
 
 
 def _strict(task, node, Xho, lib):
@@ -142,8 +156,9 @@ def run_condition(cond: Condition, cfg: RunConfig, Xtr, Xho, train, test, seed: 
     def evaluate(active_names, cost_map):
         for n in active_names:
             lib[n].cost = cost_map[n]
-        res = enumerate_programs([lib[n] for n in active_names], lib, Xtr, cfg.budget,
-                                 targets, cost_map["x"], return_bank=cond.abstraction == "prospective")
+        res = enumerate_programs([lib[n] for n in active_names], lib, Xtr, cfg.budget * cond.budget_mult,
+                                 targets, cost_map["x"],
+                                 return_bank=cond.abstraction in ("prospective", "onestep"))
         info = {}
         for tid, (node, c, n_idx) in res.found.items():
             info[tid] = {"node": node, "cost": c, "index": n_idx,
@@ -276,6 +291,27 @@ def run_condition(cond: Condition, cfg: RunConfig, Xtr, Xho, train, test, seed: 
                 idle[name] = 0
                 pending_names.append(name)
             events.append({"round": r, "event": f"near misses for {len(misses)} unsolved tasks; "
+                                                f"proposed {[n for n, _b, _s in chosen]}"})
+        elif cond.abstraction == "onestep":
+            # EXP-002b: learn from one-step completions of unsolved learn-tasks.
+            unsolved = [t for t in learn if not info.get(t.tid, {}).get("strict")]
+            os_corpus, n_evals = completions(res.bank, unsolved, lib, Xtr, cfg.budget,
+                                             order=cfg.onestep_order, include_concat=cfg.onestep_concat)
+            total_values += n_evals  # the completion checks are effort, so they're counted
+            existing = {str(lib[n].body) for n in lib if lib[n].body is not None}
+            chosen, _ = propose(os_corpus, lib, ALL_TYPES, cfg.k_per_round,
+                                name_for=lambda i, r=r: f"q{r}_{i}",
+                                blacklist=frozenset(blacklist), existing_bodies=frozenset(existing),
+                                max_holes=cfg.max_holes, max_depth=cfg.max_depth)
+            for name, body, _stats in chosen:
+                corpus = {t: rewrite(tr, name, body, lib) for t, tr in corpus.items()}
+                lib[name].meta.update({"round": r, "status": "active", "source": "one-step",
+                                       "inlined_size": inline(body, lib).size()})
+                active.append(name)
+                idle[name] = 0
+                pending_names.append(name)
+            events.append({"round": r, "event": f"one-step near misses for {len(os_corpus)} of {len(unsolved)} "
+                                                f"unsolved tasks ({n_evals} evaluations); "
                                                 f"proposed {[n for n, _b, _s in chosen]}"})
         elif cond.abstraction == "random":
             for i in range(cfg.k_per_round):

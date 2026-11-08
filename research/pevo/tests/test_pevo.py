@@ -219,3 +219,49 @@ def test_prospective_condition_runs_and_is_deterministic():
     b = run_condition(ALL_CONDITIONS["C5_prospective"], cfg, Xtr, Xho, tr, te, 5)
     assert a["test_per_task"] == b["test_per_task"]
     assert any("near misses" in e["event"] for e in a["events"])
+
+
+# ---------- EXP-002b: one-step completions ----------
+
+def _onestep_fixture():
+    from pevo.dsl import L, Node, base_prods
+    from pevo.tasks import Task
+    lib = base_prods()
+    X = ((3, 1, 3, 2), (5, 5, 1))
+    rev = tuple(t[::-1] for t in X)
+    bank = {L: {1: [(Node("x"), X)], 2: [(Node("reverse", (Node("x"),)), rev)]}}
+    return lib, X, bank, Task, L, Node
+
+
+def test_onestep_finds_a_completion_that_is_one_operation_away():
+    from pevo.dsl import eval_tree
+    from pevo.onestep import completions
+    lib, X, bank, Task, L, Node = _onestep_fixture()
+    target = tuple(tuple(e - 1 for e in t[::-1]) for t in X)          # map(sub1, reverse(x))
+    task = Task("t", None, L, target, target, 1)
+    found, n = completions(bank, [task], lib, X, budget=1000)
+    assert found["t"] == Node("map", (Node("sub1"), Node("reverse", (Node("x"),))))
+    assert eval_tree(found["t"], X, lib) == target                      # it really is a solution
+    assert 0 < n <= 1000
+
+
+def test_onestep_finds_nothing_for_a_two_step_target():
+    from pevo.onestep import completions
+    lib, X, bank, Task, L, _ = _onestep_fixture()
+    target = tuple(tuple(sorted(set(t))) for t in X)                      # dedup then sort: two steps
+    found, _ = completions(bank, [Task("t", None, L, target, target, 1)], lib, X, budget=1000)
+    assert found == {}
+
+
+def test_onestep_respects_the_effort_cap_and_tries_the_frontier_first():
+    from pevo.onestep import completions, step_ops
+    lib, X, bank, Task, L, Node = _onestep_fixture()
+    target = tuple(tuple(sorted(t)) for t in X)                           # sort(x) == sort(reverse(x))
+    task = Task("t", None, L, target, target, 1)
+    found, n = completions(bank, [task], lib, X, budget=1000)
+    assert found["t"] == Node("sort", (Node("reverse", (Node("x"),)),))   # cost-2 entry tried first
+    found, n = completions(bank, [task], lib, X, budget=1000, order="cheapest")
+    assert found["t"] == Node("sort", (Node("x"),))
+    found, n = completions(bank, [task], lib, X, budget=1)                # 'reverse' only: not enough
+    assert found == {} and n == 1
+    assert len(step_ops()) == 26 and len(step_ops(include_concat=False)) == 24

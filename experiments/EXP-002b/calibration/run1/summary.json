@@ -1,0 +1,430 @@
+{
+ "meta": {
+  "timestamp": "2026-11-09T02:40:52+0530",
+  "argv": [
+   "run_exp001.py",
+   "--seeds",
+   "100",
+   "--conds",
+   "C0_fixed,C3_evolve,C3_2x,C6_onestep,O_oracle",
+   "--out",
+   "../../experiments/EXP-002b/calibration/run1"
+  ],
+  "seeds": "100",
+  "config": {
+   "budget": 30000,
+   "rounds": 5,
+   "k_per_round": 3,
+   "alpha": 1.0,
+   "val_frac": 0.2,
+   "prune_after": 2,
+   "max_holes": 2,
+   "max_depth": 3,
+   "search_top_m": 8,
+   "nearmiss_k": 1,
+   "nearmiss_w_elements": 0.5,
+   "onestep_order": "frontier",
+   "onestep_concat": true
+  },
+  "conditions": [
+   "C0_fixed",
+   "C3_evolve",
+   "C3_2x",
+   "C6_onestep",
+   "O_oracle"
+  ],
+  "code_sha256_16": {
+   "pevo/__init__.py": "b8f83ca58cad31c6",
+   "pevo/abstraction.py": "26678dc826a6538b",
+   "pevo/dsl.py": "ec135532d336bd07",
+   "pevo/enumerate.py": "a037d9caa3cfa10a",
+   "pevo/learner.py": "01b4ce8146aa1a27",
+   "pevo/nearmiss.py": "de179a4c45ec1c20",
+   "pevo/onestep.py": "f506444834bffe2d",
+   "pevo/tasks.py": "21b385667d302d1d",
+   "run_exp001.py": "5f23c58cf3ddd6d5"
+  },
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "wall_seconds_total": 11.5
+ },
+ "summary": {
+  "flat": {
+   "C0_fixed": {
+    "mean": 0.7666666666666667,
+    "ci95": [
+     0.7666666666666667,
+     0.7666666666666667
+    ],
+    "n_seeds": 1,
+    "mean_compute_values": 150000.0,
+    "mean_wall_s": 1.8,
+    "by_level": {
+     "2": 0.9,
+     "3": 0.8,
+     "4": 0.6
+    }
+   },
+   "C3_evolve": {
+    "mean": 0.65,
+    "ci95": [
+     0.65,
+     0.65
+    ],
+    "n_seeds": 1,
+    "mean_compute_values": 150000.0,
+    "mean_wall_s": 1.52,
+    "by_level": {
+     "2": 0.8,
+     "3": 0.75,
+     "4": 0.4
+    },
+    "diff_vs_C0_fixed": {
+     "mean": -0.1166666666666667,
+     "ci95": [
+      -0.1166666666666667,
+      -0.1166666666666667
+     ],
+     "wins": 0,
+     "ties": 0,
+     "losses": 1
+    }
+   },
+   "C3_2x": {
+    "mean": 0.6666666666666666,
+    "ci95": [
+     0.6666666666666666,
+     0.6666666666666666
+    ],
+    "n_seeds": 1,
+    "mean_compute_values": 300000.0,
+    "mean_wall_s": 2.93,
+    "by_level": {
+     "2": 0.85,
+     "3": 0.7,
+     "4": 0.45
+    },
+    "diff_vs_C0_fixed": {
+     "mean": -0.10000000000000009,
+     "ci95": [
+      -0.10000000000000009,
+      -0.10000000000000009
+     ],
+     "wins": 0,
+     "ties": 0,
+     "losses": 1
+    }
+   },
+   "C6_onestep": {
+    "mean": 0.65,
+    "ci95": [
+     0.65,
+     0.65
+    ],
+    "n_seeds": 1,
+    "mean_compute_values": 270000.0,
+    "mean_wall_s": 2.02,
+    "by_level": {
+     "2": 0.85,
+     "3": 0.7,
+     "4": 0.4
+    },
+    "diff_vs_C0_fixed": {
+     "mean": -0.1166666666666667,
+     "ci95": [
+      -0.1166666666666667,
+      -0.1166666666666667
+     ],
+     "wins": 0,
+     "ties": 0,
+     "losses": 1
+    }
+   },
+   "O_oracle": {
+    "mean": 0.7,
+    "ci95": [
+     0.7,
+     0.7
+    ],
+    "n_seeds": 1,
+    "mean_compute_values": 150000.0,
+    "mean_wall_s": 2.75,
+    "by_level": {
+     "2": 0.85,
+     "3": 0.8,
+     "4": 0.45
+    },
+    "diff_vs_C0_fixed": {
+     "mean": -0.06666666666666676,
+     "ci95": [
+      -0.06666666666666676,
+      -0.06666666666666676
+     ],
+     "wins": 0,
+     "ties": 0,
+     "losses": 1
+    }
+   }
+  },
+  "struct": {
+   "C0_fixed": {
+    "mean": 0.55,
+    "ci95": [
+     0.55,
+     0.55
+    ],
+    "n_seeds": 1,
+    "mean_compute_values": 150000.0,
+    "mean_wall_s": 1.79,
+    "by_level": {
+     "2": 0.85,
+     "3": 0.4,
+     "4": 0.4
+    }
+   },
+   "C3_evolve": {
+    "mean": 0.5666666666666667,
+    "ci95": [
+     0.5666666666666667,
+     0.5666666666666667
+    ],
+    "n_seeds": 1,
+    "mean_compute_values": 150000.0,
+    "mean_wall_s": 1.63,
+    "by_level": {
+     "2": 0.9,
+     "3": 0.4,
+     "4": 0.4
+    },
+    "diff_vs_C0_fixed": {
+     "mean": 0.016666666666666607,
+     "ci95": [
+      0.016666666666666607,
+      0.016666666666666607
+     ],
+     "wins": 1,
+     "ties": 0,
+     "losses": 0
+    }
+   },
+   "C3_2x": {
+    "mean": 0.6833333333333333,
+    "ci95": [
+     0.6833333333333333,
+     0.6833333333333333
+    ],
+    "n_seeds": 1,
+    "mean_compute_values": 300000.0,
+    "mean_wall_s": 3.23,
+    "by_level": {
+     "2": 1.0,
+     "3": 0.55,
+     "4": 0.5
+    },
+    "diff_vs_C0_fixed": {
+     "mean": 0.1333333333333333,
+     "ci95": [
+      0.1333333333333333,
+      0.1333333333333333
+     ],
+     "wins": 1,
+     "ties": 0,
+     "losses": 0
+    }
+   },
+   "C6_onestep": {
+    "mean": 0.5166666666666667,
+    "ci95": [
+     0.5166666666666667,
+     0.5166666666666667
+    ],
+    "n_seeds": 1,
+    "mean_compute_values": 270000.0,
+    "mean_wall_s": 2.08,
+    "by_level": {
+     "2": 0.75,
+     "3": 0.4,
+     "4": 0.4
+    },
+    "diff_vs_C0_fixed": {
+     "mean": -0.033333333333333326,
+     "ci95": [
+      -0.033333333333333326,
+      -0.033333333333333326
+     ],
+     "wins": 0,
+     "ties": 0,
+     "losses": 1
+    }
+   },
+   "O_oracle": {
+    "mean": 0.7333333333333333,
+    "ci95": [
+     0.7333333333333333,
+     0.7333333333333333
+    ],
+    "n_seeds": 1,
+    "mean_compute_values": 150000.0,
+    "mean_wall_s": 2.72,
+    "by_level": {
+     "2": 0.95,
+     "3": 0.6,
+     "4": 0.65
+    },
+    "diff_vs_C0_fixed": {
+     "mean": 0.18333333333333324,
+     "ci95": [
+      0.18333333333333324,
+      0.18333333333333324
+     ],
+     "wins": 1,
+     "ties": 0,
+     "losses": 0
+    }
+   }
+  }
+ },
+ "rows": [
+  {
+   "dist": "struct",
+   "seed": 100,
+   "condition": "C0_fixed",
+   "wall_seconds": 1.79,
+   "total_values": 150000,
+   "test_strict": 0.55,
+   "learn_strict": 0.7875,
+   "by_level": {
+    "2": 0.85,
+    "3": 0.4,
+    "4": 0.4
+   }
+  },
+  {
+   "dist": "struct",
+   "seed": 100,
+   "condition": "C3_evolve",
+   "wall_seconds": 1.63,
+   "total_values": 150000,
+   "test_strict": 0.5666666666666667,
+   "learn_strict": 0.7875,
+   "by_level": {
+    "2": 0.9,
+    "3": 0.4,
+    "4": 0.4
+   }
+  },
+  {
+   "dist": "struct",
+   "seed": 100,
+   "condition": "C3_2x",
+   "wall_seconds": 3.23,
+   "total_values": 300000,
+   "test_strict": 0.6833333333333333,
+   "learn_strict": 0.825,
+   "by_level": {
+    "2": 1.0,
+    "3": 0.55,
+    "4": 0.5
+   }
+  },
+  {
+   "dist": "struct",
+   "seed": 100,
+   "condition": "C6_onestep",
+   "wall_seconds": 2.08,
+   "total_values": 270000,
+   "test_strict": 0.5166666666666667,
+   "learn_strict": 0.775,
+   "by_level": {
+    "2": 0.75,
+    "3": 0.4,
+    "4": 0.4
+   }
+  },
+  {
+   "dist": "struct",
+   "seed": 100,
+   "condition": "O_oracle",
+   "wall_seconds": 2.72,
+   "total_values": 150000,
+   "test_strict": 0.7333333333333333,
+   "learn_strict": 0.925,
+   "by_level": {
+    "2": 0.95,
+    "3": 0.6,
+    "4": 0.65
+   }
+  },
+  {
+   "dist": "flat",
+   "seed": 100,
+   "condition": "C0_fixed",
+   "wall_seconds": 1.8,
+   "total_values": 150000,
+   "test_strict": 0.7666666666666667,
+   "learn_strict": 0.8625,
+   "by_level": {
+    "2": 0.9,
+    "3": 0.8,
+    "4": 0.6
+   }
+  },
+  {
+   "dist": "flat",
+   "seed": 100,
+   "condition": "C3_evolve",
+   "wall_seconds": 1.52,
+   "total_values": 150000,
+   "test_strict": 0.65,
+   "learn_strict": 0.8125,
+   "by_level": {
+    "2": 0.8,
+    "3": 0.75,
+    "4": 0.4
+   }
+  },
+  {
+   "dist": "flat",
+   "seed": 100,
+   "condition": "C3_2x",
+   "wall_seconds": 2.93,
+   "total_values": 300000,
+   "test_strict": 0.6666666666666666,
+   "learn_strict": 0.825,
+   "by_level": {
+    "2": 0.85,
+    "3": 0.7,
+    "4": 0.45
+   }
+  },
+  {
+   "dist": "flat",
+   "seed": 100,
+   "condition": "C6_onestep",
+   "wall_seconds": 2.02,
+   "total_values": 270000,
+   "test_strict": 0.65,
+   "learn_strict": 0.8375,
+   "by_level": {
+    "2": 0.85,
+    "3": 0.7,
+    "4": 0.4
+   }
+  },
+  {
+   "dist": "flat",
+   "seed": 100,
+   "condition": "O_oracle",
+   "wall_seconds": 2.75,
+   "total_values": 150000,
+   "test_strict": 0.7,
+   "learn_strict": 0.8125,
+   "by_level": {
+    "2": 0.85,
+    "3": 0.8,
+    "4": 0.45
+   }
+  }
+ ]
+}
