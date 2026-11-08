@@ -47,13 +47,14 @@ from .dsl import (
     value_key,
 )
 from .enumerate import enumerate_programs
+from .nearmiss import near_misses
 
 
 @dataclass
 class Condition:
     name: str
     learn_grammar: bool = False
-    abstraction: str | None = None  # None | "data" | "all" | "random"
+    abstraction: str | None = None  # None | "data" | "all" | "random" | "search" | "oracle" | "prospective"
     prune: bool = False
     gate: bool = False
 
@@ -71,6 +72,15 @@ CONDITIONS = {
     "O_oracle": Condition("O_oracle", False, "oracle"),
 }
 
+# EXP-002 (docs/research/EXP-002-design.md). Kept separate so that the
+# EXP-001 runner, which iterates over CONDITIONS, is unchanged.
+EXP002_CONDITIONS = {
+    # Identical to C3_evolve except that abstractions are learned from the
+    # near misses of UNSOLVED learn-tasks, not from solved ones.
+    "C5_prospective": Condition("C5_prospective", True, "prospective", prune=True, gate=True),
+}
+ALL_CONDITIONS = {**CONDITIONS, **EXP002_CONDITIONS}
+
 
 @dataclass
 class RunConfig:
@@ -83,6 +93,8 @@ class RunConfig:
     max_holes: int = 2
     max_depth: int = 3
     search_top_m: int = 8
+    nearmiss_k: int = 1               # EXP-002: near misses per unsolved task
+    nearmiss_w_elements: float = 0.5  # EXP-002: list distance weight on "same elements"
 
 
 def _strict(task, node, Xho, lib):
@@ -131,7 +143,7 @@ def run_condition(cond: Condition, cfg: RunConfig, Xtr, Xho, train, test, seed: 
         for n in active_names:
             lib[n].cost = cost_map[n]
         res = enumerate_programs([lib[n] for n in active_names], lib, Xtr, cfg.budget,
-                                 targets, cost_map["x"])
+                                 targets, cost_map["x"], return_bank=cond.abstraction == "prospective")
         info = {}
         for tid, (node, c, n_idx) in res.found.items():
             info[tid] = {"node": node, "cost": c, "index": n_idx,
@@ -243,6 +255,28 @@ def run_condition(cond: Condition, cfg: RunConfig, Xtr, Xho, train, test, seed: 
                 pending_names.append(name)
                 cur = sc
             events.append({"round": r, "event": f"search: evaluated {n_eval} candidates, accepted {pending_names}"})
+        elif cond.abstraction == "prospective":
+            # EXP-002: learn from the near misses of learn-tasks not yet solved.
+            unsolved = [t for t in learn if not info.get(t.tid, {}).get("strict")]
+            misses = near_misses(res.bank, unsolved, k=cfg.nearmiss_k, w_elements=cfg.nearmiss_w_elements)
+            nm_corpus = {}
+            for tid, entries in misses.items():
+                for j, (node, _d) in enumerate(entries):
+                    nm_corpus[tid if cfg.nearmiss_k == 1 else f"{tid}#{j}"] = node
+            existing = {str(lib[n].body) for n in lib if lib[n].body is not None}
+            chosen, _ = propose(nm_corpus, lib, ALL_TYPES, cfg.k_per_round,
+                                name_for=lambda i, r=r: f"p{r}_{i}",
+                                blacklist=frozenset(blacklist), existing_bodies=frozenset(existing),
+                                max_holes=cfg.max_holes, max_depth=cfg.max_depth)
+            for name, body, _stats in chosen:
+                corpus = {t: rewrite(tr, name, body, lib) for t, tr in corpus.items()}
+                lib[name].meta.update({"round": r, "status": "active", "source": "near-miss",
+                                       "inlined_size": inline(body, lib).size()})
+                active.append(name)
+                idle[name] = 0
+                pending_names.append(name)
+            events.append({"round": r, "event": f"near misses for {len(misses)} unsolved tasks; "
+                                                f"proposed {[n for n, _b, _s in chosen]}"})
         elif cond.abstraction == "random":
             for i in range(cfg.k_per_round):
                 frag = random_fragment(rng, lib, active, Xtr)

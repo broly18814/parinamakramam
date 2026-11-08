@@ -38,9 +38,12 @@ class EnumResult:
     n_values: int
     max_cost_completed: int
     seconds: float
+    # Every admitted (program, value) by type and cost, in admission order.
+    # Only filled when requested (EXP-002 near misses); None otherwise.
+    bank: dict | None = None
 
 
-def enumerate_programs(active, lib, X, budget, targets, x_cost, cost_cap=120):
+def enumerate_programs(active, lib, X, budget, targets, x_cost, cost_cap=120, return_bank=False):
     """Enumerate programs over ``active`` productions.
 
     active  : list of Prod to search over (each with integer .cost >= 1)
@@ -49,6 +52,8 @@ def enumerate_programs(active, lib, X, budget, targets, x_cost, cost_cap=120):
     budget  : max number of distinct values admitted
     targets : dict (type, value) -> list[task_id]
     x_cost  : cost of the input leaf ``x``
+    return_bank : also return every admitted (program, value), for near-miss
+                  analysis (EXP-002). Does not change what is enumerated.
     """
     t0 = time.perf_counter()
     banks = {t: defaultdict(list) for t in ALL_TYPES}
@@ -76,7 +81,7 @@ def enumerate_programs(active, lib, X, budget, targets, x_cost, cost_cap=120):
         if c == x_cost:
             admit(Node("x"), X, L, c)
             if n >= budget:
-                return EnumResult(found, n, max_done, time.perf_counter() - t0)
+                return EnumResult(found, n, max_done, time.perf_counter() - t0, banks if return_bank else None)
         for p in prods:
             if p.cost > c:
                 break
@@ -91,7 +96,7 @@ def enumerate_programs(active, lib, X, budget, targets, x_cost, cost_cap=120):
                     continue
                 admit(Node(p.name), v, p.ret, c)
                 if n >= budget:
-                    return EnumResult(found, n, max_done, time.perf_counter() - t0)
+                    return EnumResult(found, n, max_done, time.perf_counter() - t0, banks if return_bank else None)
                 continue
             if r < k:
                 continue
@@ -113,6 +118,6 @@ def enumerate_programs(active, lib, X, budget, targets, x_cost, cost_cap=120):
                     except (Invalid, RecursionError):
                         continue
                     if admit(Node(p.name, tuple(e[0] for e in combo)), v, p.ret, c) and n >= budget:
-                        return EnumResult(found, n, max_done, time.perf_counter() - t0)
+                        return EnumResult(found, n, max_done, time.perf_counter() - t0, banks if return_bank else None)
         max_done = c
-    return EnumResult(found, n, max_done, time.perf_counter() - t0)
+    return EnumResult(found, n, max_done, time.perf_counter() - t0, banks if return_bank else None)

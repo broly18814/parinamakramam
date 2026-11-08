@@ -27,7 +27,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from pevo.dsl import base_prods  # noqa: E402
-from pevo.learner import CONDITIONS, RunConfig, run_condition  # noqa: E402
+from pevo.learner import ALL_CONDITIONS, CONDITIONS, RunConfig, run_condition  # noqa: E402
 from pevo.tasks import build_suite  # noqa: E402
 
 
@@ -57,7 +57,7 @@ def job(args):
     res = []
     for c in conds:
         t0 = time.perf_counter()
-        out = run_condition(CONDITIONS[c], cfg, Xtr, Xho, train, test, seed)
+        out = run_condition(ALL_CONDITIONS[c], cfg, Xtr, Xho, train, test, seed)
         out.update({"dist": dist, "seed": seed, "wall_seconds": round(time.perf_counter() - t0, 2),
                     "n_train": len(train), "n_test": len(test)})
         Path(outdir, "raw").mkdir(parents=True, exist_ok=True)
@@ -143,9 +143,13 @@ def main():
     ap.add_argument("--rounds", type=int, default=5)
     ap.add_argument("--workers", type=int, default=max(1, (os.cpu_count() or 2) - 2))
     ap.add_argument("--out", required=True)
+    # EXP-002 settings (ignored by EXP-001's conditions):
+    ap.add_argument("--nearmiss-k", type=int, default=1)
+    ap.add_argument("--nearmiss-w", type=float, default=0.5)
     a = ap.parse_args()
     seeds, dists, conds = parse_seeds(a.seeds), a.dists.split(","), a.conds.split(",")
-    cfg = RunConfig(budget=a.budget, rounds=a.rounds)
+    cfg = RunConfig(budget=a.budget, rounds=a.rounds, nearmiss_k=a.nearmiss_k,
+                    nearmiss_w_elements=a.nearmiss_w)
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
     meta = {"timestamp": time.strftime("%Y-%m-%dT%H:%M:%S%z"), "argv": sys.argv, "seeds": a.seeds,

@@ -168,3 +168,54 @@ def test_every_solution_the_search_reports_really_solves_its_task(lib):
     assert res.found, "the search should solve at least some tasks"
     for tid, (node, _cost, _index) in res.found.items():
         assert eval_tree(node, Xtr, lib) == by_id[tid].y_train, tid
+
+
+# ---------------------------------------------------------------- EXP-002 near misses
+
+def test_list_distance_definition():
+    from pevo.nearmiss import int_distance, list_distance
+    assert list_distance((1, 2, 3), (1, 2, 3)) == 0.0
+    assert list_distance((3, 2, 1), (1, 2, 3)) == 0.5 * 0.0 + 0.5 * (1 - 1 / 3)  # same elements, 1 in place
+    assert list_distance((), (1,)) == 1.0
+    assert 0 < list_distance((1, 2), (1, 2, 3)) < 1
+    assert int_distance(5, 5) == 0.0 and int_distance(0, 100) == min(1.0, 100 / 101)
+
+
+def test_near_miss_is_the_closest_enumerated_program(lib):
+    from pevo.nearmiss import near_misses
+    from pevo.tasks import Task
+    active = sorted(lib)
+    costs = uniform_costs(active)
+    for n in active:
+        lib[n].cost = costs[n]
+    res = enumerate_programs([lib[n] for n in active], lib, X, 2000, {}, costs["x"], return_bank=True)
+    target = eval_tree(N("map", (N("double"), N("reverse", (N("x"),)))), X, lib)
+    nearly = tuple((*t[:-1], t[-1] + 1) for t in target)  # one element off on each input
+    task = Task(tid="t", tree=None, rtype=L, y_train=nearly, y_hold=None, level=1, concepts=(), params=())
+    (node, d), = near_misses(res.bank, [task])["t"]
+    assert 0 < d < 0.5
+    assert eval_tree(node, X, lib) != nearly
+
+
+def test_returning_the_bank_does_not_change_the_search(lib):
+    active = sorted(lib)
+    costs = uniform_costs(active)
+    for n in active:
+        lib[n].cost = costs[n]
+    target = eval_tree(N("reverse", (N("sort", (N("x"),)),)), X, lib)
+    a = enumerate_programs([lib[n] for n in active], lib, X, 3000, {(L, target): ["t"]}, costs["x"])
+    b = enumerate_programs([lib[n] for n in active], lib, X, 3000, {(L, target): ["t"]}, costs["x"],
+                           return_bank=True)
+    assert a.bank is None and b.bank is not None
+    assert (a.n_values, str(a.found["t"][0]), a.found["t"][1:]) == (b.n_values, str(b.found["t"][0]), b.found["t"][1:])
+
+
+def test_prospective_condition_runs_and_is_deterministic():
+    from pevo.learner import ALL_CONDITIONS
+    lib = base_prods()
+    Xtr, Xho, tr, te = build_suite("struct", 5, lib)
+    cfg = RunConfig(budget=3000, rounds=3)
+    a = run_condition(ALL_CONDITIONS["C5_prospective"], cfg, Xtr, Xho, tr, te, 5)
+    b = run_condition(ALL_CONDITIONS["C5_prospective"], cfg, Xtr, Xho, tr, te, 5)
+    assert a["test_per_task"] == b["test_per_task"]
+    assert any("near misses" in e["event"] for e in a["events"])
