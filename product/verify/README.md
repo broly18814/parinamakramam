@@ -100,6 +100,14 @@ Install it into the same Python environment as your project's tests. It needs Py
 python -m pip install parinama-verify==0.2.1
 ```
 
+**If `python` isn't found** (common on macOS), use `python3`. **If pip refuses** with "externally-managed-environment", your system's Python is managed by another tool such as Homebrew: create a virtual environment first.
+
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install parinama-verify==0.2.1 pytest
+.venv/bin/pkv --version
+```
+
 This installs exactly release **0.2.1** from [PyPI](https://pypi.org/project/parinama-verify/). To install the same release straight from GitHub instead:
 
 ```bash

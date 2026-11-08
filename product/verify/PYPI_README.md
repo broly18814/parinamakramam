@@ -23,6 +23,14 @@ You need Python 3.10 or newer, git and pytest, on **macOS or Linux** (Windows is
 python -m pip install parinama-verify
 ```
 
+**If `python` isn't found** (common on macOS), use `python3`. **If pip refuses** with "externally-managed-environment", your system's Python is managed by another tool such as Homebrew: create a virtual environment first.
+
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install parinama-verify pytest
+.venv/bin/pkv --version
+```
+
 Then, from inside a Python project that uses git:
 
 ```bash

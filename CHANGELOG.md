@@ -9,6 +9,11 @@ Before version 1.0, anything may still change.
 
 ## Parinama Verify (`pkv`)
 
+### [Unreleased]
+
+#### Changed
+- The install instructions now say what to do when `python` isn't found (use `python3`) and when pip refuses to install into a system-managed Python (use a virtual environment). Found by the first real install. The PyPI page shows this from the next release, because a published version's page can't be changed.
+
 ### [0.2.1]: 2026-11-09
 
 There are no changes to what pkv does. This is the first release on PyPI (`pip install parinama-verify`), published from git tag `pkv-v0.2.1` by the Trusted Publishing workflow.
