@@ -1,0 +1,296 @@
+[
+ {
+  "project": "tomli",
+  "position": 61,
+  "commit": "e4f44e30bda20fc776532b3df8abf9f4f03257f0",
+  "parent": "77dce704af53ae04a685c83894e356f2c3787429",
+  "subject": "Allow lower case \"t\" and \"z\" in datetimes (#149)",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 62,
+  "commit": "77dce704af53ae04a685c83894e356f2c3787429",
+  "parent": "374364abad33073619d794ae90ebc08488be3f74",
+  "subject": "Dont hardcode module name (#145)",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 63,
+  "commit": "374364abad33073619d794ae90ebc08488be3f74",
+  "parent": "9e56735f2273c2341399932b76c0d717059db61b",
+  "subject": "Make first arg of `load` and `loads` positional only (#143)",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 64,
+  "commit": "9e56735f2273c2341399932b76c0d717059db61b",
+  "parent": "486c156d96d6260ed68a378f6bfdbc489a84e717",
+  "subject": "Error when dotted keys define values outside current table (#125)",
+  "pkv": "0.1.2",
+  "findings": [
+   {
+    "severity": "suspicious",
+    "kind": "test-file-deleted",
+    "file": "tests/test_flags.py",
+    "message": "the whole test file tests/test_flags.py was deleted, but the code it tested is still there.",
+    "test": null
+   }
+  ]
+ },
+ {
+  "project": "tomli",
+  "position": 65,
+  "commit": "486c156d96d6260ed68a378f6bfdbc489a84e717",
+  "parent": "6a93a19f4996f01f670d67d5fc0ff90b65a69234",
+  "subject": "Remove text file object support (#133)",
+  "pkv": "0.1.2",
+  "findings": [
+   {
+    "severity": "suspicious",
+    "kind": "fewer-checks",
+    "file": "tests/test_misc.py",
+    "message": "the test test_load in tests/test_misc.py now checks less: 3 checks before, 1 now.",
+    "test": "test_load"
+   }
+  ]
+ },
+ {
+  "project": "tomli",
+  "position": 66,
+  "commit": "6a93a19f4996f01f670d67d5fc0ff90b65a69234",
+  "parent": "809a8ae8795263036ac2f350a81b6e0e38fd03dd",
+  "subject": "Drop Python 3.6 support (#134)",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 67,
+  "commit": "809a8ae8795263036ac2f350a81b6e0e38fd03dd",
+  "parent": "c151139c8efcf8268cdd876e779ae28f78477378",
+  "subject": "Slightly speed up execution time of common cases (#142)",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 68,
+  "commit": "c151139c8efcf8268cdd876e779ae28f78477378",
+  "parent": "2179f2a0844c0536fb9f69b67a938ae982b7e4da",
+  "subject": "Merge pull request #138 from hukkin/version-1.2.2",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 69,
+  "commit": "2179f2a0844c0536fb9f69b67a938ae982b7e4da",
+  "parent": "744634e9f4a76b284db578a2c5231086d57f5402",
+  "subject": "Eliminate import cycle in `_re.py`",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 70,
+  "commit": "96dfe2cef79eb4c2a441d5b1b36c3ef357372c9f",
+  "parent": "8917fe3c3fc61a28163f5f78edcad2efc574a274",
+  "subject": "Make TOMLDecodeError show 'tomli' as its module (#135)",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 71,
+  "commit": "53313db9230e5da3e7fabd1f641bd7521caccba9",
+  "parent": "31c85a18468adbb5f2e892aa96cf0930ac04f93c",
+  "subject": "Slightly improve an error message",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 72,
+  "commit": "31c85a18468adbb5f2e892aa96cf0930ac04f93c",
+  "parent": "a8c87f6e8b687e54ff34ccf331f64cb819ccbf2f",
+  "subject": "Error messages: Surround illegal character by only one pair of quotation marks",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 73,
+  "commit": "a8c87f6e8b687e54ff34ccf331f64cb819ccbf2f",
+  "parent": "62befaedab10bcfdf0a0c6d5f43144673535d6e6",
+  "subject": "Test deprecation warning",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 74,
+  "commit": "62befaedab10bcfdf0a0c6d5f43144673535d6e6",
+  "parent": "eaa381a341d2a39a62680798e4ad4dceb26326a0",
+  "subject": "Improve exception tracebacks",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 75,
+  "commit": "eaa381a341d2a39a62680798e4ad4dceb26326a0",
+  "parent": "3eb26137faa786cdb5f187a0df52aaca903c23f1",
+  "subject": "Set stacklevel=2 to deprecation warn",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 76,
+  "commit": "3eb26137faa786cdb5f187a0df52aaca903c23f1",
+  "parent": "9209cb5f29bab93c89d88bf88ac58a2a515b0ac8",
+  "subject": "Merge pull request #117 from hukkin/vers-1.2.1",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 77,
+  "commit": "3ba0caa1d1173d7ff89a9dd1abf01b392f408a44",
+  "parent": "775e4ac9470650ba3b8d6e8463502e5b22ee2126",
+  "subject": "Remove type ignore from undeprecated path",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 78,
+  "commit": "775e4ac9470650ba3b8d6e8463502e5b22ee2126",
+  "parent": "6c3ae6b0836d4af2d3b434b594312d78af0b116a",
+  "subject": "Signal TextIO deprecation in type annotations",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 79,
+  "commit": "6c3ae6b0836d4af2d3b434b594312d78af0b116a",
+  "parent": "a103b0798e55c7d06c57c176895422e9cf403050",
+  "subject": "Remove another `isinstance`",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 80,
+  "commit": "a103b0798e55c7d06c57c176895422e9cf403050",
+  "parent": "1759a41480868fd2d60ab68f68b5439aada4e5e5",
+  "subject": "Remove use of `isinstance`",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 81,
+  "commit": "1759a41480868fd2d60ab68f68b5439aada4e5e5",
+  "parent": "1b35b36463629ff8a88244e10691fbd620a4b592",
+  "subject": "Raise an error on carriage return in multi-line basic string",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 82,
+  "commit": "1b35b36463629ff8a88244e10691fbd620a4b592",
+  "parent": "033577061ca4d579d9c650ec7ea91d99d0ecf022",
+  "subject": "Merge pull request #107 from hukkin/vers-1.2.0",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 83,
+  "commit": "033577061ca4d579d9c650ec7ea91d99d0ecf022",
+  "parent": "b94a0d2c8ab77e092b0adce4f1f10363aa8fa68c",
+  "subject": "Deprecate text file objects as input to `load` (#106)",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 84,
+  "commit": "b94a0d2c8ab77e092b0adce4f1f10363aa8fa68c",
+  "parent": "3b427eff74a35416db52548a04b20eab1d634402",
+  "subject": "Update benchmark",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 85,
+  "commit": "3b427eff74a35416db52548a04b20eab1d634402",
+  "parent": "b9cbbe27b574c1e0c60112b9b763fef38b46346c",
+  "subject": "Merge pull request #104 from hukkin/vers-1.1.0",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 86,
+  "commit": "b9cbbe27b574c1e0c60112b9b763fef38b46346c",
+  "parent": "e58284a29ee1e004a6fc64916bd0c97094eb0aa7",
+  "subject": "Add binary file object support to `load` (#103)",
+  "pkv": "0.1.2",
+  "findings": [
+   {
+    "severity": "notice",
+    "kind": "expected-values-changed",
+    "file": "tests/test_misc.py",
+    "message": "the expected values in test_load (tests/test_misc.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "test": "test_load"
+   }
+  ]
+ },
+ {
+  "project": "tomli",
+  "position": 87,
+  "commit": "57b7992e928840ad5691ae626a2ef5a792d4664b",
+  "parent": "7026fc9a062fc46a3d019b4462b2b24bccc3cf3f",
+  "subject": "Fuzzer: Use Atheris v2",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 88,
+  "commit": "7026fc9a062fc46a3d019b4462b2b24bccc3cf3f",
+  "parent": "f5130298445f6244cbe80bdcd8191d73edd0856d",
+  "subject": "Fuzzer: Disable caching",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 89,
+  "commit": "9c2d353f81b568b4cb1616985c3da0b337f9ea56",
+  "parent": "81c4eec444cc355f283c987dae65dfff2d43b08c",
+  "subject": "Fuzzer: Avoid recursion in dict normalization",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "tomli",
+  "position": 90,
+  "commit": "81c4eec444cc355f283c987dae65dfff2d43b08c",
+  "parent": "20b1427bf8a2ecacdfef8d0935e7e7bd65e55307",
+  "subject": "Remove needless non-capture group from regex",
+  "pkv": "0.1.2",
+  "findings": []
+ }
+]

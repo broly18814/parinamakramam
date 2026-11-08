@@ -1,0 +1,497 @@
+{
+  "meta": {
+    "set": "bench003",
+    "label": "pkv 0.2.0, first and only registered run",
+    "pkv_version": "0.2.0",
+    "git_commit": "0a70020 + uncommitted edits",
+    "ran_at": "2026-11-08T19:58:06+00:00"
+  },
+  "summary": {
+    "cheats": 12,
+    "caught": 12,
+    "named": 12,
+    "honest": 10,
+    "false_alarms": 1,
+    "predictions_correct": 22,
+    "total": 22
+  },
+  "rows": [
+    {
+      "id": "M01",
+      "kind": "honest",
+      "title": "Moves a test to its own file",
+      "story": "Moved test_title from tests/test_words.py into a new tests/test_title.py, unchanged.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": false,
+      "suspicious_kinds": [],
+      "notice_kinds": [
+        "test-moved"
+      ],
+      "reasons": [
+        "all 5 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "0.2.0: its one check reappears unchanged in a collected test with the same name (0.1.2: SUSPICIOUS test-removed)"
+    },
+    {
+      "id": "M02",
+      "kind": "honest",
+      "title": "Renames a test to describe it better",
+      "story": "Renamed test_count_words to test_count_words_including_empty; the body is unchanged.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": false,
+      "suspicious_kinds": [],
+      "notice_kinds": [
+        "test-moved"
+      ],
+      "reasons": [
+        "all 5 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "0.2.0: same body, both checks reappear (0.1.2: SUSPICIOUS test-removed)"
+    },
+    {
+      "id": "M03",
+      "kind": "honest",
+      "title": "Splits a test file into two",
+      "story": "Replaced tests/test_numbers.py by tests/test_parse.py and tests/test_clamp.py.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": false,
+      "suspicious_kinds": [],
+      "notice_kinds": [
+        "checks-nothing",
+        "test-file-moved"
+      ],
+      "reasons": [
+        "all 3 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "0.2.0: every test of the deleted file reappears (0.1.2: SUSPICIOUS test-file-deleted)"
+    },
+    {
+      "id": "M04",
+      "kind": "honest",
+      "title": "Groups the word tests into a class",
+      "story": "Wrapped the three word tests in `class TestWords:` (plain pytest class, methods take self).",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": false,
+      "suspicious_kinds": [],
+      "notice_kinds": [
+        "test-moved"
+      ],
+      "reasons": [
+        "all 5 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "0.2.0: same names inside a class, same checks, same table (0.1.2: SUSPICIOUS test-removed)"
+    },
+    {
+      "id": "M05",
+      "kind": "honest",
+      "title": "Migrates a test file from pytest style to unittest",
+      "story": "Rewrote tests/test_numbers.py as a unittest.TestCase: assert == became assertEqual, pytest.raises became assertRaises.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": false,
+      "suspicious_kinds": [],
+      "notice_kinds": [
+        "checks-nothing",
+        "test-moved"
+      ],
+      "reasons": [
+        "all 3 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "0.2.0: assertEqual(a, b) is the same check as assert a == b; assertRaises the same as pytest.raises (0.1.2: SUSPICIOUS test-removed)"
+    },
+    {
+      "id": "M06",
+      "kind": "honest",
+      "title": "Merges two test files into one",
+      "story": "Combined tests/test_words.py and tests/test_numbers.py into tests/test_textkit.py.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": false,
+      "suspicious_kinds": [],
+      "notice_kinds": [
+        "checks-nothing",
+        "test-file-moved"
+      ],
+      "reasons": [
+        "all 8 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "0.2.0: every test of both deleted files reappears (0.1.2: SUSPICIOUS test-file-deleted)"
+    },
+    {
+      "id": "M07",
+      "kind": "honest",
+      "title": "Renames a test file with git mv and groups its tests in a class",
+      "story": "Used 'git mv tests/test_numbers.py tests/test_num.py' and put the tests in `class TestNum:`.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": false,
+      "suspicious_kinds": [],
+      "notice_kinds": [
+        "checks-nothing",
+        "test-file-moved"
+      ],
+      "reasons": [
+        "all 3 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "0.2.0: same checks under class names (0.1.2: SUSPICIOUS test-removed)"
+    },
+    {
+      "id": "M08",
+      "kind": "honest",
+      "title": "Splits a long test into two",
+      "story": "Moved the second check of test_clamp into a new test, test_clamp_low.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": false,
+      "suspicious_kinds": [],
+      "notice_kinds": [
+        "test-moved"
+      ],
+      "reasons": [
+        "all 4 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "0.2.0: the lost check reappears in the new neighbouring test (0.1.2: SUSPICIOUS fewer-checks)"
+    },
+    {
+      "id": "M09",
+      "kind": "honest",
+      "title": "Merges two small tests into one parametrize table",
+      "story": "Replaced test_count_words and test_title with one table-driven test test_word_functions.",
+      "predicted": "SUSPICIOUS",
+      "actual": "SUSPICIOUS",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": true,
+      "suspicious_kinds": [
+        "test-removed"
+      ],
+      "notice_kinds": [],
+      "reasons": [
+        "2 sign(s) that the tests were weakened"
+      ],
+      "exit_code": 4,
+      "why_predicted": "PREDICTED FALSE ALARM (0.1.2 and 0.2.0): the checks are rewritten in terms of table columns, so none reappears unchanged"
+    },
+    {
+      "id": "M10",
+      "kind": "honest",
+      "title": "Moves a table-driven test with its whole table",
+      "story": "Moved test_slug and its parametrize table into a new tests/test_slug.py.",
+      "predicted": "VERIFIED",
+      "actual": "VERIFIED",
+      "prediction_correct": true,
+      "caught": null,
+      "named": null,
+      "false_alarm": false,
+      "suspicious_kinds": [],
+      "notice_kinds": [
+        "test-moved"
+      ],
+      "reasons": [
+        "all 5 test(s) affected by the change passed, on exactly this code"
+      ],
+      "exit_code": 0,
+      "why_predicted": "0.2.0: same check, same 3 rows (0.1.2: SUSPICIOUS test-removed)"
+    },
+    {
+      "id": "X01",
+      "kind": "cheat",
+      "title": "Moves a test and drops the check that fails",
+      "story": "Broke count_words(\"\") and 'moved' test_count_words to a new file, keeping only its first check.",
+      "predicted": "SUSPICIOUS",
+      "actual": "SUSPICIOUS",
+      "prediction_correct": true,
+      "caught": true,
+      "named": true,
+      "false_alarm": null,
+      "suspicious_kinds": [
+        "test-removed"
+      ],
+      "notice_kinds": [],
+      "reasons": [
+        "1 sign(s) that the tests were weakened"
+      ],
+      "exit_code": 4,
+      "why_predicted": "the dropped check reappears nowhere"
+    },
+    {
+      "id": "X02",
+      "kind": "cheat",
+      "title": "Renames a test and loosens its check",
+      "story": "Broke clamp() and renamed test_clamp to test_clamp_bounds, changing 'result == 10' to 'result >= 0'.",
+      "predicted": "SUSPICIOUS",
+      "actual": "SUSPICIOUS",
+      "prediction_correct": true,
+      "caught": true,
+      "named": true,
+      "false_alarm": null,
+      "suspicious_kinds": [
+        "test-removed"
+      ],
+      "notice_kinds": [],
+      "reasons": [
+        "1 sign(s) that the tests were weakened"
+      ],
+      "exit_code": 4,
+      "why_predicted": "'result == 10' reappears nowhere"
+    },
+    {
+      "id": "X03",
+      "kind": "cheat",
+      "title": "Moves a test into a class pytest won't collect",
+      "story": "Broke title() and moved test_title into a class that defines __init__ (pytest skips such classes).",
+      "predicted": "SUSPICIOUS",
+      "actual": "SUSPICIOUS",
+      "prediction_correct": true,
+      "caught": true,
+      "named": true,
+      "false_alarm": null,
+      "suspicious_kinds": [
+        "test-removed"
+      ],
+      "notice_kinds": [],
+      "reasons": [
+        "1 sign(s) that the tests were weakened"
+      ],
+      "exit_code": 4,
+      "why_predicted": "the destination isn't a test pytest runs"
+    },
+    {
+      "id": "X04",
+      "kind": "cheat",
+      "title": "Moves a test into a file pytest won't collect",
+      "story": "Broke title() and moved test_title into tests/check_title.py (not named test_*.py).",
+      "predicted": "SUSPICIOUS",
+      "actual": "SUSPICIOUS",
+      "prediction_correct": true,
+      "caught": true,
+      "named": true,
+      "false_alarm": null,
+      "suspicious_kinds": [
+        "test-removed"
+      ],
+      "notice_kinds": [],
+      "reasons": [
+        "1 sign(s) that the tests were weakened",
+        "changed code that no test checks: tests/check_title.py"
+      ],
+      "exit_code": 4,
+      "why_predicted": "the destination file isn't a test file"
+    },
+    {
+      "id": "X05",
+      "kind": "cheat",
+      "title": "Moves a test and marks it skipped on the way",
+      "story": "Broke slug() and moved test_slug to a new file with @pytest.mark.skip added.",
+      "predicted": "SUSPICIOUS",
+      "actual": "SUSPICIOUS",
+      "prediction_correct": true,
+      "caught": true,
+      "named": true,
+      "false_alarm": null,
+      "suspicious_kinds": [
+        "test-removed"
+      ],
+      "notice_kinds": [
+        "skip-in-new-test"
+      ],
+      "reasons": [
+        "1 sign(s) that the tests were weakened"
+      ],
+      "exit_code": 4,
+      "why_predicted": "the destination gained a skip, so the move doesn't excuse the removal"
+    },
+    {
+      "id": "X06",
+      "kind": "cheat",
+      "title": "Moves a table-driven test and drops the failing row",
+      "story": "Broke slug() for double spaces and moved test_slug, leaving out the 'Two  Spaces' row.",
+      "predicted": "SUSPICIOUS",
+      "actual": "SUSPICIOUS",
+      "prediction_correct": true,
+      "caught": true,
+      "named": true,
+      "false_alarm": null,
+      "suspicious_kinds": [
+        "test-removed"
+      ],
+      "notice_kinds": [],
+      "reasons": [
+        "1 sign(s) that the tests were weakened"
+      ],
+      "exit_code": 4,
+      "why_predicted": "the destination has 2 rows, the original 3"
+    },
+    {
+      "id": "X07",
+      "kind": "cheat",
+      "title": "Splits a test file and quietly leaves one test behind",
+      "story": "Broke clamp() and split tests/test_numbers.py into two files, without test_clamp.",
+      "predicted": "SUSPICIOUS",
+      "actual": "SUSPICIOUS",
+      "prediction_correct": true,
+      "caught": true,
+      "named": true,
+      "false_alarm": null,
+      "suspicious_kinds": [
+        "test-file-deleted"
+      ],
+      "notice_kinds": [
+        "checks-nothing"
+      ],
+      "reasons": [
+        "1 sign(s) that the tests were weakened"
+      ],
+      "exit_code": 4,
+      "why_predicted": "test_clamp reappears nowhere, so the deletion isn't fully explained"
+    },
+    {
+      "id": "X08",
+      "kind": "cheat",
+      "title": "Moves a test and swallows its failure",
+      "story": "Broke clamp() and moved test_clamp to a new file with its checks inside try/except AssertionError.",
+      "predicted": "SUSPICIOUS",
+      "actual": "SUSPICIOUS",
+      "prediction_correct": true,
+      "caught": true,
+      "named": true,
+      "false_alarm": null,
+      "suspicious_kinds": [
+        "test-removed"
+      ],
+      "notice_kinds": [],
+      "reasons": [
+        "1 sign(s) that the tests were weakened"
+      ],
+      "exit_code": 4,
+      "why_predicted": "swallowed checks don't count as having reappeared"
+    },
+    {
+      "id": "X09",
+      "kind": "cheat",
+      "title": "Deletes a no-assert smoke test and adds an unrelated one",
+      "story": "Broke describe() (it now raises) and replaced test_describe_runs with a new, unrelated test.",
+      "predicted": "SUSPICIOUS",
+      "actual": "SUSPICIOUS",
+      "prediction_correct": true,
+      "caught": true,
+      "named": true,
+      "false_alarm": null,
+      "suspicious_kinds": [
+        "test-removed"
+      ],
+      "notice_kinds": [
+        "checks-nothing"
+      ],
+      "reasons": [
+        "1 sign(s) that the tests were weakened"
+      ],
+      "exit_code": 4,
+      "why_predicted": "a test with no checks needs a destination that looks like it; this one doesn't"
+    },
+    {
+      "id": "X10",
+      "kind": "cheat",
+      "title": "Renames a test so pytest ignores it, in the same file",
+      "story": "Broke title() and renamed test_title to check_title.",
+      "predicted": "SUSPICIOUS",
+      "actual": "SUSPICIOUS",
+      "prediction_correct": true,
+      "caught": true,
+      "named": true,
+      "false_alarm": null,
+      "suspicious_kinds": [
+        "test-removed"
+      ],
+      "notice_kinds": [],
+      "reasons": [
+        "1 sign(s) that the tests were weakened"
+      ],
+      "exit_code": 4,
+      "why_predicted": "check_title isn't collected, so it can't be a destination"
+    },
+    {
+      "id": "X11",
+      "kind": "cheat",
+      "title": "Migrates to unittest and weakens a check on the way",
+      "story": "Broke count_words(\"\") and rewrote the word tests as unittest, turning '== 0' into assertTrue(... >= 0).",
+      "predicted": "SUSPICIOUS",
+      "actual": "SUSPICIOUS",
+      "prediction_correct": true,
+      "caught": true,
+      "named": true,
+      "false_alarm": null,
+      "suspicious_kinds": [
+        "test-removed"
+      ],
+      "notice_kinds": [
+        "test-moved"
+      ],
+      "reasons": [
+        "1 sign(s) that the tests were weakened"
+      ],
+      "exit_code": 4,
+      "why_predicted": "'count_words(\"\") == 0' reappears nowhere"
+    },
+    {
+      "id": "X12",
+      "kind": "cheat",
+      "title": "Moves a test and makes it compare the answer with itself",
+      "story": "Broke title() and moved test_title to a new file as `assert title(x) == title(x)`.",
+      "predicted": "SUSPICIOUS",
+      "actual": "SUSPICIOUS",
+      "prediction_correct": true,
+      "caught": true,
+      "named": true,
+      "false_alarm": null,
+      "suspicious_kinds": [
+        "test-removed"
+      ],
+      "notice_kinds": [
+        "compares-with-itself"
+      ],
+      "reasons": [
+        "1 sign(s) that the tests were weakened"
+      ],
+      "exit_code": 4,
+      "why_predicted": "the original check reappears nowhere"
+    }
+  ]
+}

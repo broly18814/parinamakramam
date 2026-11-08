@@ -1,0 +1,272 @@
+[
+ {
+  "project": "more-itertools",
+  "position": 61,
+  "commit": "5d5c163abf2c16fa6d18c5c8baa874a7a95aa678",
+  "parent": "5ea81c48727f9906879e30b352772bc3869c4e88",
+  "subject": "Merge pull request #1149 from rhettinger/typo",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 62,
+  "commit": "5ea81c48727f9906879e30b352772bc3869c4e88",
+  "parent": "5b43c0dc5f67713130ab534d448f8db1cf493e09",
+  "subject": "Merge pull request #1142 from more-itertools/version-11.0.1",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 63,
+  "commit": "5b43c0dc5f67713130ab534d448f8db1cf493e09",
+  "parent": "e4d2a4a2a97246a73856754b2c4866d7f41d4875",
+  "subject": "Merge pull request #1136 from more-itertools/version-11.0.0",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 64,
+  "commit": "e4d2a4a2a97246a73856754b2c4866d7f41d4875",
+  "parent": "18c57c720fc5a7672439ea45a5393a8c1ff40d1e",
+  "subject": "Merge pull request #1126 from veeceey/fix/issue-813-replace-marker",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 65,
+  "commit": "18c57c720fc5a7672439ea45a5393a8c1ff40d1e",
+  "parent": "9210d54527ddfa63ebe75cd5b5daa0201902c674",
+  "subject": "Issue #1134: Add running_statistics (#1135)",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 66,
+  "commit": "9210d54527ddfa63ebe75cd5b5daa0201902c674",
+  "parent": "00a00cb79c9f7edcc5e934fe3180db3b69f5231f",
+  "subject": "Merge pull request #1132 from r266-tech/docs/cross-references-grouping",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 67,
+  "commit": "00a00cb79c9f7edcc5e934fe3180db3b69f5231f",
+  "parent": "3bbe636e23bdfa359d80e6851e0c37abbc860d4c",
+  "subject": "Merge pull request #1133 from rhettinger/partition_queues",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 68,
+  "commit": "3bbe636e23bdfa359d80e6851e0c37abbc860d4c",
+  "parent": "1c21c3ae9c7991b73044fe16807b70d1cac61e0b",
+  "subject": "Merge pull request #1128 from bysiber/fix/numeric-range-negative-step-slice",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 69,
+  "commit": "1c21c3ae9c7991b73044fe16807b70d1cac61e0b",
+  "parent": "c0ed9d187906d202b9276a0750b3c377584cb75f",
+  "subject": "Merge pull request #1127 from more-itertools/running-mean-recipe",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 70,
+  "commit": "c0ed9d187906d202b9276a0750b3c377584cb75f",
+  "parent": "fdbd43c569feb4388302ddee0551d18edd39fadc",
+  "subject": "Merge pull request #1125 from rhettinger/repeat_fixes",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 71,
+  "commit": "fdbd43c569feb4388302ddee0551d18edd39fadc",
+  "parent": "6a6d1364d8dc6d2d3c727e4ccd36353b731ab105",
+  "subject": "Update sized_iter for merging",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 72,
+  "commit": "6a6d1364d8dc6d2d3c727e4ccd36353b731ab105",
+  "parent": "7275e7fcfdfec81100cd4a6a14e46a952d5a9ecb",
+  "subject": "Merge branch 'assaf127-feature/sized_iterator'",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 73,
+  "commit": "7275e7fcfdfec81100cd4a6a14e46a952d5a9ecb",
+  "parent": "8962760bc0a12973f6f673dd039c1db63ec6849c",
+  "subject": "Merge pull request #1108 from more-itertools/issue-1049-callback",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 74,
+  "commit": "8962760bc0a12973f6f673dd039c1db63ec6849c",
+  "parent": "696cd22e83db273dcbd0ae4968e0efbe351d1374",
+  "subject": "Merge pull request #1105 from nathanjmcdougall/typos",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 75,
+  "commit": "afddbffd4d5c1454e611bf3e8a4d3cad3758b593",
+  "parent": "582e9fa013091c756e2a8d98cae1ba1af4a9a389",
+  "subject": "Merge pull request #1103 from rhettinger/tee_slots",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 76,
+  "commit": "582e9fa013091c756e2a8d98cae1ba1af4a9a389",
+  "parent": "68a4c96b547378831f4ddffc6a5d1675715422cd",
+  "subject": "Merge pull request #1101 from rhettinger/extract_monotonic",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 77,
+  "commit": "68a4c96b547378831f4ddffc6a5d1675715422cd",
+  "parent": "04d266400d31920c65f26e9e57fa17bef9d45679",
+  "subject": "Merge pull request #1099 from rhettinger/synchronized",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 78,
+  "commit": "04d266400d31920c65f26e9e57fa17bef9d45679",
+  "parent": "4cbe6f9d1c78780d024fa626407015448d4fd049",
+  "subject": "Merge pull request #1097 from rhettinger/concurrent_tee",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 79,
+  "commit": "4cbe6f9d1c78780d024fa626407015448d4fd049",
+  "parent": "130d1ac88eff33084b14759402a4f8ba1d02c6d7",
+  "subject": "Merge pull request #1095 from rhettinger/serialize",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 80,
+  "commit": "cc8801726185eda99e2a585e58c74e4aa1aef617",
+  "parent": "22cf656cc0458cfcee2286c0a02369da000023ad",
+  "subject": "Merge pull request #1089 from rhettinger/count_cycle",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 81,
+  "commit": "22cf656cc0458cfcee2286c0a02369da000023ad",
+  "parent": "55fcdd8013baff9d2f5b3ab890904a0964fb61df",
+  "subject": "Merge pull request #1088 from rhettinger/exactly_n",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 82,
+  "commit": "55fcdd8013baff9d2f5b3ab890904a0964fb61df",
+  "parent": "706f1a965043dc9b8881a46626058ec70b11d1f9",
+  "subject": "Merge pull request #1091 from rhettinger/misc_improvements",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 83,
+  "commit": "706f1a965043dc9b8881a46626058ec70b11d1f9",
+  "parent": "f75535b5ed95394a3a24c1495e1f8508a06d56ab",
+  "subject": "Merge pull request #1090 from rhettinger/subslices",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 84,
+  "commit": "da2457e66b17da2859078770079ed3efb284cd0d",
+  "parent": "e1c36c297359dd6790f9c37f93b828b0fabbae7f",
+  "subject": "Merge pull request #1085 from rhettinger/powerset_extension",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 85,
+  "commit": "e1c36c297359dd6790f9c37f93b828b0fabbae7f",
+  "parent": "476083a1e3868bdea306ab9546d033229b1d72ab",
+  "subject": "Merge pull request #1084 from rhettinger/uiw_docs",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 86,
+  "commit": "476083a1e3868bdea306ab9546d033229b1d72ab",
+  "parent": "5a1d64d1915df11481dcd31ffaf7165419064116",
+  "subject": "Merge pull request #1081 from rhettinger/grouper_310_update",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 87,
+  "commit": "5a1d64d1915df11481dcd31ffaf7165419064116",
+  "parent": "aa8c480086052d4c2a64490d3214e67b7c6e674b",
+  "subject": "Merge pull request #1082 from rhettinger/product_index_iterator",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 88,
+  "commit": "aa8c480086052d4c2a64490d3214e67b7c6e674b",
+  "parent": "71b76842d32c0b25cfc992fad21f83a606606667",
+  "subject": "Merge pull request #1078 from rhettinger/iequals_fillvalue",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 89,
+  "commit": "71b76842d32c0b25cfc992fad21f83a606606667",
+  "parent": "3331507287761a35d7aa8d583f76d022dd9da958",
+  "subject": "Merge pull request #1079 from rhettinger/fillvalue_tricks",
+  "pkv": "0.1.2",
+  "findings": []
+ },
+ {
+  "project": "more-itertools",
+  "position": 90,
+  "commit": "3331507287761a35d7aa8d583f76d022dd9da958",
+  "parent": "b26c5b3a8d44a6bc026b49190cc423db72f91b63",
+  "subject": "Merge pull request #1080 from rhettinger/random_derangement",
+  "pkv": "0.1.2",
+  "findings": []
+ }
+]
