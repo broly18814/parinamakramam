@@ -91,11 +91,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 
 ## Next steps, in order
 
-1. **PyPI: `pkv-v0.2.1` released on 9 November 2026; the upload waits for your approval in GitHub's Actions tab.** Everything is set up ([runbook](../docs/product/PYPI.md)):
-   - the PyPI pending trusted publisher is registered;
-   - the GitHub `pypi` environment requires your approval and accepts only `pkv-v*` tags.
-
-   Publishing the `pkv-v0.2.1` release starts the upload, which then waits for your approval in GitHub's Actions tab (D-031).
+1. **Watch adoption, with no interviews (D-002).** pkv is on PyPI as `parinama-verify` 0.2.1 (D-032). Track installs from public numbers only: PyPI's download statistics, GitHub stars, and use of the Action.
 2. **BENCH-003:** a fresh held-out set *before* tackling the known misses in OI-8.
 3. **EXP-002b:** the one remaining near-miss variant, pre-registered (structure-based). If it closes < 10% of the gap, stop and move to EXP-005.
 4. **Publish more widely:** the first release is out (`pkv-v0.2.0`, D-030). Next, decide how to reach GitHub's Marketplace, which needs `action.yml` at the top of a repository (either a small separate repository for the action, or moving the file). Then watch install counts (no interviews; D-002).

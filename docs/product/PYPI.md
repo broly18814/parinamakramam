@@ -1,5 +1,7 @@
 # Publishing pkv to PyPI: the founder's runbook
 
+**Status: live.** pkv 0.2.1 was published on 9 November 2026 (https://pypi.org/project/parinama-verify/). The one-time steps below are done. For each future release, publish a `pkv-vX.Y.Z` GitHub release whose version matches `pyproject.toml`, then approve the `pypi` deployment in the Actions tab.
+
 **PyPI** (the Python Package Index, pypi.org) is the public store of Python packages. Once pkv is there, anyone can install it with one command:
 
 ```bash
