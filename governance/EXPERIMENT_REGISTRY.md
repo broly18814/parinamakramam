@@ -17,7 +17,7 @@ This is how we stop ourselves from fooling ourselves. Words are explained in the
   - We learned exactly where the problem is.
 - **The question:** If every version of the computer gets exactly the same amount of time, does a computer that **changes its own building blocks and joining rules** solve more *new* puzzles than one that only combines a fixed set? And does that depend on whether the puzzles contain hidden patterns?
 - **Related work:** DreamCoder, Stitch, babble, LILO, AbstractBeam, Probe, Momennejad & Raileanu 2026, and "Prospective Compression" 2026 (see [R001](../docs/research/R001-primitive-evolution-prior-art-and-thesis.md), section 2).
-- **Code:** `research/pevo`, version 0.1.0. It is saved in git snapshot `a200f19`, so anyone can get back the exact code.
+- **Code:** `research/pevo`, version 0.1.0. It is saved in git snapshot `fe5edc4`, so anyone can get back the exact code.
 - **Puzzles:**
   - Made up by the computer, so no one's private data is involved.
   - Two kinds: *patterned* and *random*.

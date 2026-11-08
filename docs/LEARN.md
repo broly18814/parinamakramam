@@ -129,9 +129,9 @@ cd /Volumes/projects/hope/parinamakramam/research/pevo && uv run --no-project --
 - **Diff**: the exact differences between two versions.
 - **Hash**: the fingerprint that names each snapshot.
 
-🎯 **Precisely.** A commit stores the whole project's state, plus who made it, when, and a message. Each commit is named by a **hash**: a long code calculated from its contents (for example `a200f19…`). If anything differs, the hash differs. That's why a hash can prove *exactly* which code an experiment used.
+🎯 **Precisely.** A commit stores the whole project's state, plus who made it, when, and a message. Each commit is named by a **hash**: a long code calculated from its contents (for example `fe5edc4…`). If anything differs, the hash differs. That's why a hash can prove *exactly* which code an experiment used.
 
-📍 **In our project.** Our first snapshot is `a200f19`. It holds the original technical versions of every document.
+📍 **In our project.** Our first snapshot is `fe5edc4`. It holds the original technical versions of every document.
 
 🛠 **Try it.** The first command shows the list of snapshots. The second shows what has changed since the last one.
 

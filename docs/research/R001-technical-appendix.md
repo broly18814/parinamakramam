@@ -1,6 +1,6 @@
 # R001 technical appendix (for specialists)
 
-> **You do not need to read this.** It is for other researchers who want to check our work precisely. The plain-language report is [R001](R001-primitive-evolution-prior-art-and-thesis.md), and every word used here is explained in the [Glossary](../GLOSSARY.md). The first technical version of R001 is preserved in git snapshot `a200f19`.
+> **You do not need to read this.** It is for other researchers who want to check our work precisely. The plain-language report is [R001](R001-primitive-evolution-prior-art-and-thesis.md), and every word used here is explained in the [Glossary](../GLOSSARY.md). The first technical version of R001 is preserved in git snapshot `fe5edc4`.
 
 ## A1. Formal definitions (v1)
 
