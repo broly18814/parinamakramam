@@ -22,6 +22,15 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
+# pkv keeps its own receipts here. They are never counted as "changes" and
+# never part of the fingerprint, so saving a receipt can't make it stale.
+PKV_DIR = ".pkv"
+
+
+def _is_pkv_own(path: str) -> bool:
+    return path == PKV_DIR or path.startswith(PKV_DIR + "/")
+
+
 class GitError(RuntimeError):
     """git refused or failed. The message says why in plain words."""
 
@@ -132,15 +141,17 @@ def changed_files(repo: str | os.PathLike = ".", base: str | None = None) -> lis
     for p in _git(root, "ls-files", "--others", "--exclude-standard", "-z").decode().split("\0"):
         if p and p not in seen:
             changes.append(Change("added", p))
+    changes = [c for c in changes if not _is_pkv_own(c.path)]
     return sorted(changes, key=lambda c: (c.path, c.status))
 
 
-def tree_hash(repo: str | os.PathLike = ".") -> str:
+def tree_hash(repo: str | os.PathLike = ".", exclude: tuple[str, ...] = ()) -> str:
     """Fingerprint of the code exactly as it is on disk now.
 
     How: copy git's staging list (the *index*) to a temporary file, add every
     current file to that copy, and ask git for the fingerprint of the result.
     The real staging list is never touched, so the user's work is unaffected.
+    pkv's own folder (.pkv/) and any paths in `exclude` are left out.
     (Side effect: git stores copies of the file contents in its object
     database; git cleans unused ones up automatically.)
     """
@@ -152,4 +163,6 @@ def tree_hash(repo: str | os.PathLike = ".") -> str:
             shutil.copyfile(gitdir / "index", index)
         env = {**os.environ, "GIT_INDEX_FILE": str(index)}
         _git(root, "add", "-A", env=env)
+        for path in (PKV_DIR, *exclude):
+            _git(root, "rm", "-r", "-q", "--cached", "--ignore-unmatch", "--", path, env=env)
         return _git(root, "write-tree", env=env).decode().strip()

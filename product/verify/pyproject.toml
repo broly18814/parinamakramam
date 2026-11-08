@@ -18,3 +18,4 @@ packages = ["pkv"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]  # lets the tests find the pkv package from any folder

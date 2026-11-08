@@ -31,9 +31,9 @@ python3 run_exp001.py --seeds 0-9 --out ../../experiments/EXP-001/results
 python3 ../../experiments/EXP-001/analysis.py
 ```
 
-Checker tool self-checks (27):
+Checker tool self-checks (54):
 
 ```bash
 cd product/verify
-PYTHONPATH=. uv run --no-project --python 3.14 --with pytest python -m pytest -q tests
+uv run --no-project --python 3.14 --with pytest python -m pytest -q tests
 ```

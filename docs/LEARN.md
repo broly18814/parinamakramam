@@ -9,7 +9,7 @@ This is a course that teaches every idea used in Parinamakramam, in order, start
 5. **🛠 Try it.** Something to type or open. Commands go in the **Terminal** app, the program where you type instructions to the computer.
 6. **✅ Check yourself.** A question to test yourself. Click to see the answer.
 
-Go in order: each lesson builds on the previous ones. One lesson a day takes 23 days, but you can go faster. Words are also listed in the [Glossary](GLOSSARY.md).
+Go in order: each lesson builds on the previous ones. One lesson a day takes 27 days, but you can go faster. Words are also listed in the [Glossary](GLOSSARY.md).
 
 ---
 
@@ -482,6 +482,90 @@ The Darwin Gödel Machine applies evolution to an agent's own code, and keeps on
 - The **state file** lets anyone, including a new Claude session, pick up exactly where we left off.
 
 Together they make the company **auditable**: every claim can be traced back to its evidence.
+
+---
+
+# Part G: How careful engineers check their own work
+
+## Lesson 24. Processes, exit codes and environment variables
+
+🖼 **Picture.**
+- A **process** is a worker the computer hires to follow one program.
+- When the worker finishes, they hand back a slip with one number: the **exit code**.
+- Every worker also carries a backpack of notes from whoever hired them: the **environment variables**.
+
+📖 **The real words.**
+- **Process**; **subprocess** (a process started by another process).
+- **Exit code**, also called **return code** or **exit status**.
+- **Environment variable**: a named setting such as `PATH` or `HOME`.
+- **Timeout**: a time limit.
+
+🎯 **Precisely.**
+- By convention, exit code 0 means success and anything else means some kind of failure. pytest uses 0 for "all passed", 1 for "some failed", 2 for "interrupted", and 5 for "no tests found".
+- Environment variables often hold **secrets**, like `GH_TOKEN`, the key to a GitHub account. Any program you start can read them unless you remove them first.
+- pkv starts pytest as a subprocess with a **minimal environment**: only `PATH`, `HOME` and similar. So a test, or something malicious hidden in a test, can't read your tokens.
+- If the tests run past the timeout, pkv stops the whole **process group**: the tests plus anything they started.
+
+📍 **In our project.** `product/verify/pkv/runner.py`. The self-check `test_runner_hides_secrets_unless_asked` proves the secret is hidden.
+
+🛠 **Try it.** The first line runs `true`, which always succeeds, then prints its exit code. The second does the same with `false`, which always fails.
+
+```bash
+true; echo $?
+```
+
+```bash
+false; echo $?
+```
+
+✅ **Check yourself.** Why does pkv give back exit code 4 for SUSPICIOUS, not 0?
+<details><summary>Answer</summary>Robots like GitHub Actions only read the exit code. Anything other than 0 makes them stop and refuse the change, which is exactly what should happen when tests were weakened.</details>
+
+## Lesson 25. Verdicts and the cost of a wrong "all clear"
+
+🎯 **Precisely.** A checker can make two kinds of mistake:
+- A **false alarm** (a *false positive*): it says "problem" when there isn't one. That's annoying; you lose a few minutes.
+- A **missed problem** (a *false negative*): it says "all clear" when there's a problem. That's dangerous, because broken code ships with a stamp of approval.
+
+pkv is deliberately built to prefer false alarms. Unsure means run more tests, and weaker evidence means UNVERIFIED rather than VERIFIED.
+
+That's also why **"changed code that no test checks"** gives UNVERIFIED. "All tests pass" is true, but says *nothing* about that code. The evidence doesn't cover the claim.
+
+✅ **Check yourself.** Every test passed, but the change deleted one test. Which verdict is right, and why?
+<details><summary>Answer</summary>SUSPICIOUS. The passing result can't be trusted, because the deleted test might be exactly the one that would have failed. Weakened evidence outranks passing tests.</details>
+
+## Lesson 26. Testing the tests: regression tests, dogfooding and mutation testing
+
+🖼 **Picture.**
+- A **regression test** is like a smoke alarm installed in the exact spot where a fire once started.
+- **Dogfooding** is a chef eating their own cooking every day.
+- **Mutation testing** is deliberately leaving the stove on to check the smoke alarm really beeps.
+
+📖 **The real words.**
+- **Regression**: something that used to work breaks again.
+- **Regression test**: a test added *because* a bug was found, so that bug can never quietly return.
+- **Dogfooding**: using your own product yourself.
+- **Mutation testing**: deliberately introducing a bug (a *mutant*) and checking a test fails. If no test fails, the mutant "survived", and your tests have a blind spot.
+
+🎯 **Precisely.** Using pkv on our own project found 5 real mistakes within minutes, and each now has a regression test. Then we broke three safeguards on purpose. Two were caught. The third survived, revealing a missing test, which we added. Now all three are caught.
+
+This is the same honesty principle as our research. A check you've never seen fail could be checking nothing at all, like the `assert True` our product hunts for.
+
+📍 **In our project.** The "found by running pkv on our own project" sections in `product/verify/tests/test_check.py`.
+
+✅ **Check yourself.** You deliberately break the code and every test still passes. What have you learned?
+<details><summary>Answer</summary>Your tests have a blind spot: nothing checks that behaviour. Add a test that fails on the broken version and passes on the correct one.</details>
+
+## Lesson 27. Monorepos and settings files
+
+🎯 **Precisely.**
+- A **monorepo** is one repository holding several projects. Ours holds two: `research/pevo` and `product/verify`.
+- Each project can have its own **settings file** for pytest (`pytest.ini`, or a `[tool.pytest…]` section in `pyproject.toml`).
+- One pytest run uses exactly one settings file, chosen from the folders above the tests it's given.
+- So pkv **groups tests by sub-project** and runs each group separately, with the overall result being the most serious one.
+- The setting `pythonpath = .` tells pytest where a project's own code lives, so the tests can find it from any folder.
+
+📍 **In our project.** `research/pevo/pytest.ini`, `product/verify/pyproject.toml`, and `group_by_project` in `runner.py`.
 
 ---
 

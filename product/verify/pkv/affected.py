@@ -61,6 +61,7 @@ class Selection:
     run_all_reasons: list[str] = field(default_factory=list)
     no_effect: list[str] = field(default_factory=list)
     removed_tests: list[str] = field(default_factory=list)
+    untested_changes: list[str] = field(default_factory=list)
     unreadable: dict[str, str] = field(default_factory=dict)
     dynamic_imports: list[str] = field(default_factory=list)
     changes: list[dict] = field(default_factory=list)
@@ -160,9 +161,45 @@ def select_tests(root, changes: list[Change], graph: ImportGraph | None = None) 
     for c in sorted(came_from):
         if PurePosixPath(c).name == "conftest.py":
             folder = str(PurePosixPath(c).parent)
-            for t in sel.all_tests:
-                if _under(t, folder) and t not in chosen:
-                    chosen[t] = f"{t} uses the shared test settings in {c}, which {tail(c)}"
+            under = [t for t in sel.all_tests if _under(t, folder)]
+            if under:
+                why = tail(c)
+            for t in under:
+                if t not in chosen:
+                    chosen[t] = f"{t} uses the shared test settings in {c}, which {why}"
+
+    # Which changed files does each chosen test really depend on? Follow the
+    # roads *forwards* from the test (and from the shared test settings that
+    # apply to it). A test can depend on several changed files; the reason
+    # above shows one route, so we add how many others there are.
+    conftests = [f for f in graph.files if PurePosixPath(f).name == "conftest.py"]
+
+    def uses_all(start: str) -> set[str]:
+        seen, todo = {start}, [start]
+        while todo:
+            for d in graph.deps.get(todo.pop(), ()):
+                if d not in seen:
+                    seen.add(d)
+                    todo.append(d)
+        return seen
+
+    covered: set[str] = set()
+    for t in list(chosen):
+        reach = uses_all(t)
+        for c in conftests:
+            if _under(t, str(PurePosixPath(c).parent)):
+                reach |= uses_all(c)
+        hit = reach & set(why_seed)
+        covered |= hit
+        if len(hit) > 1:
+            chosen[t] += f" (it also depends on {len(hit) - 1} other changed file(s))"
+
+    # Changed code that no test reaches at all: "tests pass" says nothing about it.
+    sel.untested_changes = sorted(
+        f for f, why in why_seed.items()
+        if why.startswith("was ")  # the file itself changed (not just an importer of a deleted one)
+        and f not in covered and not is_test_file(f) and PurePosixPath(f).name != "conftest.py"
+    )
 
     for path, folder in settings_scopes:
         for t in sel.all_tests:
