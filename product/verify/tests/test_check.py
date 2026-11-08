@@ -9,8 +9,7 @@ from __future__ import annotations
 
 import json
 
-from test_pkv import commit, git, repo, write  # noqa: F401  (repo is a fixture)
-
+from helpers import commit, git, write
 from pkv.cli import main
 from pkv.gitdiff import changed_files, comparison_point
 from pkv.runner import run_tests
@@ -263,3 +262,10 @@ def test_tests_that_cannot_load_are_reported_as_such(repo, capsys):
     out = capsys.readouterr().out
     assert "1 test file(s) could not even be loaded" in out
     assert "Last lines of the test output" in out and "module_that_does_not_exist" in out
+
+
+def test_label_without_value_does_not_crash_the_detector():
+    # Regression (found by strict type checking): `pytestmark: list` has no
+    # value, and the detector used to crash on it instead of giving a verdict.
+    tests, module_skips = read_tests("pytestmark: list\n\ndef test_a():\n    assert 1 == 1\n")
+    assert module_skips == 0 and tests["test_a"].asserts == 1

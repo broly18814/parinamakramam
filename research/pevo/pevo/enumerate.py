@@ -13,10 +13,10 @@ That is hardware-independent and identical across experimental conditions.
 """
 from __future__ import annotations
 
+import time
 from collections import defaultdict
 from dataclasses import dataclass
 from itertools import product
-import time
 
 from .dsl import ALL_TYPES, DATA_TYPES, Invalid, L, Node, apply, value_key
 
@@ -29,7 +29,7 @@ def compositions(total: int, k: int):
         return
     for first in range(1, total - k + 2):
         for rest in compositions(total - first, k - 1):
-            yield (first,) + rest
+            yield (first, *rest)
 
 
 @dataclass
@@ -98,7 +98,7 @@ def enumerate_programs(active, lib, X, budget, targets, x_cost, cost_cap=120):
             for split in compositions(r, k):
                 pools = []
                 ok = True
-                for t, ci in zip(p.args, split):
+                for t, ci in zip(p.args, split, strict=False):
                     pool = banks[t].get(ci)
                     if not pool:
                         ok = False
@@ -112,8 +112,7 @@ def enumerate_programs(active, lib, X, budget, targets, x_cost, cost_cap=120):
                         v = apply(p, [e[1] for e in combo], X, lib)
                     except (Invalid, RecursionError):
                         continue
-                    if admit(Node(p.name, tuple(e[0] for e in combo)), v, p.ret, c):
-                        if n >= budget:
-                            return EnumResult(found, n, max_done, time.perf_counter() - t0)
+                    if admit(Node(p.name, tuple(e[0] for e in combo)), v, p.ret, c) and n >= budget:
+                        return EnumResult(found, n, max_done, time.perf_counter() - t0)
         max_done = c
     return EnumResult(found, n, max_done, time.perf_counter() - t0)

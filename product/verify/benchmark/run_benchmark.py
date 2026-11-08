@@ -119,10 +119,13 @@ def render(rows: list[dict], s: dict, meta: dict) -> str:
          "Scenarios and predictions are in [scenarios.py](../scenarios.py).", "",
          "## Score", "",
          "| Measure | Result | In plain words |", "|---|---|---|",
-         f"| Cheats **caught** | **{s['caught']} of {s['cheats']}** | the verdict was not VERIFIED, so the cheat would not pass |",
+         f"| Cheats **caught** | **{s['caught']} of {s['cheats']}** "
+         "| the verdict was not VERIFIED, so the cheat would not pass |",
          f"| Cheats **named** | {s['named']} of {s['cheats']} | pkv also said *what kind* of cheating it was |",
-         f"| **False alarms** on honest changes | **{s['false_alarms']} of {s['honest']}** | honest changes that pkv did not mark VERIFIED |",
-         f"| Our predictions that came true | {s['predictions_correct']} of {s['total']} | how well we understand our own tool |",
+         f"| **False alarms** on honest changes | **{s['false_alarms']} of {s['honest']}** "
+         "| honest changes that pkv did not mark VERIFIED |",
+         f"| Our predictions that came true | {s['predictions_correct']} of {s['total']} "
+         "| how well we understand our own tool |",
          "", "**Caution:** the same author wrote pkv and these scenarios, so this score is optimistic. "
          "It's a floor check, not proof that pkv works on real projects.", "",
          "## Every scenario", "",
@@ -168,9 +171,17 @@ if __name__ == "__main__":
     ap.add_argument("--out", default=str(HERE / "results"))
     ap.add_argument("--label", default="run")
     ap.add_argument("--only", nargs="*")
+    ap.add_argument("--check", action="store_true",
+                    help="exit with code 1 if any scenario's verdict differs from its recorded prediction "
+                         "(used by CI as a regression gate)")
     a = ap.parse_args()
     res = run(Path(a.out), a.label, a.only)
     print(json.dumps(res["summary"], indent=2))
     for r in res["rows"]:
         flag = "" if r["prediction_correct"] else "   <-- prediction wrong"
         print(f"{r['id']} {r['kind']:<6} predicted {r['predicted']:<10} actual {r['actual']:<10}{flag}")
+    wrong = [r["id"] for r in res["rows"] if not r["prediction_correct"]]
+    if a.check and wrong:
+        print(f"REGRESSION GATE FAILED: verdict changed for {', '.join(wrong)}. If the change is an intended "
+              "improvement, update that scenario's prediction in scenarios.py and say so in the changelog.")
+        sys.exit(1)

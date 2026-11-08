@@ -44,7 +44,7 @@ def parse_seeds(s):
 
 def code_hashes():
     h = {}
-    for p in sorted((HERE / "pevo").glob("*.py")) + [HERE / "run_exp001.py"]:
+    for p in [*sorted((HERE / "pevo").glob("*.py")), HERE / "run_exp001.py"]:
         h[str(p.relative_to(HERE))] = hashlib.sha256(p.read_bytes()).hexdigest()[:16]
     return h
 
@@ -111,23 +111,26 @@ def summarise(rows, conds):
 
 
 def to_md(S, meta):
-    lines = [f"# EXP-001 summary\n", f"Generated {meta['timestamp']} · budget {meta['config']['budget']} values/round · "
+    lines = ["# EXP-001 summary\n", f"Generated {meta['timestamp']} · budget {meta['config']['budget']} values/round · "
              f"rounds {meta['config']['rounds']} · seeds {meta['seeds']}\n",
              "Metric: strict test solve rate (correct on 6 training inputs AND 4 held-out inputs), "
              "final round. CI = bootstrap over seeds.\n"]
     for dist, E in S.items():
         lines.append(f"\n## D-{dist}\n")
-        lines.append("| condition | test solve | 95% CI | Δ vs C0 [95% CI] (W/T/L) | Δ vs C1 [95% CI] | by level | compute (values) |")
+        lines.append("| condition | test solve | 95% CI | Δ vs C0 [95% CI] (W/T/L) | Δ vs C1 [95% CI] "
+                     "| by level | compute (values) |")
         lines.append("|---|---|---|---|---|---|---|")
         for c, e in E.items():
-            def fmt(key):
+            def fmt(key, e=e):
                 if key not in e:
                     return "—"
                 d = e[key]
-                return f"{d['mean']*100:+.1f} pp [{d['ci95'][0]*100:+.1f}, {d['ci95'][1]*100:+.1f}] ({d['wins']}/{d['ties']}/{d['losses']})"
+                return (f"{d['mean']*100:+.1f} pp [{d['ci95'][0]*100:+.1f}, {d['ci95'][1]*100:+.1f}] "
+                        f"({d['wins']}/{d['ties']}/{d['losses']})")
             lv = ", ".join(f"L{k}:{v*100:.0f}%" for k, v in e["by_level"].items())
             lines.append(f"| {c} | {e['mean']*100:.1f}% | [{e['ci95'][0]*100:.1f}, {e['ci95'][1]*100:.1f}] | "
-                         f"{fmt('diff_vs_C0_fixed')} | {fmt('diff_vs_C1_compose')} | {lv} | {e['mean_compute_values']:.0f} |")
+                         f"{fmt('diff_vs_C0_fixed')} | {fmt('diff_vs_C1_compose')} | {lv} "
+                         f"| {e['mean_compute_values']:.0f} |")
     return "\n".join(lines) + "\n"
 
 

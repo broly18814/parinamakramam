@@ -22,9 +22,18 @@ import random
 from collections import Counter, defaultdict
 from itertools import combinations
 
-from .dsl import (DATA_TYPES, FUNC_TYPES, Invalid, L, Node, eval_tree, hole,
-                  hole_index, hole_type, make_abstraction, node_type)
-
+from .dsl import (
+    DATA_TYPES,
+    Invalid,
+    L,
+    Node,
+    eval_tree,
+    hole,
+    hole_index,
+    hole_type,
+    make_abstraction,
+    node_type,
+)
 
 # ------------------------------------------------------------ generalisation
 
@@ -32,7 +41,7 @@ def _positions(node: Node, max_depth: int, path=()):
     """Paths to proper descendants up to max_depth."""
     out = []
     for i, k in enumerate(node.kids):
-        p = path + (i,)
+        p = (*path, i)
         out.append(p)
         if len(p) < max_depth:
             out.extend(_positions(k, max_depth, p))
@@ -50,7 +59,7 @@ def _replace(node: Node, repl: dict, path=()):
         return repl[path]
     if not node.kids:
         return node
-    return Node(node.op, tuple(_replace(k, repl, path + (i,)) for i, k in enumerate(node.kids)))
+    return Node(node.op, tuple(_replace(k, repl, (*path, i)) for i, k in enumerate(node.kids)))
 
 
 def _nested(a, b):
@@ -69,7 +78,7 @@ def generalisations(node: Node, lib, allowed_hole_types, max_holes=2, max_depth=
             if any(t not in allowed_hole_types for t in types):
                 continue
             # holes numbered in preorder (combinations of a preorder list keep order)
-            repl = {p: hole(i, t) for i, (p, t) in enumerate(zip(subset, types))}
+            repl = {p: hole(i, t) for i, (p, t) in enumerate(zip(subset, types, strict=False))}
             frag = _replace(node, repl)
             if frag.size() >= 2:
                 yield frag
@@ -88,7 +97,7 @@ def match(frag: Node, node: Node, lib, binds: dict) -> bool:
         return True
     if frag.op != node.op or len(frag.kids) != len(node.kids):
         return False
-    return all(match(f, n, lib, binds) for f, n in zip(frag.kids, node.kids))
+    return all(match(f, n, lib, binds) for f, n in zip(frag.kids, node.kids, strict=False))
 
 
 def rewrite(tree: Node, name: str, body: Node, lib) -> Node:
@@ -168,7 +177,7 @@ def fit_costs(corpus_trees, active_names, alpha=1.0, x_name="x"):
     for t in corpus_trees:
         for n in t.nodes():
             cnt[n.op] += 1
-    names = list(active_names) + [x_name]
+    names = [*list(active_names), x_name]
     total = sum(cnt[n] for n in names) + alpha * len(names)
     return {n: max(1, round(-math.log2((cnt[n] + alpha) / total))) for n in names}
 
@@ -176,7 +185,7 @@ def fit_costs(corpus_trees, active_names, alpha=1.0, x_name="x"):
 def uniform_costs(active_names, x_name="x"):
     m = len(active_names) + 1
     c = max(1, round(math.log2(m)))
-    return {n: c for n in list(active_names) + [x_name]}
+    return {n: c for n in [*list(active_names), x_name]}
 
 
 # ------------------------------------------------------------ random control
@@ -214,7 +223,7 @@ def random_fragment(rng: random.Random, lib, active_names, X, tries=200):
         try:
             # evaluate with holes bound to x / a plausible value
             env = []
-            for i, t in [(hole_index(n.op), hole_type(n.op)) for n in frag.nodes() if n.op[0] == "#"]:
+            for _i, t in [(hole_index(n.op), hole_type(n.op)) for n in frag.nodes() if n.op[0] == "#"]:
                 env.append(X if t == L else tuple(len(a) for a in X))
             eval_tree(frag, X, lib, env=env)
         except (Invalid, KeyError, IndexError):

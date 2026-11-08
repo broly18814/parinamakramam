@@ -14,9 +14,11 @@ Running too many tests wastes a little time; running too few can hide a bug.
 from __future__ import annotations
 
 import fnmatch
+import os
 from collections import deque
 from dataclasses import asdict, dataclass, field
 from pathlib import PurePosixPath
+from typing import Any
 
 from .gitdiff import Change
 from .imports import ImportGraph, build_graph, module_names
@@ -64,13 +66,14 @@ class Selection:
     untested_changes: list[str] = field(default_factory=list)
     unreadable: dict[str, str] = field(default_factory=dict)
     dynamic_imports: list[str] = field(default_factory=list)
-    changes: list[dict] = field(default_factory=list)
+    changes: list[dict[str, Any]] = field(default_factory=list)
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
 
-def select_tests(root, changes: list[Change], graph: ImportGraph | None = None) -> Selection:
+def select_tests(root: str | os.PathLike[str], changes: list[Change],
+                 graph: ImportGraph | None = None) -> Selection:
     graph = graph or build_graph(root)
     existing = set(graph.files)
     sel = Selection(changes=[asdict(c) for c in changes])
@@ -88,7 +91,7 @@ def select_tests(root, changes: list[Change], graph: ImportGraph | None = None) 
     settings_scopes: list[tuple[str, str]] = []  # (settings file, folder it governs)
     events: list[tuple[str, str]] = []
     for c in changes:
-        if c.status == "renamed":
+        if c.status == "renamed" and c.old_path:
             events.append((c.old_path, "deleted (renamed away)"))
             events.append((c.path, f"renamed from {c.old_path}"))
         else:
@@ -146,8 +149,10 @@ def select_tests(root, changes: list[Change], graph: ImportGraph | None = None) 
         """Why f is affected, as the end of a sentence about f:
         'was modified', or 'uses a.py, which uses b.py, which was modified'."""
         chain = [f]
-        while came_from[chain[-1]] is not None:
-            chain.append(came_from[chain[-1]])
+        nxt = came_from[f]
+        while nxt is not None:
+            chain.append(nxt)
+            nxt = came_from[nxt]
         if len(chain) == 1:
             return why_seed[f]
         return "uses " + ", which uses ".join(chain[1:]) + ", which " + why_seed[chain[-1]]
@@ -158,15 +163,14 @@ def select_tests(root, changes: list[Change], graph: ImportGraph | None = None) 
             chosen[f] = f"{f} {tail(f)}"
     # A conftest.py holds shared test settings for every test in its folder
     # and below. If the dye reached one, all those tests are affected.
-    for c in sorted(came_from):
-        if PurePosixPath(c).name == "conftest.py":
-            folder = str(PurePosixPath(c).parent)
+    for cf in sorted(came_from):
+        if PurePosixPath(cf).name == "conftest.py":
+            folder = str(PurePosixPath(cf).parent)
             under = [t for t in sel.all_tests if _under(t, folder)]
-            if under:
-                why = tail(c)
+            why = tail(cf) if under else ""
             for t in under:
                 if t not in chosen:
-                    chosen[t] = f"{t} uses the shared test settings in {c}, which {why}"
+                    chosen[t] = f"{t} uses the shared test settings in {cf}, which {why}"
 
     # Which changed files does each chosen test really depend on? Follow the
     # roads *forwards* from the test (and from the shared test settings that
@@ -186,9 +190,9 @@ def select_tests(root, changes: list[Change], graph: ImportGraph | None = None) 
     covered: set[str] = set()
     for t in list(chosen):
         reach = uses_all(t)
-        for c in conftests:
-            if _under(t, str(PurePosixPath(c).parent)):
-                reach |= uses_all(c)
+        for cf in conftests:
+            if _under(t, str(PurePosixPath(cf).parent)):
+                reach |= uses_all(cf)
         hit = reach & set(why_seed)
         covered |= hit
         if len(hit) > 1:

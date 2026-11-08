@@ -148,7 +148,7 @@ class ImportGraph:
         return exact or cands
 
 
-def build_graph(root: str | os.PathLike) -> ImportGraph:
+def build_graph(root: str | os.PathLike[str]) -> ImportGraph:
     root = Path(root)
     files = python_files(root)
     g = ImportGraph(root=root, files=files)

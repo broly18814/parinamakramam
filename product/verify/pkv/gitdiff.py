@@ -20,7 +20,6 @@ import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 
-
 # pkv keeps its own receipts here. They are never counted as "changes" and
 # never part of the fingerprint, so saving a receipt can't make it stale.
 PKV_DIR = ".pkv"
@@ -34,7 +33,7 @@ class GitError(RuntimeError):
     """git refused or failed. The message says why in plain words."""
 
 
-def _git(repo: Path, *args: str, env: dict | None = None) -> bytes:
+def _git(repo: Path, *args: str, env: dict[str, str] | None = None) -> bytes:
     result = subprocess.run(
         ["git", "-C", str(repo), *args], capture_output=True, env=env
     )
@@ -44,7 +43,7 @@ def _git(repo: Path, *args: str, env: dict | None = None) -> bytes:
     return result.stdout
 
 
-def repo_root(path: str | os.PathLike = ".") -> Path:
+def repo_root(path: str | os.PathLike[str] = ".") -> Path:
     """Return the top folder of the git repository that contains `path`."""
     try:
         out = _git(Path(path), "rev-parse", "--show-toplevel")
@@ -121,7 +120,7 @@ def comparison_point(root: Path, base: str | None) -> str | None:
     return base
 
 
-def changed_files(repo: str | os.PathLike = ".", base: str | None = None) -> list[Change]:
+def changed_files(repo: str | os.PathLike[str] = ".", base: str | None = None) -> list[Change]:
     """List every file that differs between the comparison point and the
     files on disk right now: committed, staged, unsaved edits, and brand-new
     files not yet known to git (ignored files excluded)."""
@@ -144,7 +143,7 @@ def changed_files(repo: str | os.PathLike = ".", base: str | None = None) -> lis
     return sorted(changes, key=lambda c: (c.path, c.status))
 
 
-def tree_hash(repo: str | os.PathLike = ".", exclude: tuple[str, ...] = ()) -> str:
+def tree_hash(repo: str | os.PathLike[str] = ".", exclude: tuple[str, ...] = ()) -> str:
     """Fingerprint of the code exactly as it is on disk now.
 
     How: start an EMPTY temporary staging list (git calls it the *index*),

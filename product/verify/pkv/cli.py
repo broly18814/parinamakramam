@@ -25,14 +25,14 @@ import sys
 from pathlib import Path
 
 from . import __version__
-from .affected import select_tests
+from .affected import Selection, select_tests
 from .gitdiff import GitError, changed_files, comparison_point, repo_root, tree_hash
 from .report import EXIT_CODES, build_evidence, decide, render
 from .runner import run_tests
 from .tamper import find_tampering
 
 
-def _print_affected(sel, base: str | None) -> None:
+def _print_affected(sel: Selection, base: str | None) -> None:
     out = print
     out(f"Parinama Verify {__version__}: which tests could this change affect?")
     out(f"Compared with: {base or 'your last commit (HEAD)'}\n")
@@ -73,7 +73,7 @@ def _print_affected(sel, base: str | None) -> None:
     out("\nNothing was run. This version only selects tests.")
 
 
-def _check(args) -> int:
+def _check(args: argparse.Namespace) -> int:
     root = repo_root(args.repo)
     # Receipt files we are about to write are not part of the user's change.
     receipts = [r for r in (_inside(root, f) for f in (args.json, args.md) if f) if r]
@@ -113,7 +113,7 @@ def _inside(root: Path, f: str) -> str | None:
         return None
 
 
-def _fresh(args) -> int:
+def _fresh(args: argparse.Namespace) -> int:
     try:
         with open(args.evidence, encoding="utf-8") as fh:
             ev = json.load(fh)

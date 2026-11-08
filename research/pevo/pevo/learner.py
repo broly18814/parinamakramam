@@ -23,12 +23,29 @@ admitted by the enumerator).  Round 0 is identical across conditions.
 from __future__ import annotations
 
 import random
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
-from .abstraction import (fit_costs, propose, random_fragment, register, rewrite,
-                          score_candidates, uniform_costs)
-from .dsl import (ALL_TYPES, DATA_TYPES, L, Invalid, base_prods, eval_tree, hole, inline,
-                  make_abstraction, value_key)
+from .abstraction import (
+    fit_costs,
+    propose,
+    random_fragment,
+    register,
+    rewrite,
+    score_candidates,
+    uniform_costs,
+)
+from .dsl import (
+    ALL_TYPES,
+    DATA_TYPES,
+    Invalid,
+    L,
+    base_prods,
+    eval_tree,
+    hole,
+    inline,
+    make_abstraction,
+    value_key,
+)
 from .enumerate import enumerate_programs
 
 
@@ -142,7 +159,7 @@ def run_condition(cond: Condition, cfg: RunConfig, Xtr, Xho, train, test, seed: 
         if gate_note:
             events.append({"round": r, "event": gate_note})
 
-        def rate(tasks, key="strict"):
+        def rate(tasks, key="strict", info=info):
             if not tasks:
                 return 0.0
             return sum(1 for t in tasks if info.get(t.tid, {}).get(key)) / len(tasks)
@@ -174,7 +191,7 @@ def run_condition(cond: Condition, cfg: RunConfig, Xtr, Xho, train, test, seed: 
                                      name_for=lambda i, r=r: f"a{r}_{i}",
                                      blacklist=frozenset(blacklist), existing_bodies=frozenset(existing),
                                      max_holes=cfg.max_holes, max_depth=cfg.max_depth)
-            for name, body, stats in chosen:
+            for name, body, _stats in chosen:
                 lib[name].meta.update({"round": r, "status": "active",
                                        "inlined_size": inline(body, lib).size()})
                 active.append(name)
@@ -183,7 +200,7 @@ def run_condition(cond: Condition, cfg: RunConfig, Xtr, Xho, train, test, seed: 
         elif cond.abstraction == "search":
             train_ids = [t.tid for t in learn + val]
 
-            def train_score(names, corp):
+            def train_score(names, corp, train_ids=train_ids):
                 nonlocal total_values
                 cm = fit_costs(corp.values(), names, alpha=cfg.alpha)
                 rs, inf = evaluate(names, cm)
@@ -200,7 +217,7 @@ def run_condition(cond: Condition, cfg: RunConfig, Xtr, Xho, train, test, seed: 
                 for j, (frag, stats) in enumerate(cands[: cfg.search_top_m]):
                     cname = f"s{r}_{i}_{j}"
                     corp2 = register(cname, frag, stats, corpus, lib)
-                    sc = train_score(active + [cname], corp2)
+                    sc = train_score([*active, cname], corp2)
                     n_eval += 1
                     if best is None or sc > best[0]:
                         if best is not None:

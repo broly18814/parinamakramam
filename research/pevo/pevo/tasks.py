@@ -121,9 +121,9 @@ def _random_tree(rng, t, size, lib, base_names):
     mins = [MIN[a] for a in args]
     extra = rem - sum(mins)
     cuts = sorted(rng.randint(0, extra) for _ in range(len(args) - 1))
-    parts = [b - a for a, b in zip([0] + cuts, cuts + [extra])]
+    parts = [b - a for a, b in zip([0, *cuts], [*cuts, extra], strict=False)]
     kids = []
-    for a, m, e in zip(args, mins, parts):
+    for a, m, e in zip(args, mins, parts, strict=False):
         k = _random_tree(rng, a, m + e, lib, base_names)
         if k is None:
             return None

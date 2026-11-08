@@ -1,0 +1,24 @@
+# Lint rules for the whole repository (ruff: https://docs.astral.sh/ruff/).
+# Plain words: an automatic reviewer that flags likely bugs, unused code and
+# inconsistent style. CI fails if any rule below is broken.
+target-version = "py310"
+line-length = 120
+
+[lint]
+select = [
+    "E", "W",   # pycodestyle: basic style errors and warnings
+    "F",        # pyflakes: unused names, undefined names, real mistakes
+    "I",        # isort: consistent import order
+    "B",        # bugbear: patterns that are often bugs
+    "UP",       # pyupgrade: modern Python syntax
+    "SIM",      # simplify: needlessly complicated code
+    "RUF",      # ruff's own checks
+]
+ignore = [
+    "SIM108",   # if/else blocks are often clearer than one-line ternaries
+]
+
+[lint.per-file-ignores]
+# The DSL uses the established type names L, I, FII, FIB from the research
+# write-up (R001); renaming them would make the code harder to check against it.
+"research/pevo/pevo/dsl.py" = ["E741"]

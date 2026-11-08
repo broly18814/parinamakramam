@@ -23,6 +23,7 @@ import ast
 import subprocess
 from dataclasses import asdict, dataclass
 from pathlib import Path, PurePosixPath
+from typing import Any
 
 from .affected import is_test_file
 from .gitdiff import Change
@@ -41,7 +42,7 @@ class Finding:
     message: str
     test: str | None = None
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
 
@@ -50,7 +51,7 @@ class TestInfo:
     asserts: int = 0
     skips: int = 0
     tautologies: int = 0
-    literals: tuple = ()
+    literals: tuple[str, ...] = ()
 
 
 def _dotted(node: ast.AST) -> str:
@@ -81,7 +82,7 @@ def _is_tautology(test: ast.AST) -> bool:
 
 def _count_checks(fn: ast.AST) -> TestInfo:
     info = TestInfo()
-    lits: list = []
+    lits: list[str] = []
     for node in ast.walk(fn):
         if isinstance(node, ast.Assert):
             info.asserts += 1
@@ -119,7 +120,9 @@ def read_tests(source: str) -> tuple[dict[str, TestInfo], int]:
                     tests[f"{node.name}::{item.name}"] = _count_checks(item)
         elif isinstance(node, (ast.Assign, ast.AnnAssign)):
             targets = node.targets if isinstance(node, ast.Assign) else [node.target]
-            if any(isinstance(t, ast.Name) and t.id == "pytestmark" for t in targets):
+            # `pytestmark: list` (a label with no value) has value None: nothing to count.
+            if node.value is not None and any(isinstance(t, ast.Name) and t.id == "pytestmark"
+                                              for t in targets):
                 module_skips += sum(1 for n in ast.walk(node.value) if _is_skip(n))
         elif isinstance(node, ast.Expr) and isinstance(node.value, ast.Call) and _is_skip(node.value.func):
             module_skips += 1  # pytest.skip(..., allow_module_level=True)

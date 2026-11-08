@@ -31,6 +31,7 @@ import xml.etree.ElementTree as ET
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any
 
 from .gitdiff import _git, tree_hash
 
@@ -94,7 +95,7 @@ class RunRecord:
     def changed_during_run(self) -> bool:
         return self.tree_hash_before != self.tree_hash_after
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> dict[str, Any]:
         d = asdict(self)
         d["changed_during_run"] = self.changed_during_run
         return d
@@ -166,7 +167,7 @@ def read_junit(path: Path) -> tuple[dict[str, int], list[str]]:
     return counts, failed
 
 
-def _run_one(root: Path, cmd: list[str], env: dict, timeout: float) -> tuple[int | None, bool, str]:
+def _run_one(root: Path, cmd: list[str], env: dict[str, str], timeout: float) -> tuple[int | None, bool, str]:
     proc = subprocess.Popen(cmd, cwd=root, env=env, stdout=subprocess.PIPE,
                             stderr=subprocess.STDOUT, start_new_session=True)
     try:
@@ -181,7 +182,7 @@ def _run_one(root: Path, cmd: list[str], env: dict, timeout: float) -> tuple[int
         return None, True, out.decode(errors="replace")
 
 
-def run_tests(root: str | os.PathLike, tests: list[str], *, timeout: float = 600,
+def run_tests(root: str | os.PathLike[str], tests: list[str], *, timeout: float = 600,
               python: str | None = None, keep_env: list[str] | None = None,
               extra_args: list[str] | None = None,
               exclude: tuple[str, ...] = ()) -> RunRecord:
@@ -191,7 +192,11 @@ def run_tests(root: str | os.PathLike, tests: list[str], *, timeout: float = 600
     env = minimal_env(keep_env)
     before = tree_hash(root, exclude)
     started, t0 = now_iso(), time.monotonic()
-    commands, codes, outcomes, tails, failed = [], [], [], [], []
+    commands: list[list[str]] = []
+    codes: list[int | None] = []
+    outcomes: list[str] = []
+    tails: list[str] = []
+    failed: list[str] = []
     counts = {"passed": 0, "failed": 0, "errors": 0, "skipped": 0, "xfailed": 0}
     timed_out = False
     with tempfile.TemporaryDirectory() as td:
@@ -206,7 +211,10 @@ def run_tests(root: str | os.PathLike, tests: list[str], *, timeout: float = 600
                 counts[k] += c[k]
             failed += f
             timed_out |= hung
-            outcome = "timed-out" if hung else PYTEST_EXIT.get(code, f"exit-{code}")
+            if hung or code is None:
+                outcome = "timed-out"
+            else:
+                outcome = PYTEST_EXIT.get(code, f"exit-{code}")
             outcomes.append(outcome)
             codes.append(code)
             commands.append([("--junitxml=<temporary file>" if a.startswith("--junitxml=") else a)
@@ -222,7 +230,7 @@ def run_tests(root: str | os.PathLike, tests: list[str], *, timeout: float = 600
         diff = _git(root, "diff-tree", "-r", "--name-only", "-z", before, after)
         changed = [p for p in diff.decode().split("\0") if p]
     # Show output from groups that did not pass; if all passed, the first one.
-    bad = [t for t, o in zip(tails, outcomes) if o != "passed"] if len(tails) > 1 else tails
+    bad = [t for t, o in zip(tails, outcomes, strict=True) if o != "passed"] if len(tails) > 1 else tails
     return RunRecord(
         commands=commands, exit_codes=codes, python=py, started_at=started,
         finished_at=now_iso(), duration_s=duration, outcome=_overall(outcomes),

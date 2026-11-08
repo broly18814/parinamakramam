@@ -1,11 +1,21 @@
-import random
 
 import pytest
-
-from pevo.abstraction import (fit_costs, generalisations, rewrite, score_candidates,
-                              uniform_costs)
-from pevo.dsl import (ALL_TYPES, DATA_TYPES, FII, L, Fn, Invalid, Node, base_prods, eval_tree,
-                      hole, inline, make_abstraction, value_key)
+from pevo.abstraction import fit_costs, generalisations, rewrite, score_candidates, uniform_costs
+from pevo.dsl import (
+    ALL_TYPES,
+    DATA_TYPES,
+    FII,
+    Fn,
+    Invalid,
+    L,
+    Node,
+    base_prods,
+    eval_tree,
+    hole,
+    inline,
+    make_abstraction,
+    value_key,
+)
 from pevo.enumerate import compositions, enumerate_programs
 from pevo.learner import CONDITIONS, RunConfig, run_condition
 from pevo.tasks import build_suite
@@ -60,7 +70,7 @@ def test_enumerator_finds_target_and_is_deduplicated(lib):
     target = eval_tree(N("reverse", (N("sort", (N("x"),)),)), X, lib)
     res = enumerate_programs([lib[n] for n in active], lib, X, 5000,
                              {(L, target): ["t"]}, costs["x"])
-    node, c, idx = res.found["t"]
+    node, _c, idx = res.found["t"]
     assert eval_tree(node, X, lib) == target
     assert res.n_values <= 5000
     # determinism
@@ -91,7 +101,9 @@ def test_rewrite_preserves_semantics(lib):
 
 
 def test_score_candidates_finds_planted_fragment(lib):
-    planted = lambda inner: N("map", (N("half"), N("dedup", (inner,))))
+    def planted(inner):
+        return N("map", (N("half"), N("dedup", (inner,))))
+
     corpus = {f"t{i}": N("sum", (planted(N(op, (N("x"),))),))
               for i, op in enumerate(["sort", "reverse", "tail", "sort", "reverse"])}
     cands = score_candidates(corpus, lib, DATA_TYPES)
@@ -109,7 +121,7 @@ def test_fit_costs_rewards_frequency():
 
 def test_suites_share_inputs_and_hold_out_sequences(lib):
     Xa, Ha, tr, te = build_suite("struct", 3, lib)
-    Xb, Hb, tr2, te2 = build_suite("flat", 3, lib)
+    Xb, Hb, _tr2, _te2 = build_suite("flat", 3, lib)
     assert Xa == Xb and Ha == Hb
     sigs = [(t.rtype, value_key(t.y_train, t.rtype)) for t in tr + te]
     assert len(sigs) == len(set(sigs))
@@ -131,8 +143,28 @@ def test_round0_identical_and_runs_deterministic():
     assert again["test_per_task"] == outs["C3_evolve"]["test_per_task"]
     # C0 never changes
     assert len({r["test_strict"] for r in outs["C0_fixed"]["rounds"]}) == 1
-    # every reported solution really solves its task on the training inputs
-    by = {t.tid: t for t in te}
+    # bookkeeping is consistent: a task counted as solved on held-out inputs
+    # ("strict") must also have a found program. (That each found program
+    # really is correct is checked independently in the next test.)
     for o in outs.values():
-        for tid, v in o["test_per_task"].items():
+        for v in o["test_per_task"].values():
             assert v["found"] or not v["strict"]
+            assert (v["program"] is not None) == v["found"]
+
+
+def test_every_solution_the_search_reports_really_solves_its_task(lib):
+    # Independent check: re-run each program the search claims to have found
+    # and confirm it reproduces that task's training outputs exactly.
+    Xtr, _xho, tr, te = build_suite("struct", 5, lib)
+    active = sorted(lib)
+    costs = uniform_costs(active)
+    for n in active:
+        lib[n].cost = costs[n]
+    by_id = {t.tid: t for t in tr + te}
+    targets: dict = {}
+    for t in tr + te:
+        targets.setdefault((t.rtype, value_key(t.y_train, t.rtype)), []).append(t.tid)
+    res = enumerate_programs([lib[n] for n in active], lib, Xtr, 3000, targets, costs["x"])
+    assert res.found, "the search should solve at least some tasks"
+    for tid, (node, _cost, _index) in res.found.items():
+        assert eval_tree(node, Xtr, lib) == by_id[tid].y_train, tid

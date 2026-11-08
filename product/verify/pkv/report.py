@@ -15,6 +15,9 @@ Every sentence in the report comes from recorded data, never from an AI.
 
 from __future__ import annotations
 
+import os
+from typing import Any
+
 from .affected import Selection
 from .runner import RunRecord, now_iso
 from .tamper import Finding
@@ -59,7 +62,7 @@ def decide(sel: Selection, run: RunRecord | None, findings: list[Finding],
         unverified.append("changed code that no test checks: " + ", ".join(sel.untested_changes))
 
     if suspicious:
-        return "SUSPICIOUS", [f"{len(suspicious)} sign(s) that the tests were weakened"] + failed + unverified
+        return "SUSPICIOUS", [f"{len(suspicious)} sign(s) that the tests were weakened", *failed, *unverified]
     if failed:
         return "FAILED", failed + unverified
     if unverified:
@@ -68,13 +71,14 @@ def decide(sel: Selection, run: RunRecord | None, findings: list[Finding],
         return "VERIFIED", ["there are no changes to check"]
     if not sel.tests:
         return "VERIFIED", ["nothing that tests could check was changed"]
-    return "VERIFIED", [f"all {run.counts.get('passed', 0)} test(s) affected by the change passed, "
+    passed = run.counts.get("passed", 0) if run else 0
+    return "VERIFIED", [f"all {passed} test(s) affected by the change passed, "
                         "on exactly this code"]
 
 
-def build_evidence(*, root, base, ref, version, sel: Selection, run: RunRecord | None,
-                   findings: list[Finding], verdict: str, reasons: list[str],
-                   tree_hash_now: str) -> dict:
+def build_evidence(*, root: str | os.PathLike[str], base: str | None, ref: str | None, version: str,
+                   sel: Selection, run: RunRecord | None, findings: list[Finding], verdict: str,
+                   reasons: list[str], tree_hash_now: str) -> dict[str, Any]:
     return {
         "tool": "parinama-verify",
         "version": version,
@@ -94,7 +98,7 @@ def build_evidence(*, root, base, ref, version, sel: Selection, run: RunRecord |
 ICON = {"VERIFIED": "✅", "FAILED": "❌", "UNVERIFIED": "❓", "SUSPICIOUS": "⚠️"}
 
 
-def render(ev: dict) -> str:
+def render(ev: dict[str, Any]) -> str:
     """The receipt as Markdown, which also reads fine as plain text."""
     sel, run = ev["selection"], ev["run"]
     L: list[str] = []
@@ -117,7 +121,7 @@ def render(ev: dict) -> str:
     if findings:
         L.append("\n## Signs the tests were weakened, and other things to review")
         for f in findings:
-            mark = "⚠️ suspicious" if f["severity"] == "suspicious" else "ℹ️ notice"
+            mark = "suspicious" if f["severity"] == "suspicious" else "notice"
             L.append(f"- **{mark}:** {f['message']}")
 
     L.append("\n## Which tests, and why")

@@ -18,8 +18,8 @@ body tree; they are evaluated by substituting argument values for holes.
 """
 from __future__ import annotations
 
+from collections.abc import Callable
 from dataclasses import dataclass, field
-from typing import Callable, Optional
 
 L, I, FII, FIB = "L", "I", "FII", "FIB"
 DATA_TYPES = (L, I)
@@ -45,7 +45,7 @@ class Fn:
         try:
             self.sig = tuple(f(v) for v in PROBE)
         except (ZeroDivisionError, OverflowError, ValueError) as e:  # pragma: no cover
-            raise Invalid(str(e))
+            raise Invalid(str(e)) from e
 
     def __eq__(self, other):
         return isinstance(other, Fn) and self.sig == other.sig
@@ -91,8 +91,8 @@ class Prod:
     name: str
     ret: str
     args: tuple
-    impl: Optional[Callable] = None  # per-example implementation (base prods)
-    body: Optional[Node] = None  # abstraction body (learned prods)
+    impl: Callable | None = None  # per-example implementation (base prods)
+    body: Node | None = None  # abstraction body (learned prods)
     cost: int = 5
     kind: str = "base"  # "base" | "learned" | "random"
     meta: dict = field(default_factory=dict)
@@ -188,12 +188,12 @@ def apply(prod: Prod, argvals, X, lib: dict):
     chk = _chk_list if prod.ret == L else _chk_int
     # Build per-example argument lists: function args are broadcast.
     cols = []
-    for a, t in zip(argvals, prod.args):
+    for a, t in zip(argvals, prod.args, strict=False):
         if t in FUNC_TYPES:
             cols.append(None)
         else:
             cols.append(a)
-    fargs = [a.f if t in FUNC_TYPES else None for a, t in zip(argvals, prod.args)]
+    fargs = [a.f if t in FUNC_TYPES else None for a, t in zip(argvals, prod.args, strict=False)]
     out = []
     for i in range(len(X)):
         call = [fargs[j] if cols[j] is None else cols[j][i] for j in range(len(cols))]
