@@ -81,9 +81,12 @@ def run_scenario(sc: Scenario, work: Path) -> dict:
     notices = sorted({f["kind"] for f in ev["findings"] if f["severity"] == "notice"})
     if sc.kind == "cheat":
         caught = actual != "VERIFIED" and actual != "FRESH"
-        named = caught and (not sc.predicted_kinds or set(sc.predicted_kinds) <= set(kinds))
+        # Registered rule: "named" needs a suspicious finding of the expected
+        # kind (or, for the stale-receipt trick, `pkv fresh` saying STALE).
         if sc.after_receipt_edits:
             named = actual == "STALE"
+        else:
+            named = caught and bool(sc.predicted_kinds) and set(sc.predicted_kinds) <= set(kinds)
     else:
         caught = named = None
     return {

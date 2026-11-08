@@ -283,3 +283,31 @@ def test_command_json_and_errors(repo, tmp_path, capsys):
 def test_command_fingerprint(repo, capsys):
     assert main(["fingerprint", "--repo", str(repo)]) == 0
     assert capsys.readouterr().out.strip() == tree_hash(repo)
+
+
+def test_fingerprint_sees_same_size_edits_made_in_the_same_second(repo):
+    """Regression for the "racy git" bug found by BENCH-001.
+
+    git compares file save times to the whole second. If a file is edited
+    to the same size within the same second it was committed, and the
+    fingerprint is taken in a LATER second, a copied index makes git trust
+    its cached record and fingerprint the OLD contents. We create exactly
+    that situation and require the fingerprint to see the new contents.
+    """
+    import os
+    import time
+
+    target = repo / "app/utils.py"
+    for attempt in range(5):
+        time.sleep(1 - (time.time() % 1) + 0.01)  # start just after a second boundary
+        write(repo, {"app/utils.py": f"X = {attempt}\n"})
+        commit(repo, f"v{attempt}")
+        old_second = int(os.stat(target).st_mtime)
+        target.write_text(f"Y = {attempt}\n")  # same size, same second
+        if int(os.stat(target).st_mtime) != old_second:
+            continue  # the edit slipped into the next second; try again
+        time.sleep(1.1)  # take the fingerprint in a later second
+        head_tree = git(repo, "rev-parse", "HEAD^{tree}").strip()
+        assert tree_hash(repo) != head_tree, "fingerprint described the old contents"
+        return
+    pytest.skip("could not create the same-second edit on this machine")

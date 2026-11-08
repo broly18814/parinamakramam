@@ -102,7 +102,7 @@ Use records from our checker tool. Only public code whose licence allows it.
 
 ## BENCH-001: The checker's practice set (product benchmark)
 
-- **Status:** 📝 pre-registered on 8 November 2026. The predictions were saved to GitHub *before* the first run, so the snapshot's timestamp proves they came first.
+- **Status:** ✅ run on 8 November 2026. The predictions were saved to GitHub *before* the first run (snapshot `58679db`), so the timestamp proves they came first.
 - **The question:** How many planted cheats does pkv 0.0.1 catch, and how many honest changes does it wrongly flag?
 - **Set-up:**
   - A small fake "shop" project with tests.
@@ -124,3 +124,28 @@ Use records from our checker tool. Only public code whose licence allows it.
     - the test deselected in settings (C16).
   - **2 of 12 honest changes falsely flagged**: deleting a feature together with its test (H08), and merging two checks into one (H09).
 - **Known bias:** the same author wrote pkv and the scenarios, so scores are optimistic. Any improvement made *after* seeing these results must be re-scored on **new scenarios written afterwards** (a held-out set) before claiming it generalises.
+
+### BENCH-001 results (pkv 0.0.1)
+
+| Run | What changed | Caught | Named | False alarms | Predictions right |
+|---|---|---|---|---|---|
+| 1 | first run, exactly as pre-registered | 10/16 | 10/16 ⚠️ | 2/12 | 28/28 |
+| 2 | scoring program corrected to follow the registered "named" rule | 11/16 ⚠️ | 8/16 | 2/12 | 27/28 |
+| 3a–c | pkv fingerprint bug fixed; run 3 times | **10/16** | **8/16** | **2/12** | **28/28** (identical all 3 times) |
+
+**What we learned:**
+
+1. **A scoring error, caught and corrected.** Run 1's scorer counted C13 and C15 as "named", although pkv reported no suspicious finding for them. The registered rule says they don't count, so the scorer was corrected to follow the rule as written. The rule itself didn't change.
+2. **A real pkv bug, found because run 2 disagreed with run 1.** In C08, the edited test file had the same size as the original and was saved in the same second. pkv's fingerprint was built from a *copy* of git's index, so git trusted its cached record and fingerprinted the **old** contents ("racy git").
+   - **Fix:** build the fingerprint from an empty index, so every file is read.
+   - **Regression test:** it recreates the exact timing, fails on the old code, and passes on the fix.
+3. **Final score, stable across 3 repeats.**
+   - Caught 10 of 16 cheats.
+   - Named 8: C01–C07 and the stale-receipt trick C14.
+   - The 2 that were caught without being named, C13 and C15, were flagged UNVERIFIED for the right reasons (untested code; all tests skipped).
+   - Missed 6, all as predicted: C08, C09, C10, C11, C12, C16.
+   - 2 false alarms, as predicted: H08, H09.
+
+**Raw results:** `product/verify/benchmark/results/` (run 2 kept as `run2-racy-fingerprint-bug`; runs 3a–c as `run3-fixed-repeat1..3`).
+
+**Next:** improve the detector for the missed families. Then measure on **BENCH-002**, a held-out set written *before* those improvements, so they can't be tailored to it.

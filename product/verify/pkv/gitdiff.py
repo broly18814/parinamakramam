@@ -15,7 +15,6 @@ after running tests: if it differs, the test result is *stale* (out of date).
 from __future__ import annotations
 
 import os
-import shutil
 import subprocess
 import tempfile
 from dataclasses import dataclass
@@ -148,20 +147,24 @@ def changed_files(repo: str | os.PathLike = ".", base: str | None = None) -> lis
 def tree_hash(repo: str | os.PathLike = ".", exclude: tuple[str, ...] = ()) -> str:
     """Fingerprint of the code exactly as it is on disk now.
 
-    How: copy git's staging list (the *index*) to a temporary file, add every
-    current file to that copy, and ask git for the fingerprint of the result.
-    The real staging list is never touched, so the user's work is unaffected.
+    How: start an EMPTY temporary staging list (git calls it the *index*),
+    add every current file to it, and ask git for the fingerprint of the
+    result. The user's real index is never read or touched.
+
+    Why empty, not a copy of the real index: git's index remembers each
+    file's size and save time, and git skips re-reading files whose size and
+    time look unchanged. A file edited to the same size within the same
+    second can then be fingerprinted with its OLD contents (the "racy git"
+    problem). Starting empty forces git to read every file, so the
+    fingerprint always matches what is really on disk. Found by BENCH-001.
+
     pkv's own folder (.pkv/) and any paths in `exclude` are left out.
     (Side effect: git stores copies of the file contents in its object
     database; git cleans unused ones up automatically.)
     """
     root = repo_root(repo)
-    gitdir = Path(_git(root, "rev-parse", "--absolute-git-dir").decode().strip())
     with tempfile.TemporaryDirectory() as td:
-        index = Path(td) / "index"
-        if (gitdir / "index").exists():
-            shutil.copyfile(gitdir / "index", index)
-        env = {**os.environ, "GIT_INDEX_FILE": str(index)}
+        env = {**os.environ, "GIT_INDEX_FILE": str(Path(td) / "index")}
         _git(root, "add", "-A", env=env)
         for path in (PKV_DIR, *exclude):
             _git(root, "rm", "-r", "-q", "--cached", "--ignore-unmatch", "--", path, env=env)
