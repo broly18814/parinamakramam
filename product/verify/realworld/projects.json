@@ -1,0 +1,10 @@
+[
+ {"name": "click", "url": "https://github.com/pallets/click.git", "licence": "BSD-3-Clause",
+  "commit": "8abb77a8432e03ed14a95f972b44f905279415a7", "python": "3.14", "test_packages": ["pytest"]},
+ {"name": "more-itertools", "url": "https://github.com/more-itertools/more-itertools.git", "licence": "MIT",
+  "commit": "f42daddf205f335fea6e200dad46049f33e71221", "python": "3.14", "test_packages": ["pytest"]},
+ {"name": "boltons", "url": "https://github.com/mahmoud/boltons.git", "licence": "BSD-3-Clause",
+  "commit": "d31d821d56c8f7756af9c30a864077f2e5855321", "python": "3.14", "test_packages": ["pytest"]},
+ {"name": "tomli", "url": "https://github.com/hukkin/tomli.git", "licence": "MIT",
+  "commit": "43a86ade8b795c6ef9b4ec53372a607cd1ed426f", "python": "3.14", "test_packages": ["pytest"]}
+]

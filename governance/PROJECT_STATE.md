@@ -26,7 +26,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 - **EXP-001 (completed):** the right building blocks are worth about 15× more thinking, but discovering them failed. The tidied code reproduces all 200 results exactly.
 - **EXP-002 (completed, negative):** learning from near misses was worse, −2.3 points vs C3, closing −17.7% of the gap. The stop rule now applies: one more variant at most ([design and results](../docs/research/EXP-002-design.md)).
 
-### Product: Parinama Verify 0.1.0 ([guide](../product/verify/README.md))
+### Product: Parinama Verify 0.1.1 ([guide](../product/verify/README.md))
 - **Full check:**
   - picks the affected tests, with reasons;
   - runs them per sub-project, with secrets hidden;
@@ -39,7 +39,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
   - **BENCH-002 (held out): 10 of 13 caught, 1 of 10 false alarms.**
 - **GitHub Action:** `product/verify/action.yml`. This repository uses it on itself.
 - **Quality:**
-  - 70 product self-checks and 16 research self-checks;
+  - 76 product self-checks and 16 research self-checks;
   - `mypy --strict` clean;
   - mutation-tested detection rules;
   - two real bugs found and fixed with regression tests: the "racy git" fingerprint bug, and a crash.
@@ -87,4 +87,4 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 1. **Real-world evidence for pkv.** Run it, read-only and in a sandboxed copy, on a few public Python projects whose licences allow it, and record what it finds. (Downloading those projects needs your go-ahead.)
 2. **BENCH-003:** a fresh held-out set *before* tackling the known misses in OI-8.
 3. **EXP-002b:** the one remaining near-miss variant, pre-registered (structure-based). If it closes < 10% of the gap, stop and move to EXP-005.
-4. **Publish more widely:** tag a first release (`pkv-v0.1.0`), and decide how to reach GitHub's Marketplace, which needs `action.yml` at the top of a repository (either a small separate repository for the action, or moving the file). Then watch install counts (no interviews; D-002).
+4. **Publish more widely:** tag a first release (`pkv-v0.1.1`), and decide how to reach GitHub's Marketplace, which needs `action.yml` at the top of a repository (either a small separate repository for the action, or moving the file). Then watch install counts (no interviews; D-002).

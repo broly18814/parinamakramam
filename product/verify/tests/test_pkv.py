@@ -170,6 +170,27 @@ def test_settings_file_in_a_subfolder_only_affects_that_folder(repo):
     assert "whose settings file tools/pyproject.toml was changed" in sel.reasons[sel.tests[0]]
 
 
+def test_imports_relative_to_a_sub_project_folder_are_traced(repo):
+    # Found by running pkv on our own repository: inside product/verify,
+    # `from realworld import run_real` names product/verify/realworld/run_real.py
+    # (pytest runs from the sub-project's folder), but pkv only knew names
+    # measured from the repository's top folder, so it called the file untested.
+    write(repo, {"tools/checker/pyproject.toml": "[project]\nname='checker'\n",
+                 "tools/checker/extras/run.py": "def go():\n    return 1\n",
+                 "tools/checker/src/lib/core.py": "X = 1\n",
+                 "tools/checker/tests/test_run.py":
+                     "from extras import run\nfrom lib import core\n\n"
+                     "def test_go():\n    assert run.go() == core.X\n"})
+    commit(repo, "add sub-project")
+    write(repo, {"tools/checker/extras/run.py": "def go():\n    return 1  # same\n",
+                 "tools/checker/src/lib/core.py": "X = 1  # same\n"})
+    sel = affected(repo)
+    assert sel.tests == ["tools/checker/tests/test_run.py"]
+    assert sel.untested_changes == []
+    names = module_names("tools/checker/src/lib/core.py", repo, ["tools/checker"])[1]
+    assert {"lib.core", "src.lib.core", "tools.checker.src.lib.core"} <= set(names)
+
+
 def test_documentation_change_runs_nothing(repo):
     write(repo, {"README.md": "# changed\n"})
     sel = affected(repo)

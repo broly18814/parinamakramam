@@ -215,3 +215,14 @@ Use records from our checker tool. Only public code whose licence allows it.
 - G08: false alarm when a test file is split in two.
 
 **Raw results:** `product/verify/benchmark/results/bench001-pkv-0.1.0/` and `bench002-pkv-0.1.0/`.
+
+---
+
+## REAL-001: pkv on real projects' real changes
+
+- **Status:** 📝 pre-registered on 9 November 2026, **not yet run**.
+- **Design and predictions:** [REAL-001-design.md](../docs/product/REAL-001-design.md).
+- **The question:** on 120 real, mostly honest changes from 4 public projects (click, more-itertools, boltons, tomli), how often does pkv give a false alarm, a false all-clear, or crash, and how much test running does it save?
+- **Held out:** a further 120 older changes, run only after any fixes are frozen.
+- **Primary prediction (R2):** at most 6 of 120 commits get a false alarm. **Safety prediction (R3):** no false all-clears.
+- **Cost:** a few hours on the MacBook, ₹0. The projects' own tests are run unchanged, and nothing of theirs is copied into this repository.

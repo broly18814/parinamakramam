@@ -658,7 +658,7 @@ This is the same honesty principle as our research. A check you've never seen fa
 - **Semantic Versioning** (MAJOR.MINOR.PATCH): PATCH for bug fixes, MINOR for new features, MAJOR for changes that break existing use.
 - **Changelog**: a dated list of what changed in each version.
 
-🎯 **Precisely.** pkv went 0.0.1 → 0.0.2 (two bug fixes) → 0.1.0 (new detection rules). Before 1.0, anything may change. [CHANGELOG.md](../CHANGELOG.md) records each step, including how every bug was found and tested.
+🎯 **Precisely.** pkv went 0.0.1 → 0.0.2 (two bug fixes) → 0.1.0 (new detection rules) → 0.1.1 (bug fixes found by dogfooding). Before 1.0, anything may change. [CHANGELOG.md](../CHANGELOG.md) records each step, including how every bug was found and tested.
 
 ## Lesson 33. Negative results and stop rules
 

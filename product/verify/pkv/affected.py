@@ -103,7 +103,7 @@ def select_tests(root: str | os.PathLike[str], changes: list[Change],
             if what.startswith("deleted"):
                 if is_test_file(path) and what == "deleted":
                     sel.removed_tests.append(path)
-                primary, alts = module_names(path, graph.root)
+                primary, alts = module_names(path, graph.root, graph.sub_projects)
                 for n in [primary, *alts]:
                     if n:
                         deleted_names[n] = path

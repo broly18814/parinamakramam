@@ -1,4 +1,4 @@
-# Parinama Verify (`pkv`): version 0.1.0
+# Parinama Verify (`pkv`): version 0.1.1
 
 An **independent checker** for code changes, whether an AI or a person made them. It works out which tests a change could break, **runs them itself**, looks for **signs the tests were weakened**, and gives a **receipt** with one verdict. Every sentence in the receipt comes from recorded data, never from an AI's opinion.
 
@@ -143,7 +143,7 @@ The receipt appears on the run's summary page and is kept as a downloadable file
 
 - **Lint and types:** `ruff` lint and `mypy --strict`, both clean.
 - **Self-checks:**
-  - 70 product self-checks, on Python 3.10, 3.12 and 3.14;
+  - 76 product self-checks, on Python 3.10, 3.12 and 3.14;
   - every bug fix has a regression test that fails before the fix;
   - each detection rule was **mutation-tested**: breaking it makes a self-check fail.
 - **Regression gate:** both practice sets; CI fails if any scenario's verdict changes.

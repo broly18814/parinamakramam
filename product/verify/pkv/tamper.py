@@ -265,7 +265,7 @@ def _deleted_with_its_code(root: Path, ref: str | None, path: str, changes: list
     deleted: set[str] = set()
     for c in changes:
         if c.status == "deleted" and c.path.endswith(".py") and not is_test_file(c.path):
-            primary, alts = module_names(c.path, root)
+            primary, alts = module_names(c.path, root, graph.sub_projects)
             deleted.update(n for n in (primary, *alts) if n)
     still_used = {f for n in names for f in graph.resolve(n, path) if not f.endswith("__init__.py")}
     return bool(names & deleted) and not still_used

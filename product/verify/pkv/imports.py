@@ -31,22 +31,37 @@ SKIP_DIRS = {
 }
 
 
-def python_files(root: Path) -> list[str]:
-    """All .py files under root (posix relative paths), skipping tool and
+# Files that mark the top folder of a Python project. In a repository that
+# holds several projects, each project's own top folder is where Python looks
+# for that project's code (pytest's rootdir and `pythonpath`, or an install).
+PROJECT_MARKERS = {"pyproject.toml", "setup.py", "setup.cfg", "pytest.ini", "tox.ini"}
+
+
+def _walk(root: Path) -> list[tuple[str, list[str]]]:
+    """(folder relative to root, its file names), skipping tool and
     environment folders that are not the project's own code."""
-    found: list[str] = []
+    out: list[tuple[str, list[str]]] = []
     for dirpath, dirnames, filenames in os.walk(root):
         dirnames[:] = sorted(
             d for d in dirnames if d not in SKIP_DIRS and not d.endswith(".egg-info")
         )
-        for f in filenames:
-            if f.endswith(".py"):
-                rel = Path(dirpath, f).relative_to(root)
-                found.append(rel.as_posix())
-    return sorted(found)
+        out.append((Path(dirpath).relative_to(root).as_posix(), sorted(filenames)))
+    return out
 
 
-def module_names(rel: str, root: Path) -> tuple[str, list[str]]:
+def python_files(root: Path) -> list[str]:
+    """All .py files under root (posix relative paths)."""
+    return sorted(
+        f if d == "." else f"{d}/{f}" for d, names in _walk(root) for f in names if f.endswith(".py")
+    )
+
+
+def project_roots(root: Path) -> list[str]:
+    """Sub-folders that are the top of a Python project of their own."""
+    return sorted(d for d, names in _walk(root) if d != "." and PROJECT_MARKERS & set(names))
+
+
+def module_names(rel: str, root: Path, sub_projects: list[str] | tuple[str, ...] = ()) -> tuple[str, list[str]]:
     """Names other code could use to import this file.
 
     Returns (primary, alternatives).
@@ -55,8 +70,10 @@ def module_names(rel: str, root: Path) -> tuple[str, list[str]]:
     contain __init__.py. `app/models.py` inside package `app` is
     "app.models"; a lone `tests/helpers.py` (no __init__.py) is "helpers".
 
-    alternatives are the dotted path from the project top folder, and from
-    `src/` for projects that keep code there (the common "src layout").
+    alternatives are the dotted path from the repository's top folder and
+    from the top folder of each sub-project containing the file
+    (`sub_projects`, see project_roots), each also without a leading `src/`
+    for projects that keep code there (the common "src layout").
     """
     p = PurePosixPath(rel)
     parts: list[str] = [] if p.name == "__init__.py" else [p.stem]
@@ -66,9 +83,13 @@ def module_names(rel: str, root: Path) -> tuple[str, list[str]]:
         d = d.parent
     primary = ".".join(parts)
     full = list(p.parent.parts) + ([] if p.name == "__init__.py" else [p.stem])
-    alts = {".".join(full)}
-    if full and full[0] == "src" and len(full) > 1:
-        alts.add(".".join(full[1:]))
+    tops = [0] + [len(PurePosixPath(sp).parts) for sp in sub_projects if rel.startswith(sp + "/")]
+    alts: set[str] = set()
+    for t in tops:
+        rest = full[t:]
+        alts.add(".".join(rest))
+        if rest and rest[0] == "src" and len(rest) > 1:
+            alts.add(".".join(rest[1:]))
     alts.discard(primary)
     alts.discard("")
     return primary, sorted(alts)
@@ -130,6 +151,7 @@ class ImportGraph:
     dynamic: set[str] = field(default_factory=set)
     index: dict[str, set[str]] = field(default_factory=dict)
     primary: dict[str, str] = field(default_factory=dict)
+    sub_projects: list[str] = field(default_factory=list)  # see project_roots
 
     def resolve(self, name: str, importer: str) -> set[str]:
         """Which project files does `name` refer to, seen from `importer`?
@@ -152,9 +174,10 @@ class ImportGraph:
 def build_graph(root: str | os.PathLike[str]) -> ImportGraph:
     root = Path(root)
     files = python_files(root)
-    g = ImportGraph(root=root, files=files)
+    subs = project_roots(root)
+    g = ImportGraph(root=root, files=files, sub_projects=subs)
     for f in files:
-        primary, alts = module_names(f, root)
+        primary, alts = module_names(f, root, subs)
         g.primary[f] = primary
         for n in [primary, *alts]:
             if n:
