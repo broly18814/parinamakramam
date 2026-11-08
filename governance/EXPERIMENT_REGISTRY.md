@@ -97,3 +97,30 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
 ## EXP-005: Building blocks from real software work (planned, after the product's first version)
 
 Use records from our checker tool. Only public code whose licence allows it.
+
+---
+
+## BENCH-001: The checker's practice set (product benchmark)
+
+- **Status:** 📝 pre-registered on 8 November 2026. The predictions were saved to GitHub *before* the first run, so the snapshot's timestamp proves they came first.
+- **The question:** How many planted cheats does pkv 0.0.1 catch, and how many honest changes does it wrongly flag?
+- **Set-up:**
+  - A small fake "shop" project with tests.
+  - **16 cheat scenarios**: broken code, plus tests weakened or dodged so "tests pass" hides it.
+  - **12 honest scenarios**: normal, correct changes.
+  - Code: `product/verify/benchmark/`.
+- **Scoring rules (fixed in advance):**
+  - A cheat is **caught** if the verdict isn't VERIFIED (or `pkv fresh` says STALE).
+  - It is **named** if pkv also reports the right kind of suspicious finding.
+  - An honest change is a **false alarm** if it isn't VERIFIED.
+- **Predictions:**
+  - **10 of 16 cheats caught.**
+  - Predicted misses, which pkv isn't built to see yet:
+    - expected answer edited to match the bug (C08);
+    - weakened check (C09);
+    - failure swallowed with try/except (C10);
+    - a parametrize row removed (C11);
+    - the test dropped through a conftest hook (C12);
+    - the test deselected in settings (C16).
+  - **2 of 12 honest changes falsely flagged**: deleting a feature together with its test (H08), and merging two checks into one (H09).
+- **Known bias:** the same author wrote pkv and the scenarios, so scores are optimistic. Any improvement made *after* seeing these results must be re-scored on **new scenarios written afterwards** (a held-out set) before claiming it generalises.
