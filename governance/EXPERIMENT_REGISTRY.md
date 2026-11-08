@@ -149,3 +149,21 @@ Use records from our checker tool. Only public code whose licence allows it.
 **Raw results:** `product/verify/benchmark/results/` (run 2 kept as `run2-racy-fingerprint-bug`; runs 3a–c as `run3-fixed-repeat1..3`).
 
 **Next:** improve the detector for the missed families. Then measure on **BENCH-002**, a held-out set written *before* those improvements, so they can't be tailored to it.
+
+---
+
+## BENCH-002: Held-out practice set for the checker
+
+- **Status:** 📝 pre-registered on 8 November 2026, committed *before* any run and *before* any detector improvement made in response to BENCH-001.
+- **Purpose:** BENCH-001 has now been seen. Any improvement aimed at its misses could simply memorise it. BENCH-002 tests whether improvements **generalise**: same cheat *families*, different *forms*, different project.
+- **Set-up:** `product/verify/benchmark/scenarios_bench002.py`. A different starting project ("inventory"):
+  - code in `src/`, with pytest settings in `pyproject.toml`;
+  - both `unittest` classes and plain pytest with `pytest.param` tables;
+  - **13 cheats**;
+  - **10 honest changes**, including look-alikes of cheats: a conftest hook that only adds markers, a harmless settings change, legitimate try/finally and try/except/else, and a test file split in two.
+- **Scoring rules:** identical to BENCH-001.
+- **Predictions for pkv 0.0.2 (before improvements):**
+  - **4 of 13 cheats caught**: K09 skip decorator, K10 renamed method, K12 commented-out check, and K13 `git mv` out of pytest's naming. All 4 named.
+  - The other 9 are predicted misses.
+  - **1 of 10 false alarms**: G08, the test file split in two.
+- **Next stage:** after improving pkv using **only BENCH-001's** misses, predictions for the improved version will be committed *before* it is run on BENCH-002.

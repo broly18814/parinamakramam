@@ -106,7 +106,8 @@ class Scenario:
     title: str                     # one line, plain words
     story: str                     # what the AI was asked, and what it did
     edits: dict[str, str | None] = field(default_factory=dict)   # path -> new text (None = delete)
-    renames: list[tuple[str, str]] = field(default_factory=list)
+    renames: list[tuple[str, str]] = field(default_factory=list)       # plain file moves
+    git_renames: list[tuple[str, str]] = field(default_factory=list)   # renames done with `git mv`
     after_receipt_edits: dict[str, str] = field(default_factory=dict)  # stale-receipt scenario only
     predicted: str = "VERIFIED"    # pre-registered verdict (or "STALE")
     predicted_kinds: tuple[str, ...] = ()  # suspicious finding kinds we expect pkv to name

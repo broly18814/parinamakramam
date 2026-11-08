@@ -24,9 +24,13 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))  # the pkv package
 sys.path.insert(0, str(HERE))         # scenarios.py
 
+import scenarios as bench001  # noqa: E402
+import scenarios_bench002 as bench002  # noqa: E402
 from pkv import __version__  # noqa: E402
 from pkv.cli import main as pkv_main  # noqa: E402
-from scenarios import BASE, SCENARIOS, Scenario  # noqa: E402
+from scenarios import Scenario  # noqa: E402
+
+SETS = {"bench001": bench001, "bench002": bench002}
 
 
 def git(repo: Path, *args: str) -> str:
@@ -44,9 +48,9 @@ def write_files(repo: Path, files: dict[str, str | None]) -> None:
             p.write_text(text)
 
 
-def build_base(repo: Path) -> None:
+def build_base(repo: Path, base: dict[str, str | None]) -> None:
     repo.mkdir(parents=True)
-    write_files(repo, BASE)
+    write_files(repo, base)
     git(repo, "init", "-q", "-b", "main")
     git(repo, "config", "user.name", "bench")
     git(repo, "config", "user.email", "bench@example.invalid")
@@ -55,6 +59,8 @@ def build_base(repo: Path) -> None:
 
 
 def apply(repo: Path, sc: Scenario) -> None:
+    for old, new in sc.git_renames:  # a rename recorded by git itself
+        git(repo, "mv", old, new)
     for old, new in sc.renames:  # a plain file move, as an AI tool would usually do
         (repo / new).parent.mkdir(parents=True, exist_ok=True)
         shutil.move(repo / old, repo / new)
@@ -66,9 +72,9 @@ def quiet(argv: list[str]) -> int:
         return pkv_main(argv)
 
 
-def run_scenario(sc: Scenario, work: Path) -> dict:
+def run_scenario(sc: Scenario, work: Path, base: dict[str, str | None] | None = None) -> dict:
     repo = work / sc.id / "proj"
-    build_base(repo)
+    build_base(repo, base if base is not None else bench001.BASE)
     apply(repo, sc)
     receipt = work / sc.id / "receipt.json"
     code = quiet(["check", "--repo", str(repo), "--json", str(receipt)])
@@ -114,9 +120,11 @@ def summarise(rows: list[dict]) -> dict:
 
 
 def render(rows: list[dict], s: dict, meta: dict) -> str:
-    L = [f"# BENCH-001 results: {meta['label']}", "",
+    title = meta.get("set", "bench001").upper().replace("BENCH", "BENCH-")
+    L = [f"# {title} results: {meta['label']}", "",
          f"pkv {meta['pkv_version']} at git snapshot `{meta['git_commit']}`, run {meta['ran_at']}. "
-         "Scenarios and predictions are in [scenarios.py](../scenarios.py).", "",
+         "Scenarios and predictions: `benchmark/scenarios.py` (BENCH-001) or "
+         "`benchmark/scenarios_bench002.py` (BENCH-002, held out).", "",
          "## Score", "",
          "| Measure | Result | In plain words |", "|---|---|---|",
          f"| Cheats **caught** | **{s['caught']} of {s['cheats']}** "
@@ -147,17 +155,18 @@ def render(rows: list[dict], s: dict, meta: dict) -> str:
     return "\n".join(L) + "\n"
 
 
-def run(out: Path, label: str, only: list[str] | None = None) -> dict:
-    scenarios = [s for s in SCENARIOS if not only or s.id in only]
+def run(out: Path, label: str, only: list[str] | None = None, which: str = "bench001") -> dict:
+    module = SETS[which]
+    scenarios = [s for s in module.SCENARIOS if not only or s.id in only]
     with tempfile.TemporaryDirectory() as td:
-        rows = [run_scenario(sc, Path(td)) for sc in scenarios]
+        rows = [run_scenario(sc, Path(td), module.BASE) for sc in scenarios]
     s = summarise(rows)
     try:
         commit = git(HERE, "rev-parse", "--short", "HEAD").strip()
         dirty = bool(git(HERE, "status", "--porcelain", "--", str(HERE.parent)).strip())
     except subprocess.CalledProcessError:
         commit, dirty = "unknown", True
-    meta = {"label": label, "pkv_version": __version__,
+    meta = {"set": which, "label": label, "pkv_version": __version__,
             "git_commit": commit + (" + uncommitted edits" if dirty else ""),
             "ran_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
     out.mkdir(parents=True, exist_ok=True)
@@ -168,6 +177,7 @@ def run(out: Path, label: str, only: list[str] | None = None) -> dict:
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
+    ap.add_argument("--set", default="bench001", choices=sorted(SETS))
     ap.add_argument("--out", default=str(HERE / "results"))
     ap.add_argument("--label", default="run")
     ap.add_argument("--only", nargs="*")
@@ -175,7 +185,7 @@ if __name__ == "__main__":
                     help="exit with code 1 if any scenario's verdict differs from its recorded prediction "
                          "(used by CI as a regression gate)")
     a = ap.parse_args()
-    res = run(Path(a.out), a.label, a.only)
+    res = run(Path(a.out), a.label, a.only, a.set)
     print(json.dumps(res["summary"], indent=2))
     for r in res["rows"]:
         flag = "" if r["prediction_correct"] else "   <-- prediction wrong"
