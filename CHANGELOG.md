@@ -9,6 +9,25 @@ Before version 1.0, anything may still change.
 
 ## Parinama Verify (`pkv`)
 
+### [0.1.0]: 2026-11-08
+
+#### Added
+- **test-not-run** (run-time check): a selected test that pytest never ran is reported as suspicious, whatever removed it (`-k`, `-m`, `--deselect`, a conftest hook, a plugin). It works by comparing the tests pkv finds in the code with pytest's own result file. Whole files skipped on purpose are not reported.
+- **failure-swallowed:** checks inside `try/except` (AssertionError, Exception, BaseException or bare except) without re-raising, or inside `contextlib.suppress(AssertionError, ...)`.
+- **check-weakened:** fewer *exact* checks (`==`, `is`, `assertEqual`, …) while the total number of checks stays the same. For example `== 90` becoming `> 0`, or `assertEqual` becoming `assertTrue`.
+- **fewer-cases:** a `parametrize` table, including `pytest.param` rows and stacked tables, that lost rows.
+- **BENCH-002**, a held-out practice set (13 cheats, 10 honest changes on a different project), and both sets as CI regression gates.
+
+#### Changed
+- A test file deleted **together with the code it tested** is now a notice, not suspicious.
+- `assert (a, b) == (1, 2)` counts as 2 exact checks, so merging asserts into a tuple comparison is no longer "fewer checks".
+- pytest's `Test*` classes that define `__init__` are ignored, as pytest itself ignores them.
+
+#### Results
+- BENCH-001: 15/16 cheats caught (was 10), 0/12 false alarms (was 2).
+- BENCH-002, held out: 10/13 caught (was 5), 1/10 false alarms (unchanged).
+- All 51 pre-registered predictions were correct.
+
 ### [0.0.2]: 2026-11-08
 
 #### Fixed

@@ -54,7 +54,7 @@ jobs:
         run: python -m pytest -q tests
 
   benchmark:
-    name: practice set BENCH-001 (regression gate)
+    name: practice sets BENCH-001 + BENCH-002 (regression gate)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -63,4 +63,6 @@ jobs:
           python-version: "3.14"
       - run: python -m pip install pytest
       - working-directory: product/verify
-        run: python benchmark/run_benchmark.py --check --out /tmp/bench
+        run: |
+          python benchmark/run_benchmark.py --set bench001 --check --out /tmp/bench001
+          python benchmark/run_benchmark.py --set bench002 --check --out /tmp/bench002

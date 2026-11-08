@@ -189,3 +189,27 @@ Use records from our checker tool. Only public code whose licence allows it.
 **Reading the result honestly:**
 - The held-out score is the one that matters. A big gap between the two sets would mean the rules memorised BENCH-001.
 - BENCH-002 has now been seen, so the *next* improvement needs a fresh held-out set (BENCH-003).
+
+### Results for pkv 0.1.0 (run after the predictions above were committed in `b767e53`)
+
+| Set | Cheats caught | Named | False alarms | Predictions right |
+|---|---|---|---|---|
+| BENCH-001 (seen) | 10 → **15/16** | 8 → **13** | 2 → **0/12** | 28/28 |
+| **BENCH-002 (held out)** | 5 → **10/13** | 4 → **9** | 1 → **1/10** | 23/23 |
+
+**Conclusion:**
+- The held-out catch rate doubled with rules designed without it, so the improvements **generalise** within these cheat families.
+- All 51 predictions were correct.
+- **Caveats:**
+  - Both sets were written by the same author as the tool.
+  - The scenarios are small and synthetic.
+  - Real-world performance is still unmeasured; that's the next evidence to gather, on public projects.
+
+**Remaining known gaps**, for a future version with a fresh held-out set:
+- C08: expected answer edited to match the bug;
+- K02: `pytest.raises(AssertionError)` around a check;
+- K04: skip mark on one table row;
+- K11: early `return` before a check;
+- G08: false alarm when a test file is split in two.
+
+**Raw results:** `product/verify/benchmark/results/bench001-pkv-0.1.0/` and `bench002-pkv-0.1.0/`.

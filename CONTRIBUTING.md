@@ -23,6 +23,14 @@ Changes must keep both trustworthy.
 
 ## Running everything locally
 
+One command runs exactly what CI runs. Use it before every upload:
+
+```bash
+scripts/check-all.sh
+```
+
+Or step by step:
+
 ```bash
 uvx ruff check product/verify research/pevo experiments
 ```
