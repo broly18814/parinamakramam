@@ -98,7 +98,8 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
 
 ## EXP-005: Building blocks learned from real code history
 
-- **Status:** 📝 pre-registered on 9 November 2026, **not yet run**. Committed before any code.
+- **Status:** ✅ finished on 9 November 2026, **positive**. Pre-registered in `42aab38`; frozen in `12ae749`, with the analysis script committed before the run.
+- **Result:** H13 ✅ OWN − RANDOM **+11.5 points** [+10.3, +12.6], in all 3 projects. H14 ✅ OWN − OTHER **+1.9** [+1.0, +2.9] (small; reversed in more-itertools). H15 ✅ 59.7% of the best possible. The learned blocks are mostly general Python idioms, plus a small project-specific layer. Next: EXP-006 (does the library make *search* cheaper?).
 - **Design and predictions:** [EXP-005-design.md](../docs/research/EXP-005-design.md).
 - **The question:** does a library of building blocks learned from a project's *past* code describe its *future* code more compactly than random fragments (H13, primary), or than blocks learned from other projects (H14)?
 - **Data:** the REAL-001 projects (click, more-itertools, boltons; tomli for calibration only), read through git. Nothing is executed, and no model is trained.

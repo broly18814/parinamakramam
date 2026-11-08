@@ -134,6 +134,11 @@ Both practice sets give exactly the same verdicts as 0.1.0, which CI's regressio
 
 ## Research: Primitive Evolution Engine (`research/pevo`)
 
+### 2026-11-09: EXP-005 (positive: building blocks learned from real code history)
+- New: `pevo/codeblocks.py` (normalised syntax-tree shapes, greedy MDL library, rewriting) and `run_exp005.py`, which reads code only through git. There are 7 new self-checks; two came from real bugs (Python's shared operator objects, and a crash on empty slots in syntax trees).
+- Results: OWN compresses future code by 13.5%, against RANDOM 1.9% and OTHER 11.5%. All three pre-registered tests pass. See `docs/research/EXP-005-design.md`, section 7.
+- The analysis is now part of the reproduction self-check: its published output must match exactly.
+
 ### 2026-11-09: EXP-002b (negative result; the near-miss line is closed)
 - New: `pevo/onestep.py` and conditions `C6_onestep` (near misses one step from an exact answer) and `C3_2x` (a compute-matched control). There are 3 new self-checks, and all 200 EXP-001 result files still reproduce exactly.
 - The pre-registered primary test failed: −11.5% of the gap closed, below the stop-rule threshold. C6 also lost to C3_2x by 5.3 points. See `docs/research/EXP-002b-design.md`, section 6.

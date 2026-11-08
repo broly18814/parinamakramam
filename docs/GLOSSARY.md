@@ -83,6 +83,7 @@ If a word in any Parinamakramam document confuses you, look it up here. The word
 | **Stop rule** | A rule, written in advance, for when to abandon a line of work. |
 | **Substrate** | The whole "material" the computer builds with: its blocks, fitting rules, building rules and habits. |
 | **Tampering** | Changing the checks so that broken code passes, for example deleting a check or making it always pass. |
+| **Temporal split** | Learning from the past and testing on the future, so the test can't leak into the learning. EXP-005 used each project's history this way. |
 | **Test (automatic check)** | A small program that checks other code works, for example "adding 2 and 3 should give 5". |
 | **Timeout** | A time limit. Tests that run longer are stopped. |
 | **Tree hash** | A short fingerprint of the exact state of all the code. If even one character changes, the fingerprint changes. |

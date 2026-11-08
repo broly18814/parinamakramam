@@ -1,0 +1,32 @@
+EXP-005: building blocks learned from real code history (run once, after the freeze)
+
+project          split        past fns  new fns       OWN   RANDOM    OTHER   ORACLE
+click            8c1a0a7abb        597       55     13.9%     0.9%     9.4%    22.0%
+more-itertools   51c42ff83f        235       50     13.5%     3.6%    14.4%    24.3%
+boltons          6cac49ce4e        886       61     13.0%     1.2%    10.8%    21.4%
+pooled (mean)                                       13.5%     1.9%    11.5%    22.5%
+
+H13 OWN - RANDOM (pooled) [primary]       +11.5 pts [+10.3, +12.6]  positive in all 3: yes  -> PASS
+H14 OWN - OTHER (pooled)                   +1.9 pts [+1.0, +2.9]  -> PASS
+H15 gap closed OWN / ORACLE (pooled)       59.7 %   [53.8, 65.7]  -> PASS
+
+Most-used OWN building blocks (normalised; HOLE = any expression)
+  click:
+    used  355x, saves 2 nodes each:  HOLE | None
+    used  179x, saves 2 nodes each:  HOLE is not None
+    used  159x, saves 2 nodes each:  HOLE is None
+    used  129x, saves 1 nodes each:  HOLE and HOLE
+    used   33x, saves 4 nodes each:  t.IO[t.Any]
+  more-itertools:
+    used   31x, saves 4 nodes each:  if HOLE:
+    raise ValueError('STR')
+    used   49x, saves 2 nodes each:  HOLE is None
+    used   45x, saves 2 nodes each:  HOLE + 1
+    used   85x, saves 1 nodes each:  HOLE - HOLE
+    used   73x, saves 1 nodes each:  v2 = HOLE
+  boltons:
+    used  176x, saves 2 nodes each:  'STR' % HOLE
+    used  148x, saves 2 nodes each:  HOLE is None
+    used  197x, saves 1 nodes each:  v2 = HOLE
+    used  175x, saves 1 nodes each:  v3 = HOLE
+    used  148x, saves 1 nodes each:  v1 = HOLE

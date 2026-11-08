@@ -18,7 +18,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[3]
 
 
-@pytest.mark.parametrize("exp", ["EXP-001", "EXP-002", "EXP-002b"])
+@pytest.mark.parametrize("exp", ["EXP-001", "EXP-002", "EXP-002b", "EXP-005"])
 def test_published_analysis_reproduces_exactly(exp, monkeypatch):
     folder = ROOT / "experiments" / exp
     monkeypatch.syspath_prepend(str(folder))

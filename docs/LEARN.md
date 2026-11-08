@@ -9,7 +9,7 @@ This is a course that teaches every idea used in Parinamakramam, in order, start
 5. **🛠 Try it.** Something to type or open. Commands go in the **Terminal** app, the program where you type instructions to the computer.
 6. **✅ Check yourself.** A question to test yourself. Click to see the answer.
 
-Go in order: each lesson builds on the previous ones. One lesson a day takes 35 days, but you can go faster. Words are also listed in the [Glossary](GLOSSARY.md).
+Go in order: each lesson builds on the previous ones. One lesson a day takes 36 days, but you can go faster. Words are also listed in the [Glossary](GLOSSARY.md).
 
 ---
 
@@ -716,6 +716,22 @@ This is the same honesty principle as our research. A check you've never seen fa
 
 ✅ **Check yourself.** Why must "every lost check reappears" be combined with "the destination looks like the original"?
 <details><summary>Answer</summary>Common lines like `assert result` appear in many tests. Without the second condition, deleting a test could be "excused" by an unrelated new test that happens to contain the same line, while checking completely different code.</details>
+
+## Lesson 36. A positive result, read carefully
+
+🖼 **Picture.** Read a writer's first five books and note their favourite phrases. They fill the sixth book too. But phrases from *other* writers fill it almost as well, because they're mostly ordinary English. You learned something real, mostly about English, and only a little about the writer.
+
+📖 **The real words.**
+- **Temporal split:** learn from the past, test on the future, as in real life. It stops the future leaking into the learning.
+- **Strong vs. weak control:** a weak control (random fragments) is easy to beat. A strong control (another project's blocks) asks the harder question.
+
+🎯 **Precisely.**
+- EXP-005 learned building blocks from three real projects' past code. They described the future code 13.5% more compactly, against 1.9% for random fragments. All three pre-registered tests passed.
+- But blocks from *other* projects reached 11.5%, so most of the value is general Python, and only about 2 points belong to each project.
+- So the honest claim is narrow: "the past predicts the shapes of future code, mostly through common language habits". Whether that helps a computer *write* code is a different question, for the next experiment.
+
+✅ **Check yourself.** Why does beating the random control matter less than beating the "other projects" control?
+<details><summary>Answer</summary>Almost anything learned from real code beats random fragments. Beating other projects' blocks is what shows the patterns are specific to *this* project, and that margin was small (+1.9 points).</details>
 
 ---
 

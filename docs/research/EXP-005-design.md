@@ -106,3 +106,42 @@ Each project's compression gets a 95% bootstrap range, from 10,000 resamples of 
 ## 6. Cost
 
 Seconds to minutes on the MacBook, ₹0. Only git and Python's built-in `ast` module.
+
+---
+
+## 7. Results (evaluation projects, run once after the freeze in D-036)
+
+Source: `experiments/EXP-005/results/` and `experiments/EXP-005/hypothesis_tests.txt`. Reproduce with `python3 experiments/EXP-005/analysis.py`; a self-check requires that output to match exactly.
+
+### Compression of each project's *future* code (higher = described more compactly)
+
+| Project | Past / new functions | OWN | RANDOM | OTHER | ORACLE |
+|---|---|---|---|---|---|
+| click | 597 / 55 | **13.9%** | 0.9% | 9.4% | 22.0% |
+| more-itertools | 235 / 50 | **13.5%** | 3.6% | 14.4% | 24.3% |
+| boltons | 886 / 61 | **13.0%** | 1.2% | 10.8% | 21.4% |
+| **Average** | | **13.5%** | 1.9% | 11.5% | 22.5% |
+
+### Pre-registered tests
+
+| | Result | Verdict |
+|---|---|---|
+| **H13** OWN − RANDOM (primary) | **+11.5 points** [+10.3, +12.6]; positive in all 3 projects | ✅ **PASS** |
+| **H14** OWN − OTHER | **+1.9 points** [+1.0, +2.9] | ✅ PASS, but small, and reversed in more-itertools (13.5% vs 14.4%) |
+| **H15** share of the best possible (OWN / ORACLE) | **59.7%** [53.8, 65.7] | ✅ PASS |
+
+My prior (OWN 8–15%, RANDOM 1–3%, OWN − OTHER 0 to +3, gap 30–50%) was right on the first three and too pessimistic on the gap.
+
+### What this does and doesn't mean
+
+- **It means:** a project's past code contains building blocks that describe its future code far better than chance fragments: 13.5% vs 1.9% shorter. It's the first discovery method in this project that captures most of the available value (60% of what a library learned on the answers themselves could do). Prospective, history-based learning works on real code where it failed in the toy world.
+- **Most of the value is general Python, not project-specific.** Blocks learned from *other* projects get 11.5% of the 13.5%. Only about 2 points are specific to the project, and none in more-itertools. The most-used blocks are small common idioms: `HOLE is None`, `HOLE | None`, `if HOLE: raise ValueError(STR)`, `'STR' % HOLE`. That's the outcome the design called "H13 and H14 pass": real, but read honestly, the hidden patterns are **mostly language-level, with a small project-level layer**.
+- **It doesn't mean** these blocks help a computer *write* code. Compression measures description length. Each block saves only 1–4 nodes per use, and whether such small blocks speed up search is exactly what EXP-006 would have to test.
+- **Limits:**
+  - three small, well-maintained libraries;
+  - 50–61 new functions each;
+  - the RANDOM control draws uniformly from all recurring candidates, many of them large and rare, so it's a weak bar. OTHER is the stronger control, and OWN beats it only narrowly.
+
+### Decision (D-037)
+
+Following the reading registered in section 4, research continues on real code. The next step, **EXP-006**, gets its own pre-registration first. It asks whether a library learned from the past makes **search** for future code cheaper, not just description shorter, with the same compute-matched controls as EXP-002b. The narrow project-specific margin (H14) means EXP-006 must include an OTHER-library condition again.

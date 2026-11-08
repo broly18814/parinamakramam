@@ -87,6 +87,6 @@ The brief's list (repository search, file retrieval, code explanation, repositor
 ## The next items, in the roadmap's order
 
 1. **Founder decisions:** buy a domain, create the GitHub organisation, enable GitHub Discussions. Each is a click or a purchase only the founder can make.
-2. **Research:** EXP-002b is done (negative; the near-miss line is closed). Next is pre-registering **EXP-005**, building blocks from real engineering records.
+2. **Research:** EXP-002b is done (negative; the near-miss line is closed). **EXP-005 is done (positive):** building blocks learned from real projects' history describe their future code 13.5% more compactly. Next is pre-registering **EXP-006**: does that make search cheaper?
 3. **Days 56–70, product:** watch adoption weekly, and fix whatever real users report, starting with each held-out set (BENCH-004).
 4. **Days 71–90:** start once there are real users. Until then, keep the product free and improving.

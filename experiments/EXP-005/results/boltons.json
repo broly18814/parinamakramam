@@ -1,0 +1,825 @@
+{
+ "project": "boltons",
+ "split": "6cac49ce4eba506a3582e8089bcc347c6b2fa70f",
+ "pinned": "d31d821d56c8f7756af9c30a864077f2e5855321",
+ "split_date": "2023-11-02",
+ "train_functions": 886,
+ "train_size": 36469,
+ "test_functions": 61,
+ "k": 50,
+ "max_size": 40,
+ "libraries": {
+  "OWN": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "'STR' % HOLE",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 176
+    },
+    {
+     "shape": "HOLE is None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 148
+    },
+    {
+     "shape": "v2 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 197
+    },
+    {
+     "shape": "v3 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 175
+    },
+    {
+     "shape": "v1 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 148
+    },
+    {
+     "shape": "'STR'.join(HOLE)",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 71
+    },
+    {
+     "shape": "HOLE == HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 140
+    },
+    {
+     "shape": "HOLE + HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 139
+    },
+    {
+     "shape": "HOLE(v1)",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 127
+    },
+    {
+     "shape": "v4 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 126
+    }
+   ]
+  },
+  "RANDOM": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "HOLE(v3, _MISSING)",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "(HOLE, v0.strip().lower())",
+     "size": 6,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "bytes(HOLE)",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "HOLE = v0._translate_index(v1)",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 5
+    },
+    {
+     "shape": "v0._remove_all(HOLE)",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 6
+    },
+    {
+     "shape": "HOLE > HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 46
+    },
+    {
+     "shape": "v3(v1, v5)",
+     "size": 4,
+     "holes": 0,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "PathAccessError(HOLE, HOLE, v1)",
+     "size": 3,
+     "holes": 2,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "(v5, sorted(v7, key=v1, reverse=not v2))",
+     "size": 11,
+     "holes": 0,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "v4.setdefault(HOLE, HOLE)",
+     "size": 3,
+     "holes": 2,
+     "uses_in_training": 2
+    }
+   ]
+  },
+  "OTHER": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "HOLE | None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 355
+    },
+    {
+     "shape": "HOLE is None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 208
+    },
+    {
+     "shape": "HOLE is not None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 204
+    },
+    {
+     "shape": "v2 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 192
+    },
+    {
+     "shape": "v3 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 188
+    },
+    {
+     "shape": "HOLE == HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 168
+    },
+    {
+     "shape": "HOLE and HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 147
+    },
+    {
+     "shape": "if HOLE:\n    raise ValueError('STR')",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 37
+    },
+    {
+     "shape": "t.IO[t.Any]",
+     "size": 5,
+     "holes": 0,
+     "uses_in_training": 33
+    },
+    {
+     "shape": "t.Callable[HOLE]",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 65
+    }
+   ]
+  },
+  "ORACLE": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "HOLE + HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 37
+    },
+    {
+     "shape": "HOLE(v1)",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 24
+    },
+    {
+     "shape": "@property\ndef __partialmethod__(v0):\n    return functools.partialmethod(v0.func, *v0.args, **v0.keywords)",
+     "size": 16,
+     "holes": 0,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "if HOLE:\n    raise ExistingArgument(f'STR{v1!r}STR{v0.name}STR')",
+     "size": 13,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "v2, v3 = HOLE",
+     "size": 4,
+     "holes": 1,
+     "uses_in_training": 5
+    },
+    {
+     "shape": "HOLE is not HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 12
+    },
+    {
+     "shape": "def __getstate__(v0):\n    return list(v0.iteritems(multi=True))",
+     "size": 11,
+     "holes": 0,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "v14.append(HOLE)",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 6
+    },
+    {
+     "shape": "HOLE[-1]",
+     "size": 4,
+     "holes": 1,
+     "uses_in_training": 4
+    },
+    {
+     "shape": "HOLE in HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 9
+    }
+   ]
+  }
+ },
+ "rows": [
+  {
+   "path": "boltons/cacheutils.py",
+   "function": "LRI.__ior__",
+   "size": 11,
+   "OWN": 10,
+   "RANDOM": 11,
+   "OTHER": 10,
+   "ORACLE": 10
+  },
+  {
+   "path": "boltons/dictutils.py",
+   "function": "OneToOne.__ior__",
+   "size": 11,
+   "OWN": 10,
+   "RANDOM": 11,
+   "OTHER": 10,
+   "ORACLE": 10
+  },
+  {
+   "path": "boltons/dictutils.py",
+   "function": "OrderedMultiDict.__getstate__",
+   "size": 11,
+   "OWN": 6,
+   "RANDOM": 11,
+   "OTHER": 11,
+   "ORACLE": 1
+  },
+  {
+   "path": "boltons/dictutils.py",
+   "function": "OrderedMultiDict.__reduce__",
+   "size": 11,
+   "OWN": 11,
+   "RANDOM": 11,
+   "OTHER": 11,
+   "ORACLE": 11
+  },
+  {
+   "path": "boltons/dictutils.py",
+   "function": "OrderedMultiDict.__setstate__",
+   "size": 13,
+   "OWN": 12,
+   "RANDOM": 13,
+   "OTHER": 12,
+   "ORACLE": 9
+  },
+  {
+   "path": "boltons/ecoutils.py",
+   "function": "dumps",
+   "size": 22,
+   "OWN": 22,
+   "RANDOM": 22,
+   "OTHER": 22,
+   "ORACLE": 22
+  },
+  {
+   "path": "boltons/fileutils.py",
+   "function": "FilePerms._FilePermProperty.__set__.sort_key",
+   "size": 8,
+   "OWN": 8,
+   "RANDOM": 8,
+   "OTHER": 8,
+   "ORACLE": 8
+  },
+  {
+   "path": "boltons/fileutils.py",
+   "function": "rotate_file",
+   "size": 145,
+   "OWN": 121,
+   "RANDOM": 145,
+   "OTHER": 125,
+   "ORACLE": 114
+  },
+  {
+   "path": "boltons/funcutils.py",
+   "function": "CachedInstancePartial.__partialmethod__",
+   "size": 16,
+   "OWN": 16,
+   "RANDOM": 16,
+   "OTHER": 16,
+   "ORACLE": 1
+  },
+  {
+   "path": "boltons/funcutils.py",
+   "function": "CachedInstancePartial.__set_name__",
+   "size": 9,
+   "OWN": 8,
+   "RANDOM": 9,
+   "OTHER": 9,
+   "ORACLE": 9
+  },
+  {
+   "path": "boltons/funcutils.py",
+   "function": "CachedInstancePartial._partialmethod",
+   "size": 7,
+   "OWN": 7,
+   "RANDOM": 7,
+   "OTHER": 7,
+   "ORACLE": 1
+  },
+  {
+   "path": "boltons/funcutils.py",
+   "function": "FunctionBuilder._argspec_to_dict",
+   "size": 22,
+   "OWN": 20,
+   "RANDOM": 22,
+   "OTHER": 20,
+   "ORACLE": 20
+  },
+  {
+   "path": "boltons/funcutils.py",
+   "function": "FunctionBuilder.add_arg",
+   "size": 88,
+   "OWN": 79,
+   "RANDOM": 88,
+   "OTHER": 81,
+   "ORACLE": 54
+  },
+  {
+   "path": "boltons/funcutils.py",
+   "function": "FunctionBuilder.get_invocation_str",
+   "size": 185,
+   "OWN": 155,
+   "RANDOM": 185,
+   "OTHER": 158,
+   "ORACLE": 144
+  },
+  {
+   "path": "boltons/funcutils.py",
+   "function": "FunctionBuilder.get_sig_str",
+   "size": 31,
+   "OWN": 29,
+   "RANDOM": 31,
+   "OTHER": 29,
+   "ORACLE": 29
+  },
+  {
+   "path": "boltons/funcutils.py",
+   "function": "InstancePartial.__partialmethod__",
+   "size": 16,
+   "OWN": 16,
+   "RANDOM": 16,
+   "OTHER": 16,
+   "ORACLE": 1
+  },
+  {
+   "path": "boltons/funcutils.py",
+   "function": "InstancePartial._partialmethod",
+   "size": 7,
+   "OWN": 7,
+   "RANDOM": 7,
+   "OTHER": 7,
+   "ORACLE": 1
+  },
+  {
+   "path": "boltons/funcutils.py",
+   "function": "inspect_formatargspec",
+   "size": 246,
+   "OWN": 210,
+   "RANDOM": 245,
+   "OTHER": 212,
+   "ORACLE": 197
+  },
+  {
+   "path": "boltons/funcutils.py",
+   "function": "inspect_formatargspec.formatargandannotation",
+   "size": 26,
+   "OWN": 21,
+   "RANDOM": 26,
+   "OTHER": 21,
+   "ORACLE": 21
+  },
+  {
+   "path": "boltons/funcutils.py",
+   "function": "once",
+   "size": 47,
+   "OWN": 42,
+   "RANDOM": 47,
+   "OTHER": 42,
+   "ORACLE": 36
+  },
+  {
+   "path": "boltons/funcutils.py",
+   "function": "once.wrapper",
+   "size": 30,
+   "OWN": 30,
+   "RANDOM": 30,
+   "OTHER": 29,
+   "ORACLE": 24
+  },
+  {
+   "path": "boltons/gcutils.py",
+   "function": "_all_types",
+   "size": 47,
+   "OWN": 45,
+   "RANDOM": 43,
+   "OTHER": 45,
+   "ORACLE": 42
+  },
+  {
+   "path": "boltons/iterutils.py",
+   "function": "GUIDerator.__next__",
+   "size": 44,
+   "OWN": 39,
+   "RANDOM": 44,
+   "OTHER": 39,
+   "ORACLE": 37
+  },
+  {
+   "path": "boltons/iterutils.py",
+   "function": "SequentialGUIDerator.reseed",
+   "size": 46,
+   "OWN": 42,
+   "RANDOM": 46,
+   "OTHER": 42,
+   "ORACLE": 41
+  },
+  {
+   "path": "boltons/iterutils.py",
+   "function": "chunked_filter",
+   "size": 80,
+   "OWN": 61,
+   "RANDOM": 74,
+   "OTHER": 72,
+   "ORACLE": 64
+  },
+  {
+   "path": "boltons/iterutils.py",
+   "function": "chunked_iter.postprocess",
+   "size": 5,
+   "OWN": 5,
+   "RANDOM": 5,
+   "OTHER": 5,
+   "ORACLE": 5
+  },
+  {
+   "path": "boltons/iterutils.py",
+   "function": "partition._make_key_func",
+   "size": 29,
+   "OWN": 26,
+   "RANDOM": 29,
+   "OTHER": 26,
+   "ORACLE": 25
+  },
+  {
+   "path": "boltons/iterutils.py",
+   "function": "research._enter",
+   "size": 34,
+   "OWN": 33,
+   "RANDOM": 34,
+   "OTHER": 33,
+   "ORACLE": 27
+  },
+  {
+   "path": "boltons/listutils.py",
+   "function": "BarrelList.__add__",
+   "size": 23,
+   "OWN": 18,
+   "RANDOM": 23,
+   "OTHER": 18,
+   "ORACLE": 12
+  },
+  {
+   "path": "boltons/listutils.py",
+   "function": "BarrelList.__eq__",
+   "size": 14,
+   "OWN": 12,
+   "RANDOM": 14,
+   "OTHER": 12,
+   "ORACLE": 12
+  },
+  {
+   "path": "boltons/listutils.py",
+   "function": "BarrelList.__ge__",
+   "size": 14,
+   "OWN": 12,
+   "RANDOM": 14,
+   "OTHER": 12,
+   "ORACLE": 12
+  },
+  {
+   "path": "boltons/listutils.py",
+   "function": "BarrelList.__gt__",
+   "size": 14,
+   "OWN": 12,
+   "RANDOM": 14,
+   "OTHER": 12,
+   "ORACLE": 12
+  },
+  {
+   "path": "boltons/listutils.py",
+   "function": "BarrelList.__iadd__",
+   "size": 11,
+   "OWN": 10,
+   "RANDOM": 11,
+   "OTHER": 10,
+   "ORACLE": 10
+  },
+  {
+   "path": "boltons/listutils.py",
+   "function": "BarrelList.__imul__",
+   "size": 29,
+   "OWN": 25,
+   "RANDOM": 29,
+   "OTHER": 25,
+   "ORACLE": 22
+  },
+  {
+   "path": "boltons/listutils.py",
+   "function": "BarrelList.__le__",
+   "size": 14,
+   "OWN": 12,
+   "RANDOM": 14,
+   "OTHER": 12,
+   "ORACLE": 12
+  },
+  {
+   "path": "boltons/listutils.py",
+   "function": "BarrelList.__lt__",
+   "size": 14,
+   "OWN": 12,
+   "RANDOM": 14,
+   "OTHER": 12,
+   "ORACLE": 12
+  },
+  {
+   "path": "boltons/listutils.py",
+   "function": "BarrelList.__mul__",
+   "size": 14,
+   "OWN": 11,
+   "RANDOM": 14,
+   "OTHER": 11,
+   "ORACLE": 12
+  },
+  {
+   "path": "boltons/listutils.py",
+   "function": "BarrelList.__ne__",
+   "size": 14,
+   "OWN": 12,
+   "RANDOM": 14,
+   "OTHER": 12,
+   "ORACLE": 12
+  },
+  {
+   "path": "boltons/listutils.py",
+   "function": "BarrelList.__radd__",
+   "size": 23,
+   "OWN": 18,
+   "RANDOM": 23,
+   "OTHER": 18,
+   "ORACLE": 12
+  },
+  {
+   "path": "boltons/listutils.py",
+   "function": "BarrelList.__reduce__",
+   "size": 11,
+   "OWN": 10,
+   "RANDOM": 11,
+   "OTHER": 10,
+   "ORACLE": 10
+  },
+  {
+   "path": "boltons/listutils.py",
+   "function": "BarrelList._as_list",
+   "size": 14,
+   "OWN": 12,
+   "RANDOM": 14,
+   "OTHER": 12,
+   "ORACLE": 12
+  },
+  {
+   "path": "boltons/listutils.py",
+   "function": "BarrelList.clear",
+   "size": 18,
+   "OWN": 18,
+   "RANDOM": 18,
+   "OTHER": 18,
+   "ORACLE": 14
+  },
+  {
+   "path": "boltons/listutils.py",
+   "function": "BarrelList.copy",
+   "size": 8,
+   "OWN": 7,
+   "RANDOM": 8,
+   "OTHER": 7,
+   "ORACLE": 7
+  },
+  {
+   "path": "boltons/listutils.py",
+   "function": "BarrelList.remove",
+   "size": 12,
+   "OWN": 11,
+   "RANDOM": 12,
+   "OTHER": 11,
+   "ORACLE": 11
+  },
+  {
+   "path": "boltons/setutils.py",
+   "function": "IndexedSet._as_container",
+   "size": 20,
+   "OWN": 18,
+   "RANDOM": 20,
+   "OTHER": 18,
+   "ORACLE": 19
+  },
+  {
+   "path": "boltons/setutils.py",
+   "function": "IndexedSet._bulk_discard",
+   "size": 42,
+   "OWN": 41,
+   "RANDOM": 40,
+   "OTHER": 41,
+   "ORACLE": 40
+  },
+  {
+   "path": "boltons/setutils.py",
+   "function": "IndexedSet._discard_many",
+   "size": 27,
+   "OWN": 23,
+   "RANDOM": 20,
+   "OTHER": 24,
+   "ORACLE": 24
+  },
+  {
+   "path": "boltons/statsutils.py",
+   "function": "Stats._calc_mode",
+   "size": 15,
+   "OWN": 15,
+   "RANDOM": 15,
+   "OTHER": 15,
+   "ORACLE": 15
+  },
+  {
+   "path": "boltons/strutils.py",
+   "function": "ellipsize",
+   "size": 147,
+   "OWN": 122,
+   "RANDOM": 142,
+   "OTHER": 127,
+   "ORACLE": 111
+  },
+  {
+   "path": "boltons/strutils.py",
+   "function": "human_readable_list",
+   "size": 97,
+   "OWN": 85,
+   "RANDOM": 97,
+   "OTHER": 85,
+   "ORACLE": 83
+  },
+  {
+   "path": "boltons/strutils.py",
+   "function": "removeprefix",
+   "size": 21,
+   "OWN": 19,
+   "RANDOM": 21,
+   "OTHER": 19,
+   "ORACLE": 18
+  },
+  {
+   "path": "boltons/timeutils.py",
+   "function": "USTimeZone._dst_range",
+   "size": 64,
+   "OWN": 54,
+   "RANDOM": 63,
+   "OTHER": 63,
+   "ORACLE": 40
+  },
+  {
+   "path": "boltons/timeutils.py",
+   "function": "USTimeZone.fromutc",
+   "size": 104,
+   "OWN": 87,
+   "RANDOM": 104,
+   "OTHER": 87,
+   "ORACLE": 87
+  },
+  {
+   "path": "boltons/timeutils.py",
+   "function": "daterange._advance",
+   "size": 63,
+   "OWN": 54,
+   "RANDOM": 63,
+   "OTHER": 56,
+   "ORACLE": 54
+  },
+  {
+   "path": "boltons/typeutils.py",
+   "function": "make_sentinel.Sentinel.__bool__",
+   "size": 5,
+   "OWN": 5,
+   "RANDOM": 5,
+   "OTHER": 5,
+   "ORACLE": 5
+  },
+  {
+   "path": "boltons/typeutils.py",
+   "function": "make_sentinel.Sentinel.__copy__",
+   "size": 5,
+   "OWN": 5,
+   "RANDOM": 5,
+   "OTHER": 5,
+   "ORACLE": 5
+  },
+  {
+   "path": "boltons/typeutils.py",
+   "function": "make_sentinel.Sentinel.__deepcopy__",
+   "size": 6,
+   "OWN": 6,
+   "RANDOM": 6,
+   "OTHER": 6,
+   "ORACLE": 6
+  },
+  {
+   "path": "boltons/urlutils.py",
+   "function": "OrderedMultiDict.__getstate__",
+   "size": 11,
+   "OWN": 6,
+   "RANDOM": 11,
+   "OTHER": 11,
+   "ORACLE": 1
+  },
+  {
+   "path": "boltons/urlutils.py",
+   "function": "OrderedMultiDict.__ior__",
+   "size": 11,
+   "OWN": 10,
+   "RANDOM": 11,
+   "OTHER": 10,
+   "ORACLE": 10
+  },
+  {
+   "path": "boltons/urlutils.py",
+   "function": "OrderedMultiDict.__new__",
+   "size": 18,
+   "OWN": 16,
+   "RANDOM": 18,
+   "OTHER": 16,
+   "ORACLE": 16
+  },
+  {
+   "path": "boltons/urlutils.py",
+   "function": "OrderedMultiDict.__setstate__",
+   "size": 13,
+   "OWN": 12,
+   "RANDOM": 13,
+   "OTHER": 12,
+   "ORACLE": 9
+  }
+ ],
+ "seconds": 3.0
+}

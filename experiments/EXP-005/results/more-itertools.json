@@ -1,0 +1,726 @@
+{
+ "project": "more-itertools",
+ "split": "51c42ff83f570f8e119be57de1b0db44a190f8f7",
+ "pinned": "f42daddf205f335fea6e200dad46049f33e71221",
+ "split_date": "2024-12-21",
+ "train_functions": 235,
+ "train_size": 11450,
+ "test_functions": 50,
+ "k": 50,
+ "max_size": 40,
+ "libraries": {
+  "OWN": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "if HOLE:\n    raise ValueError('STR')",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 31
+    },
+    {
+     "shape": "HOLE is None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 49
+    },
+    {
+     "shape": "HOLE + 1",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 45
+    },
+    {
+     "shape": "HOLE - HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 85
+    },
+    {
+     "shape": "v2 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 73
+    },
+    {
+     "shape": "HOLE == HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 64
+    },
+    {
+     "shape": "v3 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 62
+    },
+    {
+     "shape": "HOLE < HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 59
+    },
+    {
+     "shape": "v4 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 54
+    },
+    {
+     "shape": "HOLE is not None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 25
+    }
+   ]
+  },
+  "RANDOM": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "v2 > HOLE",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 3
+    },
+    {
+     "shape": "(HOLE for v12 in v10)",
+     "size": 4,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "v2 = next(v1)",
+     "size": 5,
+     "holes": 0,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "islice(HOLE, 1, None)",
+     "size": 4,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "(v0._start, HOLE, v0._step)",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 3
+    },
+    {
+     "shape": "v0[v1] < HOLE",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "repr(v0._stop)",
+     "size": 4,
+     "holes": 0,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "HOLE[-1]",
+     "size": 4,
+     "holes": 1,
+     "uses_in_training": 7
+    },
+    {
+     "shape": "HOLE < 0",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 28
+    },
+    {
+     "shape": "HOLE(v6)",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 3
+    }
+   ]
+  },
+  "OTHER": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "HOLE | None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 355
+    },
+    {
+     "shape": "HOLE is None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 307
+    },
+    {
+     "shape": "HOLE is not None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 225
+    },
+    {
+     "shape": "'STR' % HOLE",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 176
+    },
+    {
+     "shape": "v2 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 316
+    },
+    {
+     "shape": "v3 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 301
+    },
+    {
+     "shape": "HOLE == HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 244
+    },
+    {
+     "shape": "v1 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 232
+    },
+    {
+     "shape": "'STR'.join(HOLE)",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 116
+    },
+    {
+     "shape": "HOLE and HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 223
+    }
+   ]
+  },
+  "ORACLE": {
+   "blocks": 46,
+   "top": [
+    {
+     "shape": "if v1 <= 0:\n    raise ValueError('STR')",
+     "size": 9,
+     "holes": 0,
+     "uses_in_training": 4
+    },
+    {
+     "shape": "v2 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 22
+    },
+    {
+     "shape": "v1 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 19
+    },
+    {
+     "shape": "if v2 and v2[0][0] == v3 - v1:\n    v2.popleft()",
+     "size": 19,
+     "holes": 0,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "HOLE + HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 12
+    },
+    {
+     "shape": "HOLE * HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 11
+    },
+    {
+     "shape": "HOLE - HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 11
+    },
+    {
+     "shape": "if v1 is not None:\n    v0 = map(v1, v0)",
+     "size": 11,
+     "holes": 0,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "HOLE is None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 6
+    },
+    {
+     "shape": "HOLE[-1]",
+     "size": 4,
+     "holes": 1,
+     "uses_in_training": 4
+    }
+   ]
+  }
+ },
+ "rows": [
+  {
+   "path": "more_itertools/more.py",
+   "function": "_concurrent_tee.__init__",
+   "size": 41,
+   "OWN": 40,
+   "RANDOM": 38,
+   "OTHER": 39,
+   "ORACLE": 33
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "_concurrent_tee.__iter__",
+   "size": 5,
+   "OWN": 1,
+   "RANDOM": 5,
+   "OTHER": 5,
+   "ORACLE": 1
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "_concurrent_tee.__next__",
+   "size": 48,
+   "OWN": 42,
+   "RANDOM": 48,
+   "OTHER": 42,
+   "ORACLE": 38
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "_extract_buffered",
+   "size": 71,
+   "OWN": 62,
+   "RANDOM": 67,
+   "OTHER": 62,
+   "ORACLE": 58
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "_extract_monotonic",
+   "size": 66,
+   "OWN": 56,
+   "RANDOM": 59,
+   "OTHER": 57,
+   "ORACLE": 50
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "_full_period_lcg",
+   "size": 85,
+   "OWN": 71,
+   "RANDOM": 82,
+   "OTHER": 70,
+   "ORACLE": 66
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "_nth_prime_bounds",
+   "size": 72,
+   "OWN": 60,
+   "RANDOM": 69,
+   "OTHER": 58,
+   "ORACLE": 58
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "_random_ordered_indices",
+   "size": 35,
+   "OWN": 31,
+   "RANDOM": 35,
+   "OTHER": 30,
+   "ORACLE": 31
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "argmax",
+   "size": 28,
+   "OWN": 25,
+   "RANDOM": 28,
+   "OTHER": 24,
+   "ORACLE": 10
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "argmin",
+   "size": 28,
+   "OWN": 25,
+   "RANDOM": 28,
+   "OTHER": 24,
+   "ORACLE": 10
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "concurrent_tee",
+   "size": 47,
+   "OWN": 40,
+   "RANDOM": 44,
+   "OTHER": 39,
+   "ORACLE": 37
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "derangements",
+   "size": 44,
+   "OWN": 41,
+   "RANDOM": 44,
+   "OTHER": 39,
+   "ORACLE": 35
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "extract",
+   "size": 53,
+   "OWN": 42,
+   "RANDOM": 48,
+   "OTHER": 44,
+   "ORACLE": 40
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "interleave_randomly",
+   "size": 46,
+   "OWN": 37,
+   "RANDOM": 40,
+   "OTHER": 36,
+   "ORACLE": 36
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "numeric_range._before_stop",
+   "size": 29,
+   "OWN": 24,
+   "RANDOM": 27,
+   "OTHER": 24,
+   "ORACLE": 24
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "numeric_range._index_near",
+   "size": 43,
+   "OWN": 38,
+   "RANDOM": 41,
+   "OTHER": 39,
+   "ORACLE": 39
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "random_ordered_range",
+   "size": 24,
+   "OWN": 22,
+   "RANDOM": 24,
+   "OTHER": 20,
+   "ORACLE": 20
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "seekable.__getitem__",
+   "size": 9,
+   "OWN": 7,
+   "RANDOM": 9,
+   "OTHER": 9,
+   "ORACLE": 9
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "serialize.__init__",
+   "size": 15,
+   "OWN": 15,
+   "RANDOM": 12,
+   "OTHER": 14,
+   "ORACLE": 10
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "serialize.__iter__",
+   "size": 5,
+   "OWN": 1,
+   "RANDOM": 5,
+   "OTHER": 5,
+   "ORACLE": 1
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "serialize.__next__",
+   "size": 12,
+   "OWN": 11,
+   "RANDOM": 12,
+   "OTHER": 12,
+   "ORACLE": 11
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "serialize.close",
+   "size": 12,
+   "OWN": 12,
+   "RANDOM": 12,
+   "OTHER": 12,
+   "ORACLE": 12
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "serialize.send",
+   "size": 14,
+   "OWN": 14,
+   "RANDOM": 14,
+   "OTHER": 13,
+   "ORACLE": 13
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "serialize.throw",
+   "size": 15,
+   "OWN": 15,
+   "RANDOM": 15,
+   "OTHER": 15,
+   "ORACLE": 15
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "sized_iterator.__init__",
+   "size": 15,
+   "OWN": 15,
+   "RANDOM": 12,
+   "OTHER": 13,
+   "ORACLE": 12
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "sized_iterator.__iter__",
+   "size": 5,
+   "OWN": 1,
+   "RANDOM": 5,
+   "OTHER": 5,
+   "ORACLE": 1
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "sized_iterator.__len__",
+   "size": 6,
+   "OWN": 6,
+   "RANDOM": 6,
+   "OTHER": 6,
+   "ORACLE": 6
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "sized_iterator.__next__",
+   "size": 8,
+   "OWN": 7,
+   "RANDOM": 8,
+   "OTHER": 8,
+   "ORACLE": 7
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "subfactorial",
+   "size": 38,
+   "OWN": 31,
+   "RANDOM": 34,
+   "OTHER": 32,
+   "ORACLE": 28
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "synchronized",
+   "size": 24,
+   "OWN": 23,
+   "RANDOM": 20,
+   "OTHER": 21,
+   "ORACLE": 23
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "synchronized.inner",
+   "size": 19,
+   "OWN": 18,
+   "RANDOM": 19,
+   "OTHER": 17,
+   "ORACLE": 18
+  },
+  {
+   "path": "more_itertools/more.py",
+   "function": "zip_broadcast.get_iterator",
+   "size": 22,
+   "OWN": 20,
+   "RANDOM": 22,
+   "OTHER": 19,
+   "ORACLE": 21
+  },
+  {
+   "path": "more_itertools/recipes.py",
+   "function": "_factor_pollard",
+   "size": 77,
+   "OWN": 59,
+   "RANDOM": 76,
+   "OTHER": 63,
+   "ORACLE": 53
+  },
+  {
+   "path": "more_itertools/recipes.py",
+   "function": "_flatten_tensor",
+   "size": 39,
+   "OWN": 31,
+   "RANDOM": 35,
+   "OTHER": 31,
+   "ORACLE": 32
+  },
+  {
+   "path": "more_itertools/recipes.py",
+   "function": "_is_scalar",
+   "size": 21,
+   "OWN": 20,
+   "RANDOM": 21,
+   "OTHER": 19,
+   "ORACLE": 20
+  },
+  {
+   "path": "more_itertools/recipes.py",
+   "function": "_running_median_minheap_and_maxheap",
+   "size": 56,
+   "OWN": 52,
+   "RANDOM": 56,
+   "OTHER": 52,
+   "ORACLE": 44
+  },
+  {
+   "path": "more_itertools/recipes.py",
+   "function": "_running_median_minheap_only",
+   "size": 64,
+   "OWN": 60,
+   "RANDOM": 63,
+   "OTHER": 60,
+   "ORACLE": 48
+  },
+  {
+   "path": "more_itertools/recipes.py",
+   "function": "_running_median_windowed",
+   "size": 78,
+   "OWN": 70,
+   "RANDOM": 77,
+   "OTHER": 66,
+   "ORACLE": 67
+  },
+  {
+   "path": "more_itertools/recipes.py",
+   "function": "_windowed_running_max",
+   "size": 66,
+   "OWN": 57,
+   "RANDOM": 62,
+   "OTHER": 54,
+   "ORACLE": 30
+  },
+  {
+   "path": "more_itertools/recipes.py",
+   "function": "_windowed_running_mean",
+   "size": 44,
+   "OWN": 40,
+   "RANDOM": 44,
+   "OTHER": 36,
+   "ORACLE": 37
+  },
+  {
+   "path": "more_itertools/recipes.py",
+   "function": "_windowed_running_min",
+   "size": 66,
+   "OWN": 57,
+   "RANDOM": 62,
+   "OTHER": 54,
+   "ORACLE": 30
+  },
+  {
+   "path": "more_itertools/recipes.py",
+   "function": "multinomial",
+   "size": 13,
+   "OWN": 13,
+   "RANDOM": 13,
+   "OTHER": 12,
+   "ORACLE": 13
+  },
+  {
+   "path": "more_itertools/recipes.py",
+   "function": "pairwise",
+   "size": 7,
+   "OWN": 7,
+   "RANDOM": 7,
+   "OTHER": 6,
+   "ORACLE": 7
+  },
+  {
+   "path": "more_itertools/recipes.py",
+   "function": "partition.gen",
+   "size": 34,
+   "OWN": 32,
+   "RANDOM": 34,
+   "OTHER": 30,
+   "ORACLE": 32
+  },
+  {
+   "path": "more_itertools/recipes.py",
+   "function": "random_derangement",
+   "size": 65,
+   "OWN": 58,
+   "RANDOM": 65,
+   "OTHER": 51,
+   "ORACLE": 53
+  },
+  {
+   "path": "more_itertools/recipes.py",
+   "function": "running_max",
+   "size": 40,
+   "OWN": 31,
+   "RANDOM": 40,
+   "OTHER": 33,
+   "ORACLE": 26
+  },
+  {
+   "path": "more_itertools/recipes.py",
+   "function": "running_mean",
+   "size": 44,
+   "OWN": 35,
+   "RANDOM": 44,
+   "OTHER": 36,
+   "ORACLE": 30
+  },
+  {
+   "path": "more_itertools/recipes.py",
+   "function": "running_median",
+   "size": 46,
+   "OWN": 36,
+   "RANDOM": 46,
+   "OTHER": 36,
+   "ORACLE": 31
+  },
+  {
+   "path": "more_itertools/recipes.py",
+   "function": "running_min",
+   "size": 40,
+   "OWN": 31,
+   "RANDOM": 40,
+   "OTHER": 33,
+   "ORACLE": 26
+  },
+  {
+   "path": "more_itertools/recipes.py",
+   "function": "running_statistics",
+   "size": 66,
+   "OWN": 59,
+   "RANDOM": 66,
+   "OTHER": 59,
+   "ORACLE": 49
+  }
+ ],
+ "seconds": 2.0
+}

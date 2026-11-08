@@ -1,0 +1,771 @@
+{
+ "project": "click",
+ "split": "8c1a0a7abbc1c36f70d1f65f3604acc46c5ce6ab",
+ "pinned": "8abb77a8432e03ed14a95f972b44f905279415a7",
+ "split_date": "2026-07-09",
+ "train_functions": 597,
+ "train_size": 32205,
+ "test_functions": 55,
+ "k": 50,
+ "max_size": 40,
+ "libraries": {
+  "OWN": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "HOLE | None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 355
+    },
+    {
+     "shape": "HOLE is not None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 179
+    },
+    {
+     "shape": "HOLE is None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 159
+    },
+    {
+     "shape": "HOLE and HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 129
+    },
+    {
+     "shape": "t.IO[t.Any]",
+     "size": 5,
+     "holes": 0,
+     "uses_in_training": 33
+    },
+    {
+     "shape": "t.Callable[HOLE]",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 65
+    },
+    {
+     "shape": "v3 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 126
+    },
+    {
+     "shape": "_('STR').format",
+     "size": 4,
+     "holes": 0,
+     "uses_in_training": 42
+    },
+    {
+     "shape": "v2 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 119
+    },
+    {
+     "shape": "click.echo(HOLE)",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 58
+    }
+   ]
+  },
+  "RANDOM": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "random.random() > HOLE",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "v7 == HOLE",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 3
+    },
+    {
+     "shape": "HOLE = v1.make_formatter()",
+     "size": 4,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "HOLE('STR', HOLE, v4)",
+     "size": 3,
+     "holes": 2,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "JoinedStr",
+     "size": 4,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "JoinedStr",
+     "size": 4,
+     "holes": 2,
+     "uses_in_training": 3
+    },
+    {
+     "shape": "v1 is not HOLE",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 24
+    },
+    {
+     "shape": "HOLE(v12)",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "HOLE if v1 else HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 3
+    },
+    {
+     "shape": "iter(HOLE)",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 4
+    }
+   ]
+  },
+  "OTHER": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "HOLE is None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 197
+    },
+    {
+     "shape": "'STR' % HOLE",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 176
+    },
+    {
+     "shape": "v2 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 270
+    },
+    {
+     "shape": "v3 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 237
+    },
+    {
+     "shape": "HOLE + HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 221
+    },
+    {
+     "shape": "if HOLE:\n    raise ValueError('STR')",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 53
+    },
+    {
+     "shape": "HOLE == HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 204
+    },
+    {
+     "shape": "v1 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 187
+    },
+    {
+     "shape": "v4 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 180
+    },
+    {
+     "shape": "HOLE - HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 174
+    }
+   ]
+  },
+  "ORACLE": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "HOLE | None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 16
+    },
+    {
+     "shape": "HOLE is not None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 9
+    },
+    {
+     "shape": "if HOLE:\n    raise TypeError('STR')",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 5
+    },
+    {
+     "shape": "not HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 16
+    },
+    {
+     "shape": "HOLE and HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 12
+    },
+    {
+     "shape": "if HOLE:\n    raise TypeError(_('STR').format(name=v0))",
+     "size": 11,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "HOLE is HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 10
+    },
+    {
+     "shape": "cabc.Sequence[str]",
+     "size": 4,
+     "holes": 0,
+     "uses_in_training": 4
+    },
+    {
+     "shape": "HOLE[t.Any]",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 5
+    },
+    {
+     "shape": "v3 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 8
+    }
+   ]
+  }
+ },
+ "rows": [
+  {
+   "path": "src/click/_termui_impl.py",
+   "function": "_PagerWriter.__getattr__",
+   "size": 13,
+   "OWN": 13,
+   "RANDOM": 13,
+   "OTHER": 12,
+   "ORACLE": 11
+  },
+  {
+   "path": "src/click/_termui_impl.py",
+   "function": "_PagerWriter.__init__",
+   "size": 17,
+   "OWN": 15,
+   "RANDOM": 17,
+   "OTHER": 15,
+   "ORACLE": 15
+  },
+  {
+   "path": "src/click/_termui_impl.py",
+   "function": "_PagerWriter.close",
+   "size": 9,
+   "OWN": 9,
+   "RANDOM": 9,
+   "OTHER": 9,
+   "ORACLE": 5
+  },
+  {
+   "path": "src/click/_termui_impl.py",
+   "function": "_PagerWriter.flush",
+   "size": 9,
+   "OWN": 9,
+   "RANDOM": 9,
+   "OTHER": 9,
+   "ORACLE": 5
+  },
+  {
+   "path": "src/click/_termui_impl.py",
+   "function": "_PagerWriter.write",
+   "size": 22,
+   "OWN": 18,
+   "RANDOM": 22,
+   "OTHER": 18,
+   "ORACLE": 18
+  },
+  {
+   "path": "src/click/_termui_impl.py",
+   "function": "_PagerWriter.writelines",
+   "size": 17,
+   "OWN": 15,
+   "RANDOM": 17,
+   "OTHER": 16,
+   "ORACLE": 16
+  },
+  {
+   "path": "src/click/_termui_impl.py",
+   "function": "_less_uses_raw_mode",
+   "size": 73,
+   "OWN": 61,
+   "RANDOM": 73,
+   "OTHER": 62,
+   "ORACLE": 52
+  },
+  {
+   "path": "src/click/_termui_impl.py",
+   "function": "_resolve_pager_command",
+   "size": 49,
+   "OWN": 42,
+   "RANDOM": 49,
+   "OTHER": 45,
+   "ORACLE": 33
+  },
+  {
+   "path": "src/click/_utils.py",
+   "function": "Sentinel.__copy__",
+   "size": 6,
+   "OWN": 6,
+   "RANDOM": 6,
+   "OTHER": 6,
+   "ORACLE": 6
+  },
+  {
+   "path": "src/click/_utils.py",
+   "function": "Sentinel.__deepcopy__",
+   "size": 13,
+   "OWN": 11,
+   "RANDOM": 13,
+   "OTHER": 13,
+   "ORACLE": 13
+  },
+  {
+   "path": "src/click/_utils.py",
+   "function": "Sentinel.__reduce_ex__",
+   "size": 19,
+   "OWN": 18,
+   "RANDOM": 19,
+   "OTHER": 19,
+   "ORACLE": 18
+  },
+  {
+   "path": "src/click/core.py",
+   "function": "Argument.get_help_spec",
+   "size": 11,
+   "OWN": 10,
+   "RANDOM": 11,
+   "OTHER": 10,
+   "ORACLE": 10
+  },
+  {
+   "path": "src/click/core.py",
+   "function": "Argument.spec",
+   "size": 19,
+   "OWN": 17,
+   "RANDOM": 19,
+   "OTHER": 17,
+   "ORACLE": 17
+  },
+  {
+   "path": "src/click/core.py",
+   "function": "Option._check_name_is_normalized",
+   "size": 45,
+   "OWN": 40,
+   "RANDOM": 45,
+   "OTHER": 42,
+   "ORACLE": 31
+  },
+  {
+   "path": "src/click/core.py",
+   "function": "Option._infer_flag_kind",
+   "size": 89,
+   "OWN": 72,
+   "RANDOM": 89,
+   "OTHER": 75,
+   "ORACLE": 53
+  },
+  {
+   "path": "src/click/core.py",
+   "function": "Option._pick_type",
+   "size": 91,
+   "OWN": 75,
+   "RANDOM": 89,
+   "OTHER": 83,
+   "ORACLE": 69
+  },
+  {
+   "path": "src/click/core.py",
+   "function": "Option._resolve_lazy_default",
+   "size": 61,
+   "OWN": 53,
+   "RANDOM": 55,
+   "OTHER": 51,
+   "ORACLE": 53
+  },
+  {
+   "path": "src/click/core.py",
+   "function": "Option._validate",
+   "size": 86,
+   "OWN": 71,
+   "RANDOM": 83,
+   "OTHER": 70,
+   "ORACLE": 53
+  },
+  {
+   "path": "src/click/core.py",
+   "function": "Option.flag_activation_value",
+   "size": 21,
+   "OWN": 19,
+   "RANDOM": 21,
+   "OTHER": 20,
+   "ORACLE": 20
+  },
+  {
+   "path": "src/click/core.py",
+   "function": "Option.get_help_spec",
+   "size": 80,
+   "OWN": 69,
+   "RANDOM": 78,
+   "OTHER": 71,
+   "ORACLE": 69
+  },
+  {
+   "path": "src/click/core.py",
+   "function": "Option.get_help_spec._write_opts",
+   "size": 45,
+   "OWN": 36,
+   "RANDOM": 45,
+   "OTHER": 40,
+   "ORACLE": 35
+  },
+  {
+   "path": "src/click/core.py",
+   "function": "Option.is_bool_flag",
+   "size": 16,
+   "OWN": 14,
+   "RANDOM": 16,
+   "OTHER": 15,
+   "ORACLE": 14
+  },
+  {
+   "path": "src/click/core.py",
+   "function": "Parameter.__init_subclass__",
+   "size": 38,
+   "OWN": 37,
+   "RANDOM": 38,
+   "OTHER": 37,
+   "ORACLE": 36
+  },
+  {
+   "path": "src/click/core.py",
+   "function": "Parameter._check_name_is_usable",
+   "size": 59,
+   "OWN": 52,
+   "RANDOM": 59,
+   "OTHER": 54,
+   "ORACLE": 43
+  },
+  {
+   "path": "src/click/core.py",
+   "function": "Parameter._hide_unset",
+   "size": 16,
+   "OWN": 14,
+   "RANDOM": 16,
+   "OTHER": 15,
+   "ORACLE": 15
+  },
+  {
+   "path": "src/click/core.py",
+   "function": "Parameter.get_help_spec",
+   "size": 9,
+   "OWN": 9,
+   "RANDOM": 9,
+   "OTHER": 9,
+   "ORACLE": 9
+  },
+  {
+   "path": "src/click/core.py",
+   "function": "Parameter.spec",
+   "size": 29,
+   "OWN": 27,
+   "RANDOM": 29,
+   "OTHER": 26,
+   "ORACLE": 26
+  },
+  {
+   "path": "src/click/core.py",
+   "function": "_echo_aborted",
+   "size": 12,
+   "OWN": 11,
+   "RANDOM": 12,
+   "OTHER": 11,
+   "ORACLE": 12
+  },
+  {
+   "path": "src/click/core.py",
+   "function": "_outside_click_stacklevel",
+   "size": 64,
+   "OWN": 54,
+   "RANDOM": 62,
+   "OTHER": 55,
+   "ORACLE": 49
+  },
+  {
+   "path": "src/click/shell_completion.py",
+   "function": "PowerShellComplete.format_completion",
+   "size": 38,
+   "OWN": 34,
+   "RANDOM": 38,
+   "OTHER": 34,
+   "ORACLE": 31
+  },
+  {
+   "path": "src/click/shell_completion.py",
+   "function": "PowerShellComplete.get_completion_args",
+   "size": 48,
+   "OWN": 42,
+   "RANDOM": 48,
+   "OTHER": 43,
+   "ORACLE": 33
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_KeepOpenFile.__enter__",
+   "size": 6,
+   "OWN": 6,
+   "RANDOM": 6,
+   "OTHER": 6,
+   "ORACLE": 2
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_KeepOpenFile.__exit__",
+   "size": 22,
+   "OWN": 16,
+   "RANDOM": 22,
+   "OTHER": 22,
+   "ORACLE": 16
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_KeepOpenFile.__getattr__",
+   "size": 13,
+   "OWN": 13,
+   "RANDOM": 13,
+   "OTHER": 12,
+   "ORACLE": 11
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_KeepOpenFile.__init__",
+   "size": 14,
+   "OWN": 9,
+   "RANDOM": 14,
+   "OTHER": 13,
+   "ORACLE": 11
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_KeepOpenFile.__iter__",
+   "size": 13,
+   "OWN": 13,
+   "RANDOM": 12,
+   "OTHER": 13,
+   "ORACLE": 9
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_KeepOpenFile.__repr__",
+   "size": 9,
+   "OWN": 9,
+   "RANDOM": 9,
+   "OTHER": 9,
+   "ORACLE": 9
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_LazyFile.__enter__",
+   "size": 6,
+   "OWN": 6,
+   "RANDOM": 6,
+   "OTHER": 6,
+   "ORACLE": 2
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_LazyFile.__exit__",
+   "size": 25,
+   "OWN": 19,
+   "RANDOM": 25,
+   "OTHER": 25,
+   "ORACLE": 19
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_LazyFile.__getattr__",
+   "size": 14,
+   "OWN": 14,
+   "RANDOM": 14,
+   "OTHER": 13,
+   "ORACLE": 12
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_LazyFile.__init__",
+   "size": 91,
+   "OWN": 77,
+   "RANDOM": 91,
+   "OTHER": 86,
+   "ORACLE": 78
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_LazyFile.__iter__",
+   "size": 17,
+   "OWN": 17,
+   "RANDOM": 16,
+   "OTHER": 17,
+   "ORACLE": 11
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_LazyFile.__repr__",
+   "size": 28,
+   "OWN": 23,
+   "RANDOM": 28,
+   "OTHER": 26,
+   "ORACLE": 24
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_LazyFile.close",
+   "size": 15,
+   "OWN": 13,
+   "RANDOM": 15,
+   "OTHER": 13,
+   "ORACLE": 13
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_LazyFile.close_intelligently",
+   "size": 11,
+   "OWN": 11,
+   "RANDOM": 11,
+   "OTHER": 11,
+   "ORACLE": 11
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_LazyFile.open",
+   "size": 55,
+   "OWN": 48,
+   "RANDOM": 55,
+   "OTHER": 52,
+   "ORACLE": 48
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_PacifyFlushWrapper.__getattr__",
+   "size": 13,
+   "OWN": 13,
+   "RANDOM": 13,
+   "OTHER": 12,
+   "ORACLE": 11
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_PacifyFlushWrapper.__init__",
+   "size": 14,
+   "OWN": 9,
+   "RANDOM": 14,
+   "OTHER": 13,
+   "ORACLE": 11
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_PacifyFlushWrapper.flush",
+   "size": 22,
+   "OWN": 22,
+   "RANDOM": 22,
+   "OTHER": 22,
+   "ORACLE": 22
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "__getattr__",
+   "size": 43,
+   "OWN": 38,
+   "RANDOM": 43,
+   "OTHER": 42,
+   "ORACLE": 41
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_get_binary_stream",
+   "size": 36,
+   "OWN": 29,
+   "RANDOM": 36,
+   "OTHER": 32,
+   "ORACLE": 17
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_get_text_stream",
+   "size": 50,
+   "OWN": 38,
+   "RANDOM": 50,
+   "OTHER": 45,
+   "ORACLE": 26
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_make_default_short_help",
+   "size": 126,
+   "OWN": 106,
+   "RANDOM": 126,
+   "OTHER": 102,
+   "ORACLE": 99
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_safecall",
+   "size": 48,
+   "OWN": 40,
+   "RANDOM": 48,
+   "OTHER": 48,
+   "ORACLE": 40
+  },
+  {
+   "path": "src/click/utils.py",
+   "function": "_safecall.wrapper",
+   "size": 25,
+   "OWN": 23,
+   "RANDOM": 25,
+   "OTHER": 25,
+   "ORACLE": 23
+  }
+ ],
+ "seconds": 2.8
+}
