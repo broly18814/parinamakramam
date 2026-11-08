@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security problem (please report privately)
+    url: https://github.com/broly18814/parinamakramam/security/advisories/new
+    about: A way to make pkv say VERIFIED when it shouldn't, or to read hidden secrets. Please don't post these publicly.

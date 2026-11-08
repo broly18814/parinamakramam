@@ -10,6 +10,10 @@ An independent AI research and product company, started with ₹0 on one MacBook
 | If you want to… | Open |
 |---|---|
 | See where everything stands and what's next | [governance/PROJECT_STATE.md](governance/PROJECT_STATE.md) |
+| The 90-day roadmap and the status of every item | [governance/ROADMAP.md](governance/ROADMAP.md) |
+| How the product and research code are built | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) |
+| See pkv catch a cheat in two minutes | [docs/product/DEMO.md](docs/product/DEMO.md) |
+| Public usage numbers (no interviews) | [governance/ADOPTION.md](governance/ADOPTION.md) |
 | **Learn every idea from zero**, step by step | [docs/LEARN.md](docs/LEARN.md) |
 | Look up a word | [docs/GLOSSARY.md](docs/GLOSSARY.md) |
 | Read the research and the first experiment's results | [docs/research/R001…](docs/research/R001-primitive-evolution-prior-art-and-thesis.md) |

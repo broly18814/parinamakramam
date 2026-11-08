@@ -1,0 +1,19 @@
+name: Missed cheat
+description: A change weakened the tests, but pkv said VERIFIED.
+labels: ["missed cheat"]
+body:
+  - type: markdown
+    attributes:
+      value: Thank you. If the trick could be used to fool pkv on purpose, please use the private security report instead (see the links on the previous page).
+  - type: input
+    id: version
+    attributes: {label: pkv version, placeholder: pkv 0.2.1}
+    validations: {required: true}
+  - type: textarea
+    id: trick
+    attributes: {label: How the tests were weakened, description: "For example: an early `return` before the check."}
+    validations: {required: true}
+  - type: textarea
+    id: example
+    attributes: {label: A small example, description: The test before and after. Please don't paste private code.}
+    validations: {required: true}

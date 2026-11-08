@@ -1,0 +1,16 @@
+name: Bug or crash
+description: pkv crashed, gave exit code 2, or did something else wrong.
+labels: ["bug"]
+body:
+  - type: input
+    id: version
+    attributes: {label: pkv version, placeholder: pkv 0.2.1}
+    validations: {required: true}
+  - type: input
+    id: env
+    attributes: {label: Python version and operating system, placeholder: "Python 3.12, macOS 15"}
+    validations: {required: true}
+  - type: textarea
+    id: what
+    attributes: {label: What happened, description: The command you ran and the full error message.}
+    validations: {required: true}

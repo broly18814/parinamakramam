@@ -1,6 +1,6 @@
 # Project state: read this first
 
-**Last updated:** 8 November 2026 (night) · **Stage:** day 1 of the 90-day plan; week-1 product work and EXP-002 done early
+**Last updated:** 9 November 2026 · **Stage:** day 2 of the [90-day roadmap](ROADMAP.md). Days 1–55 are done; days 56–70 are mostly done; days 71–90 wait for real users.
 
 This file says where everything stands right now, so anyone (you, or a new Claude session) can continue without guessing. Words are explained in the [Glossary](../docs/GLOSSARY.md). To learn every idea from zero, use the [course](../docs/LEARN.md) (35 lessons).
 

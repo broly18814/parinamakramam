@@ -1,0 +1,22 @@
+name: False alarm
+description: pkv said SUSPICIOUS, FAILED or UNVERIFIED, but the change was fine.
+labels: ["false alarm"]
+body:
+  - type: markdown
+    attributes:
+      value: Thank you. False alarms are the main thing we measure and fix. Please don't paste private code; a small made-up example that shows the same thing is perfect.
+  - type: input
+    id: version
+    attributes: {label: pkv version, description: "Output of `pkv --version`", placeholder: pkv 0.2.1}
+    validations: {required: true}
+  - type: textarea
+    id: finding
+    attributes: {label: What pkv said, description: The verdict and the suspicious or notice lines from the receipt.}
+    validations: {required: true}
+  - type: textarea
+    id: why
+    attributes: {label: Why the change was actually fine, description: "For example: the test was moved to another file, or the project leaves that test out on purpose."}
+    validations: {required: true}
+  - type: textarea
+    id: example
+    attributes: {label: A small example (optional), description: Before and after versions of the test, or a public repository and commit.}
