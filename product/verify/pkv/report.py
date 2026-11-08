@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
 """Turn everything pkv found into one verdict and a plain report (the receipt).
 
 Verdicts, from most to least serious:

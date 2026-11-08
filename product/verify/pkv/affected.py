@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
 """Decide which test files a change could affect, and say why.
 
 Plain picture: drop dye into the river at every changed file and follow it

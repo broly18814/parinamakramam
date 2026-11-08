@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
 """Read what changed in a git repository, and fingerprint the code.
 
 Plain picture: git keeps snapshots of a project. This module asks git two

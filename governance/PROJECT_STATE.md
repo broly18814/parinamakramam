@@ -38,7 +38,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
   - **BENCH-002 (held out): 10 of 13 caught, 1 of 10 false alarms.**
 - **GitHub Action:** `product/verify/action.yml`. This repository uses it on itself.
 - **Quality:**
-  - 69 product self-checks and 16 research self-checks;
+  - 70 product self-checks and 16 research self-checks;
   - `mypy --strict` clean;
   - mutation-tested detection rules;
   - two real bugs found and fixed with regression tests: the "racy git" fingerprint bug, and a crash.
@@ -49,6 +49,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 - **Pre-registration:** every experiment and benchmark is pre-registered and committed before it runs.
 - **Plain language:** all documents, with a glossary, a course, and a technical appendix for specialists.
 - **Git history:** shows only the founder as author.
+- **Licence:** Apache License 2.0 ([LICENSE](../LICENSE), decision D-025). This closes open problem OI-5. The repository is still private.
 
 ## What we know (our own results)
 
@@ -66,7 +67,6 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 - **OI-2:** "remove unused shortcuts" never activates (fix planned in EXP-004).
 - **OI-3:** the undo rule keeps changes that make no difference.
 - **OI-4:** read the original TRINITY and Stack Overflow sources before quoting them publicly.
-- **OI-5 (your decision):** the **licence** for pkv. MIT or Apache-2.0 are the usual choices ([lesson 21](../docs/LEARN.md)). It's needed before the repository goes public and before others can use the GitHub Action.
 - **OI-6:** pkv finds tests by pytest's default naming only, and can't trace code that reads data files by name.
 - **OI-8:** known pkv misses: an expected answer edited to match a bug; `pytest.raises(AssertionError)`; a skip mark on one table row; an early `return`. Known false alarm: a test file split in two. Each needs a fresh held-out set (BENCH-003) before it's addressed.
 - **OI-9:** the near-miss scan costs 11× CPU in pure Python. It matters only if the near-miss line continues.
@@ -83,8 +83,8 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 
 ## Next steps, in order
 
-1. **Your decision: licence (OI-5).** It unblocks making the repository public, using the GitHub Action elsewhere, and the first real users.
+1. **Your decision: make the repository public?** The licence is chosen, so this is the only step left before other projects can use the GitHub Action. It's one switch in GitHub's settings, and it is publishing, so it waits for your clear yes.
 2. **Real-world evidence for pkv.** Run it, read-only and in a sandboxed copy, on a few public Python projects whose licences allow it, and record what it finds. (Downloading those projects needs your go-ahead.)
 3. **BENCH-003:** a fresh held-out set *before* tackling the known misses in OI-8.
 4. **EXP-002b:** the one remaining near-miss variant, pre-registered (structure-based). If it closes < 10% of the gap, stop and move to EXP-005.
-5. **Publish:** after the licence decision, make the repository public, add the Action to GitHub's Marketplace, and watch install counts (no interviews; D-002).
+5. **Publish more widely:** after the repository is public, add the Action to GitHub's Marketplace, tag a release, and watch install counts (no interviews; D-002).

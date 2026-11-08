@@ -20,6 +20,7 @@ An independent AI research and product company, started with ₹0 on one MacBook
 | See every change, version by version | [CHANGELOG.md](CHANGELOG.md) |
 | Report a security problem | [SECURITY.md](SECURITY.md) |
 | Rules for changing the code | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| The legal terms for using this work | [LICENSE](LICENSE) (Apache-2.0) and [NOTICE](NOTICE) |
 | See the experiment code | `research/pevo/` |
 | See the raw results | [experiments/EXP-001/](experiments/EXP-001/README.md), `experiments/EXP-002/` |
 | Read the second experiment (negative result) | [docs/research/EXP-002-design.md](docs/research/EXP-002-design.md) |
@@ -32,7 +33,7 @@ scripts/check-all.sh
 
 ## Re-run the experiments (Terminal commands)
 
-Research self-checks (11) and the full experiment (about 1.5 minutes):
+Research self-checks (16) and the full experiment (about 1.5 minutes):
 
 ```bash
 cd research/pevo
@@ -41,9 +42,15 @@ python3 run_exp001.py --seeds 0-9 --out ../../experiments/EXP-001/results
 python3 ../../experiments/EXP-001/analysis.py
 ```
 
-Checker tool self-checks (69):
+Checker tool self-checks (70):
 
 ```bash
 cd product/verify
 uv run --no-project --python 3.14 --with pytest python -m pytest -q tests
 ```
+
+## Licence
+
+Everything in this repository is licensed under the **Apache License 2.0**; see [LICENSE](LICENSE) and [NOTICE](NOTICE).
+
+In plain words: anyone may use, change and share this work, including for commercial purposes, as long as they keep the licence and notice files. The licence also grants a patent licence from contributors, and gives no warranty. Decision D-025 explains why we chose it.

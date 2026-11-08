@@ -9,6 +9,15 @@ Before version 1.0, anything may still change.
 
 ## Parinama Verify (`pkv`)
 
+### [Unreleased]
+
+#### Added
+- **Licence: Apache License 2.0** (decision D-025). `LICENSE` and `NOTICE` are at the repository root and inside the package. The package metadata declares `License-Expression: Apache-2.0`, and every source file carries an SPDX label. The package build now needs setuptools 77 or newer, the first version that understands this metadata.
+- A CI check that the package's copies of `LICENSE` and `NOTICE` match the root copies.
+
+#### Fixed
+- Importing `pkv/__main__.py` ran the pkv command, so no self-check could load it. It now runs only through `python -m pkv`. **Found by dogfooding:** pkv's check of this very change reported `__main__.py` as changed code that no test checks (UNVERIFIED). A new self-check fails before the fix and passes after it.
+
 ### [0.1.0]: 2026-11-08
 
 #### Added

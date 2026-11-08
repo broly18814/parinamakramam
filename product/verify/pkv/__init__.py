@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
 """Parinama Verify (pkv): an independent checker for code changes.
 
 Parts so far:

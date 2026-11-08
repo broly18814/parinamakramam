@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
 """Build a map of which Python files use which other Python files.
 
 Plain picture: a city map of one-way roads. If file A says `import b`, there

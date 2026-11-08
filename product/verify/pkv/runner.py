@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
 """Actually run the chosen tests, and record proof of what happened.
 
 Plain picture: an invigilator who doesn't take the student's word for it.

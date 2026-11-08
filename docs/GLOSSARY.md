@@ -42,6 +42,7 @@ If a word in any Parinamakramam document confuses you, look it up here. The word
 | **Hypothesis** | A prediction written down *before* the experiment, so we can't move the goalposts afterwards. |
 | **Import / import graph** | In Python, one file "imports" another to use its code. The import graph is the map of which files use which. We use it to work out which checks a change could affect. |
 | **JUnit XML** | A standard file format test tools use to write down each test's result. pkv reads it for exact counts. |
+| **Licence** | The legal terms for using someone's work. Ours is the Apache License 2.0: anyone may use, change and share pkv, even commercially, if they keep our licence and notice files. |
 | **Library** | The computer's growing collection of saved shortcuts. |
 | **Linter** | A program that proof-reads code for likely bugs and inconsistent style. Ours is ruff. |
 | **MDL (minimum description length)** | The technical name for *compression / shortening*. |
@@ -49,6 +50,7 @@ If a word in any Parinamakramam document confuses you, look it up here. The word
 | **Monorepo** | One repository holding several projects. Ours holds the research and the product. |
 | **Mutation testing** | Deliberately breaking code to check the tests notice. A break that no test catches reveals a blind spot. |
 | **Near miss** | For an unsolved puzzle, the attempt whose answers came closest. EXP-002 tried learning from these, and it didn't help. |
+| **NOTICE file** | A short file naming the project and who owns it. The Apache licence requires anyone who shares the work to keep it. |
 | **Negative control** | A test where the method *should not* help, like our random puzzles. If it helps there too, something is fishy. |
 | **Open source** | Code anyone may read, use and improve for free. |
 | **Oracle / cheat student** | A student secretly given the right answers' building blocks. It shows the best possible score, which tells us whether our exam can detect improvement at all. |
@@ -71,6 +73,7 @@ If a word in any Parinamakramam document confuses you, look it up here. The word
 | **Search prior / habits** | Which building blocks the computer tries first. |
 | **Seed / exam paper** | A number that generates one particular set of puzzles. The same number always produces the same puzzles, so results can be repeated exactly. |
 | **Semantic Versioning** | Version numbers MAJOR.MINOR.PATCH: PATCH for fixes, MINOR for features, MAJOR for breaking changes. |
+| **SPDX identifier** | A standard short name for a licence, such as `Apache-2.0`, written at the top of a file so tools know its licence. |
 | **Stale result** | A test result from *before* the code last changed. It no longer proves anything about the current code. |
 | **Stop rule** | A rule, written in advance, for when to abandon a line of work. |
 | **Substrate** | The whole "material" the computer builds with: its blocks, fitting rules, building rules and habits. |

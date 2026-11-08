@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
 """The `pkv` command.
 
     pkv affected [--repo PATH] [--base REF] [--json]

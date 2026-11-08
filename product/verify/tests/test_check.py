@@ -373,3 +373,25 @@ def test_whole_file_skipped_on_purpose_is_not_reported_as_not_run(repo, capsys):
     out = capsys.readouterr().out
     assert "never ran" not in out  # a deliberate whole-file skip is not "removed"
     assert "pytest found no tests to run" in out
+
+
+# ---------- the `python -m pkv` entry point ----------
+
+def test_python_dash_m_entry_point():
+    """`python -m pkv` works, and importing the entry file has no side effects.
+
+    Found by dogfooding: pkv's own check reported `pkv/__main__.py` as changed
+    code that no test checks. Before the fix, importing the file ran the command.
+    """
+    import pathlib
+    import subprocess
+    import sys
+
+    import pkv.__main__  # noqa: F401  (must not run the command or exit)
+    from pkv import __version__
+
+    package_dir = pathlib.Path(__file__).resolve().parents[1]
+    done = subprocess.run([sys.executable, "-m", "pkv", "--version"], cwd=package_dir,
+                          capture_output=True, text=True, timeout=60)
+    assert done.returncode == 0, done.stderr
+    assert done.stdout.strip() == f"pkv {__version__}"

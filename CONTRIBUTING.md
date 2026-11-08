@@ -19,7 +19,8 @@ Changes must keep both trustworthy.
 5. **Frozen research code stays frozen.** Code behind a published result (for example EXP-001) may be tidied only if the experiment is reproduced and every result file is identical. Say so in the changelog.
 6. **Benchmarks are pre-registered.** Predictions are written down and committed *before* a benchmark runs. An improvement made after seeing results must also be scored on a held-out set written before the improvement.
 7. **No private data.** Never add private source code, credentials or personal data, and never use code whose licence forbids it.
-8. **Record decisions and changes.** Important decisions go in `governance/DECISION_LOG.md`, and user-visible changes go in `CHANGELOG.md`.
+8. **Contributions use the project's licence.** Anything you submit is licensed under the [Apache License 2.0](LICENSE), as its section 5 describes. New source files in `product/verify/pkv/` start with `# SPDX-License-Identifier: Apache-2.0`.
+9. **Record decisions and changes.** Important decisions go in `governance/DECISION_LOG.md`, and user-visible changes go in `CHANGELOG.md`.
 
 ## Running everything locally
 

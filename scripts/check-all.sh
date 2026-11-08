@@ -7,6 +7,9 @@ cd "$(git rev-parse --show-toplevel)"
 PY=3.14
 step() { printf '\n== %s\n' "$1"; }
 
+step "licence files (the package copies must match the root)"
+cmp LICENSE product/verify/LICENSE && cmp NOTICE product/verify/NOTICE && echo "LICENSE and NOTICE match"
+
 step "lint (ruff)"
 uvx ruff check product/verify research/pevo experiments
 

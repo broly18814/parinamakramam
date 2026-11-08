@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
 """Spot changes that weaken the tests instead of fixing the code.
 
 Plain picture: comparing the exam paper before and after the student had it.

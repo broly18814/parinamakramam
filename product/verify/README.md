@@ -118,7 +118,7 @@ Add these steps to a workflow (`.github/workflows/*.yml`). The project's depende
 The receipt appears on the run's summary page and is kept as a downloadable file (`pkv-receipt`). The verdict is also available to later steps as `steps.<id>.outputs.verdict`.
 
 **Two notes:**
-- The repository is currently **private**, so only its owner can use this action. Other projects can use it once it's made public, which needs a licence decision first (open problem OI-5).
+- The repository is currently **private**, so only its owner can use this action. Other projects can use it once the founder makes the repository public. The licence is already chosen (Apache-2.0, decision D-025).
 - This repository uses its own action on every upload, so pkv checks pkv (the `dogfood` job in `.github/workflows/self-checks.yml`).
 
 ## Safety rules
@@ -134,7 +134,7 @@ The receipt appears on the run's summary page and is kept as a downloadable file
 
 - **Lint and types:** `ruff` lint and `mypy --strict`, both clean.
 - **Self-checks:**
-  - 69 product self-checks, on Python 3.10, 3.12 and 3.14;
+  - 70 product self-checks, on Python 3.10, 3.12 and 3.14;
   - every bug fix has a regression test that fails before the fix;
   - each detection rule was **mutation-tested**: breaking it makes a self-check fail.
 - **Regression gate:** both practice sets; CI fails if any scenario's verdict changes.
@@ -144,3 +144,7 @@ The receipt appears on the run's summary page and is kept as a downloadable file
 ```bash
 scripts/check-all.sh
 ```
+
+## Licence
+
+[Apache License 2.0](LICENSE), with a [NOTICE](NOTICE) file. Every source file in `pkv/` starts with `# SPDX-License-Identifier: Apache-2.0`, a standard one-line label that tools read to know the licence of each file.

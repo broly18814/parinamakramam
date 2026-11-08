@@ -462,7 +462,14 @@ The Darwin Gödel Machine applies evolution to an agent's own code, and keeps on
 - **Open source** means the code is public and others may use it, under the terms of a **licence**. Common licences:
   - **MIT** and **Apache-2.0** are *permissive*: anyone may use the code, even commercially. Apache-2.0 also includes protection around patents.
   - **GPL** is *copyleft*: anyone who distributes changed versions must share them under the same terms.
-- **Choosing our licence is your decision** (it's listed as an open question in PROJECT_STATE).
+- **We chose Apache-2.0** (decision D-025). Anyone may use pkv, even commercially. In return they must keep our licence and notice, and say if they changed the files. Contributors also promise not to sue users over patents on their contributions.
+
+📖 **The real words.**
+- **`LICENSE` file:** the full legal text, copied exactly. Never edit it: lawyers and tools recognise it by its exact wording, and we checked ours against the official file's checksum.
+- **`NOTICE` file:** a short file naming the project and its copyright holder. Apache-2.0 requires anyone who redistributes the work to keep it.
+- **Copyright holder:** who owns the work. Ours says "The Parinamakramam Authors" until the company is registered.
+- **SPDX identifier:** a standard short name for a licence, like `Apache-2.0`. A line `# SPDX-License-Identifier: Apache-2.0` at the top of a file lets tools know its licence without reading the whole text.
+- **Licensed is not the same as public.** The licence says what people *may* do once they have the code. Our repository is still private, so nobody else has it yet.
 - Licences also matter for research data. **Never train on code whose licence doesn't allow it**, and never on private customer code without permission. That's one of our founding rules.
 
 ## Lesson 22. How a free tool becomes a business
