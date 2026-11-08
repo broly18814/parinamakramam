@@ -35,7 +35,7 @@ We use **Trusted Publishing**. You tell PyPI, once, "trust the workflow `publish
    | Environment name | `pypi` |
 
    A pending publisher does **not** reserve the name. The name becomes yours at the first successful upload.
-4. **Recommended: require your approval for each publish.** On GitHub, open the repository's Settings → Environments → `pypi` (create it if it isn't listed) → *Required reviewers* → add yourself. Every PyPI upload then waits for your click.
+4. **Done on 9 November 2026: your approval is required for each publish.** The GitHub environment `pypi` has `broly18814` as its required reviewer, and only tags matching `pkv-v*` may deploy to it. `testpypi` exists too, and only the `main` branch may deploy to it. Every PyPI upload waits for your click in GitHub's Actions tab (*Review deployments* → *Approve*).
 5. **Optional rehearsal on TestPyPI**, PyPI's practice copy:
    - repeat steps 1–3 on https://test.pypi.org with Environment name `testpypi`;
    - then run the workflow by hand: Actions → publish → *Run workflow* → target `testpypi`.

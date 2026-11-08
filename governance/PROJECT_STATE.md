@@ -91,7 +91,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 
 ## Next steps, in order
 
-1. **Your steps for PyPI** ([runbook](../docs/product/PYPI.md)): create a PyPI account with two-factor authentication, and add the pending trusted publisher. Then approve releasing `pkv-v0.2.1`, which uploads it to PyPI automatically (D-031).
+1. **Your steps for PyPI** ([runbook](../docs/product/PYPI.md)): create a PyPI account with two-factor authentication, and add the pending trusted publisher. The GitHub side is done: the `pypi` environment requires your approval and accepts only `pkv-v*` tags. Then approve releasing `pkv-v0.2.1`, which uploads it to PyPI automatically (D-031).
 2. **BENCH-003:** a fresh held-out set *before* tackling the known misses in OI-8.
 3. **EXP-002b:** the one remaining near-miss variant, pre-registered (structure-based). If it closes < 10% of the gap, stop and move to EXP-005.
 4. **Publish more widely:** the first release is out (`pkv-v0.2.0`, D-030). Next, decide how to reach GitHub's Marketplace, which needs `action.yml` at the top of a repository (either a small separate repository for the action, or moving the file). Then watch install counts (no interviews; D-002).
