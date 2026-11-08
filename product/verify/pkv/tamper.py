@@ -405,7 +405,9 @@ def find_tampering(root: str | Path, changes: list[Change], ref: str | None,
                 findings.append(Finding("notice", "expected-values-changed", path,
                     f"the expected values in {t} ({path}) changed in the same change as the code. "
                     "Check the new expected values are right, not just made to match.", t))
-    return findings
+    # A test that disappeared or shrank may only have moved: check (D4).
+    from .moves import excuse_moves  # here, not at the top: moves.py builds on this module
+    return excuse_moves(root, changes, ref, findings)
 
 
 SELF_COMPARE = ("the test {t} in {path} compares a value with itself (like 'x == x'). That fails only for "

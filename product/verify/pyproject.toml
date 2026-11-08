@@ -1,6 +1,6 @@
 [project]
 name = "parinama-verify"
-version = "0.1.2"
+version = "0.2.0"
 description = "Independent, agent-agnostic verification of AI-written code changes"
 readme = "README.md"
 license = "Apache-2.0"
