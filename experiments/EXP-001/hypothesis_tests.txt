@@ -1,0 +1,19 @@
+Pre-registered tests (threshold +5 pp and CI excluding 0 unless stated)
+H0 oracle - C0 (struct)                                     +18.5 pp  [+15.2, +21.8]  W/L 10/0  -> PASS
+H1 C2 - C1 (struct)                                          +0.3 pp  [-3.8, +4.7]  W/L 4/5  -> FAIL
+H2 C3 - C2 (struct)  [core]                                  +1.2 pp  [-2.8, +4.8]  W/L 5/4  -> FAIL
+H3 C2r - C1 (struct), success if <= 0                        -1.2 pp  [-3.2, +0.8]  -> PASS
+H4 (C3-C1)struct - (C3-C1)flat, success if >0 & CI>0         -0.0 pp  [-2.5, +2.8]  -> FAIL
+H5 C4 - C2 (struct)                                          +4.0 pp  [+1.0, +6.8]  W/L 9/1  -> FAIL
+
+Exploratory (not pre-registered)
+C3_evolve - C3_noHO (struct)                                 +3.3 pp  [+1.3, +5.7]  W/L 6/0  -> CI>0
+C3_evolve - C3_noHO (flat)                                   +0.3 pp  [-2.8, +3.8]  W/L 5/4  -> CI spans 0
+C3_evolve - C3_noGate (flat)                                 +4.3 pp  [+1.7, +7.5]  W/L 7/1  -> CI>0
+C1_compose - C0_fixed (struct)                               -1.7 pp  [-3.2, -0.3]  W/L 1/6  -> CI<0
+C1_compose - C0_fixed (flat)                                 -4.3 pp  [-6.3, -2.0]  W/L 1/8  -> CI<0
+C4_search - C0_fixed (struct)                                +2.7 pp  [-0.8, +6.2]  W/L 8/2  -> CI spans 0
+O_oracle - C0_fixed (flat)                                   -4.3 pp  [-6.8, -1.8]  W/L 1/8  -> CI<0
+
+C3 deprecation events across all runs: 0
+C3 gate rejections across all runs: 47

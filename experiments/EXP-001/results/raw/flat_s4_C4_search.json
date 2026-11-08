@@ -1,0 +1,858 @@
+{
+ "condition": "C4_search",
+ "rounds": [
+  {
+   "round": 0,
+   "learn_strict": 0.875,
+   "val_strict": 0.8421052631578947,
+   "test_strict": 0.65,
+   "test_found_any": 0.7,
+   "n_values": 30000,
+   "max_cost_completed": 39,
+   "seconds": 0.379,
+   "library_learned": 0,
+   "x_cost": 5
+  },
+  {
+   "round": 1,
+   "learn_strict": 0.9,
+   "val_strict": 0.8947368421052632,
+   "test_strict": 0.6166666666666667,
+   "test_found_any": 0.6666666666666666,
+   "n_values": 30000,
+   "max_cost_completed": 33,
+   "seconds": 0.308,
+   "library_learned": 2,
+   "x_cost": 3
+  },
+  {
+   "round": 2,
+   "learn_strict": 0.9,
+   "val_strict": 0.8421052631578947,
+   "test_strict": 0.6,
+   "test_found_any": 0.65,
+   "n_values": 30000,
+   "max_cost_completed": 31,
+   "seconds": 0.296,
+   "library_learned": 3,
+   "x_cost": 3
+  },
+  {
+   "round": 3,
+   "learn_strict": 0.9,
+   "val_strict": 0.8421052631578947,
+   "test_strict": 0.6,
+   "test_found_any": 0.65,
+   "n_values": 30000,
+   "max_cost_completed": 31,
+   "seconds": 0.296,
+   "library_learned": 3,
+   "x_cost": 3
+  },
+  {
+   "round": 4,
+   "learn_strict": 0.9,
+   "val_strict": 0.8421052631578947,
+   "test_strict": 0.6,
+   "test_found_any": 0.65,
+   "n_values": 30000,
+   "max_cost_completed": 31,
+   "seconds": 0.29,
+   "library_learned": 3,
+   "x_cost": 3
+  }
+ ],
+ "events": [
+  {
+   "round": 0,
+   "event": "search: evaluated 24 candidates, accepted ['a0_0', 'a0_1']"
+  },
+  {
+   "round": 1,
+   "event": "search: evaluated 16 candidates, accepted ['a1_0']"
+  },
+  {
+   "round": 2,
+   "event": "search: evaluated 8 candidates, accepted []"
+  },
+  {
+   "round": 3,
+   "event": "search: evaluated 8 candidates, accepted []"
+  }
+ ],
+ "test_per_task": {
+  "te000": {
+   "level": 2,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 6366,
+   "size": 6,
+   "inlined_size": 7,
+   "program": "(dedup (filter odd (tail (a1_0 sub1))))",
+   "uses_learned": [
+    "a1_0"
+   ]
+  },
+  "te001": {
+   "level": 2,
+   "rtype": "L",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te002": {
+   "level": 2,
+   "rtype": "I",
+   "strict": true,
+   "found": true,
+   "index": 1001,
+   "size": 5,
+   "inlined_size": 5,
+   "program": "(length (concat x (dedup x)))",
+   "uses_learned": []
+  },
+  "te003": {
+   "level": 2,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 1872,
+   "size": 6,
+   "inlined_size": 7,
+   "program": "(reverse (concat (filter odd a0_0) x))",
+   "uses_learned": [
+    "a0_0"
+   ]
+  },
+  "te004": {
+   "level": 2,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 441,
+   "size": 5,
+   "inlined_size": 5,
+   "program": "(dedup (filter odd (tail x)))",
+   "uses_learned": []
+  },
+  "te005": {
+   "level": 2,
+   "rtype": "I",
+   "strict": true,
+   "found": true,
+   "index": 538,
+   "size": 4,
+   "inlined_size": 5,
+   "program": "(head (tail (tail a0_0)))",
+   "uses_learned": [
+    "a0_0"
+   ]
+  },
+  "te006": {
+   "level": 2,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 753,
+   "size": 5,
+   "inlined_size": 6,
+   "program": "(tail (reverse (dedup (a0_1 odd))))",
+   "uses_learned": [
+    "a0_1"
+   ]
+  },
+  "te007": {
+   "level": 2,
+   "rtype": "I",
+   "strict": true,
+   "found": true,
+   "index": 550,
+   "size": 4,
+   "inlined_size": 5,
+   "program": "(sum (dedup (a0_1 even)))",
+   "uses_learned": [
+    "a0_1"
+   ]
+  },
+  "te008": {
+   "level": 2,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 663,
+   "size": 5,
+   "inlined_size": 6,
+   "program": "(dedup (tail (filter even a0_0)))",
+   "uses_learned": [
+    "a0_0"
+   ]
+  },
+  "te009": {
+   "level": 2,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 729,
+   "size": 5,
+   "inlined_size": 6,
+   "program": "(reverse (tail (dedup (tail a0_0))))",
+   "uses_learned": [
+    "a0_0"
+   ]
+  },
+  "te010": {
+   "level": 2,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 2428,
+   "size": 6,
+   "inlined_size": 7,
+   "program": "(dedup (concat (reverse (a0_1 isneg)) x))",
+   "uses_learned": [
+    "a0_1"
+   ]
+  },
+  "te011": {
+   "level": 2,
+   "rtype": "I",
+   "strict": false,
+   "found": true,
+   "index": 986,
+   "size": 4,
+   "inlined_size": 5,
+   "program": "(count pos (a1_0 sub1))",
+   "uses_learned": [
+    "a1_0"
+   ]
+  },
+  "te012": {
+   "level": 2,
+   "rtype": "L",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te013": {
+   "level": 2,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 1143,
+   "size": 5,
+   "inlined_size": 6,
+   "program": "(dedup (map sub1 (tail a0_0)))",
+   "uses_learned": [
+    "a0_0"
+   ]
+  },
+  "te014": {
+   "level": 2,
+   "rtype": "I",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te015": {
+   "level": 2,
+   "rtype": "I",
+   "strict": true,
+   "found": true,
+   "index": 1311,
+   "size": 5,
+   "inlined_size": 5,
+   "program": "(max (tail (tail (tail x))))",
+   "uses_learned": []
+  },
+  "te016": {
+   "level": 2,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 64,
+   "size": 3,
+   "inlined_size": 4,
+   "program": "(filter pos a0_0)",
+   "uses_learned": [
+    "a0_0"
+   ]
+  },
+  "te017": {
+   "level": 2,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 301,
+   "size": 4,
+   "inlined_size": 5,
+   "program": "(dedup (map sub1 a0_0))",
+   "uses_learned": [
+    "a0_0"
+   ]
+  },
+  "te018": {
+   "level": 2,
+   "rtype": "I",
+   "strict": true,
+   "found": true,
+   "index": 145,
+   "size": 3,
+   "inlined_size": 4,
+   "program": "(min (a0_1 even))",
+   "uses_learned": [
+    "a0_1"
+   ]
+  },
+  "te019": {
+   "level": 2,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 4853,
+   "size": 7,
+   "inlined_size": 7,
+   "program": "(reverse (dedup (concat (tail (reverse x)) x)))",
+   "uses_learned": []
+  },
+  "te020": {
+   "level": 3,
+   "rtype": "L",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te021": {
+   "level": 3,
+   "rtype": "L",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te022": {
+   "level": 3,
+   "rtype": "I",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te023": {
+   "level": 3,
+   "rtype": "I",
+   "strict": true,
+   "found": true,
+   "index": 30,
+   "size": 2,
+   "inlined_size": 2,
+   "program": "(min x)",
+   "uses_learned": []
+  },
+  "te024": {
+   "level": 3,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 1251,
+   "size": 6,
+   "inlined_size": 6,
+   "program": "(tail (filter even (concat x x)))",
+   "uses_learned": []
+  },
+  "te025": {
+   "level": 3,
+   "rtype": "I",
+   "strict": true,
+   "found": true,
+   "index": 1985,
+   "size": 5,
+   "inlined_size": 6,
+   "program": "(head (tail (dedup (tail a0_0))))",
+   "uses_learned": [
+    "a0_0"
+   ]
+  },
+  "te026": {
+   "level": 3,
+   "rtype": "I",
+   "strict": true,
+   "found": true,
+   "index": 533,
+   "size": 4,
+   "inlined_size": 4,
+   "program": "(count (notp isneg) x)",
+   "uses_learned": []
+  },
+  "te027": {
+   "level": 3,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 929,
+   "size": 5,
+   "inlined_size": 6,
+   "program": "(map double (tail (a0_1 even)))",
+   "uses_learned": [
+    "a0_1"
+   ]
+  },
+  "te028": {
+   "level": 3,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 2374,
+   "size": 6,
+   "inlined_size": 7,
+   "program": "(concat (filter odd (a0_1 isneg)) x)",
+   "uses_learned": [
+    "a0_1"
+   ]
+  },
+  "te029": {
+   "level": 3,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 2814,
+   "size": 6,
+   "inlined_size": 7,
+   "program": "(tail (reverse (tail (dedup (tail a0_0)))))",
+   "uses_learned": [
+    "a0_0"
+   ]
+  },
+  "te030": {
+   "level": 3,
+   "rtype": "I",
+   "strict": false,
+   "found": true,
+   "index": 4986,
+   "size": 6,
+   "inlined_size": 7,
+   "program": "(count pos (dedup (tail (reverse a0_0))))",
+   "uses_learned": [
+    "a0_0"
+   ]
+  },
+  "te031": {
+   "level": 3,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 25189,
+   "size": 7,
+   "inlined_size": 8,
+   "program": "(filter odd (concat (a1_0 mod3) (dedup x)))",
+   "uses_learned": [
+    "a1_0"
+   ]
+  },
+  "te032": {
+   "level": 3,
+   "rtype": "I",
+   "strict": true,
+   "found": true,
+   "index": 1006,
+   "size": 5,
+   "inlined_size": 5,
+   "program": "(sum (concat x (tail x)))",
+   "uses_learned": []
+  },
+  "te033": {
+   "level": 3,
+   "rtype": "I",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te034": {
+   "level": 3,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 296,
+   "size": 5,
+   "inlined_size": 5,
+   "program": "(concat (reverse (dedup x)) x)",
+   "uses_learned": []
+  },
+  "te035": {
+   "level": 3,
+   "rtype": "L",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te036": {
+   "level": 3,
+   "rtype": "L",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te037": {
+   "level": 3,
+   "rtype": "L",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te038": {
+   "level": 3,
+   "rtype": "I",
+   "strict": true,
+   "found": true,
+   "index": 549,
+   "size": 3,
+   "inlined_size": 4,
+   "program": "(min (a1_0 neg))",
+   "uses_learned": [
+    "a1_0"
+   ]
+  },
+  "te039": {
+   "level": 3,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 307,
+   "size": 5,
+   "inlined_size": 5,
+   "program": "(filter odd (concat x x))",
+   "uses_learned": []
+  },
+  "te040": {
+   "level": 4,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 4580,
+   "size": 6,
+   "inlined_size": 6,
+   "program": "(filter (notp isneg) (reverse (tail x)))",
+   "uses_learned": []
+  },
+  "te041": {
+   "level": 4,
+   "rtype": "L",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te042": {
+   "level": 4,
+   "rtype": "I",
+   "strict": true,
+   "found": true,
+   "index": 787,
+   "size": 4,
+   "inlined_size": 5,
+   "program": "(min (tail (a0_1 pos)))",
+   "uses_learned": [
+    "a0_1"
+   ]
+  },
+  "te043": {
+   "level": 4,
+   "rtype": "L",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te044": {
+   "level": 4,
+   "rtype": "I",
+   "strict": true,
+   "found": true,
+   "index": 217,
+   "size": 3,
+   "inlined_size": 4,
+   "program": "(min (a0_1 pos))",
+   "uses_learned": [
+    "a0_1"
+   ]
+  },
+  "te045": {
+   "level": 4,
+   "rtype": "L",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te046": {
+   "level": 4,
+   "rtype": "L",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te047": {
+   "level": 4,
+   "rtype": "L",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te048": {
+   "level": 4,
+   "rtype": "L",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te049": {
+   "level": 4,
+   "rtype": "L",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te050": {
+   "level": 4,
+   "rtype": "I",
+   "strict": true,
+   "found": true,
+   "index": 5117,
+   "size": 6,
+   "inlined_size": 6,
+   "program": "(sum (dedup (filter odd (tail x))))",
+   "uses_learned": []
+  },
+  "te051": {
+   "level": 4,
+   "rtype": "I",
+   "strict": true,
+   "found": true,
+   "index": 10824,
+   "size": 5,
+   "inlined_size": 6,
+   "program": "(head (map add1 (a1_0 mod3)))",
+   "uses_learned": [
+    "a1_0"
+   ]
+  },
+  "te052": {
+   "level": 4,
+   "rtype": "I",
+   "strict": true,
+   "found": true,
+   "index": 28523,
+   "size": 8,
+   "inlined_size": 8,
+   "program": "(count odd (concat x (tail (reverse (tail x)))))",
+   "uses_learned": []
+  },
+  "te053": {
+   "level": 4,
+   "rtype": "I",
+   "strict": false,
+   "found": true,
+   "index": 261,
+   "size": 4,
+   "inlined_size": 4,
+   "program": "(count pos (dedup x))",
+   "uses_learned": []
+  },
+  "te054": {
+   "level": 4,
+   "rtype": "L",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te055": {
+   "level": 4,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 29710,
+   "size": 8,
+   "inlined_size": 8,
+   "program": "(concat (dedup x) (dedup (tail (sort (tail x)))))",
+   "uses_learned": []
+  },
+  "te056": {
+   "level": 4,
+   "rtype": "L",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te057": {
+   "level": 4,
+   "rtype": "L",
+   "strict": true,
+   "found": true,
+   "index": 19242,
+   "size": 7,
+   "inlined_size": 8,
+   "program": "(tail (filter (notp isneg) (concat x a0_0)))",
+   "uses_learned": [
+    "a0_0"
+   ]
+  },
+  "te058": {
+   "level": 4,
+   "rtype": "L",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  },
+  "te059": {
+   "level": 4,
+   "rtype": "L",
+   "strict": false,
+   "found": false,
+   "index": null,
+   "size": null,
+   "inlined_size": null,
+   "program": null,
+   "uses_learned": []
+  }
+ },
+ "registry": [
+  {
+   "name": "a0_0",
+   "kind": "learned",
+   "body": "(sort x)",
+   "ret": "L",
+   "args": [],
+   "cost_final": 4,
+   "utility": 18,
+   "uses": 20,
+   "n_tasks": 19,
+   "round": 0,
+   "status": "active",
+   "train_solved": 88,
+   "train_solved_before": 87,
+   "inlined_size": 2
+  },
+  {
+   "name": "a0_1",
+   "kind": "learned",
+   "body": "(filter #0:FIB x)",
+   "ret": "L",
+   "args": [
+    "FIB"
+   ],
+   "cost_final": 4,
+   "utility": 11,
+   "uses": 13,
+   "n_tasks": 13,
+   "round": 0,
+   "status": "active",
+   "train_solved": 89,
+   "train_solved_before": 88,
+   "inlined_size": 2
+  },
+  {
+   "name": "a1_0",
+   "kind": "learned",
+   "body": "(map #0:FII x)",
+   "ret": "L",
+   "args": [
+    "FII"
+   ],
+   "cost_final": 5,
+   "utility": 6,
+   "uses": 8,
+   "n_tasks": 8,
+   "round": 1,
+   "status": "active",
+   "train_solved": 88,
+   "train_solved_before": 87,
+   "inlined_size": 2
+  }
+ ],
+ "total_values": 1950000,
+ "final_active_learned": [
+  "a0_0",
+  "a0_1",
+  "a1_0"
+ ],
+ "dist": "flat",
+ "seed": 4,
+ "wall_seconds": 20.38,
+ "n_train": 99,
+ "n_test": 60
+}

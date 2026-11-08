@@ -1,0 +1,8 @@
+# Mac Finder clutter
+.DS_Store
+# Python caches and local virtual environments
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+*.egg-info/
