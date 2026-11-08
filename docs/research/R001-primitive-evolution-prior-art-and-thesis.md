@@ -1,6 +1,6 @@
 # R001: Can a computer invent its own building blocks? What others have done, what we think, and what our first experiment found
 
-**Project:** Parinamakramam (పరిణామక్రమం, "the course of evolution")
+**Project:** Parinamakramam ("the course of evolution")
 **Date:** 8 November 2026 · **Version:** 2 (rewritten in plain language) · **Owner:** founder
 
 > **How to read this.** This report is written for someone who is not a scientist or programmer. When a technical word can't be avoided, it is explained the first time it appears, and the [Glossary](../GLOSSARY.md) has every such word in one place. The exact maths and statistics, for other researchers who want to check our work, are in the separate [technical appendix](R001-technical-appendix.md). You do not need to read it.

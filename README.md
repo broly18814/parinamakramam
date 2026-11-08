@@ -1,4 +1,4 @@
-# Parinamakramam (పరిణామక్రమం, "the course of evolution")
+# Parinamakramam ("the course of evolution")
 
 An independent AI research and product company, started with ₹0 on one MacBook.
 
