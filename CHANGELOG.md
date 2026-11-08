@@ -29,6 +29,9 @@ Five false alarms found by REAL-001, a replay of 120 real commits from click, mo
 #### Known, not fixed
 - A test renamed, moved, merged or split is still reported as removed or weaker (open problem OI-8).
 
+#### Results
+- REAL-001 held-out set: 120 unseen commits, run once with 0.1.2. False alarms on 4 commits, all renamed or moved tests; 0.1.1's rules give 12 on the same commits. No crashes and no selection misses. One case meets the letter of the false all-clear rule, for an environment reason (see REAL-001, section 9).
+
 ### [0.1.1]: 2026-11-09
 
 Both practice sets give exactly the same verdicts as 0.1.0, which CI's regression gate checks.

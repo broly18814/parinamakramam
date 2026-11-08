@@ -692,6 +692,9 @@ This is the same honesty principle as our research. A check you've never seen fa
 
 📍 **In our project.** [REAL-001-design.md](product/REAL-001-design.md) and [CLASSIFICATION.md](../product/verify/realworld/results/study/CLASSIFICATION.md).
 
+- **What the held-out set showed.** The fixed pkv 0.1.2 gave false alarms on 4 of 120 unseen commits; the old rules gave 12 on the same commits. That's the fair evidence, because nobody designed anything by looking at those commits.
+- **An honest caveat.** One held-out case technically broke our "no false all-clear" rule, for a reason that wasn't pkv's mistake (an old test file needed a package we didn't install). We report it by the rule as written, then explain it. If you bend a rule you set in advance whenever the result is inconvenient, the rule protects nothing.
+
 ✅ **Check yourself.** After the fixes, only 8 of the study commits are still SUSPICIOUS, and only 4 of those are false. Why isn't that good evidence the fixes work?
 <details><summary>Answer</summary>The fixes were designed by looking at exactly those commits, so of course they fit them. It's like marking your own exam after seeing the answers. Only commits the fixes have never seen (the held-out set) can show whether they work in general.</details>
 

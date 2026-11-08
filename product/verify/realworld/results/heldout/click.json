@@ -1,0 +1,1267 @@
+[
+ {
+  "project": "click",
+  "position": 31,
+  "commit": "fe3ad76e5807e7a401ed7520f051071c6ae1fa6e",
+  "parent": "6ec99f89261b32f8a50848786eca055e1967659f",
+  "exit_code": 0,
+  "wall_seconds": 4.38,
+  "subject": "Strip ANSI from `confirm()` and `prompt()` (#3653)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 1680 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "not-run-before-too",
+    "message": "3 selected test(s) in tests/test_stream_lifecycle.py were not run (test_stress_gc_between_invocations and 2 more), but nothing in this change could have removed them: the project's settings files, its conftest.py files and these tests' names and markers are unchanged. The project probably leaves them out on purpose (for example a marker filter in its pytest settings).",
+    "severity": "notice",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_utils.py",
+    "kind": "not-run-before-too",
+    "message": "1 selected test(s) in tests/test_utils.py were not run (test_stress_echo_via_pager_exception_cleanup), but nothing in this change could have removed them: the project's settings files, its conftest.py files and these tests' names and markers are unchanged. The project probably leaves them out on purpose (for example a marker filter in its pytest settings).",
+    "severity": "notice",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1680,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 3.186,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 2.24
+ },
+ {
+  "project": "click",
+  "position": 32,
+  "commit": "6ec99f89261b32f8a50848786eca055e1967659f",
+  "parent": "240603f240a9ff179d834fede836060d897c6980",
+  "exit_code": 0,
+  "wall_seconds": 1.21,
+  "subject": "Don't parameterize tests using non-Collection iterables (#3656)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 93 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 93,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.209,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 2.22
+ },
+ {
+  "project": "click",
+  "position": 33,
+  "commit": "240603f240a9ff179d834fede836060d897c6980",
+  "parent": "679a7a0eccbdded7a6e85680bdaaf08003765e01",
+  "exit_code": 4,
+  "wall_seconds": 3.24,
+  "subject": "Merge remote-tracking branch 'upstream/stable' into merge-stable-into-main",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened",
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_options.py",
+    "kind": "fewer-checks",
+    "message": "the test test_flag_group_competition_duplicate_option_name in tests/test_options.py now checks less: 3 checks before, 1 now.",
+    "severity": "suspicious",
+    "test": "test_flag_group_competition_duplicate_option_name"
+   }
+  ],
+  "changed_files": 6,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.282,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 34,
+  "commit": "679a7a0eccbdded7a6e85680bdaaf08003765e01",
+  "parent": "8a1b1a33d739be05b7e91251e3c0dde77c5e152f",
+  "exit_code": 1,
+  "wall_seconds": 1.53,
+  "subject": "Optimize `split_arg_string` with `extend(...)` instead of a for loop system. (#3627)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.276,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 35,
+  "commit": "8a1b1a33d739be05b7e91251e3c0dde77c5e152f",
+  "parent": "4fc0e90e1c19faf82bc18f8551eb1ed78dc738ac",
+  "exit_code": 1,
+  "wall_seconds": 4.49,
+  "subject": "Merge `stable` into `main` after `CHANGES` rST to Markdown conversion (#3563)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran",
+   "changed code that no test checks: docs/conf.py"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_utils.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_echo_via_pager_yields_before_exception in tests/test_utils.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_echo_via_pager_yields_before_exception"
+   },
+   {
+    "file": "tests/test_utils.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_stress_echo_via_pager_exception_cleanup in tests/test_utils.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 17,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/nightly.yaml is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [
+   "docs/conf.py"
+  ],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.278,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 36,
+  "commit": "c48021040a50c659b74e24ac2b11c9c9c6620a21",
+  "parent": "1a994adbb114d402275a614942e2f838a654e648",
+  "exit_code": 1,
+  "wall_seconds": 3.04,
+  "subject": "Add help parameter to arguments (#3473)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 6,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.223,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 37,
+  "commit": "1a994adbb114d402275a614942e2f838a654e648",
+  "parent": "6a141c3681027e8124ce5a3c70e608dbbebffafb",
+  "exit_code": 1,
+  "wall_seconds": 3.91,
+  "subject": "Merge stable into main (#3521)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 12,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.21,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 38,
+  "commit": "6a141c3681027e8124ce5a3c70e608dbbebffafb",
+  "parent": "3a40e43e8f61761cb7bd4f3e27ae3060690a84eb",
+  "exit_code": 1,
+  "wall_seconds": 2.24,
+  "subject": "remove colorama (#3505)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 10,
+  "run_all": true,
+  "run_all_reasons": [
+   "examples/colors/README is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves",
+   "uv.lock is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.209,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 39,
+  "commit": "3a40e43e8f61761cb7bd4f3e27ae3060690a84eb",
+  "parent": "c3535905c77a29afc84861b29d3ad366ce5451bd",
+  "exit_code": 1,
+  "wall_seconds": 2.18,
+  "subject": "Merge branch 'stable'",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 5,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/nightly.yaml is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.207,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 40,
+  "commit": "c3535905c77a29afc84861b29d3ad366ce5451bd",
+  "parent": "bc36cd1a2b3bc18f401a98476154dbc5a2d212c9",
+  "exit_code": 4,
+  "wall_seconds": 2.27,
+  "subject": "Fix broken fish completion and multiline help string",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened",
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_shell_completion.py",
+    "kind": "test-removed",
+    "message": "the test test_fish_multiline_help_complete was removed from tests/test_shell_completion.py.",
+    "severity": "suspicious",
+    "test": "test_fish_multiline_help_complete"
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.208,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 41,
+  "commit": "bc36cd1a2b3bc18f401a98476154dbc5a2d212c9",
+  "parent": "dbf4d14c712750c31e15916b659925683150533b",
+  "exit_code": 4,
+  "wall_seconds": 5.98,
+  "subject": "Merge branch 'stable'",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened",
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_termui.py",
+    "kind": "check-weakened",
+    "message": "the test test_get_pager_file_nullpager_keeps_stringio_stream in tests/test_termui.py now checks less precisely: 2 exact check(s) (like '==' or assertEqual) before, 1 now. Looser checks (like '>' or 'is not None') can pass even when the result is wrong.",
+    "severity": "suspicious",
+    "test": "test_get_pager_file_nullpager_keeps_stringio_stream"
+   },
+   {
+    "file": "tests/test_termui.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_get_pager_file_nullpager_keeps_stringio_stream (tests/test_termui.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_get_pager_file_nullpager_keeps_stringio_stream"
+   },
+   {
+    "file": "tests/test_utils.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_echo_custom_file (tests/test_utils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_echo_custom_file"
+   }
+  ],
+  "changed_files": 18,
+  "run_all": true,
+  "run_all_reasons": [
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.209,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 42,
+  "commit": "dbf4d14c712750c31e15916b659925683150533b",
+  "parent": "4e869f3a172a58df077932dc80b130cdf4ba9774",
+  "exit_code": 4,
+  "wall_seconds": 3.09,
+  "subject": "Merge stable into main (#3479)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened",
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_utils.py",
+    "kind": "skip-added",
+    "message": "the test test_echo_via_pager in tests/test_utils.py was newly marked to be skipped or expected to fail.",
+    "severity": "suspicious",
+    "test": "test_echo_via_pager"
+   }
+  ],
+  "changed_files": 7,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.207,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 43,
+  "commit": "e3e69e3bf8d749ac1a632f2ece4d38ec7f6588f5",
+  "parent": "3bb230dcd5d751f8605b46e9df5a541639d5fd4e",
+  "exit_code": 1,
+  "wall_seconds": 1.46,
+  "subject": "Add type annotations for instance attributes in `utils` (#3422)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.203,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 44,
+  "commit": "3bb230dcd5d751f8605b46e9df5a541639d5fd4e",
+  "parent": "63274a79d08fdc5c19220696144489f7144a8547",
+  "exit_code": 1,
+  "wall_seconds": 2.18,
+  "subject": "WIP: Fix `HelpFormatter.write_usage` producing spurious characters (#3434)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.212,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 45,
+  "commit": "63274a79d08fdc5c19220696144489f7144a8547",
+  "parent": "7c99ebe23b931f27562d926814423cce85fd9766",
+  "exit_code": 1,
+  "wall_seconds": 2.26,
+  "subject": "`click.get_pager_file`: add tests (#1572 followup) (#3405)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_termui.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_echo_via_pager_real_pager_handles_ansi in tests/test_termui.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_echo_via_pager_real_pager_handles_ansi"
+   },
+   {
+    "file": "tests/test_termui.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_get_pager_file_with_real_pager_binary_stream in tests/test_termui.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_get_pager_file_with_real_pager_binary_stream"
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.202,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 46,
+  "commit": "7c99ebe23b931f27562d926814423cce85fd9766",
+  "parent": "d959898db264aaf07e70ad4eafa254286f9a5185",
+  "exit_code": 1,
+  "wall_seconds": 2.26,
+  "subject": "Make `TextWrapper` ANSI-aware (#3420)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.214,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 47,
+  "commit": "d959898db264aaf07e70ad4eafa254286f9a5185",
+  "parent": "ba745ac64037b7d4cdd0abce10446c0a2861935f",
+  "exit_code": 4,
+  "wall_seconds": 2.17,
+  "subject": "Add capture mode to `CliRunner` and revert default `fileno` exposure (#3391)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened",
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_testing.py",
+    "kind": "test-removed",
+    "message": "the test test_faulthandler_enable was removed from tests/test_testing.py.",
+    "severity": "suspicious",
+    "test": "test_faulthandler_enable"
+   },
+   {
+    "file": "tests/test_testing.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_capture_fd_windows_error in tests/test_testing.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_capture_fd_windows_error"
+   }
+  ],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.196,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 48,
+  "commit": "ba745ac64037b7d4cdd0abce10446c0a2861935f",
+  "parent": "ec8226954e2657324e7a25fec6657e4fbde33bcb",
+  "exit_code": 1,
+  "wall_seconds": 1.45,
+  "subject": "Cleanup documentation for `8.4.0` (#3393)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.196,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 49,
+  "commit": "ec8226954e2657324e7a25fec6657e4fbde33bcb",
+  "parent": "3619563d9bf8763360d3f0d95eb76e43f26dea5e",
+  "exit_code": 1,
+  "wall_seconds": 2.31,
+  "subject": "Dual-option value arbitration: `first` vs. `last` vs. `most explicit` policy (#3404)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.192,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 50,
+  "commit": "3619563d9bf8763360d3f0d95eb76e43f26dea5e",
+  "parent": "63daae27b124b717cffa8b458e1a0a43525f2b34",
+  "exit_code": 1,
+  "wall_seconds": 1.44,
+  "subject": "Deduplicate deprecated label translation (#3430)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.185,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 51,
+  "commit": "0039359443e73ab1034c63a1f6d58aba22c0ebc8",
+  "parent": "c943271a269e6941fcc51e3506ead074b9dda6be",
+  "exit_code": 1,
+  "wall_seconds": 1.45,
+  "subject": "Add missing space between option help text and deprecation label (#3423)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.189,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 52,
+  "commit": "c943271a269e6941fcc51e3506ead074b9dda6be",
+  "parent": "fc6c7c47edd6110b6bd5a1a5297b2035214b0cd1",
+  "exit_code": 1,
+  "wall_seconds": 2.17,
+  "subject": "Show custom error message in prompt with `hide_input=True` (#3256)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.188,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 53,
+  "commit": "fc6c7c47edd6110b6bd5a1a5297b2035214b0cd1",
+  "parent": "5b9630f50fde938b72ad8c99542efe3a6f5717e2",
+  "exit_code": 1,
+  "wall_seconds": 2.18,
+  "subject": "`FuncParamType` should use `ValueError` message in `self.fail()` (#3211)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.188,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 54,
+  "commit": "5b9630f50fde938b72ad8c99542efe3a6f5717e2",
+  "parent": "73e155006526575548d143ef519995f540547e52",
+  "exit_code": 1,
+  "wall_seconds": 1.43,
+  "subject": "Localisation of more strings (#2902)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 9,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.186,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 55,
+  "commit": "73e155006526575548d143ef519995f540547e52",
+  "parent": "fed9049f7a07550d560a91b30c5b0b3e17d54981",
+  "exit_code": 1,
+  "wall_seconds": 1.44,
+  "subject": "Fix sentinel typing and its uses in parser (#3396)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.188,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 56,
+  "commit": "831c8f0948af519e45b90801d7430ff25451f972",
+  "parent": "19fd4d6e18bc9fce451f92f422696b11169faa57",
+  "exit_code": 1,
+  "wall_seconds": 3.09,
+  "subject": "Add NoSuchCommand exception with suggestions for misspelled commands (#3228)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_options.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_unknown_options (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_unknown_options"
+   }
+  ],
+  "changed_files": 7,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.178,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 57,
+  "commit": "19fd4d6e18bc9fce451f92f422696b11169faa57",
+  "parent": "c69643b60cf971cd5d8e5d3902632807ceab9b8f",
+  "exit_code": 1,
+  "wall_seconds": 2.2,
+  "subject": "Fix: Ensure fish completion handles multiline help strings correctly (#3126)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.179,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 58,
+  "commit": "c69643b60cf971cd5d8e5d3902632807ceab9b8f",
+  "parent": "c5cced7b3096804567688df645194e3ed3dfa88b",
+  "exit_code": 1,
+  "wall_seconds": 1.43,
+  "subject": "Add file-like pager: `click.get_pager_file()` (#1572)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 7,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.182,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 59,
+  "commit": "c5cced7b3096804567688df645194e3ed3dfa88b",
+  "parent": "2468b70997a6ec27ced4b4867954c90da3f92075",
+  "exit_code": 1,
+  "wall_seconds": 1.43,
+  "subject": "fix: `_termui_impl.open_url()` \u2014 'start' on Windows is a cmd built-in, not an executable (#3186)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.185,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 60,
+  "commit": "2468b70997a6ec27ced4b4867954c90da3f92075",
+  "parent": "ddede2147c9370ab8275f81db4826b6895d2e7dc",
+  "exit_code": 1,
+  "wall_seconds": 2.24,
+  "subject": "Fix readline backspace/line-wrapping on linux (#2969)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_utils.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_echo_writing_to_standard_error (tests/test_utils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_echo_writing_to_standard_error"
+   },
+   {
+    "file": "tests/test_utils.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_full_prompt_passed_to_readline in tests/test_utils.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_full_prompt_passed_to_readline"
+   },
+   {
+    "file": "tests/test_utils.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_prompts_abort (tests/test_utils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_prompts_abort"
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.184,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": []
+ }
+]

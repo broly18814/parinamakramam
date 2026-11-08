@@ -220,7 +220,13 @@ Use records from our checker tool. Only public code whose licence allows it.
 
 ## REAL-001: pkv on real projects' real changes
 
-- **Status:** study set ✅ run on 9 November 2026; held-out set waiting (it must be run with the fixed pkv 0.1.2).
+- **Status:** ✅ finished on 9 November 2026 (study set and held-out set).
+- **Result (held-out set, pkv 0.1.2):**
+  - R2 ✅ **passed**: 4 of 120 commits had a false alarm, all from renamed or moved tests (D4). Scored with 0.1.1's rules, the same commits give 12.
+  - R1 ✅ 0 crashes.
+  - R3 ❌ failed as written: 1 disagreement with the full suite. It's an environment problem in test files the change couldn't affect, not a selection miss.
+  - R4–R6 ❌.
+  - 25 commits FAILED because older code met today's pytest (F-env).
 - **Result (study set, pkv 0.1.1):** R2 ❌ **failed**: 38 of 120 real commits had a false alarm (predicted ≤ 6). R1 ✅ 0 crashes. R3 ✅ 0 false all-clears, but weak, because no commit had a failing test. R4–R6 ❌. Five defects found and four fixed in pkv 0.1.2 (D4, renamed or moved tests, is still open). Details: [design and results](../docs/product/REAL-001-design.md) and [every alarm classified](../product/verify/realworld/results/study/CLASSIFICATION.md).
 - **Design and predictions:** [REAL-001-design.md](../docs/product/REAL-001-design.md).
 - **The question:** on 120 real, mostly honest changes from 4 public projects (click, more-itertools, boltons, tomli), how often does pkv give a false alarm, a false all-clear, or crash, and how much test running does it save?

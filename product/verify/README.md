@@ -20,13 +20,18 @@ Predictions were committed before every run, and all 51 came true. The held-out 
 
 ### On real projects (REAL-001, pre-registered)
 
-pkv 0.1.1 was replayed over 120 real commits from click, more-itertools, boltons and tomli:
-- **0 crashes, 0 false all-clears.** No commit had a failing test, though, so there was nothing to miss.
-- But **38 commits had a false alarm**, far above the 6 predicted.
-- Four of the five causes are fixed in 0.1.2; renamed or moved tests are still flagged.
-- The fixes are being checked on 120 held-out commits. Until then, treat SUSPICIOUS on real projects as "worth a look", not as proof.
+We replayed real commits from click, more-itertools, boltons and tomli through pkv, with every alarm classified by hand:
 
-The [full results](../../docs/product/REAL-001-design.md) include [every alarm classified by hand](realworld/results/study/CLASSIFICATION.md).
+| Set | pkv | Commits with a false alarm | Crashes | Selection misses |
+|---|---|---|---|---|
+| Study (fixes designed on it) | 0.1.1 | 38 / 120 | 0 | 0 |
+| **Held out (unseen, run once)** | **0.1.2** | **4 / 120**, all renamed or moved tests (0.1.1's rules: 12) | **0** | **0** |
+
+**Caveats:**
+- One held-out case meets the letter of our "false all-clear" rule. The change's own tests passed, but two *unrelated* test files couldn't load in our environment, and the receipt didn't say so (open problem OI-11).
+- These are four small, well-maintained libraries, not a guarantee for every project.
+
+See the [full results](../../docs/product/REAL-001-design.md), and every alarm classified for the [study set](realworld/results/study/CLASSIFICATION.md) and the [held-out set](realworld/results/heldout/CLASSIFICATION.md).
 - Scenario details and raw results are in [`benchmark/`](benchmark/).
 
 ## The four verdicts

@@ -56,7 +56,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 
 - 🧪 In the toy puzzle world, the right building blocks are worth about 15× more search. **Neither** backward-looking (EXP-001) **nor** near-miss (EXP-002) discovery captures that value.
 - 🧪 On its practice sets, pkv catches most planted cheats with few false alarms, and its improvements generalised to a held-out set.
-- 🧪 **On 120 real commits (REAL-001), pkv 0.1.1 never crashed and gave no false all-clear, but 38 commits had a false alarm.** Four of the five causes are fixed in 0.1.2. The fixes are not yet confirmed on the held-out commits.
+- 🧪 **On 120 real commits (REAL-001 study set), pkv 0.1.1 had false alarms on 38.** Four of the five causes are fixed in 0.1.2. **On 120 unseen commits (held-out), pkv 0.1.2 had false alarms on 4 (3%)**, all from renamed or moved tests; 0.1.1's rules give 12 on the same commits. No crashes and no selection misses. This holds on four small, well-maintained libraries only.
 
 ## Ideas still to test 💡
 
@@ -70,6 +70,8 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 - **OI-3:** the undo rule keeps changes that make no difference.
 - **OI-4:** read the original TRINITY and Stack Overflow sources before quoting them publicly.
 - **OI-6:** pkv finds tests by pytest's default naming only, and can't trace code that reads data files by name.
+- **OI-11:** a cheap whole-suite load check (`pytest --collect-only`), so a receipt can say when test files outside the selection can't even load. Found in REAL-001's held-out set (tomli #58).
+- **OI-12:** replay studies should install the test tools each commit was written for. In REAL-001, 25 old commits failed only because of today's pytest or a missing old test package.
 - **OI-10:** finer test selection for libraries: follow `from package import name` to the module that defines `name`, so a change to one module doesn't select every test. REAL-001 measured a median of 100% of test files selected in three of four projects.
 - **OI-8:** known pkv misses: an expected answer edited to match a bug; `pytest.raises(AssertionError)`; a skip mark on one table row; an early `return`. Known false alarm: a test renamed, moved, merged or split (REAL-001 defect D4). Each needs a fresh held-out set (BENCH-003) before it's addressed.
 - **OI-9:** the near-miss scan costs 11× CPU in pure Python. It matters only if the near-miss line continues.
@@ -86,7 +88,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 
 ## Next steps, in order
 
-1. **REAL-001 held-out set.** Run the 120 held-out commits once with pkv 0.1.2. It runs the four projects' tests, so the founder runs the command (see the REAL-001 design). This decides whether the fixes generalise (D-027).
+1. **pkv: renamed and moved tests (D4 / OI-8).** The last known false-alarm cause on real code. Design a rename-aware comparison that can't be used to hide a deletion, and pre-register a fresh held-out set for it (BENCH-003 plus a new replay).
 2. **BENCH-003:** a fresh held-out set *before* tackling the known misses in OI-8.
 3. **EXP-002b:** the one remaining near-miss variant, pre-registered (structure-based). If it closes < 10% of the gap, stop and move to EXP-005.
 4. **Publish more widely:** tag a first release (`pkv-v0.1.2`), and decide how to reach GitHub's Marketplace, which needs `action.yml` at the top of a repository (either a small separate repository for the action, or moving the file). Then watch install counts (no interviews; D-002).

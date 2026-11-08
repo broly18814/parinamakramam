@@ -138,3 +138,54 @@ All 120 commits ran. Every alarm was classified by hand: [CLASSIFICATION.md](../
 ### After the fixes (pkv 0.1.2)
 
 Recomputed from the saved receipts, without re-running anything: 8 SUSPICIOUS commits remain. Four are accurate signals; four are D4. Because the fixes were designed on these same commits, that is **not** evidence. As registered in section 7, the **held-out set** (120 older commits) is run once with pkv 0.1.2, and its result is what counts.
+
+## 9. Results: held-out set (run once, 9 November 2026, pkv 0.1.2)
+
+The 120 older commits were run once with the fixed pkv 0.1.2, frozen before the run. Every alarm is classified in [the held-out CLASSIFICATION.md](../../product/verify/realworld/results/heldout/CLASSIFICATION.md).
+
+| Project | Commits | VERIFIED | FAILED | UNVERIFIED | SUSPICIOUS | Tool error | Ran every test |
+|---|---|---|---|---|---|---|---|
+| click | 30 | 2 | 23 | 0 | 5 | 0 | 4 |
+| more-itertools | 30 | 30 | 0 | 0 | 0 | 0 | 8 |
+| boltons | 30 | 28 | 0 | 1 | 1 | 0 | 1 |
+| tomli | 30 | 21 | 2 | 1 | 6 | 0 | 15 |
+| **All** | **120** | **81** | **25** | **2** | **12** | **0** | **28** |
+
+### The same predictions, scored on the held-out set
+
+| ID | Prediction | Result | Verdict |
+|---|---|---|---|
+| R1 | Tool errors ≤ 1 | 0 | ✅ PASS |
+| **R2 (primary)** | Commits with a false alarm ≤ 6 | **4**, all from the known, unfixed D4 (renamed or moved tests) | ✅ **PASS** |
+| **R3 (safety)** | No false all-clears | **1 by the rule as written** (tomli #58) | ❌ **FAIL as written.** It isn't a selection miss: the change only touched `tests/test_misc.py`, which pkv ran and which passed. Two *other* test files couldn't load because of our environment, and they failed the same way before the change. |
+| R4 | Run-all on 30–60% | 28 (23%) | ❌ FAIL |
+| R5 | UNVERIFIED on 15–40% | 2 (2%), both accurate | ❌ FAIL |
+| R6 | Median share of test files run ≤ 50% | 100% | ❌ FAIL |
+
+### Did the fixes generalise?
+
+Scoring the same held-out receipts with pkv 0.1.1's rules, without running anything, gives a direct before-and-after on commits the fixes had never seen:
+
+| | pkv 0.1.1 | **pkv 0.1.2** |
+|---|---|---|
+| Commits with a false alarm | 12 | **4** |
+| Accurate findings kept | 8 | **8 (the same)** |
+
+- **Yes, for the fixture fix (D2):** it was exercised on 7 commits.
+- **Barely tested for the "already left out" fix (D1):** exercised on 1 commit, because click's tests couldn't load in 28 of its 30 held-out commits.
+- **Not tested at all for D3** (`x == x`).
+
+### What we learned, beyond pkv
+
+- **Replaying old commits on today's tools breaks things.** 25 held-out commits FAILED, not because their code was wrong, but because:
+  - today's pytest rejects a pattern click used then;
+  - and old tomli needed a test package our setup never installs.
+
+  Rule E5 only checked the newest commit. A future replay study should install the test tools each commit was written for, for example from its own lock file, or re-check E5 on the oldest commit too.
+- **A partial run can be right about the change and still miss that the suite is broken.** The R3 case was correct about everything the change could affect. But the receipt didn't say that other test files couldn't even load. A cheap "does the whole suite still load?" step would add that (open problem OI-11).
+
+### Conclusion
+
+On commits it had never seen, pkv 0.1.2 gave a false alarm on **4 of 120** (3%). All four were renamed or moved tests, a known and documented cause. It never crashed, and it made no selection miss. One case meets the letter of the false all-clear rule, for the environment reason above. Every accurate finding was kept.
+
+This is evidence on four small, well-maintained Python libraries, not a general accuracy guarantee.

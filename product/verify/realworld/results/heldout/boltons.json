@@ -1,0 +1,1146 @@
+[
+ {
+  "project": "boltons",
+  "position": 31,
+  "commit": "b5c495bec206741ec25cd82ecc869e0b59bb0d10",
+  "parent": "78e8638e695d78ccc2dc641ef87e38fa51185840",
+  "exit_code": 0,
+  "wall_seconds": 2.09,
+  "subject": "funcutils: forward target-keyword-only args as keywords in wraps invocations (#445)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 42 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 42,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.003,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.87
+ },
+ {
+  "project": "boltons",
+  "position": 32,
+  "commit": "814a5a7c6e27fcb52c524ca4fe2b05108903058c",
+  "parent": "c1c25da365cf14878cf5317147e7a09b5d124df5",
+  "exit_code": 0,
+  "wall_seconds": 4.51,
+  "subject": "Merge pull request #443 from mahmoud/edge-case-hardening",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 99 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 11,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 6,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 99,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.275,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.85
+ },
+ {
+  "project": "boltons",
+  "position": 33,
+  "commit": "c1c25da365cf14878cf5317147e7a09b5d124df5",
+  "parent": "e66cade323f5c11cebb4bd0f099e634b245adccd",
+  "exit_code": 0,
+  "wall_seconds": 1.08,
+  "subject": "Fix off-by-one in Bits length check",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 12 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 12,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.13,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.84
+ },
+ {
+  "project": "boltons",
+  "position": 34,
+  "commit": "e66cade323f5c11cebb4bd0f099e634b245adccd",
+  "parent": "289edfcd20474b92850ec0f982032c4e79e72432",
+  "exit_code": 0,
+  "wall_seconds": 0.37,
+  "subject": "add pathutils tests",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 4 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 4,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.124,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.83
+ },
+ {
+  "project": "boltons",
+  "position": 35,
+  "commit": "289edfcd20474b92850ec0f982032c4e79e72432",
+  "parent": "7b577b0f3cc7adc2418733ce5c7dcdf6af82187d",
+  "exit_code": 4,
+  "wall_seconds": 2.91,
+  "subject": "funcutils: forward defaulted and kw-only args as keywords in wraps invocations (#343)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_funcutils_fb_py3.py",
+    "kind": "test-removed",
+    "message": "the test test_FunctionBuilder_KWONLY_MARKER was removed from tests/test_funcutils_fb_py3.py.",
+    "severity": "suspicious",
+    "test": "test_FunctionBuilder_KWONLY_MARKER"
+   },
+   {
+    "file": "tests/test_funcutils_fb_py3.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_wraps_inner_kwarg_only (tests/test_funcutils_fb_py3.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_wraps_inner_kwarg_only"
+   },
+   {
+    "file": "tests/test_funcutils_fb_py3.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_wraps_posonly_defaulted_arg in tests/test_funcutils_fb_py3.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_wraps_posonly_defaulted_arg"
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 38,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.986,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "boltons",
+  "position": 36,
+  "commit": "7b577b0f3cc7adc2418733ce5c7dcdf6af82187d",
+  "parent": "8c3fc2850693eacd2f2f8c95e7581adbb65b1269",
+  "exit_code": 0,
+  "wall_seconds": 1.11,
+  "subject": "tbutils: round-trip traceback anchor lines in ParsedException (#333)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 7 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_tbutils_parsed_exc.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_parsed_exc_with_anchor (tests/test_tbutils_parsed_exc.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_parsed_exc_with_anchor"
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 7,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.127,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.83
+ },
+ {
+  "project": "boltons",
+  "position": 37,
+  "commit": "8c3fc2850693eacd2f2f8c95e7581adbb65b1269",
+  "parent": "ead236e278ca0466bf468de746b5960fb12d7e5b",
+  "exit_code": 0,
+  "wall_seconds": 1.58,
+  "subject": "Pluralize words ending in \"x\" with \"-es\" (box -> boxes)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 27 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 27,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.497,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.83
+ },
+ {
+  "project": "boltons",
+  "position": 38,
+  "commit": "ead236e278ca0466bf468de746b5960fb12d7e5b",
+  "parent": "57cb026b7f47cd2765a0d5acdc83849ed5f1f6a3",
+  "exit_code": 0,
+  "wall_seconds": 1.26,
+  "subject": "fix: backoff_iter with factor=1.0 and no count raised ZeroDivisionError",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 45 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 45,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.197,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.83
+ },
+ {
+  "project": "boltons",
+  "position": 39,
+  "commit": "29fa06172259ad97ef31aa1e63b3bbae7d2a3d0c",
+  "parent": "1d525271754ed7aea7f2347ed16ddbcedb1097a3",
+  "exit_code": 0,
+  "wall_seconds": 2.15,
+  "subject": "bump version to 26.1.1dev",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 445 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 28,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 445,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.865,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.83
+ },
+ {
+  "project": "boltons",
+  "position": 40,
+  "commit": "1d525271754ed7aea7f2347ed16ddbcedb1097a3",
+  "parent": "4c24615af43092468feab118368fcc9ff91feca3",
+  "exit_code": 0,
+  "wall_seconds": 2.14,
+  "subject": "boltons version 26.1.0",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 445 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 28,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 445,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.853,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.82
+ },
+ {
+  "project": "boltons",
+  "position": 41,
+  "commit": "1e61524a798ea73632029a013a7686036d5c126f",
+  "parent": "55dfe5077bcb5fa76611b5f2a557ea6c442ad87c",
+  "exit_code": 0,
+  "wall_seconds": 1.25,
+  "subject": "fix(strutils): stop singularize() mangling words ending in 'ss'",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 26 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 26,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.165,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.83
+ },
+ {
+  "project": "boltons",
+  "position": 42,
+  "commit": "55dfe5077bcb5fa76611b5f2a557ea6c442ad87c",
+  "parent": "ebc7a8f776debfa33f0b380b57a444bca75a251b",
+  "exit_code": 0,
+  "wall_seconds": 1.1,
+  "subject": "fix(fileutils): accept os.PathLike in AtomicSaver",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 8 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 8,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.139,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.88
+ },
+ {
+  "project": "boltons",
+  "position": 43,
+  "commit": "ebc7a8f776debfa33f0b380b57a444bca75a251b",
+  "parent": "bba729bf4539afc993a6410bdf8074b28707004a",
+  "exit_code": 0,
+  "wall_seconds": 1.29,
+  "subject": "Fix copy.copy/copy.deepcopy collapsing OrderedMultiDict values",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 198 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 198,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.287,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.82
+ },
+ {
+  "project": "boltons",
+  "position": 44,
+  "commit": "bba729bf4539afc993a6410bdf8074b28707004a",
+  "parent": "f5cf8b5d32bf25752b44a11c9d87d2144c7b8919",
+  "exit_code": 0,
+  "wall_seconds": 0.4,
+  "subject": "Speed up MultiReplace match lookup",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 23 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 23,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.157,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.82
+ },
+ {
+  "project": "boltons",
+  "position": 45,
+  "commit": "f5cf8b5d32bf25752b44a11c9d87d2144c7b8919",
+  "parent": "d0a284fc7ef1aebceb54798600d73be4eeb76ed8",
+  "exit_code": 0,
+  "wall_seconds": 1.22,
+  "subject": "Remove listutils test import side effect",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 4 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 4,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.19,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.82
+ },
+ {
+  "project": "boltons",
+  "position": 46,
+  "commit": "d0a284fc7ef1aebceb54798600d73be4eeb76ed8",
+  "parent": "609cabe932a1ea1423b24568644945abb1b8bb84",
+  "exit_code": 0,
+  "wall_seconds": 1.2,
+  "subject": "fix IndexedSet out-of-range negative indexing wrapping around (x[-n-k], pop(-n-k))",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 9 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 9,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.153,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.88
+ },
+ {
+  "project": "boltons",
+  "position": 47,
+  "commit": "609cabe932a1ea1423b24568644945abb1b8bb84",
+  "parent": "979fa9b613fa8c0a455ae16ea6f2ec91c11ecafe",
+  "exit_code": 0,
+  "wall_seconds": 1.16,
+  "subject": "fix IndexedSet slicing after removals: keep iter_slice bounds in apparent index space (#423)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 7 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 7,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.178,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.92
+ },
+ {
+  "project": "boltons",
+  "position": 48,
+  "commit": "979fa9b613fa8c0a455ae16ea6f2ec91c11ecafe",
+  "parent": "fb464991b718ca7bfabc14555c2947f25e7c79c9",
+  "exit_code": 0,
+  "wall_seconds": 2.2,
+  "subject": "bump version to 26.0.1dev",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 437 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 28,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 437,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.913,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.89
+ },
+ {
+  "project": "boltons",
+  "position": 49,
+  "commit": "fb464991b718ca7bfabc14555c2947f25e7c79c9",
+  "parent": "25e8d6b18ecba58d358c8f46a5cea554f99bdfb2",
+  "exit_code": 0,
+  "wall_seconds": 2.17,
+  "subject": "boltons version 26.0.0",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 437 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 28,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 437,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.885,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.85
+ },
+ {
+  "project": "boltons",
+  "position": 50,
+  "commit": "25e8d6b18ecba58d358c8f46a5cea554f99bdfb2",
+  "parent": "4aa77cddb5d06def130df6f09aefab4018fa487c",
+  "exit_code": 0,
+  "wall_seconds": 1.29,
+  "subject": "Match list insert before start in BarrelList",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 6 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 6,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.255,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.86
+ },
+ {
+  "project": "boltons",
+  "position": 51,
+  "commit": "4aa77cddb5d06def130df6f09aefab4018fa487c",
+  "parent": "3970a80f63807392e512340c25dc2db473bcba70",
+  "exit_code": 0,
+  "wall_seconds": 1.19,
+  "subject": "Fix split maxsplit zero handling",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 44 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 44,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.196,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.85
+ },
+ {
+  "project": "boltons",
+  "position": 52,
+  "commit": "b34c53428941cf3d46a6db97b3663ce5a9659834",
+  "parent": "471dad1c6e8182baa3337f118a359ef8f768bf3f",
+  "exit_code": 3,
+  "wall_seconds": 4.4,
+  "subject": "Modernize CI: uv/tox-uv, OIDC publish",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: docs/conf.py"
+  ],
+  "findings": [],
+  "changed_files": 8,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/publish.yml is not Python code, so we can't trace what uses it",
+   ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves",
+   "requirements-test.txt is a project settings file; it can change how every test behaves",
+   "tox.ini is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 28,
+  "all_test_files": 28,
+  "untested_changes": [
+   "docs/conf.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 435,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.877,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "boltons",
+  "position": 53,
+  "commit": "471dad1c6e8182baa3337f118a359ef8f768bf3f",
+  "parent": "c463d1633a075c398d6ffad7d8653064a615b696",
+  "exit_code": 0,
+  "wall_seconds": 0.49,
+  "subject": "remove unused len(self) call in BarrelList._balance_list",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 5 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 5,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.25,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.85
+ },
+ {
+  "project": "boltons",
+  "position": 54,
+  "commit": "c463d1633a075c398d6ffad7d8653064a615b696",
+  "parent": "766b5547392fe8d54c1e000098499dc556bb5cb7",
+  "exit_code": 0,
+  "wall_seconds": 2.2,
+  "subject": "Fix OrderedMultiDict equality to compare values against plain mappings",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 196 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 196,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.285,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.86
+ },
+ {
+  "project": "boltons",
+  "position": 55,
+  "commit": "766b5547392fe8d54c1e000098499dc556bb5cb7",
+  "parent": "8a2a93d8213e1fa4da30c8167ab1a18caad17a17",
+  "exit_code": 0,
+  "wall_seconds": 1.19,
+  "subject": "fix(strutils): bytes2human rolls over at exact powers of 1024",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 23 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 23,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.158,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.86
+ },
+ {
+  "project": "boltons",
+  "position": 56,
+  "commit": "8a2a93d8213e1fa4da30c8167ab1a18caad17a17",
+  "parent": "80f9eb4296daadad85db5ef6c0fd14e2f3602fa4",
+  "exit_code": 0,
+  "wall_seconds": 1.07,
+  "subject": "fix(tbutils): avoid IndexError in ParsedException.from_string on truncated tracebacks",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 6 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 6,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.124,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.85
+ },
+ {
+  "project": "boltons",
+  "position": 57,
+  "commit": "80f9eb4296daadad85db5ef6c0fd14e2f3602fa4",
+  "parent": "207651ee6055aabd0d9cdeac2e00140cdc208d44",
+  "exit_code": 0,
+  "wall_seconds": 0.39,
+  "subject": "Fix syntax error in MultiReplace example",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 22 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 22,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.154,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.85
+ },
+ {
+  "project": "boltons",
+  "position": 58,
+  "commit": "207651ee6055aabd0d9cdeac2e00140cdc208d44",
+  "parent": "ce60604a463eb2c1f84b7756f38d909f404bd1d2",
+  "exit_code": 0,
+  "wall_seconds": 0.39,
+  "subject": "Add human_readable_list to __all__ in strutils",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 22 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 22,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.155,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.91
+ },
+ {
+  "project": "boltons",
+  "position": 59,
+  "commit": "ce60604a463eb2c1f84b7756f38d909f404bd1d2",
+  "parent": "c0d580df13d3d2d3d99a7769828afc7176127d90",
+  "exit_code": 0,
+  "wall_seconds": 1.24,
+  "subject": "bit more info in docstring",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 45 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 45,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.992,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.85
+ },
+ {
+  "project": "boltons",
+  "position": 60,
+  "commit": "c0d580df13d3d2d3d99a7769828afc7176127d90",
+  "parent": "f7cbf1971022b3910c93aaeef7a3478d0a6eacd6",
+  "exit_code": 0,
+  "wall_seconds": 1.25,
+  "subject": "backwards compatible once decorator (and test). doesn't rely on functools.cache (added in 3.9), just uses a nonlocal sen",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 45 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 45,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.996,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.84
+ }
+]
