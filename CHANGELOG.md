@@ -9,9 +9,9 @@ Before version 1.0, anything may still change.
 
 ## Parinama Verify (`pkv`)
 
-### [0.2.1]: not released yet (prepared for PyPI)
+### [0.2.1]: 2026-11-09
 
-There are no changes to what pkv does. This release is for publishing on PyPI.
+There are no changes to what pkv does. This is the first release on PyPI (`pip install parinama-verify`), published from git tag `pkv-v0.2.1` by the Trusted Publishing workflow.
 
 #### Added
 - PyPI metadata: author, keywords, classifiers (Alpha; macOS and Linux; Python 3.10–3.14; Pytest) and project links.

@@ -91,7 +91,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 
 ## Next steps, in order
 
-1. **Your decision: publish `pkv-v0.2.1` to PyPI.** Everything is set up ([runbook](../docs/product/PYPI.md)):
+1. **PyPI: `pkv-v0.2.1` released on 9 November 2026; the upload waits for your approval in GitHub's Actions tab.** Everything is set up ([runbook](../docs/product/PYPI.md)):
    - the PyPI pending trusted publisher is registered;
    - the GitHub `pypi` environment requires your approval and accepts only `pkv-v*` tags.
 

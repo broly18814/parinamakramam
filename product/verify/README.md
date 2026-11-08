@@ -1,4 +1,4 @@
-# Parinama Verify (`pkv`): version 0.2.0
+# Parinama Verify (`pkv`): version 0.2.1
 
 An **independent checker** for code changes, whether an AI or a person made them. It works out which tests a change could break, **runs them itself**, looks for **signs the tests were weakened**, and gives a **receipt** with one verdict. Every sentence in the receipt comes from recorded data, never from an AI's opinion.
 
@@ -97,10 +97,16 @@ Exit code 2 means pkv itself couldn't complete, for example because the folder i
 Install it into the same Python environment as your project's tests. It needs Python 3.10 or newer, and pytest:
 
 ```bash
-python -m pip install "git+https://github.com/broly18814/parinamakramam@pkv-v0.2.0#subdirectory=product/verify"
+python -m pip install parinama-verify==0.2.1
 ```
 
-This installs exactly release **0.2.0**. Releases are listed on the project's [Releases page](https://github.com/broly18814/parinamakramam/releases). Each one also offers the ready-built package (a `.whl` file), the source archive, and a `SHA256SUMS` file. Check your download against it before installing:
+This installs exactly release **0.2.1** from [PyPI](https://pypi.org/project/parinama-verify/). To install the same release straight from GitHub instead:
+
+```bash
+python -m pip install "git+https://github.com/broly18814/parinamakramam@pkv-v0.2.1#subdirectory=product/verify"
+```
+
+Releases are listed on the project's [Releases page](https://github.com/broly18814/parinamakramam/releases). Each one also offers the ready-built package (a `.whl` file), the source archive, and a `SHA256SUMS` file. Check your download against it before installing:
 
 ```bash
 shasum -a 256 -c SHA256SUMS
@@ -147,7 +153,7 @@ Add these steps to a workflow (`.github/workflows/*.yml`). The project's depende
   with:
     python-version: "3.12"
 - run: pip install pytest -r requirements.txt
-- uses: broly18814/parinamakramam/product/verify@pkv-v0.2.0
+- uses: broly18814/parinamakramam/product/verify@pkv-v0.2.1
   with:
     fail-on: FAILED,SUSPICIOUS,UNVERIFIED   # the default
 ```
@@ -156,7 +162,7 @@ The receipt appears on the run's summary page and is kept as a downloadable file
 
 **Two notes:**
 - The repository is **public**, so any GitHub project can use this action.
-- `@pkv-v0.2.0` is the first release. For the strongest guarantee, pin to that release's full snapshot hash (shown on the release page) instead of the tag name. That's GitHub's own security advice for third-party actions. `@main` gets every change as soon as it's merged.
+- `@pkv-v0.2.1` is the latest release. For the strongest guarantee, pin to that release's full snapshot hash (shown on the release page) instead of the tag name. That's GitHub's own security advice for third-party actions. `@main` gets every change as soon as it's merged.
 - It isn't listed in GitHub's Marketplace yet. The Marketplace requires `action.yml` at the top of a repository, and ours lives in `product/verify/`.
 - This repository uses its own action on every upload, so pkv checks pkv (the `dogfood` job in `.github/workflows/self-checks.yml`).
 
