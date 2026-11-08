@@ -41,7 +41,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 - **GitHub Action:** `product/verify/action.yml`. This repository uses it on itself.
 - **First release:** `pkv-v0.2.0` on GitHub Releases, with the wheel, the source archive and checksums (D-030).
 - **Quality:**
-  - 102 product self-checks and 22 research self-checks;
+  - 102 product self-checks and 29 research self-checks;
   - `mypy --strict` clean;
   - mutation-tested detection rules;
   - two real bugs found and fixed with regression tests: the "racy git" fingerprint bug, and a crash.

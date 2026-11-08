@@ -37,7 +37,7 @@ scripts/check-all.sh
 
 ## Re-run the experiments (Terminal commands)
 
-Research self-checks (22) and the full experiment (about 1.5 minutes):
+Research self-checks (29) and the full experiment (about 1.5 minutes):
 
 ```bash
 cd research/pevo

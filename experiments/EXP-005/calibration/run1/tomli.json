@@ -1,0 +1,636 @@
+{
+ "project": "tomli",
+ "split": "c00fbc1f82d31292c21c65cb252c5e6e5b05d3b1",
+ "pinned": "43a86ade8b795c6ef9b4ec53372a607cd1ed426f",
+ "split_date": "2021-12-27",
+ "train_functions": 42,
+ "train_size": 3111,
+ "test_functions": 40,
+ "k": 50,
+ "max_size": 40,
+ "libraries": {
+  "OWN": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "HOLE(v0, v1, HOLE)",
+     "size": 3,
+     "holes": 2,
+     "uses_in_training": 48
+    },
+    {
+     "shape": "v1 += 1",
+     "size": 4,
+     "holes": 0,
+     "uses_in_training": 17
+    },
+    {
+     "shape": "v1 + HOLE",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 23
+    },
+    {
+     "shape": "v0.startswith('STR', v1)",
+     "size": 5,
+     "holes": 0,
+     "uses_in_training": 11
+    },
+    {
+     "shape": "HOLE == 'STR'",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 19
+    },
+    {
+     "shape": "HOLE(v0, v1)",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 18
+    },
+    {
+     "shape": "HOLE: str | None = v0[v1]",
+     "size": 8,
+     "holes": 1,
+     "uses_in_training": 5
+    },
+    {
+     "shape": "tuple[Pos, str]",
+     "size": 5,
+     "holes": 0,
+     "uses_in_training": 8
+    },
+    {
+     "shape": "v1 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 24
+    },
+    {
+     "shape": "HOLE[:-1]",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 6
+    }
+   ]
+  },
+  "RANDOM": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "parse_key(HOLE, v1)",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 3
+    },
+    {
+     "shape": "(HOLE, v3 + v0[v4:v1])",
+     "size": 9,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "parse_value(HOLE, HOLE, v2)",
+     "size": 3,
+     "holes": 2,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "HOLE = parse_key_part(v0, v1)",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "HOLE(HOLE, 'STR')",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 3
+    },
+    {
+     "shape": "HOLE >= len(v0)",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "suffixed_err(HOLE, v3, HOLE)",
+     "size": 3,
+     "holes": 2,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "parse_literal_str(HOLE, HOLE)",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "HOLE(v0, v1, 'NUM')",
+     "size": 4,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "suffixed_err(HOLE, HOLE, 'STR')",
+     "size": 3,
+     "holes": 2,
+     "uses_in_training": 21
+    }
+   ]
+  },
+  "OTHER": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "try:\n    if not math.isfinite(float(v0)):\n        return _format_not_finite(float(v0))\n    v0 = int(v0)\nexcept (TypeError, ValueError):\n    return str(v0)",
+     "size": 29,
+     "holes": 0,
+     "uses_in_training": 3
+    },
+    {
+     "shape": "if HOLE:\n    return _('STR')",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 14
+    },
+    {
+     "shape": "HOLE == HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 40
+    },
+    {
+     "shape": "_ngettext('STR', 'STR', HOLE)",
+     "size": 4,
+     "holes": 1,
+     "uses_in_training": 13
+    },
+    {
+     "shape": "return str(v0)",
+     "size": 4,
+     "holes": 0,
+     "uses_in_training": 12
+    },
+    {
+     "shape": "HOLE % HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 30
+    },
+    {
+     "shape": "if isinstance(v0, dt.datetime) and v0.tzinfo is not None:\n    v3 = dt.datetime.now(v0.tzinfo).date()\nelse:\n    v3 = dt.date.today()",
+     "size": 29,
+     "holes": 0,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "_quotient_and_remainder(HOLE, 'NUM', HOLE, v5, v4, v3)",
+     "size": 6,
+     "holes": 2,
+     "uses_in_training": 6
+    },
+    {
+     "shape": "HOLE and HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 23
+    },
+    {
+     "shape": "HOLE | HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 21
+    }
+   ]
+  },
+  "ORACLE": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "TOMLDecodeError(HOLE, v0, v1)",
+     "size": 4,
+     "holes": 1,
+     "uses_in_training": 26
+    },
+    {
+     "shape": "v1 += 1",
+     "size": 4,
+     "holes": 0,
+     "uses_in_training": 17
+    },
+    {
+     "shape": "v0.startswith('STR', v1)",
+     "size": 5,
+     "holes": 0,
+     "uses_in_training": 12
+    },
+    {
+     "shape": "v1 + HOLE",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 22
+    },
+    {
+     "shape": "HOLE == 'STR'",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 20
+    },
+    {
+     "shape": "HOLE(v0, v1)",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 20
+    },
+    {
+     "shape": "v1 = skip_chars(v0, v1, TOML_WS)",
+     "size": 7,
+     "holes": 0,
+     "uses_in_training": 7
+    },
+    {
+     "shape": "HOLE: str | None = v0[v1]",
+     "size": 8,
+     "holes": 1,
+     "uses_in_training": 5
+    },
+    {
+     "shape": "tuple[Pos, str]",
+     "size": 5,
+     "holes": 0,
+     "uses_in_training": 8
+    },
+    {
+     "shape": "HOLE[:-1]",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 6
+    }
+   ]
+  }
+ },
+ "rows": [
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.__init__",
+   "size": 29,
+   "OWN": 28,
+   "RANDOM": 28,
+   "OTHER": 29,
+   "ORACLE": 28
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.add_pending",
+   "size": 16,
+   "OWN": 15,
+   "RANDOM": 16,
+   "OTHER": 16,
+   "ORACLE": 15
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.finalize_pending",
+   "size": 23,
+   "OWN": 22,
+   "RANDOM": 23,
+   "OTHER": 23,
+   "ORACLE": 22
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.is_",
+   "size": 86,
+   "OWN": 70,
+   "RANDOM": 80,
+   "OTHER": 80,
+   "ORACLE": 68
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.set",
+   "size": 88,
+   "OWN": 59,
+   "RANDOM": 67,
+   "OTHER": 82,
+   "ORACLE": 59
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.unset_all",
+   "size": 41,
+   "OWN": 31,
+   "RANDOM": 37,
+   "OTHER": 39,
+   "ORACLE": 31
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.__init__",
+   "size": 13,
+   "OWN": 9,
+   "RANDOM": 13,
+   "OTHER": 13,
+   "ORACLE": 9
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.append_nest_to_list",
+   "size": 56,
+   "OWN": 44,
+   "RANDOM": 47,
+   "OTHER": 53,
+   "ORACLE": 39
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.get_or_create_nest",
+   "size": 64,
+   "OWN": 51,
+   "RANDOM": 62,
+   "OTHER": 61,
+   "ORACLE": 47
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Output.__init__",
+   "size": 14,
+   "OWN": 14,
+   "RANDOM": 14,
+   "OTHER": 14,
+   "ORACLE": 14
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "TOMLDecodeError.__init__",
+   "size": 189,
+   "OWN": 177,
+   "RANDOM": 187,
+   "OTHER": 173,
+   "ORACLE": 156
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_dict_rule",
+   "size": 106,
+   "OWN": 67,
+   "RANDOM": 91,
+   "OTHER": 99,
+   "ORACLE": 54
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_list_rule",
+   "size": 102,
+   "OWN": 67,
+   "RANDOM": 92,
+   "OTHER": 100,
+   "ORACLE": 56
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "is_unicode_scalar_value",
+   "size": 20,
+   "OWN": 12,
+   "RANDOM": 14,
+   "OTHER": 19,
+   "ORACLE": 20
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "key_value_rule",
+   "size": 165,
+   "OWN": 133,
+   "RANDOM": 159,
+   "OTHER": 160,
+   "ORACLE": 120
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "load",
+   "size": 38,
+   "OWN": 31,
+   "RANDOM": 38,
+   "OTHER": 36,
+   "ORACLE": 31
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "loads",
+   "size": 204,
+   "OWN": 176,
+   "RANDOM": 191,
+   "OTHER": 180,
+   "ORACLE": 131
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float",
+   "size": 37,
+   "OWN": 32,
+   "RANDOM": 36,
+   "OTHER": 36,
+   "ORACLE": 32
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float.safe_parse_float",
+   "size": 23,
+   "OWN": 18,
+   "RANDOM": 23,
+   "OTHER": 21,
+   "ORACLE": 18
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_array",
+   "size": 125,
+   "OWN": 85,
+   "RANDOM": 109,
+   "OTHER": 112,
+   "ORACLE": 79
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str",
+   "size": 145,
+   "OWN": 101,
+   "RANDOM": 121,
+   "OTHER": 127,
+   "ORACLE": 93
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape",
+   "size": 138,
+   "OWN": 96,
+   "RANDOM": 111,
+   "OTHER": 127,
+   "ORACLE": 87
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape_multiline",
+   "size": 18,
+   "OWN": 10,
+   "RANDOM": 17,
+   "OTHER": 18,
+   "ORACLE": 14
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_hex_char",
+   "size": 72,
+   "OWN": 53,
+   "RANDOM": 71,
+   "OTHER": 68,
+   "ORACLE": 52
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_inline_table",
+   "size": 213,
+   "OWN": 150,
+   "RANDOM": 192,
+   "OTHER": 198,
+   "ORACLE": 128
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key",
+   "size": 103,
+   "OWN": 65,
+   "RANDOM": 83,
+   "OTHER": 93,
+   "ORACLE": 54
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_part",
+   "size": 75,
+   "OWN": 48,
+   "RANDOM": 68,
+   "OTHER": 69,
+   "ORACLE": 45
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_value_pair",
+   "size": 76,
+   "OWN": 55,
+   "RANDOM": 70,
+   "OTHER": 71,
+   "ORACLE": 46
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_literal_str",
+   "size": 40,
+   "OWN": 28,
+   "RANDOM": 39,
+   "OTHER": 35,
+   "ORACLE": 28
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_multiline_str",
+   "size": 114,
+   "OWN": 70,
+   "RANDOM": 110,
+   "OTHER": 100,
+   "ORACLE": 80
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_one_line_basic_str",
+   "size": 22,
+   "OWN": 15,
+   "RANDOM": 21,
+   "OTHER": 20,
+   "ORACLE": 15
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_value",
+   "size": 280,
+   "OWN": 210,
+   "RANDOM": 248,
+   "OTHER": 257,
+   "ORACLE": 195
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_chars",
+   "size": 28,
+   "OWN": 23,
+   "RANDOM": 28,
+   "OTHER": 26,
+   "ORACLE": 23
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comment",
+   "size": 42,
+   "OWN": 30,
+   "RANDOM": 39,
+   "OTHER": 38,
+   "ORACLE": 30
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comments_and_array_ws",
+   "size": 32,
+   "OWN": 25,
+   "RANDOM": 29,
+   "OTHER": 28,
+   "ORACLE": 25
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_until",
+   "size": 77,
+   "OWN": 63,
+   "RANDOM": 74,
+   "OTHER": 72,
+   "ORACLE": 60
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "cached_tz",
+   "size": 43,
+   "OWN": 36,
+   "RANDOM": 39,
+   "OTHER": 40,
+   "ORACLE": 40
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_datetime",
+   "size": 118,
+   "OWN": 116,
+   "RANDOM": 110,
+   "OTHER": 112,
+   "ORACLE": 113
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_localtime",
+   "size": 48,
+   "OWN": 46,
+   "RANDOM": 43,
+   "OTHER": 46,
+   "ORACLE": 43
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_number",
+   "size": 28,
+   "OWN": 28,
+   "RANDOM": 28,
+   "OTHER": 28,
+   "ORACLE": 25
+  }
+ ],
+ "seconds": 0.5
+}
