@@ -246,3 +246,14 @@ Use records from our checker tool. Only public code whose licence allows it.
 - **Design and predictions:** [D4-design.md](../docs/product/D4-design.md).
 - **BENCH-003:** 10 honest reorganisations and 12 cheats disguised as moves, in a third practice project. **Safety criterion:** all 12 cheats are caught. At most 1 honest false alarm (M09, predicted).
 - **REAL-002:** 120 fresh real commits (positions 61–90 of the REAL-001 projects), analysed read-only. 0.1.2's findings are classified by hand first; then 0.2.0 is compared. **Primary (Q1):** no real or intended weakening is excused. **Q2:** at least half of the move false alarms are cleared.
+
+---
+
+## EXP-002b: near misses chosen by structure (the last allowed variant)
+
+- **Status:** 📝 pre-registered on 9 November 2026, **not yet run**. Committed before any code.
+- **Design and predictions:** [EXP-002b-design.md](../docs/research/EXP-002b-design.md).
+- **The question:** if near misses are chosen because *one more step* turns them into an exact answer (structure), not because their answers look close, do the learned shortcuts recover the hidden building blocks?
+- **Primary (H9, stop rule):** share of the C0 → oracle gap closed. **Below 10%, the near-miss line stops and research moves to EXP-005.**
+- **Compute control (H11):** must beat plain learning given the same doubled effort (C3_2x).
+- **Cost:** minutes on the MacBook, ₹0.
