@@ -24,7 +24,7 @@ We use **Trusted Publishing**. You tell PyPI, once, "trust the workflow `publish
 
 1. **Create a PyPI account** at https://pypi.org/account/register/ and verify your email.
 2. **Turn on two-factor authentication**, which PyPI requires before publishing: Account settings → Two factor authentication. Save the recovery codes somewhere safe.
-3. **Add a "pending trusted publisher"**: Your account → Publishing → *Add a new pending publisher* → GitHub. Enter exactly:
+3. **Done on 9 November 2026** (the founder signed in; Claude filled in and submitted the form, and PyPI confirmed it). **Add a "pending trusted publisher"**: Your account → Publishing → *Add a new pending publisher* → GitHub. Enter exactly:
 
    | Field | Value |
    |---|---|
@@ -36,7 +36,7 @@ We use **Trusted Publishing**. You tell PyPI, once, "trust the workflow `publish
 
    A pending publisher does **not** reserve the name. The name becomes yours at the first successful upload.
 4. **Done on 9 November 2026: your approval is required for each publish.** The GitHub environment `pypi` has `broly18814` as its required reviewer, and only tags matching `pkv-v*` may deploy to it. `testpypi` exists too, and only the `main` branch may deploy to it. Every PyPI upload waits for your click in GitHub's Actions tab (*Review deployments* → *Approve*).
-5. **Optional rehearsal on TestPyPI**, PyPI's practice copy:
+5. **Optional rehearsal on TestPyPI**, PyPI's practice copy. Skipped for now: it needs a separate TestPyPI account, and the real upload already waits for the founder's approval.
    - repeat steps 1–3 on https://test.pypi.org with Environment name `testpypi`;
    - then run the workflow by hand: Actions → publish → *Run workflow* → target `testpypi`.
 
