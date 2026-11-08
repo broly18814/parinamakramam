@@ -1,0 +1,2126 @@
+[
+ {
+  "project": "click",
+  "position": 1,
+  "commit": "fdb65f4809719580436acb067410cec64433e5de",
+  "parent": "dd149eb3129d887a22202c3fafa5ceb0e0d7018d",
+  "exit_code": 4,
+  "wall_seconds": 4.89,
+  "subject": "Add `context_settings` parameter to `CliRunner.invoke` (#3896)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 5,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 43,
+  "all_test_files": 43,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 2622,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.874,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 2,
+  "commit": "dd149eb3129d887a22202c3fafa5ceb0e0d7018d",
+  "parent": "ac0e297ec2d7d78455a7d18ce306996e668c4a85",
+  "exit_code": 4,
+  "wall_seconds": 17.02,
+  "subject": "Merge stable into main (#3910)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_utils/test_style.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_styling (tests/test_utils/test_style.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_styling"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 31,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/publish.yaml is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 43,
+  "all_test_files": 43,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 2604,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.658,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 3,
+  "commit": "ac0e297ec2d7d78455a7d18ce306996e668c4a85",
+  "parent": "2247b35ea1c47c727d7a06e51fa280e12a863ff6",
+  "exit_code": 4,
+  "wall_seconds": 3.94,
+  "subject": "Print `\\x04` and `\\x1a` input bytes as `^D` and `^Z` in `CliRunner` (#3878)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 43,
+  "all_test_files": 43,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 2269,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.815,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 4,
+  "commit": "2247b35ea1c47c727d7a06e51fa280e12a863ff6",
+  "parent": "06b2a678741131fd577ce170e23e5ca0aeba0309",
+  "exit_code": 4,
+  "wall_seconds": 5.69,
+  "subject": "Add `Parameter.spec` and deprecate `human_readable_name` (#3877)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_deprecations.py",
+    "kind": "checks-nothing",
+    "message": "the new test test_parameter_subclass_without_override_is_silent in tests/test_deprecations.py has no checks (no assert), so it can never fail.",
+    "severity": "notice",
+    "test": "test_parameter_subclass_without_override_is_silent"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_deprecated_warning (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_deprecated_warning"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 7,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 43,
+  "all_test_files": 43,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 2261,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.81,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 5,
+  "commit": "06b2a678741131fd577ce170e23e5ca0aeba0309",
+  "parent": "3cbaa76b6014be7427d1ab06b4af40f01e7c278e",
+  "exit_code": 4,
+  "wall_seconds": 5.68,
+  "subject": "Deprecate parameter names that are: not a Python identifier, or a Python Keyword, or not lower-cased (#3866)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 8,
+  "run_all": true,
+  "run_all_reasons": [
+   "pyproject.toml is a project settings file; it can change how every test behaves",
+   "uv.lock is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 43,
+  "all_test_files": 43,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 2240,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.821,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 6,
+  "commit": "3cbaa76b6014be7427d1ab06b4af40f01e7c278e",
+  "parent": "6aabf099bfdd4c1e75fe8d0e0d4241372b988ab1",
+  "exit_code": 4,
+  "wall_seconds": 6.26,
+  "subject": "Merge stable into main (#3876)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "5 sign(s) that the tests were weakened",
+   "changed code that no test checks: tests/typing/typing_path.py"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_info_dict.py",
+    "kind": "test-removed",
+    "message": "the test test_argument_to_info_dict_help was removed from tests/test_info_dict.py.",
+    "severity": "suspicious",
+    "test": "test_argument_to_info_dict_help"
+   },
+   {
+    "file": "tests/test_utils/test_make_default_short_help.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_make_default_short_help (tests/test_utils/test_make_default_short_help.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_make_default_short_help"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 11,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 43,
+  "all_test_files": 43,
+  "untested_changes": [
+   "tests/typing/typing_path.py"
+  ],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 2098,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.751,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 7,
+  "commit": "6aabf099bfdd4c1e75fe8d0e0d4241372b988ab1",
+  "parent": "36baa15ff831b939a22bc527cd76ce653ef6f66d",
+  "exit_code": 4,
+  "wall_seconds": 7.25,
+  "subject": "Stable (#3851)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "7 sign(s) that the tests were weakened",
+   "changed code that no test checks: tests/test_exceptions/__init__.py, tests/test_types/__init__.py"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_custom_type_frozenset_flag_value was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_custom_type_frozenset_flag_value"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "fewer-checks",
+    "message": "the test test_multiple_envvar in tests/test_options.py now checks less: 6 checks before, 2 now.",
+    "severity": "suspicious",
+    "test": "test_multiple_envvar"
+   },
+   {
+    "file": "tests/test_types.py",
+    "kind": "test-file-deleted",
+    "message": "the whole test file tests/test_types.py was deleted, but the code it tested is still there.",
+    "severity": "suspicious",
+    "test": null
+   },
+   {
+    "file": "tests/test_types/test_Path.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_invalid_path_with_esc_sequence in tests/test_types/test_Path.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_invalid_path_with_esc_sequence"
+   },
+   {
+    "file": "tests/test_types/test_Path.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_path_resolve_symlink in tests/test_types/test_Path.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_path_resolve_symlink"
+   },
+   {
+    "file": "tests/test_types/test_Path.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_path_surrogates in tests/test_types/test_Path.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_path_surrogates"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 30,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 43,
+  "all_test_files": 43,
+  "untested_changes": [
+   "tests/test_exceptions/__init__.py",
+   "tests/test_types/__init__.py"
+  ],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 2058,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.757,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 8,
+  "commit": "e1fd5946ab26aaf372009eaff1acf947140b40fb",
+  "parent": "2103e157683c5e4cadc8ee1838df526a54bde9a4",
+  "exit_code": 4,
+  "wall_seconds": 3.92,
+  "subject": "Add support of `pathlib.Path` to `edit` (#3781)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened",
+   "changed code that no test checks: tests/typing/typing_edit.py"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_termui.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_edit_pathlib in tests/test_termui.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_edit_pathlib"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 5,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 34,
+  "all_test_files": 34,
+  "untested_changes": [
+   "tests/typing/typing_edit.py"
+  ],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1990,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.737,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 9,
+  "commit": "2103e157683c5e4cadc8ee1838df526a54bde9a4",
+  "parent": "61b69e967e525bd502f5bf42def4d551e761fe0e",
+  "exit_code": 4,
+  "wall_seconds": 4.14,
+  "subject": "Forward all user's parameters set in `PAGER` and improve flag detection (#3777)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_termui.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_pipepager_less_detection_case_insensitive_on_windows in tests/test_termui.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_pipepager_less_detection_case_insensitive_on_windows"
+   },
+   {
+    "file": "tests/test_termui.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_pipepager_less_detection_matches_stem in tests/test_termui.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_pipepager_less_detection_matches_stem"
+   },
+   {
+    "file": "tests/test_termui.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_tempfile_pager_passes_pager_params in tests/test_termui.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_tempfile_pager_passes_pager_params"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 34,
+  "all_test_files": 34,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1988,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.729,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 10,
+  "commit": "61b69e967e525bd502f5bf42def4d551e761fe0e",
+  "parent": "f36d58bbd7f188178de2d4fe1d0292c510375ca7",
+  "exit_code": 4,
+  "wall_seconds": 2.88,
+  "subject": "Resolve the pager command once, in `_pager_contextmanager` (#3776)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 34,
+  "all_test_files": 34,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1970,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.514,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 11,
+  "commit": "f36d58bbd7f188178de2d4fe1d0292c510375ca7",
+  "parent": "cbd7a4109da16ce58f54c2a618b4c986e3041fcf",
+  "exit_code": 4,
+  "wall_seconds": 4.5,
+  "subject": "Refactor pager stream handling (#3767)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_termui.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_get_pager_file_flushes_stream_on_exception (tests/test_termui.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_get_pager_file_flushes_stream_on_exception"
+   },
+   {
+    "file": "tests/test_termui.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_get_pager_file_nullpager_keeps_stringio_stream (tests/test_termui.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_get_pager_file_nullpager_keeps_stringio_stream"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 5,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 34,
+  "all_test_files": 34,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1970,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.522,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 12,
+  "commit": "fc5c7f45da0a4443f60ba2d322fe4bf829977739",
+  "parent": "150d1071d69c5cdad7de78590013ffe56cf9e3bb",
+  "exit_code": 4,
+  "wall_seconds": 3.64,
+  "subject": "Fix error reporting on Windows when an error is raised in the pager  (#3764)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_termui.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_tempfile_pager_closes_file_before_unlink in tests/test_termui.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_tempfile_pager_closes_file_before_unlink"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 34,
+  "all_test_files": 34,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1969,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.526,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 13,
+  "commit": "150d1071d69c5cdad7de78590013ffe56cf9e3bb",
+  "parent": "8b44edfff7d9a6c895fa804148c16b3a0bc9efb5",
+  "exit_code": 4,
+  "wall_seconds": 3.67,
+  "subject": "Settles progress bar on its final position (#3769)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 34,
+  "all_test_files": 34,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1968,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.517,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 14,
+  "commit": "8b44edfff7d9a6c895fa804148c16b3a0bc9efb5",
+  "parent": "9c4dfdaebe0e6b2aabc566eb81f6f10eb5cd6ea1",
+  "exit_code": 4,
+  "wall_seconds": 3.62,
+  "subject": "Changed `tempfile.NamedTemporaryFile` mode to `w` (#3739)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_termui.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_tempfile_pager_accepts_text in tests/test_termui.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_tempfile_pager_accepts_text"
+   },
+   {
+    "file": "tests/test_termui.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_tempfile_pager_handles_ansi in tests/test_termui.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_tempfile_pager_handles_ansi"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 34,
+  "all_test_files": 34,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1956,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.52,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 15,
+  "commit": "9c4dfdaebe0e6b2aabc566eb81f6f10eb5cd6ea1",
+  "parent": "00e592cea702e0b2caa0dee42489fdb1c22cd845",
+  "exit_code": 4,
+  "wall_seconds": 3.64,
+  "subject": "Sort help args to make them reproducible (#3728)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 34,
+  "all_test_files": 34,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1952,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.505,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 16,
+  "commit": "00e592cea702e0b2caa0dee42489fdb1c22cd845",
+  "parent": "5aa8ac43527f91c4c801a50b485c09576715d340",
+  "exit_code": 4,
+  "wall_seconds": 2.86,
+  "subject": "Pre-8.5.0 release changelog and doc fixes (#3697)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 11,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 34,
+  "all_test_files": 34,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1939,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.493,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 17,
+  "commit": "398f9154317f6c54bf98fe3359672ad5cb851585",
+  "parent": "5e906a8afb67242dffdd91404dbf31f469054b15",
+  "exit_code": 4,
+  "wall_seconds": 1.14,
+  "subject": "Parametrize deprecation tests and check targets (#3715)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "2 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_deprecations.py",
+    "kind": "test-removed",
+    "message": "the test test_stream_helper_deprecated was removed from tests/test_deprecations.py.",
+    "severity": "suspicious",
+    "test": "test_stream_helper_deprecated"
+   },
+   {
+    "file": "tests/test_deprecations.py",
+    "kind": "test-removed",
+    "message": "the test test_utilities_deprecated was removed from tests/test_deprecations.py.",
+    "severity": "suspicious",
+    "test": "test_utilities_deprecated"
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 34,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 28,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.156,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 18,
+  "commit": "5e906a8afb67242dffdd91404dbf31f469054b15",
+  "parent": "cfa01eeb7894a408af70b29d28c0b24f8680f9fb",
+  "exit_code": 4,
+  "wall_seconds": 4.34,
+  "subject": "`click.prompt` typing clarifications / improvements (#3407)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened",
+   "changed code that no test checks: tests/typing/typing_prompt.py"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 6,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 34,
+  "all_test_files": 34,
+  "untested_changes": [
+   "tests/typing/typing_prompt.py"
+  ],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1921,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.5,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 19,
+  "commit": "cfa01eeb7894a408af70b29d28c0b24f8680f9fb",
+  "parent": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+  "exit_code": 4,
+  "wall_seconds": 7.38,
+  "subject": "Deprecate `isolated_filesystem` and document its limits (#3704)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_basic.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_file_lazy_mode (tests/test_basic.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_file_lazy_mode"
+   },
+   {
+    "file": "tests/test_utils/test_open_file.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_open_file_atomic_permissions_existing_file (tests/test_utils/test_open_file.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_open_file_atomic_permissions_existing_file"
+   },
+   {
+    "file": "tests/test_utils/test_open_file.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_open_file_atomic_permissions_new_file (tests/test_utils/test_open_file.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_open_file_atomic_permissions_new_file"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 10,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 34,
+  "all_test_files": 34,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1917,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.485,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 20,
+  "commit": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+  "parent": "7df2f82305f20f1611a9668b38d26933b648d807",
+  "exit_code": 4,
+  "wall_seconds": 6.1,
+  "subject": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 14,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 34,
+  "all_test_files": 34,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1914,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.492,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 21,
+  "commit": "7df2f82305f20f1611a9668b38d26933b648d807",
+  "parent": "b551fe85714c906565303fae98136d7c72b252ea",
+  "exit_code": 4,
+  "wall_seconds": 3.64,
+  "subject": "Add built-in PowerShell shell completion support (#3637)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 33,
+  "all_test_files": 33,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1905,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.48,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 22,
+  "commit": "b551fe85714c906565303fae98136d7c72b252ea",
+  "parent": "b67832c2167e5b0ff6764a8c04a0a9087e697b5a",
+  "exit_code": 4,
+  "wall_seconds": 2.86,
+  "subject": "Streamline option flag management (#3641)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 33,
+  "all_test_files": 33,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1901,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.492,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 23,
+  "commit": "b67832c2167e5b0ff6764a8c04a0a9087e697b5a",
+  "parent": "8c1a0a7abbc1c36f70d1f65f3604acc46c5ce6ab",
+  "exit_code": 4,
+  "wall_seconds": 5.21,
+  "subject": "Fix parsing when a parameter is named `help` (#3678)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 6,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 33,
+  "all_test_files": 33,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1901,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.489,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 24,
+  "commit": "8c1a0a7abbc1c36f70d1f65f3604acc46c5ce6ab",
+  "parent": "8a4ce842564ae94ab050062db8525196ad476c19",
+  "exit_code": 4,
+  "wall_seconds": 5.22,
+  "subject": "Strip all ANSI sequences (#3681)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 5,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 33,
+  "all_test_files": 33,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1893,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.474,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 25,
+  "commit": "8a4ce842564ae94ab050062db8525196ad476c19",
+  "parent": "8dd4d60eb5ad4532abdd9b2809a7d9e2aa679b87",
+  "exit_code": 4,
+  "wall_seconds": 3.55,
+  "subject": "Validate `style()` color arguments (#3677)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 33,
+  "all_test_files": 33,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1748,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.429,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 26,
+  "commit": "8dd4d60eb5ad4532abdd9b2809a7d9e2aa679b87",
+  "parent": "7925a3410d7098c28cfca3b2baa6c852666bbd14",
+  "exit_code": 0,
+  "wall_seconds": 1.14,
+  "subject": "Restore `test_echo_color_flag` from #3505 (#3676)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 6 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 33,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 6,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.154,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 2.31
+ },
+ {
+  "project": "click",
+  "position": 27,
+  "commit": "7925a3410d7098c28cfca3b2baa6c852666bbd14",
+  "parent": "a44e9f05edbfcea04b5ec91d4403976a50381c59",
+  "exit_code": 4,
+  "wall_seconds": 1.62,
+  "subject": "Merge stable into main.  (#3674)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "2 sign(s) that the tests were weakened",
+   "changed code that no test checks: tests/test_utils/__init__.py"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_utils.py",
+    "kind": "test-file-deleted",
+    "message": "the whole test file tests/test_utils.py was deleted, but the code it tested is still there.",
+    "severity": "suspicious",
+    "test": null
+   },
+   {
+    "file": "tests/test_utils/test_echo.py",
+    "kind": "checks-nothing",
+    "message": "the new test test_echo_no_streams in tests/test_utils/test_echo.py has no checks (no assert), so it can never fail.",
+    "severity": "notice",
+    "test": "test_echo_no_streams"
+   },
+   {
+    "file": "tests/test_utils/test_echo.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_echo_writing_to_standard_error in tests/test_utils/test_echo.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_echo_writing_to_standard_error"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_echo_via_pager in tests/test_utils/test_echo_via_pager.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_echo_via_pager"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_echo_via_pager_yields_before_exception in tests/test_utils/test_echo_via_pager.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_echo_via_pager_yields_before_exception"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   },
+   {
+    "file": "tests/test_utils/test_open_file.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_open_file_atomic_permissions_existing_file in tests/test_utils/test_open_file.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_open_file_atomic_permissions_existing_file"
+   },
+   {
+    "file": "tests/test_utils/test_open_file.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_open_file_atomic_permissions_new_file in tests/test_utils/test_open_file.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_open_file_atomic_permissions_new_file"
+   },
+   {
+    "file": "tests/test_utils/test_open_file.py",
+    "kind": "checks-nothing",
+    "message": "the new test test_open_file_ignore_invalid_utf8 in tests/test_utils/test_open_file.py has no checks (no assert), so it can never fail.",
+    "severity": "notice",
+    "test": "test_open_file_ignore_invalid_utf8"
+   },
+   {
+    "file": "tests/test_utils/test_open_file.py",
+    "kind": "checks-nothing",
+    "message": "the new test test_open_file_ignore_no_encoding in tests/test_utils/test_open_file.py has no checks (no assert), so it can never fail.",
+    "severity": "notice",
+    "test": "test_open_file_ignore_no_encoding"
+   },
+   {
+    "file": "tests/test_utils/test_prompt.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_full_prompt_passed_to_readline in tests/test_utils/test_prompt.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_full_prompt_passed_to_readline"
+   },
+   {
+    "file": "tests/test_utils/test_prompt.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_prompts_abort in tests/test_utils/test_prompt.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_prompts_abort"
+   },
+   {
+    "file": "tests/test_utils/test_echo_via_pager.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils/test_echo_via_pager.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 15,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 13,
+  "all_test_files": 33,
+  "untested_changes": [
+   "tests/test_utils/__init__.py"
+  ],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 148,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.444,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 28,
+  "commit": "a44e9f05edbfcea04b5ec91d4403976a50381c59",
+  "parent": "94c191ca6c9598865fc5672b85cf138845b337d5",
+  "exit_code": 4,
+  "wall_seconds": 2.76,
+  "subject": "Update documentation following Colorama removal (#3671)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1684,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.413,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 29,
+  "commit": "94c191ca6c9598865fc5672b85cf138845b337d5",
+  "parent": "16fc00e2f4a2717a521084f193709a6058afc693",
+  "exit_code": 4,
+  "wall_seconds": 3.57,
+  "subject": "Add `@custom_version_option`, freeze `@version_option` (#3581)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 6,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1684,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.418,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "click",
+  "position": 30,
+  "commit": "16fc00e2f4a2717a521084f193709a6058afc693",
+  "parent": "fe3ad76e5807e7a401ed7520f051071c6ae1fa6e",
+  "exit_code": 4,
+  "wall_seconds": 3.51,
+  "subject": "Do not trigger a `BytesWarning` under `python -bb` (#3642)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "4 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_gc_between_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_gc_between_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_logging_sequential_invocations in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_logging_sequential_invocations"
+   },
+   {
+    "file": "tests/test_stream_lifecycle.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_thread_pool_with_exit in tests/test_stream_lifecycle.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_thread_pool_with_exit"
+   },
+   {
+    "file": "tests/test_utils.py",
+    "kind": "test-not-run",
+    "message": "the test test_stress_echo_via_pager_exception_cleanup in tests/test_utils.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_stress_echo_via_pager_exception_cleanup"
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 21,
+  "all_test_files": 21,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1681,
+   "skipped": 25,
+   "xfailed": 1
+  },
+  "test_seconds": 2.433,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ }
+]

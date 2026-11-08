@@ -97,3 +97,44 @@ My own expectation is that R2 is the most likely to fail. Real projects do thing
 - The held-out set is run **once**, after all fixes are frozen, to see whether they hold on changes pkv has never seen.
 - All 120 study records are committed, with each classification and its reason. Nothing is dropped.
 - **Stop rule:** if R3 fails (any false all-clear), that's fixed before anything else, and no public claim about pkv's accuracy is made until the held-out set confirms the fix.
+
+---
+
+## 8. Results: study set (run once, 9 November 2026, pkv 0.1.1)
+
+All 120 commits ran. Every alarm was classified by hand: [CLASSIFICATION.md](../../product/verify/realworld/results/study/CLASSIFICATION.md). The raw results are in `product/verify/realworld/results/study/`.
+
+| Project | Commits | VERIFIED | FAILED | UNVERIFIED | SUSPICIOUS | Tool error | Ran every test |
+|---|---|---|---|---|---|---|---|
+| click | 30 | 1 | 0 | 0 | 29 | 0 | 2 |
+| more-itertools | 30 | 30 | 0 | 0 | 0 | 0 | 3 |
+| boltons | 30 | 20 | 0 | 0 | 10 | 0 | 1 |
+| tomli | 30 | 24 | 0 | 4 | 2 | 0 | 17 |
+| **All** | **120** | **75** | **0** | **4** | **41** | **0** | **23** |
+
+### Predictions, scored exactly as written
+
+| ID | Prediction | Result | Verdict |
+|---|---|---|---|
+| R1 | Tool errors ≤ 1 | 0 | ✅ PASS |
+| **R2 (primary)** | Commits with a false alarm ≤ 6 (5%) | **38 (32%)** | ❌ **FAIL** |
+| **R3 (safety)** | No false all-clears | 0 of 24 commits where pkv ran fewer than all test files and said VERIFIED | ✅ PASS, but weak: the full suite passed at all 120 commits, so there was no failure to miss |
+| R4 | Run-all on 30–60% | 23 (19%) | ❌ FAIL (fewer than predicted) |
+| R5 | UNVERIFIED on 15–40% | 4 (3%), all accurate | ❌ FAIL (fewer than predicted; some were hidden behind SUSPICIOUS) |
+| R6 | Median share of test files run ≤ 50% | 100% | ❌ FAIL |
+
+### What we learned
+
+- **The primary prediction failed badly.** Real projects do three things the practice sets never did:
+  - leave tests out on purpose (click's stress tests);
+  - name a fixture `test_url` (boltons);
+  - test their own comparison methods with `x <= x` (boltons).
+
+  These explain 34 of the 38 bad commits, and they're now fixed (D1–D3, D5). The other 4 come from tests that were **renamed, moved or merged** (D4, not yet fixed).
+- **The alarms that were right were useful.** In boltons #6, a large "sweep" change quietly deleted a test and a check with no explanation. pkv flagged both. The 5 S-intended findings were accurate descriptions of deliberate choices.
+- **Narrowing the test run rarely helps in libraries.** In click, more-itertools and tomli, every test imports the package, and the package's `__init__.py` imports everything. A file-level import map therefore has to select every test. Only boltons, a collection of independent modules, got real savings: a median of 7% of test files, 0.17 s instead of 1.9 s.
+- **It's fast and it didn't crash.** The median check took 0.4–8 s per commit, and no project broke pkv.
+
+### After the fixes (pkv 0.1.2)
+
+Recomputed from the saved receipts, without re-running anything: 8 SUSPICIOUS commits remain. Four are accurate signals; four are D4. Because the fixes were designed on these same commits, that is **not** evidence. As registered in section 7, the **held-out set** (120 older commits) is run once with pkv 0.1.2, and its result is what counts.

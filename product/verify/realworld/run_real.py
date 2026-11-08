@@ -13,7 +13,14 @@ Usage (from product/verify; WORK must be outside this repository):
     python realworld/run_real.py setup   --work WORK
     python realworld/run_real.py list    --work WORK --set study|heldout
     python realworld/run_real.py run     --work WORK --set study|heldout [--only NAME]
-    python realworld/run_real.py summary --set study|heldout
+    python realworld/run_real.py summary --set study|heldout [--dir FOLDER]
+    python realworld/run_real.py rescore --work WORK --set study|heldout
+
+`rescore` recomputes every verdict with the *current* pkv from the saved
+receipts, without running anything from the projects: pkv's weakened-test
+rules only read code through git, and the saved receipt records exactly
+which tests pytest ran. It checks that the test selection is unchanged, so
+the stored run is still the right one.
 
 Safety: the projects' test suites are run, and tests are code. Every
 project is a widely used open-source package, cloned into WORK, installed
@@ -159,10 +166,54 @@ def run(work: Path, which: str, only: str | None) -> None:
         (out_dir / f"{p['name']}.json").write_text(json.dumps(records, indent=1) + "\n")
 
 
-def summary(which: str) -> None:
+def rescore(work: Path, which: str) -> None:
+    sys.path.insert(0, str(PKV_DIR))
+    from dataclasses import fields
+
+    from pkv import __version__
+    from pkv.affected import select_tests
+    from pkv.gitdiff import changed_files
+    from pkv.imports import build_graph
+    from pkv.report import decide
+    from pkv.runner import RunRecord
+    from pkv.tamper import find_not_run, find_tampering
+
+    out_dir = RESULTS / f"{which}-rescored-pkv-{__version__}"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    names = {f.name for f in fields(RunRecord)}
+    for p in PROJECTS:
+        repo, _ = paths(work, p)
+        stored = json.loads((RESULTS / which / f"{p['name']}.json").read_text())
+        records = []
+        for old in stored:
+            sha, parent = old["commit"], old["parent"]
+            git(repo, "checkout", "-q", "--detach", "-f", sha)
+            git(repo, "clean", "-q", "-f", "-d")
+            receipt = json.loads((work / "receipts" / which / f"{p['name']}-{sha[:12]}.json").read_text())
+            graph = build_graph(repo)
+            changes = changed_files(repo, parent)
+            sel = select_tests(repo, changes, graph)
+            if sorted(sel.tests) != sorted(receipt["selection"]["tests"]):
+                sys.exit(f"{p['name']} {sha[:10]}: the selection changed, so the stored run can't be reused")
+            run = RunRecord(**{k: v for k, v in receipt["run"].items() if k in names}) if receipt["run"] else None
+            findings = find_tampering(repo, changes, parent, graph)
+            if run and run.outcome in ("passed", "failed"):
+                findings += find_not_run(repo, sel.tests, run.executed, changes, parent, graph)
+            verdict, reasons = decide(sel, run, findings, ran_requested=True)
+            new = {**old, "verdict": verdict, "verdict_reasons": reasons,
+                   "findings": [f.to_dict() for f in findings], "rescored_with": __version__,
+                   "verdict_as_run": old["verdict"]}
+            records.append(new)
+            if verdict != old["verdict"]:
+                print(f"{p['name']} #{old['position']} {sha[:10]}: {old['verdict']} -> {verdict}")
+        git(repo, "checkout", "-q", "--detach", "-f", p["commit"])
+        (out_dir / f"{p['name']}.json").write_text(json.dumps(records, indent=1) + "\n")
+
+
+def summary(which: str, folder: str | None = None) -> None:
     rows = []
     for p in PROJECTS:
-        f = RESULTS / which / f"{p['name']}.json"
+        f = RESULTS / (folder or which) / f"{p['name']}.json"
         if f.exists():
             rows += json.loads(f.read_text())
     if not rows:
@@ -191,10 +242,11 @@ def summary(which: str) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("command", choices=["setup", "list", "run", "summary"])
+    ap.add_argument("command", choices=["setup", "list", "run", "summary", "rescore"])
     ap.add_argument("--work", type=Path)
     ap.add_argument("--set", choices=list(SETS), default="study")
     ap.add_argument("--only")
+    ap.add_argument("--dir", help="results sub-folder to summarise (default: the set's own)")
     a = ap.parse_args()
     if a.command != "summary":
         if a.work is None:
@@ -212,8 +264,10 @@ def main() -> None:
             print(f"{p['name']}: {len(cs)} commits, newest {cs[0][:10]}, oldest {cs[-1][:10]}")
     elif a.command == "run":
         run(work, a.set, a.only)
+    elif a.command == "rescore":
+        rescore(work, a.set)
     else:
-        summary(a.set)
+        summary(a.set, a.dir)
 
 
 if __name__ == "__main__":

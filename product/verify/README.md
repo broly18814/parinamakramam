@@ -1,4 +1,4 @@
-# Parinama Verify (`pkv`): version 0.1.1
+# Parinama Verify (`pkv`): version 0.1.2
 
 An **independent checker** for code changes, whether an AI or a person made them. It works out which tests a change could break, **runs them itself**, looks for **signs the tests were weakened**, and gives a **receipt** with one verdict. Every sentence in the receipt comes from recorded data, never from an AI's opinion.
 
@@ -17,7 +17,16 @@ Predictions were committed before every run, and all 51 came true. The held-out 
 
 **Read these scores carefully:**
 - The scenarios are small, and the same author wrote them and pkv.
-- Performance on real projects hasn't been measured yet.
+
+### On real projects (REAL-001, pre-registered)
+
+pkv 0.1.1 was replayed over 120 real commits from click, more-itertools, boltons and tomli:
+- **0 crashes, 0 false all-clears.** No commit had a failing test, though, so there was nothing to miss.
+- But **38 commits had a false alarm**, far above the 6 predicted.
+- Four of the five causes are fixed in 0.1.2; renamed or moved tests are still flagged.
+- The fixes are being checked on 120 held-out commits. Until then, treat SUSPICIOUS on real projects as "worth a look", not as proof.
+
+The [full results](../../docs/product/REAL-001-design.md) include [every alarm classified by hand](realworld/results/study/CLASSIFICATION.md).
 - Scenario details and raw results are in [`benchmark/`](benchmark/).
 
 ## The four verdicts
@@ -60,14 +69,17 @@ Exit code 2 means pkv itself couldn't complete, for example because the folder i
 - security-related files changed;
 - expected values edited in the same change as the code;
 - a test deleted together with the code it tested;
-- a new test that checks nothing.
+- a new test that checks nothing;
+- a test that compares a value with itself (`x == x`);
+- selected tests that weren't run, when nothing in the change could have removed them (the project leaves them out on purpose).
 
 **Known misses (measured):**
 - An expected answer edited to *match* a bug. This is indistinguishable from an honest fix without knowing the intended behaviour.
 - `pytest.raises(AssertionError)` wrapped around a check.
 - A skip mark on a single `pytest.param` row.
 - An early `return` before a check.
-- **False alarm:** splitting one test file into two is flagged.
+- **False alarm:** a test renamed, moved to another file, merged into a `parametrize` table, or a test file split in two, is reported as removed or weaker. Seen in 4 of 120 real click commits.
+- **Little narrowing in libraries** whose tests all import the package, when the package's `__init__.py` imports everything: pkv must run every test.
 
 ## Use it on your computer
 
@@ -143,7 +155,7 @@ The receipt appears on the run's summary page and is kept as a downloadable file
 
 - **Lint and types:** `ruff` lint and `mypy --strict`, both clean.
 - **Self-checks:**
-  - 76 product self-checks, on Python 3.10, 3.12 and 3.14;
+  - 86 product self-checks, on Python 3.10, 3.12 and 3.14;
   - every bug fix has a regression test that fails before the fix;
   - each detection rule was **mutation-tested**: breaking it makes a self-check fail.
 - **Regression gate:** both practice sets; CI fails if any scenario's verdict changes.

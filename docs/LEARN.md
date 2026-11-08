@@ -9,7 +9,7 @@ This is a course that teaches every idea used in Parinamakramam, in order, start
 5. **🛠 Try it.** Something to type or open. Commands go in the **Terminal** app, the program where you type instructions to the computer.
 6. **✅ Check yourself.** A question to test yourself. Click to see the answer.
 
-Go in order: each lesson builds on the previous ones. One lesson a day takes 33 days, but you can go faster. Words are also listed in the [Glossary](GLOSSARY.md).
+Go in order: each lesson builds on the previous ones. One lesson a day takes 34 days, but you can go faster. Words are also listed in the [Glossary](GLOSSARY.md).
 
 ---
 
@@ -669,6 +669,31 @@ This is the same honesty principle as our research. A check you've never seen fa
 
 ✅ **Check yourself.** Why write the stop rule *before* seeing the result?
 <details><summary>Answer</summary>After a disappointing result it's tempting to keep trying "just one more tweak" forever. A rule written in advance, when you had no stake in the outcome, decides fairly when to stop.</details>
+
+## Lesson 34. Testing on real code: the replay study
+
+🖼 **Picture.** A smoke alarm passes every test in the factory, using smoke the factory makes. Then it's fitted in four real kitchens for a month. It never misses a fire, but it goes off for toast every morning. Both facts matter. Only the kitchens could tell you the second one.
+
+📖 **The real words.**
+- **Replay study:** taking real changes that real people made and checking each one as if it were new.
+- **False alarm** and **false all-clear:** the two ways a checker is wrong (see the Glossary).
+- **Fixture:** a pytest helper that prepares data for tests. It isn't a test itself, even if its name starts with `test`.
+
+🎯 **Precisely.**
+- REAL-001 replayed 120 real commits from four public projects. All its predictions and the rules for labelling every alarm were committed *before* it ran.
+- The primary prediction **failed**: 38 commits had a false alarm, against at most 6 predicted. Every alarm was read by hand and labelled, including the ones that were right.
+- The causes were things our own practice sets never contained:
+  - a project leaving slow tests out on purpose;
+  - a fixture named `test_url`;
+  - a test that checks `x <= x` because it's testing the comparison itself.
+
+  Real projects contain surprises that the person writing the tests can't imagine.
+- Fixes designed on the same 120 commits can't prove themselves there. That's why 120 *other* commits were held out, to be run once after the fixes are frozen.
+
+📍 **In our project.** [REAL-001-design.md](product/REAL-001-design.md) and [CLASSIFICATION.md](../product/verify/realworld/results/study/CLASSIFICATION.md).
+
+✅ **Check yourself.** After the fixes, only 8 of the study commits are still SUSPICIOUS, and only 4 of those are false. Why isn't that good evidence the fixes work?
+<details><summary>Answer</summary>The fixes were designed by looking at exactly those commits, so of course they fit them. It's like marking your own exam after seeing the answers. Only commits the fixes have never seen (the held-out set) can show whether they work in general.</details>
 
 ---
 

@@ -28,6 +28,7 @@ from pathlib import Path
 from . import __version__
 from .affected import Selection, select_tests
 from .gitdiff import GitError, changed_files, comparison_point, repo_root, tree_hash
+from .imports import build_graph
 from .report import EXIT_CODES, build_evidence, decide, render
 from .runner import run_tests
 from .tamper import find_not_run, find_tampering
@@ -80,8 +81,9 @@ def _check(args: argparse.Namespace) -> int:
     receipts = [r for r in (_inside(root, f) for f in (args.json, args.md) if f) if r]
     ref = comparison_point(root, args.base)
     changes = [c for c in changed_files(root, args.base) if c.path not in receipts]
-    sel = select_tests(root, changes)
-    findings = find_tampering(root, changes, ref)
+    graph = build_graph(root)  # one map of the code, shared by every step below
+    sel = select_tests(root, changes, graph)
+    findings = find_tampering(root, changes, ref, graph)
     run = None
     if sel.tests and not args.no_run:
         run = run_tests(root, sel.tests, timeout=args.timeout, python=args.python,
@@ -90,7 +92,7 @@ def _check(args: argparse.Namespace) -> int:
         # collected" pytest writes no per-file entries, and that case is already
         # UNVERIFIED for its own, more accurate reason.
         if run.outcome in ("passed", "failed"):
-            findings += find_not_run(root, sel.tests, run.executed)
+            findings += find_not_run(root, sel.tests, run.executed, changes, ref, graph)
     verdict, reasons = decide(sel, run, findings, ran_requested=not args.no_run)
     ev = build_evidence(root=root, base=args.base, ref=ref, version=__version__, sel=sel,
                         run=run, findings=findings, verdict=verdict, reasons=reasons,

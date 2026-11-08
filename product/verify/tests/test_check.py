@@ -10,6 +10,7 @@ from __future__ import annotations
 import json
 
 from helpers import commit, git, write
+from pkv.affected import select_tests
 from pkv.cli import main
 from pkv.gitdiff import changed_files, comparison_point
 from pkv.runner import run_tests
@@ -373,6 +374,129 @@ def test_whole_file_skipped_on_purpose_is_not_reported_as_not_run(repo, capsys):
     out = capsys.readouterr().out
     assert "never ran" not in out  # a deliberate whole-file skip is not "removed"
     assert "pytest found no tests to run" in out
+
+
+# ---------- false alarms found in REAL-001 (each with its cheating look-alike) ----------
+
+STRESS_SETTINGS = ("[tool.pytest.ini_options]\naddopts = \"-m 'not stress'\"\n"
+                   "markers = ['stress: slow tests, run separately']\n")
+STRESS_TESTS = ("import pytest\nfrom app.utils import slug\n\ndef test_slug():\n    assert slug('A') == 'a'\n\n"
+                "@pytest.mark.stress\ndef test_slug_many():\n    assert slug('B') == 'b'\n")
+
+
+def test_tests_the_project_already_left_out_are_a_notice_not_suspicious(repo, capsys):
+    # click's pyproject.toml says addopts = "-m 'not stress'": its stress tests
+    # never run normally. pkv blamed 26 of 30 real click changes for that.
+    write(repo, {"pyproject.toml": STRESS_SETTINGS, "tests/test_utils.py": STRESS_TESTS})
+    commit(repo, "stress tests, excluded by the project's own settings")
+    write(repo, {"app/utils.py": "def slug(s):\n    return s.lower()  # same\n"})
+    assert check(repo) == 0
+    out = capsys.readouterr().out
+    assert "never ran" not in out
+    assert "1 selected test(s) in tests/test_utils.py were not run (test_slug_many)" in out
+
+
+def test_marking_a_test_so_the_settings_drop_it_is_still_suspicious(repo, capsys):
+    # The look-alike cheat: the settings are old, but the change adds the marker
+    # that makes them drop a test.
+    write(repo, {"pyproject.toml": STRESS_SETTINGS})
+    commit(repo, "settings")
+    write(repo, {"app/utils.py": "def slug(s):\n    return s\n",  # breaks test_slug
+                 "tests/test_utils.py": ("import pytest\nfrom app.utils import slug\n\n"
+                                         "@pytest.mark.stress\ndef test_slug():\n    assert slug('A') == 'a'\n\n"
+                                         "def test_slug_returns_text():\n    assert isinstance(slug('A'), str)\n")})
+    assert check(repo) == 4
+    assert "test_slug in tests/test_utils.py was selected but pytest never ran it" in capsys.readouterr().out
+
+
+def test_a_helper_conftest_uses_counts_as_a_selection_control(repo, capsys):
+    # A conftest hook that drops tests based on a helper module: changing the
+    # helper can remove tests, so it must not be excused as "already left out".
+    write(repo, {"tests/droplist.py": "DROP = []\n",
+                 "tests/conftest.py": ("from droplist import DROP\n\n"
+                                       "def pytest_collection_modifyitems(items):\n"
+                                       "    items[:] = [i for i in items if i.name not in DROP]\n")})
+    commit(repo, "hook with an empty drop list")
+    write(repo, {"tests/droplist.py": "DROP = ['test_slug']\n",
+                 "app/utils.py": "def slug(s):\n    return s\n"})
+    assert check(repo) == 4
+    assert "test_slug in tests/test_utils.py was selected but pytest never ran it" in capsys.readouterr().out
+
+
+def test_code_a_fixture_only_conftest_uses_does_not_count_as_a_selection_control(repo, capsys):
+    # click's conftest.py only provides fixtures, but imports click itself; pkv
+    # treated every change to click as able to remove tests (26 real changes).
+    write(repo, {"pyproject.toml": STRESS_SETTINGS, "tests/test_utils.py": STRESS_TESTS,
+                 "tests/conftest.py": ("import pytest\nfrom app.utils import slug\n\n"
+                                       "@pytest.fixture\ndef word():\n    return slug('A')\n")})
+    commit(repo, "fixture-only conftest that uses the project's code")
+    write(repo, {"app/utils.py": "def slug(s):\n    return s.lower()  # same\n"})
+    assert check(repo) == 0
+    assert "never ran" not in capsys.readouterr().out
+
+
+def test_a_version_bump_in_the_settings_file_does_not_count_as_a_selection_control(repo, capsys):
+    # click bumped its own version in pyproject.toml and uv.lock; that can't
+    # drop tests, but pkv blamed the change for click's long-excluded tests.
+    lock = 'version = 1\n\n[[package]]\nname = "app"\nversion = "{v}"\n'
+    write(repo, {"pyproject.toml": "[project]\nname = 'app'\nversion = '1.0'\n\n" + STRESS_SETTINGS,
+                 "uv.lock": lock.format(v="1.0"), "tests/test_utils.py": STRESS_TESTS})
+    commit(repo, "settings and lock")
+    write(repo, {"pyproject.toml": "[project]\nname = 'app'\nversion = '1.1'\n\n" + STRESS_SETTINGS,
+                 "uv.lock": lock.format(v="1.1")})
+    assert check(repo) == 0
+    assert "never ran" not in capsys.readouterr().out
+
+
+def test_a_new_package_in_the_lock_file_still_counts_as_a_selection_control(repo, capsys):
+    # The look-alike: a newly added package could be a pytest plugin that drops tests.
+    lock = 'version = 1\n\n[[package]]\nname = "app"\nversion = "1.0"\n'
+    write(repo, {"pyproject.toml": STRESS_SETTINGS, "uv.lock": lock, "tests/test_utils.py": STRESS_TESTS})
+    commit(repo, "settings and lock")
+    write(repo, {"uv.lock": lock + '\n[[package]]\nname = "pytest-dropper"\nversion = "0.1"\n'})
+    assert check(repo) == 4
+    assert "test_slug_many in tests/test_utils.py was selected but pytest never ran it" in capsys.readouterr().out
+
+
+def test_a_test_folder_init_file_is_used_by_the_tests_in_that_folder(repo):
+    # click's tests/test_types/__init__.py was reported as "changed code that
+    # no test checks", but Python runs it before every test module in that folder.
+    write(repo, {"tests/unit/__init__.py": "",
+                 "tests/unit/test_unit.py": "def test_u():\n    assert 1 + 1 == 2\n"})
+    commit(repo, "a test package")
+    write(repo, {"tests/unit/__init__.py": "# a comment\n"})
+    sel = select_tests(repo, changed_files(repo))
+    assert sel.tests == ["tests/unit/test_unit.py"] and sel.untested_changes == []
+
+
+def test_a_fixture_named_test_something_is_not_a_test(repo, capsys):
+    # boltons has `@pytest.fixture def test_url(request)`; pytest never runs it
+    # as a test, so "selected but never ran" was a false alarm on 7 real changes.
+    write(repo, {"tests/test_utils.py": ("import pytest\nfrom app.utils import slug\n\n"
+                                         "@pytest.fixture(params=['A'])\ndef test_word(request):\n"
+                                         "    return request.param\n\n"
+                                         "def test_slug(test_word):\n    assert slug(test_word) == 'a'\n")})
+    commit(repo, "fixture with a test-like name")
+    write(repo, {"app/utils.py": "def slug(s):\n    return s.lower()  # same\n"})
+    assert check(repo) == 0
+    assert "never ran" not in capsys.readouterr().out
+
+
+def test_comparing_a_value_with_itself_is_a_notice_not_always_passes(repo, capsys):
+    # boltons added `assert cab <= cab` to test its own set type's comparison,
+    # which really was broken. It can fail, so "can never fail" was false.
+    write(repo, {"tests/test_utils.py": ("from app.utils import slug\n\ndef test_slug():\n"
+                                         "    assert slug('A') == 'a'\n    s = slug('B')\n    assert s <= s\n")})
+    assert check(repo) == 0
+    out = capsys.readouterr().out
+    assert "compares a value with itself" in out and "can never fail" not in out
+    assert "always-passes" not in kinds(repo)
+
+
+def test_comparing_two_equal_literals_still_always_passes(repo):
+    write(repo, {"tests/test_utils.py": ("from app.utils import slug\n\ndef test_slug():\n"
+                                         "    assert slug('A') == 'a'\n    assert 1 == 1\n")})
+    assert "always-passes" in kinds(repo, "suspicious")
 
 
 # ---------- the `python -m pkv` entry point ----------

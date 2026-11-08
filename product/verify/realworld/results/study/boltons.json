@@ -1,0 +1,1266 @@
+[
+ {
+  "project": "boltons",
+  "position": 1,
+  "commit": "d31d821d56c8f7756af9c30a864077f2e5855321",
+  "parent": "fe1ce8bcc4df6f76cba8fbcd1559fa774c34b334",
+  "exit_code": 4,
+  "wall_seconds": 2.84,
+  "subject": "Merge pull request #610 from mahmoud/pr-sweep-oct26-followup",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_fileutils.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_rotate_file_full_rotation (tests/test_fileutils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_rotate_file_full_rotation"
+   },
+   {
+    "file": "tests/test_fileutils.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_rotate_file_full_rotation_no_ext (tests/test_fileutils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_rotate_file_full_rotation_no_ext"
+   },
+   {
+    "file": "tests/test_urlutils.py",
+    "kind": "test-not-run",
+    "message": "the test test_url in tests/test_urlutils.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_url"
+   }
+  ],
+  "changed_files": 9,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 6,
+  "all_test_files": 30,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 356,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.343,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "boltons",
+  "position": 2,
+  "commit": "fe1ce8bcc4df6f76cba8fbcd1559fa774c34b334",
+  "parent": "4e5faa3d7e4008d89e0d8bf1ea87b6d9a061a16d",
+  "exit_code": 4,
+  "wall_seconds": 19.22,
+  "subject": "Merge pull request #609 from mahmoud/pr-sweep-oct26",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_funcutils_fb_py3.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_remove_arg_posonly in tests/test_funcutils_fb_py3.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_remove_arg_posonly"
+   },
+   {
+    "file": "tests/test_funcutils_fb_py3.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_wraps_posonly_marker in tests/test_funcutils_fb_py3.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_wraps_posonly_marker"
+   },
+   {
+    "file": "tests/test_iterutils.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in TestRemap::test_namedtuple (tests/test_iterutils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "TestRemap::test_namedtuple"
+   },
+   {
+    "file": "tests/test_pathutils.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_shrinkuser_root_home in tests/test_pathutils.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_shrinkuser_root_home"
+   },
+   {
+    "file": "tests/test_strutils.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_bytes2human (tests/test_strutils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_bytes2human"
+   },
+   {
+    "file": "tests/test_urlutils.py",
+    "kind": "test-not-run",
+    "message": "the test test_url in tests/test_urlutils.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_url"
+   }
+  ],
+  "changed_files": 51,
+  "run_all": true,
+  "run_all_reasons": [
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 30,
+  "all_test_files": 30,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 617,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.919,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "boltons",
+  "position": 3,
+  "commit": "4e5faa3d7e4008d89e0d8bf1ea87b6d9a061a16d",
+  "parent": "961dcff3f42e73b245aef65e377fe82763b257bb",
+  "exit_code": 0,
+  "wall_seconds": 1.14,
+  "subject": "Fix spooled stream write compatibility and backwards text seeks (#513)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 88 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 88,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.16,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.89
+ },
+ {
+  "project": "boltons",
+  "position": 4,
+  "commit": "78ec69cac4465c57bb7debafcf3181d7d1ceaa76",
+  "parent": "4332b35a278d694f30c99881faa61cde695c7a96",
+  "exit_code": 4,
+  "wall_seconds": 2.22,
+  "subject": "bump version to 26.2.1dev",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_urlutils.py",
+    "kind": "test-not-run",
+    "message": "the test test_url in tests/test_urlutils.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_url"
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 29,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 519,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.925,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "boltons",
+  "position": 5,
+  "commit": "4332b35a278d694f30c99881faa61cde695c7a96",
+  "parent": "1216b467c10b852d08aa6895c80b6b9ec8f990d8",
+  "exit_code": 4,
+  "wall_seconds": 2.23,
+  "subject": "boltons version 26.2.0",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_urlutils.py",
+    "kind": "test-not-run",
+    "message": "the test test_url in tests/test_urlutils.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_url"
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 29,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 519,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.928,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "boltons",
+  "position": 6,
+  "commit": "1216b467c10b852d08aa6895c80b6b9ec8f990d8",
+  "parent": "8bb31ba90e574daddbf0d7a2dc658398dc141e38",
+  "exit_code": 4,
+  "wall_seconds": 5.13,
+  "subject": "Complete September PR sweep for 26.2.0 (#481)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "3 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_cacheutils.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_threshold_counter (tests/test_cacheutils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_threshold_counter"
+   },
+   {
+    "file": "tests/test_namedutils.py",
+    "kind": "test-removed",
+    "message": "the test test_valid_names_still_accepted was removed from tests/test_namedutils.py.",
+    "severity": "suspicious",
+    "test": "test_valid_names_still_accepted"
+   },
+   {
+    "file": "tests/test_statsutils.py",
+    "kind": "fewer-checks",
+    "message": "the test test_histogram_zero_interquartile_range in tests/test_statsutils.py now checks less: 2 checks before, 1 now.",
+    "severity": "suspicious",
+    "test": "test_histogram_zero_interquartile_range"
+   },
+   {
+    "file": "tests/test_strutils.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_bytes2human (tests/test_strutils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_bytes2human"
+   },
+   {
+    "file": "tests/test_urlutils.py",
+    "kind": "test-not-run",
+    "message": "the test test_url in tests/test_urlutils.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_url"
+   }
+  ],
+  "changed_files": 11,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 7,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 208,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.288,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "boltons",
+  "position": 7,
+  "commit": "8bb31ba90e574daddbf0d7a2dc658398dc141e38",
+  "parent": "45a251181fba4c5a4ecc05e838da1c394e1ed0e4",
+  "exit_code": 0,
+  "wall_seconds": 1.26,
+  "subject": "statsutils: complete Pearson classification and maintainer review (#434)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 7 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 7,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.144,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.93
+ },
+ {
+  "project": "boltons",
+  "position": 8,
+  "commit": "45a251181fba4c5a4ecc05e838da1c394e1ed0e4",
+  "parent": "1cdc0e9d36f3eb32608f3b34885717697643e9b8",
+  "exit_code": 0,
+  "wall_seconds": 1.25,
+  "subject": "strutils: recognize Unicode line separators without splitting dates (#475)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 35 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 35,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.172,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.88
+ },
+ {
+  "project": "boltons",
+  "position": 9,
+  "commit": "1cdc0e9d36f3eb32608f3b34885717697643e9b8",
+  "parent": "805c803ca71da28f09cb7ec521f7ea14d1a4048b",
+  "exit_code": 0,
+  "wall_seconds": 1.07,
+  "subject": "statsutils: handle zero interquartile range in histograms (#467)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 5 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 5,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.123,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.88
+ },
+ {
+  "project": "boltons",
+  "position": 10,
+  "commit": "805c803ca71da28f09cb7ec521f7ea14d1a4048b",
+  "parent": "5150802911edbf8ade1e7d1bfb346fed52c88d05",
+  "exit_code": 0,
+  "wall_seconds": 1.2,
+  "subject": "jsonutils: align binary streams to binary newlines (#464)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 6 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 6,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.128,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.87
+ },
+ {
+  "project": "boltons",
+  "position": 11,
+  "commit": "5150802911edbf8ade1e7d1bfb346fed52c88d05",
+  "parent": "574393a4c349d5b81ee328a9e450c34dd0614635",
+  "exit_code": 0,
+  "wall_seconds": 1.5,
+  "subject": "jsonutils: accept explicit end-of-file relative seek (#465)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 5 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 5,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.128,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.86
+ },
+ {
+  "project": "boltons",
+  "position": 12,
+  "commit": "574393a4c349d5b81ee328a9e450c34dd0614635",
+  "parent": "56161fec0ac7a1e5ba0577cc33c20bbdbb331728",
+  "exit_code": 0,
+  "wall_seconds": 1.21,
+  "subject": "listutils: preserve barrel endpoints during slice deletion (#472)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 13 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 13,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.217,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.87
+ },
+ {
+  "project": "boltons",
+  "position": 13,
+  "commit": "56161fec0ac7a1e5ba0577cc33c20bbdbb331728",
+  "parent": "a180020c760b532e8889f161d97d05647adfee8c",
+  "exit_code": 0,
+  "wall_seconds": 1.83,
+  "subject": "listutils: normalize forward and reverse slice bounds (#471)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 11 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 11,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.212,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.86
+ },
+ {
+  "project": "boltons",
+  "position": 14,
+  "commit": "a180020c760b532e8889f161d97d05647adfee8c",
+  "parent": "e00c10a809525027b8167fbb7ac233cfc25a01f5",
+  "exit_code": 0,
+  "wall_seconds": 1.25,
+  "subject": "setutils: flatten inputs to IndexedSet.update (#474)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 16 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 16,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.158,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.86
+ },
+ {
+  "project": "boltons",
+  "position": 15,
+  "commit": "e00c10a809525027b8167fbb7ac233cfc25a01f5",
+  "parent": "efff866a3b66fdafc817894390742e1d8bc025e5",
+  "exit_code": 0,
+  "wall_seconds": 2.07,
+  "subject": "setutils, listutils: streamline bulk removal and fix list bounds (#440)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 22 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 22,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.251,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.86
+ },
+ {
+  "project": "boltons",
+  "position": 16,
+  "commit": "efff866a3b66fdafc817894390742e1d8bc025e5",
+  "parent": "5eb6cc045560abf320712f262346ae95fb66d448",
+  "exit_code": 0,
+  "wall_seconds": 1.22,
+  "subject": "mathutils: preserve empty Bits through conversions (#468)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 14 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 14,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.134,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.84
+ },
+ {
+  "project": "boltons",
+  "position": 17,
+  "commit": "5eb6cc045560abf320712f262346ae95fb66d448",
+  "parent": "19bd337cad0760945dfe0245434d8253156ee390",
+  "exit_code": 0,
+  "wall_seconds": 1.2,
+  "subject": "mathutils: resolve negative Bits indices (#450)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 12 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 12,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.129,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.9
+ },
+ {
+  "project": "boltons",
+  "position": 18,
+  "commit": "19bd337cad0760945dfe0245434d8253156ee390",
+  "parent": "8789df2cc35a4d9ddfebfa59c14f3e80e34234e1",
+  "exit_code": 0,
+  "wall_seconds": 1.08,
+  "subject": "timeutils: support DST folds in USTimeZone (#441)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 13 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 13,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.13,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.84
+ },
+ {
+  "project": "boltons",
+  "position": 19,
+  "commit": "8789df2cc35a4d9ddfebfa59c14f3e80e34234e1",
+  "parent": "dfd632467c06089a19427e14010e83f57502c9bc",
+  "exit_code": 0,
+  "wall_seconds": 1.17,
+  "subject": "timeutils: match timezone for default relative time (#469)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 11 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 11,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.128,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.84
+ },
+ {
+  "project": "boltons",
+  "position": 20,
+  "commit": "dfd632467c06089a19427e14010e83f57502c9bc",
+  "parent": "f5f5cd867ee98f15def2b6a19bfba203de29b961",
+  "exit_code": 4,
+  "wall_seconds": 1.3,
+  "subject": "iterutils: drop test that pins GUIDerator error wording",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_iterutils.py",
+    "kind": "test-removed",
+    "message": "the test test_guiderator_size_bounds was removed from tests/test_iterutils.py.",
+    "severity": "suspicious",
+    "test": "test_guiderator_size_bounds"
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 50,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.198,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "boltons",
+  "position": 21,
+  "commit": "f5f5cd867ee98f15def2b6a19bfba203de29b961",
+  "parent": "970051b66474ac37383c5d990c169c794e20eb88",
+  "exit_code": 0,
+  "wall_seconds": 0.45,
+  "subject": "iterutils: correct inclusive GUIDerator size message (#451)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 51 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 51,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.197,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.84
+ },
+ {
+  "project": "boltons",
+  "position": 22,
+  "commit": "970051b66474ac37383c5d990c169c794e20eb88",
+  "parent": "9decba3e5736f61180eec274420ced0e572e30e6",
+  "exit_code": 0,
+  "wall_seconds": 1.22,
+  "subject": "namedutils: reject empty type and field names (#462)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 61 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 61,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.207,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.83
+ },
+ {
+  "project": "boltons",
+  "position": 23,
+  "commit": "9decba3e5736f61180eec274420ced0e572e30e6",
+  "parent": "a1ea1030ed85137e999c0bd9b11d16368d3ab241",
+  "exit_code": 0,
+  "wall_seconds": 1.19,
+  "subject": "ecoutils: skip identifying lookups when scrubbing (#461)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 4 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_ecoutils.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_scrub (tests/test_ecoutils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_scrub"
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 4,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.133,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.82
+ },
+ {
+  "project": "boltons",
+  "position": 24,
+  "commit": "a1ea1030ed85137e999c0bd9b11d16368d3ab241",
+  "parent": "d45cc414e33aa4e08a73e0993574df4397e2e9db",
+  "exit_code": 4,
+  "wall_seconds": 1.29,
+  "subject": "dictutils: preserve iterator values in addlist (#458)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_urlutils.py",
+    "kind": "test-not-run",
+    "message": "the test test_url in tests/test_urlutils.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_url"
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 206,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.289,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "boltons",
+  "position": 25,
+  "commit": "d45cc414e33aa4e08a73e0993574df4397e2e9db",
+  "parent": "967864f89791509f9eb36b22b4579d36b72a6df2",
+  "exit_code": 4,
+  "wall_seconds": 1.21,
+  "subject": "urlutils: honor parse_qsl encoding (#455)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_urlutils.py",
+    "kind": "test-not-run",
+    "message": "the test test_url in tests/test_urlutils.py was selected but pytest never ran it: something removed it from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
+    "severity": "suspicious",
+    "test": "test_url"
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 126,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.172,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "boltons",
+  "position": 26,
+  "commit": "967864f89791509f9eb36b22b4579d36b72a6df2",
+  "parent": "5df26592c29b9561d122640868ba0522cbc1e20d",
+  "exit_code": 0,
+  "wall_seconds": 1.15,
+  "subject": "statsutils: add mode() for most-common value, incl. categorical data (#453)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 4 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 4,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.123,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.83
+ },
+ {
+  "project": "boltons",
+  "position": 27,
+  "commit": "5df26592c29b9561d122640868ba0522cbc1e20d",
+  "parent": "673e010d0afabc2f530e8d1f67f0a47c37afa7f4",
+  "exit_code": 0,
+  "wall_seconds": 1.15,
+  "subject": "Use the sep argument in args2sh and args2cmd (#454)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 31 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 31,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.169,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.83
+ },
+ {
+  "project": "boltons",
+  "position": 28,
+  "commit": "673e010d0afabc2f530e8d1f67f0a47c37afa7f4",
+  "parent": "580a9c2d12755d472e534ca3e277e8f7e3ada49e",
+  "exit_code": 0,
+  "wall_seconds": 1.18,
+  "subject": "strutils: add ellipsize for word-boundary-aware truncation",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 29 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 29,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.167,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.83
+ },
+ {
+  "project": "boltons",
+  "position": 29,
+  "commit": "580a9c2d12755d472e534ca3e277e8f7e3ada49e",
+  "parent": "ec1ff9f6728f5f857402b294c218be731c62af5f",
+  "exit_code": 4,
+  "wall_seconds": 1.1,
+  "subject": "setutils: cover _ComplementSet __ge__'s double-complement branch, drop duplicated NotImplemented checks (#446)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_setutils.py",
+    "kind": "always-passes",
+    "message": "the test test_complement_set in tests/test_setutils.py gained a check that can never fail (like 'assert True').",
+    "severity": "suspicious",
+    "test": "test_complement_set"
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 9,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.152,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ },
+ {
+  "project": "boltons",
+  "position": 30,
+  "commit": "ec1ff9f6728f5f857402b294c218be731c62af5f",
+  "parent": "b5c495bec206741ec25cd82ecc869e0b59bb0d10",
+  "exit_code": 4,
+  "wall_seconds": 1.11,
+  "subject": "Fix issupserset typo in _ComplementSet comparisons (#438)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_setutils.py",
+    "kind": "always-passes",
+    "message": "the test test_complement_set in tests/test_setutils.py gained a check that can never fail (like 'assert True').",
+    "severity": "suspicious",
+    "test": "test_complement_set"
+   },
+   {
+    "file": "tests/test_setutils.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_complement_set (tests/test_setutils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_complement_set"
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 9,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.151,
+  "failed_tests": [],
+  "files_changed_during_run": []
+ }
+]

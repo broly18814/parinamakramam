@@ -9,6 +9,26 @@ Before version 1.0, anything may still change.
 
 ## Parinama Verify (`pkv`)
 
+### [0.1.2]: 2026-11-09
+
+Five false alarms found by REAL-001, a replay of 120 real commits from click, more-itertools, boltons and tomli. Each fix has a regression self-check that fails on 0.1.1, plus a cheating look-alike that must still be caught. BENCH-001 and BENCH-002 verdicts are unchanged.
+
+#### Fixed
+- **"Selected but never ran" no longer blames a change for tests the project already leaves out.** For example, click's `addopts = "-m 'not stress'"` caused false alarms on 28 of 30 click commits. It stays suspicious when the change touched:
+  - the project's pytest settings (only the pytest section counts, so a version bump doesn't);
+  - the list of packages in a lock file (a new package could be a plugin);
+  - any `conftest.py`;
+  - code used by a conftest that defines pytest hooks or loads plugins;
+  - or the test's own name or markers.
+
+  Otherwise it's a notice, "not-run-before-too".
+- **Fixtures named `test_*` are not tests.** For example, boltons' `@pytest.fixture def test_url`.
+- **`assert x == x` is not "can never fail".** It fails for NaN and for custom comparisons, which projects test on purpose. Only literal comparisons such as `assert 1 == 1` count. A self-comparison is now a notice, "compares-with-itself".
+- **A package's `__init__.py` counts as used by every module inside it**, as Python runs it first. Test folders' `__init__.py` files no longer look like untested code.
+
+#### Known, not fixed
+- A test renamed, moved, merged or split is still reported as removed or weaker (open problem OI-8).
+
 ### [0.1.1]: 2026-11-09
 
 Both practice sets give exactly the same verdicts as 0.1.0, which CI's regression gate checks.

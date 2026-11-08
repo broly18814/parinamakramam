@@ -176,6 +176,7 @@ def build_graph(root: str | os.PathLike[str]) -> ImportGraph:
     files = python_files(root)
     subs = project_roots(root)
     g = ImportGraph(root=root, files=files, sub_projects=subs)
+    fileset = set(files)
     for f in files:
         primary, alts = module_names(f, root, subs)
         g.primary[f] = primary
@@ -195,6 +196,17 @@ def build_graph(root: str | os.PathLike[str]) -> ImportGraph:
         targets: set[str] = set()
         for n in names:
             targets |= g.resolve(n, f)
+        # Python runs a package's __init__.py before any module inside it, so
+        # every file uses the __init__.py files of the packages that contain it
+        # (found in REAL-001: click's test-folder __init__.py files looked untested).
+        d = PurePosixPath(f).parent
+        while str(d) not in ("", "."):
+            init = f"{d}/__init__.py"
+            if init not in fileset:
+                break
+            if init != f:
+                targets.add(init)
+            d = d.parent
         g.deps[f] = targets
         for t in targets:
             g.users.setdefault(t, set()).add(f)

@@ -33,6 +33,7 @@ If a word in any Parinamakramam document confuses you, look it up here. The word
 | **Exit code** | The number a program hands back when it finishes. 0 means success. Robots like GitHub Actions read it to decide whether to accept a change. |
 | **Exploratory result** | Something we noticed but didn't predict in advance. It's a lead to follow up, not proof. |
 | **False alarm / missed problem** | The two ways a checker can be wrong. A false alarm says 'problem' when there isn't one. A missed problem says 'all clear' when there is one, and that's far worse. |
+| **Fixture** | A pytest helper that prepares something for tests (data, a temporary folder). It isn't a test itself, even if its name starts with `test`. |
 | **Flaky (non-deterministic)** | A result that changes from run to run with nothing changed. A flaky score is meaningless. |
 | **Forking paths** | Trying many small variations and keeping the one that looks best; it produces 'improvements' that are really luck. |
 | **Freeze (a design)** | Committing to every setting before the real test, so it can't be tuned to the answers. |
@@ -67,6 +68,7 @@ If a word in any Parinamakramam document confuses you, look it up here. The word
 | **Receipt (evidence)** | pkv's record of a check: what changed, which tests ran, the results, the fingerprint, and the verdict. Saved as JSON and Markdown. |
 | **Regression gate** | A CI check that fails if quality drops, e.g. if any practice-set verdict changes. |
 | **Regression test** | A test added because a bug was found, so that bug can never quietly come back. |
+| **Replay study** | Checking real changes that real people made, one at a time, as if each were new. REAL-001 is ours. |
 | **Repository (repo)** | A project folder tracked by git, usually stored on GitHub. |
 | **Reproducibility** | Getting exactly the same results again from the same code and data. |
 | **Script injection** | Untrusted text pasted into a command so it becomes part of the command. Prevented by passing inputs as environment variables. |

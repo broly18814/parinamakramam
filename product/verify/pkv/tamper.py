@@ -21,12 +21,14 @@ be deleted. The report says what changed; a person decides.
 from __future__ import annotations
 
 import ast
+import configparser
+import re
 import subprocess
 from dataclasses import asdict, dataclass
 from pathlib import Path, PurePosixPath
 from typing import Any
 
-from .affected import is_test_file
+from .affected import CONFIG_PATTERNS, _matches, is_test_file
 from .gitdiff import Change
 from .imports import ImportGraph, build_graph, module_names, read_imports
 
@@ -56,6 +58,7 @@ class TestInfo:
     cases: int | None = 1     # parametrize rows (product of all tables); None if not countable
     skips: int = 0
     tautologies: int = 0
+    self_compares: int = 0  # `assert x == x`: fails only for unusual values (NaN, custom comparisons)
     literals: tuple[str, ...] = ()
 
 
@@ -85,14 +88,23 @@ def _is_skip(node: ast.AST) -> bool:
     return bool(name) and name.split(".")[-1] in SKIP_NAMES
 
 
+def _is_self_compare(test: ast.AST) -> bool:
+    """`x == x`, `x <= x`, ...: the same expression on both sides."""
+    return (isinstance(test, ast.Compare) and len(test.ops) == 1
+            and isinstance(test.ops[0], (ast.Eq, ast.Is, ast.GtE, ast.LtE))
+            and ast.dump(test.left) == ast.dump(test.comparators[0]))
+
+
 def _is_tautology(test: ast.AST) -> bool:
-    """assert True / assert 1 / assert "x" / assert x == x: can never fail."""
+    """assert True / assert 1 / assert "x" / assert 1 == 1: can never fail.
+
+    `assert x == x` is *not* counted: it fails when x is NaN or has a custom
+    comparison, and real projects use it on purpose to test exactly that
+    (found in REAL-001: boltons tests its own set type's `x <= x`).
+    """
     if isinstance(test, ast.Constant):
         return bool(test.value)
-    if isinstance(test, ast.Compare) and len(test.ops) == 1 and isinstance(
-            test.ops[0], (ast.Eq, ast.Is, ast.GtE, ast.LtE)):
-        return ast.dump(test.left) == ast.dump(test.comparators[0])
-    return False
+    return isinstance(test, ast.Compare) and _is_self_compare(test) and isinstance(test.left, ast.Constant)
 
 
 def _check_call_name(node: ast.Call) -> str | None:
@@ -192,6 +204,8 @@ def _count_checks(fn: ast.AST) -> TestInfo:
             info.exact += exact
             if _is_tautology(node.test):
                 info.tautologies += 1
+            elif _is_self_compare(node.test):
+                info.self_compares += 1
             lits += [repr(c.value) for c in ast.walk(node.test) if isinstance(c, ast.Constant)]
         elif isinstance(node, ast.Call):
             name = _check_call_name(node)
@@ -211,6 +225,17 @@ def _count_checks(fn: ast.AST) -> TestInfo:
     return info
 
 
+def _is_fixture(node: ast.FunctionDef | ast.AsyncFunctionDef) -> bool:
+    """@pytest.fixture / @fixture(...): a helper pytest never runs as a test,
+    even when its name starts with `test` (found in REAL-001: boltons' `test_url`)."""
+    return any(_dotted(d).split(".")[-1] == "fixture" for d in node.decorator_list)
+
+
+def _is_test_function(node: ast.AST) -> bool:
+    return (isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) and node.name.startswith("test")
+            and not _is_fixture(node))
+
+
 def read_tests(source: str) -> tuple[dict[str, TestInfo], int]:
     """Map each test (e.g. 'test_login' or 'TestUser::test_name') to what it
     checks, plus a count of skip markers that apply to the whole file."""
@@ -218,7 +243,8 @@ def read_tests(source: str) -> tuple[dict[str, TestInfo], int]:
     tests: dict[str, TestInfo] = {}
     module_skips = 0
     for node in tree.body:
-        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) and node.name.startswith("test"):
+        if _is_test_function(node):
+            assert isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef))
             tests[node.name] = _count_checks(node)
         elif isinstance(node, ast.ClassDef) and node.name.startswith("Test") and not any(
                 isinstance(i, ast.FunctionDef) and i.name == "__init__" for i in node.body):
@@ -226,7 +252,8 @@ def read_tests(source: str) -> tuple[dict[str, TestInfo], int]:
             class_skips = sum(1 for d in node.decorator_list if _is_skip(d))
             module_skips += class_skips
             for item in node.body:
-                if isinstance(item, (ast.FunctionDef, ast.AsyncFunctionDef)) and item.name.startswith("test"):
+                if _is_test_function(item):
+                    assert isinstance(item, (ast.FunctionDef, ast.AsyncFunctionDef))
                     tests[f"{node.name}::{item.name}"] = _count_checks(item)
         elif isinstance(node, (ast.Assign, ast.AnnAssign)):
             targets = node.targets if isinstance(node, ast.Assign) else [node.target]
@@ -342,6 +369,9 @@ def find_tampering(root: str | Path, changes: list[Change], ref: str | None,
                 if new.tautologies:
                     findings.append(Finding("suspicious", "always-passes", path,
                         f"the new test {t} in {path} contains a check that can never fail (like 'assert True').", t))
+                if new.self_compares:
+                    findings.append(Finding("notice", "compares-with-itself", path,
+                                            SELF_COMPARE.format(t=t, path=path), t))
                 if new.skips:
                     findings.append(Finding("notice", "skip-in-new-test", path,
                         f"the new test {t} in {path} is marked to be skipped.", t))
@@ -368,6 +398,9 @@ def find_tampering(root: str | Path, changes: list[Change], ref: str | None,
             if new.tautologies > old.tautologies:
                 findings.append(Finding("suspicious", "always-passes", path,
                     f"the test {t} in {path} gained a check that can never fail (like 'assert True').", t))
+            if new.self_compares > old.self_compares:
+                findings.append(Finding("notice", "compares-with-itself", path,
+                                        SELF_COMPARE.format(t=t, path=path), t))
             if code_changed and new.literals != old.literals and new.asserts >= old.asserts:
                 findings.append(Finding("notice", "expected-values-changed", path,
                     f"the expected values in {t} ({path}) changed in the same change as the code. "
@@ -375,7 +408,131 @@ def find_tampering(root: str | Path, changes: list[Change], ref: str | None,
     return findings
 
 
-def find_not_run(root: str | Path, tests: list[str], executed: list[list[str]]) -> list[Finding]:
+SELF_COMPARE = ("the test {t} in {path} compares a value with itself (like 'x == x'). That fails only for "
+                "unusual values, such as NaN or a custom comparison; check that's what it means to test.")
+
+
+def _selection_marks(source: str) -> dict[str, str]:
+    """For each test, everything in its file that pytest's selection could
+    look at: its name, its decorators, its class's decorators, and the
+    file's `pytestmark`. If none of this changed, a marker filter or `-k`
+    expression that skips the test now skipped it before, too."""
+    tree = ast.parse(source)
+    module_marks = "".join(ast.unparse(n) for n in tree.body if isinstance(n, (ast.Assign, ast.AnnAssign))
+                           and any(isinstance(t, ast.Name) and t.id == "pytestmark"
+                                   for t in (n.targets if isinstance(n, ast.Assign) else [n.target])))
+    out: dict[str, str] = {}
+    for node in tree.body:
+        if _is_test_function(node):
+            assert isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef))
+            out[node.name] = module_marks + "|" + "".join(map(ast.unparse, node.decorator_list))
+        elif isinstance(node, ast.ClassDef):
+            cls = "".join(map(ast.unparse, node.decorator_list)) + "".join(
+                ast.unparse(i) for i in node.body if isinstance(i, ast.Assign)
+                and any(isinstance(t, ast.Name) and t.id == "pytestmark" for t in i.targets))
+            for item in node.body:
+                if _is_test_function(item):
+                    assert isinstance(item, (ast.FunctionDef, ast.AsyncFunctionDef))
+                    out[f"{node.name}::{item.name}"] = (module_marks + "|" + cls + "|"
+                                                        + "".join(map(ast.unparse, item.decorator_list)))
+    return out
+
+
+def _can_change_the_run(path: Path) -> bool:
+    """Does this conftest.py define pytest hooks or load plugins? If it can't
+    be read, assume it can (the safe side)."""
+    try:
+        tree = ast.parse(path.read_text(errors="replace"))
+    except (SyntaxError, OSError):
+        return True
+    for node in tree.body:
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) and node.name.startswith("pytest_"):
+            return True
+        if isinstance(node, (ast.Assign, ast.AnnAssign)) and any(
+                isinstance(t, ast.Name) and t.id == "pytest_plugins"
+                for t in (node.targets if isinstance(node, ast.Assign) else [node.target])):
+            return True
+    return False
+
+
+LOCK_FILES = {"uv.lock", "poetry.lock", "pdm.lock"}
+
+
+def _pytest_settings(path: str, text: str) -> str | None:
+    """The part of a settings file that pytest reads, as text, or None if
+    this kind of file can't be split that way (then any change counts)."""
+    name = PurePosixPath(path).name
+    if name == "pyproject.toml":
+        keep, out = False, []
+        for line in text.splitlines():
+            if line.lstrip().startswith("["):
+                header = line.strip().strip("[]").strip()
+                keep = header == "tool.pytest" or header.startswith(("tool.pytest.", "tool.pytest_"))
+            if keep:
+                out.append(line.rstrip())
+        return "\n".join(out)
+    if name in ("setup.cfg", "tox.ini", "pytest.ini"):
+        cp = configparser.RawConfigParser()
+        try:
+            cp.read_string(text)
+        except configparser.Error:
+            return None
+        section = {"setup.cfg": "tool:pytest", "tox.ini": "pytest", "pytest.ini": "pytest"}[name]
+        return repr(sorted(cp.items(section))) if cp.has_section(section) else ""
+    if name in LOCK_FILES:
+        # A new package could be a pytest plugin; a version change of an
+        # existing one (often the project's own version) can't drop tests.
+        return repr(sorted(set(re.findall(r'^name = "([^"]+)"', text, re.M))))
+    return None
+
+
+def _could_change_selection(root: Path, ref: str | None, c: Change) -> bool:
+    """Did this change to a settings or lock file touch what pytest reads?"""
+    if c.status != "modified" or ref is None:
+        return True
+    old = _old_source(root, ref, c.path)
+    try:
+        new = (root / c.path).read_text(errors="replace")
+    except OSError:
+        return True
+    if old is None:
+        return True
+    before, after = _pytest_settings(c.path, old), _pytest_settings(c.path, new)
+    return before is None or after is None or before != after
+
+
+def _selection_controls_changed(changes: list[Change], graph: ImportGraph,
+                                ref: str | None = None) -> list[str]:
+    """Changed files that could remove tests from a run: project settings
+    files whose pytest settings changed (a version bump elsewhere in
+    pyproject.toml doesn't count; found in REAL-001), any conftest.py, and project code used by a conftest.py that can
+    change the run (it defines `pytest_*` hooks or loads plugins). A conftest
+    that only provides fixtures can't remove tests, so the code it imports
+    doesn't count (found in REAL-001: click's conftest imports click itself,
+    which made every change to click a "selection control")."""
+    conftests = [f for f in graph.files if PurePosixPath(f).name == "conftest.py"]
+    hooked = [f for f in conftests if _can_change_the_run(graph.root / f)]
+    reach: set[str] = set(conftests)
+    todo = list(hooked)
+    while todo:
+        for d in graph.deps.get(todo.pop(), set()):
+            if d not in reach:
+                reach.add(d)
+                todo.append(d)
+    hit: list[str] = []
+    for c in changes:
+        for p in filter(None, (c.path, c.old_path)):
+            if _matches(p, CONFIG_PATTERNS):
+                if _could_change_selection(graph.root, ref, c):
+                    hit.append(p)
+            elif PurePosixPath(p).name == "conftest.py" or p in reach:
+                hit.append(p)
+    return sorted(set(hit))
+
+
+def find_not_run(root: str | Path, tests: list[str], executed: list[list[str]],
+                 changes: list[Change] | None = None, ref: str | None = None,
+                 graph: ImportGraph | None = None) -> list[Finding]:
     """Selected tests that pytest never ran: something removed them from the run.
 
     pkv knows, from reading the code, every test function in the files it
@@ -383,6 +540,13 @@ def find_not_run(root: str | Path, tests: list[str], executed: list[list[str]]) 
     skipped). A selected test missing from that list was removed some other
     way: a settings option (-k, -m, --deselect...), a conftest hook, a plugin.
     This check works the same whichever mechanism was used.
+
+    When the change is known (`changes`, `ref`), a test is reported as
+    suspicious only if this change could have removed it: it touched a
+    settings file, a conftest.py or code a conftest.py uses, or the test's
+    own name or markers. Otherwise the project already left that test out
+    before the change (for example click's `addopts = "-m 'not stress'"`,
+    found in REAL-001), and it is reported once per file as a notice.
 
     A whole file skipped or failing to load appears in pytest's results as
     one entry with an empty class name; such files are not reported here
@@ -402,18 +566,41 @@ def find_not_run(root: str | Path, tests: list[str], executed: list[list[str]]) 
         else:
             ran.add((parts[-1], base))
     findings: list[Finding] = []
+    controls: list[str] | None = None
+    if changes is not None:
+        controls = _selection_controls_changed(changes, graph or build_graph(root), ref)
     for t in tests:
         stem = PurePosixPath(t).stem
         if stem in whole_file:
             continue
         try:
-            static, _ = read_tests((root / t).read_text(errors="replace"))
+            source = (root / t).read_text(errors="replace")
+            static, _ = read_tests(source)
         except (SyntaxError, OSError):
             continue
-        for name in sorted(static):
-            if (stem, name) not in ran:
+        missing = [name for name in sorted(static) if (stem, name) not in ran]
+        if not missing:
+            continue
+        unchanged: list[str] = []
+        if controls == []:
+            old = _old_source(root, ref, t)
+            try:
+                before = _selection_marks(old) if old is not None else {}
+            except SyntaxError:
+                before = {}
+            now = _selection_marks(source)
+            unchanged = [n for n in missing if n in before and before[n] == now.get(n)]
+        for name in missing:
+            if name not in unchanged:
                 findings.append(Finding("suspicious", "test-not-run", t,
                     f"the test {name} in {t} was selected but pytest never ran it: something removed it "
                     "from the run (a settings option such as -k or --deselect, a conftest hook, or a plugin).",
                     name))
+        if unchanged:
+            more = f" and {len(unchanged) - 1} more" if len(unchanged) > 1 else ""
+            findings.append(Finding("notice", "not-run-before-too", t,
+                f"{len(unchanged)} selected test(s) in {t} were not run ({unchanged[0]}{more}), but nothing in "
+                "this change could have removed them: the project's settings files, its conftest.py files and "
+                "these tests' names and markers are unchanged. The project probably leaves them out on purpose "
+                "(for example a marker filter in its pytest settings).", unchanged[0]))
     return findings

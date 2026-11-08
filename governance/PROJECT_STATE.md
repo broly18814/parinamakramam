@@ -2,7 +2,7 @@
 
 **Last updated:** 8 November 2026 (night) · **Stage:** day 1 of the 90-day plan; week-1 product work and EXP-002 done early
 
-This file says where everything stands right now, so anyone (you, or a new Claude session) can continue without guessing. Words are explained in the [Glossary](../docs/GLOSSARY.md). To learn every idea from zero, use the [course](../docs/LEARN.md) (33 lessons).
+This file says where everything stands right now, so anyone (you, or a new Claude session) can continue without guessing. Words are explained in the [Glossary](../docs/GLOSSARY.md). To learn every idea from zero, use the [course](../docs/LEARN.md) (34 lessons).
 
 ## Where the project lives
 
@@ -26,7 +26,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 - **EXP-001 (completed):** the right building blocks are worth about 15× more thinking, but discovering them failed. The tidied code reproduces all 200 results exactly.
 - **EXP-002 (completed, negative):** learning from near misses was worse, −2.3 points vs C3, closing −17.7% of the gap. The stop rule now applies: one more variant at most ([design and results](../docs/research/EXP-002-design.md)).
 
-### Product: Parinama Verify 0.1.1 ([guide](../product/verify/README.md))
+### Product: Parinama Verify 0.1.2 ([guide](../product/verify/README.md))
 - **Full check:**
   - picks the affected tests, with reasons;
   - runs them per sub-project, with secrets hidden;
@@ -39,7 +39,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
   - **BENCH-002 (held out): 10 of 13 caught, 1 of 10 false alarms.**
 - **GitHub Action:** `product/verify/action.yml`. This repository uses it on itself.
 - **Quality:**
-  - 76 product self-checks and 16 research self-checks;
+  - 86 product self-checks and 16 research self-checks;
   - `mypy --strict` clean;
   - mutation-tested detection rules;
   - two real bugs found and fixed with regression tests: the "racy git" fingerprint bug, and a crash.
@@ -55,7 +55,8 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 ## What we know (our own results)
 
 - 🧪 In the toy puzzle world, the right building blocks are worth about 15× more search. **Neither** backward-looking (EXP-001) **nor** near-miss (EXP-002) discovery captures that value.
-- 🧪 On its practice sets, pkv catches most planted cheats with few false alarms, and its improvements generalised to a held-out set. **It hasn't been tested on real outside projects yet.**
+- 🧪 On its practice sets, pkv catches most planted cheats with few false alarms, and its improvements generalised to a held-out set.
+- 🧪 **On 120 real commits (REAL-001), pkv 0.1.1 never crashed and gave no false all-clear, but 38 commits had a false alarm.** Four of the five causes are fixed in 0.1.2. The fixes are not yet confirmed on the held-out commits.
 
 ## Ideas still to test 💡
 
@@ -69,7 +70,8 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 - **OI-3:** the undo rule keeps changes that make no difference.
 - **OI-4:** read the original TRINITY and Stack Overflow sources before quoting them publicly.
 - **OI-6:** pkv finds tests by pytest's default naming only, and can't trace code that reads data files by name.
-- **OI-8:** known pkv misses: an expected answer edited to match a bug; `pytest.raises(AssertionError)`; a skip mark on one table row; an early `return`. Known false alarm: a test file split in two. Each needs a fresh held-out set (BENCH-003) before it's addressed.
+- **OI-10:** finer test selection for libraries: follow `from package import name` to the module that defines `name`, so a change to one module doesn't select every test. REAL-001 measured a median of 100% of test files selected in three of four projects.
+- **OI-8:** known pkv misses: an expected answer edited to match a bug; `pytest.raises(AssertionError)`; a skip mark on one table row; an early `return`. Known false alarm: a test renamed, moved, merged or split (REAL-001 defect D4). Each needs a fresh held-out set (BENCH-003) before it's addressed.
 - **OI-9:** the near-miss scan costs 11× CPU in pure Python. It matters only if the near-miss line continues.
 
 ## Top 5 risks
@@ -84,7 +86,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 
 ## Next steps, in order
 
-1. **Real-world evidence for pkv.** Run it, read-only and in a sandboxed copy, on a few public Python projects whose licences allow it, and record what it finds. (Downloading those projects needs your go-ahead.)
+1. **REAL-001 held-out set.** Run the 120 held-out commits once with pkv 0.1.2. It runs the four projects' tests, so the founder runs the command (see the REAL-001 design). This decides whether the fixes generalise (D-027).
 2. **BENCH-003:** a fresh held-out set *before* tackling the known misses in OI-8.
 3. **EXP-002b:** the one remaining near-miss variant, pre-registered (structure-based). If it closes < 10% of the gap, stop and move to EXP-005.
-4. **Publish more widely:** tag a first release (`pkv-v0.1.1`), and decide how to reach GitHub's Marketplace, which needs `action.yml` at the top of a repository (either a small separate repository for the action, or moving the file). Then watch install counts (no interviews; D-002).
+4. **Publish more widely:** tag a first release (`pkv-v0.1.2`), and decide how to reach GitHub's Marketplace, which needs `action.yml` at the top of a repository (either a small separate repository for the action, or moving the file). Then watch install counts (no interviews; D-002).

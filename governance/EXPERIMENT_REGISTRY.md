@@ -220,7 +220,8 @@ Use records from our checker tool. Only public code whose licence allows it.
 
 ## REAL-001: pkv on real projects' real changes
 
-- **Status:** 📝 pre-registered on 9 November 2026, **not yet run**.
+- **Status:** study set ✅ run on 9 November 2026; held-out set waiting (it must be run with the fixed pkv 0.1.2).
+- **Result (study set, pkv 0.1.1):** R2 ❌ **failed**: 38 of 120 real commits had a false alarm (predicted ≤ 6). R1 ✅ 0 crashes. R3 ✅ 0 false all-clears, but weak, because no commit had a failing test. R4–R6 ❌. Five defects found and four fixed in pkv 0.1.2 (D4, renamed or moved tests, is still open). Details: [design and results](../docs/product/REAL-001-design.md) and [every alarm classified](../product/verify/realworld/results/study/CLASSIFICATION.md).
 - **Design and predictions:** [REAL-001-design.md](../docs/product/REAL-001-design.md).
 - **The question:** on 120 real, mostly honest changes from 4 public projects (click, more-itertools, boltons, tomli), how often does pkv give a false alarm, a false all-clear, or crash, and how much test running does it save?
 - **Held out:** a further 120 older changes, run only after any fixes are frozen.
