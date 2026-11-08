@@ -76,7 +76,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 - **OI-11:** a cheap whole-suite load check (`pytest --collect-only`), so a receipt can say when test files outside the selection can't even load. Found in REAL-001's held-out set (tomli #58).
 - **OI-12:** replay studies should install the test tools each commit was written for. In REAL-001, 25 old commits failed only because of today's pytest or a missing old test package.
 - **OI-10:** finer test selection for libraries: follow `from package import name` to the module that defines `name`, so a change to one module doesn't select every test. REAL-001 measured a median of 100% of test files selected in three of four projects.
-- **OI-8:** known pkv misses: an expected answer edited to match a bug; `pytest.raises(AssertionError)`; a skip mark on one table row; an early `return`. Known false alarms: tests merged into a table, or generalised while renamed (D4 handles plain moves since 0.2.0). Each needs a fresh held-out set (BENCH-003) before it's addressed.
+- **OI-8:** known pkv misses: an expected answer edited to match a bug; `pytest.raises(AssertionError)`; a skip mark on one table row; an early `return`. Known false alarms: tests merged into a table, or generalised while renamed (D4 handles plain moves since 0.2.0). Each needs a fresh held-out set (BENCH-004) before it's addressed.
 - **OI-9:** the near-miss scan costs 11× CPU in pure Python. It matters only if the near-miss line continues.
 
 ## Top 5 risks
@@ -92,6 +92,6 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 ## Next steps, in order
 
 1. **Watch adoption, with no interviews (D-002).** pkv is on PyPI as `parinama-verify` 0.2.1 (D-032). Track installs from public numbers only: PyPI's download statistics, GitHub stars, and use of the Action.
-2. **BENCH-003:** a fresh held-out set *before* tackling the known misses in OI-8.
+2. **BENCH-004:** a fresh held-out set, written *before* tackling the remaining known misses in OI-8 (`pytest.raises(AssertionError)`, a skip on one table row, an early `return`) and the extra move spellings in OI-13.
 3. **EXP-002b:** the one remaining near-miss variant, pre-registered (structure-based). If it closes < 10% of the gap, stop and move to EXP-005.
 4. **Publish more widely:** the first release is out (`pkv-v0.2.0`, D-030). Next, decide how to reach GitHub's Marketplace, which needs `action.yml` at the top of a repository (either a small separate repository for the action, or moving the file). Then watch install counts (no interviews; D-002).
