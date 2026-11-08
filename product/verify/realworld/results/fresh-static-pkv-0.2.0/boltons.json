@@ -1,0 +1,296 @@
+[
+ {
+  "project": "boltons",
+  "position": 61,
+  "commit": "42586df3dd672c11f5376b8d9a42e26c05cf5543",
+  "parent": "49f381eedbdcd695f7ed95110ebb1088582de7f3",
+  "subject": "add once decorator",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 62,
+  "commit": "49f381eedbdcd695f7ed95110ebb1088582de7f3",
+  "parent": "17374731bcc404908726a65734f941d789f23a78",
+  "subject": "Extend partition to accept multiple predicates",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 63,
+  "commit": "17374731bcc404908726a65734f941d789f23a78",
+  "parent": "ce7c7d2b15ea189c1284a48d742a7862bfae8606",
+  "subject": "Adds cache option to remap and use in research",
+  "pkv": "0.2.0",
+  "findings": [
+   {
+    "severity": "notice",
+    "kind": "expected-values-changed",
+    "file": "tests/test_iterutils.py",
+    "message": "the expected values in test_research (tests/test_iterutils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "test": "test_research"
+   }
+  ]
+ },
+ {
+  "project": "boltons",
+  "position": 64,
+  "commit": "ce7c7d2b15ea189c1284a48d742a7862bfae8606",
+  "parent": "1b1d37875f5702a7c86990e3f415093fb360db4d",
+  "subject": "fix(human_readable_list): altering f-string syntax to have backwards compatibility with Python <3.12",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 65,
+  "commit": "1b1d37875f5702a7c86990e3f415093fb360db4d",
+  "parent": "6b9a2bf202e3e2c5a56718b4fea5914de5a97107",
+  "subject": "feat(strutils): add human_readable_list function to format lists of strings",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 66,
+  "commit": "6b9a2bf202e3e2c5a56718b4fea5914de5a97107",
+  "parent": "a7ae0909a6d0aade8eee422011f3e305b30c5db7",
+  "subject": "Merge branch 's-t-e-v-e-n-k-support-pytest-9'",
+  "pkv": "0.2.0",
+  "findings": [
+   {
+    "severity": "notice",
+    "kind": "shared-settings",
+    "file": "tests/conftest.py",
+    "message": "the shared test settings in tests/conftest.py were modified. These affect many tests at once.",
+    "test": null
+   }
+  ]
+ },
+ {
+  "project": "boltons",
+  "position": 67,
+  "commit": "b47171245cebeb39df55cbac7ae1efb3e29f317e",
+  "parent": "c8c442b98b8cff6d0aee61e61e28d4cb0be0ac21",
+  "subject": "fix strutils",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 68,
+  "commit": "c8c442b98b8cff6d0aee61e61e28d4cb0be0ac21",
+  "parent": "f9c4f30511b58c543bda7e4c04193fd480f68b24",
+  "subject": "fix html2text",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 69,
+  "commit": "f9c4f30511b58c543bda7e4c04193fd480f68b24",
+  "parent": "0c88f25323de3ff85bcca844b9ce6cd171a80392",
+  "subject": "Fix barrellist sort with multiple lists",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 70,
+  "commit": "0c88f25323de3ff85bcca844b9ce6cd171a80392",
+  "parent": "d70669ac4b1b31d1455a388270cb47b075c44cc0",
+  "subject": "Fix Table.to_text() sizing",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 71,
+  "commit": "c23dbdadb6fecdf505eb4231559561913b84c13f",
+  "parent": "ed747452aea780e838cedd82faac4cf941e626ac",
+  "subject": "bump docs version",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 72,
+  "commit": "a7d9afd61bb36ed7bc9cd3b13a594db32c1f3cec",
+  "parent": "6e0354e0a7ff20ae440bf3fe47ccd79c9c7c973f",
+  "subject": "add fsync to atomic_save for correctness",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 73,
+  "commit": "41c8cbdefb085c878483e819d25e82c055462590",
+  "parent": "b4697c18731e18ac7e9dcd328dce6dc3e605382c",
+  "subject": "Remove unnecessary comment",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 74,
+  "commit": "b4697c18731e18ac7e9dcd328dce6dc3e605382c",
+  "parent": "6a8ac764bb218036258deb771bb73e171f31e395",
+  "subject": "Add removeprefix to strutils for older python versions & fix test on windows",
+  "pkv": "0.2.0",
+  "findings": [
+   {
+    "severity": "notice",
+    "kind": "expected-values-changed",
+    "file": "tests/test_fileutils.py",
+    "message": "the expected values in test_iter_find_files (tests/test_fileutils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "test": "test_iter_find_files"
+   }
+  ]
+ },
+ {
+  "project": "boltons",
+  "position": 75,
+  "commit": "6a8ac764bb218036258deb771bb73e171f31e395",
+  "parent": "ad144374273049e7e1d3a0d98ce669e939c47c24",
+  "subject": "Fix bug in fileutils tests",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 76,
+  "commit": "ad144374273049e7e1d3a0d98ce669e939c47c24",
+  "parent": "21dc968d2b81e57a69c153d214ccf774fa8392d3",
+  "subject": "migrate to pyproject.toml",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 77,
+  "commit": "21dc968d2b81e57a69c153d214ccf774fa8392d3",
+  "parent": "6e428e956e3d3f9faae06c1d4340acbf438b983b",
+  "subject": "replace deprecated utcnow",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 78,
+  "commit": "6e428e956e3d3f9faae06c1d4340acbf438b983b",
+  "parent": "3bfcfdd04395b6cc74a5c0cdc72c8f64cc4ac01f",
+  "subject": "add python 3.13 support",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 79,
+  "commit": "3bfcfdd04395b6cc74a5c0cdc72c8f64cc4ac01f",
+  "parent": "60ecb2037e05b283b514803b83d3ba9467d8868f",
+  "subject": "quick file rotation util",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 80,
+  "commit": "60ecb2037e05b283b514803b83d3ba9467d8868f",
+  "parent": "5aed99eb066f563fbad2231498492df8403a643d",
+  "subject": "bump version for 24.1.1dev",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 81,
+  "commit": "e86ef90a1a46775e0e8348c917d5aee6c15cfef1",
+  "parent": "120915ea2cdf995cbd6f864e04030ce7cd756701",
+  "subject": "bump docs version",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 82,
+  "commit": "120915ea2cdf995cbd6f864e04030ce7cd756701",
+  "parent": "df92fa4f0e13c92f9536a4e8f7ec78ced90e8789",
+  "subject": "bump version for 24.1.0 release",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 83,
+  "commit": "801e80e9538b59cf9aa8f2307ebd5c08c35d6dfd",
+  "parent": "ddbdefc5581a0a361c17a4518cb0793061c18e99",
+  "subject": "Update typeutils.py",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 84,
+  "commit": "ddbdefc5581a0a361c17a4518cb0793061c18e99",
+  "parent": "2ccc5098bc2c8d1dae7f9be8934b799d85857a42",
+  "subject": "add no-copy-of-sentinels test",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 85,
+  "commit": "2ccc5098bc2c8d1dae7f9be8934b799d85857a42",
+  "parent": "d463c605877f80787a62f8d968d358cdd7d0a601",
+  "subject": "Sentinel copy return self",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 86,
+  "commit": "d463c605877f80787a62f8d968d358cdd7d0a601",
+  "parent": "1f07518303de8a087cb945c5c0375cbeeb09ba71",
+  "subject": "fix module name in multireplace docstring",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 87,
+  "commit": "1f07518303de8a087cb945c5c0375cbeeb09ba71",
+  "parent": "d9a927b5c1b0816eb6227c4cea8c0c6245035eb7",
+  "subject": "add enter parameter to research to allow traversing custom data types",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 88,
+  "commit": "d9a927b5c1b0816eb6227c4cea8c0c6245035eb7",
+  "parent": "ee3c660a6811acd5408d28a5da44fe0a94278834",
+  "subject": "test iter_find_files max depth",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 89,
+  "commit": "ee3c660a6811acd5408d28a5da44fe0a94278834",
+  "parent": "9381c52b800a5eb85ab8549887987656c96efb16",
+  "subject": "quick implementation of max_depth for boltons.fileutils.iter_find_files",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "boltons",
+  "position": 90,
+  "commit": "9381c52b800a5eb85ab8549887987656c96efb16",
+  "parent": "827f193775a793716bc2615e939340c398ecd042",
+  "subject": "Remove more redundant internal compatibility aliases",
+  "pkv": "0.2.0",
+  "findings": []
+ }
+]

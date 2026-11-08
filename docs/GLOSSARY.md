@@ -15,6 +15,7 @@ If a word in any Parinamakramam document confuses you, look it up here. The word
 | **Bootstrap / confidence range** | A way of checking whether a result could be luck: reshuffle the results thousands of times and see how much the answer wobbles. If the whole range of likely values is above zero, it's very unlikely to be luck. |
 | **Budget** | How many tries the computer gets. Every student gets the same budget, so nobody wins by trying harder. |
 | **Calibration / practice paper** | The one set of puzzles (number 100) we used to build and fix the system. The real exam papers were kept unseen. |
+| **Canonical form** | One standard way of writing something that can be written several ways. pkv treats `assert a == b` and `self.assertEqual(a, b)` as the same check because they share one canonical form. |
 | **Changelog** | A dated list of what changed in each version. Ours is CHANGELOG.md. |
 | **CI (Continuous Integration)** | A service that automatically runs a project's checks every time someone changes the code, for example GitHub Actions. *(In the technical appendix, "CI" means confidence interval instead, which is the confidence range above.)* |
 | **CLI (command-line tool)** | A program you run by typing a command in the Terminal instead of clicking buttons. |

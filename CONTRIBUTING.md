@@ -12,7 +12,7 @@ Changes must keep both trustworthy.
    - lint (`ruff`);
    - types (`mypy --strict` for pkv);
    - all tests, on Python 3.10, 3.12 and 3.14;
-   - the BENCH-001 regression gate.
+   - the regression gates on all three practice sets (BENCH-001, 002 and 003).
 2. **Every bug fix comes with a regression test** that fails before the fix and passes after it. Say in the pull request that you checked both.
 3. **No false "all clear".** pkv must never turn an uncertain situation into VERIFIED. When in doubt, run more tests or give a weaker verdict.
 4. **Results are deterministic.** A benchmark or experiment must give the same answer every time it runs.

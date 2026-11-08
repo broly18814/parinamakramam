@@ -1,0 +1,1183 @@
+[
+ {
+  "project": "more-itertools",
+  "position": 31,
+  "commit": "cecd215fe1c6fdc639b9eb837cee93bba09d2952",
+  "parent": "c69f0f9129ff8d26102219f50b60088353be7edf",
+  "exit_code": 0,
+  "wall_seconds": 6.47,
+  "subject": "Merge pull request #1236 from pochmann/patch-8",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 732 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 732,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.21,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.05,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 32,
+  "commit": "3a259350f28cd17f09b4f0af21c6ebc03cf725cf",
+  "parent": "7ff676d95968fb0a85f2527056c575cba039303c",
+  "exit_code": 0,
+  "wall_seconds": 6.49,
+  "subject": "Merge branch 'jonathandung-patch-22'",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 732 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 732,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.229,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.07,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 33,
+  "commit": "7ff676d95968fb0a85f2527056c575cba039303c",
+  "parent": "9ddc55c57390707d97d96302eea1992919c8d930",
+  "exit_code": 0,
+  "wall_seconds": 7.23,
+  "subject": "Merge pull request #1231 from more-itertools/issue-1227-convolve-ruff",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 732 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": true,
+  "run_all_reasons": [
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 732,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.233,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 34,
+  "commit": "9ddc55c57390707d97d96302eea1992919c8d930",
+  "parent": "516f0a80fb7c2c8562dbb5e318fc2a3d44f4171f",
+  "exit_code": 0,
+  "wall_seconds": 7.36,
+  "subject": "Merge pull request #1223 from uttam12331/chunked-negative-n-guard",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 732 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 732,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.252,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.07,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 35,
+  "commit": "516f0a80fb7c2c8562dbb5e318fc2a3d44f4171f",
+  "parent": "f9cdcb990dbb87a9748e61a9a28c2ad737e60452",
+  "exit_code": 0,
+  "wall_seconds": 6.5,
+  "subject": "Merge pull request #1217 from more-itertools/issue-1215-iter-index-range",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 731 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 731,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.236,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.08,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 36,
+  "commit": "f9cdcb990dbb87a9748e61a9a28c2ad737e60452",
+  "parent": "da37f9de442b69fbcaa9f54fb042c2a6999473a6",
+  "exit_code": 0,
+  "wall_seconds": 8.11,
+  "subject": "Merge pull request #1216 from more-itertools/numeric-range-equality",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 731 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 731,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.271,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.07,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 37,
+  "commit": "da37f9de442b69fbcaa9f54fb042c2a6999473a6",
+  "parent": "301c957c8a50eca09c3b6eae416508a91487b552",
+  "exit_code": 0,
+  "wall_seconds": 7.39,
+  "subject": "Merge pull request #1211 from rhettinger/minmax_stability",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 732 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 732,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.253,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.07,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 38,
+  "commit": "301c957c8a50eca09c3b6eae416508a91487b552",
+  "parent": "cb75bb9c55f7ed3e77ce599097e1ba8da411746d",
+  "exit_code": 0,
+  "wall_seconds": 6.51,
+  "subject": "Merge pull request #1210 from JamesParrott/Lazy_import_threading",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 730 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 730,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.244,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.09,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 39,
+  "commit": "cb75bb9c55f7ed3e77ce599097e1ba8da411746d",
+  "parent": "c2859de7ae7b791b77c33462a58f81f9a4d9d5d6",
+  "exit_code": 0,
+  "wall_seconds": 6.54,
+  "subject": "Merge pull request #1207 from jonathandung/patch-1",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 730 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": true,
+  "run_all_reasons": [
+   "more_itertools/more.pyi is not Python code, so we can't trace what uses it",
+   "more_itertools/recipes.pyi is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 730,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.279,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 40,
+  "commit": "c2859de7ae7b791b77c33462a58f81f9a4d9d5d6",
+  "parent": "8ff2d60e1462a6857f5a9b153d7be474f82da8b5",
+  "exit_code": 0,
+  "wall_seconds": 7.34,
+  "subject": "Merge pull request #1200 from Sanjays2402/fix/sliced-negative-n",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 730 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 730,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.267,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.11,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 41,
+  "commit": "8ff2d60e1462a6857f5a9b153d7be474f82da8b5",
+  "parent": "d82024d025ec48f1197f92d5b66560a537a78184",
+  "exit_code": 0,
+  "wall_seconds": 6.56,
+  "subject": "Merge pull request #1199 from jonathandung/patch-2",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 729 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 729,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.297,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.07,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 42,
+  "commit": "d82024d025ec48f1197f92d5b66560a537a78184",
+  "parent": "ed86a1528aa015f219f8d3385ea2ebd3f63a5212",
+  "exit_code": 0,
+  "wall_seconds": 6.52,
+  "subject": "Merge pull request #1203 from jonathandung/patch-3",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 729 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 729,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.26,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.09,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 43,
+  "commit": "ed86a1528aa015f219f8d3385ea2ebd3f63a5212",
+  "parent": "fe24c338d8c3264a82cdc2bed49fb156cfd11a86",
+  "exit_code": 0,
+  "wall_seconds": 7.27,
+  "subject": "Merge branch 'CodingFeng101-codex/tail-negative'",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 729 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 729,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.261,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.09,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 44,
+  "commit": "b363d6b82c7082db647bd350560fca5e1d724a16",
+  "parent": "5d946b3590bfe92f1465c1b9b9830dd434745c84",
+  "exit_code": 0,
+  "wall_seconds": 7.54,
+  "subject": "Merge pull request #1193 from nyxst4ck/codex/fix-interleave-evenly-empty",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 727 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 727,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.246,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.1,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 45,
+  "commit": "49c991e4e5f142c326de6b92478f58851544f7dd",
+  "parent": "7b2929cc1e44d04e18bc63e5cb8400e03e4c7391",
+  "exit_code": 0,
+  "wall_seconds": 7.38,
+  "subject": "Merge branch 'gaoflow-fix-iter-index-negative-bounds'",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 726 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 726,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.327,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.11,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 46,
+  "commit": "7b2929cc1e44d04e18bc63e5cb8400e03e4c7391",
+  "parent": "c5538f9ff7f3fa92ac0fe378b5c70486494c040b",
+  "exit_code": 0,
+  "wall_seconds": 6.61,
+  "subject": "Merge pull request #1178 from jonathandung/patch-1",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 725 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 725,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.343,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.17,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 47,
+  "commit": "ccf6e0caedd1d982e7f628e5160956a8a18ad608",
+  "parent": "aaa45c2dd91b660a0cf73cb66b3d956efd762894",
+  "exit_code": 0,
+  "wall_seconds": 6.61,
+  "subject": "Merge pull request #1171 from jonathandung/master",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 725 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 725,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.346,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.14,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 48,
+  "commit": "aaa45c2dd91b660a0cf73cb66b3d956efd762894",
+  "parent": "5692cd838d2b0b55ff46c5f9934b79a0b069027e",
+  "exit_code": 0,
+  "wall_seconds": 3.87,
+  "subject": "Merge pull request #1167 from rhettinger/broken_test_powerset_of_sets",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 585 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 585,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 2.72,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.16,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 49,
+  "commit": "504b087128d853d7b2cc6478237626e585514935",
+  "parent": "0c48044a70bae53fed919526bb1229d459a3e496",
+  "exit_code": 0,
+  "wall_seconds": 7.46,
+  "subject": "Merge pull request #1166 from rhettinger/subfactorial",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 725 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 5,
+  "run_all": true,
+  "run_all_reasons": [
+   "more_itertools/more.pyi is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 725,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.337,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 50,
+  "commit": "0c48044a70bae53fed919526bb1229d459a3e496",
+  "parent": "3265258211deb791678e5d79f84979c3e37eb17f",
+  "exit_code": 0,
+  "wall_seconds": 6.58,
+  "subject": "Merge pull request #1162 from Labib-Bin-Salam/fix-docstring-typos",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 722 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 722,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.308,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.11,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 51,
+  "commit": "3265258211deb791678e5d79f84979c3e37eb17f",
+  "parent": "6aeb7458a8313428f69f8c579b6bf7eea6269e90",
+  "exit_code": 0,
+  "wall_seconds": 6.58,
+  "subject": "Merge pull request #1161 from rhettinger/minmax_microoptimization",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 722 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 722,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.312,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.14,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 52,
+  "commit": "6aeb7458a8313428f69f8c579b6bf7eea6269e90",
+  "parent": "64be96ceb2a6e836f76f069f4a96d2394d59fd0c",
+  "exit_code": 0,
+  "wall_seconds": 6.58,
+  "subject": "Merge pull request #1160 from rhettinger/simplify_last",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 722 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 722,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.319,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.12,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 53,
+  "commit": "64be96ceb2a6e836f76f069f4a96d2394d59fd0c",
+  "parent": "264b18d8dfbab42fdbd969fc09abf602c6ea58b3",
+  "exit_code": 0,
+  "wall_seconds": 7.54,
+  "subject": "Merge pull request #1159 from more-itertools/version-11.1.0",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 722 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": true,
+  "run_all_reasons": [
+   "setup.cfg is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 722,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.333,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 54,
+  "commit": "264b18d8dfbab42fdbd969fc09abf602c6ea58b3",
+  "parent": "18d98893df45e0014bf316ca7832d441dd94aa4f",
+  "exit_code": 0,
+  "wall_seconds": 7.47,
+  "subject": "Merge pull request #1158 from SAY-5/seekable-getitem",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 722 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": true,
+  "run_all_reasons": [
+   "more_itertools/more.pyi is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 722,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.325,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 55,
+  "commit": "18d98893df45e0014bf316ca7832d441dd94aa4f",
+  "parent": "bd8475cc1e9b2efdbc055ab4af4d4693a9c5cb7a",
+  "exit_code": 0,
+  "wall_seconds": 7.39,
+  "subject": "Merge pull request #1157 from rhettinger/expand_serialize",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 720 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "severity": "notice",
+    "kind": "checks-nothing",
+    "file": "tests/test_more.py",
+    "message": "the new test TestSerialize::test_serialize_generator_methods_locking in tests/test_more.py has no checks (no assert), so it can never fail.",
+    "test": "TestSerialize::test_serialize_generator_methods_locking"
+   }
+  ],
+  "changed_files": 3,
+  "run_all": true,
+  "run_all_reasons": [
+   "more_itertools/more.pyi is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 720,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.286,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 56,
+  "commit": "bd8475cc1e9b2efdbc055ab4af4d4693a9c5cb7a",
+  "parent": "e5d0b41448fe920811c982529d0fc42348a9be21",
+  "exit_code": 0,
+  "wall_seconds": 6.59,
+  "subject": "Merge pull request #1155 from rhettinger/optimize_islice_extended",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 717 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 717,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.321,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.11,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 57,
+  "commit": "ea68e05fbe566a01ab416a0a2dd5e9637ac4e789",
+  "parent": "37bb3adb089f7f392edb96bc7bf8d3c921e26d38",
+  "exit_code": 0,
+  "wall_seconds": 6.56,
+  "subject": "Merge pull request #1086 from ben42code/u/ben42code/islice_extended_memory_usage6",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 717 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 717,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.294,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.11,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 58,
+  "commit": "37bb3adb089f7f392edb96bc7bf8d3c921e26d38",
+  "parent": "1806a75b836b9eff4a7885a96ece6183f5fb6409",
+  "exit_code": 0,
+  "wall_seconds": 7.45,
+  "subject": "Merge pull request #1154 from DORI2001/fix/peekable-class-getitem-849",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 717 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": true,
+  "run_all_reasons": [
+   "more_itertools/more.pyi is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 717,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.321,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 59,
+  "commit": "1806a75b836b9eff4a7885a96ece6183f5fb6409",
+  "parent": "247e15b3a489d5805375c95dfa79486c9bd0eb1b",
+  "exit_code": 0,
+  "wall_seconds": 7.48,
+  "subject": "Merge pull request #1153 from more-itertools/issue-1152",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 716 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 716,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.338,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 6.09,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "more-itertools",
+  "position": 60,
+  "commit": "247e15b3a489d5805375c95dfa79486c9bd0eb1b",
+  "parent": "1bf1273ad54d41a2d1cc4524058ef81e6fcdd7ed",
+  "exit_code": 0,
+  "wall_seconds": 7.33,
+  "subject": "Merge pull request #1150 from more-itertools/version-11.0.2",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 715 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 8,
+  "run_all": true,
+  "run_all_reasons": [
+   "more_itertools/more.pyi is not Python code, so we can't trace what uses it",
+   "more_itertools/recipes.pyi is not Python code, so we can't trace what uses it",
+   "setup.cfg is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 715,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 6.309,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ }
+]

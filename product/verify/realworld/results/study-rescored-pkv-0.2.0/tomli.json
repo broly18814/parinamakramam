@@ -1,0 +1,1265 @@
+[
+ {
+  "project": "tomli",
+  "position": 1,
+  "commit": "eacf46ff608ed29868f5d0ad278d315d1e99869d",
+  "parent": "94a60819c4f0b244829513f19f3caf64ef16b466",
+  "exit_code": 0,
+  "wall_seconds": 0.38,
+  "subject": "Merge pull request #321 from hukkin/version-2.5.0",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 17 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": true,
+  "run_all_reasons": [
+   ".bumpversion.cfg is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 17,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 0.19,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 2,
+  "commit": "eb93c1225a5540e61a3a4054673e364fc6efe307",
+  "parent": "18d8d59db6d632ebbcfe63f1f7636145d652da21",
+  "exit_code": 0,
+  "wall_seconds": 0.39,
+  "subject": "Improve tomllib compatibility and sync docs (#299)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 17 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 17,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 0.19,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 0.21,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 3,
+  "commit": "18d8d59db6d632ebbcfe63f1f7636145d652da21",
+  "parent": "1e6e869aa9dbbddc492608944e82d9ad5397280f",
+  "exit_code": 0,
+  "wall_seconds": 1.2,
+  "subject": "Bump cibuildwheel for Python 3.15 wheels (#317)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 17 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 17,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 0.196,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 4,
+  "commit": "1e6e869aa9dbbddc492608944e82d9ad5397280f",
+  "parent": "c3299981db699cacabbd6edd0e32934f5e3e600b",
+  "exit_code": 0,
+  "wall_seconds": 1.2,
+  "subject": "Set smaller MAX_INLINE_NESTING to avoid python:3.13-alpine worker thread crash",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 17 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 17,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 0.194,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 0.21,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 5,
+  "commit": "5a77b12a7a9f052ce5a20c335d2825658f6aea52",
+  "parent": "50d7e476e7573b5515178957ca5284233d7fb711",
+  "exit_code": 0,
+  "wall_seconds": 0.39,
+  "subject": "Use frozendict on Python 3.15",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 17 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 17,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 0.194,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 0.22,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 6,
+  "commit": "b7e1bcccb9b5ec8f1bd3ca8ce2b940b37531204e",
+  "parent": "bbca44b6abbe4713cee9035fd4a21ef5686df05d",
+  "exit_code": 0,
+  "wall_seconds": 1.41,
+  "subject": "Use Python 3.15 lazy import (#295)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 17 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "severity": "notice",
+    "kind": "skip-in-new-test",
+    "file": "tests/test_misc.py",
+    "message": "the new test TestMiscellaneous::test_lazy_import in tests/test_misc.py is marked to be skipped.",
+    "test": "TestMiscellaneous::test_lazy_import"
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 17,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 0.195,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 0.21,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 7,
+  "commit": "bbca44b6abbe4713cee9035fd4a21ef5686df05d",
+  "parent": "2bcd2627d5fcc262f734eaa730b62c0915d1e0d3",
+  "exit_code": 0,
+  "wall_seconds": 0.39,
+  "subject": "Merge pull request #288 from hukkin/version-2.4.1",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 17 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": true,
+  "run_all_reasons": [
+   ".bumpversion.cfg is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 17,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.193,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 8,
+  "commit": "e1fdb94bc998377f1c2545c7cd4f70ff2a3fb4e4",
+  "parent": "c20c49113890c226ffb27a67befe20d14fcf0c73",
+  "exit_code": 0,
+  "wall_seconds": 1.2,
+  "subject": "Limit number of parts of a key (#286)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 17 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 17,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.194,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 0.21,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 9,
+  "commit": "920e20b1cf495b63f6d4a6aa3cd5e4ff25f5f5a7",
+  "parent": "064e492919b2338def788753b8c981c9131334c0",
+  "exit_code": 3,
+  "wall_seconds": 0.15,
+  "subject": "Update performance benchmark and results",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: benchmark/run.py"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 3,
+  "untested_changes": [
+   "benchmark/run.py"
+  ],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "UNVERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 10,
+  "commit": "064e492919b2338def788753b8c981c9131334c0",
+  "parent": "b8a1358cd4f3932b910333e0179270093596ce64",
+  "exit_code": 0,
+  "wall_seconds": 0.38,
+  "subject": "Merge pull request #280 from hukkin/version-2.4.0",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 16 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": true,
+  "run_all_reasons": [
+   ".bumpversion.cfg is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 16,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.189,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 11,
+  "commit": "b8a1358cd4f3932b910333e0179270093596ce64",
+  "parent": "497937545351e0b4c8afe2299d5ddfb4a7e050cc",
+  "exit_code": 0,
+  "wall_seconds": 0.37,
+  "subject": "Tests: remove now needless \"TOML compliance\"->\"burntsushi\" format conversion",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 2 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 2,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.178,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 0.21,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 12,
+  "commit": "9eb2125ef49071e673d42e383b5221a268665193",
+  "parent": "12314bde5b89a8bdc32de7403a2a4cf786187bbc",
+  "exit_code": 4,
+  "wall_seconds": 1.12,
+  "subject": "TOML 1.1: Make seconds optional in Date-Time and Time (#203)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "severity": "suspicious",
+    "kind": "fewer-checks",
+    "file": "tests/test_data.py",
+    "message": "the test TestData::test_valid in tests/test_data.py now checks less: 2 checks before, 1 now.",
+    "test": "TestData::test_valid"
+   }
+  ],
+  "changed_files": 6,
+  "run_all": true,
+  "run_all_reasons": [
+   "tests/data/valid/dates-and-times/datetimes.json is not Python code, so we can't trace what uses it",
+   "tests/data/valid/dates-and-times/datetimes.toml is not Python code, so we can't trace what uses it",
+   "tests/data/valid/dates-and-times/localtime.json is not Python code, so we can't trace what uses it",
+   "tests/data/valid/dates-and-times/localtime.toml is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 16,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.19,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "SUSPICIOUS"
+ },
+ {
+  "project": "tomli",
+  "position": 13,
+  "commit": "12314bde5b89a8bdc32de7403a2a4cf786187bbc",
+  "parent": "2a2aa62f1bc71b89b74d41dd2ab67b5dd24bc129",
+  "exit_code": 0,
+  "wall_seconds": 1.09,
+  "subject": "TOML 1.1: Add \\xHH Unicode escape code to basic strings (#202)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 16 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": true,
+  "run_all_reasons": [
+   "tests/data/valid/multiline-basic-str/replacements.json is not Python code, so we can't trace what uses it",
+   "tests/data/valid/multiline-basic-str/replacements.toml is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 16,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.189,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 14,
+  "commit": "2a2aa62f1bc71b89b74d41dd2ab67b5dd24bc129",
+  "parent": "38297f82cd0ef067f1afd2ffb8dfa73b65c398da",
+  "exit_code": 0,
+  "wall_seconds": 1.09,
+  "subject": "TOML 1.1: Allow newlines and trailing comma in inline tables (#200)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 16 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 6,
+  "run_all": true,
+  "run_all_reasons": [
+   "tests/data/valid/empty-inline-table.json is not Python code, so we can't trace what uses it",
+   "tests/data/valid/inline-table/empty-inline-table.json is not Python code, so we can't trace what uses it",
+   "tests/data/valid/empty-inline-table.toml is not Python code, so we can't trace what uses it",
+   "tests/data/valid/inline-table/empty-inline-table.toml is not Python code, so we can't trace what uses it",
+   "tests/data/valid/inline-table/multiline-inline-table.json is not Python code, so we can't trace what uses it",
+   "tests/data/valid/inline-table/multiline-inline-table.toml is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 16,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.19,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 15,
+  "commit": "38297f82cd0ef067f1afd2ffb8dfa73b65c398da",
+  "parent": "fc9c79f52259ffc0c2caedadb55894dd29198f36",
+  "exit_code": 0,
+  "wall_seconds": 1.18,
+  "subject": "Xfail on tests for TOML 1.1 features not yet supported",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 2 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 2,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.18,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 0.21,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 16,
+  "commit": "0921abf5cea9f937565e37793d5061a128c22ac5",
+  "parent": "871f2c1cf33bc451376c225eeff77611cf2dd5a9",
+  "exit_code": 0,
+  "wall_seconds": 0.41,
+  "subject": "TOML 1.1: Add shorthand for escape character (#201)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 16 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": true,
+  "run_all_reasons": [
+   "tests/data/valid/multiline-basic-str/replacements.json is not Python code, so we can't trace what uses it",
+   "tests/data/valid/multiline-basic-str/replacements.toml is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 16,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.185,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 17,
+  "commit": "871f2c1cf33bc451376c225eeff77611cf2dd5a9",
+  "parent": "5e2265ebb91ed4b6aa556d2c31a7661f60d64380",
+  "exit_code": 0,
+  "wall_seconds": 0.38,
+  "subject": "[pre-commit.ci] auto fixes from pre-commit.com hooks",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 16 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 16,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.185,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 0.21,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 18,
+  "commit": "0b158821c3911df4f24441959d8ce18991619222",
+  "parent": "0bc66fcab1f766fe410ffeebfe9ec1ec646f1681",
+  "exit_code": 0,
+  "wall_seconds": 0.38,
+  "subject": "Merge pull request #266 from hukkin/version-2.3.0",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 16 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": true,
+  "run_all_reasons": [
+   ".bumpversion.cfg is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 16,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.184,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 19,
+  "commit": "0aa242f3188f4b892e434f1b4d23818fcd978615",
+  "parent": "a18221eb5c3f4592285f533d48e68432132bc37b",
+  "exit_code": 3,
+  "wall_seconds": 0.38,
+  "subject": "Update license metadata to appease PEP 639",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: scripts/use_setuptools.py"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": true,
+  "run_all_reasons": [
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [
+   "scripts/use_setuptools.py"
+  ],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 16,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.183,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "UNVERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 20,
+  "commit": "b974fa13a96503546e47a895ac123d5c8425bc9a",
+  "parent": "f574f366d40b2fa0672177f06df4d6dfc4188356",
+  "exit_code": 0,
+  "wall_seconds": 0.38,
+  "subject": "[pre-commit.ci] pre-commit autoupdate (#248)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 16 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": true,
+  "run_all_reasons": [
+   ".pre-commit-config.yaml is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 16,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.182,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 21,
+  "commit": "f574f366d40b2fa0672177f06df4d6dfc4188356",
+  "parent": "1da01ef78fee9f491f55feb5e2d9fcf24d4977f0",
+  "exit_code": 3,
+  "wall_seconds": 1.81,
+  "subject": "Update mypy to 1.15 and use `--strict` mode (#257)",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: scripts/use_setuptools.py, setup.py"
+  ],
+  "findings": [],
+  "changed_files": 9,
+  "run_all": true,
+  "run_all_reasons": [
+   ".pre-commit-config.yaml is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [
+   "scripts/use_setuptools.py",
+   "setup.py"
+  ],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 16,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.184,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "UNVERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 22,
+  "commit": "1da01ef78fee9f491f55feb5e2d9fcf24d4977f0",
+  "parent": "41881885a360e9f6526badafc1c5b2eec4133393",
+  "exit_code": 0,
+  "wall_seconds": 0.38,
+  "subject": "Reduce import time by removing `typing` import (#251)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 16 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 16,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.185,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 0.21,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 23,
+  "commit": "41881885a360e9f6526badafc1c5b2eec4133393",
+  "parent": "42a570d5222ec8abfa6e20421d3f2e5132da2f83",
+  "exit_code": 0,
+  "wall_seconds": 1.1,
+  "subject": "Reduce import time by removing `string` and `tomli._types` imports",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 16 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "severity": "notice",
+    "kind": "checks-nothing",
+    "file": "tests/test_misc.py",
+    "message": "the new test TestMiscellaneous::test_types_import in tests/test_misc.py has no checks (no assert), so it can never fail.",
+    "test": "TestMiscellaneous::test_types_import"
+   }
+  ],
+  "changed_files": 4,
+  "run_all": true,
+  "run_all_reasons": [
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "tests/test_misc.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 16,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.185,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 24,
+  "commit": "42a570d5222ec8abfa6e20421d3f2e5132da2f83",
+  "parent": "5723018c2bb8793a1be582244d75acf036d17157",
+  "exit_code": 3,
+  "wall_seconds": 0.38,
+  "subject": "tooling: add tox wrapper that enables mypyc (#246)",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: scripts/use_setuptools.py"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": true,
+  "run_all_reasons": [
+   "scripts/mypyc_tox is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [
+   "scripts/use_setuptools.py"
+  ],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 15,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.183,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "UNVERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 25,
+  "commit": "067b7ca2297a22f93c60e80fa5df81b396cd2705",
+  "parent": "0724e2ab1858da7f5e05a9bffdb24c33589d951c",
+  "exit_code": 0,
+  "wall_seconds": 0.38,
+  "subject": "Merge pull request #244 from hukkin/readme",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 15 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 5,
+  "run_all": true,
+  "run_all_reasons": [
+   ".bumpversion.cfg is not Python code, so we can't trace what uses it",
+   ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 15,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.183,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 26,
+  "commit": "0724e2ab1858da7f5e05a9bffdb24c33589d951c",
+  "parent": "149547d2ec5b7d1badf8d0c1ab603735fa9b5a70",
+  "exit_code": 0,
+  "wall_seconds": 0.38,
+  "subject": "Annotate global constants as Final to speed up compiled code",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 15 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 15,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.183,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 0.21,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 27,
+  "commit": "149547d2ec5b7d1badf8d0c1ab603735fa9b5a70",
+  "parent": "443a0c1bc5da39b7ed84306912ee1900e6b72e2f",
+  "exit_code": 4,
+  "wall_seconds": 2.0,
+  "subject": "Create binary wheels with mypyc (#242)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "3 sign(s) that the tests were weakened",
+   "changed code that no test checks: scripts/use_setuptools.py, setup.py"
+  ],
+  "findings": [
+   {
+    "severity": "suspicious",
+    "kind": "test-removed",
+    "file": "tests/test_error.py",
+    "message": "the test TestError::test_module_name was removed from tests/test_error.py.",
+    "test": "TestError::test_module_name"
+   },
+   {
+    "severity": "suspicious",
+    "kind": "check-weakened",
+    "file": "tests/test_error.py",
+    "message": "the test TestError::test_type_error in tests/test_error.py now checks less precisely: 2 exact check(s) (like '==' or assertEqual) before, 0 now. Looser checks (like '>' or 'is not None') can pass even when the result is wrong.",
+    "test": "TestError::test_type_error"
+   },
+   {
+    "severity": "notice",
+    "kind": "expected-values-changed",
+    "file": "tests/test_error.py",
+    "message": "the expected values in TestError::test_type_error (tests/test_error.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "test": "TestError::test_type_error"
+   },
+   {
+    "severity": "suspicious",
+    "kind": "check-weakened",
+    "file": "tests/test_misc.py",
+    "message": "the test TestMiscellaneous::test_incorrect_load in tests/test_misc.py now checks less precisely: 1 exact check(s) (like '==' or assertEqual) before, 0 now. Looser checks (like '>' or 'is not None') can pass even when the result is wrong.",
+    "test": "TestMiscellaneous::test_incorrect_load"
+   },
+   {
+    "severity": "notice",
+    "kind": "expected-values-changed",
+    "file": "tests/test_misc.py",
+    "message": "the expected values in TestMiscellaneous::test_incorrect_load (tests/test_misc.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "test": "TestMiscellaneous::test_incorrect_load"
+   },
+   {
+    "severity": "notice",
+    "kind": "expected-values-changed",
+    "file": "tests/test_misc.py",
+    "message": "the expected values in TestMiscellaneous::test_inline_array_recursion_limit (tests/test_misc.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "test": "TestMiscellaneous::test_inline_array_recursion_limit"
+   },
+   {
+    "severity": "notice",
+    "kind": "expected-values-changed",
+    "file": "tests/test_misc.py",
+    "message": "the expected values in TestMiscellaneous::test_inline_table_recursion_limit (tests/test_misc.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "test": "TestMiscellaneous::test_inline_table_recursion_limit"
+   }
+  ],
+  "changed_files": 11,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+   "MANIFEST.in is a project settings file; it can change how every test behaves",
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [
+   "scripts/use_setuptools.py",
+   "setup.py"
+  ],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 15,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.183,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "SUSPICIOUS"
+ },
+ {
+  "project": "tomli",
+  "position": 28,
+  "commit": "48461cfbaf0775c9025720f80d8afa4fa50c0183",
+  "parent": "d1d6a8571b06b18005af8bf9078c1d37de5353e1",
+  "exit_code": 0,
+  "wall_seconds": 0.38,
+  "subject": "Merge pull request #240 from hukkin/version-2.1.0",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 16 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": true,
+  "run_all_reasons": [
+   ".bumpversion.cfg is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 16,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.184,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 29,
+  "commit": "d1d6a8571b06b18005af8bf9078c1d37de5353e1",
+  "parent": "59ed9efb3d6bb7ec71454601a72088b0a6853b8c",
+  "exit_code": 0,
+  "wall_seconds": 1.19,
+  "subject": "Add attributes to TOMLDecodeError. Deprecate free-form `__init__` args (#238)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 16 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "severity": "notice",
+    "kind": "expected-values-changed",
+    "file": "tests/test_error.py",
+    "message": "the expected values in TestError::test_module_name (tests/test_error.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "test": "TestError::test_module_name"
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 16,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.183,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 0.2,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ },
+ {
+  "project": "tomli",
+  "position": 30,
+  "commit": "59ed9efb3d6bb7ec71454601a72088b0a6853b8c",
+  "parent": "9d25b3f99e37426d33eb8b5513890d723fefd441",
+  "exit_code": 0,
+  "wall_seconds": 0.38,
+  "subject": "Add a comment about implicit lru_cache bound",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 14 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 3,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 14,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.181,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "full_suite_exit": 0,
+  "full_suite_seconds": 0.2,
+  "rescored_with": "0.2.0",
+  "verdict_as_run": "VERIFIED"
+ }
+]

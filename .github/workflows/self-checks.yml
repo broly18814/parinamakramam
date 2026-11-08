@@ -56,7 +56,7 @@ jobs:
         run: python -m pytest -q tests
 
   benchmark:
-    name: practice sets BENCH-001 + BENCH-002 (regression gate)
+    name: practice sets BENCH-001, 002, 003 (regression gate)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -68,6 +68,7 @@ jobs:
         run: |
           python benchmark/run_benchmark.py --set bench001 --check --out /tmp/bench001
           python benchmark/run_benchmark.py --set bench002 --check --out /tmp/bench002
+          python benchmark/run_benchmark.py --set bench003 --check --out /tmp/bench003
 
   dogfood:
     name: pkv checks this change (dogfooding the GitHub Action)

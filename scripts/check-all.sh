@@ -24,7 +24,7 @@ step "pkv self-checks"
 
 step "practice sets (regression gate)"
 out="$(mktemp -d)"
-for set in bench001 bench002; do
+for set in bench001 bench002 bench003; do
   (cd product/verify && uv run --no-project --python "$PY" --with pytest \
     python benchmark/run_benchmark.py --set "$set" --check --out "$out/$set" > /dev/null)
   echo "$set: every verdict matches its prediction"

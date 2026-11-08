@@ -1,0 +1,310 @@
+[
+ {
+  "project": "click",
+  "position": 61,
+  "commit": "ddede2147c9370ab8275f81db4826b6895d2e7dc",
+  "parent": "d2e4a42ff410d92e88293f3552422a4a284c749b",
+  "subject": "`Parameter` typing improvements (#2805)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 62,
+  "commit": "d2e4a42ff410d92e88293f3552422a4a284c749b",
+  "parent": "25edc1e31360efba4f64c8c3c540bbbcfb7876da",
+  "subject": "Extract `_guess_type` from `convert_type` and add overloads (#3372)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 63,
+  "commit": "25edc1e31360efba4f64c8c3c540bbbcfb7876da",
+  "parent": "0cd28d6548f92e46396e0ffdd19ec5ea75b4b5e4",
+  "subject": "Add parametrized tests for `should_strip_ansi` (#2731)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 64,
+  "commit": "0cd28d6548f92e46396e0ffdd19ec5ea75b4b5e4",
+  "parent": "8d3449517a97b6fd457a025bd9c3d2acfd301fa4",
+  "subject": "fix help hint showing shadowed option name (#3208)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 65,
+  "commit": "b03f211e602d915f413068eba87ff08469b38477",
+  "parent": "c8da1fcc2cb4523c1fb5bef7f0ca82394dde1efd",
+  "subject": "Auto-detect `type=UNPROCESSED` when `flag_value` has non-basic types (#3363)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 66,
+  "commit": "c8da1fcc2cb4523c1fb5bef7f0ca82394dde1efd",
+  "parent": "8a2b48901a08b3d2ec3a9bbd151948a9765368c6",
+  "subject": "Split string values from `default_map` for multi-value parameters (#3364)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 67,
+  "commit": "8a2b48901a08b3d2ec3a9bbd151948a9765368c6",
+  "parent": "30a7f7c8e6cf40c1a09f22ac83377c6ae1d201b5",
+  "subject": "`ParamType` and other typing improvements (#3371)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 68,
+  "commit": "8bd8b4a074c55c03b6eb5666edc44a9c43df38a2",
+  "parent": "d777956105fde08e01dd895dde2b86ccdf558d59",
+  "subject": "add codespell pre-commit hook (#3373)",
+  "pkv": "0.2.0",
+  "findings": [
+   {
+    "severity": "notice",
+    "kind": "expected-values-changed",
+    "file": "tests/test_options.py",
+    "message": "the expected values in test_argument_custom_class (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "test": "test_argument_custom_class"
+   },
+   {
+    "severity": "notice",
+    "kind": "expected-values-changed",
+    "file": "tests/test_options.py",
+    "message": "the expected values in test_option_custom_class (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "test": "test_option_custom_class"
+   },
+   {
+    "severity": "notice",
+    "kind": "expected-values-changed",
+    "file": "tests/test_options.py",
+    "message": "the expected values in test_option_custom_class_reusable (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "test": "test_option_custom_class_reusable"
+   }
+  ]
+ },
+ {
+  "project": "click",
+  "position": 69,
+  "commit": "f1f191ecd2c790b161187c78e7c88440e9524e5c",
+  "parent": "4a352253c9ff013e36d11e4a6820d36d00ff2cd4",
+  "subject": "Apply format guidelines to commits since latest 8.3.2 release (#3343)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 70,
+  "commit": "4a352253c9ff013e36d11e4a6820d36d00ff2cd4",
+  "parent": "c7e1ba8448cbcb2cdd9c1c7f4a592e863dcc3995",
+  "subject": "Reduce blast-radius of `UNSET` in `default_map` (#3240)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 71,
+  "commit": "c7e1ba8448cbcb2cdd9c1c7f4a592e863dcc3995",
+  "parent": "76552ff1e8c85837f911fc34037e702ae4327eda",
+  "subject": "Reorder `ParameterSource` (#3248)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 72,
+  "commit": "76552ff1e8c85837f911fc34037e702ae4327eda",
+  "parent": "8c95c73bd5ef89eac638f85f1904a104ba4b1a32",
+  "subject": "Show default string in prompt (#3328)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 73,
+  "commit": "8c95c73bd5ef89eac638f85f1904a104ba4b1a32",
+  "parent": "60cad4ad6583bf885c62d6f4597f3555d1ee1a0f",
+  "subject": "Reconcile default value passing and default activation (#3239)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 74,
+  "commit": "60cad4ad6583bf885c62d6f4597f3555d1ee1a0f",
+  "parent": "e3c87be8c1de04e8795f97aceabb6326e7342928",
+  "subject": "Mark `make_default_short_help` as private API (#3250)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 75,
+  "commit": "89af4ae2d682e8ab9f14a036bad19e8990d828d4",
+  "parent": "32010b9e9a33fa4981de7052c1ae1a71770613ef",
+  "subject": "Expose original file descriptor in `CliRunner` (#3244)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 76,
+  "commit": "452935115a4073a074069d5428db998766886b8b",
+  "parent": "ac2dd7aadf08aa0ce7f75bf0e96b95ad5e62d1b9",
+  "subject": "Path normalization documentation clean-up + `shlex.split` extensive tests (#3330)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 77,
+  "commit": "ac2dd7aadf08aa0ce7f75bf0e96b95ad5e62d1b9",
+  "parent": "1339fd3323357119a9c7a6326c788f80295954ce",
+  "subject": "Allow debugger interactions in tests (#3235)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 78,
+  "commit": "5df10013f7ed8bad94da1e82d58e3711eec1afb3",
+  "parent": "63ea71f9b0544b7c4ba21385a1164a7b29b17e42",
+  "subject": "Fix pager test leaks (#3238)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 79,
+  "commit": "63ea71f9b0544b7c4ba21385a1164a7b29b17e42",
+  "parent": "1458800409ed12076f18451889b0857db36aa522",
+  "subject": "Document and fix command sanitizing with `shlex.split` (#3245)",
+  "pkv": "0.2.0",
+  "findings": [
+   {
+    "severity": "notice",
+    "kind": "skip-in-new-test",
+    "file": "tests/test_termui.py",
+    "message": "the new test test_editor_windows_path_normalization in tests/test_termui.py is marked to be skipped.",
+    "test": "test_editor_windows_path_normalization"
+   }
+  ]
+ },
+ {
+  "project": "click",
+  "position": 80,
+  "commit": "1458800409ed12076f18451889b0857db36aa522",
+  "parent": "04ef3a6f473deb2499721a8d11f92a7d2c0912f2",
+  "subject": "Fix speculative empty string check (#3299)",
+  "pkv": "0.2.0",
+  "findings": [
+   {
+    "severity": "notice",
+    "kind": "expected-values-changed",
+    "file": "tests/test_options.py",
+    "message": "the expected values in test_show_default_with_empty_string (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "test": "test_show_default_with_empty_string"
+   }
+  ]
+ },
+ {
+  "project": "click",
+  "position": 81,
+  "commit": "feffea5ca2537ed36a1d699d3536a65c676fc5c1",
+  "parent": "a9e62f548af4934a109eae38b588a228102d7058",
+  "subject": "fix windows import check",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 82,
+  "commit": "bb7be1f6a91f3fd1267d1a6d68771273d593f9c7",
+  "parent": "6c4a77ba24854dab793a8ff72110a0a24c403c9f",
+  "subject": "Revert \"Use `default=True` as a sentinel for non-boolean flags\"",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 83,
+  "commit": "6c4a77ba24854dab793a8ff72110a0a24c403c9f",
+  "parent": "5850ef97230f84c74d0234ab0f30f23b398a6eee",
+  "subject": "Use `default=True` as a sentinel for non-boolean flags",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 84,
+  "commit": "5850ef97230f84c74d0234ab0f30f23b398a6eee",
+  "parent": "ae46cfd6bc997804893adc799589248eadcdbc29",
+  "subject": "Fix callable ``flag_value`` being instantiated when used as a default (#3225)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 85,
+  "commit": "ae46cfd6bc997804893adc799589248eadcdbc29",
+  "parent": "b6afbf05ea6dbc8a4e7cdd448dd345c783973137",
+  "subject": "`NamedTextIOWrapper`: stop closing buffer (#3139)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 86,
+  "commit": "b6afbf05ea6dbc8a4e7cdd448dd345c783973137",
+  "parent": "fa7f035ab58dc4d9b8818b92fbc6a8f3c3234af6",
+  "subject": "Hide `Sentinel.UNSET` values as `None` in `lookup_default()` (#3224)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 87,
+  "commit": "fa7f035ab58dc4d9b8818b92fbc6a8f3c3234af6",
+  "parent": "dacca25f9964d0e776b5481291e68c8ae90b5944",
+  "subject": "Add cross-reference to tests from `test_defaults.py` (#3223)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 88,
+  "commit": "ebcd548d50662bc8fa4f8b9ec7fe13cb8310bfaa",
+  "parent": "7f7bbe4569ea68e8dabee232eade069ef3310aea",
+  "subject": "Fix handling of options which set both is_flag=False and flag_value=... (#3152)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 89,
+  "commit": "b91bb9548a5617b1197add95e084d569f57149c3",
+  "parent": "ea70da487b05d6bb758d472a3a9ffab4a5b7fcd5",
+  "subject": "Provide altered context to callbacks to hide `UNSET` values as `None` (#3137)",
+  "pkv": "0.2.0",
+  "findings": []
+ },
+ {
+  "project": "click",
+  "position": 90,
+  "commit": "ea70da487b05d6bb758d472a3a9ffab4a5b7fcd5",
+  "parent": "e27b307462b725722f620c69dd1d5509c032d18a",
+  "subject": "Don't test using a file in docs/ (#3102)",
+  "pkv": "0.2.0",
+  "findings": []
+ }
+]

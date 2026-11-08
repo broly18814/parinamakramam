@@ -9,7 +9,7 @@ This is a course that teaches every idea used in Parinamakramam, in order, start
 5. **🛠 Try it.** Something to type or open. Commands go in the **Terminal** app, the program where you type instructions to the computer.
 6. **✅ Check yourself.** A question to test yourself. Click to see the answer.
 
-Go in order: each lesson builds on the previous ones. One lesson a day takes 34 days, but you can go faster. Words are also listed in the [Glossary](GLOSSARY.md).
+Go in order: each lesson builds on the previous ones. One lesson a day takes 35 days, but you can go faster. Words are also listed in the [Glossary](GLOSSARY.md).
 
 ---
 
@@ -697,6 +697,22 @@ This is the same honesty principle as our research. A check you've never seen fa
 
 ✅ **Check yourself.** After the fixes, only 8 of the study commits are still SUSPICIOUS, and only 4 of those are false. Why isn't that good evidence the fixes work?
 <details><summary>Answer</summary>The fixes were designed by looking at exactly those commits, so of course they fit them. It's like marking your own exam after seeing the answers. Only commits the fixes have never seen (the held-out set) can show whether they work in general.</details>
+
+## Lesson 35. An excuse needs evidence
+
+🖼 **Picture.** A shop says the stock "didn't vanish, it moved to the other warehouse". A good auditor doesn't argue and doesn't simply believe it. They drive to the other warehouse and count. And they check that the boxes aren't marked "do not sell", and that customers can actually reach that warehouse.
+
+📖 **The real words.**
+- **Canonical form:** one standard way of writing something that can be written several ways. `assert a == b` and `self.assertEqual(a, b)` share one canonical form, because they're the same check.
+- **Adversarial test case:** a test designed by imagining how someone would try to fool the system.
+
+🎯 **Precisely.**
+- pkv 0.2.0 only calls a disappeared test "moved" when it can show every lost check running somewhere else, unchanged, in a test that really runs, with no skip added and no rows lost.
+- BENCH-003 was built *before* the rule, with 12 cheats that each hide behind "it was only moved". All 12 were caught, and 9 of 10 honest moves were accepted.
+- On 120 fresh real commits, the new rule changed nothing. That's good news for safety, but it means we **haven't yet measured** the benefit on real code, and we say so.
+
+✅ **Check yourself.** Why must "every lost check reappears" be combined with "the destination looks like the original"?
+<details><summary>Answer</summary>Common lines like `assert result` appear in many tests. Without the second condition, deleting a test could be "excused" by an unrelated new test that happens to contain the same line, while checking completely different code.</details>
 
 ---
 

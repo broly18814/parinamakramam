@@ -103,3 +103,45 @@ The order of work is fixed in advance, so I can't tune on what I see:
 - If Q1 or B3-safety fails, the move rule is wrong. It gets fixed or removed **before** anything else, and the excused cases are reported.
 - If Q2 fails, the rule is kept only if Q1 and B3-safety hold. It's then reported as helping less than hoped.
 - BENCH-003 becomes a CI regression gate once 0.2.0 exists.
+
+---
+
+## 6. Results (9 November 2026, pkv 0.2.0, frozen in `0a70020` before either run)
+
+### BENCH-003: run once per version
+
+| | pkv 0.1.2 (baseline) | **pkv 0.2.0** |
+|---|---|---|
+| Disguised cheats caught | 12 / 12 | **12 / 12, all named** |
+| Honest reorganisations flagged (false alarms) | 10 / 10 | **1 / 10** (M09, predicted) |
+| Predictions correct | — | **22 / 22** |
+
+- **B3-safety ✅ passed.**
+- **B3-false-alarms ✅ passed.**
+- **Existing sets:** BENCH-001 is unchanged. In BENCH-002 only G08 changed, to VERIFIED as pre-registered, so its false alarms went from 1/10 to 0/10.
+
+### REAL-002: 120 fresh commits, read only
+
+- pkv 0.1.2 flagged 2 of the 120 commits (tomli #64, #65). Both were labelled **S-intended** and committed before 0.2.0 ran. In both, the tested code was removed in the same commit; neither is a move.
+- pkv 0.2.0's findings on all 120 commits are **identical** to 0.1.2's.
+
+| ID | Prediction | Result |
+|---|---|---|
+| **Q1 (safety)** | No S-true or S-intended finding becomes a notice | ✅ 0 of 2 |
+| Q2 | At least half of the move false alarms cleared | ⚪ **Not testable.** There were no move false alarms among these commits. |
+| Q3 | No crashes | ✅ 0 |
+
+**Honest reading.** REAL-002 shows the new rule did no harm on 120 unseen real commits. It doesn't show that the rule helps on real code, because these commits gave it nothing to do. So the evidence that the rule helps comes from BENCH-003, a practice set written by the same author as pkv.
+
+### Diagnostic only: REAL-001's sets, which I had seen before designing the rule
+
+pkv 0.2.0 was scored from the saved receipts, without running anything. This is **not evidence**, because these cases shaped the design.
+- Of the 4 held-out move false alarms, 2 are cleared completely (tomli #53, #56).
+- In tomli #55, 5 of 6 tests are recognised. The sixth spells `assert isinstance(x, D)` as `self.assertIsInstance(x, D)`, an equivalence the rule doesn't know.
+- tomli #47 stays flagged: two files were merged into one test.
+- In the study set, click's generalised renames and table merges (#6, #17, #27) stay flagged, as predicted. One move in #7 is recognised.
+- **All 15 findings previously labelled S-true or S-intended in REAL-001 are still raised.**
+
+### Decision
+
+pkv 0.2.0 is kept: both safety criteria held, and BENCH-003 met every prediction. The missing spelling equivalences, such as `assertIsInstance`, are **not** added now. They were found by looking at seen data, so adding them needs a fresh held-out set first (open problem OI-13).

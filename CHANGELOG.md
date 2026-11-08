@@ -9,6 +9,27 @@ Before version 1.0, anything may still change.
 
 ## Parinama Verify (`pkv`)
 
+### [0.2.0]: 2026-11-09
+
+#### Added
+- **Move-aware comparison (new module `pkv/moves.py`).** This fixes REAL-001 defect D4. A test that was removed or shrank, or a deleted test file, becomes a notice ("test-moved" / "test-file-moved") instead of suspicious, but only if all five conditions pre-registered in `docs/product/D4-design.md` hold:
+  - every lost check reappears unchanged, each claimed once (`assertEqual` and `assert ==` count as the same check, and swallowed checks don't count);
+  - in a test pytest really runs;
+  - in a destination with the same name, or with at least 80% of the original's statements in order;
+  - with no added skip;
+  - and with no lost parametrize rows.
+- **BENCH-003**, a third practice project: 10 honest reorganisations and 12 cheats disguised as moves. It's now a CI regression gate.
+
+#### Changed
+- BENCH-002 G08 (a test file split in two) is now VERIFIED, as pre-registered. BENCH-002 false alarms went from 1/10 to 0/10.
+
+#### Results
+- BENCH-003: 22/22 predictions correct. 12/12 disguised cheats caught and named. Honest false alarms 1/10 (0.1.2: 10/10).
+- REAL-002 (120 fresh real commits, read only): findings identical to 0.1.2's. No accurate alarm was lost, and there were no crashes. There were no moves in this set, so the benefit on real code is still unmeasured.
+
+#### Known, not fixed
+- Some equivalent spellings aren't recognised yet, for example `self.assertIsInstance(x, T)` and `assert isinstance(x, T)` (OI-13). Tests rewritten in terms of table columns, or generalised while renamed, are still flagged.
+
 ### [0.1.2]: 2026-11-09
 
 Five false alarms found by REAL-001, a replay of 120 real commits from click, more-itertools, boltons and tomli. Each fix has a regression self-check that fails on 0.1.1, plus a cheating look-alike that must still be caught. BENCH-001 and BENCH-002 verdicts are unchanged.

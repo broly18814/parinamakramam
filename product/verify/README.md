@@ -1,4 +1,4 @@
-# Parinama Verify (`pkv`): version 0.1.2
+# Parinama Verify (`pkv`): version 0.2.0
 
 An **independent checker** for code changes, whether an AI or a person made them. It works out which tests a change could break, **runs them itself**, looks for **signs the tests were weakened**, and gives a **receipt** with one verdict. Every sentence in the receipt comes from recorded data, never from an AI's opinion.
 
@@ -11,9 +11,10 @@ An **independent checker** for code changes, whether an AI or a person made them
 | Practice set | Cheats caught | Cheats named | False alarms on honest changes |
 |---|---|---|---|
 | BENCH-001 (16 cheats, 12 honest) | **15 / 16** | 13 | **0 / 12** |
-| **BENCH-002, held out** (13 cheats, 10 honest, different project) | **10 / 13** | 9 | **1 / 10** |
+| **BENCH-002, held out** (13 cheats, 10 honest, different project) | **10 / 13** | 9 | **0 / 10** |
+| **BENCH-003, moved tests** (12 cheats disguised as moves, 10 honest moves) | **12 / 12** | 12 | **1 / 10** |
 
-Predictions were committed before every run, and all 51 came true. The held-out set was written *before* the rules that improved it, so its score is the fairer one.
+Predictions were committed before every run, and all came true. Each held-out set was written *before* the rules it tests, so its score is the fairer one.
 
 **Read these scores carefully:**
 - The scenarios are small, and the same author wrote them and pkv.
@@ -66,8 +67,10 @@ Exit code 2 means pkv itself couldn't complete, for example because the folder i
 | failure-swallowed | a check inside `try / except Exception: pass`, or `contextlib.suppress(AssertionError)` |
 | fewer-cases | rows removed from a `parametrize` table |
 | skip-added | new `skip` / `skipif` / `xfail` markers |
-| always-passes | `assert True`, `assert x == x` |
+| always-passes | `assert True`, `assert 1 == 1` |
 | **test-not-run** | a selected test that pytest **never ran**, *however* it was removed (`-k`, `--deselect`, a conftest hook, a plugin), found by comparing the tests in the code with pytest's own results |
+
+**Moved, not removed (0.2.0).** A test that disappears is excused only when pkv can prove it moved: every check it lost reappears unchanged in a test pytest really runs; the destination clearly is the original (same name, or most of the same statements in order); and it gained no skip and lost no table rows. A cheat that "moves" a test while dropping, loosening, skipping, hiding or swallowing it stays SUSPICIOUS. All 12 such cheats in BENCH-003 were caught.
 
 **Notices (worth a look, often fine):**
 - shared test settings (`conftest.py`) changed;
@@ -75,6 +78,7 @@ Exit code 2 means pkv itself couldn't complete, for example because the folder i
 - expected values edited in the same change as the code;
 - a test deleted together with the code it tested;
 - a new test that checks nothing;
+- a test moved, renamed or reorganised with every check intact;
 - a test that compares a value with itself (`x == x`);
 - selected tests that weren't run, when nothing in the change could have removed them (the project leaves them out on purpose).
 
@@ -83,7 +87,7 @@ Exit code 2 means pkv itself couldn't complete, for example because the folder i
 - `pytest.raises(AssertionError)` wrapped around a check.
 - A skip mark on a single `pytest.param` row.
 - An early `return` before a check.
-- **False alarm:** a test renamed, moved to another file, merged into a `parametrize` table, or a test file split in two, is reported as removed or weaker. Seen in 4 of 120 real click commits.
+- **False alarm:** tests merged into a `parametrize` table, or generalised while being renamed, are still reported as removed. Their checks really are rewritten, so pkv can't prove nothing was lost. Plain moves, renames, splits, merges of files and migrations to unittest are recognised (0.2.0), except for a few spellings such as `assertIsInstance`.
 - **Little narrowing in libraries** whose tests all import the package, when the package's `__init__.py` imports everything: pkv must run every test.
 
 ## Use it on your computer
@@ -160,10 +164,10 @@ The receipt appears on the run's summary page and is kept as a downloadable file
 
 - **Lint and types:** `ruff` lint and `mypy --strict`, both clean.
 - **Self-checks:**
-  - 86 product self-checks, on Python 3.10, 3.12 and 3.14;
+  - 102 product self-checks, on Python 3.10, 3.12 and 3.14;
   - every bug fix has a regression test that fails before the fix;
   - each detection rule was **mutation-tested**: breaking it makes a self-check fail.
-- **Regression gate:** both practice sets; CI fails if any scenario's verdict changes.
+- **Regression gate:** all three practice sets; CI fails if any scenario's verdict changes.
 - **Dogfooding:** pkv checks every upload of this repository.
 - **Run it all locally with one command:**
 
