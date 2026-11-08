@@ -9,7 +9,7 @@ This is a course that teaches every idea used in Parinamakramam, in order, start
 5. **🛠 Try it.** Something to type or open. Commands go in the **Terminal** app, the program where you type instructions to the computer.
 6. **✅ Check yourself.** A question to test yourself. Click to see the answer.
 
-Go in order: each lesson builds on the previous ones. One lesson a day takes 27 days, but you can go faster. Words are also listed in the [Glossary](GLOSSARY.md).
+Go in order: each lesson builds on the previous ones. One lesson a day takes 33 days, but you can go faster. Words are also listed in the [Glossary](GLOSSARY.md).
 
 ---
 
@@ -566,6 +566,95 @@ This is the same honesty principle as our research. A check you've never seen fa
 - The setting `pythonpath = .` tells pytest where a project's own code lives, so the tests can find it from any folder.
 
 📍 **In our project.** `research/pevo/pytest.ini`, `product/verify/pyproject.toml`, and `group_by_project` in `runner.py`.
+
+---
+
+# Part H: Working at a professional standard
+
+## Lesson 28. Benchmarks, held-out sets and the forking-paths trap
+
+🖼 **Picture.** A driving instructor who only ever tests you on the same route. You could memorise that route without learning to drive. A fair examiner keeps a **second route you've never seen**.
+
+📖 **The real words.**
+- **Benchmark**: a fixed set of test situations.
+- **Held-out set**: situations deliberately kept apart from the ones used for improving.
+- **Overfitting**: becoming good at the test rather than at the skill.
+- **Garden of forking paths**: if you try many small variations and keep the one that looks best, you'll find "improvements" that are really just luck.
+- **Freezing a design**: committing to settings *before* the real test.
+
+🎯 **Precisely.**
+- pkv's rules were improved using only BENCH-001's misses. BENCH-002 was written and saved *before* those improvements.
+- The held-out score doubled (5 → 10 of 13), which is evidence the rules generalise.
+- In EXP-002, the design allowed small adjustments after one calibration paper. We **didn't use them**: differences of ±2 points on one paper are smaller than the noise between papers, so choosing by them would be choosing by luck.
+
+📍 **In our project.** `product/verify/benchmark/`; decision D-023; [EXPERIMENT_REGISTRY.md](../governance/EXPERIMENT_REGISTRY.md).
+
+✅ **Check yourself.** After seeing BENCH-002's results, can we now improve pkv using BENCH-002 and still call its score "held out"?
+<details><summary>Answer</summary>No. Once you've looked at it and changed the tool because of it, it's no longer held out. The next improvement needs a fresh set (BENCH-003) written before the change.</details>
+
+## Lesson 29. Reproducing results before touching frozen code
+
+🖼 **Picture.** Re-baking a prize-winning cake after reorganising the kitchen. If it doesn't taste *exactly* the same, the reorganisation changed something.
+
+📖 **The real words.**
+- **Reproducibility**: getting the same results again.
+- **Refactoring**: changing how code is written without changing what it does.
+- **Behaviour-preserving change**: one that provably changes nothing observable.
+
+🎯 **Precisely.** Twice today we changed shared research code: first a tidy-up, then letting the search return its bank. Each time we re-ran all 200 EXP-001 runs and compared every result file with the published ones. They were identical apart from timing fields. Only then was the change accepted. Without this, an "harmless" edit could silently change published science.
+
+## Lesson 30. Linters, type checkers and continuous integration
+
+🖼 **Picture.**
+- A **linter** is a proof-reader for code.
+- A **type checker** checks that every part receives the kind of thing it expects, like a plug fitting its socket.
+- **CI** is a robot that runs every check on every upload.
+
+📖 **The real words.**
+- **Linter**: ours is `ruff`.
+- **Static type checking**: ours is `mypy --strict`.
+- **CI pipeline**: GitHub Actions, with several **jobs**.
+- **Regression gate**: CI fails if quality drops.
+- **Flaky**: a result that changes between runs.
+
+🎯 **Precisely.** These tools found real problems today:
+- The linter found a research self-check that **claimed more than it tested**.
+- The type checker found a **crash** on `pytestmark: list`.
+- Running the practice set twice exposed **non-determinism**, and its cause: the "racy git" fingerprint bug.
+- CI caught an over-long line from a scripted edit.
+
+`scripts/check-all.sh` runs the same checks locally before uploading.
+
+## Lesson 31. GitHub Actions and script injection
+
+🖼 **Picture.** A form whose "name" box gets pasted directly into an instruction for a robot. If someone writes "Bob; also delete everything" as their name, the robot obeys.
+
+📖 **The real words.**
+- **GitHub Action**: a reusable workflow step.
+- **Composite action**: one made of shell steps.
+- **Script injection**: untrusted text pasted into a command so that it *becomes* part of the command.
+
+🎯 **Precisely.**
+- Our action passes every input (branch names, settings) through **environment variables** and quotes them, never pasting `${{ … }}` text into the command itself. GitHub's security guidance recommends exactly this.
+- A rehearsal also caught a subtle bug: a failed run could display an **old receipt** left on the machine. The action now deletes old receipts first.
+
+## Lesson 32. Versions and changelogs
+
+📖 **The real words.**
+- **Semantic Versioning** (MAJOR.MINOR.PATCH): PATCH for bug fixes, MINOR for new features, MAJOR for changes that break existing use.
+- **Changelog**: a dated list of what changed in each version.
+
+🎯 **Precisely.** pkv went 0.0.1 → 0.0.2 (two bug fixes) → 0.1.0 (new detection rules). Before 1.0, anything may change. [CHANGELOG.md](../CHANGELOG.md) records each step, including how every bug was found and tested.
+
+## Lesson 33. Negative results and stop rules
+
+🎯 **Precisely.**
+- EXP-002's idea, learning building blocks from near misses, **failed** its pre-registered test (−2.3 points against C3). My own guess had been a small gain.
+- A professional records this as clearly as a success, explains the likely reason (programs with close *outputs* don't share the right *structure*), and follows the **stop rule** written in advance: at most one more variant, then move on.
+- Stop rules protect a one-person company's most limited resource, which is time.
+
+✅ **Check yourself.** Why write the stop rule *before* seeing the result?
+<details><summary>Answer</summary>After a disappointing result it's tempting to keep trying "just one more tweak" forever. A rule written in advance, when you had no stake in the outcome, decides fairly when to stop.</details>
 
 ---
 

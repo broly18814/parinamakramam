@@ -16,11 +16,21 @@ An independent AI research and product company, started with ₹0 on one MacBook
 | Read why we chose this product | [docs/product/P001…](docs/product/P001-first-workflow-public-evidence.md) |
 | See every important decision and why | [governance/DECISION_LOG.md](governance/DECISION_LOG.md) |
 | See every experiment: predictions, then results | [governance/EXPERIMENT_REGISTRY.md](governance/EXPERIMENT_REGISTRY.md) |
-| Use or read the checker tool | [product/verify/](product/verify/README.md) |
+| Use or read the checker tool (version 0.1.0) | [product/verify/](product/verify/README.md) |
+| See every change, version by version | [CHANGELOG.md](CHANGELOG.md) |
+| Report a security problem | [SECURITY.md](SECURITY.md) |
+| Rules for changing the code | [CONTRIBUTING.md](CONTRIBUTING.md) |
 | See the experiment code | `research/pevo/` |
-| See the raw results | [experiments/EXP-001/](experiments/EXP-001/README.md) |
+| See the raw results | [experiments/EXP-001/](experiments/EXP-001/README.md), `experiments/EXP-002/` |
+| Read the second experiment (negative result) | [docs/research/EXP-002-design.md](docs/research/EXP-002-design.md) |
 
-## Re-run everything (Terminal commands)
+## Check everything (exactly what GitHub's robot runs)
+
+```bash
+scripts/check-all.sh
+```
+
+## Re-run the experiments (Terminal commands)
 
 Research self-checks (11) and the full experiment (about 1.5 minutes):
 
@@ -31,7 +41,7 @@ python3 run_exp001.py --seeds 0-9 --out ../../experiments/EXP-001/results
 python3 ../../experiments/EXP-001/analysis.py
 ```
 
-Checker tool self-checks (54):
+Checker tool self-checks (69):
 
 ```bash
 cd product/verify

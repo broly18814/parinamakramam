@@ -1,47 +1,75 @@
-# Parinama Verify (`pkv`): version 0.0.1
+# Parinama Verify (`pkv`): version 0.1.0
 
-An **independent checker** for code changes, whether an AI or a person made them. It works out which tests a change could break, **actually runs them**, looks for **signs the tests were weakened**, and gives you a **receipt** with one verdict. The full product plan is in [P001](../../docs/product/P001-first-workflow-public-evidence.md); words are explained in the [Glossary](../../docs/GLOSSARY.md).
+An **independent checker** for code changes, whether an AI or a person made them. It works out which tests a change could break, **runs them itself**, looks for **signs the tests were weakened**, and gives a **receipt** with one verdict. Every sentence in the receipt comes from recorded data, never from an AI's opinion.
+
+- **Product plan:** [P001](../../docs/product/P001-first-workflow-public-evidence.md)
+- **Every change:** [CHANGELOG](../../CHANGELOG.md)
+- **Words explained:** [Glossary](../../docs/GLOSSARY.md)
+
+## Measured performance (practice sets, pre-registered)
+
+| Practice set | Cheats caught | Cheats named | False alarms on honest changes |
+|---|---|---|---|
+| BENCH-001 (16 cheats, 12 honest) | **15 / 16** | 13 | **0 / 12** |
+| **BENCH-002, held out** (13 cheats, 10 honest, different project) | **10 / 13** | 9 | **1 / 10** |
+
+Predictions were committed before every run, and all 51 came true. The held-out set was written *before* the rules that improved it, so its score is the fairer one.
+
+**Read these scores carefully:**
+- The scenarios are small, and the same author wrote them and pkv.
+- Performance on real projects hasn't been measured yet.
+- Scenario details and raw results are in [`benchmark/`](benchmark/).
 
 ## The four verdicts
 
-| Verdict | What it means | Exit code\* |
+| Verdict | Meaning | Exit code |
 |---|---|---|
-| ✅ **VERIFIED** | The tests the change could affect ran on exactly this code, all passed, and nothing suspicious was found. | 0 |
-| ❌ **FAILED** | Tests ran and at least one failed, or a test file couldn't even be loaded. | 1 |
-| ❓ **UNVERIFIED** | We couldn't confirm the change works. Possible reasons: changed code that no test checks; tests that didn't finish; every test skipped; files that changed *while* the tests ran. | 3 |
-| ⚠️ **SUSPICIOUS** | The change weakened the tests: deleted tests, fewer checks, new "skip" markers, checks that can never fail. A person must look before trusting "tests pass", **even if every test passed**. | 4 |
+| **VERIFIED** | The tests the change could affect ran on exactly this code, all passed, and nothing suspicious was found. | 0 |
+| **FAILED** | Tests ran and at least one failed, or a test file couldn't be loaded. | 1 |
+| **UNVERIFIED** | We couldn't confirm the change works. Possible reasons: changed code that no test checks; tests that didn't finish; every test skipped; files changed during the run. | 3 |
+| **SUSPICIOUS** | The change weakened the tests. A person must look, **even if every test passed**. | 4 |
 
-\*The **exit code** is a number every program gives back when it finishes. Robots like GitHub Actions read it to decide whether to accept a change. 0 means "all good"; anything else means "stop". Exit code 2 means pkv itself couldn't do the job, for example because the folder isn't a git project.
+Exit code 2 means pkv itself couldn't complete, for example because the folder isn't a git project. Robots such as GitHub Actions read the exit code to accept or block a change.
 
-## What it does, step by step
+## What it checks
 
-| Part | File | What it does, in plain words |
-|---|---|---|
-| **Change reader** | `gitdiff.py` | Asks git which files were added, changed, deleted or renamed, including unsaved edits and brand-new files. |
-| **Fingerprint** | `gitdiff.py` | One short code (a **tree hash**) for the exact state of all the code. Identical code always gives the same fingerprint; change one character and it changes. |
-| **Code map** | `imports.py` | Reads every Python file *without running it* and records which files use which (an **import graph**). |
-| **Test finder** | `affected.py` | Follows the map backwards from each change to every test that could break, and writes the reason. It also lists **changed code that no test checks**. |
-| **Test runner** | `runner.py` | Runs the chosen tests in a separate process, with a time limit and with passwords and tokens hidden from them. It records the exact command, the timing, every result, and the fingerprint before and after. If the project contains several sub-projects, each one runs separately. |
-| **Cheating detector** | `tamper.py` | Compares every changed test file with its previous version, test by test (details below). |
-| **Receipt** | `report.py` | Combines everything into one verdict plus a readable report. Every sentence comes from recorded data, never from an AI's opinion. |
+**Choosing and running tests:**
+- It reads the change with git.
+- It maps which Python files import which, reading the code without running it.
+- It selects every test the change could reach, with a reason for each.
+- It runs them in a separate process, one pytest run per sub-project, with a time limit and with secrets hidden.
+- It records the code's **fingerprint** (tree hash) before and after the run.
 
-### What the cheating detector looks for
+**Signs that tests were weakened (suspicious):**
 
-**⚠️ Suspicious** (the tests were weakened):
-- a test file deleted;
-- a test file renamed so pytest no longer runs it;
-- a test removed;
-- a test that now checks less than before;
-- a new "skip" or "expected to fail" marker;
-- a check that can never fail (`assert True`, `assert x == x`).
+| Rule | Example |
+|---|---|
+| test-file-deleted | a test file deleted while the code it tested stays |
+| test-file-hidden | a test file renamed so pytest no longer collects it |
+| test-removed | a test function removed or renamed |
+| fewer-checks | a test with fewer checks than before |
+| check-weakened | `== 90` became `> 0`; `assertEqual` became `assertTrue` |
+| failure-swallowed | a check inside `try / except Exception: pass`, or `contextlib.suppress(AssertionError)` |
+| fewer-cases | rows removed from a `parametrize` table |
+| skip-added | new `skip` / `skipif` / `xfail` markers |
+| always-passes | `assert True`, `assert x == x` |
+| **test-not-run** | a selected test that pytest **never ran**, *however* it was removed (`-k`, `--deselect`, a conftest hook, a plugin), found by comparing the tests in the code with pytest's own results |
 
-**ℹ️ Notice** (worth a look, often fine):
+**Notices (worth a look, often fine):**
 - shared test settings (`conftest.py`) changed;
-- security-related files changed (login, passwords, payments…);
-- expected answers in a test changed in the same change as the code;
+- security-related files changed;
+- expected values edited in the same change as the code;
+- a test deleted together with the code it tested;
 - a new test that checks nothing.
 
-## Try it
+**Known misses (measured):**
+- An expected answer edited to *match* a bug. This is indistinguishable from an honest fix without knowing the intended behaviour.
+- `pytest.raises(AssertionError)` wrapped around a check.
+- A skip mark on a single `pytest.param` row.
+- An early `return` before a check.
+- **False alarm:** splitting one test file into two is flagged.
+
+## Use it on your computer
 
 From inside a Python project that uses git, with pytest installed:
 
@@ -49,58 +77,70 @@ From inside a Python project that uses git, with pytest installed:
 PYTHONPATH=/Volumes/projects/hope/parinamakramam/product/verify python3 -m pkv check --json .pkv/receipt.json --md .pkv/receipt.md
 ```
 
-Later, to ask "does that receipt still match the code?":
+Then, later:
 
 ```bash
 PYTHONPATH=/Volumes/projects/hope/parinamakramam/product/verify python3 -m pkv fresh .pkv/receipt.json
 ```
 
-This answers **FRESH** (exit code 0) or **STALE** (exit code 1). It's how you catch an AI that ran the tests, then changed more code, then said "tests pass".
+`pkv fresh` answers **FRESH** or **STALE**: does the receipt still match the code exactly?
 
 **Other commands:**
-- `pkv affected` shows which tests would run, and why, without running them.
-- `pkv fingerprint` prints the current fingerprint.
+- `pkv affected` lists the tests that would run and why, without running them.
+- `pkv fingerprint` prints the code's fingerprint.
 
 **Options for `pkv check`:**
-- `--base main` compares with the `main` branch, as a GitHub pull request does.
-- `--no-run` inspects only, without running tests.
-- `--timeout 600` sets a time limit in seconds.
+- `--base main` compares with a branch, as a pull request does.
+- `--no-run` inspects without running anything.
+- `--timeout SECONDS` sets the time limit.
 - `--python PATH` chooses which Python runs the tests.
-- `--keep-env NAME` lets the tests see one environment setting they really need.
+- `--keep-env NAME` passes one environment setting through to the tests.
 
-Keep receipts in a `.pkv/` folder. pkv never counts its own receipts as part of your change or your fingerprint.
+Keep receipts in `.pkv/`: pkv never counts its own receipts as part of a change.
+
+## Use it on GitHub (GitHub Action)
+
+Add these steps to a workflow (`.github/workflows/*.yml`). The project's dependencies and pytest must be installed first:
+
+```yaml
+- uses: actions/checkout@v4
+  with:
+    fetch-depth: 0          # pkv needs the history to compare with
+- uses: actions/setup-python@v5
+  with:
+    python-version: "3.12"
+- run: pip install pytest -r requirements.txt
+- uses: broly18814/parinamakramam/product/verify@main
+  with:
+    fail-on: FAILED,SUSPICIOUS,UNVERIFIED   # the default
+```
+
+The receipt appears on the run's summary page and is kept as a downloadable file (`pkv-receipt`). The verdict is also available to later steps as `steps.<id>.outputs.verdict`.
+
+**Two notes:**
+- The repository is currently **private**, so only its owner can use this action. Other projects can use it once it's made public, which needs a licence decision first (open problem OI-5).
+- This repository uses its own action on every upload, so pkv checks pkv (the `dogfood` job in `.github/workflows/self-checks.yml`).
 
 ## Safety rules
 
-1. **Reads, never runs, your code while analysing it.** The only thing it runs is pytest, on the chosen tests.
+1. **It never runs your code while analysing it.** The only thing it runs is pytest, on the selected tests.
 2. **When unsure, it runs more tests and gives a weaker verdict.** A false "all clear" is the worst thing a checker can do.
-3. **Hides secrets from the tests.** Only basic settings (like `PATH` and `HOME`) are passed on, unless you allow more with `--keep-env`.
-4. **Tells you what it can't see.** Files that load code by name at run time, unreadable files, and changed code with no tests are all reported.
-5. **No AI, no internet, no outside packages.** Only Python's built-in parts (decision D-014).
+3. **It hides secrets from the tests.** Only basic settings are passed on, unless allowed with `--keep-env`.
+4. **It tells you what it can't see.** Dynamic imports, unreadable files and untested code are all reported.
+5. **No AI, no network, no outside packages.** Only Python's built-in parts.
+6. **It isn't a sandbox.** Tests are code. Run untrusted projects in an isolated environment. See [SECURITY.md](../../SECURITY.md).
 
-## Self-checks: 54, all passing (8 November 2026)
+## Quality checks (all run automatically on every upload)
 
-Run them with:
+- **Lint and types:** `ruff` lint and `mypy --strict`, both clean.
+- **Self-checks:**
+  - 69 product self-checks, on Python 3.10, 3.12 and 3.14;
+  - every bug fix has a regression test that fails before the fix;
+  - each detection rule was **mutation-tested**: breaking it makes a self-check fail.
+- **Regression gate:** both practice sets; CI fails if any scenario's verdict changes.
+- **Dogfooding:** pkv checks every upload of this repository.
+- **Run it all locally with one command:**
 
 ```bash
-cd /Volumes/projects/hope/parinamakramam/product/verify
-uv run --no-project --python 3.14 --with pytest python -m pytest -q tests
+scripts/check-all.sh
 ```
-
-GitHub's robot also runs them automatically on every upload, on Python 3.12 and 3.14.
-
-**How we know the self-checks themselves work.** We deliberately broke three safeguards in a copy of the code: secret-hiding, the "fewer checks" detector, and the "changed during the run" verdict. Then we checked that the self-checks fail. The first two were caught at once. The third wasn't, so we added a self-check for it. This technique is called **mutation testing**: testing the tests.
-
-**Mistakes found by using pkv on our own project** (dogfooding). Each one is fixed and now has its own self-check:
-1. A sub-folder's settings file made it demand *every* test in the whole project.
-2. It wrongly called changed files "untested" when a test reached them by a second route.
-3. The receipt showed a garbled command.
-4. When test files couldn't load, it said "2 tests failed". Now it says what really happened.
-5. Tests from two sub-projects couldn't run together. Now each sub-project runs separately.
-
-## Known limits (honest list)
-
-- **It follows imports only.** Code that reads a data file by name isn't traced, so a changed data file means "run every test".
-- **It finds test files by pytest's default names only** (`test_*.py`, `*_test.py`).
-- **It doesn't cut off the network and isn't a full security sandbox.** It runs only the test command, with secrets hidden.
-- **It hasn't been tried on large public projects yet.** That's the next step, together with a practice set of projects with planted cheating, to measure how much it catches.

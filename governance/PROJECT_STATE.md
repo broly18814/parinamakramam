@@ -1,93 +1,90 @@
 # Project state: read this first
 
-**Last updated:** 8 November 2026 (evening) · **Stage:** day 1 of the 90-day plan, with the day 2–4 product work done early
+**Last updated:** 8 November 2026 (night) · **Stage:** day 1 of the 90-day plan; week-1 product work and EXP-002 done early
 
-This file says where everything stands right now, so anyone (you, or a new Claude session) can continue without guessing. Words are explained in the [Glossary](../docs/GLOSSARY.md). To learn all the ideas from zero, use the [course](../docs/LEARN.md) (27 lessons).
+This file says where everything stands right now, so anyone (you, or a new Claude session) can continue without guessing. Words are explained in the [Glossary](../docs/GLOSSARY.md). To learn every idea from zero, use the [course](../docs/LEARN.md) (33 lessons).
 
 ## Where the project lives
 
 - **On this Mac:** `/Volumes/projects/hope/parinamakramam`
 - **Online:** https://github.com/broly18814/parinamakramam
-  - **Private**: only you can see it.
-  - This project is set to always upload as `broly18814`, even though another GitHub account is the default on this Mac (decision D-015).
-- **Automatic checks:** GitHub's robot runs all self-checks on every upload, on Python 3.12 and 3.14.
+  - **Private**; it's the only repository in the account.
+  - This project always uploads as `broly18814`. The Mac's default GitHub account is unchanged.
+- **Backup of the 14 deleted repositories:** `/Volumes/projects/hope/github-backup-broly18814-2026-11-08` (verified; see D-020 and D-021).
+- **Every upload is checked automatically:**
+  - lint and strict types;
+  - tests on Python 3.10, 3.12 and 3.14;
+  - both practice sets as a regression gate;
+  - pkv checking its own change.
+- **Run the same checks locally:** `scripts/check-all.sh`.
 
 ## Done so far
 
-**Research**
-- Read and checked earlier work by others (R001, section 2).
-- Gave a critique of your idea and named its parts precisely (R001, sections 3–4).
-- **Experiment EXP-001** built, self-checked (11 out of 11 pass) and run (R001 section 6; [registry](EXPERIMENT_REGISTRY.md)).
+### Research
+- **Prior work** reviewed and a critique given ([R001](../docs/research/R001-primitive-evolution-prior-art-and-thesis.md)).
+- **EXP-001 (completed):** the right building blocks are worth about 15× more thinking, but discovering them failed. The tidied code reproduces all 200 results exactly.
+- **EXP-002 (completed, negative):** learning from near misses was worse, −2.3 points vs C3, closing −17.7% of the gap. The stop rule now applies: one more variant at most ([design and results](../docs/research/EXP-002-design.md)).
 
-**Product: Parinama Verify (`pkv`)**, full first version ([guide](../product/verify/README.md))
-- Reads what changed, fingerprints the code, maps which files use which, and picks the tests that could break, with reasons.
-- **Runs the tests**: separately per sub-project, with a time limit, secrets hidden, and the fingerprint recorded before and after.
-- **Cheating detector**: deleted, hidden or emptied tests; new "skip" markers; checks that can never fail; plus notices for shared settings, security files and edited expected answers.
-- **Receipt** with one verdict (VERIFIED, FAILED, UNVERIFIED or SUSPICIOUS), saved as JSON and Markdown. `pkv fresh` later says whether a receipt still matches the code.
-- **54 out of 54 self-checks pass.** Mutation testing confirmed the self-checks catch deliberately broken safeguards.
-- **Dogfooding** (using pkv on our own project) found 5 real mistakes. All are fixed and each has a regression test.
+### Product: Parinama Verify 0.1.0 ([guide](../product/verify/README.md))
+- **Full check:**
+  - picks the affected tests, with reasons;
+  - runs them per sub-project, with secrets hidden;
+  - fingerprints the code before and after;
+  - detects 10 kinds of weakened tests, including the run-time "selected but never ran" check;
+  - gives a one-verdict receipt;
+  - `pkv fresh` detects stale receipts.
+- **Measured on pre-registered practice sets** (all 51 predictions correct):
+  - BENCH-001: 15 of 16 cheats caught, 0 of 12 false alarms;
+  - **BENCH-002 (held out): 10 of 13 caught, 1 of 10 false alarms.**
+- **GitHub Action:** `product/verify/action.yml`. This repository uses it on itself.
+- **Quality:**
+  - 69 product self-checks and 16 research self-checks;
+  - `mypy --strict` clean;
+  - mutation-tested detection rules;
+  - two real bugs found and fixed with regression tests: the "racy git" fingerprint bug, and a crash.
 
-**Company habits**
-- Saved with git and uploaded to GitHub.
-- Every document is in plain language, with a glossary, a course, and a technical appendix for specialists.
-
-## What's in the project
-
-| Folder | What it holds |
-|---|---|
-| `research/pevo/` | The puzzle-world experiment, with its self-checks. |
-| `product/verify/` | The checker tool `pkv`, with 54 self-checks. Uses only Python's built-in parts. |
-| `experiments/EXP-001/` | All results from the first experiment, with a [reading guide](../experiments/EXP-001/README.md). |
-| `docs/` | Research report, product report, glossary, course. |
-| `governance/` | This file, the decision log, and the experiment registry. |
-| `.github/workflows/` | Instructions for GitHub's robot (runs the self-checks). |
+### Company habits
+- **Standard project files:** [CHANGELOG](../CHANGELOG.md), [SECURITY](../SECURITY.md), [CONTRIBUTING](../CONTRIBUTING.md).
+- **Versioning:** Semantic Versioning.
+- **Pre-registration:** every experiment and benchmark is pre-registered and committed before it runs.
+- **Plain language:** all documents, with a glossary, a course, and a technical appendix for specialists.
+- **Git history:** shows only the founder as author.
 
 ## What we know (our own results)
 
-- 🧪 In the toy puzzle world, the right building blocks are worth about **15 times more thinking time** (58 → 76.5 out of 100). Our methods for *discovering* them recovered almost none of that.
-- 🧪 Shortcuts with action slots gave a small, real gain (+3.3), and only on patterned puzzles. This was an extra observation, not an advance prediction.
-- 🧪 pkv works correctly on our own project and on all 54 planted situations. **It hasn't been tested on outside projects yet.**
+- 🧪 In the toy puzzle world, the right building blocks are worth about 15× more search. **Neither** backward-looking (EXP-001) **nor** near-miss (EXP-002) discovery captures that value.
+- 🧪 On its practice sets, pkv catches most planted cheats with few false alarms, and its improvements generalised to a held-out set. **It hasn't been tested on real outside projects yet.**
 
 ## Ideas still to test 💡
 
-- Choosing building blocks by whether they help with *unsolved* puzzles closes the gap (EXP-002).
+- A near-miss variant chosen by *structure* (for example "one more search step reaches the target") instead of output similarity: the last allowed variant.
+- Building blocks from real engineering records (EXP-005).
 - Programmers will use, and later pay for, an independent checker (P001).
-- pkv catches most real cheating patterns. To measure this, we'll build a practice set of projects with planted cheating.
 
 ## Open problems
 
-- ~~OI-1: no git.~~ ✅ Fixed.
-- **OI-2:** "remove unused shortcuts" never activates in EXP-001 (fix in EXP-004).
+- **OI-2:** "remove unused shortcuts" never activates (fix planned in EXP-004).
 - **OI-3:** the undo rule keeps changes that make no difference.
 - **OI-4:** read the original TRINITY and Stack Overflow sources before quoting them publicly.
-- **OI-5 (your decision):** the checker's **licence** (MIT or Apache-2.0 are the usual choices; [lesson 21](../docs/LEARN.md)). Needed before making it public.
-- **OI-6:** pkv finds test files only by pytest's default names, and can't trace code that reads data files by name. Both are documented.
-- **OI-7 (waiting for you):** you asked to delete every other repository in `broly18814`. Deletion is permanent, so it needs your explicit confirmation of the list, plus a permission you have to grant yourself. See the decision log entry D-018.
+- **OI-5 (your decision):** the **licence** for pkv. MIT or Apache-2.0 are the usual choices ([lesson 21](../docs/LEARN.md)). It's needed before the repository goes public and before others can use the GitHub Action.
+- **OI-6:** pkv finds tests by pytest's default naming only, and can't trace code that reads data files by name.
+- **OI-8:** known pkv misses: an expected answer edited to match a bug; `pytest.raises(AssertionError)`; a skip mark on one table row; an early `return`. Known false alarm: a test file split in two. Each needs a fresh held-out set (BENCH-003) before it's addressed.
+- **OI-9:** the near-miss scan costs 11× CPU in pure Python. It matters only if the near-miss line continues.
 
 ## Top 5 risks
 
 | Risk | How likely | How bad | What we do about it |
 |---|---|---|---|
 | AI tool makers build their own checker | High | High | Work with every AI tool, run inside CI, publish openly, move fast |
-| Research eats all the time and the product stalls | Medium | High | About 60% product / 40% research each week; stop rules in the registry |
-| Toy-world results don't carry over | High | Medium | EXP-005 on real software records |
-| Too much for one person | High | High | The weekly plan; automation; one product only |
-| Misusing someone's code or data | Low | High | Only made-up data and public code whose licence allows it |
+| Research eats all the time | Medium | High | Stop rules (EXP-002's is now active); about 60% product / 40% research |
+| Toy-world results don't carry over | High | Medium | EXP-005 on real engineering records |
+| Practice-set scores flatter pkv | Medium | High | Held-out sets; next, measure on real public projects |
+| Too much for one person | High | High | Automation (CI, check-all script); one product only |
 
 ## Next steps, in order
 
-1. **A practice set for the checker:** about 20 small made-up projects, each with one known, planted kind of cheating, plus honest changes that must *not* be flagged. Measure how many cheats pkv catches and how many false alarms it raises. This becomes the product's own benchmark.
-2. **Try pkv on 3 public Python projects** whose licences allow it: plant a cheat in a copy, run pkv, and record what happens.
-3. **GitHub add-on (Action):** run `pkv check` automatically on every pull request and post the receipt as a comment.
-4. **EXP-002 code:** invent shortcuts from near-miss attempts on unsolved puzzles. Practice paper 100 only, until the design is frozen.
-
-## Plan for the rest of week 1 (about 6 hours a day)
-
-| Day | Product (checker) | Research | Admin and learning |
-|---|---|---|---|
-| 2 | practice set: 10 cheat types + 10 honest changes | — | lessons 1–8; check whether the name is free as a website and handle |
-| 3 | run the practice set; fix what it finds; publish the score in the README | — | lessons 9–14; create a free GitHub organisation (optional) |
-| 4 | try pkv on 3 public projects | — | lessons 15–20; **decide the licence (OI-5)** |
-| 5 | GitHub Action, version 0 | EXP-002 design document | lessons 21–27 |
-| 6 | — | EXP-002 near-miss shortcut maker + self-checks | — |
-| 7 | review the week; update this file and the logs | EXP-002 practice run (paper 100 only) | reread R001 and P001 |
+1. **Your decision: licence (OI-5).** It unblocks making the repository public, using the GitHub Action elsewhere, and the first real users.
+2. **Real-world evidence for pkv.** Run it, read-only and in a sandboxed copy, on a few public Python projects whose licences allow it, and record what it finds. (Downloading those projects needs your go-ahead.)
+3. **BENCH-003:** a fresh held-out set *before* tackling the known misses in OI-8.
+4. **EXP-002b:** the one remaining near-miss variant, pre-registered (structure-based). If it closes < 10% of the gap, stop and move to EXP-005.
+5. **Publish:** after the licence decision, make the repository public, add the Action to GitHub's Marketplace, and watch install counts (no interviews; D-002).
