@@ -81,3 +81,38 @@ Between 10% and 30% on H9, the line neither stops nor counts as a success. It co
 - Every hypothesis, scored exactly as written, including CPU time and `total_values` per condition.
 - How many unsolved learn-tasks got a near miss each round, and which shortcuts were learned, compared with the hidden concepts.
 - A failure is written up as plainly as a success.
+
+---
+
+## 6. Results (evaluation seeds 10–19, run once after the freeze in D-034)
+
+Source: `experiments/EXP-002b/results/` and `experiments/EXP-002b/hypothesis_tests.txt`. Reproduce with `python3 experiments/EXP-002b/analysis.py`. The re-run results for C0, C3 and the oracle are identical to EXP-002's files, so the comparison is clean.
+
+### Average puzzles solved out of 100
+
+| Puzzles | C0 (fixed) | C3 (learning) | **C3_2x (learning, double effort)** | **C6 (one-step near misses)** | Oracle |
+|---|---|---|---|---|---|
+| Patterned (D-struct) | 55.3 | 54.8 | **58.8** | **53.5** | 71.3 |
+| Random (D-flat) | 67.3 | 65.2 | 67.3 | 62.0 | 62.3 |
+
+Mean effort per run, in values: C0, C3 and the oracle 150,000; C6 270,000; C3_2x 300,000.
+
+### Pre-registered tests
+
+| | Result | Verdict |
+|---|---|---|
+| **H9** gap closed (primary, stop rule) | **−11.5%** [−30.5%, +6.0%] | ❌ **FAIL: below 10%, so the stop rule applies** |
+| **H10** C6 − C3 | −1.3 points [−4.0, +1.3] | ❌ FAIL |
+| **H11** C6 − C3_2x (compute control) | **−5.3 points [−9.0, −1.2]**, C6 lost on 8 of 10 papers | ❌ FAIL: plain search with the same effort is *better* |
+| **H12** C6 − C0 on random puzzles ≤ +2 | −5.3 points | ✅ PASS |
+
+### What we learned
+
+- **My prior was wrong again.** I guessed +2 to +8 points over C3, and the result is −1.3.
+- **Structure-based near misses are rare within a fair budget.** C6 found one for only **95 of 692** unsolved task-rounds (14%). With so few completed programs, a building block seldom recurs across tasks, and what was learned wasn't the hidden concepts.
+- **The strongest finding is the control.** Giving plain learning (C3) **twice the search effort** beat every learner we've built: +4.0 points over C3 [+0.0, +8.2], winning on 7 of 10 papers. At equal effort, *searching more* is still better than *learning differently*.
+- **The exam still works.** The oracle (the cheat student) leads by +16.0 points on all 10 papers. The value of good building blocks is real; three discovery methods have now failed to capture it.
+
+### Decision (D-035)
+
+Following the stop rule written in advance (D-024): **the near-miss line of research is closed.** EXP-002 and EXP-002b both closed less than 10% of the gap. Research effort moves to **EXP-005**, building blocks from real engineering records, which gets its own pre-registration. No further near-miss variants will be tried.

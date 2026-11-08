@@ -24,6 +24,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 ### Research
 - **Prior work** reviewed and a critique given ([R001](../docs/research/R001-primitive-evolution-prior-art-and-thesis.md)).
 - **EXP-001 (completed):** the right building blocks are worth about 15× more thinking, but discovering them failed. The tidied code reproduces all 200 results exactly.
+- **EXP-002b (completed, negative):** near misses chosen by structure closed −11.5% of the gap and lost to plain learning given the same doubled effort. **The near-miss line is closed (D-035)**; research moves to EXP-005.
 - **EXP-002 (completed, negative):** learning from near misses was worse, −2.3 points vs C3, closing −17.7% of the gap. The stop rule now applies: one more variant at most ([design and results](../docs/research/EXP-002-design.md)).
 
 ### Product: Parinama Verify 0.2.0 ([guide](../product/verify/README.md))
@@ -40,7 +41,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 - **GitHub Action:** `product/verify/action.yml`. This repository uses it on itself.
 - **First release:** `pkv-v0.2.0` on GitHub Releases, with the wheel, the source archive and checksums (D-030).
 - **Quality:**
-  - 102 product self-checks and 16 research self-checks;
+  - 102 product self-checks and 22 research self-checks;
   - `mypy --strict` clean;
   - mutation-tested detection rules;
   - two real bugs found and fixed with regression tests: the "racy git" fingerprint bug, and a crash.
@@ -55,7 +56,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 
 ## What we know (our own results)
 
-- 🧪 In the toy puzzle world, the right building blocks are worth about 15× more search. **Neither** backward-looking (EXP-001) **nor** near-miss (EXP-002) discovery captures that value.
+- 🧪 In the toy puzzle world, the right building blocks are worth about 15× more search. **None** of backward-looking (EXP-001), output-similar near-miss (EXP-002) or structure-based near-miss (EXP-002b) discovery captures that value. At equal effort, more plain search (C3_2x) beat them all.
 - 🧪 On its practice sets, pkv catches most planted cheats with few false alarms, and its improvements generalised to a held-out set.
 - 🧪 **On 120 real commits (REAL-001 study set), pkv 0.1.1 had false alarms on 38.** Four of the five causes are fixed in 0.1.2. **On 120 unseen commits (held-out), pkv 0.1.2 had false alarms on 4 (3%)**, all from renamed or moved tests; 0.1.1's rules give 12 on the same commits. No crashes and no selection misses. This holds on four small, well-maintained libraries only.
 
@@ -93,5 +94,5 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 
 1. **Watch adoption, with no interviews (D-002).** pkv is on PyPI as `parinama-verify` 0.2.1 (D-032). Track installs from public numbers only: PyPI's download statistics, GitHub stars, and use of the Action.
 2. **BENCH-004:** a fresh held-out set, written *before* tackling the remaining known misses in OI-8 (`pytest.raises(AssertionError)`, a skip on one table row, an early `return`) and the extra move spellings in OI-13.
-3. **EXP-002b:** the one remaining near-miss variant, pre-registered (structure-based). If it closes < 10% of the gap, stop and move to EXP-005.
+3. **EXP-005 (research):** pre-register learning building blocks from real engineering records (public, licence-permitting commits, such as the REAL-001 projects), now that the near-miss line is closed (D-035). Decide first what "building block" means for real code, and how to measure it fairly.
 4. **Publish more widely:** the first release is out (`pkv-v0.2.0`, D-030). Next, decide how to reach GitHub's Marketplace, which needs `action.yml` at the top of a repository (either a small separate repository for the action, or moving the file). Then watch install counts (no interviews; D-002).

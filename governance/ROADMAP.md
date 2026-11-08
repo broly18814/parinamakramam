@@ -69,7 +69,7 @@ The brief's list (repository search, file retrieval, code explanation, repositor
 | Measure product usage | 🟡 public counters only ([ADOPTION.md](ADOPTION.md)). The baseline is taken; there are no users yet. |
 | Publish a demonstration | ✅ [DEMO.md](../docs/product/DEMO.md), a two-minute reproducible script |
 | Improve major failures | ✅ REAL-001: false alarms down from 38 to 4 per 120 real commits |
-| Run primitive-evolution ablations | 🟡 EXP-001 included ablations. The one allowed follow-up, EXP-002b, isn't run yet. |
+| Run primitive-evolution ablations | ✅ EXP-001's ablations, plus EXP-002b with a compute-matched control (C3_2x). Negative: the near-miss line is closed by the stop rule (D-035). |
 | **Deliverable:** public product evidence and experimental results | 🟡 The experimental results are public. *Product* evidence (other people using it) doesn't exist yet. |
 
 ## Days 71–90: Commercial validation
@@ -80,13 +80,13 @@ The brief's list (repository search, file retrieval, code explanation, repositor
 | Measure activation and retention | ⏳ | The method is defined in ADOPTION.md. It needs users. |
 | Measure cost per task | ⏳ | Easy to do: pkv costs ₹0 per check on the user's machine. To be written down with the first users. |
 | Improve the product | ⏳ (continuous) | |
-| Run the first architecture experiment | ⏳ | After EXP-002b, per the stop rule |
+| Run the first architecture experiment | ⏳ | EXP-005 comes first (D-035) |
 | Investigate compute opportunities | ⏳ | |
 | Prepare the next proprietary-model experiment | ⏳ | |
 
 ## The next items, in the roadmap's order
 
 1. **Founder decisions:** buy a domain, create the GitHub organisation, enable GitHub Discussions. Each is a click or a purchase only the founder can make.
-2. **Days 56–70, research:** EXP-002b, the last allowed near-miss variant, pre-registered first.
+2. **Research:** EXP-002b is done (negative; the near-miss line is closed). Next is pre-registering **EXP-005**, building blocks from real engineering records.
 3. **Days 56–70, product:** watch adoption weekly, and fix whatever real users report, starting with each held-out set (BENCH-004).
 4. **Days 71–90:** start once there are real users. Until then, keep the product free and improving.

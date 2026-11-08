@@ -668,6 +668,7 @@ This is the same honesty principle as our research. A check you've never seen fa
 - EXP-002's idea, learning building blocks from near misses, **failed** its pre-registered test (−2.3 points against C3). My own guess had been a small gain.
 - A professional records this as clearly as a success, explains the likely reason (programs with close *outputs* don't share the right *structure*), and follows the **stop rule** written in advance: at most one more variant, then move on.
 - Stop rules protect a one-person company's most limited resource, which is time.
+- **The stop rule fired.** The one allowed follow-up, EXP-002b (near misses chosen by structure), also failed (−11.5% of the gap). So the near-miss line is closed, as written in advance. Its most useful lesson came from a *control*: plain learning given twice the search effort beat every clever learner. Before claiming a method is smart, check it beats simply spending the same effort on brute force.
 
 ✅ **Check yourself.** Why write the stop rule *before* seeing the result?
 <details><summary>Answer</summary>After a disappointing result it's tempting to keep trying "just one more tweak" forever. A rule written in advance, when you had no stake in the outcome, decides fairly when to stop.</details>

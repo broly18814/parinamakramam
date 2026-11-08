@@ -134,6 +134,10 @@ Both practice sets give exactly the same verdicts as 0.1.0, which CI's regressio
 
 ## Research: Primitive Evolution Engine (`research/pevo`)
 
+### 2026-11-09: EXP-002b (negative result; the near-miss line is closed)
+- New: `pevo/onestep.py` and conditions `C6_onestep` (near misses one step from an exact answer) and `C3_2x` (a compute-matched control). There are 3 new self-checks, and all 200 EXP-001 result files still reproduce exactly.
+- The pre-registered primary test failed: −11.5% of the gap closed, below the stop-rule threshold. C6 also lost to C3_2x by 5.3 points. See `docs/research/EXP-002b-design.md`, section 6.
+
 ### 2026-11-08: code tidy-up (no change in behaviour)
 - Lint fixes:
   - `zip` calls now state their length handling explicitly;

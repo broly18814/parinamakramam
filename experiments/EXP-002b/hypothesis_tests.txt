@@ -1,0 +1,27 @@
+EXP-002b on evaluation seeds 10-19 (run once, after the freeze in D-034)
+
+H9  gap closed (C6 - C0) / (oracle - C0)  [primary]  -11.5 %    [-30.5, +6.0]  -> FAIL: below 10%, the stop rule applies
+H10 C6 - C3 (struct), success if >= +5 and CI > 0    -1.3 pts  [-4.0, +1.3]  won/lost 4/5  -> FAIL
+H11 C6 - C3_2x (struct), success if CI > 0           -5.3 pts  [-9.0, -1.2]  won/lost 2/8  -> FAIL
+H12 C6 - C0 (flat), success if <= +2 pts             -5.3 pts  [-7.8, -2.8]  won/lost 1/8  -> PASS
+
+For context (not pre-registered tests)
+    C3_2x - C3_evolve (struct)                       +4.0 pts  [+0.0, +8.2]  won/lost 7/3  -> 
+    C3_2x - C0_fixed (struct)                        +3.5 pts  [-0.3, +7.2]  won/lost 6/4  -> 
+    C6_onestep - C0_fixed (struct)                   -1.8 pts  [-4.5, +1.0]  won/lost 3/7  -> 
+    O_oracle - C0_fixed (struct)                    +16.0 pts  [+13.0, +18.7]  won/lost 10/0  -> 
+    C3_2x - C0_fixed (flat)                          -0.0 pts  [-2.0, +1.8]  won/lost 5/5  -> 
+
+Mean test score (out of 100), mean effort (values) and CPU seconds per run
+    struct C0_fixed      55.3      150000      2.2 s
+    struct C3_evolve     54.8      150000      2.0 s
+    struct C3_2x         58.8      300000      4.2 s
+    struct C6_onestep    53.5      270000      2.6 s
+    struct O_oracle      71.3      150000      3.3 s
+    flat   C0_fixed      67.3      150000      2.1 s
+    flat   C3_evolve     65.2      150000      1.7 s
+    flat   C3_2x         67.3      300000      3.5 s
+    flat   C6_onestep    62.0      270000      2.2 s
+    flat   O_oracle      62.3      150000      3.0 s
+
+C6 found a one-step near miss for 95 of 692 unsolved learn-task-rounds (struct, all seeds).

@@ -27,7 +27,7 @@ An independent AI research and product company, started with ₹0 on one MacBook
 | The legal terms for using this work | [LICENSE](LICENSE) (Apache-2.0) and [NOTICE](NOTICE) |
 | See the experiment code | `research/pevo/` |
 | See the raw results | [experiments/EXP-001/](experiments/EXP-001/README.md), `experiments/EXP-002/` |
-| Read the second experiment (negative result) | [docs/research/EXP-002-design.md](docs/research/EXP-002-design.md) |
+| Read the second experiment and its last variant (both negative) | [EXP-002](docs/research/EXP-002-design.md), [EXP-002b](docs/research/EXP-002b-design.md) |
 
 ## Check everything (exactly what GitHub's robot runs)
 
@@ -37,7 +37,7 @@ scripts/check-all.sh
 
 ## Re-run the experiments (Terminal commands)
 
-Research self-checks (16) and the full experiment (about 1.5 minutes):
+Research self-checks (22) and the full experiment (about 1.5 minutes):
 
 ```bash
 cd research/pevo

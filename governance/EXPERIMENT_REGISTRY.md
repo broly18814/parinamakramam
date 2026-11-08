@@ -251,7 +251,8 @@ Use records from our checker tool. Only public code whose licence allows it.
 
 ## EXP-002b: near misses chosen by structure (the last allowed variant)
 
-- **Status:** 📝 pre-registered on 9 November 2026, **not yet run**. Committed before any code.
+- **Status:** ✅ finished on 9 November 2026, **negative**. Pre-registered in `745f592`; design frozen in `6ef3a13` before the run.
+- **Result:** H9 ❌ −11.5% of the gap (below 10%, so **the stop rule applies; the near-miss line is closed**). H10 ❌ −1.3 points vs C3. H11 ❌ −5.3 points vs C3_2x (same effort spent on plain search wins). H12 ✅. Next: EXP-005 (D-035).
 - **Design and predictions:** [EXP-002b-design.md](../docs/research/EXP-002b-design.md).
 - **The question:** if near misses are chosen because *one more step* turns them into an exact answer (structure), not because their answers look close, do the learned shortcuts recover the hidden building blocks?
 - **Primary (H9, stop rule):** share of the C0 → oracle gap closed. **Below 10%, the near-miss line stops and research moves to EXP-005.**
