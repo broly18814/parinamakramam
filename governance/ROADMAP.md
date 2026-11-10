@@ -1,6 +1,6 @@
 # The 90-day roadmap: plan and status
 
-The roadmap from the founder's original brief, copied as written, with the status of every item. Day 1 was **8 November 2026**. Last updated: **9 November 2026 (day 2)**.
+The roadmap from the founder's original brief, copied as written, with the status of every item. Day 1 was **8 November 2026**. Last updated: **10 November 2026 (day 3)**.
 
 Status marks:
 - ✅ done;
@@ -24,7 +24,7 @@ Status marks:
 | Study Sakana AI | ✅ | R001 |
 | Define first research experiment | ✅ | EXP-001 in the [registry](EXPERIMENT_REGISTRY.md) |
 | Prepare Mac environment | ✅ | `scripts/check-all.sh` runs everything locally |
-| Create project documentation | ✅ | README, glossary, 35-lesson course, decision log |
+| Create project documentation | ✅ | README, glossary, 37-lesson course, decision log |
 | **Deliverables:** product specification, research map, **technical architecture**, experiment specification, development environment | ✅ | The architecture document was added on day 2: [ARCHITECTURE.md](../docs/ARCHITECTURE.md) |
 
 ## Days 11–25: Product prototype
@@ -66,7 +66,7 @@ The brief's list (repository search, file retrieval, code explanation, repositor
 |---|---|
 | Publish an alpha | ✅ PyPI `parinama-verify` 0.2.1 ("Alpha"), GitHub releases, the Action |
 | Collect voluntary feedback | ✅ issue templates for false alarms, missed cheats and bugs, plus private security reports. **No interviews** (D-002). |
-| Measure product usage | 🟡 public counters only ([ADOPTION.md](ADOPTION.md)). The baseline is taken; there are no users yet. |
+| Measure product usage | 🟡 public counters only ([ADOPTION.md](ADOPTION.md)). Second reading on 10 November: still no real users. |
 | Publish a demonstration | ✅ [DEMO.md](../docs/product/DEMO.md), a two-minute reproducible script |
 | Improve major failures | ✅ REAL-001: false alarms down from 38 to 4 per 120 real commits |
 | Run primitive-evolution ablations | ✅ EXP-001's ablations, plus EXP-002b with a compute-matched control (C3_2x). Negative: the near-miss line is closed by the stop rule (D-035). |
@@ -80,13 +80,39 @@ The brief's list (repository search, file retrieval, code explanation, repositor
 | Measure activation and retention | ⏳ | The method is defined in ADOPTION.md. It needs users. |
 | Measure cost per task | ⏳ | Easy to do: pkv costs ₹0 per check on the user's machine. To be written down with the first users. |
 | Improve the product | ⏳ (continuous) | |
-| Run the first architecture experiment | ⏳ | EXP-005 comes first (D-035) |
+| Run the first architecture experiment | ⏳ | EXP-006 comes first (D-037, D-039) |
 | Investigate compute opportunities | ⏳ | |
 | Prepare the next proprietary-model experiment | ⏳ | |
 
 ## The next items, in the roadmap's order
 
 1. **Founder decisions:** buy a domain, create the GitHub organisation, enable GitHub Discussions. Each is a click or a purchase only the founder can make.
-2. **Research:** EXP-002b is done (negative; the near-miss line is closed). **EXP-005 is done (positive):** building blocks learned from real projects' history describe their future code 13.5% more compactly. Next is pre-registering **EXP-006**: does that make search cheaper?
+2. **Research:** EXP-002b is done (negative; the near-miss line is closed). **EXP-005 is done (positive):** building blocks learned from real projects' history describe their future code 13.5% more compactly. **EXP-006 is designed** (D-039): does that make search cheaper? Next: commit the design, then build and calibrate it on tomli.
 3. **Days 56–70, product:** watch adoption weekly, and fix whatever real users report, starting with each held-out set (BENCH-004).
 4. **Days 71–90:** start once there are real users. Until then, keep the product free and improving.
+
+## The research plan from here (added 10 November 2026)
+
+The 90-day list above names "primitive research" only in general terms. After five experiments the plan is specific. Full reasoning: [R001, sections 2.4 and 7](../docs/research/R001-primitive-evolution-prior-art-and-thesis.md).
+
+| Step | What it is | Depends on |
+|---|---|---|
+| **EXP-006** | Do blocks learned from a project's past let a search find its future code with fewer guesses? Designed (D-039); to be built on tomli, frozen, then run once on packaging, urllib3 and httpx. | The design being committed first |
+| then **EXP-007** | The same blocks, in a search judged by running tests | EXP-006 passing both its main prediction and its double-search control |
+| or **learned guidance** | A small model, trained on the MacBook, that suggests what to try next. The project's first neural network, and the start of the own-model work. | EXP-006 failing, or sharper habits matching the blocks |
+| **Architecture proposals** (the brief's deliverables 9 and 11) | Three candidate designs, written on top of whichever branch holds | EXP-006's result |
+
+## The brief's first year, checked against the evidence so far
+
+| Year-1 goal in the founder's brief | Status on day 3 |
+|---|---|
+| A working software-engineering product | ✅ pkv 0.2.1, public |
+| Repeat usage; early paying customers "if validation succeeds" | ⏳ no users yet; nothing to validate |
+| Self-service distribution | ✅ PyPI and a GitHub Action; 🟡 the Marketplace listing isn't done |
+| Primitive discovery prototype; compositional library learning | ✅ built and tested; the toy-world results were negative, the real-code result positive |
+| Small proprietary models; architecture baselines | ⏳ not started; the first one follows from EXP-006 (see above) |
+| Early research automation | 🟡 by hand, with scripts and self-checks; not automated |
+| English, Telugu and Hindi experiments | ⏳ not started |
+
+Years 2 and 3 stay as written in the brief. Nothing measured so far bears on them.
+

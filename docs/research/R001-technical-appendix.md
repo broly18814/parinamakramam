@@ -85,3 +85,31 @@ v1 measures only (1).
 - O ≈ C0 at 15× B (76.5 vs 76.3).
 
 Raw data: `experiments/EXP-001/results/`. Code hashes are in `summary.json → meta`.
+
+## A4. Real-code formulation (EXP-005 and EXP-006; added 10 November 2026)
+
+The toy-world definitions in A1 need three changes for real code: there are no executable task specifications, the "programs" are human-written, and the prior is estimated from a corpus instead of from the learner's own solutions.
+
+**Corpus and split.** For a repository with pinned commit *c₁* and split commit *c₀* (an ancestor of *c₁*), let F(c) be the set of included functions at commit c, keyed by (path, qualified name). 𝒟_past = F(c₀), and 𝒟_future = F(c₁) \ F(c₀) by key.
+
+**Normalisation ν.** ν maps a function's AST to a tree with the docstring removed, local names α-renamed to v₀, v₁, … in order of first occurrence, string literals → `STR`, and numeric literals outside {−1, 0, 1, 2} → `NUM`. |t| is the node count of ν(t), excluding expression-context markers.
+
+**Fragments.** A fragment f is a subtree of some ν(t) with 0, 1 or 2 direct child expressions replaced by holes, 4 ≤ |subtree| ≤ 40, occurring at least twice without overlap. |f| counts non-hole nodes.
+
+**Library learning (EXP-005).** Greedy MDL: repeatedly add argmax_f [ uses(f) · (|f| − 1) − |f| ], with uses counted on nodes not yet covered, until |L| = K = 50.
+
+**Compression (EXP-005's outcome).** C(L, 𝒟) = 1 − Σ_t |rewrite_L(t)| / Σ_t |t| over t ∈ 𝒟, where rewrite_L applies L's fragments in library order, top-down, without overlap, each match costing one node.
+
+**Grammar (EXP-006).** A base rule is a node type with its non-node field values and list arities; a slot's context is c = (parent type, field). With library L, the rule set is R_L = R_base ∪ L, a probabilistic tree-substitution grammar. With counts n(r, c) from 𝒟_past rewritten by L, and one pseudo-count per fragment in the backoff:
+
+P_L(r | c) = ( n(r, c) + α · P₀(r | kind(c)) ) / ( n(c) + α ), α = 1.
+
+The weights are always fitted on the evaluated project's 𝒟_past, so conditions differ only in L. The no-library, wider-context condition replaces c by c₂ = (grandparent type, grandparent field, parent type, field), backing off to P_∅(r | c) with the same α.
+
+**Search and effort (EXP-006's outcome).** A derivation's cost is g = Σ −log₂ P_L(r | c). A\* on f = g + h, where h sums each open slot's minimum completion cost (admissible), returns complete trees in order of non-increasing probability. Effort E_L(τ) is the number of states materialised before the target τ = (c, shape) is returned; a tree with probability p is reached after at most 1/p complete trees. Solve_B(L) = |{τ : E_L(τ) ≤ B}| / |𝒯|, where 𝒯 is sampled from the subtrees of 𝒟_future with 4 ≤ |τ| ≤ 12.
+
+**The thesis in this notation (hypothesis, v3).** There exist a data source 𝒟 and a learner ℓ with L = ℓ(𝒟) such that Solve_B(L) > Solve_{2B}(∅) on targets drawn after 𝒟 was fixed, and Solve_B(L) > Solve_B(∅ with context c₂). EXP-001, EXP-002 and EXP-002b refuted this for 𝒟 = the learner's own search traces in the toy domain. EXP-006's H17 and H19 test it for 𝒟 = 𝒟_past.
+
+**Statistics.** Percentile bootstrap, 10,000 resamples, seed 0, resampling functions within project (a cluster bootstrap, since several targets share a function); pooled statistics are unweighted means over projects.
+
+**How A1's "alternatives for later" stand.** "Prospective description length of future tasks" is what EXP-005 measured. The Bayesian form, max P(L) · Π P(tasks | L), is the objective that A4's grammar makes computable, because P_L assigns every tree a probability; it hasn't been used for learning yet (greedy MDL on node counts is used instead).

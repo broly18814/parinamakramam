@@ -7,6 +7,15 @@ Take a reading with `scripts/adoption.sh` (dates are UTC) and add the row below.
 | Date (UTC) | PyPI downloads (day / week / month) | Wheel downloads from GitHub releases | Stars | Forks | Repository views, 14 days | Clones, 14 days | Open issues |
 |---|---|---|---|---|---|---|---|
 | 2026-11-08 | not available yet (pypistats updates daily) | 2, both our own release checks | 0 | 0 | 0 (0 unique) | 0 (0 unique) | 0 |
+| 2026-11-10 | 12 / 99 / 0 (the month counter hasn't caught up yet) | 3 | 0 | 0 | 29 (20 unique) | 472 (67 unique) | 0 |
+
+## Notes on each reading
+
+- **2026-11-10 (day 3).** No sign of real use yet, as expected two days after publishing.
+  - PyPI, not counting mirrors: 87 downloads on 8 November and 12 on 9 November. The first-day spike followed by a sharp drop is the usual pattern of scanners and mirrors picking up a new package, plus our own install checks (D-032).
+  - The 472 clones are consistent with GitHub's robot fetching the code for our own checks on every upload (about 40 uploads, several jobs each). We can't tell from the counter how many, if any, were people.
+  - 20 unique visitors viewed the repository page. Nobody starred it, forked it or opened an issue.
+  - A public code search for workflows that use the Action (`broly18814/parinamakramam/product/verify`) found **0** repositories other than ours.
 
 ## How to read these numbers honestly
 

@@ -1,6 +1,6 @@
 # Technical architecture
 
-This is how the two systems in this repository are built: what each part does, how the parts connect, and the rules that hold everywhere. It describes the code as it is (pkv 0.2.1, research code as of EXP-002). Words are explained in the [Glossary](GLOSSARY.md).
+This is how the two systems in this repository are built: what each part does, how the parts connect, and the rules that hold everywhere. It describes the code as it is (pkv 0.2.1, research code as of EXP-005; updated 10 November 2026). Words are explained in the [Glossary](GLOSSARY.md).
 
 ---
 
@@ -80,8 +80,13 @@ git ──▶ gitdiff ──▶ affected ──▶ runner ──▶ report ─�
 | `enumerate.py` | The search: tries programs cheapest-first, keeps one per distinct result, and stops at a fixed **budget** of distinct values. That budget is the fair measure of effort (D-005). |
 | `abstraction.py` | Proposes shortcuts from a set of programs, scored by how much they shorten them (MDL); fits the search habits; random shortcuts as a control. |
 | `nearmiss.py` | EXP-002: finds the closest attempt for each unsolved puzzle. |
+| `onestep.py` | EXP-002b: finds attempts that one more step turns into an exact answer, within a capped effort. |
+| `codeblocks.py` | EXP-005, real code: turns each function into a normalised syntax tree, finds recurring shapes (with up to two gaps), picks 50 by how much they shorten the code, and measures how much they shorten *later* code. It only reads code; nothing is executed. |
 | `learner.py` | The experimental conditions (A, B, C, C-random, D, E, cheat, C5) and the round-by-round loop, with a validation gate that keeps a shortcut only if it helps on held-out practice puzzles. |
 | `run_exp001.py` | Runs conditions × seeds and writes one result file each. |
+| `run_exp005.py` | EXP-005: reads each project's past and future functions through git, at the registered split commits, and writes one result file per project. |
+
+**Designed, not yet written (EXP-006):** a module that fits a probabilistic grammar on a project's past code, with and without the learned blocks, and a best-first search that tries to recover hidden pieces of its future code within a fixed budget ([design](research/EXP-006-design.md)).
 
 **Experimental discipline built into the code:**
 - seeds are fixed;
@@ -94,4 +99,4 @@ git ──▶ gitdiff ──▶ affected ──▶ runner ──▶ report ─�
 
 ## How the two parts relate
 
-They share **no code**. They share a method: pre-registration, held-out tests, honest reporting of failures, and one CI. The research question (inventing building blocks) and the product (verifying changes) were chosen to run in parallel without overwhelming one founder, as the original 90-day roadmap required.
+They share **no code** (as of 10 November 2026; a planned EXP-007 would be the first to reuse pkv's test selection in research). They share a method: pre-registration, held-out tests, honest reporting of failures, and one CI. The research question (inventing building blocks) and the product (verifying changes) were chosen to run in parallel without overwhelming one founder, as the original 90-day roadmap required.

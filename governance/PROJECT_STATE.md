@@ -1,17 +1,18 @@
 # Project state: read this first
 
-**Last updated:** 9 November 2026 · **Stage:** day 2 of the [90-day roadmap](ROADMAP.md). Days 1–55 are done; days 56–70 are mostly done; days 71–90 wait for real users.
+**Last updated:** 10 November 2026 · **Stage:** day 3 of the [90-day roadmap](ROADMAP.md). Days 1–55 are done; days 56–70 are mostly done; days 71–90 wait for real users.
 
-This file says where everything stands right now, so anyone (you, or a new Claude session) can continue without guessing. Words are explained in the [Glossary](../docs/GLOSSARY.md). To learn every idea from zero, use the [course](../docs/LEARN.md) (36 lessons).
+This file says where everything stands right now, so anyone (you, or a new Claude session) can continue without guessing. Words are explained in the [Glossary](../docs/GLOSSARY.md). To learn every idea from zero, use the [course](../docs/LEARN.md) (37 lessons).
 
 ## Where the project lives
 
-- **On this Mac:** `/Volumes/projects/hope/parinamakramam`
+- **On this Mac:** `/Volumes/projects/hope/parinamakramam`. Restored from GitHub on 10 November 2026 after the folder was found empty; every check passed on the restored copy (D-038).
 - **Online:** https://github.com/broly18814/parinamakramam
   - **Public** since 8 November 2026 (D-026); it's the only repository in the account.
   - Turned on: secret scanning, push protection, and private vulnerability reporting.
   - This project always uploads as `broly18814`. The Mac's default GitHub account is unchanged.
-- **Backup of the 14 deleted repositories:** `/Volumes/projects/hope/github-backup-broly18814-2026-11-08` (verified; see D-020 and D-021).
+- **Backup of the 14 deleted repositories: missing.** It was at `/Volumes/projects/hope/github-backup-broly18814-2026-11-08` (D-020, D-021) and was never uploaded anywhere. On 10 November 2026 that folder was gone, deleted through the Trash (D-038, D-041, open problem OI-15).
+- **Study copies of other people's projects** (read-only, never uploaded): `/Volumes/projects/hope/work/exp006/src`.
 - **Every upload is checked automatically:**
   - lint and strict types;
   - tests on Python 3.10, 3.11, 3.12, 3.13 and 3.14;
@@ -23,6 +24,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 
 ### Research
 - **Prior work** reviewed and a critique given ([R001](../docs/research/R001-primitive-evolution-prior-art-and-thesis.md)).
+- **EXP-006 (designed, not built):** does a phrase book of blocks learned from a project's past let a search *find* its future code with fewer guesses? Tested on three projects nobody here has analysed (packaging, urllib3, httpx), against double the search and against sharper habits with no blocks ([design](../docs/research/EXP-006-design.md), D-039).
 - **EXP-001 (completed):** the right building blocks are worth about 15× more thinking, but discovering them failed. The tidied code reproduces all 200 results exactly.
 - **EXP-005 (completed, positive):** building blocks learned from real projects' past code compress their future code by 13.5%, against 1.9% for random fragments; 60% of the best possible. They're mostly general Python idioms, plus a small (+1.9-point) project-specific layer ([design and results](../docs/research/EXP-005-design.md)).
 - **EXP-002b (completed, negative):** near misses chosen by structure closed −11.5% of the gap and lost to plain learning given the same doubled effort. **The near-miss line is closed (D-035)**; research moves to EXP-005.
@@ -55,6 +57,12 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 - **Git history:** shows only the founder as author.
 - **Licence:** Apache License 2.0 ([LICENSE](../LICENSE), decision D-025). This closes open problem OI-5.
 
+## The research idea as it now stands (D-042)
+
+> With limited effort, new building blocks help when the problems contain recurring structure **and** the blocks are learned from a richer source of information than the system's own earlier attempts. Whether a library of blocks then does better than sharper habits over the original blocks is open. 💡 A hypothesis; EXP-006 tests the open part.
+
+What each result leads to next is written down in advance: [R001, section 7.2](../docs/research/R001-primitive-evolution-prior-art-and-thesis.md).
+
 ## What we know (our own results)
 
 - 🧪 In the toy puzzle world, the right building blocks are worth about 15× more search. **None** of backward-looking (EXP-001), output-similar near-miss (EXP-002) or structure-based near-miss (EXP-002b) discovery captures that value. At equal effort, more plain search (C3_2x) beat them all.
@@ -64,12 +72,12 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 
 ## Ideas still to test 💡
 
-- A near-miss variant chosen by *structure* (for example "one more search step reaches the target") instead of output similarity: the last allowed variant.
-- Building blocks from real engineering records (EXP-005).
+- Blocks learned from a project's history make *search* for its future code cheaper, by more than doubling the search would, and by more than sharper habits would (EXP-006).
 - Programmers will use, and later pay for, an independent checker (P001).
 
 ## Open problems
 
+- **OI-15:** the local backup of the 14 deleted repositories is gone for good: the disk's change log shows the folder was put in the Trash and deleted from it on 10 November (D-041). **GitHub can still restore the 14 repositories until about 6 February 2027** (Settings → Repositories → Deleted repositories); that is the founder's step. The two bundles of this project's pre-rewrite history can't be recovered.
 - **OI-2:** "remove unused shortcuts" never activates (fix planned in EXP-004).
 - **OI-3:** the undo rule keeps changes that make no difference.
 - **OI-4:** read the original TRINITY and Stack Overflow sources before quoting them publicly.
@@ -92,9 +100,28 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 | Practice-set scores flatter pkv | Medium | High | Held-out sets; next, measure on real public projects |
 | Too much for one person | High | High | Automation (CI, check-all script); one product only |
 
+## The founder's brief: what is still unwritten
+
+The founder restated the full brief on 10 November 2026. Checked against it, these deliverables don't exist yet as documents. They're listed in the order recommended for writing them.
+
+| Deliverable in the brief | Status | Why this order |
+|---|---|---|
+| 18. Grants, compute credits and incubators in India | not started | Deadlines pass, so it's the only one that gets worse by waiting. It needs fresh checking of official pages. |
+| 14. Own-model roadmap for the MacBook | not started | A small baseline model can be trained on this Mac at no cost, and later architecture work needs that baseline. |
+| 8. Three discovery algorithms, compared in writing | partly | Four have been *tested* (EXP-001, 002, 002b, 005) but never set side by side with pseudocode and costs. |
+| 9 and 11. Three architecture proposals, and how blocks could shape an architecture | not started | Better written after EXP-006, so they build on evidence about whether blocks help search at all. |
+| 15. Languages: English, Telugu, Hindi | not started | Needs dataset licences checked one by one. |
+| 12. An automated research assistant | not started | The manual version (pre-register, run, analyse, self-check) is the specification; automate it once it has stopped changing. |
+| 3 and 16. Full competitor and pricing table; three-part business model | partly | P001 covers the checker's competitors and a first view of earning. Prices should be re-read from official pages at the time a paid offer is designed (D-010). |
+| 7. The full engine design document | partly | `research/pevo` implements a first version; the formal definitions are in R001's appendix. |
+
+Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decision log), 2 (P001), 4 to 6 (R001 and its appendix), 10 (EXP-001), 13 (pkv), 17 (ADOPTION.md).
+
 ## Next steps, in order
 
-1. **Watch adoption, with no interviews (D-002).** pkv is on PyPI as `parinama-verify` 0.2.1 (D-032). Track installs from public numbers only: PyPI's download statistics, GitHub stars, and use of the Action.
-2. **BENCH-004:** a fresh held-out set, written *before* tackling the remaining known misses in OI-8 (`pytest.raises(AssertionError)`, a skip on one table row, an early `return`) and the extra move spellings in OI-13.
-3. **EXP-006 (research):** pre-register whether building blocks learned from a project's past make *search* for its future code cheaper (D-037), with compute-matched controls and an OTHER-library condition.
-4. **Publish more widely:** the first release is out (`pkv-v0.2.0`, D-030). Next, decide how to reach GitHub's Marketplace, which needs `action.yml` at the top of a repository (either a small separate repository for the action, or moving the file). Then watch install counts (no interviews; D-002).
+1. **Founder: decide whether to restore the 14 deleted repositories on GitHub** while its 90-day window is open (OI-15, D-041). If they're restored, keep the new backup in **two** places.
+2. **EXP-006 (research):** the design was uploaded on 10 November 2026, before any code, so it has its timestamp. Next: build it on tomli only, calibrate by the written rules, freeze, and run the three evaluation projects once.
+3. **BENCH-004:** a fresh held-out set, written *before* tackling the remaining known misses in OI-8 (`pytest.raises(AssertionError)`, a skip on one table row, an early `return`) and the extra move spellings in OI-13.
+4. **Watch adoption weekly, with no interviews (D-002).** Reading of 10 November: no real use yet ([ADOPTION.md](ADOPTION.md)). Next reading: 17 November.
+5. **Publish more widely:** decide how to reach GitHub's Marketplace, which needs `action.yml` at the top of a repository (a small separate repository for the action, or moving the file).
+6. **The unwritten deliverables above**, starting with grants and compute (18).

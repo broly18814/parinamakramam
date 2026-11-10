@@ -1,6 +1,12 @@
 # P001: Our first product, and why we chose it (using public evidence only)
 
-**Date:** 8 November 2026 · **Version:** 2 (plain language)
+**Date:** 8 November 2026 · **Version:** 2 (plain language) · **Status notes added:** 10 November 2026. The original text is unchanged; each note is marked with its date.
+
+> **Where this plan stands on 10 November 2026.**
+> - **Built:** all seven steps of section 4. The tool is `pkv` 0.2.1, on PyPI as `parinama-verify`, with a GitHub Action. It has four verdicts, not three: FAILED was added for "the tests ran and failed" (D-016).
+> - **Measured:** on made-up projects with planted cheats, it catches most of them with few false alarms. On 120 unseen real commits from four Python libraries, it gave 4 false alarms, all from renamed or moved tests, with no crashes (REAL-001). Details are in the [project state](../../governance/PROJECT_STATE.md).
+> - **Demand:** not shown yet. Two days after publishing there are downloads by scanners and by us, 20 unique page visitors, and no other project using it ([adoption log](../../governance/ADOPTION.md)). The idea that programmers will use, and later pay for, an independent checker is still 💡 an idea to test.
+> - **Next for the product:** a fresh held-out practice set (BENCH-004) before fixing the known misses, a route to GitHub's Marketplace, and a weekly adoption reading.
 
 **How we decided:** we read public complaints on GitHub (a website where programmers store code and report problems), published surveys, and one published study. **We did not interview anyone.** Unfamiliar words are explained in the [Glossary](../GLOSSARY.md).
 
@@ -131,7 +137,7 @@ We'll watch public numbers:
 - installs from GitHub's add-on store;
 - public problem reports.
 
-We'll also offer an **optional, off-by-default** anonymous counter that records only "how many verified / suspicious", never any code. And we'll publish a **benchmark**: a set of made-up projects with planted cheating, showing how much our tool catches.
+We'll also offer an **optional, off-by-default** anonymous counter that records only "how many verified / suspicious", never any code. *(Note, 10 November 2026: not built. pkv sends nothing anywhere, and demand is read only from public counters. A counter would need its own decision first.)* And we'll publish a **benchmark**: a set of made-up projects with planted cheating, showing how much our tool catches.
 
 Later, we'll offer a paid version. Whether people actually pay is the most honest signal there is.
 
@@ -146,6 +152,8 @@ Prices will be set only after checking what competitors charge, and treated as e
 
 ### How it feeds the research
 
-Every run records a chain: *the change → the map of connected files → which checks were chosen → what happened.* These records are real-world examples of "how engineers trace the effects of a change", which is exactly the kind of reusable building block our research studies (experiment EXP-005). We'll only use **public code whose licence allows it**, never anyone's private code without permission.
+Every run records a chain: *the change → the map of connected files → which checks were chosen → what happened.* These records are real-world examples of "how engineers trace the effects of a change", which is exactly the kind of reusable building block our research studies (experiment EXP-005).
+
+*(Note, 10 November 2026: this hasn't happened yet. With no users there are no such records, so EXP-005 was run on something else: the shapes of code in three public projects' histories. It found that a project's past code predicts the shapes of its future code. The link back to the product is now planned differently: if EXP-006 succeeds, EXP-007 would search for code and judge it by running the project's tests, which is where pkv's test selection could be reused.)* We'll only use **public code whose licence allows it**, never anyone's private code without permission.
 
 > **In plain words: what using it feels like.** You run one command after an AI changes your code. In about a minute it says: *"These 14 checks are the ones your change could break. I ran them. 13 passed and 1 failed. Also, the AI deleted 2 conditions in `test_login.py`. Here's the proof."*

@@ -1,7 +1,7 @@
 # R001: Can a computer invent its own building blocks? What others have done, what we think, and what our first experiment found
 
 **Project:** Parinamakramam ("the course of evolution")
-**Date:** 8 November 2026 · **Version:** 2 (rewritten in plain language) · **Owner:** founder
+**Date:** 8 November 2026 · **Version:** 3 (updated 10 November 2026 with the results of experiments 2 to 5, new sources, and the plan from here; sections 2.3, 2.4 and 7 are new or rewritten, and sections 3 to 6 are unchanged) · **Owner:** founder
 
 > **How to read this.** This report is written for someone who is not a scientist or programmer. When a technical word can't be avoided, it is explained the first time it appears, and the [Glossary](../GLOSSARY.md) has every such word in one place. The exact maths and statistics, for other researchers who want to check our work, are in the separate [technical appendix](R001-technical-appendix.md). You do not need to read it.
 
@@ -73,6 +73,40 @@ Everyone above changes *something* and keeps *something* fixed:
 1. Change the **joining rules**, not only the blocks.
 2. Choose blocks by **"does it help me solve more?"** instead of "does it shorten old solutions?"
 3. Measure all of it **fairly**, with careful comparison groups, on a laptop.
+
+### 2.3 Work on building blocks in *real* code (added 10 November 2026)
+
+Our fifth experiment moved from toy puzzles to real code, so these sources became relevant. For each one, the title, authors, venue and stated result were checked against its arXiv abstract page. The full papers haven't been re-read, so the results are labelled 📄 and described only as their abstracts describe them.
+
+| Who / what | What it does, in plain words | Why it matters to us |
+|---|---|---|
+| **Allamanis & Sutton, "Mining Idioms from Source Code", 2014** ([link](https://arxiv.org/abs/1404.0417)) | Finds the phrases programmers keep reusing ("idioms") automatically, by fitting a grammar whose rules may be whole chunks of code with gaps. | 📄 Mined idioms recur across projects. **This is the closest earlier work to our EXP-005**, so "code has reusable blocks" is not our discovery. |
+| **Sivaraman and others, "Mining Idioms in the Wild", 2021** ([link](https://arxiv.org/abs/2107.06402)) | The same family of method, but on trees that also record how data flows, tested on code in the Hack language. | 📄 Found places worth tidying up in old code better than a version without the data-flow information. |
+| **Shin and others, PATOIS, NeurIPS 2019** ([link](https://arxiv.org/abs/1906.10816)) | Gives mined idioms to a neural code generator as extra "words" it may write in one step. | 📄 Accuracy improved on two datasets. **This is the closest earlier work to our EXP-006.** |
+| **Stengel-Eskin, Prasad & Bansal, ReGAL, ICML 2024** ([link](https://arxiv.org/abs/2401.16467)) | Builds a library of reusable functions by rewriting existing programs, then lets a large language model use them. | 📄 The models predicted programs more accurately with the library. |
+| **Fijalkow and others, distribution-based search, AAAI 2022** ([link](https://arxiv.org/abs/2110.12485)) | Ways to try programs in order from most to least likely under a probabilistic grammar, with proofs of optimality. | The kind of search EXP-006 uses. |
+
+A search on 10 November 2026 for work that measures what EXP-006 measures (search effort at a matched budget, a project's own blocks against other projects' blocks, and blocks against sharper habits, on a time split inside one project) found none. That is "not found in three searches", not "doesn't exist".
+
+### 2.4 How the opening has narrowed after five experiments (added 10 November 2026)
+
+**In plain words.** Section 2.2 named three openings. Here is what our own experiments did to each.
+
+| The opening we named | What we found 🧪 | Where it stands |
+|---|---|---|
+| 1. Change the **joining rules**, not only the blocks | Action slots added 3.3 points on patterned puzzles in EXP-001. That was noticed afterwards, not predicted in advance. | A lead, not a result. Its follow-up (EXP-004) is on hold. |
+| 2. Choose blocks by **"does it help me solve more?"** | Testing each shortcut first gave +4 points on 9 of 10 exam papers, below our 5-point bar, at 15 times the effort. Two "near-miss" methods (EXP-002, EXP-002b) scored slightly below the learner they were built on. | Mostly negative. At equal effort, simply searching more beat every learner we built. |
+| 3. Measure it all **fairly**, on a laptop | Every experiment had a matched-effort comparison, a cheat student and unseen exam papers. | Delivered. This is the part of the project that has worked best. |
+
+What the five experiments say together: **a system can't easily discover good blocks from its own past search, but it can learn them from code that people wrote** (EXP-005: 13.5% shorter descriptions of future code, against 1.9% for random fragments). That learned material turned out to be mostly general Python habits, with only a thin project-specific layer.
+
+So the idea is now stated like this 💡 (a hypothesis, not a result):
+
+> **With limited effort, new building blocks help when two things are true: the problems contain recurring structure, and the blocks are learned from a richer source of information than the system's own earlier attempts. Whether a library of blocks then does better than sharper habits over the original blocks is an open question.**
+
+EXP-006 tests the last sentence directly.
+
+**In engineering terms.** Self-supervised library learning from the learner's own solved or nearly solved tasks (MDL-ranked fragments, utility-gated fragments, and two prospective near-miss variants) recovered none of the oracle library's +18.5-point effect at matched compute, and lost to a 2× search-budget control. Corpus-based fragment mining on human-written code generalised across a temporal split on a description-length measure (OWN − RANDOM = +11.5 points of compression, OWN − OTHER = +1.9). The open question is whether that description-length gain converts into lower search cost, and whether a tree-substitution grammar beats a plain grammar with a wider conditioning context.
 
 ---
 
@@ -239,16 +273,37 @@ Because of this practice run, I added the **cheat student** and **Student E** *b
 
 ## 7. What comes next (details in the [experiment registry](../../governance/EXPERIMENT_REGISTRY.md))
 
-- **EXP-002 · Looking forward, not back.** Look at puzzles the computer *almost* solved (near misses) and invent blocks that would close the gap, using a cheap estimate instead of a full re-test. **Target:** close at least 30% of the 58 → 76.5 gap using at most twice the normal effort.
-- **EXP-003 · Better habits without over-learning.** Blend the learned "what to try first" habits with "try everything equally".
-- **EXP-004 · Real joining-rule changes.** Shortcuts where the same slot appears twice; splitting and merging shortcuts; and fixing the "remove unused shortcuts" feature by removing a shortcut if the score doesn't drop without it.
-- **EXP-005 · From puzzles to real software.** Use the same machinery on records from our product (how a code change affects other code), using only public code whose licence allows it.
+This section was rewritten on 10 November 2026. The plan as first written on 8 November is kept in git snapshot `fe5edc4`.
+
+### 7.1 What happened to the plan of 8 November
+
+| Planned | What happened |
+|---|---|
+| **EXP-002 · Looking forward, not back** (learn from near misses) | Done, **negative**. It closed −17.7% of the gap. A second variant, EXP-002b, closed −11.5% and lost to plain learning given the same doubled effort. The stop rule closed this line (D-035). |
+| **EXP-003 · Better habits without over-learning** | Not run in the toy world. The same question is now asked on real code, as the "sharper habits" guesser in EXP-006. |
+| **EXP-004 · Real joining-rule changes** | On hold. The toy world stopped telling us new things (D-004's condition for moving on), so effort moved to real code. |
+| **EXP-005 · From puzzles to real software** | Done, **positive, read narrowly**. It was run on the *shapes of code* in three projects' histories, not on records from our product as first planned, because the product has no users yet and so no records. |
+
+### 7.2 The plan from here
+
+**EXP-006** is designed and not yet built ([design](EXP-006-design.md)): does a phrase book of blocks learned from a project's past let a search *find* its future code with fewer guesses? What follows depends on its result, and each branch was written down before the experiment exists:
+
+| If EXP-006 shows… | Then the next step is… |
+|---|---|
+| Blocks help, by more than doubling the search would | **EXP-007:** use the library inside a search whose answers are checked by *running tests*, not by exact match. This is the first point where the research and the product (`pkv`) could meet. |
+| Blocks help, but less than doubling the search | Record that more search wins again. The blocks stay a way of *describing* code. |
+| Sharper habits do as well as blocks | Prefer the simpler system. The research turns from libraries of blocks to learned **guidance**: a small model, trainable on the MacBook, that suggests what to try next. |
+| Blocks don't help at all | The block-library line pauses on real code as well as in the toy world, and the next pre-registration is about guidance. |
+
+Two branches lead to learned guidance. That would be the project's first use of a neural network, and the natural place to start the small own-model work the founder's brief asks for.
+
+**Not planned yet, on purpose:** the three architecture proposals in the founder's brief. They should be built on whichever branch above turns out to be true, so they're written after EXP-006.
 
 ---
 
 ## 8. How to re-run everything yourself
 
-These commands run the self-checks (11 tests), the full experiment (about 1.5 minutes), and the analysis:
+These commands run the research self-checks (30 tests, as of 10 November 2026), the full first experiment (about 1.5 minutes), and its analysis:
 
 ```bash
 cd parinamakramam/research/pevo
