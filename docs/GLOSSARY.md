@@ -12,6 +12,8 @@ If a word in any Parinamakramam document confuses you, look it up here. The word
 | **Baseline** | The plain, simple version you compare against. In our experiment it's Student A, who never learns. |
 | **Benchmark** | A standard exam used to compare methods fairly. |
 | **Benchmark (practice set)** | A fixed set of test situations used to measure a tool. pkv's are BENCH-001 and BENCH-002. |
+| **Best-first search / A\* search** | Trying the most promising option first instead of going in a fixed order. A\* ("A-star") is the standard version: it scores each unfinished attempt by its cost so far plus the *least* it could still cost to finish, and always continues the attempt with the lowest total. If that estimate never overestimates, the first finished answer is guaranteed to be the best one. EXP-006 uses it to produce guesses in order from most to least likely. |
+| **Bit (of surprise)** | A unit for how unlikely something is. Each extra bit means half as likely, and about twice as many guesses before a best-first search reaches it. |
 | **Bootstrap / confidence range** | A way of checking whether a result could be luck: reshuffle the results thousands of times and see how much the answer wobbles. If the whole range of likely values is above zero, it's very unlikely to be luck. |
 | **Budget** | How many tries the computer gets. Every student gets the same budget, so nobody wins by trying harder. |
 | **Calibration / practice paper** | The one set of puzzles (number 100) we used to build and fix the system. The real exam papers were kept unseen. |
@@ -19,10 +21,12 @@ If a word in any Parinamakramam document confuses you, look it up here. The word
 | **Changelog** | A dated list of what changed in each version. Ours is CHANGELOG.md. |
 | **CI (Continuous Integration)** | A service that automatically runs a project's checks every time someone changes the code, for example GitHub Actions. *(In the technical appendix, "CI" means confidence interval instead, which is the confidence range above.)* |
 | **CLI (command-line tool)** | A program you run by typing a command in the Terminal instead of clicking buttons. |
+| **Cluster bootstrap** | The bootstrap done on whole groups. In EXP-006 several hidden pieces come from the same function and aren't independent, so we reshuffle whole functions, not single pieces. |
 | **Commit / snapshot** | A saved copy of the whole project at one moment, made with git. You can always go back to it. |
 | **Composite action / GitHub Action** | A reusable step for GitHub's robot. pkv is available as one (product/verify/action.yml). |
 | **Compression / shortening** | Judging a shortcut by how much shorter it makes your *old* solutions. That's the usual method, and our experiment found it picks the wrong shortcuts. |
 | **Condition** | One "student" in our experiment, meaning one version of the computer with certain features switched on or off. |
+| **Context (in a grammar)** | What the computer looks at when it guesses the next piece. In EXP-006 the context is *where* the piece goes, for example "the thing being called in a function call". A wider context looks one level further up as well. |
 | **Data slot** | A blank in a shortcut that takes a thing, such as a list or a number. Compare *action slot*. |
 | **Deprecation / pruning** | Throwing away shortcuts that aren't useful any more. |
 | **Diff** | The list of exactly what changed in the code: which files, which lines added and which removed. |
@@ -31,6 +35,7 @@ If a word in any Parinamakramam document confuses you, look it up here. The word
 | **Enumeration / search** | Trying possible recipes one by one, simplest first. |
 | **Environment variable** | A named setting every program receives from whoever started it, for example `PATH`. These often hold secrets, so pkv hides them from tests. |
 | **Evaluator / exam marker** | The part that marks the results. It's fixed, and the learner can never change it, so it can't cheat. |
+| **Exact match** | Counting a guess as right only if it's identical to the real answer. Strict, but nobody has to judge it. |
 | **Exit code** | The number a program hands back when it finishes. 0 means success. Robots like GitHub Actions read it to decide whether to accept a change. |
 | **Exploratory result** | Something we noticed but didn't predict in advance. It's a lead to follow up, not proof. |
 | **False alarm / missed problem** | The two ways a checker can be wrong. A false alarm says 'problem' when there isn't one. A missed problem says 'all clear' when there is one, and that's far worse. |
@@ -61,6 +66,7 @@ If a word in any Parinamakramam document confuses you, look it up here. The word
 | **Positive control** | A test where the method *should* help, like the cheat student. If it doesn't, the exam is broken. |
 | **Pre-registration** | Writing down predictions and success rules before running an experiment. |
 | **Primitive** | A basic building block, one of the starting actions. |
+| **Probabilistic grammar (PCFG)** | A grammar is a set of rules for building valid code, such as "a call is a function followed by arguments". A *probabilistic* grammar also says how likely each rule is, learned by counting in real code. Multiplying the likelihoods of the rules used gives the likelihood of a whole piece of code. PCFG stands for probabilistic context-free grammar. |
 | **Process / subprocess** | A running program. A subprocess is one started by another program; pkv runs pytest as a subprocess. |
 | **Program / recipe** | A list of instructions a computer follows. |
 | **pytest** | The most common tool for running automatic checks in Python projects. |
@@ -87,6 +93,7 @@ If a word in any Parinamakramam document confuses you, look it up here. The word
 | **Test (automatic check)** | A small program that checks other code works, for example "adding 2 and 3 should give 5". |
 | **Timeout** | A time limit. Tests that run longer are stopped. |
 | **Tree hash** | A short fingerprint of the exact state of all the code. If even one character changes, the fingerprint changes. |
+| **Tree-substitution grammar (TSG)** | A grammar whose rules can be whole ready-made chunks with gaps, not only single steps. Adding EXP-005's building blocks to a probabilistic grammar makes it one. |
 | **Type** | What kind of thing something is: a list, a number, an action. Types decide what can snap together. |
 | **Type checker** | A program that checks every part of the code receives the kind of value it expects. Ours is mypy. |
 | **Untested change** | Changed code that no test reaches. 'All tests pass' says nothing about it. |

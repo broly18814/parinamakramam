@@ -9,7 +9,7 @@ This is a course that teaches every idea used in Parinamakramam, in order, start
 5. **🛠 Try it.** Something to type or open. Commands go in the **Terminal** app, the program where you type instructions to the computer.
 6. **✅ Check yourself.** A question to test yourself. Click to see the answer.
 
-Go in order: each lesson builds on the previous ones. One lesson a day takes 36 days, but you can go faster. Words are also listed in the [Glossary](GLOSSARY.md).
+Go in order: each lesson builds on the previous ones. One lesson a day takes 37 days, but you can go faster. Words are also listed in the [Glossary](GLOSSARY.md).
 
 ---
 
@@ -732,6 +732,39 @@ This is the same honesty principle as our research. A check you've never seen fa
 
 ✅ **Check yourself.** Why does beating the random control matter less than beating the "other projects" control?
 <details><summary>Answer</summary>Almost anything learned from real code beats random fragments. Beating other projects' blocks is what shows the patterns are specific to *this* project, and that margin was small (+1.9 points).</details>
+
+## Lesson 37. Guessing code: grammars, likelihood and best-first search
+
+🖼 **Picture.** Your phone's keyboard guesses your next word, likeliest first. Now imagine a game: I hide one short phrase from a letter you wrote, and the keyboard must guess the whole phrase exactly. A keyboard that only knows single words has to get every word right in a row. A keyboard that also knows your favourite ready-made phrases ("see you tomorrow") can land the whole thing in one go. But a longer list of suggestions also means more wrong ones to get through.
+
+📖 **The real words.**
+- **Abstract syntax tree (AST):** code drawn as a tree. `x.append(y)` is a *call* whose function is "the `append` of `x`" and whose one argument is `y`. Python builds this tree before it runs anything.
+- **Grammar:** the rules for building valid trees, such as "a call has a function and a list of arguments".
+- **Probabilistic grammar (PCFG):** the same rules, each with a likelihood learned by counting real code. The likelihood of a whole tree is the likelihoods of its rules multiplied together.
+- **Bit:** a unit of unlikeliness. Likelihood 1 in 2 is 1 bit, 1 in 8 is 3 bits, 1 in 1,024 is 10 bits. Bits add up where likelihoods multiply, which makes them easier to work with. The formula is bits = −log₂(likelihood).
+- **Best-first search (A\*):** always continue the unfinished guess that could still turn out most likely. It produces finished guesses from most to least likely.
+- **Tree-substitution grammar (TSG):** a grammar that also has ready-made chunks with gaps: our building blocks.
+- **Exact match:** a guess counts only if it's identical to the hidden piece.
+
+🎯 **Precisely.**
+- If guesses come out from most to least likely, an answer with likelihood 1 in N is reached after **at most N guesses**, because there can't be more than N different answers each at least that likely. So every bit saved roughly halves the work.
+- A worked example. Say a hidden phrase needs four rules that are each 1 in 10 likely. Together that's 1 in 10,000, about 13 bits: up to 10,000 guesses. If the whole phrase is one saved block used 1 time in 50, it costs under 6 bits: about 50 guesses.
+- The price: the likelihoods at each step must add up to 1. Every block added takes a little likelihood away from everything else, so answers that *don't* use a block get slightly harder. A library helps only if the first effect beats the second. In the toy puzzle world (EXP-001) it didn't.
+- **A fair rival.** Instead of adding blocks, you can make the habits sharper by looking at more of the surroundings before guessing ("a wider **context**"). If that does as well, the simpler system wins. EXP-006 tests it as its own condition, because a result is only convincing if the simplest explanation was given a fair chance.
+- **Why new projects.** EXP-005 already looked at how well the blocks fit the future code of its three projects. Testing the next idea on the same code would be marking our own exam after seeing the answers, so EXP-006 uses three projects nobody on this project has analysed.
+
+📍 **In our project.** [EXP-006-design.md](research/EXP-006-design.md): the question, the six guessers, eight predictions with their pass and fail rules, and what each outcome will mean. It was written before any code.
+
+🛠 **Try it.** See a real syntax tree:
+
+```
+python3 -c "import ast; print(ast.dump(ast.parse('x.append(y)').body[0].value, indent=1))"
+```
+
+You'll see `Call(` at the top, an `Attribute(` inside it with `attr='append'`, and two `Name(` entries for `x` and `y`. That is four nodes, and it's exactly the kind of piece EXP-006 hides.
+
+✅ **Check yourself.** A block makes one family of answers 100 times cheaper to reach but makes every other answer 2% more expensive. Is it worth adding?
+<details><summary>Answer</summary>It depends on how often that family comes up in the code you'll actually have to write, which is why it has to be measured on future code and can't be settled by argument. If the family is 1 answer in 20, the block clearly pays. If it's 1 in 10,000, the 2% tax on everything else costs more than it saves.</details>
 
 ---
 

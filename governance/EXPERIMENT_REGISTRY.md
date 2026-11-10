@@ -88,9 +88,13 @@ This is how we stop ourselves from fooling ourselves. Words are explained in the
 
 ## EXP-003: Better habits without over-learning (planned)
 
+- **Status on 10 November 2026:** not run in the toy world. The question "are better habits enough, without new blocks?" is now asked on real code, as the sharper-habits condition of EXP-006 (its prediction H19). If that condition matches the block library, this becomes the main research line, with a small trainable model as the habit-learner.
+
 Blend learned "what to try first" habits with "try everything equally". Later, possibly a very small AI model that looks at a puzzle's examples and suggests which blocks to try.
 
 ## EXP-004: Real changes to the joining rules (planned)
+
+- **Status on 10 November 2026:** on hold. Research moved from the toy puzzle world to real code (D-035, D-037). Open problem OI-2 ("remove unused shortcuts" never activates) stays open with it.
 
 - Shortcuts where the same blank appears twice.
 - Splitting and merging shortcuts.
@@ -263,3 +267,28 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
 - **Primary (H9, stop rule):** share of the C0 → oracle gap closed. **Below 10%, the near-miss line stops and research moves to EXP-005.**
 - **Compute control (H11):** must beat plain learning given the same doubled effort (C3_2x).
 - **Cost:** minutes on the MacBook, ₹0.
+
+---
+
+## EXP-006: do learned building blocks make search for real code cheaper?
+
+- **Status:** 📝 design written on 10 November 2026, before any EXP-006 code. It counts as pre-registered from the commit that contains it. Not built, not run.
+- **Design and predictions:** [EXP-006-design.md](../docs/research/EXP-006-design.md).
+- **The question:** hide a small piece of a function that a project's programmers wrote *later*, and let the computer guess it exactly, likeliest guess first. With the same number of guesses allowed, does a phrase book of 50 building blocks learned from the project's *past* (EXP-005's method, unchanged) recover more hidden pieces than no phrase book?
+- **In engineering terms:** exact-match infilling of masked syntax-tree fragments (size 4 to 12) by best-first enumeration from a probabilistic grammar fitted on past code, at a fixed budget of expanded states; the grammar with and without learned tree fragments.
+- **Data:** three projects no earlier experiment touched, chosen by a rule fixed in the design: **packaging, urllib3 and httpx**. tomli is for calibration only. Code is read through git; nothing is executed.
+- **Primary (H16):** OWN − NONE ≥ +3 points at 20,000 states, range excluding 0, positive in all 3 projects.
+- **Compute control (H17):** OWN must beat NONE given **twice** the search.
+- **Simpler-system control (H19):** OWN must beat a grammar with no blocks but sharper habits (two-level context).
+- **Also:** project-specific (H18), better than random (H20), share of the ceiling (H21), "can the test detect a good library at all" (H22), and a replication of EXP-005's compression result on the new projects (R13).
+- **Stop rule:** if H16 fails, or it passes while both H17 and H19 fail, the block-library line pauses on real code too, and the next pre-registration must be about guidance (habits), not blocks.
+- **Cost (estimate):** about 10 minutes across the MacBook's cores, ₹0.
+
+---
+
+## EXP-007: using the blocks in a search checked by running tests (not designed)
+
+- **Status:** a placeholder only. It gets a design and a pre-registration **only if** EXP-006's primary prediction (H16) and its double-search control (H17) both pass.
+- **The idea:** EXP-006 counts a guess as right only if it's written identically to the hidden code. EXP-007 would count it as right if the project's own tests pass, which is closer to what a coding tool has to do, and is where `pkv`'s test selection could be reused.
+- **If EXP-006 fails instead:** this entry is closed unrun, and the next pre-registration is about learned guidance (see EXP-003's status).
+
