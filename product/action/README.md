@@ -64,4 +64,4 @@ The scenarios are small, and the same author wrote them and pkv. In a replay of 
 
 ## Where the code lives
 
-This repository holds only the action, so it can be listed on GitHub's Marketplace. pkv itself, its self-checks, the practice sets and every design decision are in [broly18814/parinamakramam](https://github.com/broly18814/parinamakramam), under `product/verify/`. This `action.yml` is generated there from the original by `product/action/build.py`, so the two never drift apart. Please open issues there.
+This repository holds only the action, so it can be listed on GitHub's Marketplace. pkv itself, its self-checks, the practice sets and every design decision are in [broly18814/parinamakramam](https://github.com/broly18814/parinamakramam), under `product/verify/`. This `action.yml` is generated there from the original by `product/action/build_action.py`, so the two never drift apart. Please open issues there.

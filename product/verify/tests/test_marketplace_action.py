@@ -1,7 +1,7 @@
 """Self-checks for the GitHub Marketplace copy of the action (product/action/).
 
 What must hold:
-- the committed Marketplace action.yml is exactly what build.py makes from the original,
+- the committed Marketplace action.yml is exactly what build_action.py makes from the original,
   so the two can't drift apart;
 - it pins the package version this repository is releasing;
 - its download step installs a correct pkv, and refuses a file whose fingerprint
@@ -10,7 +10,6 @@ What must hold:
 from __future__ import annotations
 
 import hashlib
-import importlib.util
 import os
 import re
 import subprocess
@@ -25,12 +24,15 @@ ROOT = Path(__file__).resolve().parents[3]
 ACTION = ROOT / "product" / "action"
 
 
-def _build_module():
-    spec = importlib.util.spec_from_file_location("marketplace_build", ACTION / "build.py")
-    assert spec and spec.loader
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
-    return mod
+@pytest.fixture
+def b(monkeypatch):
+    """product/action/build_action.py, imported with a plain import statement so pkv's
+    import map sees that these tests check it."""
+    monkeypatch.syspath_prepend(str(ACTION))
+    sys.modules.pop("build_action", None)
+    import build_action
+    yield build_action
+    sys.modules.pop("build_action", None)
 
 
 def _install_script(yml: str) -> str:
@@ -40,14 +42,12 @@ def _install_script(yml: str) -> str:
     return textwrap.dedent(yml[start:end]) + "\n"
 
 
-def test_the_committed_marketplace_action_is_generated_from_the_original():
-    b = _build_module()
+def test_the_committed_marketplace_action_is_generated_from_the_original(b):
     assert (ACTION / "action.yml").read_text() == b.build(b.SOURCE.read_text())
     assert b.main(["--check"]) == 0
 
 
-def test_it_pins_the_version_being_released():
-    b = _build_module()
+def test_it_pins_the_version_being_released(b):
     pyproject = (ROOT / "product" / "verify" / "pyproject.toml").read_text()
     released = re.search(r'^version = "([^"]+)"$', pyproject, re.M)
     assert released and released.group(1) == b.VERSION
@@ -55,8 +55,7 @@ def test_it_pins_the_version_being_released():
     assert len(b.WHEEL_SHA256) == 64 and int(b.WHEEL_SHA256, 16) >= 0
 
 
-def test_the_generator_refuses_an_original_it_does_not_recognise():
-    b = _build_module()
+def test_the_generator_refuses_an_original_it_does_not_recognise(b):
     with pytest.raises(ValueError):
         b.build(b.SOURCE.read_text().replace("    - id: check\n", "    - id: verify\n"))
 

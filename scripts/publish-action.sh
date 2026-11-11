@@ -2,7 +2,7 @@
 # Publish the GitHub Marketplace copy of the action to its own repository.
 #
 # Plain words: GitHub's Marketplace lists an action only if its action.yml is at the
-# top of a repository of its own. This copies product/action/ (made by build.py) and
+# top of a repository of its own. This copies product/action/ (made by build_action.py) and
 # the licence files into github.com/broly18814/parinama-verify-action, saves them
 # there as one commit, and tags it with pkv's version (for example v0.2.1).
 # Listing it in the Marketplace is then a step for the founder on GitHub's website
@@ -18,8 +18,8 @@ ACTION_REPO="https://github.com/broly18814/parinama-verify-action.git"
 if [ -n "$(git status --porcelain)" ]; then
   echo "The working tree has uncommitted changes; commit them first." >&2; exit 1
 fi
-python3 product/action/build.py --check
-version="$(python3 -c 'import sys; sys.path.insert(0, "product/action"); import build; print(build.VERSION)')"
+python3 product/action/build_action.py --check
+version="$(python3 -c 'import sys; sys.path.insert(0, "product/action"); import build_action; print(build_action.VERSION)')"
 tag="v$version"
 source_commit="$(git rev-parse HEAD)"
 
@@ -49,7 +49,7 @@ git -c user.name="$(git -C "$root" config user.name)" -c user.email="$(git -C "$
   commit --quiet -m "Parinama Verify action $version
 
 Generated from broly18814/parinamakramam at $source_commit
-(product/action/, made by product/action/build.py from product/verify/action.yml)."
+(product/action/, made by product/action/build_action.py from product/verify/action.yml)."
 git tag "$tag"
 git "${cred[@]}" push --quiet origin main "refs/tags/$tag"
 echo "Published $tag: $(git rev-parse HEAD)"
