@@ -7,3 +7,5 @@ __pycache__/
 .venv/
 *.egg-info/
 .pkv/
+# Private drafts kept on this Mac only, never uploaded (founder, 11 Nov 2026)
+private/
