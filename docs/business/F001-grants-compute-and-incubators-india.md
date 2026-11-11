@@ -2,6 +2,8 @@
 
 **Date:** 11 November 2026 · **Version:** 1 · **Brief deliverable:** 18
 
+> **Note, 12 November 2026 (D-048):** the founder decided not to apply to private foreign funders: Emergent Ventures, the Transformative AI Fund and similar. The rows about them stay below as research, but they are **not part of the plan**. The recommendation in section 1 and the order in section 5 are replaced by D-048.
+
 **How this was checked:** each row was read on the programme's own page on 11 November 2026, unless the row says otherwise. Rules, amounts and dates change often, so re-read the official page before applying. Each statement carries a label, as in P001:
 - ✅ **Read on the official page today.**
 - 📰 **From a secondary source**, such as a news site or a grant listing. The official page couldn't be read or didn't say.
