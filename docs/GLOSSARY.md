@@ -31,9 +31,11 @@ If a word in any Parinamakramam document confuses you, look it up here. The word
 | **Deprecation / pruning** | Throwing away shortcuts that aren't useful any more. |
 | **Diff** | The list of exactly what changed in the code: which files, which lines added and which removed. |
 | **Dogfooding** | Using your own product on yourself. Running pkv on our own project found 5 real mistakes. |
+| **DPIIT recognition** | The Indian government's official certificate that a company is a "startup". It is free, but only a registered company, LLP or partnership can get it, not a person alone. Most government startup money (the Seed Fund, MeitY schemes, the startup tax holiday) needs it. See F001. |
 | **DSL (domain-specific language)** | The small, fixed set of basic actions the computer starts with. Ours has 26. |
 | **Enumeration / search** | Trying possible recipes one by one, simplest first. |
 | **Environment variable** | A named setting every program receives from whoever started it, for example `PATH`. These often hold secrets, so pkv hides them from tests. |
+| **Equity-free grant (non-dilutive funding)** | Money you don't pay back and that doesn't buy part of your company. Compare an investor, who takes a share (equity) in exchange. |
 | **Evaluator / exam marker** | The part that marks the results. It's fixed, and the learner can never change it, so it can't cheat. |
 | **Exact match** | Counting a guess as right only if it's identical to the real answer. Strict, but nobody has to judge it. |
 | **Exit code** | The number a program hands back when it finishes. 0 means success. Robots like GitHub Actions read it to decide whether to accept a change. |
@@ -48,10 +50,12 @@ If a word in any Parinamakramam document confuses you, look it up here. The word
 | **Held-out set** | Test situations kept apart from the ones used for improving, to check that improvements generalise. |
 | **Hypothesis** | A prediction written down *before* the experiment, so we can't move the goalposts afterwards. |
 | **Import / import graph** | In Python, one file "imports" another to use its code. The import graph is the map of which files use which. We use it to work out which checks a change could affect. |
+| **Incubator** | An organisation, often at a university, that supports young startups with mentoring, space and sometimes money. In India many government grants reach startups only through an incubator. |
 | **JUnit XML** | A standard file format test tools use to write down each test's result. pkv reads it for exact counts. |
 | **Licence** | The legal terms for using someone's work. Ours is the Apache License 2.0: anyone may use, change and share pkv, even commercially, if they keep our licence and notice files. |
 | **Library** | The computer's growing collection of saved shortcuts. |
 | **Linter** | A program that proof-reads code for likely bugs and inconsistent style. Ours is ruff. |
+| **Marketplace (GitHub)** | GitHub's store of ready-made tools, including Actions. Listing is free; it's the main way strangers find an Action. It needs the Action's own repository with `action.yml` at the top. |
 | **MDL (minimum description length)** | The technical name for *compression / shortening*. |
 | **Module** | One Python code file, or a folder of them. |
 | **Monorepo** | One repository holding several projects. Ours holds the research and the product. |
@@ -99,3 +103,4 @@ If a word in any Parinamakramam document confuses you, look it up here. The word
 | **Untested change** | Changed code that no test reaches. 'All tests pass' says nothing about it. |
 | **Validation gate / undo rule** | After each change, check the practice score; if it got worse, undo the change. |
 | **Verdict** | pkv's one-word conclusion: VERIFIED, FAILED, UNVERIFIED or SUSPICIOUS. |
+| **Wheel (`.whl`)** | The ready-built file of a Python package, the one `pip install` downloads. It's a zip file, so it can be checked by its fingerprint and unpacked without pip. |

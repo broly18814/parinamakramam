@@ -43,7 +43,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
   - **BENCH-002 (held out): 10 of 13 caught, 0 of 10 false alarms** (0.1.0 had 1, a split test file);
   - BENCH-003 (cheats disguised as moved tests): 12 of 12 caught, 1 of 10 false alarms.
 - **GitHub Action:** `product/verify/action.yml`. This repository uses it on itself.
-- **Marketplace-ready copy of the Action** (D-045): its own repository, [broly18814/parinama-verify-action](https://github.com/broly18814/parinama-verify-action), tag `v0.2.1`. It downloads pkv 0.2.1 from PyPI and checks its fingerprint. The listing itself is the founder's one-time step ([how](../product/action/PUBLISHING.md)).
+- **Marketplace-ready copy of the Action** (D-045): built and tested in `product/action/`. It downloads pkv 0.2.1 from PyPI and checks its fingerprint, and the robot runs it on every upload. **Not published yet.** Creating its public repository, `broly18814/parinama-verify-action`, waits for the founder's explicit go-ahead; the Marketplace listing is then the founder's one-time step ([how](../product/action/PUBLISHING.md)).
 - **Releases:** `pkv-v0.2.0` (D-030), then `pkv-v0.2.1`, the first on PyPI (`pip install parinama-verify`), each with the wheel, the source archive and checksums.
 - **Quality:**
   - 107 product self-checks and 47 research self-checks;
@@ -110,7 +110,7 @@ The founder restated the full brief on 10 November 2026. Checked against it, the
 
 | Deliverable in the brief | Status | Why this order |
 |---|---|---|
-| 18. Grants, compute credits and incubators in India | not started | Deadlines pass, so it's the only one that gets worse by waiting. It needs fresh checking of official pages. |
+| 18. Grants, compute credits and incubators in India | ✅ written: [F001](../docs/business/F001-grants-compute-and-incubators-india.md) (11 Nov) | Re-read every three months; deadlines and rules change. |
 | 14. Own-model roadmap for the MacBook | not started | A small baseline model can be trained on this Mac at no cost, and later architecture work needs that baseline. |
 | 8. Three discovery algorithms, compared in writing | partly | Four have been *tested* (EXP-001, 002, 002b, 005) but never set side by side with pseudocode and costs. |
 | 9 and 11. Three architecture proposals, and how blocks could shape an architecture | not started | Better written after EXP-006, so they build on evidence about whether blocks help search at all. |
@@ -127,5 +127,6 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
 2. **Research: pre-register the guidance experiment** (D-044). Start from EXP-006's machinery, which is built and tested; compare guessers that use more context against each other at equal effort, on rich and pyparsing (untouched so far), with NONE and CTX2 as the baselines to beat. A small neural guesser trainable on the MacBook is the natural strong condition.
 3. **BENCH-004:** a fresh held-out set, written *before* tackling the remaining known misses in OI-8 (`pytest.raises(AssertionError)`, a skip on one table row, an early `return`) and the extra move spellings in OI-13.
 4. **Watch adoption weekly, with no interviews (D-002).** Reading of 10 November: no real use yet ([ADOPTION.md](ADOPTION.md)). Next reading: 17 November.
-5. **Founder: list the action on GitHub's Marketplace.** This is a one-time step on GitHub's website: accept the Marketplace Developer Agreement and tick "publish" on the `v0.2.1` release ([steps](../product/action/PUBLISHING.md)). Everything else is done (D-045).
-6. **The unwritten deliverables above**, starting with grants and compute (18).
+5. **Founder: publish the action.** Say yes to creating the public repository `broly18814/parinama-verify-action`; then `scripts/publish-action.sh` uploads it. After that comes your one-time step on GitHub's website: accept the Marketplace Developer Agreement and tick "publish" on the `v0.2.1` release ([steps](../product/action/PUBLISHING.md)). Everything else is done and tested (D-045).
+6. **Funding, as individuals first ([F001](../docs/business/F001-grants-compute-and-incubators-india.md)):** draft applications to Emergent Ventures India, then the Transformative AI Fund, for the founder to read and submit. Registering a company is deferred until pkv has real users; that is the founder's decision.
+7. **The unwritten deliverables above**, next the own-model roadmap (14).
