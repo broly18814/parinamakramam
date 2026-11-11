@@ -261,3 +261,63 @@ They come from **one small project** (42 past functions), used for building and 
 
 **The design is frozen from the commit that contains this section.** The analysis script (`experiments/EXP-006/analysis.py`) is in the same commit. The evaluation run happens once, after it.
 
+---
+
+## 10. Results (evaluation projects, run once after the freeze in D-043)
+
+Run on 11 November 2026 from the frozen snapshot `488ca6f`, with no uncommitted changes (every result file records this). Source: `experiments/EXP-006/results/` and `experiments/EXP-006/hypothesis_tests.txt`. Reproduce with `python3 experiments/EXP-006/analysis.py`; a self-check requires that output to match exactly. The whole run took 39 seconds on the MacBook, far below the 10-minute estimate, because the frozen budget (5,000) is small.
+
+### In plain words first
+
+- **The phrase book helps a little.** With the project's own phrase book, the guesser found 18.3 of 100 hidden pieces within 5,000 guesses, against 14.2 with no phrase book. It helped in all three projects.
+- **But simply guessing twice as long helps just as much.** With no phrase book and 10,000 guesses, it found 18.5.
+- **And sharper habits, with no phrase book at all, did better than the phrase book:** 22.6 of 100.
+- So the extra machinery isn't worth it here. The simpler system wins, and the rule written in advance says: pause the phrase-book line and work on better habits next.
+
+### Found, out of 100 hidden pieces, within 5,000 guesses
+
+| Project | Pieces | Buildable at all | NONE | OWN | RANDOM | OTHER | ORACLE | CTX2 | NONE, 10,000 guesses |
+|---|---|---|---|---|---|---|---|---|---|
+| packaging | 341 | 71.6% | 16.4 | 21.1 | 18.8 | 19.6 | 22.0 | 21.7 | 20.5 |
+| urllib3 | 374 | 68.7% | 15.0 | 17.4 | 15.8 | 17.9 | 19.8 | 20.9 | 18.7 |
+| httpx | 410 | 90.5% | 11.2 | 16.3 | 11.7 | 14.6 | 15.9 | 25.4 | 16.3 |
+| **Average** | | | **14.2** | **18.3** | 15.4 | 17.4 | 19.2 | **22.6** | **18.5** |
+
+### Pre-registered tests
+
+| | Result | Verdict |
+|---|---|---|
+| **H16** OWN − NONE (primary) | **+4.1 points** [+2.5, +5.7], positive in all 3 | ✅ PASS |
+| **H17** OWN − NONE with double the search (compute control) | −0.3 [−1.9, +1.4] | ❌ FAIL: doubling the search does as well |
+| **H18** OWN − OTHER (project-specific) | +0.9 [−0.1, +1.8] | ❌ FAIL: other projects' blocks search about as well |
+| **H19** OWN − CTX2 (simpler-system control) | **−4.4** [−6.3, −2.5] | ❌ FAIL: sharper habits are clearly better |
+| **H20** OWN − RANDOM | +2.9 [+1.4, +4.4] | ✅ PASS |
+| **H21** share of the cheat library's gain | 81.4% [60.3, 105.0] | ✅ PASS |
+| **H22** the test can detect a good library | +5.0 [+3.4, +6.7] | ✅ PASS |
+| **R13** EXP-005 replicated on new projects (compression OWN − RANDOM) | +11.4 [+10.1, +12.6], positive in all 3 | ✅ PASS |
+
+**Registered reading:** H16 passed, but both H17 and H19 failed, so **the stop rule applies**: the block-library line pauses on real code, and the next pre-registration is about guidance (better habits), not blocks.
+
+### My prior, against what happened
+
+| | Prior (written before any code) | Result |
+|---|---|---|
+| NONE at 5,000 | 15–35 of 100 | 14.2 (just below) |
+| H16 | +2 to +6, ~60% to pass | +4.1, passed |
+| H17 | ~45% | failed |
+| H18 | ~30% | failed |
+| H19 | ~50%, "the one I'm least able to predict" | failed clearly |
+| H20, H22, R13 | ~85%, ~85%, ~90% | all passed |
+| H21 | 30–60% | 81% (higher) |
+
+### What this does and doesn't mean
+
+- **It means:** the phrase book's gain in search is real but small: worth about doubling the search, not more. A plainer improvement to the guesser, looking one level further up the code before guessing, beats it by 4.4 points. The cheat phrase book (learned on the answers) gains only 5.0 points, so even a perfect library of this kind has little to offer this search. The past already captures 81% of that small ceiling.
+- **It also means EXP-005 replicates:** on three projects nobody here had analysed, the past's blocks again describe future code far more compactly than random fragments (12.9% vs 1.5%), and other projects' blocks again come close (12.1%).
+- **Where the blocks help most:** medium pieces (7 to 9 nodes), where OWN found 4.0 of 100 against CTX2's 2.4. That is a lead, not a test: the numbers are tiny.
+- **It doesn't mean** blocks never help search. This is one grammar, one search method, exact match, small pieces, three libraries. A neural guesser could behave differently.
+- **Limits:** 28 to 31% of pieces in packaging and urllib3 can't be built at all from past code (a name or attribute never seen before). They count as unsolved in every condition, which pulls every score down equally.
+
+### Decision (D-044)
+
+Following the reading registered in section 5, the block-library line pauses on real code (its toy-world version was closed by D-035). EXP-007 is closed unrun. The next research pre-registration is about **guidance**: what to guess next. CTX2 is the simplest form of guidance, and it won; the natural next question is how much further better context can go, at equal effort.

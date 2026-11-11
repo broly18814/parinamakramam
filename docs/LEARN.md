@@ -9,7 +9,7 @@ This is a course that teaches every idea used in Parinamakramam, in order, start
 5. **🛠 Try it.** Something to type or open. Commands go in the **Terminal** app, the program where you type instructions to the computer.
 6. **✅ Check yourself.** A question to test yourself. Click to see the answer.
 
-Go in order: each lesson builds on the previous ones. One lesson a day takes 37 days, but you can go faster. Words are also listed in the [Glossary](GLOSSARY.md).
+Go in order: each lesson builds on the previous ones. One lesson a day takes 38 days, but you can go faster. Words are also listed in the [Glossary](GLOSSARY.md).
 
 ---
 
@@ -765,6 +765,26 @@ You'll see `Call(` at the top, an `Attribute(` inside it with `attr='append'`, a
 
 ✅ **Check yourself.** A block makes one family of answers 100 times cheaper to reach but makes every other answer 2% more expensive. Is it worth adding?
 <details><summary>Answer</summary>It depends on how often that family comes up in the code you'll actually have to write, which is why it has to be measured on future code and can't be settled by argument. If the family is 1 answer in 20, the block clearly pays. If it's 1 in 10,000, the 2% tax on everything else costs more than it saves.</details>
+
+## Lesson 38. When the simpler system wins
+
+🖼 **Picture.** Two ways to type faster on your phone: memorise 50 ready-made phrases, or have the keyboard look at the word *before* the one you're typing. We tested both on real code. The phrases helped a little, about as much as simply taking twice as long. Looking at one more word helped twice as much as the phrases.
+
+📖 **The real words.**
+- **Compute-matched control:** the plain method given the same extra effort the clever method costs. If it does as well, the cleverness bought nothing.
+- **Simpler-system control:** the simplest alternative way to get the same benefit, given a fair chance.
+- **Ceiling (oracle):** the best a method of this kind could possibly do. Here it was a phrase book learned on the hidden answers themselves.
+- **Stop rule:** a rule, written in advance, for when to stop a line of research.
+
+🎯 **Precisely.**
+- EXP-006 hid 1,125 small pieces of newer code in three projects and counted guesses. Within 5,000 guesses: no phrase book 14.2 of 100, own phrase book 18.3, no phrase book with twice the guesses 18.5, sharper habits 22.6.
+- Even the cheat phrase book reached only 19.2. A perfect library of this kind has little room in this search, while a better guesser has plenty.
+- The phrase-book result was positive (+4.1, unlikely to be luck), and it would have been easy to report just that. The two controls written in advance turned it into the honest conclusion: the extra machinery isn't worth it here.
+
+📍 **In our project.** [EXP-006 results](research/EXP-006-design.md), section 10, and decision D-044.
+
+✅ **Check yourself.** The phrase book beat no phrase book by 4.1 points, and the range [+2.5, +5.7] excludes zero. Why isn't that enough to recommend it?
+<details><summary>Answer</summary>Because the phrase book costs extra work, and spending that work on plain search gave the same gain. And a simpler change (looking at more context) gave twice the gain. A result only shows a method is worth using when it beats the cheapest alternatives, not just doing nothing.</details>
 
 ---
 

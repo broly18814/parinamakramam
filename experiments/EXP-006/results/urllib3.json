@@ -1,0 +1,10322 @@
+{
+ "project": "urllib3",
+ "url": "https://github.com/urllib3/urllib3.git",
+ "licence": "MIT",
+ "pinned": "c5347bbd39203d68d7b0e3ffb83ced3e3b4b9109",
+ "split": "6ec2a1d36872a583aa32c54e345633aae1c332d6",
+ "split_date": "2024-06-21",
+ "past_functions": 498,
+ "future_functions": 73,
+ "past_size": 26749,
+ "learn_seconds": 1.69,
+ "libraries": {
+  "OWN": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "HOLE | None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 405
+    },
+    {
+     "shape": "HOLE is None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 94
+    },
+    {
+     "shape": "HOLE is not None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 93
+    },
+    {
+     "shape": "HOLE('STR')",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 136
+    },
+    {
+     "shape": "typing.Mapping[str, str]",
+     "size": 6,
+     "holes": 0,
+     "uses_in_training": 27
+    },
+    {
+     "shape": "HOLE | HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 103
+    },
+    {
+     "shape": "HOLE == HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 99
+    },
+    {
+     "shape": "v2 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 99
+    },
+    {
+     "shape": "HOLE and HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 98
+    },
+    {
+     "shape": "v1 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 76
+    }
+   ]
+  },
+  "RANDOM": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "HOLE != 0",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 11
+    },
+    {
+     "shape": "v28.drain_conn()",
+     "size": 4,
+     "holes": 0,
+     "uses_in_training": 4
+    },
+    {
+     "shape": "v6.verify_mode = v1",
+     "size": 4,
+     "holes": 0,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "HOLE('STR', HOLE, 'STR')",
+     "size": 3,
+     "holes": 2,
+     "uses_in_training": 8
+    },
+    {
+     "shape": "HOLE[1:]",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 7
+    },
+    {
+     "shape": "raise OSError(v3.args[0], str(v3)) from v3",
+     "size": 11,
+     "holes": 0,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "v8 is not HOLE",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 3
+    },
+    {
+     "shape": "HOLE(v4, v5)",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 5
+    },
+    {
+     "shape": "['STR', 'STR', HOLE]",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 5
+    },
+    {
+     "shape": "run_hypercorn_in_thread(HOLE, HOLE)",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 5
+    }
+   ]
+  },
+  "OTHER": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "HOLE is None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 201
+    },
+    {
+     "shape": "HOLE | None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 198
+    },
+    {
+     "shape": "HOLE is not None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 145
+    },
+    {
+     "shape": "HOLE == HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 247
+    },
+    {
+     "shape": "isinstance(HOLE, HOLE)",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 245
+    },
+    {
+     "shape": "HOLE('STR')",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 234
+    },
+    {
+     "shape": "object.__setattr__(v0, 'STR', HOLE)",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 59
+    },
+    {
+     "shape": "v1 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 192
+    },
+    {
+     "shape": "v2 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 188
+    },
+    {
+     "shape": "typing.Union[HOLE]",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 88
+    }
+   ]
+  },
+  "ORACLE": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "HOLE | None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 26
+    },
+    {
+     "shape": "if (v3 := v2.data_to_send()):\n    v0.sock.sendall(v3)",
+     "size": 12,
+     "holes": 0,
+     "uses_in_training": 5
+    },
+    {
+     "shape": "HOLE is not None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 12
+    },
+    {
+     "shape": "HOLE is None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 11
+    },
+    {
+     "shape": "'STR' in HOLE",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 10
+    },
+    {
+     "shape": "HOLE == 'STR'",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 9
+    },
+    {
+     "shape": "v1 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 15
+    },
+    {
+     "shape": "if HOLE:\n    raise NotImplementedError('STR')",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 4
+    },
+    {
+     "shape": "v0._headers.append(HOLE)",
+     "size": 4,
+     "holes": 1,
+     "uses_in_training": 5
+    },
+    {
+     "shape": "if (v2 := v1.data_to_send()):\n    v0.sock.sendall(v2)",
+     "size": 12,
+     "holes": 0,
+     "uses_in_training": 2
+    }
+   ]
+  }
+ },
+ "set": "evaluation",
+ "budget": 5000,
+ "budget_max": 25000,
+ "max_target_size": 12,
+ "k": 50,
+ "max_pattern_size": 40,
+ "tasks_total": 374,
+ "tasks_derivable": 257,
+ "seconds": {
+  "NONE": {
+   "build_max": 0.26,
+   "search": 12.25
+  },
+  "OWN": {
+   "build_max": 0.52,
+   "search": 10.89
+  },
+  "RANDOM": {
+   "build_max": 0.61,
+   "search": 12.02
+  },
+  "OTHER": {
+   "build_max": 0.58,
+   "search": 10.97
+  },
+  "ORACLE": {
+   "build_max": 0.56,
+   "search": 11.11
+  },
+  "CTX2": {
+   "build_max": 0.71,
+   "search": 14.02
+  }
+ },
+ "python": "3.14.6",
+ "code_commit": "488ca6f3d7baeec252a7e4bfcfe49de664081398",
+ "code_uncommitted_changes": false,
+ "compression": [
+  {
+   "path": "dummyserver/app.py",
+   "function": "_find_built_wheel",
+   "size": 52,
+   "OWN": 45,
+   "RANDOM": 52,
+   "OTHER": 43,
+   "ORACLE": 46
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "_get_pyodide_template",
+   "size": 24,
+   "OWN": 20,
+   "RANDOM": 24,
+   "OTHER": 20,
+   "ORACLE": 18
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "dripfeed",
+   "size": 53,
+   "OWN": 48,
+   "RANDOM": 51,
+   "OTHER": 49,
+   "ORACLE": 37
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "dripfeed.generate",
+   "size": 27,
+   "OWN": 26,
+   "RANDOM": 27,
+   "OTHER": 26,
+   "ORACLE": 15
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config._create_urllib3_sockets",
+   "size": 136,
+   "OWN": 124,
+   "RANDOM": 136,
+   "OTHER": 125,
+   "ORACLE": 117
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config._retry_create_urllib3_sockets",
+   "size": 44,
+   "OWN": 39,
+   "RANDOM": 42,
+   "OTHER": 39,
+   "ORACLE": 39
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config.create_sockets",
+   "size": 51,
+   "OWN": 48,
+   "RANDOM": 51,
+   "OTHER": 48,
+   "ORACLE": 33
+  },
+  {
+   "path": "noxfile.py",
+   "function": "test_min_pyopenssl",
+   "size": 31,
+   "OWN": 30,
+   "RANDOM": 31,
+   "OTHER": 31,
+   "ORACLE": 31
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "HTTPConnection.__repr__",
+   "size": 17,
+   "OWN": 16,
+   "RANDOM": 17,
+   "OTHER": 14,
+   "ORACLE": 17
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "HTTPConnection.__str__",
+   "size": 20,
+   "OWN": 19,
+   "RANDOM": 20,
+   "OTHER": 20,
+   "ORACLE": 20
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "HTTPConnection.proxy_is_tunneling",
+   "size": 11,
+   "OWN": 9,
+   "RANDOM": 11,
+   "OTHER": 9,
+   "ORACLE": 9
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "_normalize_header_value",
+   "size": 51,
+   "OWN": 36,
+   "RANDOM": 51,
+   "OTHER": 39,
+   "ORACLE": 37
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "_normalize_header_values",
+   "size": 73,
+   "OWN": 64,
+   "RANDOM": 73,
+   "OTHER": 64,
+   "ORACLE": 66
+  },
+  {
+   "path": "src/urllib3/connectionpool.py",
+   "function": "ConnectionPool._new_pool_queue",
+   "size": 26,
+   "OWN": 24,
+   "RANDOM": 26,
+   "OTHER": 24,
+   "ORACLE": 26
+  },
+  {
+   "path": "src/urllib3/connectionpool.py",
+   "function": "_is_same_host",
+   "size": 101,
+   "OWN": 76,
+   "RANDOM": 99,
+   "OTHER": 77,
+   "ORACLE": 69
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.__del__",
+   "size": 8,
+   "OWN": 8,
+   "RANDOM": 8,
+   "OTHER": 8,
+   "ORACLE": 5
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.__init__",
+   "size": 57,
+   "OWN": 47,
+   "RANDOM": 57,
+   "OTHER": 52,
+   "ORACLE": 49
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream._get_next_buffer",
+   "size": 44,
+   "OWN": 42,
+   "RANDOM": 44,
+   "OTHER": 43,
+   "ORACLE": 42
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.close",
+   "size": 47,
+   "OWN": 42,
+   "RANDOM": 47,
+   "OTHER": 47,
+   "ORACLE": 38
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.closed",
+   "size": 9,
+   "OWN": 9,
+   "RANDOM": 9,
+   "OTHER": 9,
+   "ORACLE": 9
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.is_closed",
+   "size": 7,
+   "OWN": 7,
+   "RANDOM": 7,
+   "OTHER": 7,
+   "ORACLE": 7
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.readable",
+   "size": 6,
+   "OWN": 6,
+   "RANDOM": 6,
+   "OTHER": 6,
+   "ORACLE": 6
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.readinto",
+   "size": 83,
+   "OWN": 71,
+   "RANDOM": 83,
+   "OTHER": 73,
+   "ORACLE": 71
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.seekable",
+   "size": 6,
+   "OWN": 6,
+   "RANDOM": 6,
+   "OTHER": 6,
+   "ORACLE": 6
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.writable",
+   "size": 6,
+   "OWN": 6,
+   "RANDOM": 6,
+   "OTHER": 6,
+   "ORACLE": 6
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_is_node_js",
+   "size": 22,
+   "OWN": 19,
+   "RANDOM": 22,
+   "OTHER": 17,
+   "ORACLE": 18
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_run_sync_with_timeout",
+   "size": 87,
+   "OWN": 76,
+   "RANDOM": 87,
+   "OTHER": 78,
+   "ORACLE": 77
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "has_jspi",
+   "size": 16,
+   "OWN": 16,
+   "RANDOM": 16,
+   "OTHER": 16,
+   "ORACLE": 15
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "send_jspi_request",
+   "size": 188,
+   "OWN": 177,
+   "RANDOM": 184,
+   "OTHER": 179,
+   "ORACLE": 179
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "PyOpenSSLContext.verify_flags",
+   "size": 21,
+   "OWN": 20,
+   "RANDOM": 21,
+   "OTHER": 20,
+   "ORACLE": 21
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "WrappedSocket.selected_alpn_protocol",
+   "size": 20,
+   "OWN": 17,
+   "RANDOM": 20,
+   "OTHER": 17,
+   "ORACLE": 17
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "_get_common_name",
+   "size": 33,
+   "OWN": 27,
+   "RANDOM": 33,
+   "OTHER": 29,
+   "ORACLE": 29
+  },
+  {
+   "path": "src/urllib3/exceptions.py",
+   "function": "MaxRetryError.__reduce__",
+   "size": 14,
+   "OWN": 14,
+   "RANDOM": 14,
+   "OTHER": 14,
+   "ORACLE": 12
+  },
+  {
+   "path": "src/urllib3/exceptions.py",
+   "function": "NameResolutionError.__reduce__",
+   "size": 14,
+   "OWN": 14,
+   "RANDOM": 14,
+   "OTHER": 14,
+   "ORACLE": 12
+  },
+  {
+   "path": "src/urllib3/exceptions.py",
+   "function": "NewConnectionError.__reduce__",
+   "size": 12,
+   "OWN": 12,
+   "RANDOM": 12,
+   "OTHER": 12,
+   "ORACLE": 10
+  },
+  {
+   "path": "src/urllib3/http2/__init__.py",
+   "function": "extract_from_urllib3",
+   "size": 29,
+   "OWN": 29,
+   "RANDOM": 27,
+   "OTHER": 29,
+   "ORACLE": 25
+  },
+  {
+   "path": "src/urllib3/http2/__init__.py",
+   "function": "inject_into_urllib3",
+   "size": 56,
+   "OWN": 49,
+   "RANDOM": 56,
+   "OTHER": 50,
+   "ORACLE": 47
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.__init__",
+   "size": 74,
+   "OWN": 61,
+   "RANDOM": 74,
+   "OTHER": 60,
+   "ORACLE": 50
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection._new_h2_conn",
+   "size": 25,
+   "OWN": 24,
+   "RANDOM": 25,
+   "OTHER": 24,
+   "ORACLE": 24
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.close",
+   "size": 48,
+   "OWN": 46,
+   "RANDOM": 42,
+   "OTHER": 48,
+   "ORACLE": 27
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.connect",
+   "size": 30,
+   "OWN": 29,
+   "RANDOM": 24,
+   "OTHER": 30,
+   "ORACLE": 19
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.endheaders",
+   "size": 54,
+   "OWN": 49,
+   "RANDOM": 54,
+   "OTHER": 49,
+   "ORACLE": 38
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.getresponse",
+   "size": 142,
+   "OWN": 125,
+   "RANDOM": 142,
+   "OTHER": 127,
+   "ORACLE": 126
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.putheader",
+   "size": 80,
+   "OWN": 68,
+   "RANDOM": 74,
+   "OTHER": 68,
+   "ORACLE": 69
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.putrequest",
+   "size": 126,
+   "OWN": 111,
+   "RANDOM": 126,
+   "OTHER": 112,
+   "ORACLE": 94
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.request",
+   "size": 127,
+   "OWN": 108,
+   "RANDOM": 127,
+   "OTHER": 110,
+   "ORACLE": 109
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.send",
+   "size": 169,
+   "OWN": 157,
+   "RANDOM": 169,
+   "OTHER": 156,
+   "ORACLE": 88
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.set_tunnel",
+   "size": 30,
+   "OWN": 20,
+   "RANDOM": 30,
+   "OTHER": 22,
+   "ORACLE": 22
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Response.__init__",
+   "size": 42,
+   "OWN": 41,
+   "RANDOM": 42,
+   "OTHER": 42,
+   "ORACLE": 41
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Response.close",
+   "size": 5,
+   "OWN": 5,
+   "RANDOM": 5,
+   "OTHER": 5,
+   "ORACLE": 5
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Response.data",
+   "size": 8,
+   "OWN": 8,
+   "RANDOM": 8,
+   "OTHER": 8,
+   "ORACLE": 8
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Response.get_redirect_location",
+   "size": 6,
+   "OWN": 6,
+   "RANDOM": 6,
+   "OTHER": 6,
+   "ORACLE": 6
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_LockedObject.__enter__",
+   "size": 12,
+   "OWN": 12,
+   "RANDOM": 12,
+   "OTHER": 12,
+   "ORACLE": 12
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_LockedObject.__exit__",
+   "size": 27,
+   "OWN": 21,
+   "RANDOM": 23,
+   "OTHER": 21,
+   "ORACLE": 21
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_LockedObject.__init__",
+   "size": 15,
+   "OWN": 14,
+   "RANDOM": 15,
+   "OTHER": 14,
+   "ORACLE": 15
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_is_illegal_header_value",
+   "size": 12,
+   "OWN": 11,
+   "RANDOM": 12,
+   "OTHER": 12,
+   "ORACLE": 11
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_is_legal_header_name",
+   "size": 12,
+   "OWN": 11,
+   "RANDOM": 12,
+   "OTHER": 12,
+   "ORACLE": 11
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.__init__",
+   "size": 40,
+   "OWN": 30,
+   "RANDOM": 40,
+   "OTHER": 36,
+   "ORACLE": 28
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache._reset",
+   "size": 16,
+   "OWN": 16,
+   "RANDOM": 16,
+   "OTHER": 16,
+   "ORACLE": 16
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache._values",
+   "size": 31,
+   "OWN": 25,
+   "RANDOM": 31,
+   "OTHER": 28,
+   "ORACLE": 24
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.acquire_and_get",
+   "size": 95,
+   "OWN": 81,
+   "RANDOM": 91,
+   "OTHER": 82,
+   "ORACLE": 71
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.set_and_release",
+   "size": 55,
+   "OWN": 45,
+   "RANDOM": 55,
+   "OTHER": 45,
+   "ORACLE": 39
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "BaseHTTPResponse.shutdown",
+   "size": 7,
+   "OWN": 7,
+   "RANDOM": 7,
+   "OTHER": 7,
+   "ORACLE": 7
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "ContentDecoder.has_unconsumed_tail",
+   "size": 8,
+   "OWN": 8,
+   "RANDOM": 8,
+   "OTHER": 8,
+   "ORACLE": 8
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "DeflateDecoder.has_unconsumed_tail",
+   "size": 28,
+   "OWN": 25,
+   "RANDOM": 28,
+   "OTHER": 25,
+   "ORACLE": 23
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "GzipDecoder.has_unconsumed_tail",
+   "size": 10,
+   "OWN": 10,
+   "RANDOM": 10,
+   "OTHER": 10,
+   "ORACLE": 9
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "HTTPResponse.shutdown",
+   "size": 29,
+   "OWN": 24,
+   "RANDOM": 29,
+   "OTHER": 24,
+   "ORACLE": 24
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "MultiDecoder.has_unconsumed_tail",
+   "size": 15,
+   "OWN": 15,
+   "RANDOM": 15,
+   "OTHER": 15,
+   "ORACLE": 15
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "Url.auth_decoded",
+   "size": 54,
+   "OWN": 48,
+   "RANDOM": 54,
+   "OTHER": 46,
+   "ORACLE": 45
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "Url.auth_decoded_joined",
+   "size": 31,
+   "OWN": 26,
+   "RANDOM": 31,
+   "OTHER": 24,
+   "ORACLE": 23
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_decode_percent_encoding",
+   "size": 50,
+   "OWN": 46,
+   "RANDOM": 48,
+   "OTHER": 46,
+   "ORACLE": 39
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_normalize_host_percent_encoding",
+   "size": 46,
+   "OWN": 44,
+   "RANDOM": 46,
+   "OTHER": 44,
+   "ORACLE": 34
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_normalize_zone_id_percent_encoding",
+   "size": 23,
+   "OWN": 23,
+   "RANDOM": 23,
+   "OTHER": 23,
+   "ORACLE": 17
+  }
+ ],
+ "tasks": [
+  {
+   "path": "dummyserver/app.py",
+   "function": "_find_built_wheel",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Lambda",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "_find_built_wheel",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 9210
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "_find_built_wheel",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "keyword",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "_find_built_wheel",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "_find_built_wheel",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "_find_built_wheel",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BinOp",
+    "left"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "_find_built_wheel",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "_find_built_wheel",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "_get_pyodide_template",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "orelse"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "_get_pyodide_template",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 316,
+    "OWN": 175,
+    "RANDOM": 311,
+    "OTHER": 189,
+    "ORACLE": 53,
+    "CTX2": 271
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "_get_pyodide_template",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 316,
+    "OWN": 175,
+    "RANDOM": 311,
+    "OTHER": 189,
+    "ORACLE": 53,
+    "CTX2": 216
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "_get_pyodide_template",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 101,
+    "OWN": 62,
+    "RANDOM": 101,
+    "OTHER": 68,
+    "ORACLE": 68,
+    "CTX2": 29
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "dripfeed",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Await",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 12596
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "dripfeed",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "AsyncFunctionDef",
+    "decorator_list"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 6751,
+    "OWN": 1344,
+    "RANDOM": 2,
+    "OTHER": 1451,
+    "ORACLE": 1455,
+    "CTX2": 38
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "dripfeed",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 3460,
+    "OWN": 5147,
+    "RANDOM": 3407,
+    "OTHER": 93,
+    "ORACLE": 3809,
+    "CTX2": 15412
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "dripfeed",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Yield",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 2828,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "dripfeed",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "AsyncFunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "dripfeed",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 366,
+    "OWN": 180,
+    "RANDOM": 351,
+    "OTHER": 195,
+    "ORACLE": 321,
+    "CTX2": 777
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "dripfeed",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "dripfeed",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "dripfeed.generate",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "dripfeed.generate",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "dripfeed.generate",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "dripfeed.generate",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Yield",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 2828,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "dripfeed.generate",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1274,
+    "OWN": 617,
+    "RANDOM": 1220,
+    "OTHER": 637,
+    "ORACLE": 1135,
+    "CTX2": 2270
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "dripfeed.generate",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 17724,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "dripfeed.generate",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Await",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/app.py",
+   "function": "dripfeed.generate",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config._create_urllib3_sockets",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config._create_urllib3_sockets",
+   "size": 11,
+   "kind": "expr",
+   "context": [
+    "For",
+    "iter"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config._create_urllib3_sockets",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config._create_urllib3_sockets",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "ExceptHandler",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config._create_urllib3_sockets",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config._create_urllib3_sockets",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config._create_urllib3_sockets",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config._create_urllib3_sockets",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config._retry_create_urllib3_sockets",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config._retry_create_urllib3_sockets",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 12237,
+    "OWN": 5342,
+    "RANDOM": 18047,
+    "OTHER": 4877,
+    "ORACLE": 4904,
+    "CTX2": 1814
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config._retry_create_urllib3_sockets",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 384,
+    "OWN": 90,
+    "RANDOM": 395,
+    "OTHER": 89,
+    "ORACLE": 354,
+    "CTX2": 149
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config._retry_create_urllib3_sockets",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config._retry_create_urllib3_sockets",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config._retry_create_urllib3_sockets",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "Try",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config._retry_create_urllib3_sockets",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config._retry_create_urllib3_sockets",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config.create_sockets",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config.create_sockets",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Compare",
+    "left"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config.create_sockets",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "orelse"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config.create_sockets",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Assert",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config.create_sockets",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 2775,
+    "OWN": 2175,
+    "RANDOM": 2949,
+    "OTHER": 2247,
+    "ORACLE": 2488,
+    "CTX2": 172
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config.create_sockets",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 2775,
+    "OWN": 2175,
+    "RANDOM": 2949,
+    "OTHER": 2247,
+    "ORACLE": 2488,
+    "CTX2": 172
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config.create_sockets",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "dummyserver/hypercornserver.py",
+   "function": "Config.create_sockets",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "noxfile.py",
+   "function": "test_min_pyopenssl",
+   "size": 11,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "noxfile.py",
+   "function": "test_min_pyopenssl",
+   "size": 12,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "noxfile.py",
+   "function": "test_min_pyopenssl",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "noxfile.py",
+   "function": "test_min_pyopenssl",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "decorator_list"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 1205
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "noxfile.py",
+   "function": "test_min_pyopenssl",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "targets"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 836,
+    "OWN": 437,
+    "RANDOM": 856,
+    "OTHER": 767,
+    "ORACLE": 774,
+    "CTX2": 381
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "HTTPConnection.__repr__",
+   "size": 12,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "HTTPConnection.__repr__",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "JoinedStr",
+    "values"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "HTTPConnection.__str__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "FormattedValue",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 20444,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 498
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "HTTPConnection.__str__",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "JoinedStr",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 730
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "HTTPConnection.proxy_is_tunneling",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "HTTPConnection.proxy_is_tunneling",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 13407,
+    "OWN": null,
+    "RANDOM": 13298,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "_normalize_header_value",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 3957,
+    "OWN": 395,
+    "RANDOM": 3823,
+    "OTHER": 426,
+    "ORACLE": 348,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "_normalize_header_value",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "_normalize_header_value",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "_normalize_header_value",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 5713,
+    "OWN": 20005,
+    "RANDOM": 5786,
+    "OTHER": 16360,
+    "ORACLE": 12153,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "_normalize_header_value",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Attribute",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 9230
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "_normalize_header_value",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 3332,
+    "OWN": 367,
+    "RANDOM": 3154,
+    "OTHER": 390,
+    "ORACLE": 318,
+    "CTX2": 3209
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "_normalize_header_value",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "_normalize_header_value",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "_normalize_header_values",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "_normalize_header_values",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "_normalize_header_values",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "_normalize_header_values",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 6503,
+    "OWN": 3914,
+    "RANDOM": 9554,
+    "OTHER": 4012,
+    "ORACLE": 3416,
+    "CTX2": 6674
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "_normalize_header_values",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 5614,
+    "OWN": 5574,
+    "RANDOM": 5707,
+    "OTHER": 5918,
+    "ORACLE": 5621,
+    "CTX2": 18594
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "_normalize_header_values",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "_normalize_header_values",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connection.py",
+   "function": "_normalize_header_values",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "For",
+    "target"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connectionpool.py",
+   "function": "ConnectionPool._new_pool_queue",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connectionpool.py",
+   "function": "ConnectionPool._new_pool_queue",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connectionpool.py",
+   "function": "ConnectionPool._new_pool_queue",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connectionpool.py",
+   "function": "ConnectionPool._new_pool_queue",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 18101,
+    "OWN": 6220,
+    "RANDOM": 17011,
+    "OTHER": 6300,
+    "ORACLE": 16630,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connectionpool.py",
+   "function": "ConnectionPool._new_pool_queue",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connectionpool.py",
+   "function": "ConnectionPool._new_pool_queue",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connectionpool.py",
+   "function": "ConnectionPool._new_pool_queue",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connectionpool.py",
+   "function": "_is_same_host",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 22117
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connectionpool.py",
+   "function": "_is_same_host",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Compare",
+    "comparators"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connectionpool.py",
+   "function": "_is_same_host",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 169,
+    "OWN": 52,
+    "RANDOM": 177,
+    "OTHER": 52,
+    "ORACLE": 54,
+    "CTX2": 159
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/connectionpool.py",
+   "function": "_is_same_host",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 10,
+    "OWN": 6,
+    "RANDOM": 10,
+    "OTHER": 6,
+    "ORACLE": 6,
+    "CTX2": 10
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/connectionpool.py",
+   "function": "_is_same_host",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connectionpool.py",
+   "function": "_is_same_host",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Compare",
+    "left"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connectionpool.py",
+   "function": "_is_same_host",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/connectionpool.py",
+   "function": "_is_same_host",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 275,
+    "OWN": 138,
+    "RANDOM": 263,
+    "OTHER": 148,
+    "ORACLE": 142,
+    "CTX2": 323
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.__del__",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 168,
+    "OWN": 134,
+    "RANDOM": 167,
+    "OTHER": 144,
+    "ORACLE": 9,
+    "CTX2": 96
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.__init__",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1988,
+    "OWN": 778,
+    "RANDOM": 1988,
+    "OTHER": 1949,
+    "ORACLE": 1830,
+    "CTX2": 845
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.__init__",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.__init__",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.__init__",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.__init__",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.__init__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "AnnAssign",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 174,
+    "OWN": 56,
+    "RANDOM": 166,
+    "OTHER": 69,
+    "ORACLE": 66,
+    "CTX2": 1378
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.__init__",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.__init__",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream._get_next_buffer",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream._get_next_buffer",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "orelse"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream._get_next_buffer",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "orelse"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream._get_next_buffer",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream._get_next_buffer",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.close",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1931,
+    "OWN": 1293,
+    "RANDOM": 1927,
+    "OTHER": 1888,
+    "ORACLE": 1052,
+    "CTX2": 1919
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.close",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 6144,
+    "OWN": 6581,
+    "RANDOM": 6008,
+    "OTHER": 5511,
+    "ORACLE": 5699,
+    "CTX2": 5589
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.close",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 44,
+    "CTX2": 1834
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.close",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 208
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.close",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 2795,
+    "OWN": 2773,
+    "RANDOM": 2811,
+    "OTHER": 2541,
+    "ORACLE": 2285,
+    "CTX2": 2744
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.close",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.close",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.close",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1930,
+    "OWN": 1292,
+    "RANDOM": 1926,
+    "OTHER": 1887,
+    "ORACLE": 1051,
+    "CTX2": 1918
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.closed",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 10628,
+    "OWN": 10022,
+    "RANDOM": 10890,
+    "OTHER": 9486,
+    "ORACLE": 9675,
+    "CTX2": 3844
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.readinto",
+   "size": 11,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.readinto",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.readinto",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.readinto",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.readinto",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.readinto",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Slice",
+    "upper"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.readinto",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_JSPIReadStream.readinto",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "targets"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_is_node_js",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_is_node_js",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_is_node_js",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 22187,
+    "RANDOM": null,
+    "OTHER": 540,
+    "ORACLE": null,
+    "CTX2": 41
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_is_node_js",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Compare",
+    "left"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_run_sync_with_timeout",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 198,
+    "OWN": 84,
+    "RANDOM": 196,
+    "OTHER": 83,
+    "ORACLE": 81,
+    "CTX2": 225
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_run_sync_with_timeout",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_run_sync_with_timeout",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "orelse"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_run_sync_with_timeout",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 196,
+    "OWN": 83,
+    "RANDOM": 193,
+    "OTHER": 82,
+    "ORACLE": 80,
+    "CTX2": 224
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_run_sync_with_timeout",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 457,
+    "OWN": 308,
+    "RANDOM": 524,
+    "OTHER": 327,
+    "ORACLE": 240,
+    "CTX2": 550
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_run_sync_with_timeout",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 15242,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_run_sync_with_timeout",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "_run_sync_with_timeout",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "Try",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "has_jspi",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "Try",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "has_jspi",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "send_jspi_request",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 21881,
+    "OWN": 9641,
+    "RANDOM": 23765,
+    "OTHER": 19293,
+    "ORACLE": 22899,
+    "CTX2": 554
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "send_jspi_request",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "send_jspi_request",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "targets"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "send_jspi_request",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 8005,
+    "OWN": 8958,
+    "RANDOM": 7950,
+    "OTHER": 10010,
+    "ORACLE": 8791,
+    "CTX2": 6730
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "send_jspi_request",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "send_jspi_request",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "send_jspi_request",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/emscripten/fetch.py",
+   "function": "send_jspi_request",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "PyOpenSSLContext.verify_flags",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Attribute",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "PyOpenSSLContext.verify_flags",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "PyOpenSSLContext.verify_flags",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "func"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "PyOpenSSLContext.verify_flags",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "PyOpenSSLContext.verify_flags",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "WrappedSocket.selected_alpn_protocol",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "WrappedSocket.selected_alpn_protocol",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "WrappedSocket.selected_alpn_protocol",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 12,
+    "OWN": 9,
+    "RANDOM": 12,
+    "OTHER": 9,
+    "ORACLE": 9,
+    "CTX2": 10
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "WrappedSocket.selected_alpn_protocol",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "WrappedSocket.selected_alpn_protocol",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "_get_common_name",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "IfExp",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "_get_common_name",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "_get_common_name",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "_get_common_name",
+   "size": 12,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "_get_common_name",
+   "size": 11,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "_get_common_name",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 12,
+    "OWN": 9,
+    "RANDOM": 12,
+    "OTHER": 9,
+    "ORACLE": 9,
+    "CTX2": 10
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "_get_common_name",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/contrib/pyopenssl.py",
+   "function": "_get_common_name",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/exceptions.py",
+   "function": "MaxRetryError.__reduce__",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/exceptions.py",
+   "function": "MaxRetryError.__reduce__",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/exceptions.py",
+   "function": "MaxRetryError.__reduce__",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/exceptions.py",
+   "function": "NameResolutionError.__reduce__",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/exceptions.py",
+   "function": "NameResolutionError.__reduce__",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/exceptions.py",
+   "function": "NameResolutionError.__reduce__",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/exceptions.py",
+   "function": "NewConnectionError.__reduce__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/exceptions.py",
+   "function": "NewConnectionError.__reduce__",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/exceptions.py",
+   "function": "NewConnectionError.__reduce__",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/__init__.py",
+   "function": "extract_from_urllib3",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/__init__.py",
+   "function": "extract_from_urllib3",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/__init__.py",
+   "function": "extract_from_urllib3",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/__init__.py",
+   "function": "extract_from_urllib3",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/__init__.py",
+   "function": "inject_into_urllib3",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Raise",
+    "exc"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/__init__.py",
+   "function": "inject_into_urllib3",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/__init__.py",
+   "function": "inject_into_urllib3",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/__init__.py",
+   "function": "inject_into_urllib3",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/__init__.py",
+   "function": "inject_into_urllib3",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 8687,
+    "OWN": 22075,
+    "RANDOM": 8534,
+    "OTHER": 17790,
+    "ORACLE": 14156,
+    "CTX2": 22662
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/__init__.py",
+   "function": "inject_into_urllib3",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/__init__.py",
+   "function": "inject_into_urllib3",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/__init__.py",
+   "function": "inject_into_urllib3",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.__init__",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1200,
+    "OWN": 484,
+    "RANDOM": 1259,
+    "OTHER": 502,
+    "ORACLE": 467,
+    "CTX2": 1189
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.__init__",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 609,
+    "OWN": 221,
+    "RANDOM": 609,
+    "OTHER": 231,
+    "ORACLE": 250,
+    "CTX2": 22
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.__init__",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.__init__",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 7808
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.__init__",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.__init__",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.__init__",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.__init__",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 15,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection._new_h2_conn",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection._new_h2_conn",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection._new_h2_conn",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection._new_h2_conn",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection._new_h2_conn",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection._new_h2_conn",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.close",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 208
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.close",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 7556
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.close",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 15,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.close",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 44,
+    "CTX2": 1834
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.close",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "Try",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 7072
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.close",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 188
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.close",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.close",
+   "size": 12,
+   "kind": "stmt",
+   "context": [
+    "Try",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 6,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.connect",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 17644
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.connect",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 84
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.connect",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "With",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 17292
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.connect",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 2954
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.connect",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.connect",
+   "size": 12,
+   "kind": "stmt",
+   "context": [
+    "With",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 1,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.connect",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.endheaders",
+   "size": 12,
+   "kind": "stmt",
+   "context": [
+    "With",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 20004,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.endheaders",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.endheaders",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "keyword",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 12094,
+    "RANDOM": 22050,
+    "OTHER": 12378,
+    "ORACLE": 12324,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.endheaders",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.endheaders",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.endheaders",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 7556
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.endheaders",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.endheaders",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.getresponse",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.getresponse",
+   "size": 11,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.getresponse",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.getresponse",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.getresponse",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Assert",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 9,
+    "OWN": 3,
+    "RANDOM": 11,
+    "OTHER": 3,
+    "ORACLE": 3,
+    "CTX2": 13
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.getresponse",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 4585,
+    "OWN": 4540,
+    "RANDOM": 4553,
+    "OTHER": 4795,
+    "ORACLE": 5419,
+    "CTX2": 1420
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.getresponse",
+   "size": 12,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "orelse"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.getresponse",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 352
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.putheader",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Raise",
+    "exc"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.putheader",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.putheader",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 82,
+    "OWN": 126,
+    "RANDOM": 65,
+    "OTHER": 130,
+    "ORACLE": 129,
+    "CTX2": 63
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.putheader",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "JoinedStr",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1325,
+    "OWN": 454,
+    "RANDOM": 1675,
+    "OTHER": 500,
+    "ORACLE": 1129,
+    "CTX2": 3842
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.putheader",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 20753,
+    "RANDOM": null,
+    "OTHER": 20920,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.putheader",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.putheader",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.putheader",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "JoinedStr",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 3499,
+    "OWN": 3950,
+    "RANDOM": 4296,
+    "OTHER": 3663,
+    "ORACLE": 2946,
+    "CTX2": 6904
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.putrequest",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.putrequest",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 5975
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.putrequest",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 609,
+    "OWN": 221,
+    "RANDOM": 609,
+    "OTHER": 231,
+    "ORACLE": 250,
+    "CTX2": 22
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.putrequest",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.putrequest",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 2698,
+    "OWN": 305,
+    "RANDOM": 2550,
+    "OTHER": 322,
+    "ORACLE": 242,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.putrequest",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.putrequest",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 16071
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.putrequest",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 9660
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.request",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 715,
+    "OWN": 363,
+    "RANDOM": 702,
+    "OTHER": 395,
+    "ORACLE": 263,
+    "CTX2": 1099
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.request",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 3331,
+    "OWN": 3592,
+    "RANDOM": 3382,
+    "OTHER": 3194,
+    "ORACLE": 2825,
+    "CTX2": 4766
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.request",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "BinOp",
+    "left"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 8125,
+    "OWN": 3,
+    "RANDOM": 7702,
+    "OTHER": 243,
+    "ORACLE": 255,
+    "CTX2": 26
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.request",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.request",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.request",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 8,
+    "RANDOM": null,
+    "OTHER": 536,
+    "ORACLE": 558,
+    "CTX2": 97
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.request",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.request",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.send",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 20127,
+    "OWN": 15384,
+    "RANDOM": 20110,
+    "OTHER": 16252,
+    "ORACLE": 15565,
+    "CTX2": 7768
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.send",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.send",
+   "size": 12,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 17722,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.send",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.send",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Raise",
+    "exc"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.send",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.send",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.send",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.set_tunnel",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 8,
+    "RANDOM": null,
+    "OTHER": 536,
+    "ORACLE": 558,
+    "CTX2": 97
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.set_tunnel",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 10,
+    "OWN": 6,
+    "RANDOM": 10,
+    "OTHER": 6,
+    "ORACLE": 6,
+    "CTX2": 10
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.set_tunnel",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "BinOp",
+    "left"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 8125,
+    "OWN": 3,
+    "RANDOM": 7702,
+    "OTHER": 243,
+    "ORACLE": 255,
+    "CTX2": 26
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Connection.set_tunnel",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 4347,
+    "OWN": 1773,
+    "RANDOM": 4640,
+    "OTHER": 1600,
+    "ORACLE": 1774,
+    "CTX2": 649
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Response.__init__",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 893,
+    "OWN": 596,
+    "RANDOM": 908,
+    "OTHER": 839,
+    "ORACLE": 513,
+    "CTX2": 591
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "HTTP2Response.__init__",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 6840,
+    "OWN": 7254,
+    "RANDOM": 6858,
+    "OTHER": 6181,
+    "ORACLE": 6001,
+    "CTX2": 4673
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_LockedObject.__enter__",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_LockedObject.__enter__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_LockedObject.__exit__",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_LockedObject.__exit__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 126,
+    "OWN": 59,
+    "RANDOM": 130,
+    "OTHER": 55,
+    "ORACLE": 53,
+    "CTX2": 72
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_LockedObject.__exit__",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 8190,
+    "OWN": 3466,
+    "RANDOM": 67,
+    "OTHER": 5965,
+    "ORACLE": 4928,
+    "CTX2": 533
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_LockedObject.__exit__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_LockedObject.__exit__",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 2196
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_LockedObject.__init__",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_LockedObject.__init__",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1958,
+    "OWN": 572,
+    "RANDOM": 2068,
+    "OTHER": 593,
+    "ORACLE": 1793,
+    "CTX2": 677
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_is_illegal_header_value",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_is_illegal_header_value",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_is_illegal_header_value",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_is_legal_header_name",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_is_legal_header_name",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/connection.py",
+   "function": "_is_legal_header_name",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.__init__",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "Subscript",
+    "slice"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.__init__",
+   "size": 12,
+   "kind": "expr",
+   "context": [
+    "AnnAssign",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.__init__",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 17018,
+    "OWN": 13001,
+    "RANDOM": 15376,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 611
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.__init__",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "AnnAssign",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.__init__",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.__init__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 193,
+    "OWN": 130,
+    "RANDOM": 190,
+    "OTHER": 146,
+    "ORACLE": 138,
+    "CTX2": 106
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.__init__",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 17018,
+    "OWN": 13001,
+    "RANDOM": 15376,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 611
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.__init__",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Subscript",
+    "slice"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache._reset",
+   "size": 12,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache._reset",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "With",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache._reset",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "With",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache._values",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "comprehension",
+    "iter"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache._values",
+   "size": 12,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache._values",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "Subscript",
+    "slice"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache._values",
+   "size": 12,
+   "kind": "stmt",
+   "context": [
+    "With",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache._values",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 17018,
+    "OWN": 13001,
+    "RANDOM": 15376,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 611
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache._values",
+   "size": 11,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache._values",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 193,
+    "OWN": 130,
+    "RANDOM": 190,
+    "OTHER": 146,
+    "ORACLE": 138,
+    "CTX2": 106
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.acquire_and_get",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "With",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.acquire_and_get",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 22284
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.acquire_and_get",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.acquire_and_get",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.acquire_and_get",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Assert",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.acquire_and_get",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "Try",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.acquire_and_get",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "targets"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.acquire_and_get",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 51,
+    "OWN": 18,
+    "RANDOM": 26,
+    "OTHER": 17,
+    "ORACLE": 20,
+    "CTX2": 53
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.set_and_release",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "targets"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.set_and_release",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Compare",
+    "left"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.set_and_release",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.set_and_release",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 419,
+    "OWN": 143,
+    "RANDOM": 427,
+    "OTHER": 144,
+    "ORACLE": 161,
+    "CTX2": 42
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.set_and_release",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.set_and_release",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 22,
+    "OWN": 11,
+    "RANDOM": 19,
+    "OTHER": 10,
+    "ORACLE": 10,
+    "CTX2": 14
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.set_and_release",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/http2/probe.py",
+   "function": "_HTTP2ProbeCache.set_and_release",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "DeflateDecoder.has_unconsumed_tail",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 421,
+    "OWN": 284,
+    "RANDOM": 424,
+    "OTHER": 306,
+    "ORACLE": 317,
+    "CTX2": 6556
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "DeflateDecoder.has_unconsumed_tail",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "DeflateDecoder.has_unconsumed_tail",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "DeflateDecoder.has_unconsumed_tail",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "GzipDecoder.has_unconsumed_tail",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "GzipDecoder.has_unconsumed_tail",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "HTTPResponse.shutdown",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "HTTPResponse.shutdown",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "HTTPResponse.shutdown",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1637,
+    "OWN": 607,
+    "RANDOM": 1687,
+    "OTHER": 612,
+    "ORACLE": 671,
+    "CTX2": 95
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "HTTPResponse.shutdown",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "HTTPResponse.shutdown",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 419,
+    "OWN": 143,
+    "RANDOM": 427,
+    "OTHER": 144,
+    "ORACLE": 161,
+    "CTX2": 14
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "HTTPResponse.shutdown",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "HTTPResponse.shutdown",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "HTTPResponse.shutdown",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "MultiDecoder.has_unconsumed_tail",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "MultiDecoder.has_unconsumed_tail",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/response.py",
+   "function": "MultiDecoder.has_unconsumed_tail",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "Url.auth_decoded",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "targets"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 21091
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "Url.auth_decoded",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1928,
+    "OWN": 699,
+    "RANDOM": 1824,
+    "OTHER": 732,
+    "ORACLE": 722,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "Url.auth_decoded",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "IfExp",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "Url.auth_decoded",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "Url.auth_decoded",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 81,
+    "OWN": 66,
+    "RANDOM": 81,
+    "OTHER": 68,
+    "ORACLE": 68,
+    "CTX2": 25
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "Url.auth_decoded",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "Url.auth_decoded",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 10464,
+    "OWN": 6705,
+    "RANDOM": 9819,
+    "OTHER": 8894,
+    "ORACLE": 14443,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "Url.auth_decoded",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "Url.auth_decoded_joined",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "Url.auth_decoded_joined",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "FormattedValue",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 5121,
+    "OWN": 2329,
+    "RANDOM": 4933,
+    "OTHER": 2327,
+    "ORACLE": 2271,
+    "CTX2": 2208
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "Url.auth_decoded_joined",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "Url.auth_decoded_joined",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 12,
+    "OWN": 9,
+    "RANDOM": 12,
+    "OTHER": 9,
+    "ORACLE": 9,
+    "CTX2": 10
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "Url.auth_decoded_joined",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 9803,
+    "OWN": 3816,
+    "RANDOM": 10473,
+    "OTHER": 582,
+    "ORACLE": 3045,
+    "CTX2": 4624
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "Url.auth_decoded_joined",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "Url.auth_decoded_joined",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 14,
+    "OWN": 5,
+    "RANDOM": 14,
+    "OTHER": 5,
+    "ORACLE": 5,
+    "CTX2": 15
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "Url.auth_decoded_joined",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "JoinedStr",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 6368,
+    "OWN": 2843,
+    "RANDOM": 6184,
+    "OTHER": 2874,
+    "ORACLE": 2802,
+    "CTX2": 2876
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_decode_percent_encoding",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 666,
+    "OWN": 313,
+    "RANDOM": 868,
+    "OTHER": 342,
+    "ORACLE": 1220,
+    "CTX2": 709
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_decode_percent_encoding",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1712,
+    "OWN": 978,
+    "RANDOM": 539,
+    "OTHER": 1379,
+    "ORACLE": 1525,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_decode_percent_encoding",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_decode_percent_encoding",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_decode_percent_encoding",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_decode_percent_encoding",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_decode_percent_encoding",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_decode_percent_encoding",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_normalize_host_percent_encoding",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_normalize_host_percent_encoding",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Attribute",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 11032
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_normalize_host_percent_encoding",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_normalize_host_percent_encoding",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_normalize_host_percent_encoding",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Raise",
+    "exc"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_normalize_host_percent_encoding",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_normalize_host_percent_encoding",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "func"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_normalize_host_percent_encoding",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_normalize_zone_id_percent_encoding",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_normalize_zone_id_percent_encoding",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_normalize_zone_id_percent_encoding",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Attribute",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 11032
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_normalize_zone_id_percent_encoding",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_normalize_zone_id_percent_encoding",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "func"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_normalize_zone_id_percent_encoding",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/urllib3/util/url.py",
+   "function": "_normalize_zone_id_percent_encoding",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  }
+ ]
+}

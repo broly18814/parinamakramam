@@ -295,6 +295,8 @@ This section was rewritten on 10 November 2026. The plan as first written on 8 N
 | Sharper habits do as well as blocks | Prefer the simpler system. The research turns from libraries of blocks to learned **guidance**: a small model, trainable on the MacBook, that suggests what to try next. |
 | Blocks don't help at all | The block-library line pauses on real code as well as in the toy world, and the next pre-registration is about guidance. |
 
+**What happened (11 November 2026, D-044):** blocks helped a little (+4.1 of 100), less than doubling the search, and sharper habits did better (+8.4). Both of the last two rows of the table above applied, so **the research turns to learned guidance.**
+
 Two branches lead to learned guidance. That would be the project's first use of a neural network, and the natural place to start the small own-model work the founder's brief asks for.
 
 **Not planned yet, on purpose:** the three architecture proposals in the founder's brief. They should be built on whichever branch above turns out to be true, so they're written after EXP-006.

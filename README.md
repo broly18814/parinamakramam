@@ -28,7 +28,7 @@ An independent AI research and product company, started with ₹0 on one MacBook
 | See the experiment code | `research/pevo/` |
 | See the raw results | [experiments/EXP-001/](experiments/EXP-001/README.md), `experiments/EXP-002/` |
 | Read the real-code experiment (positive) | [docs/research/EXP-005-design.md](docs/research/EXP-005-design.md) |
-| Read the next experiment's plan (written before any code; not run yet) | [docs/research/EXP-006-design.md](docs/research/EXP-006-design.md) |
+| Read the latest experiment: plan, predictions and results (mixed; the stop rule applied) | [docs/research/EXP-006-design.md](docs/research/EXP-006-design.md) |
 | Read the second experiment and its last variant (both negative) | [EXP-002](docs/research/EXP-002-design.md), [EXP-002b](docs/research/EXP-002b-design.md) |
 
 ## Check everything (exactly what GitHub's robot runs)
@@ -39,7 +39,7 @@ scripts/check-all.sh
 
 ## Re-run the experiments (Terminal commands)
 
-Research self-checks (46) and the full first experiment (about 1.5 minutes):
+Research self-checks (47) and the full first experiment (about 1.5 minutes):
 
 ```bash
 cd research/pevo

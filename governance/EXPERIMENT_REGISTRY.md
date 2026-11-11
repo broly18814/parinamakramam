@@ -272,7 +272,8 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
 
 ## EXP-006: do learned building blocks make search for real code cheaper?
 
-- **Status:** 🔒 frozen on 11 November 2026, **not run on the evaluation projects yet**. Pre-registered in `7b9fa9c` before any code; built and calibrated on tomli only; primary budget B = 5,000 states and target size up to 12, both by the written rules (D-043). Code: `research/pevo/pevo/grammarsearch.py` and `run_exp006.py`; analysis script committed before the run.
+- **Status:** ✅ finished on 11 November 2026. **H16 passed, but H17 and H19 failed, so the stop rule applies (D-044).** OWN found 18.3 of 100 hidden pieces within 5,000 guesses, against 14.2 for NONE, 18.5 for NONE with double the guesses, and **22.6 for sharper habits (CTX2)**. EXP-005 replicated on the new projects (R13). Details: design section 10.
+- **History:** frozen on 11 November 2026, before the evaluation run. Pre-registered in `7b9fa9c` before any code; built and calibrated on tomli only; primary budget B = 5,000 states and target size up to 12, both by the written rules (D-043). Code: `research/pevo/pevo/grammarsearch.py` and `run_exp006.py`; analysis script committed before the run.
 - **Design and predictions:** [EXP-006-design.md](../docs/research/EXP-006-design.md).
 - **The question:** hide a small piece of a function that a project's programmers wrote *later*, and let the computer guess it exactly, likeliest guess first. With the same number of guesses allowed, does a phrase book of 50 building blocks learned from the project's *past* (EXP-005's method, unchanged) recover more hidden pieces than no phrase book?
 - **In engineering terms:** exact-match infilling of masked syntax-tree fragments (size 4 to 12) by best-first enumeration from a probabilistic grammar fitted on past code, at a fixed budget of expanded states; the grammar with and without learned tree fragments.
@@ -288,7 +289,8 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
 
 ## EXP-007: using the blocks in a search checked by running tests (not designed)
 
-- **Status:** a placeholder only. It gets a design and a pre-registration **only if** EXP-006's primary prediction (H16) and its double-search control (H17) both pass.
+- **Status:** ❌ closed unrun on 11 November 2026 (D-044): EXP-006's double-search control (H17) failed.
+- **Original condition:** it would get a design and a pre-registration **only if** EXP-006's primary prediction (H16) and its double-search control (H17) both passed.
 - **The idea:** EXP-006 counts a guess as right only if it's written identically to the hidden code. EXP-007 would count it as right if the project's own tests pass, which is closer to what a coding tool has to do, and is where `pkv`'s test selection could be reused.
 - **If EXP-006 fails instead:** this entry is closed unrun, and the next pre-registration is about learned guidance (see EXP-003's status).
 

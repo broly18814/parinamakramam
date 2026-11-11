@@ -1,0 +1,9290 @@
+{
+ "project": "packaging",
+ "url": "https://github.com/pypa/packaging.git",
+ "licence": "Apache-2.0 OR BSD-2-Clause",
+ "pinned": "843887fd431f8b3c10f1b39e1d4066ba3516147c",
+ "split": "d2fa92384821919d48eab89bae087b950637d52a",
+ "split_date": "2026-06-25",
+ "past_functions": 459,
+ "future_functions": 50,
+ "past_size": 26792,
+ "learn_seconds": 1.72,
+ "libraries": {
+  "OWN": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "HOLE | None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 198
+    },
+    {
+     "shape": "HOLE is None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 145
+    },
+    {
+     "shape": "object.__setattr__(v0, 'STR', HOLE)",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 59
+    },
+    {
+     "shape": "HOLE is not None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 91
+    },
+    {
+     "shape": "HOLE == HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 160
+    },
+    {
+     "shape": "isinstance(v1, HOLE)",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 78
+    },
+    {
+     "shape": "HOLE('STR')",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 144
+    },
+    {
+     "shape": "Mapping[str, Any]",
+     "size": 5,
+     "holes": 0,
+     "uses_in_training": 35
+    },
+    {
+     "shape": "not HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 112
+    },
+    {
+     "shape": "v2 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 111
+    }
+   ]
+  },
+  "RANDOM": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "v0._prereleases is not HOLE",
+     "size": 4,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "HOLE < HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 30
+    },
+    {
+     "shape": "HOLE = _GLibCVersion(2, 'NUM')",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "HOLE(v1, BoundaryKind.AFTER_LOCALS)",
+     "size": 4,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "'STR' if HOLE else HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 6
+    },
+    {
+     "shape": "if v1.version is None:\n    return False",
+     "size": 8,
+     "holes": 0,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "len(v1) < trimmed_length",
+     "size": 6,
+     "holes": 0,
+     "uses_in_training": 3
+    },
+    {
+     "shape": "_canonical_floor(HOLE)",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 3
+    },
+    {
+     "shape": "@property\ndef filename(v0) -> str:\n    v1 = v0.name or _path_name(v0.path) or _url_name(v0.url)\n    if not v1:\n        raise PylockValidationError('STR')\n    re",
+     "size": 29,
+     "holes": 0,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "isinstance(v0, str)",
+     "size": 4,
+     "holes": 0,
+     "uses_in_training": 4
+    }
+   ]
+  },
+  "OTHER": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "HOLE | None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 405
+    },
+    {
+     "shape": "HOLE is None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 150
+    },
+    {
+     "shape": "HOLE is not None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 147
+    },
+    {
+     "shape": "HOLE('STR')",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 226
+    },
+    {
+     "shape": "HOLE[str, str]",
+     "size": 4,
+     "holes": 1,
+     "uses_in_training": 65
+    },
+    {
+     "shape": "HOLE == HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 186
+    },
+    {
+     "shape": "v2 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 176
+    },
+    {
+     "shape": "typing.Union[HOLE]",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 88
+    },
+    {
+     "shape": "v1 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 168
+    },
+    {
+     "shape": "isinstance(HOLE, HOLE)",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 163
+    }
+   ]
+  },
+  "ORACLE": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "HOLE is None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 47
+    },
+    {
+     "shape": "if HOLE:\n    return None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 38
+    },
+    {
+     "shape": "HOLE is not None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 31
+    },
+    {
+     "shape": "not HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 45
+    },
+    {
+     "shape": "HOLE | None",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 21
+    },
+    {
+     "shape": "HOLE and HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 30
+    },
+    {
+     "shape": "HOLE == HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 30
+    },
+    {
+     "shape": "tuple[Interval, ...]",
+     "size": 5,
+     "holes": 0,
+     "uses_in_training": 8
+    },
+    {
+     "shape": "if HOLE:\n    if v0.version != v1.version:\n        return v1.version < v0.version\nelif v2 != v3:\n    return v3 < v2",
+     "size": 25,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "isinstance(HOLE, HOLE)",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 25
+    }
+   ]
+  }
+ },
+ "set": "evaluation",
+ "budget": 5000,
+ "budget_max": 25000,
+ "max_target_size": 12,
+ "k": 50,
+ "max_pattern_size": 40,
+ "tasks_total": 341,
+ "tasks_derivable": 244,
+ "seconds": {
+  "NONE": {
+   "build_max": 0.12,
+   "search": 6.95
+  },
+  "OWN": {
+   "build_max": 0.4,
+   "search": 6.39
+  },
+  "RANDOM": {
+   "build_max": 0.36,
+   "search": 6.87
+  },
+  "OTHER": {
+   "build_max": 0.36,
+   "search": 8.43
+  },
+  "ORACLE": {
+   "build_max": 0.52,
+   "search": 9.67
+  },
+  "CTX2": {
+   "build_max": 0.5,
+   "search": 11.64
+  }
+ },
+ "python": "3.14.6",
+ "code_commit": "488ca6f3d7baeec252a7e4bfcfe49de664081398",
+ "code_uncommitted_changes": false,
+ "compression": [
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "LowerBound.__gt__",
+   "size": 85,
+   "OWN": 59,
+   "RANDOM": 82,
+   "OTHER": 68,
+   "ORACLE": 42
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "LowerBound.__le__",
+   "size": 85,
+   "OWN": 59,
+   "RANDOM": 75,
+   "OTHER": 68,
+   "ORACLE": 62
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "UpperBound.__gt__",
+   "size": 89,
+   "OWN": 63,
+   "RANDOM": 79,
+   "OTHER": 70,
+   "ORACLE": 44
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "ranges_are_disjoint",
+   "size": 66,
+   "OWN": 62,
+   "RANDOM": 64,
+   "OTHER": 62,
+   "ORACLE": 56
+  },
+  {
+   "path": "src/packaging/dependency_groups.py",
+   "function": "CyclicDependencyGroup.__reduce__",
+   "size": 26,
+   "OWN": 24,
+   "RANDOM": 26,
+   "OTHER": 26,
+   "ORACLE": 24
+  },
+  {
+   "path": "src/packaging/dependency_groups.py",
+   "function": "DependencyGroupResolver._validate",
+   "size": 79,
+   "OWN": 75,
+   "RANDOM": 79,
+   "OTHER": 75,
+   "ORACLE": 75
+  },
+  {
+   "path": "src/packaging/direct_url.py",
+   "function": "_file_url_has_absolute_path",
+   "size": 11,
+   "OWN": 10,
+   "RANDOM": 11,
+   "OTHER": 10,
+   "ORACLE": 11
+  },
+  {
+   "path": "src/packaging/markers.py",
+   "function": "_cached_default_environment",
+   "size": 63,
+   "OWN": 60,
+   "RANDOM": 63,
+   "OTHER": 59,
+   "ORACLE": 58
+  },
+  {
+   "path": "src/packaging/metadata.py",
+   "function": "InvalidMetadata.__reduce__",
+   "size": 25,
+   "OWN": 23,
+   "RANDOM": 25,
+   "OTHER": 21,
+   "ORACLE": 23
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "RangeRelation.__repr__",
+   "size": 15,
+   "OWN": 15,
+   "RANDOM": 15,
+   "OTHER": 15,
+   "ORACLE": 15
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "RangeRelation.is_disjoint",
+   "size": 18,
+   "OWN": 17,
+   "RANDOM": 18,
+   "OTHER": 17,
+   "ORACLE": 13
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "RangeRelation.is_subset",
+   "size": 18,
+   "OWN": 17,
+   "RANDOM": 18,
+   "OTHER": 17,
+   "ORACLE": 13
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.__sub__",
+   "size": 20,
+   "OWN": 14,
+   "RANDOM": 20,
+   "OTHER": 17,
+   "ORACLE": 15
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange._is_plain",
+   "size": 21,
+   "OWN": 19,
+   "RANDOM": 21,
+   "OTHER": 19,
+   "ORACLE": 19
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange._merged_region",
+   "size": 35,
+   "OWN": 32,
+   "RANDOM": 35,
+   "OTHER": 33,
+   "ORACLE": 29
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange._same_releases",
+   "size": 19,
+   "OWN": 17,
+   "RANDOM": 19,
+   "OTHER": 17,
+   "ORACLE": 17
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.difference",
+   "size": 104,
+   "OWN": 89,
+   "RANDOM": 103,
+   "OTHER": 90,
+   "ORACLE": 77
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.from_bounds",
+   "size": 146,
+   "OWN": 109,
+   "RANDOM": 140,
+   "OTHER": 109,
+   "ORACLE": 103
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_disjoint",
+   "size": 33,
+   "OWN": 30,
+   "RANDOM": 33,
+   "OTHER": 30,
+   "ORACLE": 23
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_subset",
+   "size": 52,
+   "OWN": 43,
+   "RANDOM": 52,
+   "OTHER": 45,
+   "ORACLE": 36
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_superset",
+   "size": 16,
+   "OWN": 15,
+   "RANDOM": 16,
+   "OTHER": 15,
+   "ORACLE": 12
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.relation",
+   "size": 99,
+   "OWN": 88,
+   "RANDOM": 98,
+   "OTHER": 88,
+   "ORACLE": 71
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.snap_bounds",
+   "size": 133,
+   "OWN": 124,
+   "RANDOM": 129,
+   "OTHER": 124,
+   "ORACLE": 117
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.to_specifier_set",
+   "size": 294,
+   "OWN": 250,
+   "RANDOM": 292,
+   "OTHER": 257,
+   "ORACLE": 248
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_clean_lower",
+   "size": 135,
+   "OWN": 102,
+   "RANDOM": 132,
+   "OTHER": 113,
+   "ORACLE": 95
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_decompose_dev0_gap",
+   "size": 164,
+   "OWN": 140,
+   "RANDOM": 159,
+   "OTHER": 149,
+   "ORACLE": 129
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_detect_equal_wildcard",
+   "size": 176,
+   "OWN": 135,
+   "RANDOM": 172,
+   "OTHER": 151,
+   "ORACLE": 121
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_detect_not_equal",
+   "size": 187,
+   "OWN": 149,
+   "RANDOM": 184,
+   "OTHER": 155,
+   "ORACLE": 145
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_dev_family_anchor",
+   "size": 63,
+   "OWN": 51,
+   "RANDOM": 62,
+   "OTHER": 51,
+   "ORACLE": 49
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_difference_ranges",
+   "size": 132,
+   "OWN": 116,
+   "RANDOM": 129,
+   "OTHER": 118,
+   "ORACLE": 101
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_gap",
+   "size": 213,
+   "OWN": 172,
+   "RANDOM": 208,
+   "OTHER": 181,
+   "ORACLE": 157
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_gaps",
+   "size": 57,
+   "OWN": 50,
+   "RANDOM": 57,
+   "OTHER": 51,
+   "ORACLE": 49
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_interval",
+   "size": 230,
+   "OWN": 180,
+   "RANDOM": 228,
+   "OTHER": 188,
+   "ORACLE": 174
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_lower",
+   "size": 182,
+   "OWN": 144,
+   "RANDOM": 181,
+   "OTHER": 146,
+   "ORACLE": 135
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_upper",
+   "size": 153,
+   "OWN": 120,
+   "RANDOM": 152,
+   "OTHER": 119,
+   "ORACLE": 117
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_epoch_floor_lower",
+   "size": 156,
+   "OWN": 116,
+   "RANDOM": 152,
+   "OTHER": 131,
+   "ORACLE": 113
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_format_intervals",
+   "size": 27,
+   "OWN": 24,
+   "RANDOM": 27,
+   "OTHER": 23,
+   "ORACLE": 24
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_interval_slice",
+   "size": 68,
+   "OWN": 57,
+   "RANDOM": 66,
+   "OTHER": 58,
+   "ORACLE": 57
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_is_dev0_version",
+   "size": 28,
+   "OWN": 21,
+   "RANDOM": 28,
+   "OTHER": 21,
+   "ORACLE": 21
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_relate_bounds",
+   "size": 134,
+   "OWN": 120,
+   "RANDOM": 129,
+   "OTHER": 122,
+   "ORACLE": 104
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_tighten_no_prereleases",
+   "size": 71,
+   "OWN": 58,
+   "RANDOM": 69,
+   "OTHER": 64,
+   "ORACLE": 47
+  },
+  {
+   "path": "src/packaging/requirements.py",
+   "function": "Requirement.__replace__",
+   "size": 139,
+   "OWN": 129,
+   "RANDOM": 137,
+   "OTHER": 129,
+   "ORACLE": 118
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "Specifier.__replace__",
+   "size": 77,
+   "OWN": 69,
+   "RANDOM": 77,
+   "OTHER": 69,
+   "ORACLE": 61
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.__replace__",
+   "size": 59,
+   "OWN": 52,
+   "RANDOM": 59,
+   "OTHER": 52,
+   "ORACLE": 45
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet._check_relation_operand",
+   "size": 28,
+   "OWN": 22,
+   "RANDOM": 28,
+   "OTHER": 23,
+   "ORACLE": 25
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.is_disjoint",
+   "size": 20,
+   "OWN": 19,
+   "RANDOM": 20,
+   "OTHER": 19,
+   "ORACLE": 16
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.is_subset",
+   "size": 20,
+   "OWN": 19,
+   "RANDOM": 20,
+   "OTHER": 19,
+   "ORACLE": 16
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.is_superset",
+   "size": 20,
+   "OWN": 19,
+   "RANDOM": 20,
+   "OTHER": 19,
+   "ORACLE": 16
+  },
+  {
+   "path": "src/packaging/tags.py",
+   "function": "interpreter_abi",
+   "size": 28,
+   "OWN": 27,
+   "RANDOM": 28,
+   "OTHER": 27,
+   "ORACLE": 25
+  },
+  {
+   "path": "src/packaging/tags.py",
+   "function": "pure_python_tags",
+   "size": 43,
+   "OWN": 35,
+   "RANDOM": 43,
+   "OTHER": 36,
+   "ORACLE": 36
+  }
+ ],
+ "tasks": [
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "LowerBound.__gt__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "UnaryOp",
+    "operand"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 323,
+    "RANDOM": null,
+    "OTHER": 3358,
+    "ORACLE": 3903,
+    "CTX2": 123
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "LowerBound.__gt__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 37,
+    "OWN": 17,
+    "RANDOM": 41,
+    "OTHER": 16,
+    "ORACLE": 17,
+    "CTX2": 67
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "LowerBound.__gt__",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 12496,
+    "OWN": 715,
+    "RANDOM": 15961,
+    "OTHER": 3687,
+    "ORACLE": 751,
+    "CTX2": 3735
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "LowerBound.__gt__",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 431,
+    "OWN": 133,
+    "RANDOM": 504,
+    "OTHER": 115,
+    "ORACLE": 115,
+    "CTX2": 281
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "LowerBound.__gt__",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "LowerBound.__gt__",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 24245,
+    "OWN": 9380,
+    "RANDOM": null,
+    "OTHER": 9244,
+    "ORACLE": 10041,
+    "CTX2": 7031
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "LowerBound.__gt__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 11475,
+    "OWN": 1909,
+    "RANDOM": 3151,
+    "OTHER": 3087,
+    "ORACLE": 2064,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "LowerBound.__gt__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 47,
+    "OWN": 18,
+    "RANDOM": 47,
+    "OTHER": 18,
+    "ORACLE": 18,
+    "CTX2": 69
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "LowerBound.__le__",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "LowerBound.__le__",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 24245,
+    "OWN": 9380,
+    "RANDOM": null,
+    "OTHER": 9244,
+    "ORACLE": 10041,
+    "CTX2": 7031
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "LowerBound.__le__",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "LowerBound.__le__",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 9619,
+    "RANDOM": 12486,
+    "OTHER": 12416,
+    "ORACLE": 10335,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "LowerBound.__le__",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 2556,
+    "RANDOM": null,
+    "OTHER": 24094,
+    "ORACLE": null,
+    "CTX2": 794
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "LowerBound.__le__",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 17951
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "LowerBound.__le__",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "LowerBound.__le__",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 1555
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "UpperBound.__gt__",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "UpperBound.__gt__",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "UpperBound.__gt__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 882,
+    "OWN": 383,
+    "RANDOM": 872,
+    "OTHER": 373,
+    "ORACLE": 394,
+    "CTX2": 728
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "UpperBound.__gt__",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 13592,
+    "OWN": 6735,
+    "RANDOM": 18291,
+    "OTHER": 4915,
+    "ORACLE": 6543,
+    "CTX2": 6333
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "UpperBound.__gt__",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 24245,
+    "OWN": 9380,
+    "RANDOM": null,
+    "OTHER": 9244,
+    "ORACLE": 10041,
+    "CTX2": 7031
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "UpperBound.__gt__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 11475,
+    "OWN": 1909,
+    "RANDOM": 3151,
+    "OTHER": 3087,
+    "ORACLE": 2064,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "UpperBound.__gt__",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 431,
+    "OWN": 133,
+    "RANDOM": 504,
+    "OTHER": 115,
+    "ORACLE": 115,
+    "CTX2": 281
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "UpperBound.__gt__",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 6258
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "ranges_are_disjoint",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "While",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "ranges_are_disjoint",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "ranges_are_disjoint",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "orelse"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "ranges_are_disjoint",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "ranges_are_disjoint",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "ranges_are_disjoint",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "While",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "ranges_are_disjoint",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/_ranges.py",
+   "function": "ranges_are_disjoint",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 13477,
+    "OWN": 12666,
+    "RANDOM": 16208,
+    "OTHER": 15471,
+    "ORACLE": 18114,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/dependency_groups.py",
+   "function": "CyclicDependencyGroup.__reduce__",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/dependency_groups.py",
+   "function": "CyclicDependencyGroup.__reduce__",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 943
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/dependency_groups.py",
+   "function": "CyclicDependencyGroup.__reduce__",
+   "size": 12,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/dependency_groups.py",
+   "function": "CyclicDependencyGroup.__reduce__",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "Subscript",
+    "slice"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/dependency_groups.py",
+   "function": "CyclicDependencyGroup.__reduce__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Subscript",
+    "slice"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1780,
+    "OWN": 4414,
+    "RANDOM": 1961,
+    "OTHER": 3011,
+    "ORACLE": 1587,
+    "CTX2": 85
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/dependency_groups.py",
+   "function": "CyclicDependencyGroup.__reduce__",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/dependency_groups.py",
+   "function": "CyclicDependencyGroup.__reduce__",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/dependency_groups.py",
+   "function": "DependencyGroupResolver._validate",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/dependency_groups.py",
+   "function": "DependencyGroupResolver._validate",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 9389,
+    "OWN": 21102,
+    "RANDOM": 8728,
+    "OTHER": 17738,
+    "ORACLE": 15551,
+    "CTX2": 7929
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/dependency_groups.py",
+   "function": "DependencyGroupResolver._validate",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/dependency_groups.py",
+   "function": "DependencyGroupResolver._validate",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 22317
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/dependency_groups.py",
+   "function": "DependencyGroupResolver._validate",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/dependency_groups.py",
+   "function": "DependencyGroupResolver._validate",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/dependency_groups.py",
+   "function": "DependencyGroupResolver._validate",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/dependency_groups.py",
+   "function": "DependencyGroupResolver._validate",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/direct_url.py",
+   "function": "_file_url_has_absolute_path",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/direct_url.py",
+   "function": "_file_url_has_absolute_path",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/markers.py",
+   "function": "_cached_default_environment",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/markers.py",
+   "function": "_cached_default_environment",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/markers.py",
+   "function": "_cached_default_environment",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Dict",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/markers.py",
+   "function": "_cached_default_environment",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/markers.py",
+   "function": "_cached_default_environment",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/metadata.py",
+   "function": "InvalidMetadata.__reduce__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/metadata.py",
+   "function": "InvalidMetadata.__reduce__",
+   "size": 11,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/metadata.py",
+   "function": "InvalidMetadata.__reduce__",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/metadata.py",
+   "function": "InvalidMetadata.__reduce__",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Subscript",
+    "slice"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/metadata.py",
+   "function": "InvalidMetadata.__reduce__",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/metadata.py",
+   "function": "InvalidMetadata.__reduce__",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/metadata.py",
+   "function": "InvalidMetadata.__reduce__",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1273,
+    "OWN": 1947,
+    "RANDOM": 1076,
+    "OTHER": 324,
+    "ORACLE": 677,
+    "CTX2": 152
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "RangeRelation.__repr__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "FormattedValue",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 785
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "RangeRelation.__repr__",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "RangeRelation.__repr__",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "RangeRelation.__repr__",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "JoinedStr",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 1220
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "RangeRelation.is_disjoint",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "RangeRelation.is_disjoint",
+   "size": 12,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "RangeRelation.is_disjoint",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "RangeRelation.is_subset",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "RangeRelation.is_subset",
+   "size": 12,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "RangeRelation.is_subset",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.__sub__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.__sub__",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 24791
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.__sub__",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 1291,
+    "RANDOM": null,
+    "OTHER": 13115,
+    "ORACLE": 15613,
+    "CTX2": 412
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.__sub__",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.__sub__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "UnaryOp",
+    "operand"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 15040,
+    "OWN": 155,
+    "RANDOM": 16224,
+    "OTHER": 1681,
+    "ORACLE": 2070,
+    "CTX2": 59
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange._is_plain",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 10770,
+    "OWN": null,
+    "RANDOM": 10199,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 5530
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange._is_plain",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 18919,
+    "RANDOM": null,
+    "OTHER": 23659,
+    "ORACLE": 21943,
+    "CTX2": 1734
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange._is_plain",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange._merged_region",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange._merged_region",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange._merged_region",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange._merged_region",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange._merged_region",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange._merged_region",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange._merged_region",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange._merged_region",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange._same_releases",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange._same_releases",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Attribute",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange._same_releases",
+   "size": 12,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange._same_releases",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange._same_releases",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Attribute",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.difference",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.difference",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "AnnAssign",
+    "annotation"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.difference",
+   "size": 11,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.difference",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.difference",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.difference",
+   "size": 12,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.difference",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 977,
+    "OWN": 327,
+    "RANDOM": 1073,
+    "OTHER": 320,
+    "ORACLE": 341,
+    "CTX2": 838
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.difference",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.from_bounds",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BinOp",
+    "left"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 338,
+    "OWN": 183,
+    "RANDOM": 956,
+    "OTHER": 175,
+    "ORACLE": 446,
+    "CTX2": 553
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.from_bounds",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "UnaryOp",
+    "operand"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 11081,
+    "OWN": 2228,
+    "RANDOM": 56,
+    "OTHER": 1410,
+    "ORACLE": 1039,
+    "CTX2": 4659
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.from_bounds",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.from_bounds",
+   "size": 12,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.from_bounds",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 82,
+    "OWN": 21,
+    "RANDOM": 78,
+    "OTHER": 21,
+    "ORACLE": 21,
+    "CTX2": 90
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.from_bounds",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 20023,
+    "RANDOM": null,
+    "OTHER": 20712,
+    "ORACLE": 23608,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.from_bounds",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 80,
+    "OWN": 20,
+    "RANDOM": 76,
+    "OTHER": 20,
+    "ORACLE": 20,
+    "CTX2": 150
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.from_bounds",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": 1712,
+    "OTHER": 20859,
+    "ORACLE": 14651,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_disjoint",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_disjoint",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_disjoint",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_disjoint",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Attribute",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 8798,
+    "OWN": 5015,
+    "RANDOM": 8517,
+    "OTHER": 5434,
+    "ORACLE": 5269,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_disjoint",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 17706,
+    "OWN": null,
+    "RANDOM": 16524,
+    "OTHER": null,
+    "ORACLE": 28,
+    "CTX2": 19976
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_disjoint",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 3278,
+    "OWN": 6889,
+    "RANDOM": 3348,
+    "OTHER": 5724,
+    "ORACLE": null,
+    "CTX2": 3239
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_disjoint",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_disjoint",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_subset",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_subset",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_subset",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 3278,
+    "OWN": 6889,
+    "RANDOM": 3348,
+    "OTHER": 5724,
+    "ORACLE": null,
+    "CTX2": 3239
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_subset",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Compare",
+    "left"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_subset",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_subset",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 17706,
+    "OWN": null,
+    "RANDOM": 16524,
+    "OTHER": null,
+    "ORACLE": 28,
+    "CTX2": 19976
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_subset",
+   "size": 12,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_subset",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_superset",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_superset",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 17706,
+    "OWN": null,
+    "RANDOM": 16524,
+    "OTHER": null,
+    "ORACLE": 28,
+    "CTX2": 19976
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_superset",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 3278,
+    "OWN": 6889,
+    "RANDOM": 3348,
+    "OTHER": 5724,
+    "ORACLE": null,
+    "CTX2": 3239
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.is_superset",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.relation",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.relation",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.relation",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 3278,
+    "OWN": 6889,
+    "RANDOM": 3348,
+    "OTHER": 5724,
+    "ORACLE": null,
+    "CTX2": 3239
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.relation",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.relation",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Attribute",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 8798,
+    "OWN": 5015,
+    "RANDOM": 8517,
+    "OTHER": 5434,
+    "ORACLE": 5269,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.relation",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.relation",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.relation",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.snap_bounds",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Subscript",
+    "slice"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1194,
+    "OWN": 547,
+    "RANDOM": 3229,
+    "OTHER": 679,
+    "ORACLE": 2407,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.snap_bounds",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.snap_bounds",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.snap_bounds",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 17720,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.snap_bounds",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.snap_bounds",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.snap_bounds",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Subscript",
+    "slice"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.snap_bounds",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "IfExp",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": 891,
+    "OTHER": 23269,
+    "ORACLE": null,
+    "CTX2": 2108
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.to_specifier_set",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.to_specifier_set",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.to_specifier_set",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.to_specifier_set",
+   "size": 12,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.to_specifier_set",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.to_specifier_set",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.to_specifier_set",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "VersionRange.to_specifier_set",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_clean_lower",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_clean_lower",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_clean_lower",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 1312,
+    "CTX2": 2497
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_clean_lower",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 13563,
+    "OWN": 246,
+    "RANDOM": 13968,
+    "OTHER": 4619,
+    "ORACLE": 282,
+    "CTX2": 563
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_clean_lower",
+   "size": 12,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_clean_lower",
+   "size": 12,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_clean_lower",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 565,
+    "OWN": 308,
+    "RANDOM": 614,
+    "OTHER": 255,
+    "ORACLE": 269,
+    "CTX2": 316
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_clean_lower",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 2297,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 2651,
+    "CTX2": 7914
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_decompose_dev0_gap",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "comprehension",
+    "iter"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_decompose_dev0_gap",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_decompose_dev0_gap",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 8966,
+    "OWN": 5790,
+    "RANDOM": 8586,
+    "OTHER": 5350,
+    "ORACLE": 6878,
+    "CTX2": 1004
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_decompose_dev0_gap",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_decompose_dev0_gap",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_decompose_dev0_gap",
+   "size": 11,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_decompose_dev0_gap",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 16446,
+    "OWN": 1283,
+    "RANDOM": 1345,
+    "OTHER": 5020,
+    "ORACLE": 1346,
+    "CTX2": 7727
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_decompose_dev0_gap",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_detect_equal_wildcard",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 176,
+    "OWN": 81,
+    "RANDOM": 174,
+    "OTHER": 76,
+    "ORACLE": 86,
+    "CTX2": 234
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_detect_equal_wildcard",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Compare",
+    "left"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 18132,
+    "OWN": 332,
+    "RANDOM": 18092,
+    "OTHER": 5514,
+    "ORACLE": 398,
+    "CTX2": 4019
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_detect_equal_wildcard",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_detect_equal_wildcard",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_detect_equal_wildcard",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_detect_equal_wildcard",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Subscript",
+    "slice"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 169,
+    "OWN": 65,
+    "RANDOM": 149,
+    "OTHER": 38,
+    "ORACLE": 105,
+    "CTX2": 18
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_detect_equal_wildcard",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "BinOp",
+    "right"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_detect_equal_wildcard",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_detect_not_equal",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 2059,
+    "OWN": 659,
+    "RANDOM": 2022,
+    "OTHER": 687,
+    "ORACLE": 781,
+    "CTX2": 9000
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_detect_not_equal",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "GeneratorExp",
+    "elt"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_detect_not_equal",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "orelse"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1097,
+    "OWN": 753,
+    "RANDOM": 911,
+    "OTHER": 673,
+    "ORACLE": 732,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_detect_not_equal",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": 11611,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_detect_not_equal",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 263,
+    "OWN": 184,
+    "RANDOM": 265,
+    "OTHER": 188,
+    "ORACLE": 189,
+    "CTX2": 73
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_detect_not_equal",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_detect_not_equal",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_detect_not_equal",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_dev_family_anchor",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1372,
+    "OWN": 520,
+    "RANDOM": 1256,
+    "OTHER": 520,
+    "ORACLE": 548,
+    "CTX2": 732
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_dev_family_anchor",
+   "size": 12,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_dev_family_anchor",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 318,
+    "OWN": 169,
+    "RANDOM": 333,
+    "OTHER": 167,
+    "ORACLE": 177,
+    "CTX2": 878
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_dev_family_anchor",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_dev_family_anchor",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 20520,
+    "RANDOM": null,
+    "OTHER": 19817,
+    "ORACLE": 18273,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_dev_family_anchor",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 62,
+    "OWN": 20,
+    "RANDOM": 63,
+    "OTHER": 19,
+    "ORACLE": 20,
+    "CTX2": 68
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_dev_family_anchor",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "List",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 312,
+    "OWN": 71,
+    "RANDOM": 355,
+    "OTHER": 98,
+    "ORACLE": 98,
+    "CTX2": 6542
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_dev_family_anchor",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "List",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 312,
+    "OWN": 71,
+    "RANDOM": 355,
+    "OTHER": 98,
+    "ORACLE": 98,
+    "CTX2": 6542
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_difference_ranges",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "While",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_difference_ranges",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_difference_ranges",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 3642,
+    "OWN": 3320,
+    "RANDOM": 3727,
+    "OTHER": 3470,
+    "ORACLE": 3500,
+    "CTX2": 18002
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_difference_ranges",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_difference_ranges",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 13477,
+    "OWN": 12666,
+    "RANDOM": 16208,
+    "OTHER": 15471,
+    "ORACLE": 18114,
+    "CTX2": 21209
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_difference_ranges",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_difference_ranges",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_difference_ranges",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "While",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 950,
+    "OWN": 1162,
+    "RANDOM": 1284,
+    "OTHER": 2121,
+    "ORACLE": 2501,
+    "CTX2": 6144
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_gap",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 5152,
+    "OWN": 6274,
+    "RANDOM": 5914,
+    "OTHER": 5202,
+    "ORACLE": 6129,
+    "CTX2": 2119
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_gap",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_gap",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_gap",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 64,
+    "OWN": 21,
+    "RANDOM": 65,
+    "OTHER": 20,
+    "ORACLE": 21,
+    "CTX2": 97
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_gap",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_gap",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 6965,
+    "RANDOM": null,
+    "OTHER": 7447,
+    "ORACLE": 9468,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_gap",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_gap",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 3290,
+    "RANDOM": 441,
+    "OTHER": 3509,
+    "ORACLE": 4388,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_gaps",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Subscript",
+    "slice"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 5817,
+    "RANDOM": null,
+    "OTHER": 7010,
+    "ORACLE": 4637,
+    "CTX2": 14872
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_gaps",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 36,
+    "OWN": 10,
+    "RANDOM": 42,
+    "OTHER": 8,
+    "ORACLE": 9,
+    "CTX2": 27
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_gaps",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "For",
+    "iter"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_gaps",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 24201,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 23398,
+    "CTX2": 16333
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_gaps",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 3824,
+    "OWN": 3855,
+    "RANDOM": 4560,
+    "OTHER": 862,
+    "ORACLE": 3749,
+    "CTX2": 6947
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_gaps",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Subscript",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_gaps",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 8187,
+    "OWN": 7665,
+    "RANDOM": 8283,
+    "OTHER": 8887,
+    "ORACLE": 7353,
+    "CTX2": 3716
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_gaps",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 4437,
+    "OWN": 5589,
+    "RANDOM": 4292,
+    "OTHER": 3957,
+    "ORACLE": 4491,
+    "CTX2": 835
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_interval",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_interval",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "targets"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 19383
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_interval",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 67,
+    "OWN": 25,
+    "RANDOM": 67,
+    "OTHER": 22,
+    "ORACLE": 25,
+    "CTX2": 113
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_interval",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "UnaryOp",
+    "operand"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": 12052,
+    "ORACLE": 14442,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_interval",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_interval",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_interval",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 100,
+    "OWN": 42,
+    "RANDOM": 146,
+    "OTHER": 36,
+    "ORACLE": 41,
+    "CTX2": 218
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_interval",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_lower",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_lower",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "orelse"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_lower",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_lower",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "ListComp",
+    "elt"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_lower",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_lower",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "orelse"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_lower",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 4548,
+    "OWN": 818,
+    "RANDOM": 4845,
+    "OTHER": 3748,
+    "ORACLE": 887,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_lower",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_upper",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "FormattedValue",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_upper",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 8610,
+    "OWN": 2770,
+    "RANDOM": 8135,
+    "OTHER": 3170,
+    "ORACLE": 3358,
+    "CTX2": 17410
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_upper",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 565,
+    "OWN": 308,
+    "RANDOM": 614,
+    "OTHER": 255,
+    "ORACLE": 269,
+    "CTX2": 316
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_upper",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 11243,
+    "OWN": 9423,
+    "RANDOM": 10926,
+    "OTHER": 11041,
+    "ORACLE": 11472,
+    "CTX2": 8656
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_upper",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "List",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 567,
+    "OWN": 168,
+    "RANDOM": 531,
+    "OTHER": 242,
+    "ORACLE": 245,
+    "CTX2": 10589
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_upper",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 8595,
+    "RANDOM": null,
+    "OTHER": 9520,
+    "ORACLE": 7278,
+    "CTX2": 2008
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_upper",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 13999,
+    "RANDOM": null,
+    "OTHER": 17627,
+    "ORACLE": 17824,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_encode_upper",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "JoinedStr",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_epoch_floor_lower",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 7889,
+    "OWN": 2492,
+    "RANDOM": 7576,
+    "OTHER": 2813,
+    "ORACLE": 3022,
+    "CTX2": 20118
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_epoch_floor_lower",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Subscript",
+    "slice"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_epoch_floor_lower",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 562,
+    "OWN": 529,
+    "RANDOM": 431,
+    "OTHER": 428,
+    "ORACLE": 507,
+    "CTX2": 634
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_epoch_floor_lower",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 14029,
+    "OWN": 5193,
+    "RANDOM": 13078,
+    "OTHER": 5838,
+    "ORACLE": 6182,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_epoch_floor_lower",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_epoch_floor_lower",
+   "size": 11,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_epoch_floor_lower",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 6056,
+    "OWN": 5515,
+    "RANDOM": 6841,
+    "OTHER": 6531,
+    "ORACLE": 6344,
+    "CTX2": 11193
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_epoch_floor_lower",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_format_intervals",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "JoinedStr",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 7801,
+    "OWN": 16695,
+    "RANDOM": 7799,
+    "OTHER": 10151,
+    "ORACLE": 11056,
+    "CTX2": 2050
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_format_intervals",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "GeneratorExp",
+    "elt"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_format_intervals",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "JoinedStr",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 20286,
+    "OWN": 14483,
+    "RANDOM": 20331,
+    "OTHER": 10581,
+    "ORACLE": 19520,
+    "CTX2": 316
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_interval_slice",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 5012,
+    "OWN": 1600,
+    "RANDOM": 4934,
+    "OTHER": 3518,
+    "ORACLE": 1749,
+    "CTX2": 358
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_interval_slice",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "keyword",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_interval_slice",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 5747,
+    "OWN": 5828,
+    "RANDOM": 5983,
+    "OTHER": 5679,
+    "ORACLE": 6648,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_interval_slice",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "IfExp",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 32,
+    "OWN": 9,
+    "RANDOM": 38,
+    "OTHER": 9,
+    "ORACLE": 9,
+    "CTX2": 7
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_interval_slice",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 5681,
+    "OWN": 5936,
+    "RANDOM": 5574,
+    "OTHER": 6356,
+    "ORACLE": 5967,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_interval_slice",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "IfExp",
+    "orelse"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_interval_slice",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 2212,
+    "OWN": 1975,
+    "RANDOM": 2503,
+    "OTHER": 1570,
+    "ORACLE": 1862,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_interval_slice",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 60,
+    "OWN": 14,
+    "RANDOM": 40,
+    "OTHER": 11,
+    "ORACLE": 13,
+    "CTX2": 86
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_is_dev0_version",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 868,
+    "OWN": 419,
+    "RANDOM": 907,
+    "OTHER": 418,
+    "ORACLE": 447,
+    "CTX2": 727
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_is_dev0_version",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 318,
+    "OWN": 169,
+    "RANDOM": 333,
+    "OTHER": 167,
+    "ORACLE": 177,
+    "CTX2": 719
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_is_dev0_version",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1294,
+    "OWN": 491,
+    "RANDOM": 1179,
+    "OTHER": 484,
+    "ORACLE": 528,
+    "CTX2": 440
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_is_dev0_version",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 276,
+    "OWN": 148,
+    "RANDOM": 296,
+    "OTHER": 146,
+    "ORACLE": 148,
+    "CTX2": 350
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_relate_bounds",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_relate_bounds",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_relate_bounds",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 13477,
+    "OWN": 12666,
+    "RANDOM": 16208,
+    "OTHER": 15471,
+    "ORACLE": 18114,
+    "CTX2": 21209
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_relate_bounds",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "UnaryOp",
+    "operand"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_relate_bounds",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "orelse"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 40,
+    "OWN": 33,
+    "RANDOM": 35,
+    "OTHER": 21,
+    "ORACLE": 5,
+    "CTX2": 10
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_relate_bounds",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 10044,
+    "OWN": 8643,
+    "RANDOM": 20895,
+    "OTHER": 5800,
+    "ORACLE": 9308,
+    "CTX2": 7438
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_relate_bounds",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_relate_bounds",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_tighten_no_prereleases",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_tighten_no_prereleases",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 19476,
+    "OWN": 338,
+    "RANDOM": 18041,
+    "OTHER": 6963,
+    "ORACLE": 412,
+    "CTX2": 304
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_tighten_no_prereleases",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 620,
+    "OWN": 400,
+    "RANDOM": 643,
+    "OTHER": 425,
+    "ORACLE": 415,
+    "CTX2": 313
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_tighten_no_prereleases",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 2638,
+    "OWN": 1450,
+    "RANDOM": 3040,
+    "OTHER": 1387,
+    "ORACLE": 1548,
+    "CTX2": 2103
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_tighten_no_prereleases",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Starred",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 17767,
+    "OWN": 5559,
+    "RANDOM": 16600,
+    "OTHER": 4319,
+    "ORACLE": 29,
+    "CTX2": 51
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_tighten_no_prereleases",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_tighten_no_prereleases",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/ranges.py",
+   "function": "_tighten_no_prereleases",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/requirements.py",
+   "function": "Requirement.__replace__",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/requirements.py",
+   "function": "Requirement.__replace__",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/requirements.py",
+   "function": "Requirement.__replace__",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Raise",
+    "exc"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/requirements.py",
+   "function": "Requirement.__replace__",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/requirements.py",
+   "function": "Requirement.__replace__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "IfExp",
+    "orelse"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/requirements.py",
+   "function": "Requirement.__replace__",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/requirements.py",
+   "function": "Requirement.__replace__",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/requirements.py",
+   "function": "Requirement.__replace__",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "Specifier.__replace__",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 20028,
+    "OWN": 7521,
+    "RANDOM": 18372,
+    "OTHER": 7755,
+    "ORACLE": 8238,
+    "CTX2": 10569
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "Specifier.__replace__",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "Specifier.__replace__",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 7802,
+    "OWN": 19632,
+    "RANDOM": 6969,
+    "OTHER": 15875,
+    "ORACLE": 16024,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "Specifier.__replace__",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "Specifier.__replace__",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "Specifier.__replace__",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "Specifier.__replace__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 12,
+    "OWN": 8,
+    "RANDOM": 12,
+    "OTHER": 7,
+    "ORACLE": 7,
+    "CTX2": 9
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "Specifier.__replace__",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.__replace__",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.__replace__",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.__replace__",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.__replace__",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.__replace__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "IfExp",
+    "test"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.__replace__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 12,
+    "OWN": 8,
+    "RANDOM": 12,
+    "OTHER": 7,
+    "ORACLE": 7,
+    "CTX2": 9
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.__replace__",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 11009,
+    "OWN": 4252,
+    "RANDOM": 15631,
+    "OTHER": 4365,
+    "ORACLE": 4621,
+    "CTX2": 3930
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.__replace__",
+   "size": 11,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet._check_relation_operand",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 1293,
+    "RANDOM": null,
+    "OTHER": 13122,
+    "ORACLE": 15621,
+    "CTX2": 791
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet._check_relation_operand",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet._check_relation_operand",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "UnaryOp",
+    "operand"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 15044,
+    "OWN": 157,
+    "RANDOM": null,
+    "OTHER": 1688,
+    "ORACLE": 2074,
+    "CTX2": 120
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet._check_relation_operand",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1319,
+    "OWN": 731,
+    "RANDOM": 1280,
+    "OTHER": 898,
+    "ORACLE": 1016,
+    "CTX2": 63
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet._check_relation_operand",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 372,
+    "OWN": 238,
+    "RANDOM": 374,
+    "OTHER": 287,
+    "ORACLE": 299,
+    "CTX2": 22
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet._check_relation_operand",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet._check_relation_operand",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.is_disjoint",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.is_disjoint",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "func"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.is_disjoint",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.is_disjoint",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.is_disjoint",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.is_subset",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.is_subset",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.is_subset",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.is_subset",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "func"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.is_subset",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.is_superset",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.is_superset",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "func"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.is_superset",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.is_superset",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/specifiers.py",
+   "function": "SpecifierSet.is_superset",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/tags.py",
+   "function": "interpreter_abi",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/tags.py",
+   "function": "interpreter_abi",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/tags.py",
+   "function": "interpreter_abi",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/tags.py",
+   "function": "interpreter_abi",
+   "size": 12,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/tags.py",
+   "function": "interpreter_abi",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/tags.py",
+   "function": "interpreter_abi",
+   "size": 11,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/tags.py",
+   "function": "interpreter_abi",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 3927
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/tags.py",
+   "function": "interpreter_abi",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/tags.py",
+   "function": "pure_python_tags",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 169,
+    "OWN": 70,
+    "RANDOM": 169,
+    "OTHER": 73,
+    "ORACLE": 78,
+    "CTX2": 86
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/tags.py",
+   "function": "pure_python_tags",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 5816
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/tags.py",
+   "function": "pure_python_tags",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/tags.py",
+   "function": "pure_python_tags",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1319,
+    "OWN": 731,
+    "RANDOM": 1280,
+    "OTHER": 898,
+    "ORACLE": 1016,
+    "CTX2": 113
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/tags.py",
+   "function": "pure_python_tags",
+   "size": 12,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/tags.py",
+   "function": "pure_python_tags",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "orelse"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/packaging/tags.py",
+   "function": "pure_python_tags",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 43,
+    "OWN": 11,
+    "RANDOM": 51,
+    "OTHER": 10,
+    "ORACLE": 10,
+    "CTX2": 23
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/packaging/tags.py",
+   "function": "pure_python_tags",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Yield",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 15954,
+    "OWN": 4101,
+    "RANDOM": 21581,
+    "OTHER": null,
+    "ORACLE": 14195,
+    "CTX2": 293
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  }
+ ]
+}

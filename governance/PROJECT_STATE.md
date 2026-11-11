@@ -2,7 +2,7 @@
 
 **Last updated:** 11 November 2026 · **Stage:** day 4 of the [90-day roadmap](ROADMAP.md). Days 1–55 are done; days 56–70 are mostly done; days 71–90 wait for real users.
 
-This file says where everything stands right now, so anyone (you, or a new Claude session) can continue without guessing. Words are explained in the [Glossary](../docs/GLOSSARY.md). To learn every idea from zero, use the [course](../docs/LEARN.md) (37 lessons).
+This file says where everything stands right now, so anyone (you, or a new Claude session) can continue without guessing. Words are explained in the [Glossary](../docs/GLOSSARY.md). To learn every idea from zero, use the [course](../docs/LEARN.md) (38 lessons).
 
 ## Where the project lives
 
@@ -24,7 +24,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 
 ### Research
 - **Prior work** reviewed and a critique given ([R001](../docs/research/R001-primitive-evolution-prior-art-and-thesis.md)).
-- **EXP-006 (built and frozen, not run yet; D-043):** does a phrase book of blocks learned from a project's past let a search *find* its future code with fewer guesses? Tested on three projects nobody here has analysed (packaging, urllib3, httpx), against double the search and against sharper habits with no blocks ([design](../docs/research/EXP-006-design.md), D-039).
+- **EXP-006 (completed; stop rule applies, D-044):** the phrase book made search a little cheaper (+4.1 of 100), but no more than doubling the search, and sharper habits with no phrase book did better (+8.4). The question was: does a phrase book of blocks learned from a project's past let a search *find* its future code with fewer guesses? Tested on three projects nobody here has analysed (packaging, urllib3, httpx), against double the search and against sharper habits with no blocks ([design](../docs/research/EXP-006-design.md), D-039).
 - **EXP-001 (completed):** the right building blocks are worth about 15× more thinking, but discovering them failed. The tidied code reproduces all 200 results exactly.
 - **EXP-005 (completed, positive):** building blocks learned from real projects' past code compress their future code by 13.5%, against 1.9% for random fragments; 60% of the best possible. They're mostly general Python idioms, plus a small (+1.9-point) project-specific layer ([design and results](../docs/research/EXP-005-design.md)).
 - **EXP-002b (completed, negative):** near misses chosen by structure closed −11.5% of the gap and lost to plain learning given the same doubled effort. **The near-miss line is closed (D-035)**; research moves to EXP-005.
@@ -44,7 +44,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 - **GitHub Action:** `product/verify/action.yml`. This repository uses it on itself.
 - **First release:** `pkv-v0.2.0` on GitHub Releases, with the wheel, the source archive and checksums (D-030).
 - **Quality:**
-  - 102 product self-checks and 46 research self-checks;
+  - 102 product self-checks and 47 research self-checks;
   - `mypy --strict` clean;
   - mutation-tested detection rules;
   - two real bugs found and fixed with regression tests: the "racy git" fingerprint bug, and a crash.
@@ -61,6 +61,8 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 
 > With limited effort, new building blocks help when the problems contain recurring structure **and** the blocks are learned from a richer source of information than the system's own earlier attempts. Whether a library of blocks then does better than sharper habits over the original blocks is open. 💡 A hypothesis; EXP-006 tests the open part.
 
+**Answered on 11 November 2026 for EXP-006's setting (D-044):** a library of blocks did not beat sharper habits; it gained no more than doubling the search would.
+
 What each result leads to next is written down in advance: [R001, section 7.2](../docs/research/R001-primitive-evolution-prior-art-and-thesis.md).
 
 ## What we know (our own results)
@@ -72,7 +74,7 @@ What each result leads to next is written down in advance: [R001, section 7.2](.
 
 ## Ideas still to test 💡
 
-- Blocks learned from a project's history make *search* for its future code cheaper, by more than doubling the search would, and by more than sharper habits would (EXP-006).
+- **Better guidance beats more blocks** (from EXP-006): how much further can a better guesser go at equal effort? The next pre-registration (D-044).
 - Programmers will use, and later pay for, an independent checker (P001).
 
 ## Open problems
@@ -120,7 +122,7 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
 ## Next steps, in order
 
 1. **Founder: decide whether to restore the 14 deleted repositories on GitHub** while its 90-day window is open (OI-15, D-041). If they're restored, keep the new backup in **two** places.
-2. **EXP-006 (research):** built, calibrated on tomli and frozen (B = 5,000 states; D-043). Next: commit and upload the freeze, then run packaging, urllib3 and httpx **once** (about 5 to 10 minutes) and publish whatever it shows.
+2. **Research: pre-register the guidance experiment** (D-044). Start from EXP-006's machinery, which is built and tested; compare guessers that use more context against each other at equal effort, on rich and pyparsing (untouched so far), with NONE and CTX2 as the baselines to beat. A small neural guesser trainable on the MacBook is the natural strong condition.
 3. **BENCH-004:** a fresh held-out set, written *before* tackling the remaining known misses in OI-8 (`pytest.raises(AssertionError)`, a skip on one table row, an early `return`) and the extra move spellings in OI-13.
 4. **Watch adoption weekly, with no interviews (D-002).** Reading of 10 November: no real use yet ([ADOPTION.md](ADOPTION.md)). Next reading: 17 November.
 5. **Publish more widely:** decide how to reach GitHub's Marketplace, which needs `action.yml` at the top of a repository (a small separate repository for the action, or moving the file).

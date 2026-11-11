@@ -24,7 +24,7 @@ Status marks:
 | Study Sakana AI | ✅ | R001 |
 | Define first research experiment | ✅ | EXP-001 in the [registry](EXPERIMENT_REGISTRY.md) |
 | Prepare Mac environment | ✅ | `scripts/check-all.sh` runs everything locally |
-| Create project documentation | ✅ | README, glossary, 37-lesson course, decision log |
+| Create project documentation | ✅ | README, glossary, 38-lesson course, decision log |
 | **Deliverables:** product specification, research map, **technical architecture**, experiment specification, development environment | ✅ | The architecture document was added on day 2: [ARCHITECTURE.md](../docs/ARCHITECTURE.md) |
 
 ## Days 11–25: Product prototype
@@ -97,9 +97,9 @@ The 90-day list above names "primitive research" only in general terms. After fi
 
 | Step | What it is | Depends on |
 |---|---|---|
-| **EXP-006** | Do blocks learned from a project's past let a search find its future code with fewer guesses? Designed (D-039); to be built on tomli, frozen, then run once on packaging, urllib3 and httpx. | The design being committed first |
-| then **EXP-007** | The same blocks, in a search judged by running tests | EXP-006 passing both its main prediction and its double-search control |
-| or **learned guidance** | A small model, trained on the MacBook, that suggests what to try next. The project's first neural network, and the start of the own-model work. | EXP-006 failing, or sharper habits matching the blocks |
+| **EXP-006** ✅ | Do blocks learned from a project's past let a search find its future code with fewer guesses? **Done (D-044): a little, no more than doubling the search; sharper habits did better.** | — |
+| ~~EXP-007~~ | The same blocks, in a search judged by running tests | **Closed unrun:** the double-search control failed |
+| **next: learned guidance** | A better guesser of what to try next, from wider context up to a small model trained on the MacBook. The project's first neural network, and the start of the own-model work. | **Triggered** by EXP-006 (D-044); needs its own pre-registration |
 | **Architecture proposals** (the brief's deliverables 9 and 11) | Three candidate designs, written on top of whichever branch holds | EXP-006's result |
 
 ## The brief's first year, checked against the evidence so far
