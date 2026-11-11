@@ -114,3 +114,19 @@ jobs:
           git config --global user.name "ci"
           git config --global user.email "ci@example.invalid"
       - uses: ./product/action
+
+  published-action:
+    name: the published action works, used the way a stranger would (pinned to its commit)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - run: python -m pip install pytest
+      - run: |
+          git config --global user.name "ci"
+          git config --global user.email "ci@example.invalid"
+      - uses: broly18814/parinama-verify-action@57ada4841218a46d4166f3e0bc8de18ebe1912dd  # v0.2.1
