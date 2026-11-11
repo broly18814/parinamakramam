@@ -161,17 +161,17 @@ Add these steps to a workflow (`.github/workflows/*.yml`). The project's depende
   with:
     python-version: "3.12"
 - run: pip install pytest -r requirements.txt
-- uses: broly18814/parinamakramam/product/verify@pkv-v0.2.1
+- uses: broly18814/parinama-verify-action@v0.2.1
   with:
     fail-on: FAILED,SUSPICIOUS,UNVERIFIED   # the default
 ```
 
 The receipt appears on the run's summary page and is kept as a downloadable file (`pkv-receipt`). The verdict is also available to later steps as `steps.<id>.outputs.verdict`.
 
-**Two notes:**
-- The repository is **public**, so any GitHub project can use this action.
-- `@pkv-v0.2.1` is the latest release. For the strongest guarantee, pin to that release's full snapshot hash (shown on the release page) instead of the tag name. That's GitHub's own security advice for third-party actions. `@main` gets every change as soon as it's merged.
-- It isn't listed in GitHub's Marketplace yet. The Marketplace requires `action.yml` at the top of a repository, and ours lives in `product/verify/`.
+**Notes:**
+- `broly18814/parinama-verify-action` is the action's own small repository, made so it can be listed on GitHub's Marketplace. Its first step downloads exactly pkv 0.2.1 from PyPI and refuses to run it unless its SHA-256 fingerprint matches the release's `SHA256SUMS` ([how it's built](../action/PUBLISHING.md)).
+- The older address, `broly18814/parinamakramam/product/verify@pkv-v0.2.1`, still works. It runs pkv straight from this repository, with no download.
+- `@v0.2.1` is the latest release. For the strongest guarantee, pin to that release's full commit hash instead of the tag name. That's GitHub's own security advice for third-party actions.
 - This repository uses its own action on every upload, so pkv checks pkv (the `dogfood` job in `.github/workflows/self-checks.yml`).
 
 ## Safety rules

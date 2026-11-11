@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
-      - run: uvx ruff check product/verify research/pevo experiments
+      - run: uvx ruff check product/verify product/action research/pevo experiments
       - name: Licence files in the package match the root copies
         run: cmp LICENSE product/verify/LICENSE && cmp NOTICE product/verify/NOTICE
 
@@ -98,3 +98,19 @@ jobs:
           git config --global user.name "ci"
           git config --global user.email "ci@example.invalid"
       - uses: ./product/verify
+
+  marketplace-action:
+    name: the Marketplace copy of the action works (downloads pkv from PyPI, checks its fingerprint)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - run: python -m pip install pytest
+      - run: |
+          git config --global user.name "ci"
+          git config --global user.email "ci@example.invalid"
+      - uses: ./product/action

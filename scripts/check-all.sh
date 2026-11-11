@@ -11,7 +11,7 @@ step "licence files (the package copies must match the root)"
 cmp LICENSE product/verify/LICENSE && cmp NOTICE product/verify/NOTICE && echo "LICENSE and NOTICE match"
 
 step "lint (ruff)"
-uvx ruff check product/verify research/pevo experiments
+uvx ruff check product/verify product/action research/pevo experiments
 
 step "types (mypy --strict)"
 (cd product/verify && uvx mypy --python-version 3.10 --strict pkv)

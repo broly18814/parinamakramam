@@ -30,7 +30,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 - **EXP-002b (completed, negative):** near misses chosen by structure closed −11.5% of the gap and lost to plain learning given the same doubled effort. **The near-miss line is closed (D-035)**; research moves to EXP-005.
 - **EXP-002 (completed, negative):** learning from near misses was worse, −2.3 points vs C3, closing −17.7% of the gap. The stop rule now applies: one more variant at most ([design and results](../docs/research/EXP-002-design.md)).
 
-### Product: Parinama Verify 0.2.0 ([guide](../product/verify/README.md))
+### Product: Parinama Verify 0.2.1 ([guide](../product/verify/README.md))
 - **Full check:**
   - picks the affected tests, with reasons;
   - runs them per sub-project, with secrets hidden;
@@ -38,13 +38,15 @@ This file says where everything stands right now, so anyone (you, or a new Claud
   - detects 10 kinds of weakened tests, including the run-time "selected but never ran" check;
   - gives a one-verdict receipt;
   - `pkv fresh` detects stale receipts.
-- **Measured on pre-registered practice sets** (all 51 predictions correct):
+- **Measured on pre-registered practice sets** (every prediction correct; figures for 0.2.0, unchanged in 0.2.1):
   - BENCH-001: 15 of 16 cheats caught, 0 of 12 false alarms;
-  - **BENCH-002 (held out): 10 of 13 caught, 1 of 10 false alarms.**
+  - **BENCH-002 (held out): 10 of 13 caught, 0 of 10 false alarms** (0.1.0 had 1, a split test file);
+  - BENCH-003 (cheats disguised as moved tests): 12 of 12 caught, 1 of 10 false alarms.
 - **GitHub Action:** `product/verify/action.yml`. This repository uses it on itself.
-- **First release:** `pkv-v0.2.0` on GitHub Releases, with the wheel, the source archive and checksums (D-030).
+- **Marketplace-ready copy of the Action** (D-045): its own repository, [broly18814/parinama-verify-action](https://github.com/broly18814/parinama-verify-action), tag `v0.2.1`. It downloads pkv 0.2.1 from PyPI and checks its fingerprint. The listing itself is the founder's one-time step ([how](../product/action/PUBLISHING.md)).
+- **Releases:** `pkv-v0.2.0` (D-030), then `pkv-v0.2.1`, the first on PyPI (`pip install parinama-verify`), each with the wheel, the source archive and checksums.
 - **Quality:**
-  - 102 product self-checks and 47 research self-checks;
+  - 107 product self-checks and 47 research self-checks;
   - `mypy --strict` clean;
   - mutation-tested detection rules;
   - two real bugs found and fixed with regression tests: the "racy git" fingerprint bug, and a crash.
@@ -125,5 +127,5 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
 2. **Research: pre-register the guidance experiment** (D-044). Start from EXP-006's machinery, which is built and tested; compare guessers that use more context against each other at equal effort, on rich and pyparsing (untouched so far), with NONE and CTX2 as the baselines to beat. A small neural guesser trainable on the MacBook is the natural strong condition.
 3. **BENCH-004:** a fresh held-out set, written *before* tackling the remaining known misses in OI-8 (`pytest.raises(AssertionError)`, a skip on one table row, an early `return`) and the extra move spellings in OI-13.
 4. **Watch adoption weekly, with no interviews (D-002).** Reading of 10 November: no real use yet ([ADOPTION.md](ADOPTION.md)). Next reading: 17 November.
-5. **Publish more widely:** decide how to reach GitHub's Marketplace, which needs `action.yml` at the top of a repository (a small separate repository for the action, or moving the file).
+5. **Founder: list the action on GitHub's Marketplace.** This is a one-time step on GitHub's website: accept the Marketplace Developer Agreement and tick "publish" on the `v0.2.1` release ([steps](../product/action/PUBLISHING.md)). Everything else is done (D-045).
 6. **The unwritten deliverables above**, starting with grants and compute (18).
