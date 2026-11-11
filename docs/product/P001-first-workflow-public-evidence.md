@@ -8,6 +8,13 @@
 > - **Demand:** not shown yet. Two days after publishing there are downloads by scanners and by us, 20 unique page visitors, and no other project using it ([adoption log](../../governance/ADOPTION.md)). The idea that programmers will use, and later pay for, an independent checker is still 💡 an idea to test.
 > - **Next for the product:** a fresh held-out practice set (BENCH-004) before fixing the known misses, a route to GitHub's Marketplace, and a weekly adoption reading.
 
+> **Correction, 12 November 2026 ([R002](../research/R002-fresh-plan/REPORT.md)):** section 2.3 says I couldn't find a tool whose whole job is being a neutral referee for AI code. That is no longer true, and may have been incomplete when written:
+> - GitHub Copilot's coding agent runs a project's tests and links its logs to each commit.
+> - pytest-testmon selects affected tests.
+> - **Skylos** and at least seven small open-source tools (goodhart, tamperguard, tampercheck, testwall, checkwash, dunnit and others) detect deleted or skipped tests.
+>
+> pkv's remaining edge has to be proven by measurement; see [plan v2](../../governance/PLAN-v2.md), track A.
+
 **How we decided:** we read public complaints on GitHub (a website where programmers store code and report problems), published surveys, and one published study. **We did not interview anyone.** Unfamiliar words are explained in the [Glossary](../GLOSSARY.md).
 
 **How sure are we?** Each important statement carries a label:

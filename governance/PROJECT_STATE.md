@@ -123,6 +123,8 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
 
 ## Next steps, in order
 
+> **12 November 2026:** a new plan, [plan v2](PLAN-v2.md), is proposed and waits for the founder's approval. It was rebuilt from the brief and fresh research ([R002](../docs/research/R002-fresh-plan/REPORT.md)). Until it is approved, the steps below stand.
+
 1. **Founder: decide whether to restore the 14 deleted repositories on GitHub** while its 90-day window is open (OI-15, D-041). If they're restored, keep the new backup in **two** places.
 2. **Research: pre-register the guidance experiment** (D-044). Start from EXP-006's machinery, which is built and tested; compare guessers that use more context against each other at equal effort, on rich and pyparsing (untouched so far), with NONE and CTX2 as the baselines to beat. A small neural guesser trainable on the MacBook is the natural strong condition.
 3. **BENCH-004:** a fresh held-out set, written *before* tackling the remaining known misses in OI-8 (`pytest.raises(AssertionError)`, a skip on one table row, an early `return`) and the extra move spellings in OI-13.

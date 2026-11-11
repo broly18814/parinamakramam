@@ -18,6 +18,7 @@ An independent AI research and product company, started with ₹0 on one MacBook
 | Look up a word | [docs/GLOSSARY.md](docs/GLOSSARY.md) |
 | Read the research and the first experiment's results | [docs/research/R001…](docs/research/R001-primitive-evolution-prior-art-and-thesis.md) |
 | Read why we chose this product | [docs/product/P001…](docs/product/P001-first-workflow-public-evidence.md) |
+| **Plan v2 (proposed, 12 Nov): the next 90 days rebuilt from the brief and fresh research** | [governance/PLAN-v2.md](governance/PLAN-v2.md), research in [docs/research/R002-fresh-plan/](docs/research/R002-fresh-plan/REPORT.md) |
 | Grants, free computing and incubators in India | [docs/business/F001…](docs/business/F001-grants-compute-and-incubators-india.md) |
 | See every important decision and why | [governance/DECISION_LOG.md](governance/DECISION_LOG.md) |
 | See every experiment: predictions, then results | [governance/EXPERIMENT_REGISTRY.md](governance/EXPERIMENT_REGISTRY.md) |
