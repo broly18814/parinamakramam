@@ -43,7 +43,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
   - **BENCH-002 (held out): 10 of 13 caught, 0 of 10 false alarms** (0.1.0 had 1, a split test file);
   - BENCH-003 (cheats disguised as moved tests): 12 of 12 caught, 1 of 10 false alarms.
 - **GitHub Action:** `product/verify/action.yml`. This repository uses it on itself.
-- **The Action's own public repository** (D-045, D-046): [broly18814/parinama-verify-action](https://github.com/broly18814/parinama-verify-action), tag `v0.2.1` (commit `57ada48`). It downloads pkv 0.2.1 from PyPI and checks its fingerprint. The robot tests both the copy here and the published one on every upload. **Not listed on the Marketplace yet:** that is the founder's one-time step ([how](../product/action/PUBLISHING.md)).
+- **The Action's own public repository** (D-045, D-046): [broly18814/parinama-verify-action](https://github.com/broly18814/parinama-verify-action), tag `v0.2.1` (commit `57ada48`). It downloads pkv 0.2.1 from PyPI and checks its fingerprint. The robot tests both the copy here and the published one on every upload. **Listed on GitHub's Marketplace** since 11 November 2026 ([Parinama Verify](https://github.com/marketplace/actions/parinama-verify); categories Testing and Continuous integration; D-047).
 - **Releases:** `pkv-v0.2.0` (D-030), then `pkv-v0.2.1`, the first on PyPI (`pip install parinama-verify`), each with the wheel, the source archive and checksums.
 - **Quality:**
   - 107 product self-checks and 47 research self-checks;
@@ -127,6 +127,6 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
 2. **Research: pre-register the guidance experiment** (D-044). Start from EXP-006's machinery, which is built and tested; compare guessers that use more context against each other at equal effort, on rich and pyparsing (untouched so far), with NONE and CTX2 as the baselines to beat. A small neural guesser trainable on the MacBook is the natural strong condition.
 3. **BENCH-004:** a fresh held-out set, written *before* tackling the remaining known misses in OI-8 (`pytest.raises(AssertionError)`, a skip on one table row, an early `return`) and the extra move spellings in OI-13.
 4. **Watch adoption weekly, with no interviews (D-002).** Reading of 10 November: no real use yet ([ADOPTION.md](ADOPTION.md)). Next reading: 17 November.
-5. **Founder: list the action on GitHub's Marketplace.** The repository is published (D-046). What remains is a one-time step on GitHub's website that only you can take: open the `v0.2.1` release page, accept the Marketplace Developer Agreement, and tick "publish" ([steps](../product/action/PUBLISHING.md)).
+5. **Watch whether the Marketplace listing brings anyone** (D-047): add the action repository's traffic and the listing to the weekly adoption reading.
 6. **Funding, as individuals first ([F001](../docs/business/F001-grants-compute-and-incubators-india.md)):** draft applications to Emergent Ventures India, then the Transformative AI Fund, for the founder to read and submit. Registering a company is deferred until pkv has real users; that is the founder's decision.
 7. **The unwritten deliverables above**, next the own-model roadmap (14).

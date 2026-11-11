@@ -108,7 +108,7 @@ The 90-day list above names "primitive research" only in general terms. After fi
 |---|---|
 | A working software-engineering product | ✅ pkv 0.2.1, public |
 | Repeat usage; early paying customers "if validation succeeds" | ⏳ no users yet; nothing to validate |
-| Self-service distribution | ✅ PyPI, and the GitHub Action in its own public repository (D-045, D-046); 🟡 the Marketplace listing waits for the founder's one-time step on GitHub |
+| Self-service distribution | ✅ PyPI, and the GitHub Action [listed on GitHub's Marketplace](https://github.com/marketplace/actions/parinama-verify) (D-045 to D-047) |
 | Primitive discovery prototype; compositional library learning | ✅ built and tested; the toy-world results were negative, the real-code result positive |
 | Small proprietary models; architecture baselines | ⏳ not started; the first one follows from EXP-006 (see above) |
 | Early research automation | 🟡 by hand, with scripts and self-checks; not automated |

@@ -4,10 +4,10 @@ Rule D-002: no interviews, ever. We judge demand only from what people do on the
 
 Take a reading with `scripts/adoption.sh` (dates are UTC) and add the row below. One reading a week is enough.
 
-| Date (UTC) | PyPI downloads (day / week / month) | Wheel downloads from GitHub releases | Stars | Forks | Repository views, 14 days | Clones, 14 days | Open issues |
-|---|---|---|---|---|---|---|---|
-| 2026-11-08 | not available yet (pypistats updates daily) | 2, both our own release checks | 0 | 0 | 0 (0 unique) | 0 (0 unique) | 0 |
-| 2026-11-10 | 12 / 99 / 0 (the month counter hasn't caught up yet) | 3 | 0 | 0 | 29 (20 unique) | 472 (67 unique) | 0 |
+| Date (UTC) | PyPI downloads (day / week / month) | Wheel downloads from GitHub releases | Stars | Forks | Repository views, 14 days | Clones, 14 days | Open issues | Action repository (Marketplace): stars, views 14 days |
+|---|---|---|---|---|---|---|---|---|
+| 2026-11-08 | not available yet (pypistats updates daily) | 2, both our own release checks | 0 | 0 | 0 (0 unique) | 0 (0 unique) | 0 | — (not yet created) |
+| 2026-11-10 | 12 / 99 / 0 (the month counter hasn't caught up yet) | 3 | 0 | 0 | 29 (20 unique) | 472 (67 unique) | 0 | — (not yet created) |
 
 ## Notes on each reading
 
@@ -22,6 +22,6 @@ Take a reading with `scripts/adoption.sh` (dates are UTC) and add the row below.
 - **PyPI downloads include robots.** Mirrors and security scanners download every new package. Expect dozens of "downloads" in the first days that aren't people. A real signal is a *steady weekly* number that keeps growing.
 - **Our own downloads count too.** Release checks, CI installs from PyPI and demos all add to the counts. Note them in the row when we know.
 - **Stars and forks are cheap. Use is not.** The strongest signals are:
-  - a public repository using `broly18814/parinamakramam/product/verify` in its workflow (search GitHub code for that string);
+  - a public repository using `broly18814/parinama-verify-action` (listed on GitHub's Marketplace since 11 November 2026, D-047) or `broly18814/parinamakramam/product/verify` in its workflow. Search GitHub code for both strings, and don't count this repository: its own robot uses both;
   - an issue filed from a real project, using the templates in `.github/ISSUE_TEMPLATE/`.
 - **Activation and retention** (the day 71–90 goals): a project that adds the Action and *keeps* it for 30 days counts as retained. These are counted by hand from public repositories only.

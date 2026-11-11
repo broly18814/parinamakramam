@@ -169,7 +169,7 @@ Add these steps to a workflow (`.github/workflows/*.yml`). The project's depende
 The receipt appears on the run's summary page and is kept as a downloadable file (`pkv-receipt`). The verdict is also available to later steps as `steps.<id>.outputs.verdict`.
 
 **Notes:**
-- [`broly18814/parinama-verify-action`](https://github.com/broly18814/parinama-verify-action) is the action's own small public repository, made so it can be listed on GitHub's Marketplace. Its first step downloads exactly pkv 0.2.1 from PyPI and refuses to run it unless its SHA-256 fingerprint matches the release's `SHA256SUMS` ([how it's built](../action/PUBLISHING.md)).
+- It is **listed on GitHub's Marketplace**: [Parinama Verify](https://github.com/marketplace/actions/parinama-verify). Its code is in [`broly18814/parinama-verify-action`](https://github.com/broly18814/parinama-verify-action), the action's own small public repository. Its first step downloads exactly pkv 0.2.1 from PyPI and refuses to run it unless its SHA-256 fingerprint matches the release's `SHA256SUMS` ([how it's built](../action/PUBLISHING.md)).
 - For the strongest guarantee, pin to the release's full commit hash instead of the tag name: `broly18814/parinama-verify-action@57ada4841218a46d4166f3e0bc8de18ebe1912dd  # v0.2.1`. That's GitHub's own security advice for third-party actions.
 - The older address, `broly18814/parinamakramam/product/verify@pkv-v0.2.1`, still works. It runs pkv straight from this repository, with no download.
 - This repository uses its own action on every upload, so pkv checks pkv (the `dogfood` job in `.github/workflows/self-checks.yml`).
