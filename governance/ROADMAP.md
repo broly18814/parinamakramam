@@ -81,7 +81,7 @@ The brief's list (repository search, file retrieval, code explanation, repositor
 | Measure cost per task | ⏳ | Easy to do: pkv costs ₹0 per check on the user's machine. To be written down with the first users. |
 | Improve the product | ⏳ (continuous) | |
 | Run the first architecture experiment | ⏳ | EXP-006 comes first (D-037, D-039) |
-| Investigate compute opportunities | ⏳ | |
+| Investigate compute opportunities | ✅ | [F001](../docs/business/F001-grants-compute-and-incubators-india.md) (11 Nov): free notebooks and TPU Research Cloud now; cloud credits after a company exists |
 | Prepare the next proprietary-model experiment | ⏳ | |
 
 ## The next items, in the roadmap's order
@@ -104,7 +104,7 @@ The 90-day list above names "primitive research" only in general terms. After fi
 
 ## The brief's first year, checked against the evidence so far
 
-| Year-1 goal in the founder's brief | Status on day 3 |
+| Year-1 goal in the founder's brief | Status on day 4 (11 Nov) |
 |---|---|
 | A working software-engineering product | ✅ pkv 0.2.1, public |
 | Repeat usage; early paying customers "if validation succeeds" | ⏳ no users yet; nothing to validate |
