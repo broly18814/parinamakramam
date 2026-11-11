@@ -267,6 +267,8 @@ They come from **one small project** (42 past functions), used for building and 
 
 Run on 11 November 2026 from the frozen snapshot `488ca6f`, with no uncommitted changes (every result file records this). Source: `experiments/EXP-006/results/` and `experiments/EXP-006/hypothesis_tests.txt`. Reproduce with `python3 experiments/EXP-006/analysis.py`; a self-check requires that output to match exactly. The whole run took 39 seconds on the MacBook, far below the 10-minute estimate, because the frozen budget (5,000) is small.
 
+**The robot's check on the freeze, honestly.** GitHub's robot marked the freeze snapshot `488ca6f` as failed. Every self-check passed (148 of 148), but our own checker, pkv, gave the verdict UNVERIFIED. The reason: the self-check for `calibrate.py` ran the script as a separate program, where pkv can't see it being checked. After the results were saved, that self-check was changed to run the script in-process, and pkv now gives VERIFIED. Only a test changed; the frozen experiment code and every result are untouched.
+
 ### In plain words first
 
 - **The phrase book helps a little.** With the project's own phrase book, the guesser found 18.3 of 100 hidden pieces within 5,000 guesses, against 14.2 with no phrase book. It helped in all three projects.
