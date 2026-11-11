@@ -1,0 +1,7174 @@
+{
+ "project": "tomli",
+ "url": "https://github.com/hukkin/tomli.git",
+ "licence": "MIT",
+ "pinned": "43a86ade8b795c6ef9b4ec53372a607cd1ed426f",
+ "split": "c00fbc1f82d31292c21c65cb252c5e6e5b05d3b1",
+ "split_date": "2021-12-27",
+ "past_functions": 42,
+ "future_functions": 40,
+ "past_size": 3111,
+ "learn_seconds": 0.84,
+ "libraries": {
+  "OWN": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "HOLE(v0, v1, HOLE)",
+     "size": 3,
+     "holes": 2,
+     "uses_in_training": 48
+    },
+    {
+     "shape": "v1 += 1",
+     "size": 4,
+     "holes": 0,
+     "uses_in_training": 17
+    },
+    {
+     "shape": "v1 + HOLE",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 23
+    },
+    {
+     "shape": "v0.startswith('STR', v1)",
+     "size": 5,
+     "holes": 0,
+     "uses_in_training": 11
+    },
+    {
+     "shape": "HOLE == 'STR'",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 19
+    },
+    {
+     "shape": "HOLE(v0, v1)",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 18
+    },
+    {
+     "shape": "HOLE: str | None = v0[v1]",
+     "size": 8,
+     "holes": 1,
+     "uses_in_training": 5
+    },
+    {
+     "shape": "tuple[Pos, str]",
+     "size": 5,
+     "holes": 0,
+     "uses_in_training": 8
+    },
+    {
+     "shape": "v1 = HOLE",
+     "size": 2,
+     "holes": 1,
+     "uses_in_training": 24
+    },
+    {
+     "shape": "HOLE[:-1]",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 6
+    }
+   ]
+  },
+  "RANDOM": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "parse_key(HOLE, v1)",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 3
+    },
+    {
+     "shape": "(HOLE, v3 + v0[v4:v1])",
+     "size": 9,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "parse_value(HOLE, HOLE, v2)",
+     "size": 3,
+     "holes": 2,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "HOLE = parse_key_part(v0, v1)",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "HOLE(HOLE, 'STR')",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 3
+    },
+    {
+     "shape": "HOLE >= len(v0)",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "suffixed_err(HOLE, v3, HOLE)",
+     "size": 3,
+     "holes": 2,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "parse_literal_str(HOLE, HOLE)",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "HOLE(v0, v1, 'NUM')",
+     "size": 4,
+     "holes": 1,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "suffixed_err(HOLE, HOLE, 'STR')",
+     "size": 3,
+     "holes": 2,
+     "uses_in_training": 21
+    }
+   ]
+  },
+  "OTHER": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "try:\n    if not math.isfinite(float(v0)):\n        return _format_not_finite(float(v0))\n    v0 = int(v0)\nexcept (TypeError, ValueError):\n    return str(v0)",
+     "size": 29,
+     "holes": 0,
+     "uses_in_training": 3
+    },
+    {
+     "shape": "if HOLE:\n    return _('STR')",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 14
+    },
+    {
+     "shape": "HOLE == HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 40
+    },
+    {
+     "shape": "_ngettext('STR', 'STR', HOLE)",
+     "size": 4,
+     "holes": 1,
+     "uses_in_training": 13
+    },
+    {
+     "shape": "return str(v0)",
+     "size": 4,
+     "holes": 0,
+     "uses_in_training": 12
+    },
+    {
+     "shape": "HOLE % HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 30
+    },
+    {
+     "shape": "if isinstance(v0, dt.datetime) and v0.tzinfo is not None:\n    v3 = dt.datetime.now(v0.tzinfo).date()\nelse:\n    v3 = dt.date.today()",
+     "size": 29,
+     "holes": 0,
+     "uses_in_training": 2
+    },
+    {
+     "shape": "_quotient_and_remainder(HOLE, 'NUM', HOLE, v5, v4, v3)",
+     "size": 6,
+     "holes": 2,
+     "uses_in_training": 6
+    },
+    {
+     "shape": "HOLE and HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 23
+    },
+    {
+     "shape": "HOLE | HOLE",
+     "size": 2,
+     "holes": 2,
+     "uses_in_training": 21
+    }
+   ]
+  },
+  "ORACLE": {
+   "blocks": 50,
+   "top": [
+    {
+     "shape": "TOMLDecodeError(HOLE, v0, v1)",
+     "size": 4,
+     "holes": 1,
+     "uses_in_training": 26
+    },
+    {
+     "shape": "v1 += 1",
+     "size": 4,
+     "holes": 0,
+     "uses_in_training": 17
+    },
+    {
+     "shape": "v0.startswith('STR', v1)",
+     "size": 5,
+     "holes": 0,
+     "uses_in_training": 12
+    },
+    {
+     "shape": "v1 + HOLE",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 22
+    },
+    {
+     "shape": "HOLE == 'STR'",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 20
+    },
+    {
+     "shape": "HOLE(v0, v1)",
+     "size": 3,
+     "holes": 1,
+     "uses_in_training": 20
+    },
+    {
+     "shape": "v1 = skip_chars(v0, v1, TOML_WS)",
+     "size": 7,
+     "holes": 0,
+     "uses_in_training": 7
+    },
+    {
+     "shape": "HOLE: str | None = v0[v1]",
+     "size": 8,
+     "holes": 1,
+     "uses_in_training": 5
+    },
+    {
+     "shape": "tuple[Pos, str]",
+     "size": 5,
+     "holes": 0,
+     "uses_in_training": 8
+    },
+    {
+     "shape": "HOLE[:-1]",
+     "size": 5,
+     "holes": 1,
+     "uses_in_training": 6
+    }
+   ]
+  }
+ },
+ "set": "calibration",
+ "budget": 50000,
+ "budget_max": 250000,
+ "max_target_size": 12,
+ "k": 50,
+ "max_pattern_size": 40,
+ "tasks_total": 260,
+ "tasks_derivable": 248,
+ "seconds": {
+  "NONE": {
+   "build_max": 0.35,
+   "search": 1241.92
+  },
+  "OWN": {
+   "build_max": 1.17,
+   "search": 1054.36
+  },
+  "RANDOM": {
+   "build_max": 0.91,
+   "search": 1170.94
+  },
+  "OTHER": {
+   "build_max": 0.99,
+   "search": 1306.35
+  },
+  "ORACLE": {
+   "build_max": 0.74,
+   "search": 1061.86
+  },
+  "CTX2": {
+   "build_max": 0.92,
+   "search": 743.81
+  }
+ },
+ "python": "3.14.6",
+ "code_commit": "497c7690bee51c79ebab26a40022cfa7d0874989",
+ "compression": [
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.__init__",
+   "size": 29,
+   "OWN": 28,
+   "RANDOM": 28,
+   "OTHER": 29,
+   "ORACLE": 28
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.add_pending",
+   "size": 16,
+   "OWN": 15,
+   "RANDOM": 16,
+   "OTHER": 16,
+   "ORACLE": 15
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.finalize_pending",
+   "size": 23,
+   "OWN": 22,
+   "RANDOM": 23,
+   "OTHER": 23,
+   "ORACLE": 22
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.is_",
+   "size": 86,
+   "OWN": 70,
+   "RANDOM": 80,
+   "OTHER": 80,
+   "ORACLE": 68
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.set",
+   "size": 88,
+   "OWN": 59,
+   "RANDOM": 67,
+   "OTHER": 82,
+   "ORACLE": 59
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.unset_all",
+   "size": 41,
+   "OWN": 31,
+   "RANDOM": 37,
+   "OTHER": 39,
+   "ORACLE": 31
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.__init__",
+   "size": 13,
+   "OWN": 9,
+   "RANDOM": 13,
+   "OTHER": 13,
+   "ORACLE": 9
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.append_nest_to_list",
+   "size": 56,
+   "OWN": 44,
+   "RANDOM": 47,
+   "OTHER": 53,
+   "ORACLE": 39
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.get_or_create_nest",
+   "size": 64,
+   "OWN": 51,
+   "RANDOM": 62,
+   "OTHER": 61,
+   "ORACLE": 47
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Output.__init__",
+   "size": 14,
+   "OWN": 14,
+   "RANDOM": 14,
+   "OTHER": 14,
+   "ORACLE": 14
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "TOMLDecodeError.__init__",
+   "size": 189,
+   "OWN": 177,
+   "RANDOM": 187,
+   "OTHER": 173,
+   "ORACLE": 156
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_dict_rule",
+   "size": 106,
+   "OWN": 67,
+   "RANDOM": 91,
+   "OTHER": 99,
+   "ORACLE": 54
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_list_rule",
+   "size": 102,
+   "OWN": 67,
+   "RANDOM": 92,
+   "OTHER": 100,
+   "ORACLE": 56
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "is_unicode_scalar_value",
+   "size": 20,
+   "OWN": 12,
+   "RANDOM": 14,
+   "OTHER": 19,
+   "ORACLE": 20
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "key_value_rule",
+   "size": 165,
+   "OWN": 133,
+   "RANDOM": 159,
+   "OTHER": 160,
+   "ORACLE": 120
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "load",
+   "size": 38,
+   "OWN": 31,
+   "RANDOM": 38,
+   "OTHER": 36,
+   "ORACLE": 31
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "loads",
+   "size": 204,
+   "OWN": 176,
+   "RANDOM": 191,
+   "OTHER": 180,
+   "ORACLE": 131
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float",
+   "size": 37,
+   "OWN": 32,
+   "RANDOM": 36,
+   "OTHER": 36,
+   "ORACLE": 32
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float.safe_parse_float",
+   "size": 23,
+   "OWN": 18,
+   "RANDOM": 23,
+   "OTHER": 21,
+   "ORACLE": 18
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_array",
+   "size": 125,
+   "OWN": 85,
+   "RANDOM": 109,
+   "OTHER": 112,
+   "ORACLE": 79
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str",
+   "size": 145,
+   "OWN": 101,
+   "RANDOM": 121,
+   "OTHER": 127,
+   "ORACLE": 93
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape",
+   "size": 138,
+   "OWN": 96,
+   "RANDOM": 111,
+   "OTHER": 127,
+   "ORACLE": 87
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape_multiline",
+   "size": 18,
+   "OWN": 10,
+   "RANDOM": 17,
+   "OTHER": 18,
+   "ORACLE": 14
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_hex_char",
+   "size": 72,
+   "OWN": 53,
+   "RANDOM": 71,
+   "OTHER": 68,
+   "ORACLE": 52
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_inline_table",
+   "size": 213,
+   "OWN": 150,
+   "RANDOM": 192,
+   "OTHER": 198,
+   "ORACLE": 128
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key",
+   "size": 103,
+   "OWN": 65,
+   "RANDOM": 83,
+   "OTHER": 93,
+   "ORACLE": 54
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_part",
+   "size": 75,
+   "OWN": 48,
+   "RANDOM": 68,
+   "OTHER": 69,
+   "ORACLE": 45
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_value_pair",
+   "size": 76,
+   "OWN": 55,
+   "RANDOM": 70,
+   "OTHER": 71,
+   "ORACLE": 46
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_literal_str",
+   "size": 40,
+   "OWN": 28,
+   "RANDOM": 39,
+   "OTHER": 35,
+   "ORACLE": 28
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_multiline_str",
+   "size": 114,
+   "OWN": 70,
+   "RANDOM": 110,
+   "OTHER": 100,
+   "ORACLE": 80
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_one_line_basic_str",
+   "size": 22,
+   "OWN": 15,
+   "RANDOM": 21,
+   "OTHER": 20,
+   "ORACLE": 15
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_value",
+   "size": 280,
+   "OWN": 210,
+   "RANDOM": 248,
+   "OTHER": 257,
+   "ORACLE": 195
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_chars",
+   "size": 28,
+   "OWN": 23,
+   "RANDOM": 28,
+   "OTHER": 26,
+   "ORACLE": 23
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comment",
+   "size": 42,
+   "OWN": 30,
+   "RANDOM": 39,
+   "OTHER": 38,
+   "ORACLE": 30
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comments_and_array_ws",
+   "size": 32,
+   "OWN": 25,
+   "RANDOM": 29,
+   "OTHER": 28,
+   "ORACLE": 25
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_until",
+   "size": 77,
+   "OWN": 63,
+   "RANDOM": 74,
+   "OTHER": 72,
+   "ORACLE": 60
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "cached_tz",
+   "size": 43,
+   "OWN": 36,
+   "RANDOM": 39,
+   "OTHER": 40,
+   "ORACLE": 40
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_datetime",
+   "size": 118,
+   "OWN": 116,
+   "RANDOM": 110,
+   "OTHER": 112,
+   "ORACLE": 113
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_localtime",
+   "size": 48,
+   "OWN": 46,
+   "RANDOM": 43,
+   "OTHER": 46,
+   "ORACLE": 43
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_number",
+   "size": 28,
+   "OWN": 28,
+   "RANDOM": 28,
+   "OTHER": 28,
+   "ORACLE": 25
+  }
+ ],
+ "tasks": [
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.__init__",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Subscript",
+    "slice"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.__init__",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 29030,
+    "OWN": null,
+    "RANDOM": 16845,
+    "OTHER": 28014,
+    "ORACLE": null,
+    "CTX2": 34566
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.__init__",
+   "size": 12,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.__init__",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "AnnAssign",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.__init__",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "AnnAssign",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 1852
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.__init__",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Subscript",
+    "slice"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 54983,
+    "RANDOM": 40816,
+    "OTHER": null,
+    "ORACLE": 61945,
+    "CTX2": 394
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.add_pending",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.add_pending",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.finalize_pending",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 19734,
+    "OWN": 16577,
+    "RANDOM": 16010,
+    "OTHER": 19686,
+    "ORACLE": 14634,
+    "CTX2": 5827
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.finalize_pending",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 48941,
+    "OWN": null,
+    "RANDOM": 133323,
+    "OTHER": 47728,
+    "ORACLE": null,
+    "CTX2": 3150
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.finalize_pending",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 194117,
+    "OWN": 186007,
+    "RANDOM": 141307,
+    "OTHER": 191686,
+    "ORACLE": 136549,
+    "CTX2": 47047
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.finalize_pending",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 15621
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.is_",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 211,
+    "OWN": 77,
+    "RANDOM": 405,
+    "OTHER": 241,
+    "ORACLE": 74,
+    "CTX2": 277
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.is_",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 5675,
+    "OWN": 776,
+    "RANDOM": 9004,
+    "OTHER": 8026,
+    "ORACLE": 724,
+    "CTX2": 3464
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.is_",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 320,
+    "OWN": 99,
+    "RANDOM": 54,
+    "OTHER": 505,
+    "ORACLE": 102,
+    "CTX2": 408
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.is_",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 106,
+    "OWN": 137,
+    "RANDOM": 107,
+    "OTHER": 103,
+    "ORACLE": 113,
+    "CTX2": 21
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.is_",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 48531,
+    "OWN": 2098,
+    "RANDOM": 12411,
+    "OTHER": 30652,
+    "ORACLE": 3278,
+    "CTX2": 109
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.is_",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 17785,
+    "OWN": 8682,
+    "RANDOM": 3367,
+    "OTHER": 29332,
+    "ORACLE": 12750,
+    "CTX2": 27972
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.is_",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 222,
+    "OWN": 30,
+    "RANDOM": 376,
+    "OTHER": 217,
+    "ORACLE": 29,
+    "CTX2": 123
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.is_",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 48531,
+    "OWN": 2098,
+    "RANDOM": 12411,
+    "OTHER": 30652,
+    "ORACLE": 3278,
+    "CTX2": 109
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.set",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 98210,
+    "OWN": 21969,
+    "RANDOM": 37935,
+    "OTHER": 96009,
+    "ORACLE": 16418,
+    "CTX2": 155
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.set",
+   "size": 12,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.set",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "func"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 1585
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.set",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Attribute",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 117
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.set",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 132950,
+    "OWN": null,
+    "RANDOM": 4,
+    "OTHER": 131508,
+    "ORACLE": null,
+    "CTX2": 31
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.set",
+   "size": 11,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 153569
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.set",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 312,
+    "OWN": 40,
+    "RANDOM": 412,
+    "OTHER": 271,
+    "ORACLE": 38,
+    "CTX2": 16
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.set",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 581,
+    "OWN": 176,
+    "RANDOM": 571,
+    "OTHER": 96,
+    "ORACLE": 204,
+    "CTX2": 495
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.unset_all",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.unset_all",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.unset_all",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Subscript",
+    "slice"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 27,
+    "OWN": 144912,
+    "RANDOM": 16411,
+    "OTHER": 27,
+    "ORACLE": 141370,
+    "CTX2": 4
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.unset_all",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "For",
+    "iter"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 414,
+    "OWN": 4,
+    "RANDOM": 7,
+    "OTHER": 419,
+    "ORACLE": 4,
+    "CTX2": 10
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.unset_all",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 185661,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 77487,
+    "CTX2": 1810
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.unset_all",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 782,
+    "OWN": 65,
+    "RANDOM": 1200,
+    "OTHER": 767,
+    "ORACLE": 72,
+    "CTX2": 30
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.unset_all",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 21986,
+    "OWN": 10641,
+    "RANDOM": 34900,
+    "OTHER": 35104,
+    "ORACLE": 15539,
+    "CTX2": 3550
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.unset_all",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 27639,
+    "OWN": 12084,
+    "RANDOM": 30064,
+    "OTHER": 27370,
+    "ORACLE": 4875,
+    "CTX2": 239
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.__init__",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "AnnAssign",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 8184,
+    "OWN": 4,
+    "RANDOM": 5136,
+    "OTHER": 8037,
+    "ORACLE": 4,
+    "CTX2": 39
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.__init__",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 9448,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 9379,
+    "CTX2": 39475
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.append_nest_to_list",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 72309,
+    "OWN": 27924,
+    "RANDOM": 49036,
+    "OTHER": 72008,
+    "ORACLE": 27745,
+    "CTX2": 1835
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.append_nest_to_list",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "orelse"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 46965,
+    "OWN": 17192,
+    "RANDOM": 90601,
+    "OTHER": 24200,
+    "ORACLE": 7494,
+    "CTX2": 290
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.append_nest_to_list",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.append_nest_to_list",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 2374,
+    "OWN": 204,
+    "RANDOM": 3750,
+    "OTHER": 2312,
+    "ORACLE": 181,
+    "CTX2": 988
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.append_nest_to_list",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.append_nest_to_list",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "UnaryOp",
+    "operand"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 51620,
+    "OWN": null,
+    "RANDOM": 30056,
+    "OTHER": 51172,
+    "ORACLE": 3085,
+    "CTX2": 51715
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.append_nest_to_list",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 20479
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.append_nest_to_list",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 2251,
+    "OWN": 3885,
+    "RANDOM": 70,
+    "OTHER": 1754,
+    "ORACLE": 1634,
+    "CTX2": 1323
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.get_or_create_nest",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "For",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 2006,
+    "OWN": 997,
+    "RANDOM": 1901,
+    "OTHER": 1052,
+    "ORACLE": 909,
+    "CTX2": 62
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.get_or_create_nest",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 52620,
+    "OWN": 8535,
+    "RANDOM": 19904,
+    "OTHER": 50784,
+    "ORACLE": 1606,
+    "CTX2": 40
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.get_or_create_nest",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 320,
+    "OWN": 99,
+    "RANDOM": 54,
+    "OTHER": 505,
+    "ORACLE": 102,
+    "CTX2": 408
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.get_or_create_nest",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 4549,
+    "OWN": 7,
+    "RANDOM": 10622,
+    "OTHER": 4391,
+    "ORACLE": 7,
+    "CTX2": 80
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.get_or_create_nest",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "UnaryOp",
+    "operand"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 17545,
+    "OWN": 1906,
+    "RANDOM": 9243,
+    "OTHER": 17265,
+    "ORACLE": 1009,
+    "CTX2": 137
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.get_or_create_nest",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 7471,
+    "RANDOM": 119219,
+    "OTHER": null,
+    "ORACLE": 5267,
+    "CTX2": 1346
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.get_or_create_nest",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 4775,
+    "OWN": 268,
+    "RANDOM": 6851,
+    "OTHER": 2791,
+    "ORACLE": 264,
+    "CTX2": 249
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.get_or_create_nest",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 74930,
+    "RANDOM": 129886,
+    "OTHER": 238667,
+    "ORACLE": 81103,
+    "CTX2": 2389
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Output.__init__",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Output.__init__",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "TOMLDecodeError.__init__",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "TOMLDecodeError.__init__",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "BinOp",
+    "right"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 16463
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "TOMLDecodeError.__init__",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "TOMLDecodeError.__init__",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "TOMLDecodeError.__init__",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "TOMLDecodeError.__init__",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "TOMLDecodeError.__init__",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "TOMLDecodeError.__init__",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "BinOp",
+    "left"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 7121
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_dict_rule",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": 31870,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 10997
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_dict_rule",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 298,
+    "OWN": 300,
+    "RANDOM": 327,
+    "OTHER": 108,
+    "ORACLE": 95,
+    "CTX2": 74
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_dict_rule",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 2,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 3,
+    "CTX2": 105307
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_dict_rule",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 26834,
+    "OWN": 27281,
+    "RANDOM": 21462,
+    "OTHER": 26440,
+    "ORACLE": 16557,
+    "CTX2": 1387
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_dict_rule",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "Try",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 208207,
+    "OWN": 127082,
+    "RANDOM": 146735,
+    "OTHER": 200618,
+    "ORACLE": 75480,
+    "CTX2": 7818
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_dict_rule",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Raise",
+    "exc"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 5693,
+    "OWN": null,
+    "RANDOM": 12205,
+    "OTHER": 5673,
+    "ORACLE": 25805,
+    "CTX2": 17476
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_dict_rule",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 4701,
+    "OWN": 156,
+    "RANDOM": 23,
+    "OTHER": 4674,
+    "ORACLE": 2876,
+    "CTX2": 487
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_dict_rule",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Raise",
+    "exc"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 5693,
+    "OWN": null,
+    "RANDOM": 12205,
+    "OTHER": 5673,
+    "ORACLE": 25805,
+    "CTX2": 17803
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_list_rule",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 14339,
+    "OWN": 13,
+    "RANDOM": 10542,
+    "OTHER": 14207,
+    "ORACLE": 13,
+    "CTX2": 414
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_list_rule",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 1801,
+    "RANDOM": 6416,
+    "OTHER": null,
+    "ORACLE": 1571,
+    "CTX2": 81322
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_list_rule",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "ExceptHandler",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 18074,
+    "OWN": null,
+    "RANDOM": 52731,
+    "OTHER": 19088,
+    "ORACLE": 94767,
+    "CTX2": 90616
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_list_rule",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": 31870,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 10997
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_list_rule",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_list_rule",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Expr",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 89959,
+    "OWN": 82207,
+    "RANDOM": 66936,
+    "OTHER": 89217,
+    "ORACLE": 48638,
+    "CTX2": 1411
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_list_rule",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 4701,
+    "OWN": 156,
+    "RANDOM": 23,
+    "OTHER": 4674,
+    "ORACLE": 2876,
+    "CTX2": 487
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_list_rule",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 10387,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 7866,
+    "CTX2": 11143
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "is_unicode_scalar_value",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 51,
+    "RANDOM": 1048,
+    "OTHER": null,
+    "ORACLE": 85870,
+    "CTX2": 317
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "is_unicode_scalar_value",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "BoolOp",
+    "values"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 52,
+    "RANDOM": 1052,
+    "OTHER": null,
+    "ORACLE": 85953,
+    "CTX2": 320
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "key_value_rule",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "Try",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 225730
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "key_value_rule",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "key_value_rule",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 786,
+    "OWN": 68,
+    "RANDOM": 855,
+    "OTHER": 689,
+    "ORACLE": 68,
+    "CTX2": 24
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "key_value_rule",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1940,
+    "OWN": 69,
+    "RANDOM": 74,
+    "OTHER": 1855,
+    "ORACLE": 69,
+    "CTX2": 61
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "key_value_rule",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 954,
+    "OWN": 242,
+    "RANDOM": 748,
+    "OTHER": 733,
+    "ORACLE": 225,
+    "CTX2": 31
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "key_value_rule",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Raise",
+    "exc"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "key_value_rule",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Raise",
+    "exc"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "key_value_rule",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Raise",
+    "exc"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 5693,
+    "OWN": null,
+    "RANDOM": 12205,
+    "OTHER": 5673,
+    "ORACLE": 25805,
+    "CTX2": 17476
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "load",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "load",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "ExceptHandler",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "load",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 30906,
+    "OWN": 21034,
+    "RANDOM": 24698,
+    "OTHER": 21848,
+    "ORACLE": 19202,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "load",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "Try",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 36197,
+    "OWN": null,
+    "RANDOM": 37971,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "load",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "load",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 4549,
+    "OWN": 7,
+    "RANDOM": 10622,
+    "OTHER": 4391,
+    "ORACLE": 7,
+    "CTX2": 80
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "loads",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Raise",
+    "exc"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 170226,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": 166017,
+    "ORACLE": 133225,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "loads",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 119891,
+    "OWN": null,
+    "RANDOM": 2614,
+    "OTHER": 114005,
+    "ORACLE": null,
+    "CTX2": 5634
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "loads",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 31185,
+    "OWN": 40693,
+    "RANDOM": 51539,
+    "OTHER": 29553,
+    "ORACLE": 32285,
+    "CTX2": 56294
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "loads",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "JoinedStr",
+    "values"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "loads",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 27,
+    "OWN": 9,
+    "RANDOM": 11,
+    "OTHER": 22,
+    "ORACLE": 8,
+    "CTX2": 20
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "loads",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "Raise",
+    "exc"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "loads",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 88570
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "loads",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 24,
+    "OWN": 8,
+    "RANDOM": 10,
+    "OTHER": 20,
+    "ORACLE": 9,
+    "CTX2": 13
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 39,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 33,
+    "CTX2": 78791
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float.safe_parse_float",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float.safe_parse_float",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 54,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 39,
+    "CTX2": 2172
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float.safe_parse_float",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float.safe_parse_float",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_array",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Subscript",
+    "slice"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_array",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_array",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_array",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "While",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_array",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "While",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 7366,
+    "OWN": 185,
+    "RANDOM": 132,
+    "OTHER": 2888,
+    "ORACLE": 298,
+    "CTX2": 352
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_array",
+   "size": 12,
+   "kind": "stmt",
+   "context": [
+    "While",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 133423,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 100620,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_array",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 995,
+    "OWN": 72,
+    "RANDOM": 29,
+    "OTHER": 1044,
+    "ORACLE": 64,
+    "CTX2": 108
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_array",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1350,
+    "OWN": 1,
+    "RANDOM": 1451,
+    "OTHER": 1225,
+    "ORACLE": 1,
+    "CTX2": 103
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "AugAssign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 191,
+    "OWN": 51,
+    "RANDOM": 322,
+    "OTHER": 186,
+    "ORACLE": 51,
+    "CTX2": 24
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "While",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 4,
+    "OWN": 1,
+    "RANDOM": 4,
+    "OTHER": 2,
+    "ORACLE": 1,
+    "CTX2": 4
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 27,
+    "OWN": 9,
+    "RANDOM": 11,
+    "OTHER": 22,
+    "ORACLE": 8,
+    "CTX2": 16
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 4,
+    "OWN": 1,
+    "RANDOM": 4,
+    "OTHER": 2,
+    "ORACLE": 1,
+    "CTX2": 5
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 8417,
+    "OWN": 2112,
+    "RANDOM": 41663,
+    "OTHER": 6442,
+    "ORACLE": 2069,
+    "CTX2": 831
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "Try",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1454,
+    "OWN": 581,
+    "RANDOM": 2422,
+    "OTHER": 296,
+    "ORACLE": 671,
+    "CTX2": 245
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 12,
+    "OWN": 29,
+    "RANDOM": 13,
+    "OTHER": 10,
+    "ORACLE": 32,
+    "CTX2": 7
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 128497,
+    "OWN": 13235,
+    "RANDOM": 11884,
+    "OTHER": 57991,
+    "ORACLE": 16292,
+    "CTX2": 7980
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 14,
+    "OWN": 4,
+    "RANDOM": 9,
+    "OTHER": 12,
+    "ORACLE": 4,
+    "CTX2": 9
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "ExceptHandler",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 2692,
+    "OWN": 701,
+    "RANDOM": 4,
+    "OTHER": 2727,
+    "ORACLE": 811,
+    "CTX2": 701
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 685,
+    "OWN": 2,
+    "RANDOM": 95,
+    "OTHER": 662,
+    "ORACLE": 2,
+    "CTX2": 10
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 4,
+    "OWN": 1,
+    "RANDOM": 4,
+    "OTHER": 2,
+    "ORACLE": 1,
+    "CTX2": 4
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 19033,
+    "OWN": null,
+    "RANDOM": 57856,
+    "OTHER": 18993,
+    "ORACLE": 123745,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape_multiline",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 5632,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 29950
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape_multiline",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 110165,
+    "OWN": 1035,
+    "RANDOM": 50702,
+    "OTHER": 113762,
+    "ORACLE": null,
+    "CTX2": 4733
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape_multiline",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 685,
+    "OWN": 2,
+    "RANDOM": 95,
+    "OTHER": 662,
+    "ORACLE": 2,
+    "CTX2": 10
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_hex_char",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 685,
+    "OWN": 2,
+    "RANDOM": 95,
+    "OTHER": 662,
+    "ORACLE": 2,
+    "CTX2": 10
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_hex_char",
+   "size": 12,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_hex_char",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Raise",
+    "exc"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 5693,
+    "OWN": null,
+    "RANDOM": 12205,
+    "OTHER": 5673,
+    "ORACLE": 25805,
+    "CTX2": 17476
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_hex_char",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 8996,
+    "OWN": 959,
+    "RANDOM": 17312,
+    "OTHER": 6562,
+    "ORACLE": 825,
+    "CTX2": 357
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_hex_char",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 124037,
+    "OWN": 11989,
+    "RANDOM": 211165,
+    "OTHER": 122643,
+    "ORACLE": 13688,
+    "CTX2": 1958
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_hex_char",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Subscript",
+    "slice"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 367,
+    "OWN": 48,
+    "RANDOM": 664,
+    "OTHER": 295,
+    "ORACLE": 49,
+    "CTX2": 29
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_hex_char",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 99014,
+    "OWN": 9705,
+    "RANDOM": 228153,
+    "OTHER": 68490,
+    "ORACLE": 8564,
+    "CTX2": 3470
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_hex_char",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 19033,
+    "OWN": null,
+    "RANDOM": 57856,
+    "OTHER": 18993,
+    "ORACLE": 123745,
+    "CTX2": 173290
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_inline_table",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 3360,
+    "OWN": 3830,
+    "RANDOM": 2745,
+    "OTHER": 3958,
+    "ORACLE": 3468,
+    "CTX2": 1532
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_inline_table",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 328,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 354,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_inline_table",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 24,
+    "OWN": 8,
+    "RANDOM": 10,
+    "OTHER": 20,
+    "ORACLE": 9,
+    "CTX2": 13
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_inline_table",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 59657,
+    "OWN": 3060,
+    "RANDOM": 63725,
+    "OTHER": 61395,
+    "ORACLE": 3196,
+    "CTX2": 9186
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_inline_table",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1350,
+    "OWN": 1,
+    "RANDOM": 1451,
+    "OTHER": 1225,
+    "ORACLE": 1,
+    "CTX2": 103
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_inline_table",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 23628,
+    "OWN": 6500,
+    "RANDOM": 91633,
+    "OTHER": 16386,
+    "ORACLE": 5567,
+    "CTX2": 5294
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_inline_table",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_inline_table",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "While",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 7366,
+    "OWN": 185,
+    "RANDOM": 132,
+    "OTHER": 2888,
+    "ORACLE": 298,
+    "CTX2": 352
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 51377,
+    "OWN": 1233,
+    "RANDOM": 174,
+    "OTHER": 44492,
+    "ORACLE": 2,
+    "CTX2": 4283
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "AnnAssign",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 89,
+    "OWN": 200,
+    "RANDOM": 38,
+    "OTHER": 17,
+    "ORACLE": 329,
+    "CTX2": 4
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "While",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 2452,
+    "RANDOM": 1423,
+    "OTHER": null,
+    "ORACLE": 1866,
+    "CTX2": 70261
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "While",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 36093,
+    "OWN": 473,
+    "RANDOM": 126,
+    "OTHER": 14508,
+    "ORACLE": 2,
+    "CTX2": 452
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 51,
+    "OWN": 18,
+    "RANDOM": 41,
+    "OTHER": 53,
+    "ORACLE": 21,
+    "CTX2": 30
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 4701,
+    "OWN": 156,
+    "RANDOM": 23,
+    "OTHER": 4674,
+    "ORACLE": 2876,
+    "CTX2": 487
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 12525,
+    "OWN": 9609,
+    "RANDOM": 13552,
+    "OTHER": 12625,
+    "ORACLE": 6009,
+    "CTX2": 1116
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 107,
+    "OWN": 37,
+    "RANDOM": 211,
+    "OTHER": 113,
+    "ORACLE": 38,
+    "CTX2": 341
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_part",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 44323,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 40699,
+    "CTX2": 109417
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_part",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 685,
+    "OWN": 2,
+    "RANDOM": 95,
+    "OTHER": 662,
+    "ORACLE": 2,
+    "CTX2": 10
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_part",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Raise",
+    "exc"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 5693,
+    "OWN": null,
+    "RANDOM": 12205,
+    "OTHER": 5673,
+    "ORACLE": 25805,
+    "CTX2": 17251
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_part",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 35393,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 227914,
+    "CTX2": 67599
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_part",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "Try",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 73311,
+    "OWN": 2,
+    "RANDOM": 12235,
+    "OTHER": 12391,
+    "ORACLE": 2,
+    "CTX2": 9
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_part",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 451,
+    "OWN": 144,
+    "RANDOM": 202,
+    "OTHER": 467,
+    "ORACLE": 168,
+    "CTX2": 648
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_part",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 6593,
+    "OWN": 395,
+    "RANDOM": 7615,
+    "OTHER": 6958,
+    "ORACLE": 368,
+    "CTX2": 560
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_part",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 114173,
+    "OWN": 17191,
+    "RANDOM": 130071,
+    "OTHER": 113316,
+    "ORACLE": 17402,
+    "CTX2": 48011
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_value_pair",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_value_pair",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 144303,
+    "RANDOM": 36077,
+    "OTHER": 246218,
+    "ORACLE": 155263,
+    "CTX2": 349
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_value_pair",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_value_pair",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": 172372,
+    "OTHER": null,
+    "ORACLE": 142422,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_value_pair",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Subscript",
+    "slice"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 37872,
+    "OWN": 72253,
+    "RANDOM": 24383,
+    "OTHER": 36174,
+    "ORACLE": 83234,
+    "CTX2": 181
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_value_pair",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 19033,
+    "OWN": null,
+    "RANDOM": 57856,
+    "OTHER": 18993,
+    "ORACLE": 123745,
+    "CTX2": 173290
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_value_pair",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 4,
+    "OWN": 1,
+    "RANDOM": 4,
+    "OTHER": 2,
+    "ORACLE": 1,
+    "CTX2": 4
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_value_pair",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 4701,
+    "OWN": 156,
+    "RANDOM": 23,
+    "OTHER": 4674,
+    "ORACLE": 2876,
+    "CTX2": 487
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_literal_str",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 52621,
+    "RANDOM": null,
+    "OTHER": 214345,
+    "ORACLE": 46586,
+    "CTX2": 68689
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_literal_str",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_literal_str",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_literal_str",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 4,
+    "OWN": 1,
+    "RANDOM": 4,
+    "OTHER": 2,
+    "ORACLE": 1,
+    "CTX2": 4
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_literal_str",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 685,
+    "OWN": 2,
+    "RANDOM": 95,
+    "OTHER": 662,
+    "ORACLE": 2,
+    "CTX2": 10
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_literal_str",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 925,
+    "OWN": 407,
+    "RANDOM": 670,
+    "OTHER": 864,
+    "ORACLE": 417,
+    "CTX2": 997
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_literal_str",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 20,
+    "OWN": 4,
+    "RANDOM": 41,
+    "OTHER": 14,
+    "ORACLE": 4,
+    "CTX2": 6
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_literal_str",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_multiline_str",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 21631,
+    "OWN": 7691,
+    "RANDOM": 9145,
+    "OTHER": 21791,
+    "ORACLE": 58912,
+    "CTX2": 183
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_multiline_str",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 1220,
+    "RANDOM": 160406,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 9753
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_multiline_str",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 21631,
+    "OWN": 7691,
+    "RANDOM": 9145,
+    "OTHER": 21791,
+    "ORACLE": 58912,
+    "CTX2": 183
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_multiline_str",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_multiline_str",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 63678,
+    "OWN": 21762,
+    "RANDOM": 107553,
+    "OTHER": 45675,
+    "ORACLE": 25593,
+    "CTX2": 1834
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_multiline_str",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_multiline_str",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 583,
+    "OWN": 300,
+    "RANDOM": 2462,
+    "OTHER": 568,
+    "ORACLE": 297,
+    "CTX2": 125
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_multiline_str",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 11230,
+    "OWN": 6109,
+    "RANDOM": 41884,
+    "OTHER": 12499,
+    "ORACLE": 9175,
+    "CTX2": 2720
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_one_line_basic_str",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 57624,
+    "OWN": null,
+    "RANDOM": 35390,
+    "OTHER": 58491,
+    "ORACLE": 247275,
+    "CTX2": 4679
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_one_line_basic_str",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 685,
+    "OWN": 2,
+    "RANDOM": 95,
+    "OTHER": 662,
+    "ORACLE": 2,
+    "CTX2": 10
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_one_line_basic_str",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 29753
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_one_line_basic_str",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 4,
+    "OWN": 1,
+    "RANDOM": 4,
+    "OTHER": 2,
+    "ORACLE": 1,
+    "CTX2": 4
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_value",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Tuple",
+    "elts"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 23,
+    "OWN": 14,
+    "RANDOM": 10,
+    "OTHER": 22,
+    "ORACLE": 14,
+    "CTX2": 7
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_value",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 164930,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 153046,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_value",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_value",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_value",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 2326,
+    "OWN": 135,
+    "RANDOM": 50,
+    "OTHER": 2387,
+    "ORACLE": 132,
+    "CTX2": 232
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_value",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 107336,
+    "OWN": 13017,
+    "RANDOM": 15882,
+    "OTHER": 97541,
+    "ORACLE": 12073,
+    "CTX2": 18349
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_value",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "Raise",
+    "exc"
+   ],
+   "derivable": false,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_value",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 118,
+    "OWN": 34,
+    "RANDOM": 28,
+    "OTHER": 102,
+    "ORACLE": 37,
+    "CTX2": 84
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_chars",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "Try",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 125997,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 171756,
+    "CTX2": 263
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_chars",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "While",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 3822,
+    "OWN": 691,
+    "RANDOM": 2250,
+    "OTHER": 2594,
+    "ORACLE": 796,
+    "CTX2": 8
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_chars",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "While",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 4,
+    "OWN": 1,
+    "RANDOM": 4,
+    "OTHER": 2,
+    "ORACLE": 1,
+    "CTX2": 4
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comment",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 61,
+    "OWN": 45,
+    "RANDOM": 89,
+    "OTHER": 55,
+    "ORACLE": 47,
+    "CTX2": 18
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comment",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "AnnAssign",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 89,
+    "OWN": 200,
+    "RANDOM": 38,
+    "OTHER": 17,
+    "ORACLE": 329,
+    "CTX2": 4
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comment",
+   "size": 12,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comment",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 11,
+    "OWN": 3,
+    "RANDOM": 2,
+    "OTHER": 10,
+    "ORACLE": 3,
+    "CTX2": 15
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comment",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "Try",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 73311,
+    "OWN": 2,
+    "RANDOM": 12235,
+    "OTHER": 12391,
+    "ORACLE": 2,
+    "CTX2": 9
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comments_and_array_ws",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 180,
+    "OWN": 852,
+    "RANDOM": 566,
+    "OTHER": 160,
+    "ORACLE": 647,
+    "CTX2": 169
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comments_and_array_ws",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "While",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 10371,
+    "OWN": 90525,
+    "RANDOM": 43540,
+    "OTHER": 7779,
+    "ORACLE": 51021,
+    "CTX2": 53238
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comments_and_array_ws",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 27129,
+    "OWN": 929,
+    "RANDOM": 37,
+    "OTHER": 27533,
+    "ORACLE": 3988,
+    "CTX2": 1183
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comments_and_array_ws",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 1598,
+    "OWN": 99,
+    "RANDOM": 2607,
+    "OTHER": 1632,
+    "ORACLE": 101,
+    "CTX2": 218
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comments_and_array_ws",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "While",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 11350,
+    "OWN": 254,
+    "RANDOM": 22831,
+    "OTHER": 4592,
+    "ORACLE": 436,
+    "CTX2": 634
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comments_and_array_ws",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "While",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 226662,
+    "OWN": 3002,
+    "RANDOM": 193,
+    "OTHER": 95409,
+    "ORACLE": 31241,
+    "CTX2": 4006
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_until",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "Try",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 91835
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_until",
+   "size": 12,
+   "kind": "stmt",
+   "context": [
+    "ExceptHandler",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_until",
+   "size": 10,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_until",
+   "size": 5,
+   "kind": "stmt",
+   "context": [
+    "ExceptHandler",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 10598,
+    "OWN": 35675,
+    "RANDOM": 10249,
+    "OTHER": 4832,
+    "ORACLE": 11679,
+    "CTX2": 3734
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_until",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 871
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_until",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_until",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "Raise",
+    "exc"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_until",
+   "size": 8,
+   "kind": "expr",
+   "context": [
+    "UnaryOp",
+    "operand"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 122685
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "cached_tz",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "IfExp",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 13,
+    "OWN": 5,
+    "RANDOM": 5,
+    "OTHER": 7,
+    "ORACLE": 5,
+    "CTX2": 6
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "cached_tz",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "keyword",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 7015,
+    "OWN": 437,
+    "RANDOM": 567,
+    "OTHER": 472,
+    "ORACLE": 2987,
+    "CTX2": 22
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "cached_tz",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "keyword",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 6196,
+    "OWN": 423,
+    "RANDOM": 558,
+    "OTHER": 1336,
+    "ORACLE": 2554,
+    "CTX2": 15
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "cached_tz",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": 241603,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 5496
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": true,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "cached_tz",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "decorator_list"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 17998,
+    "OWN": 10985,
+    "RANDOM": 14749,
+    "OTHER": 18435,
+    "ORACLE": 11911,
+    "CTX2": 15
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "cached_tz",
+   "size": 9,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 70589,
+    "OWN": 37957,
+    "RANDOM": 18014,
+    "OTHER": 28263,
+    "ORACLE": 33134,
+    "CTX2": 625
+   },
+   "used_block": {
+    "OWN": true,
+    "RANDOM": true,
+    "OTHER": true,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_datetime",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "AnnAssign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 5067
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_datetime",
+   "size": 4,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": 194667,
+    "RANDOM": 241678,
+    "OTHER": null,
+    "ORACLE": 213365,
+    "CTX2": 1505
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_datetime",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_datetime",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "FunctionDef",
+    "returns"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 14469,
+    "OWN": 362,
+    "RANDOM": 4269,
+    "OTHER": 3448,
+    "ORACLE": 646,
+    "CTX2": 48
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_datetime",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_datetime",
+   "size": 8,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_datetime",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 91604
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_datetime",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "AnnAssign",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 340,
+    "OWN": 211,
+    "RANDOM": 196,
+    "OTHER": 74,
+    "ORACLE": 345,
+    "CTX2": 7
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": true,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_localtime",
+   "size": 10,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_localtime",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 753,
+    "CTX2": 58408
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_localtime",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Call",
+    "args"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_localtime",
+   "size": 9,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_localtime",
+   "size": 7,
+   "kind": "expr",
+   "context": [
+    "IfExp",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_localtime",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_localtime",
+   "size": 12,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_localtime",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Assign",
+    "targets"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 195807,
+    "CTX2": 13183
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_number",
+   "size": 5,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 32865
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_number",
+   "size": 6,
+   "kind": "stmt",
+   "context": [
+    "If",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": 78703
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_number",
+   "size": 11,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_number",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "arg",
+    "annotation"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": 753,
+    "CTX2": 58408
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": true
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_number",
+   "size": 6,
+   "kind": "expr",
+   "context": [
+    "Return",
+    "value"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_number",
+   "size": 4,
+   "kind": "expr",
+   "context": [
+    "If",
+    "test"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": 11447,
+    "OWN": 5267,
+    "RANDOM": 13075,
+    "OTHER": 11319,
+    "ORACLE": 5678,
+    "CTX2": 1365
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_number",
+   "size": 7,
+   "kind": "stmt",
+   "context": [
+    "FunctionDef",
+    "body"
+   ],
+   "derivable": true,
+   "effort": {
+    "NONE": null,
+    "OWN": null,
+    "RANDOM": null,
+    "OTHER": null,
+    "ORACLE": null,
+    "CTX2": null
+   },
+   "used_block": {
+    "OWN": false,
+    "RANDOM": false,
+    "OTHER": false,
+    "ORACLE": false
+   }
+  }
+ ]
+}

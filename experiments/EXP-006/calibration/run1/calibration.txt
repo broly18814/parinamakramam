@@ -1,0 +1,13 @@
+EXP-006 calibration on tomli: 260 tasks (248 derivable), searches run to 250,000 states
+
+solved, out of 100 tasks, within this many states:
+condition      1,000     5,000    20,000    50,000   100,000   250,000
+NONE            19.2      26.5      38.1      44.6      49.6      53.8
+OWN             33.5      38.5      46.9      50.8      53.1      56.5
+RANDOM          24.6      30.8      43.1      50.0      53.8      58.8
+OTHER           19.6      29.2      39.2      46.2      50.4      54.6
+ORACLE          31.2      38.5      46.5      51.5      55.8      61.5
+CTX2            38.8      49.2      57.7      61.2      66.9      69.6
+
+Rule 1: NONE at 5,000 / 20,000 / 50,000 = 26.5 / 38.1 / 44.6  ->  primary budget B = 5,000 (searches run to 25,000)
+Rule 2: NONE at 50,000 = 44.6 (threshold 10)  ->  largest target size = 12

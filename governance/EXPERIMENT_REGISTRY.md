@@ -272,7 +272,7 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
 
 ## EXP-006: do learned building blocks make search for real code cheaper?
 
-- **Status:** 📝 design written on 10 November 2026, before any EXP-006 code. It counts as pre-registered from the commit that contains it. Not built, not run.
+- **Status:** 🔒 frozen on 11 November 2026, **not run on the evaluation projects yet**. Pre-registered in `7b9fa9c` before any code; built and calibrated on tomli only; primary budget B = 5,000 states and target size up to 12, both by the written rules (D-043). Code: `research/pevo/pevo/grammarsearch.py` and `run_exp006.py`; analysis script committed before the run.
 - **Design and predictions:** [EXP-006-design.md](../docs/research/EXP-006-design.md).
 - **The question:** hide a small piece of a function that a project's programmers wrote *later*, and let the computer guess it exactly, likeliest guess first. With the same number of guesses allowed, does a phrase book of 50 building blocks learned from the project's *past* (EXP-005's method, unchanged) recover more hidden pieces than no phrase book?
 - **In engineering terms:** exact-match infilling of masked syntax-tree fragments (size 4 to 12) by best-first enumeration from a probabilistic grammar fitted on past code, at a fixed budget of expanded states; the grammar with and without learned tree fragments.

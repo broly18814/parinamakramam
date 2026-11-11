@@ -303,7 +303,7 @@ Two branches lead to learned guidance. That would be the project's first use of 
 
 ## 8. How to re-run everything yourself
 
-These commands run the research self-checks (30 tests, as of 10 November 2026), the full first experiment (about 1.5 minutes), and its analysis:
+These commands run the research self-checks (46 tests, as of 11 November 2026), the full first experiment (about 1.5 minutes), and its analysis:
 
 ```bash
 cd parinamakramam/research/pevo

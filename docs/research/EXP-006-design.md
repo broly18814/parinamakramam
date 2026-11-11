@@ -213,3 +213,51 @@ These are estimates made before the code exists. The measured figures will repla
 - **Small targets.** Sizes 4 to 12 are fragments, not functions. A pass shows cheaper search for fragments only.
 - **No neural network.** A pass doesn't show that a language model would benefit, and a fail doesn't show it wouldn't.
 - **Learning cost isn't charged.** Building a library takes seconds of extra computing that `NONE` and `CTX2` don't spend. It's paid once, not per task, and its measured time will be reported next to the results.
+
+---
+
+## 9. Calibration and freeze (11 November 2026)
+
+Everything in this section was decided on tomli only. No evaluation project (packaging, urllib3, httpx) has been searched.
+
+### What the calibration run gave
+
+One run on tomli, with every search taken to 250,000 states (budget 50,000 × 5). 260 hidden pieces, of which 248 can be built at all from tomli's past code. Source: `experiments/EXP-006/calibration/run1/`; the decision below is reproduced exactly by a self-check.
+
+| Found, out of 100, within… | 1,000 | 5,000 | 20,000 | 50,000 | 250,000 |
+|---|---|---|---|---|---|
+| NONE (no phrase book) | 19.2 | **26.5** | 38.1 | 44.6 | 53.8 |
+| OWN (own past's phrase book) | 33.5 | 38.5 | 46.9 | 50.8 | 56.5 |
+| RANDOM | 24.6 | 30.8 | 43.1 | 50.0 | 58.8 |
+| OTHER | 19.6 | 29.2 | 39.2 | 46.2 | 54.6 |
+| ORACLE (cheat phrase book) | 31.2 | 38.5 | 46.5 | 51.5 | 61.5 |
+| CTX2 (sharper habits) | 38.8 | 49.2 | 57.7 | 61.2 | 69.6 |
+
+### The two decisions, both by the written rules
+
+- **Primary budget B = 5,000 states** (searches run to 25,000). Rule: the smallest of 5,000, 20,000 and 50,000 at which NONE finds at least 20 of 100. NONE found 26.5 at 5,000.
+- **Largest target size stays 12.** Rule: drop to 8 only if NONE finds under 10 of 100 at 50,000. It found 44.6.
+
+Nothing else was changed after the calibration run.
+
+### Implementation details the design didn't spell out, settled while building and before the calibration run
+
+1. **Every rule gets the extra backoff count, not only blocks.** Section 4.1 gives "one extra count" to each block. Without the same for base rules, a base rule whose every past use sits inside a block would get probability zero in the library conditions only, so those conditions couldn't build some pieces that NONE can. The extra count is given to every rule in every condition, which keeps the set of buildable pieces identical across conditions, as section 4.2 requires.
+2. **The category of a position never seen in the past.** A block's hole always holds an expression. A hidden piece's own position takes the category of the piece (a statement position or an expression position). That is a fact about Python's grammar, not information about the answer.
+3. **Ties.** Guesses of equal likelihood are taken in the order they were queued; rules of equal cost are ordered by when they were first seen in the past code. The search is fully deterministic.
+4. **The calibration OTHER project** is humanize at commit `d16e6352c9785c5ab86de0133222bd22e89b0db2`. EXP-005 used humanize too but didn't record its commit.
+
+### Engineering checks done before the calibration run
+
+- A smoke run on tomli with a budget of 2,000 was used only to measure speed. Its numbers weren't used for any decision and weren't kept. It showed each step was too slow, because every finished guess was rebuilt in full before being compared. The comparison now stops at the first difference. A self-check proves it gives the same answer as rebuilding, so no effort count can change.
+- 16 self-checks: 13 for the grammar and search, 2 that pin the runner to the registered commits and settings, and 1 that reproduces the calibration decision exactly. They check that every piece of code can be rebuilt exactly; libraries are applied exactly as EXP-005 applies them, in EXP-005's order; every position's probabilities add up to one; the completion bound is exact; finished guesses come out most likely first; and the effort reported is the guess's position in that order.
+- **Testing the tests.** The code was broken on purpose in four ways (completion bound set to zero, library applied in reverse order, comparison ignoring length, backoff weight halved). A self-check failed every time. The reverse-order break was missed at first, so a test with two overlapping blocks was added before the calibration decision was recorded.
+
+### What the calibration numbers do and don't say
+
+They come from **one small project** (42 past functions), used for building and fixing. They aren't evidence for or against any prediction, and they're shown only so the budget decision can be checked. On tomli, sharper habits (CTX2) were ahead of every phrase book at every budget. If that holds on the evaluation projects, H19 fails and the stop rule applies; that can only be known from the evaluation run.
+
+**Code version, honestly.** The calibration result file names snapshot `497c769` as its code version, but the EXP-006 code wasn't committed yet when it ran. Since then the code changed only in ways that can't change a result: an equal-length check made explicit (`strict=True`) in the comparison, and the runner now also records whether the code had uncommitted changes. The evaluation run will use the committed, frozen code.
+
+**The design is frozen from the commit that contains this section.** The analysis script (`experiments/EXP-006/analysis.py`) is in the same commit. The evaluation run happens once, after it.
+

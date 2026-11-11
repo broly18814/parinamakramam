@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import contextlib
 import io
+import subprocess
 import sys
 from pathlib import Path
 
@@ -28,3 +29,12 @@ def test_published_analysis_reproduces_exactly(exp, monkeypatch):
         import analysis  # noqa: F401  (importing it runs the analysis)
     sys.modules.pop("analysis", None)
     assert out.getvalue() == (folder / "hypothesis_tests.txt").read_text()
+
+
+def test_exp006_calibration_decision_reproduces_exactly():
+    """The registered calibration rules, applied to the committed calibration run, give the
+    committed decision (primary budget and target size), character for character."""
+    folder = ROOT / "experiments" / "EXP-006"
+    out = subprocess.run([sys.executable, str(folder / "calibrate.py"), str(folder / "calibration" / "run1")],
+                         check=True, capture_output=True, text=True).stdout
+    assert out == (folder / "calibration" / "run1" / "calibration.txt").read_text()

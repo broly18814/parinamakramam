@@ -1,6 +1,6 @@
 # Technical architecture
 
-This is how the two systems in this repository are built: what each part does, how the parts connect, and the rules that hold everywhere. It describes the code as it is (pkv 0.2.1, research code as of EXP-005; updated 10 November 2026). Words are explained in the [Glossary](GLOSSARY.md).
+This is how the two systems in this repository are built: what each part does, how the parts connect, and the rules that hold everywhere. It describes the code as it is (pkv 0.2.1, research code as of EXP-006; updated 11 November 2026). Words are explained in the [Glossary](GLOSSARY.md).
 
 ---
 
@@ -85,8 +85,8 @@ git ──▶ gitdiff ──▶ affected ──▶ runner ──▶ report ─�
 | `learner.py` | The experimental conditions (A, B, C, C-random, D, E, cheat, C5) and the round-by-round loop, with a validation gate that keeps a shortcut only if it helps on held-out practice puzzles. |
 | `run_exp001.py` | Runs conditions × seeds and writes one result file each. |
 | `run_exp005.py` | EXP-005: reads each project's past and future functions through git, at the registered split commits, and writes one result file per project. |
-
-**Designed, not yet written (EXP-006):** a module that fits a probabilistic grammar on a project's past code, with and without the learned blocks, and a best-first search that tries to recover hidden pieces of its future code within a fixed budget ([design](research/EXP-006-design.md)).
+| `grammarsearch.py` | EXP-006: a probabilistic grammar fitted on a project's past code (with or without learned blocks, or with a wider context), and a best-first search that counts how many guesses it needs to recover a hidden piece of future code exactly ([design](research/EXP-006-design.md)). |
+| `run_exp006.py` | EXP-006: prepares each project, runs every condition in parallel worker processes, and writes one result file per project. |
 
 **Experimental discipline built into the code:**
 - seeds are fixed;
