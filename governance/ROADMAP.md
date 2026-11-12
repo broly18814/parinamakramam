@@ -1,6 +1,6 @@
 # The 90-day roadmap: plan and status
 
-The roadmap from the founder's original brief, copied as written, with the status of every item. Day 1 was **8 November 2026**. Last updated: **10 November 2026 (day 3)**.
+The roadmap from the founder's original brief, copied as written, with the status of every item. Day 1 was **8 November 2026**. Last updated: **12 November 2026 (day 5)**.
 
 Status marks:
 - ✅ done;
@@ -8,7 +8,9 @@ Status marks:
 - ⏳ not started yet;
 - ↪️ replaced by a recorded decision.
 
-> **The big picture.** The product and research work of days 1–55 is done, well ahead of schedule. Of days 56–70, the alpha is published and the major failures were improved; the demonstration and the feedback route are done today. Measuring usage has started, but there are no users yet. Days 71–90 (commercial validation) haven't started, and **can't usefully start until real people use pkv**. Time can't speed that up: it's the one thing no amount of work today can replace.
+> **From 12 November 2026 (day 5), [plan v2](PLAN-v2.md) is the plan in force (D-049).** This page keeps the original roadmap and its status as the historical record. The work ahead, with its order and stop rules, is in plan v2; the items below marked ↪️ point to where each one went.
+
+> **The big picture (as of day 3).** The product and research work of days 1–55 is done, well ahead of schedule. Of days 56–70, the alpha is published and the major failures were improved; the demonstration and the feedback route are done today. Measuring usage has started, but there are no users yet. Days 71–90 (commercial validation) haven't started, and **can't usefully start until real people use pkv**. Time can't speed that up: it's the one thing no amount of work today can replace.
 
 ## Days 1–10: Research foundation
 
@@ -76,15 +78,17 @@ The brief's list (repository search, file retrieval, code explanation, repositor
 
 | Item | Status | Why not yet |
 |---|---|---|
-| Test self-service paid offers | ⏳ | Needs users first. D-010 says no payment systems before there's something people use. |
+| Test self-service paid offers | ⏳ ↪️ plan v2 §7 | Needs users first. D-010 says no payment systems before there's something people use. |
 | Measure activation and retention | ⏳ | The method is defined in ADOPTION.md. It needs users. |
 | Measure cost per task | ⏳ | Easy to do: pkv costs ₹0 per check on the user's machine. To be written down with the first users. |
 | Improve the product | ⏳ (continuous) | |
 | Run the first architecture experiment | ⏳ | EXP-006 comes first (D-037, D-039) |
 | Investigate compute opportunities | ✅ | [F001](../docs/business/F001-grants-compute-and-incubators-india.md) (11 Nov): free notebooks and TPU Research Cloud now; cloud credits after a company exists |
-| Prepare the next proprietary-model experiment | ⏳ | |
+| Prepare the next proprietary-model experiment | ↪️ plan v2 Track C | C1 (Mac training speed) and C2 (dataset registry) in weeks 1–2, then EXP-M1 |
 
-## The next items, in the roadmap's order
+## The next items, in the roadmap's order (replaced by plan v2, D-049)
+
+> Kept as written on day 3. Items 2 to 4 are now in plan v2: the research next step is EXP-007 (Track B), BENCH-004 is folded into TAMPER-BENCH (Track A), and days 71–90 no longer wait open-ended for users: a launch at week 11 starts a 12-week reading window (Track A's go/no-go rule).
 
 1. **Founder decisions:** buy a domain, create the GitHub organisation, enable GitHub Discussions. Each is a click or a purchase only the founder can make.
 2. **Research:** EXP-002b is done (negative; the near-miss line is closed). **EXP-005 is done (positive):** building blocks learned from real projects' history describe their future code 13.5% more compactly. **EXP-006 is designed** (D-039): does that make search cheaper? Next: commit the design, then build and calibrate it on tomli.
@@ -99,7 +103,8 @@ The 90-day list above names "primitive research" only in general terms. After fi
 |---|---|---|
 | **EXP-006** ✅ | Do blocks learned from a project's past let a search find its future code with fewer guesses? **Done (D-044): a little, no more than doubling the search; sharper habits did better.** | — |
 | ~~EXP-007~~ | The same blocks, in a search judged by running tests | **Closed unrun:** the double-search control failed |
-| **next: learned guidance** | A better guesser of what to try next, from wider context up to a small model trained on the MacBook. The project's first neural network, and the start of the own-model work. | **Triggered** by EXP-006 (D-044); needs its own pre-registration |
+| ↪️ ~~next: learned guidance~~ | Replaced by plan v2 (D-049): guidance becomes one factor of the new EXP-007 below | — |
+| **EXP-007 (new design, plan v2 Track B)** | Every pairing of three phrase books (none, learned, named) with three guessers (flat, CTX2, distilled from a local model). Tests hypothesis H23: blocks help only when the search is guided | EXP-006 (D-044); to be pre-registered in weeks 1–2 |
 | **Architecture proposals** (the brief's deliverables 9 and 11) | Three candidate designs, written on top of whichever branch holds | EXP-006's result |
 
 ## The brief's first year, checked against the evidence so far

@@ -1,6 +1,6 @@
 # Project state: read this first
 
-**Last updated:** 11 November 2026 · **Stage:** day 4 of the [90-day roadmap](ROADMAP.md). Days 1–55 are done; days 56–70 are mostly done; days 71–90 wait for real users.
+**Last updated:** 12 November 2026 · **Stage:** week 1 of [plan v2](PLAN-v2.md), approved on 12 November 2026 (D-049), which replaces the original [90-day roadmap](ROADMAP.md) from day 5 onward.
 
 This file says where everything stands right now, so anyone (you, or a new Claude session) can continue without guessing. Words are explained in the [Glossary](../docs/GLOSSARY.md). To learn every idea from zero, use the [course](../docs/LEARN.md) (38 lessons).
 
@@ -123,12 +123,13 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
 
 ## Next steps, in order
 
-> **12 November 2026:** a new plan, [plan v2](PLAN-v2.md), is proposed and waits for the founder's approval. It was rebuilt from the brief and fresh research ([R002](../docs/research/R002-fresh-plan/REPORT.md)). Until it is approved, the steps below stand.
+> **12 November 2026:** [plan v2](PLAN-v2.md) is approved (D-049). The steps below follow its weeks 1–2; the full calendar is in its section 8.
 
-1. **Founder: decide whether to restore the 14 deleted repositories on GitHub** while its 90-day window is open (OI-15, D-041). If they're restored, keep the new backup in **two** places.
-2. **Research: pre-register the guidance experiment** (D-044). Start from EXP-006's machinery, which is built and tested; compare guessers that use more context against each other at equal effort, on rich and pyparsing (untouched so far), with NONE and CTX2 as the baselines to beat. A small neural guesser trainable on the MacBook is the natural strong condition.
-3. **BENCH-004:** a fresh held-out set, written *before* tackling the remaining known misses in OI-8 (`pytest.raises(AssertionError)`, a skip on one table row, an early `return`) and the extra move spellings in OI-13.
-4. **Watch adoption weekly, with no interviews (D-002).** Reading of 10 November: no real use yet ([ADOPTION.md](ADOPTION.md)). Next reading: 17 November.
-5. **Watch whether the Marketplace listing brings anyone** (D-047): add the action repository's traffic and the listing to the weekly adoption reading.
-6. **Funding:** no applications to private foreign funders (D-048). Funding and compute follow only the sources the brief names in section 19.1 (Indian government schemes, incubators, cloud providers, research programmes, universities), as checked in [F001](../docs/business/F001-grants-compute-and-incubators-india.md).
-7. **The unwritten deliverables above**, next the own-model roadmap (14).
+1. **Founder: decide on Telangana's TISC 2026** (a challenge, not a grant; reportedly closes **20 November**, from a secondary source). Enter or skip.
+2. **Track C, C1: measure this Mac's training speed** for 10M, 25M, 50M and 125M models in MLX. It replaces R002's estimates and sizes EXP-M1 and IND-1.
+3. **Track C, C2: dataset registry** (brief §16): every source with licence, version and hash. Text: FineWeb-Edu, IndicCorp v2, Sangraha; code: a permissive subset of The Stack v1 dedup. Excluded: Samanantar, The Stack v2, Python-Edu.
+4. **Track A, A1: pre-register TAMPER-BENCH** and collect its cases (absorbs BENCH-004 and the known misses in OI-8 and OI-13).
+5. **Track B: pre-register EXP-007** (H23, library × guidance), on rich and pyparsing, from EXP-006's machinery.
+6. **Watch adoption weekly, with no interviews (D-002)**, including the Marketplace listing (D-047). Next reading: 17 November ([ADOPTION.md](ADOPTION.md)).
+7. **Founder: decide whether to restore the 14 deleted repositories on GitHub** while its 90-day window is open (OI-15, D-041; possible until about 6 February 2027).
+8. **Funding:** no applications to private foreign funders (D-048). No company or payments before there is use (D-010); plan v2 §7 has the route for later.

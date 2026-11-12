@@ -1,6 +1,6 @@
 # Plan v2: the next 90 days, rebuilt from the founder's goals
 
-**Status: PROPOSED, 12 November 2026. Not in force until the founder approves it.** The current [roadmap](ROADMAP.md) stays in force until then.
+**Status: APPROVED by the founder on 12 November 2026 (decision [D-049](DECISION_LOG.md)).** This is now the plan for the next 90 days. Week 1 starts 12 November 2026 (day 5 of the original roadmap). Progress is tracked in [PROJECT_STATE.md](PROJECT_STATE.md) and the [roadmap](ROADMAP.md).
 **Built from:** the founder's original brief (all 26 sections, re-read in full on 12 November 2026) and fresh research from primary sources ([R002 report](../docs/research/R002-fresh-plan/REPORT.md); seven sets of notes in [`R002-fresh-plan/notes/`](../docs/research/R002-fresh-plan/notes/)).
 **Rules kept:** ₹0, no interviews ever (D-002), one person, honest results, no foreign private funders (D-048).
 
@@ -197,7 +197,7 @@ A fixed small set of real-project coding tasks, with the instructions in English
 
 | Weeks | Track A (product) | Track B (research) | Tracks C and D (models, languages) | Founder-only steps |
 |---|---|---|---|---|
-| 1–2 (to 26 Nov) | TAMPER-BENCH design pre-registered; cases collected | EXP-007 design pre-registered | C1 throughput benchmark; C2 dataset registry | Decide on TISC (closes 20 Nov); approve this plan |
+| 1–2 (to 26 Nov) | TAMPER-BENCH design pre-registered; cases collected | EXP-007 design pre-registered | C1 throughput benchmark; C2 dataset registry | Decide on TISC (closes 20 Nov); ~~approve this plan~~ (done, D-049) |
 | 3–4 | A2 mutation check built and self-tested | EXP-007 built and calibrated | — | — |
 | 5–6 | TAMPER-BENCH run once; results published | EXP-007 run once; results published | IND-1 pre-registered | — |
 | 7–8 | A3 evidence bundle; A4 Claude Code hook | Write-up; decide EXP-008 by the stop rule | EXP-M1 pre-registered | — |
@@ -225,6 +225,6 @@ A fixed small set of real-project coding tasks, with the instructions in English
 
 ## 11. Decisions this plan needs from the founder
 
-1. **Approve plan v2**, or ask for changes. If approved, it becomes D-049 and replaces the current roadmap's days 71–90.
+1. ~~**Approve plan v2**, or ask for changes.~~ **Done:** approved on 12 November 2026 (D-049).
 2. **TISC 2026** (Telangana, closes 20 Nov; the date is from a secondary source): enter or skip.
 3. Later, at week 11: **write and post the launch yourself.**
