@@ -44,3 +44,25 @@ def test_exp006_calibration_decision_reproduces_exactly(monkeypatch):
         import calibrate  # noqa: F401  (importing it applies the rules)
     sys.modules.pop("calibrate", None)
     assert out.getvalue() == (run / "calibration.txt").read_text()
+
+
+def _c1(monkeypatch):
+    monkeypatch.syspath_prepend(str(ROOT / "experiments" / "C1-throughput"))
+    sys.modules.pop("bench_throughput", None)
+    import bench_throughput
+
+    return bench_throughput
+
+
+def test_c1_parameter_counts_match_the_registered_table(monkeypatch):
+    """The sizes in C1's README are what the formula (and so the measured model) gives."""
+    b = _c1(monkeypatch)
+    counts = {s.name: round(b.param_count(s) / 1e5) / 10 for s in b.SIZES}
+    assert counts == {"10M": 11.8, "25M": 23.6, "50M": 48.8, "125M": 125.1}
+    assert all(s.d_model % 64 == 0 for s in b.SIZES)
+
+
+def test_c1_days_to_twenty_tokens_per_parameter(monkeypatch):
+    b = _c1(monkeypatch)
+    # 125M parameters at 4,000 tokens/s: 2.5 billion tokens take about 7.2 days.
+    assert abs(b.chinchilla_days(125_000_000, 4_000) - 7.234) < 0.001

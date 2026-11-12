@@ -294,3 +294,12 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
 - **The idea:** EXP-006 counts a guess as right only if it's written identically to the hidden code. EXP-007 would count it as right if the project's own tests pass, which is closer to what a coding tool has to do, and is where `pkv`'s test selection could be reused.
 - **If EXP-006 fails instead:** this entry is closed unrun, and the next pre-registration is about learned guidance (see EXP-003's status).
 
+---
+
+## C1: how fast can this Mac train small language models? (plan v2, Track C)
+
+- **Status:** pre-registered on 12 November 2026 (plan v2, D-049). A measurement, not a test of a research idea.
+- **Design, predictions and decision rules:** [experiments/C1-throughput/README.md](../experiments/C1-throughput/README.md).
+- **The question:** tokens per second when training GPT-style models of 10M, 25M, 50M and 125M parameters in MLX on this M4 Pro, in float32 and bfloat16, and whether the speed drops as the laptop heats up.
+- **Why it comes first:** it sizes EXP-M1 (the tokenizer study) and IND-1 (Telugu and Hindi tasks) before either is pre-registered.
+- **Cost:** about 25 minutes of the Mac, ₹0.
