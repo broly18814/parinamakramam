@@ -139,6 +139,9 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
        - (a) **the sealed, reproducible benchmark itself:** the only public one that runs every rival under fixed rules, ours included;
        - (b) **the evidence bundle (A3) and the Claude Code hook (A4):** "every AI change comes with a receipt", with pkv 0.2.1's blocking rules (24/41 cheats, 3/20 false alarms; Skylos had 22/41 and 2/20);
        - (c) **TAMPER-BENCH v2:** a fix for A2's documented-change alarms, judged on a new sealed set before any claim.
+   - **Founder's choice (D-052): receipts (A3 + A4).** Next:
+     - **A3:** a clean-copy run, a sealed receipt and `pkv fresh --rerun`. The design and predictions came before the code ([A3 design](../docs/product/A3-design.md)); REAL-004 decides the default.
+     - **Then A4:** the Claude Code hook.
    - **Earlier steps:** A2 was built (two development rounds, [A2 design](../docs/product/A2-design.md)). REAL-003, on 120 real commits, was inconclusive (A2 acted on 25, with 2 correct alarms), so A2 stays opt-in ([REAL-003](../docs/product/REAL-003-design.md)).
    - **New misses, understood but not fixed:**
      - code-side cheats with untouched tests;

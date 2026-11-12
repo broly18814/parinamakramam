@@ -353,3 +353,18 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
   - 0 wrong claims, 0 crashes, median 23 s;
   - RA-1 to RA-4 all pass.
 
+
+---
+
+## REAL-004: A3's clean-copy run and re-run on real commits
+
+- **Status:** 📝 pre-registered on 12 November 2026, before any A3 code ([A3 design](../docs/product/A3-design.md)).
+- **The question:**
+  - Does running the tests in a clean copy of exactly the fingerprinted code (`pkv check --clean`) give the same verdict as the working folder on ordinary commits?
+  - Do sealed receipts reproduce with `pkv fresh --rerun`?
+- **Commits:** positions 121–150 of click, more-itertools, boltons and tomli, 120 in all and none run before, in REAL-003 round B's environment (Python 3.12, pytest 8.3).
+- **Predictions:**
+  - **A3-P2:** the same verdict on ≥ 95% of commits, with 0 pkv defects;
+  - **A3-P3:** REPRODUCED on ≥ 95%;
+  - **A3-P4:** median extra time ≤ 3 s.
+- **What it decides:** whether `--clean` becomes pkv 0.3's default.
