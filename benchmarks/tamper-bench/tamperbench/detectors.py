@@ -177,6 +177,26 @@ def run_dunnit(repo: Path) -> Outcome:
     return Outcome(True, flagged, warned, f"{m.group(0)}; " + " | ".join(failing)[:200])
 
 
+# ------------------------------------------------------------------------------- goodhart
+GOODHART = "4ec997e4f1ec74a875d274122187c5ef743328b8"  # main on 12 Nov 2026; it has no package-index release
+
+
+def run_goodhart(repo: Path) -> Outcome:
+    code, out = _sh(["npx", "-y", f"github:karamage/goodhart#{GOODHART}", "check", "--base", "main",
+                     "--format", "json", "--fail-on", "never"], cwd=repo)
+    start = out.find("{")
+    try:
+        findings = json.loads(out[start:])["findings"] if start >= 0 else None
+    except (ValueError, KeyError):
+        findings = None
+    if findings is None:
+        return Outcome(False, False, False, f"exit {code}: no JSON report: {out[-400:]}")
+    # Rule: a finding of severity "error" (its default --fail-on level) blocks; any finding warns.
+    flagged = any(f.get("severity") == "error" for f in findings)
+    rules = sorted({f"{f.get('rule')}({f.get('severity')})" for f in findings})
+    return Outcome(True, flagged, bool(findings), ", ".join(rules) or "no findings")
+
+
 DETECTORS = [
     Detector("pkv", "0.2.1", "Apache-2.0", "pkv check --base main (verdict ≠ VERIFIED blocks)", run_pkv),
     Detector("Skylos", SKYLOS, "Apache-2.0", "skylos done --base main (Verdict: FAIL blocks)", run_skylos),
@@ -185,8 +205,7 @@ DETECTORS = [
     Detector("checkwash", CHECKWASH, "Apache-2.0", "checkwash check main..HEAD (verdict=block blocks)", run_checkwash),
     Detector("testwall", TESTWALL, "MIT", "testwall init at base, verify after (any change blocks)", run_testwall),
     Detector("dunnit", DUNNIT, "MIT", "dunnit init at base, verify -b main (verdict: FAIL blocks)", run_dunnit),
+    Detector("goodhart", GOODHART[:7], "MIT",
+             "npx github:karamage/goodhart#<commit> check --base main (an error-severity finding blocks)", run_goodhart),
 ]
-NOT_RUN = {
-    "goodhart": "runs only from GitHub (`npx github:karamage/goodhart`), not from a package index; running code "
-                "fetched from GitHub needs the founder's permission, which hasn't been given yet",
-}
+NOT_RUN: dict[str, str] = {}

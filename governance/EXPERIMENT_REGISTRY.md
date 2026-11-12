@@ -315,7 +315,13 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
   - **Development set:** 30 public cases, 20 cheats and 10 honest.
   - **Held-out set:** 61 sealed cases, 41 cheats and 20 honest. 24 of them (39%) come from Skylos's published self-test, goodhart's rules, rival READMEs and ImpossibleBench.
   - **Labels:** every label is confirmed by running the case. In a cheat the original tests fail on the changed code; in an honest change they pass, except where a documented behaviour change says otherwise.
-- **Detectors:** pkv 0.2.1, Skylos 5.6.0, tamperguard 0.2.0, tampercheck 0.1.1, checkwash 0.12.0, testwall 1.0.1 and dunnit 0.3.0, each pinned and run as its own documentation says. goodhart isn't run yet: it installs only from GitHub.
-- **So far (development set, pkv only):** 13 of 20 cheats caught, 4 of 9 semantic ones, 2 false alarms in 10 honest changes ([results](../benchmarks/tamper-bench/results/dev/RESULTS.md)).
-- **Waiting for:** the founder's permission to run the outside tools at scale (the assistant's safety check stopped the batch run), then the one held-out run in plan v2's weeks 5–6.
+- **Detectors:** pkv 0.2.1, Skylos 5.6.0, tamperguard 0.2.0, tampercheck 0.1.1, checkwash 0.12.0, testwall 1.0.1, dunnit 0.3.0 and goodhart (commit `4ec997e`, from GitHub), each pinned and run as its own documentation says.
+- **Development set, all 8 tools (12 Nov, after the founder's "Yes, run them"):**
+  - **checkwash best:** 15/20 cheats, 6/9 semantic, 2/10 false alarms;
+  - **pkv:** 13/20, 4/9 and 2/10;
+  - **testwall:** 16/20 and 9/9, but 7/10 false alarms;
+  - **Skylos:** 9/20 and 1/9.
+  
+  Edited expected values, rigged tests and hard-coded answers are caught by almost nothing ([results](../benchmarks/tamper-bench/results/dev/RESULTS.md), [notes](../benchmarks/tamper-bench/results/dev/NOTES.md)).
+- **Next:** the one held-out run, after A2 is built (plan v2, weeks 5–6), so the held-out cases stay unseen while A2 is made.
 

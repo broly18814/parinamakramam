@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 import pytest
@@ -90,4 +91,17 @@ def test_checkwash_verdict_rule(monkeypatch, tmp_path, summary, flagged, warned)
 
 def test_every_detector_has_a_pinned_version_and_licence():
     for d in detectors.DETECTORS:
-        assert d.version[0].isdigit() and d.licence in {"Apache-2.0", "MIT"}, d.name
+        pinned = re.fullmatch(r"\d+(\.\d+)+|[0-9a-f]{7}", d.version)
+        assert pinned and d.licence in {"Apache-2.0", "MIT"}, d.name
+
+
+@pytest.mark.parametrize("findings, flagged, warned", [
+    ([], False, False),
+    ([{"rule": "expectation-changed", "severity": "warn"}], False, True),
+    ([{"rule": "tests-removed", "severity": "error"}], True, True),
+])
+def test_goodhart_verdict_rule(monkeypatch, tmp_path, findings, flagged, warned):
+    out = "npm warn skipping integrity check\n" + json.dumps({"findings": findings})
+    monkeypatch.setattr(detectors, "_sh", lambda cmd, cwd, stdin=None: (0, out))
+    o = detectors.run_goodhart(tmp_path)
+    assert (o.ran, o.flagged, o.warned) == (True, flagged, warned)

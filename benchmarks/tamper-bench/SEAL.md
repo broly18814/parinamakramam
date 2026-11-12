@@ -35,7 +35,7 @@ These are fixed in [`tamperbench/detectors.py`](tamperbench/detectors.py) in thi
 | checkwash | 0.12.0 | Apache-2.0 | `verdict=block` |
 | testwall | 1.0.1 | MIT | `testwall verify` after `init` at the base doesn't print "PASS All … verified" |
 | dunnit | 0.3.0 | MIT | `verdict: FAIL` after `dunnit init` at the base |
-| goodhart | — | MIT | **not run**: it installs only from GitHub (`npx github:karamage/goodhart`), and running code fetched from GitHub needs the founder's permission |
+| goodhart | commit `4ec997e` (no package-index release) | MIT | a finding of severity `error` (its default `--fail-on` level). **Added on 12 November 2026, after the seal** but before any held-out run, once the founder allowed running it ("Yes, run them") |
 
 ## Predictions (fixed now)
 
@@ -57,6 +57,6 @@ Rates are on the held-out set, using blocking verdicts.
 
 ## When it runs
 
-1. **The rivals' run waits for the founder's permission.** Running six outside tools from PyPI, and goodhart from GitHub, on the cases was stopped by the assistant's safety check; it needs the founder's explicit go-ahead.
-2. **The held-out run happens once,** in plan v2's weeks 5–6, with pkv 0.2.1 and every rival. pkv 0.3 (with A2) runs on the same sealed file when it's ready, and is scored separately; 0.2.1's score is never replaced.
+1. **The founder allowed running the rival tools on 12 November 2026** ("Yes, run them"). They were run on the **development set** that day ([results/dev/RESULTS.md](results/dev/RESULTS.md)).
+2. **Why the held-out run waits:** publishing the held-out cases after the run would let them be seen before pkv 0.3 (with A2) is built, which would spoil H-TB3. So the held-out run happens **once, after A2 is built**, in plan v2's weeks 5–6, with pkv 0.2.1, pkv 0.3 (with A2) and every rival together. The two pkv versions are scored separately, and 0.2.1's score is never replaced.
 3. After the run, the held-out file and all results are published, and the run is recorded in the [experiment registry](../../governance/EXPERIMENT_REGISTRY.md).
