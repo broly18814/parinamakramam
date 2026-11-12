@@ -206,6 +206,6 @@ DETECTORS = [
     Detector("testwall", TESTWALL, "MIT", "testwall init at base, verify after (any change blocks)", run_testwall),
     Detector("dunnit", DUNNIT, "MIT", "dunnit init at base, verify -b main (verdict: FAIL blocks)", run_dunnit),
     Detector("goodhart", GOODHART[:7], "MIT",
-             "npx github:karamage/goodhart#<commit> check --base main (an error-severity finding blocks)", run_goodhart),
+             "npx github:karamage/goodhart#<commit> check --base main (an error finding blocks)", run_goodhart),
 ]
 NOT_RUN: dict[str, str] = {}
