@@ -50,8 +50,9 @@ HERE = Path(__file__).resolve().parent
 PKV_DIR = HERE.parent
 PROJECTS = json.loads((HERE / "projects.json").read_text())
 RESULTS = HERE / "results"
-SETS = {"study": (0, 30), "heldout": (30, 60), "fresh": (60, 90)}  # positions in the commit list
+SETS = {"study": (0, 30), "heldout": (30, 60), "fresh": (60, 90), "a2": (90, 120)}  # positions in the commit list
 # "fresh" is REAL-002: read-only analysis of 120 further commits (docs/product/D4-design.md).
+# "a2" is REAL-003: pkv with --mutate (A2) on 120 further commits (docs/product/REAL-003-design.md).
 TIMEOUT_S = 600
 # The full-suite comparison runs with the same kind of minimal environment pkv uses.
 FULL_ENV = {"PATH": os.environ.get("PATH", "/usr/bin:/bin"), "HOME": os.environ.get("HOME", "/tmp"),
@@ -125,6 +126,7 @@ def slim(receipt: dict[str, Any]) -> dict[str, Any]:
         "test_seconds": run.get("duration_s"),
         "failed_tests": run.get("failed_tests", [])[:20],
         "files_changed_during_run": run.get("files_changed_during_run"),
+        "mutation": receipt.get("mutation"),
     }
 
 
@@ -147,9 +149,10 @@ def run(work: Path, which: str, only: str | None) -> None:
             receipt = local / f"{p['name']}-{sha[:12]}.json"
             receipt.unlink(missing_ok=True)
             t0 = time.monotonic()
+            extra = ["--mutate"] if which == "a2" else []
             r = sh(sys.executable, "-m", "pkv", "check", "--repo", str(repo), "--base", parent,
-                   "--python", str(py), "--timeout", str(TIMEOUT_S), "--json", str(receipt),
-                   check=False, env=env, timeout=TIMEOUT_S + 120)
+                   "--python", str(py), "--timeout", str(TIMEOUT_S), "--json", str(receipt), *extra,
+                   check=False, env=env, timeout=TIMEOUT_S + 600)
             rec: dict[str, Any] = {"project": p["name"], "position": i, "commit": sha,
                                    "parent": parent, "exit_code": r.returncode,
                                    "wall_seconds": round(time.monotonic() - t0, 2),
