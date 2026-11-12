@@ -14,6 +14,8 @@
 Exit codes:
     affected / fingerprint: 0 = worked, 2 = could not do the job.
     check: 0 VERIFIED, 1 FAILED, 3 UNVERIFIED, 4 SUSPICIOUS, 2 could not do the job.
+        --mutate adds the mutation check: mistakes in the changed lines that the old tests
+        caught but the new tests don't make the verdict SUSPICIOUS.
     fresh: 0 still matches, 1 out of date (stale), 2 could not do the job.
 """
 
@@ -29,6 +31,7 @@ from . import __version__
 from .affected import Selection, select_tests
 from .gitdiff import GitError, changed_files, comparison_point, repo_root, tree_hash
 from .imports import build_graph
+from .mutate import MAX_MUTANTS, MutationReport, mutation_check
 from .report import EXIT_CODES, build_evidence, decide, render
 from .runner import run_tests
 from .tamper import find_not_run, find_tampering
@@ -93,12 +96,18 @@ def _check(args: argparse.Namespace) -> int:
         # UNVERIFIED for its own, more accurate reason.
         if run.outcome in ("passed", "failed"):
             findings += find_not_run(root, sel.tests, run.executed, changes, ref, graph)
+    mutation: MutationReport | None = None
+    if args.mutate and run is not None and run.outcome == "passed":
+        mutation = mutation_check(root, ref, changes, sel, python=args.python, keep_env=args.keep_env,
+                                  max_mutants=args.mutants)
+        findings += mutation.findings()
     verdict, reasons = decide(sel, run, findings, ran_requested=not args.no_run)
     ev = build_evidence(root=root, base=args.base, ref=ref, version=__version__, sel=sel,
                         run=run, findings=findings, verdict=verdict, reasons=reasons,
                         tree_hash_now=run.tree_hash_after if run
                         else tree_hash(root, exclude=tuple(receipts)))
     ev["receipt_files"] = receipts
+    ev["mutation"] = mutation.to_dict() if mutation else None
     text = render(ev)
     print(text, end="")
     for f in (args.json, args.md):
@@ -165,6 +174,10 @@ def main(argv: list[str] | None = None) -> int:
     c.add_argument("--python", default=None, help="Python to run the tests with")
     c.add_argument("--keep-env", action="append", default=[], metavar="NAME",
                    help="pass this environment variable to the tests (repeatable)")
+    c.add_argument("--mutate", action="store_true",
+                   help="also check the tests still catch small mistakes in the changed lines (slower)")
+    c.add_argument("--mutants", type=int, default=MAX_MUTANTS, metavar="N",
+                   help=f"at most N mistakes to try with --mutate (default {MAX_MUTANTS})")
     fr = sub.add_parser("fresh", help="does a saved receipt still match the code?")
     fr.add_argument("evidence")
     fr.add_argument("--repo", default=".")

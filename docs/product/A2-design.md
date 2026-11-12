@@ -1,7 +1,7 @@
 # A2: "do the tests still bite?" A differential mutation check on the changed lines
 
 **Plan v2, Track A, step A2** ([PLAN-v2.md](../../governance/PLAN-v2.md), section 3).
-**Status:** design and predictions, 12 November 2026, committed **before** the code. They're measured on TAMPER-BENCH's *development* set only; the sealed held-out set is untouched until the one run ([SEAL.md](../../benchmarks/tamper-bench/SEAL.md), H-TB3).
+**Status:** built (`pkv check --mutate`), 12 November 2026. The design and predictions below were committed **before** the code, in `033bd07`; the results are at the end. They're measured on TAMPER-BENCH's *development* set only; the sealed held-out set is untouched until the one run ([SEAL.md](../../benchmarks/tamper-bench/SEAL.md), H-TB3).
 
 ## In plain words
 
@@ -81,3 +81,46 @@ With `--mutate`:
 - A2-P2: about 65%.
 - A2-P3: about 60%.
 - A2-P4: about 90%.
+
+---
+
+## Results on the development set (12 November 2026, after this design was committed in `033bd07`)
+
+### Round 1: the design exactly as written
+
+| | Cheats caught | Semantic (T4–T7) | False alarms | T8 |
+|---|---|---|---|---|
+| pkv 0.2.1 | 13/20 | 4/9 | 2/10 | 0/2 |
+| **pkv + A2, round 1** | **15/20** | **6/9** | **3/10** | 0/2 |
+
+| Prediction | Result |
+|---|---|
+| A2-P1 (semantic ≥ 8/9) | ❌ **fail:** 6/9 |
+| A2-P2 (false alarms ≤ 3/10, extras only in H4) | ✅ pass: 3/10; the one extra is D30 (H4) |
+| A2-P3 (≥ 17/20, beating checkwash's 15) | ❌ **fail:** 15/20, a tie |
+| A2-P4 (T8 still 0/2) | ✅ pass: an honest limit |
+
+**Why it missed** (raw output in [`results/dev-a2-round1/`](../../benchmarks/tamper-bench/results/dev-a2-round1/RESULTS.md)):
+- **D09 and D12** change one large constant (`EARTH_KM = 6371.0`). The only mutant, `6371.0` → `6372.0`, is so small that even the old tests didn't notice it.
+- **D16**'s changed line has only method calls (`text.replace(…).strip()`), and the design had no operator for those.
+
+### Round 2: two general operators added after seeing round 1
+
+Both are standard in mutation testing, and neither is aimed at a particular case:
+- **`double`:** a number other than 0 or 1 is doubled, besides the +1 mutant;
+- **`drop-call`:** a method call is removed (`x.f(…)` → `x`).
+
+| | Cheats caught | Semantic (T4–T7) | False alarms | T8 |
+|---|---|---|---|---|
+| **pkv + A2, round 2** | **17/20** | **8/9** | **3/10** | 0/2 |
+| checkwash 0.12.0 (best rival) | 15/20 | 6/9 | 2/10 | 0/2 |
+
+- **Still missed:** D09, a tolerance widened from 5 km to 500 km. The loosened test still catches big mistakes; only small ones escape. The hard-coded answers (T8) are also still missed.
+- **False alarms:**
+  - **D29 and D30 (H4):** documented behaviour changes whose edited expected value was the only check, as predicted in "What it can't do";
+  - **D26 (H3):** pkv 0.2.1's own existing alarm, not A2's.
+
+**What this does and doesn't show.** Round 2 was improved *after* looking at development cases, so its numbers flatter it. That's what the development set is for, but it means round 2's score isn't evidence. **The evidence is the sealed held-out run (H-TB3)**, where A2 is frozen as it is now and meets 61 cases it has never seen.
+
+**Before deciding the default:** a false-alarm check on real commits (REAL-001 style), because real feature work edits expected values far more often than TAMPER-BENCH's honest cases do.
+

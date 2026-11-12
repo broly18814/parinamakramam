@@ -111,6 +111,8 @@ def main(argv: list[str] | None = None) -> None:
     ap.add_argument("--out", required=True, type=Path)
     ap.add_argument("--title", default=None)
     ap.add_argument("--detectors", nargs="*", help="run only these (default: all)")
+    ap.add_argument("--merge", action="store_true",
+                    help="keep other detectors' rows already in runs.jsonl; replace only the ones run now")
     ap.add_argument("--summarise-only", action="store_true", help="rebuild RESULTS.md from runs.jsonl")
     a = ap.parse_args(argv)
     a.out.mkdir(parents=True, exist_ok=True)
@@ -119,6 +121,12 @@ def main(argv: list[str] | None = None) -> None:
         rows = [json.loads(x) for x in (a.out / "runs.jsonl").read_text().splitlines() if x]
     else:
         rows = run(load(a.cases), a.detectors)
+        existing = a.out / "runs.jsonl"
+        if a.merge and existing.exists():
+            ran = {r["detector"] for r in rows}
+            kept = [json.loads(x) for x in existing.read_text().splitlines() if x]
+            rows = sorted([r for r in kept if r["detector"] not in ran] + rows,
+                          key=lambda r: (r["case"], r["detector"]))
         (a.out / "runs.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
     (a.out / "RESULTS.md").write_text(summarise(rows, title))
     print((a.out / "RESULTS.md").read_text().split("## By category")[0])

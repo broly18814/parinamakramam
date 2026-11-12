@@ -29,6 +29,7 @@ These are fixed in [`tamperbench/detectors.py`](tamperbench/detectors.py) in thi
 | Detector | Version | Licence | Blocking rule |
 |---|---|---|---|
 | pkv (ours) | 0.2.1 | Apache-2.0 | verdict ≠ VERIFIED |
+| pkv + A2 (ours, `--mutate`) | 0.2.1+a2 | Apache-2.0 | verdict ≠ VERIFIED. Added on 12 November 2026 after the seal: this is the "pkv 0.3 with A2" of H-TB3, built and tuned **on the development set only** (two rounds, [A2 design](../../docs/product/A2-design.md)). It's frozen for the held-out run |
 | Skylos | 5.6.0 | Apache-2.0 | `Verdict: FAIL` |
 | tamperguard | 0.2.0 | MIT | exit code 2 |
 | tampercheck | 0.1.1 | Apache-2.0 | exit code 1, at its default severity (high) |

@@ -156,6 +156,23 @@ def render(ev: dict[str, Any]) -> str:
             L.append(run["output_tail"])
             L.append("```")
 
+    m = ev.get("mutation")
+    if m:
+        L.append("\n## Do the tests still bite? (mutation check)")
+        if not m["ran"]:
+            L.append(f"Not run: {m['reason']}.")
+        else:
+            L.append(f"- {m['mutants']} small deliberate mistakes were made in the changed lines of the old code.")
+            L.append(f"- The old tests caught {m['killed_by_old']}; the new tests caught {m['killed_by_new']}.")
+            if m["lost"]:
+                L.append("- **Caught before, not caught now:**")
+                L += [f"  - `{x['file']}` line {x['line']}: {x['change']}" for x in m["lost"][:10]]
+            if m["excluded_new"]:
+                L.append("- New tests that fail on the old code (left out of the comparison): "
+                         + ", ".join(f"`{t}`" for t in m["excluded_new"][:10]))
+            if m["partial"]:
+                L.append("- Stopped early at the time limit; not every mistake was tried.")
+
     warn = []
     warn += [f"could not read `{f}` ({e})" for f, e in sel["unreadable"].items()]
     warn += [f"`{f}` loads code by name at run time; links from it may be missed"

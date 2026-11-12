@@ -323,5 +323,8 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
   - **Skylos:** 9/20 and 1/9.
   
   Edited expected values, rigged tests and hard-coded answers are caught by almost nothing ([results](../benchmarks/tamper-bench/results/dev/RESULTS.md), [notes](../benchmarks/tamper-bench/results/dev/NOTES.md)).
-- **Next:** the one held-out run, after A2 is built (plan v2, weeks 5–6), so the held-out cases stay unseen while A2 is made.
+- **A2 (pkv `--mutate`, the differential mutation check) on the development set** ([design and results](../docs/product/A2-design.md)):
+  - **Round 1, exactly as pre-registered:** 15/20 cheats and 6/9 semantic, with 3/10 false alarms. A2-P1 and A2-P3 failed; A2-P2 and A2-P4 passed.
+  - **Round 2, after adding two general operators:** 17/20 and 8/9, with 3/10 false alarms. That's best on development, but it was improved on these cases, so it isn't evidence.
+- **Next:** the one held-out run with A2 frozen (H-TB3); then a real-commit false-alarm check before A2 is on by default.
 

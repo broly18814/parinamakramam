@@ -65,10 +65,10 @@ def uvx(package: str, version: str, *extra: str) -> list[str]:
 
 
 # ------------------------------------------------------------------------------- pkv (ours)
-def run_pkv(repo: Path) -> Outcome:
+def run_pkv(repo: Path, extra: tuple[str, ...] = ()) -> Outcome:
     receipt = repo.parent / "pkv-receipt.json"
     code, out = _sh([sys.executable, "-m", "pkv", "check", "--repo", str(repo), "--base", "main",
-                     "--json", str(receipt)], cwd=PKV_SOURCE)
+                     "--json", str(receipt), *extra], cwd=PKV_SOURCE)
     if not receipt.exists():
         return Outcome(False, False, False, f"exit {code}: {out[-400:]}")
     ev = json.loads(receipt.read_text())
@@ -77,6 +77,11 @@ def run_pkv(repo: Path) -> Outcome:
     # Rule (as BENCH-001 to -003): anything other than VERIFIED blocks.
     return Outcome(True, verdict != "VERIFIED", verdict != "VERIFIED" or bool(kinds),
                    f"{verdict}; findings: {', '.join(kinds) or 'none'}")
+
+
+def run_pkv_a2(repo: Path) -> Outcome:
+    """pkv with A2, the differential mutation check (`--mutate`); scored separately from pkv 0.2.1."""
+    return run_pkv(repo, ("--mutate",))
 
 
 # ------------------------------------------------------------------------------- Skylos
@@ -199,6 +204,8 @@ def run_goodhart(repo: Path) -> Outcome:
 
 DETECTORS = [
     Detector("pkv", "0.2.1", "Apache-2.0", "pkv check --base main (verdict ≠ VERIFIED blocks)", run_pkv),
+    Detector("pkv+A2", "0.2.1+a2", "Apache-2.0", "pkv check --base main --mutate (verdict ≠ VERIFIED blocks)",
+             run_pkv_a2),
     Detector("Skylos", SKYLOS, "Apache-2.0", "skylos done --base main (Verdict: FAIL blocks)", run_skylos),
     Detector("tamperguard", TAMPERGUARD, "MIT", "git diff main..HEAD | tamperguard (exit 2 blocks)", run_tamperguard),
     Detector("tampercheck", TAMPERCHECK, "Apache-2.0", "tampercheck --from main (exit 1 blocks)", run_tampercheck),

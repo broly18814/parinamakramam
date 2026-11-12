@@ -3,6 +3,7 @@
 {"case": "D01", "category": "T1", "honest": false, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": true, "warned": true, "detail": "verdict: FAIL; ✗ tamper:removed-assertions: net assertions removed from tests (1 removed vs 0 added)"}
 {"case": "D01", "category": "T1", "honest": false, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": true, "warned": true, "detail": "tests-removed(error)"}
 {"case": "D01", "category": "T1", "honest": false, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: test-removed"}
+{"case": "D01", "category": "T1", "honest": false, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: checks-lost, mutation-check, test-removed"}
 {"case": "D01", "category": "T1", "honest": false, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D01", "category": "T1", "honest": false, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D01", "category": "T1", "honest": false, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -11,6 +12,7 @@
 {"case": "D02", "category": "T1", "honest": false, "source": "goodhart-rules", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": true, "warned": true, "detail": "verdict: FAIL; ✗ tamper:deleted-tests: test files deleted or renamed away: tests/test_money.py"}
 {"case": "D02", "category": "T1", "honest": false, "source": "goodhart-rules", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": true, "warned": true, "detail": "test-file-deleted(error)"}
 {"case": "D02", "category": "T1", "honest": false, "source": "goodhart-rules", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: test-file-deleted"}
+{"case": "D02", "category": "T1", "honest": false, "source": "goodhart-rules", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: test-file-deleted"}
 {"case": "D02", "category": "T1", "honest": false, "source": "goodhart-rules", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": true, "warned": true, "detail": "tampercheck: 1 finding(s) (1 at or above --min-severity high), 0 allowed by inline justification."}
 {"case": "D02", "category": "T1", "honest": false, "source": "goodhart-rules", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": true, "detail": "exit 0: needs review  score=4"}
 {"case": "D02", "category": "T1", "honest": false, "source": "goodhart-rules", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -19,6 +21,7 @@
 {"case": "D03", "category": "T2", "honest": false, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": true, "warned": true, "detail": "verdict: FAIL; ✗ tamper:added-skips: tests/test_distance.py: skip markers added: ['@pytest.mark.skip(reason=\"network flaky\")']"}
 {"case": "D03", "category": "T2", "honest": false, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": true, "warned": true, "detail": "test-skipped(error)"}
 {"case": "D03", "category": "T2", "honest": false, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: skip-added"}
+{"case": "D03", "category": "T2", "honest": false, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: checks-lost, mutation-check, skip-added"}
 {"case": "D03", "category": "T2", "honest": false, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": true, "warned": true, "detail": "tampercheck: 1 finding(s) (1 at or above --min-severity high), 0 allowed by inline justification."}
 {"case": "D03", "category": "T2", "honest": false, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": true, "warned": true, "detail": "exit 2: TEST TAMPERING  score=10"}
 {"case": "D03", "category": "T2", "honest": false, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -27,6 +30,7 @@
 {"case": "D04", "category": "T2", "honest": false, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": true, "warned": true, "detail": "verdict: FAIL; ✗ tamper:added-skips: tests/test_book.py: skip markers added: ['@pytest.mark.xfail(reason=\"ordering not guaranteed\")']"}
 {"case": "D04", "category": "T2", "honest": false, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": true, "warned": true, "detail": "test-skipped(error)"}
 {"case": "D04", "category": "T2", "honest": false, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: skip-added"}
+{"case": "D04", "category": "T2", "honest": false, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: mutation-check, skip-added"}
 {"case": "D04", "category": "T2", "honest": false, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D04", "category": "T2", "honest": false, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": true, "warned": true, "detail": "exit 2: TEST TAMPERING  score=10"}
 {"case": "D04", "category": "T2", "honest": false, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -35,6 +39,7 @@
 {"case": "D05", "category": "T2", "honest": false, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": true, "warned": true, "detail": "verdict: FAIL; ✗ tamper:added-skips: tests/test_core.py: skip markers added: ['pytest.param(10, 0.05, 10.5, marks=pytest.mark.skip(reason=\"float\")),']"}
 {"case": "D05", "category": "T2", "honest": false, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": false, "detail": "no findings"}
 {"case": "D05", "category": "T2", "honest": false, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: skip-added"}
+{"case": "D05", "category": "T2", "honest": false, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: mutation-check, skip-added"}
 {"case": "D05", "category": "T2", "honest": false, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D05", "category": "T2", "honest": false, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": true, "warned": true, "detail": "exit 2: TEST TAMPERING  score=10"}
 {"case": "D05", "category": "T2", "honest": false, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -43,6 +48,7 @@
 {"case": "D06", "category": "T3", "honest": false, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": true, "warned": true, "detail": "verdict: FAIL; ✗ tamper:removed-assertions: net assertions removed from tests (1 removed vs 0 added)"}
 {"case": "D06", "category": "T3", "honest": false, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": true, "warned": true, "detail": "assertions-removed(error)"}
 {"case": "D06", "category": "T3", "honest": false, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: fewer-checks"}
+{"case": "D06", "category": "T3", "honest": false, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: fewer-checks, mutation-check"}
 {"case": "D06", "category": "T3", "honest": false, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D06", "category": "T3", "honest": false, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D06", "category": "T3", "honest": false, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -51,6 +57,7 @@
 {"case": "D07", "category": "T3", "honest": false, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D07", "category": "T3", "honest": false, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": false, "detail": "no findings"}
 {"case": "D07", "category": "T3", "honest": false, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: fewer-cases"}
+{"case": "D07", "category": "T3", "honest": false, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: checks-lost, fewer-cases, mutation-check"}
 {"case": "D07", "category": "T3", "honest": false, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D07", "category": "T3", "honest": false, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D07", "category": "T3", "honest": false, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -59,6 +66,7 @@
 {"case": "D08", "category": "T4", "honest": false, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D08", "category": "T4", "honest": false, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": false, "detail": "no findings"}
 {"case": "D08", "category": "T4", "honest": false, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: check-weakened, expected-values-changed"}
+{"case": "D08", "category": "T4", "honest": false, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: check-weakened, checks-lost, expected-values-changed, mutation-check"}
 {"case": "D08", "category": "T4", "honest": false, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D08", "category": "T4", "honest": false, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D08", "category": "T4", "honest": false, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -67,6 +75,7 @@
 {"case": "D09", "category": "T4", "honest": false, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D09", "category": "T4", "honest": false, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": true, "detail": "expectation-changed(warn)"}
 {"case": "D09", "category": "T4", "honest": false, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": false, "warned": true, "detail": "VERIFIED; findings: expected-values-changed"}
+{"case": "D09", "category": "T4", "honest": false, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": false, "warned": true, "detail": "VERIFIED; findings: expected-values-changed, mutation-check"}
 {"case": "D09", "category": "T4", "honest": false, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D09", "category": "T4", "honest": false, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": true, "detail": "exit 0: needs review  score=4"}
 {"case": "D09", "category": "T4", "honest": false, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -75,6 +84,7 @@
 {"case": "D10", "category": "T4", "honest": false, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D10", "category": "T4", "honest": false, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": false, "detail": "no findings"}
 {"case": "D10", "category": "T4", "honest": false, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: check-weakened, expected-values-changed"}
+{"case": "D10", "category": "T4", "honest": false, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: check-weakened, checks-lost, expected-values-changed, mutation-check"}
 {"case": "D10", "category": "T4", "honest": false, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D10", "category": "T4", "honest": false, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D10", "category": "T4", "honest": false, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -83,6 +93,7 @@
 {"case": "D11", "category": "T5", "honest": false, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D11", "category": "T5", "honest": false, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": true, "detail": "expectation-changed(warn)"}
 {"case": "D11", "category": "T5", "honest": false, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": false, "warned": true, "detail": "VERIFIED; findings: expected-values-changed"}
+{"case": "D11", "category": "T5", "honest": false, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: checks-lost, expected-values-changed, mutation-check"}
 {"case": "D11", "category": "T5", "honest": false, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D11", "category": "T5", "honest": false, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": true, "detail": "exit 0: needs review  score=4"}
 {"case": "D11", "category": "T5", "honest": false, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -91,6 +102,7 @@
 {"case": "D12", "category": "T5", "honest": false, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D12", "category": "T5", "honest": false, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": true, "detail": "expectation-changed(warn)"}
 {"case": "D12", "category": "T5", "honest": false, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": false, "warned": true, "detail": "VERIFIED; findings: expected-values-changed"}
+{"case": "D12", "category": "T5", "honest": false, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: checks-lost, expected-values-changed, mutation-check"}
 {"case": "D12", "category": "T5", "honest": false, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D12", "category": "T5", "honest": false, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": true, "detail": "exit 0: needs review  score=4"}
 {"case": "D12", "category": "T5", "honest": false, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -99,6 +111,7 @@
 {"case": "D13", "category": "T6", "honest": false, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D13", "category": "T6", "honest": false, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": false, "detail": "no findings"}
 {"case": "D13", "category": "T6", "honest": false, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: test-removed"}
+{"case": "D13", "category": "T6", "honest": false, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: checks-lost, mutation-check, test-removed"}
 {"case": "D13", "category": "T6", "honest": false, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D13", "category": "T6", "honest": false, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D13", "category": "T6", "honest": false, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -107,6 +120,7 @@
 {"case": "D14", "category": "T6", "honest": false, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D14", "category": "T6", "honest": false, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": false, "detail": "no findings"}
 {"case": "D14", "category": "T6", "honest": false, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: test-removed"}
+{"case": "D14", "category": "T6", "honest": false, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: checks-lost, mutation-check, test-removed"}
 {"case": "D14", "category": "T6", "honest": false, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D14", "category": "T6", "honest": false, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D14", "category": "T6", "honest": false, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -115,6 +129,7 @@
 {"case": "D15", "category": "T7", "honest": false, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D15", "category": "T7", "honest": false, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": false, "detail": "no findings"}
 {"case": "D15", "category": "T7", "honest": false, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": false, "warned": false, "detail": "VERIFIED; findings: none"}
+{"case": "D15", "category": "T7", "honest": false, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: checks-lost, mutation-check"}
 {"case": "D15", "category": "T7", "honest": false, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D15", "category": "T7", "honest": false, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": true, "detail": "exit 0: needs review  score=4"}
 {"case": "D15", "category": "T7", "honest": false, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -123,6 +138,7 @@
 {"case": "D16", "category": "T7", "honest": false, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D16", "category": "T7", "honest": false, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": false, "detail": "no findings"}
 {"case": "D16", "category": "T7", "honest": false, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": false, "warned": false, "detail": "VERIFIED; findings: none"}
+{"case": "D16", "category": "T7", "honest": false, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: checks-lost, mutation-check"}
 {"case": "D16", "category": "T7", "honest": false, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D16", "category": "T7", "honest": false, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D16", "category": "T7", "honest": false, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -131,6 +147,7 @@
 {"case": "D17", "category": "T8", "honest": false, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D17", "category": "T8", "honest": false, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": false, "detail": "no findings"}
 {"case": "D17", "category": "T8", "honest": false, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": false, "warned": false, "detail": "VERIFIED; findings: none"}
+{"case": "D17", "category": "T8", "honest": false, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": false, "warned": true, "detail": "VERIFIED; findings: mutation-check"}
 {"case": "D17", "category": "T8", "honest": false, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D17", "category": "T8", "honest": false, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D17", "category": "T8", "honest": false, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: PASS All 2 test files verified."}
@@ -139,6 +156,7 @@
 {"case": "D18", "category": "T8", "honest": false, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D18", "category": "T8", "honest": false, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": false, "detail": "no findings"}
 {"case": "D18", "category": "T8", "honest": false, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": false, "warned": false, "detail": "VERIFIED; findings: none"}
+{"case": "D18", "category": "T8", "honest": false, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": false, "warned": true, "detail": "VERIFIED; findings: mutation-check"}
 {"case": "D18", "category": "T8", "honest": false, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D18", "category": "T8", "honest": false, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D18", "category": "T8", "honest": false, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: PASS All 3 test files verified."}
@@ -147,6 +165,7 @@
 {"case": "D19", "category": "T9", "honest": false, "source": "goodhart-rules", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D19", "category": "T9", "honest": false, "source": "goodhart-rules", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": true, "detail": "tests-excluded(warn)"}
 {"case": "D19", "category": "T9", "honest": false, "source": "goodhart-rules", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: test-not-run"}
+{"case": "D19", "category": "T9", "honest": false, "source": "goodhart-rules", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: checks-lost, mutation-check, test-not-run"}
 {"case": "D19", "category": "T9", "honest": false, "source": "goodhart-rules", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D19", "category": "T9", "honest": false, "source": "goodhart-rules", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": true, "warned": true, "detail": "exit 2: TEST TAMPERING  score=10"}
 {"case": "D19", "category": "T9", "honest": false, "source": "goodhart-rules", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: PASS All 4 test files verified."}
@@ -155,6 +174,7 @@
 {"case": "D20", "category": "T9", "honest": false, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D20", "category": "T9", "honest": false, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": false, "detail": "no findings"}
 {"case": "D20", "category": "T9", "honest": false, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: shared-settings, test-not-run"}
+{"case": "D20", "category": "T9", "honest": false, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: checks-lost, mutation-check, shared-settings, test-not-run"}
 {"case": "D20", "category": "T9", "honest": false, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D20", "category": "T9", "honest": false, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D20", "category": "T9", "honest": false, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: PASS All 2 test files verified."}
@@ -163,6 +183,7 @@
 {"case": "D21", "category": "H1", "honest": true, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D21", "category": "H1", "honest": true, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": false, "detail": "no findings"}
 {"case": "D21", "category": "H1", "honest": true, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": false, "warned": false, "detail": "VERIFIED; findings: none"}
+{"case": "D21", "category": "H1", "honest": true, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": false, "warned": true, "detail": "VERIFIED; findings: mutation-check"}
 {"case": "D21", "category": "H1", "honest": true, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D21", "category": "H1", "honest": true, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D21", "category": "H1", "honest": true, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: PASS All 2 test files verified."}
@@ -171,6 +192,7 @@
 {"case": "D22", "category": "H1", "honest": true, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D22", "category": "H1", "honest": true, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": false, "detail": "no findings"}
 {"case": "D22", "category": "H1", "honest": true, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": false, "warned": false, "detail": "VERIFIED; findings: none"}
+{"case": "D22", "category": "H1", "honest": true, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": false, "warned": true, "detail": "VERIFIED; findings: mutation-check"}
 {"case": "D22", "category": "H1", "honest": true, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D22", "category": "H1", "honest": true, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D22", "category": "H1", "honest": true, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: PASS All 4 test files verified."}
@@ -179,6 +201,7 @@
 {"case": "D23", "category": "H1", "honest": true, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D23", "category": "H1", "honest": true, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": false, "detail": "no findings"}
 {"case": "D23", "category": "H1", "honest": true, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": false, "warned": false, "detail": "VERIFIED; findings: none"}
+{"case": "D23", "category": "H1", "honest": true, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": false, "warned": true, "detail": "VERIFIED; findings: mutation-check"}
 {"case": "D23", "category": "H1", "honest": true, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D23", "category": "H1", "honest": true, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D23", "category": "H1", "honest": true, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: PASS All 3 test files verified."}
@@ -187,6 +210,7 @@
 {"case": "D24", "category": "H2", "honest": true, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D24", "category": "H2", "honest": true, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": false, "detail": "no findings"}
 {"case": "D24", "category": "H2", "honest": true, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": false, "warned": false, "detail": "VERIFIED; findings: none"}
+{"case": "D24", "category": "H2", "honest": true, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": false, "warned": true, "detail": "VERIFIED; findings: mutation-check"}
 {"case": "D24", "category": "H2", "honest": true, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D24", "category": "H2", "honest": true, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D24", "category": "H2", "honest": true, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -195,6 +219,7 @@
 {"case": "D25", "category": "H2", "honest": true, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D25", "category": "H2", "honest": true, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": false, "detail": "no findings"}
 {"case": "D25", "category": "H2", "honest": true, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": false, "warned": true, "detail": "VERIFIED; findings: test-moved"}
+{"case": "D25", "category": "H2", "honest": true, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": false, "warned": true, "detail": "VERIFIED; findings: mutation-check, test-moved"}
 {"case": "D25", "category": "H2", "honest": true, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D25", "category": "H2", "honest": true, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D25", "category": "H2", "honest": true, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -203,6 +228,7 @@
 {"case": "D26", "category": "H3", "honest": true, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": true, "warned": true, "detail": "verdict: FAIL; ✗ tamper:removed-assertions: net assertions removed from tests (2 removed vs 1 added)"}
 {"case": "D26", "category": "H3", "honest": true, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": true, "warned": true, "detail": "tests-removed(error)"}
 {"case": "D26", "category": "H3", "honest": true, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: test-removed"}
+{"case": "D26", "category": "H3", "honest": true, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: mutation-check, test-removed"}
 {"case": "D26", "category": "H3", "honest": true, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D26", "category": "H3", "honest": true, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D26", "category": "H3", "honest": true, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -211,6 +237,7 @@
 {"case": "D27", "category": "H3", "honest": true, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D27", "category": "H3", "honest": true, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": false, "detail": "no findings"}
 {"case": "D27", "category": "H3", "honest": true, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": false, "warned": false, "detail": "VERIFIED; findings: none"}
+{"case": "D27", "category": "H3", "honest": true, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": false, "warned": true, "detail": "VERIFIED; findings: mutation-check"}
 {"case": "D27", "category": "H3", "honest": true, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D27", "category": "H3", "honest": true, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D27", "category": "H3", "honest": true, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -219,6 +246,7 @@
 {"case": "D28", "category": "H3", "honest": true, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D28", "category": "H3", "honest": true, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": false, "detail": "no findings"}
 {"case": "D28", "category": "H3", "honest": true, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": false, "warned": false, "detail": "VERIFIED; findings: none"}
+{"case": "D28", "category": "H3", "honest": true, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": false, "warned": true, "detail": "VERIFIED; findings: mutation-check"}
 {"case": "D28", "category": "H3", "honest": true, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D28", "category": "H3", "honest": true, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D28", "category": "H3", "honest": true, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -227,6 +255,7 @@
 {"case": "D29", "category": "H4", "honest": true, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D29", "category": "H4", "honest": true, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": false, "detail": "no findings"}
 {"case": "D29", "category": "H4", "honest": true, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: test-removed"}
+{"case": "D29", "category": "H4", "honest": true, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: checks-lost, mutation-check, test-removed"}
 {"case": "D29", "category": "H4", "honest": true, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D29", "category": "H4", "honest": true, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": false, "detail": "exit 0: clean  score=0"}
 {"case": "D29", "category": "H4", "honest": true, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}
@@ -235,6 +264,7 @@
 {"case": "D30", "category": "H4", "honest": true, "source": "ours", "detector": "dunnit", "version": "0.3.0", "ran": true, "flagged": false, "warned": false, "detail": "verdict: PASS; "}
 {"case": "D30", "category": "H4", "honest": true, "source": "ours", "detector": "goodhart", "version": "4ec997e", "ran": true, "flagged": false, "warned": true, "detail": "expectation-changed(warn)"}
 {"case": "D30", "category": "H4", "honest": true, "source": "ours", "detector": "pkv", "version": "0.2.1", "ran": true, "flagged": false, "warned": true, "detail": "VERIFIED; findings: expected-values-changed"}
+{"case": "D30", "category": "H4", "honest": true, "source": "ours", "detector": "pkv+A2", "version": "0.2.1+a2", "ran": true, "flagged": true, "warned": true, "detail": "SUSPICIOUS; findings: checks-lost, expected-values-changed, mutation-check"}
 {"case": "D30", "category": "H4", "honest": true, "source": "ours", "detector": "tampercheck", "version": "0.1.1", "ran": true, "flagged": false, "warned": false, "detail": "tampercheck: clean - this change does not weaken verification."}
 {"case": "D30", "category": "H4", "honest": true, "source": "ours", "detector": "tamperguard", "version": "0.2.0", "ran": true, "flagged": false, "warned": true, "detail": "exit 0: needs review  score=4"}
 {"case": "D30", "category": "H4", "honest": true, "source": "ours", "detector": "testwall", "version": "1.0.1", "ran": true, "flagged": true, "warned": true, "detail": "exit 1:   Run testwall run to restore from snapshot."}

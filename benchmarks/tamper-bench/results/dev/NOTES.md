@@ -4,6 +4,12 @@ All 8 tools on the 30 public development cases, run after the founder's go-ahead
 
 **The development set is not the benchmark result.** It's small (20 cheats, 10 honest changes), we wrote most of it, and we may look at it while building. The result that counts is the held-out run (see [SEAL.md](../../SEAL.md)). These are first readings.
 
+> **Update, the same day: A2.** pkv with its new mutation check (`--mutate`) was added later.
+> - **Round 1, exactly as designed:** 15/20 cheats, 6/9 subtle, 3/10 false alarms ([`../dev-a2-round1/`](../dev-a2-round1/RESULTS.md)).
+> - **Round 2, after two general improvements:** 17/20, 8/9, 3/10 (in RESULTS.md here).
+>
+> Round 2 was improved on these very cases, so only the held-out run can show whether it's really better ([A2 design and results](../../../../docs/product/A2-design.md)).
+
 ## In plain words
 
 - **checkwash, a tool with 1 GitHub star, did best overall.** It caught 15 of 20 cheats, including 6 of the 9 subtle ones, with 2 false alarms in 10 honest changes. Our tool, pkv, caught 13 of 20 (4 of 9 subtle) with the same 2 false alarms. **On this set, pkv isn't the best checker, and we say so.**

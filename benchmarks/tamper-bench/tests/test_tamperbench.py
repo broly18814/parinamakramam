@@ -50,8 +50,9 @@ def test_label_check_requires_a_changelog_line_for_h4(tmp_path):
     assert any("CHANGELOG" in p for p in check_label(fake, tmp_path))
 
 
-def test_published_development_results_reproduce_exactly():
-    out = HERE / "results" / "dev"
+@pytest.mark.parametrize("folder", ["dev", "dev-a2-round1"])
+def test_published_development_results_reproduce_exactly(folder):
+    out = HERE / "results" / folder
     rows = [json.loads(x) for x in (out / "runs.jsonl").read_text().splitlines() if x]
     assert run.summarise(rows, "development set") == (out / "RESULTS.md").read_text()
 
@@ -91,7 +92,7 @@ def test_checkwash_verdict_rule(monkeypatch, tmp_path, summary, flagged, warned)
 
 def test_every_detector_has_a_pinned_version_and_licence():
     for d in detectors.DETECTORS:
-        pinned = re.fullmatch(r"\d+(\.\d+)+|[0-9a-f]{7}", d.version)
+        pinned = re.fullmatch(r"\d+(\.\d+)+(\+a2)?|[0-9a-f]{7}", d.version)
         assert pinned and d.licence in {"Apache-2.0", "MIT"}, d.name
 
 
