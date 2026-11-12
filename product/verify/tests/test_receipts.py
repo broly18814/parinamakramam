@@ -200,3 +200,22 @@ def test_rerun_exposes_a_working_folder_pass_that_needed_a_leftover(repo, tmp_pa
     assert fresh(receipt, repo, "--rerun") == 4
     out = capsys.readouterr().out
     assert "recorded run: working folder" in out and "NOT REPRODUCED" in out
+
+
+def test_the_isolation_plugin_cuts_the_route_back_to_the_working_folder(tmp_path):
+    """A direct test of pkv/clean_copy_plugin.py, without needing uv: a module only the working
+    folder has stays importable until the plugin runs, and isn't after."""
+    from pkv import clean_copy_plugin as plugin
+
+    working, copy = tmp_path / "working", tmp_path / "copy"
+    working.mkdir()
+    copy.mkdir()
+    (working / "leftover_mod.py").write_text("X = 1\n")
+    code = (f"import sys, runpy\nsys.path.append({str(working)!r})\n"
+            f"cut = {{run}}\n"
+            "try:\n    import leftover_mod\n    print('FOUND')\nexcept ImportError:\n    print('CUT')\n")
+    run_it = f"runpy.run_path({plugin.__file__!r})['isolate']({str(working)!r}, {str(copy)!r})"
+    for step, expected in (("None", "FOUND"), (run_it, "CUT")):
+        out = subprocess.run([sys.executable, "-c", code.replace("{run}", step)],
+                             capture_output=True, text=True, check=True).stdout.strip()
+        assert out == expected

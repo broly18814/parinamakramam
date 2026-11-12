@@ -9,3 +9,7 @@ __pycache__/
 .pkv/
 # Private drafts kept on this Mac only, never uploaded (founder, 11 Nov 2026)
 private/
+
+# Build output (python -m build / uv build). Never committed.
+build/
+dist/
