@@ -304,3 +304,18 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
 - **The question:** tokens per second when training GPT-style models of 10M, 25M, 50M and 125M parameters in MLX on this M4 Pro, in float32 and bfloat16, and whether the speed drops as the laptop heats up.
 - **Why it comes first:** it sizes EXP-M1 (the tokenizer study) and IND-1 (Telugu and Hindi tasks) before either is pre-registered.
 - **Cost:** about 25 minutes of the Mac, ₹0.
+
+---
+
+## TAMPER-BENCH: a fair public test of tools that catch weakened tests (plan v2, Track A, A1)
+
+- **Status:** 🔒 built and sealed on 12 November 2026; the held-out run waits (see below). It replaces BENCH-004 (D-049).
+- **Where:** [benchmarks/tamper-bench/](../benchmarks/tamper-bench/README.md); the design in [docs/product/TAMPER-BENCH-design.md](../docs/product/TAMPER-BENCH-design.md); the fingerprint, verdict rules and predictions (H-TB1 to H-TB4) in [SEAL.md](../benchmarks/tamper-bench/SEAL.md).
+- **Cases:** 91 in all.
+  - **Development set:** 30 public cases, 20 cheats and 10 honest.
+  - **Held-out set:** 61 sealed cases, 41 cheats and 20 honest. 24 of them (39%) come from Skylos's published self-test, goodhart's rules, rival READMEs and ImpossibleBench.
+  - **Labels:** every label is confirmed by running the case. In a cheat the original tests fail on the changed code; in an honest change they pass, except where a documented behaviour change says otherwise.
+- **Detectors:** pkv 0.2.1, Skylos 5.6.0, tamperguard 0.2.0, tampercheck 0.1.1, checkwash 0.12.0, testwall 1.0.1 and dunnit 0.3.0, each pinned and run as its own documentation says. goodhart isn't run yet: it installs only from GitHub.
+- **So far (development set, pkv only):** 13 of 20 cheats caught, 4 of 9 semantic ones, 2 false alarms in 10 honest changes ([results](../benchmarks/tamper-bench/results/dev/RESULTS.md)).
+- **Waiting for:** the founder's permission to run the outside tools at scale (the assistant's safety check stopped the batch run), then the one held-out run in plan v2's weeks 5–6.
+

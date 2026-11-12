@@ -1,7 +1,7 @@
 # TAMPER-BENCH: a fair public test of tools that catch weakened tests
 
 **Plan v2, Track A, step A1** ([PLAN-v2.md](../../governance/PLAN-v2.md), section 3). It replaces BENCH-004 (D-049).
-**Status:** design draft, 12 November 2026. The cases are collected next. This design, the case list's fingerprint and the predictions are all committed **before** any detector runs on the held-out cases.
+**Status:** built and sealed, 12 November 2026. The code is in [`benchmarks/tamper-bench/`](../../benchmarks/tamper-bench/): 30 public development cases and 61 sealed held-out cases, every label confirmed by running it. The fingerprint, the verdict rules and the predictions are in [SEAL.md](../../benchmarks/tamper-bench/SEAL.md), all committed **before** any detector runs on the held-out cases. Changes from this design while building: 91 cases instead of about 90; every label is now confirmed automatically by running the case (see the benchmark's README); goodhart not run yet (it needs the founder's permission).
 
 ## In plain words
 

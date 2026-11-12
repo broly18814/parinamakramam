@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
-      - run: uvx ruff check product/verify product/action research/pevo experiments
+      - run: uvx ruff check product/verify product/action research/pevo experiments benchmarks/tamper-bench
       - name: Licence files in the package match the root copies
         run: cmp LICENSE product/verify/LICENSE && cmp NOTICE product/verify/NOTICE
 
@@ -53,6 +53,9 @@ jobs:
         run: python -m pytest -q tests
       - name: Checker tool self-checks (pkv)
         working-directory: product/verify
+        run: python -m pytest -q tests
+      - name: TAMPER-BENCH self-checks (every case's label confirmed by running it)
+        working-directory: benchmarks/tamper-bench
         run: python -m pytest -q tests
 
   benchmark:
