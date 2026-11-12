@@ -1,7 +1,7 @@
 # A2: "do the tests still bite?" A differential mutation check on the changed lines
 
 **Plan v2, Track A, step A2** ([PLAN-v2.md](../../governance/PLAN-v2.md), section 3).
-**Status:** built (`pkv check --mutate`), 12 November 2026. The design and predictions below were committed **before** the code, in `033bd07`; the results are at the end. They're measured on TAMPER-BENCH's *development* set only; the sealed held-out set is untouched until the one run ([SEAL.md](../../benchmarks/tamper-bench/SEAL.md), H-TB3).
+**Status:** built (`pkv check --mutate`), 12 November 2026. **Held-out result: H-TB3 failed** (false alarms +10 points against a limit of +5), so A2 stays opt-in and isn't presented as an advantage (see the end). The design and predictions below were committed **before** the code, in `033bd07`; the results are at the end. They're measured on TAMPER-BENCH's *development* set only; the sealed held-out set is untouched until the one run ([SEAL.md](../../benchmarks/tamper-bench/SEAL.md), H-TB3).
 
 ## In plain words
 
@@ -123,4 +123,22 @@ Both are standard in mutation testing, and neither is aimed at a particular case
 **What this does and doesn't show.** Round 2 was improved *after* looking at development cases, so its numbers flatter it. That's what the development set is for, but it means round 2's score isn't evidence. **The evidence is the sealed held-out run (H-TB3)**, where A2 is frozen as it is now and meets 61 cases it has never seen.
 
 **Before deciding the default:** a false-alarm check on real commits (REAL-001 style), because real feature work edits expected values far more often than TAMPER-BENCH's honest cases do. **Done as [REAL-003](REAL-003-design.md):** 2 alarms in 25 commits where A2 acted, both correct, none wrong. That's inconclusive by its rule (fewer than 30), so A2 stays opt-in.
+
+## The held-out result (H-TB3, 12 November 2026)
+
+A2, frozen as it was after round 2, met the 61 sealed held-out cases once ([results](../../benchmarks/tamper-bench/results/heldout/RESULTS.md), [notes](../../benchmarks/tamper-bench/results/heldout/NOTES.md)):
+
+| | Cheats caught | Semantic (T4–T7) | False alarms | T8 |
+|---|---|---|---|---|
+| pkv 0.2.1 | 24/41 | 7/20 (35%) | 3/20 (15%) | 0/3 |
+| **pkv + A2** | **34/41**, the most of any tool | **16/20 (80%)** | **5/20 (25%)** | 0/3 |
+
+- **H-TB3 fails.** The semantic gain (+45 points) is well over the +25 required, but the false alarms rose 10 points, against a limit of 5. The two extra ones (X56, X58) are documented behaviour changes, the limit this design named in advance ("What it can't do").
+- **The stop rule applies:** the mutation check isn't presented as an advantage, and Track A rethinks its differentiator before the launch (D-051).
+- **New misses, now understood:**
+  - cheats placed in the code with the tests untouched (an `==` that is always true): A2 doesn't run there;
+  - a table row edited while other rows still catch every mutant;
+  - swapped return values, for which there's no operator.
+
+  None is fixed: the held-out cases are public now, so a fix needs a new sealed set.
 

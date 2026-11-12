@@ -18,10 +18,15 @@ Each case is a tiny project with one change. Some changes hide a bug by weakenin
 | `tamperbench/dev.py` | the **development set**: 30 public cases (20 cheats, 10 honest) |
 | `tamperbench/detectors.py` | how each tool is run, and its verdict rule (fixed before the held-out run) |
 | `tamperbench/run.py` | runs tools on cases and writes `runs.jsonl` and `RESULTS.md` |
-| `results/dev/` | pkv 0.2.1 on the development set |
+| `tamperbench/heldout.py` | the **held-out set**: 61 cases (41 cheats, 20 honest), published after its one run, byte for byte as sealed |
+| `tamperbench/score.py` | scores the sealed predictions H-TB1 to H-TB4 from a run's `runs.jsonl` |
+| `results/dev/` | all tools on the development set |
+| `results/heldout/` | **all 9 tools on the held-out set, the one run** ([notes](results/heldout/NOTES.md)) |
 | `SEAL.md` | the held-out set's fingerprint and the predictions |
 
-The **held-out set** (61 cases) is sealed: its fingerprint is in `SEAL.md`, and the file itself is published after the one held-out run.
+The **held-out set** (61 cases) was sealed: its fingerprint was committed in `SEAL.md` before any tool saw it, and after the one run (12 November 2026) the file was published with that same fingerprint. Its opening note still says it's kept off GitHub; that text can't change without breaking the seal.
+
+**The held-out result in one line:** pkv with its mutation check (`--mutate`) caught the most cheats (34/41) but raised 5 false alarms in 20 honest changes, more than its pre-registered limit, so prediction H-TB3 failed ([notes](results/heldout/NOTES.md)).
 
 ## Categories
 

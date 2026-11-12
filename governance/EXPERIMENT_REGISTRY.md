@@ -309,13 +309,13 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
 
 ## TAMPER-BENCH: a fair public test of tools that catch weakened tests (plan v2, Track A, A1)
 
-- **Status:** 🔒 built and sealed on 12 November 2026; the held-out run waits (see below). It replaces BENCH-004 (D-049).
+- **Status:** ✅ built, sealed and run on 12 November 2026: the one held-out run is done, and the held-out cases are published with the sealed fingerprint. **H-TB1, H-TB2 and H-TB4 pass; H-TB3 fails** (D-051). It replaces BENCH-004 (D-049).
 - **Where:** [benchmarks/tamper-bench/](../benchmarks/tamper-bench/README.md); the design in [docs/product/TAMPER-BENCH-design.md](../docs/product/TAMPER-BENCH-design.md); the fingerprint, verdict rules and predictions (H-TB1 to H-TB4) in [SEAL.md](../benchmarks/tamper-bench/SEAL.md).
 - **Cases:** 91 in all.
   - **Development set:** 30 public cases, 20 cheats and 10 honest.
   - **Held-out set:** 61 sealed cases, 41 cheats and 20 honest. 24 of them (39%) come from Skylos's published self-test, goodhart's rules, rival READMEs and ImpossibleBench.
   - **Labels:** every label is confirmed by running the case. In a cheat the original tests fail on the changed code; in an honest change they pass, except where a documented behaviour change says otherwise.
-- **Detectors:** pkv 0.2.1, Skylos 5.6.0, tamperguard 0.2.0, tampercheck 0.1.1, checkwash 0.12.0, testwall 1.0.1, dunnit 0.3.0 and goodhart (commit `4ec997e`, from GitHub), each pinned and run as its own documentation says.
+- **Detectors:** pkv 0.2.1, pkv + A2 (`--mutate`), Skylos 5.6.0, tamperguard 0.2.0, tampercheck 0.1.1, checkwash 0.12.0, testwall 1.0.1, dunnit 0.3.0 and goodhart (commit `4ec997e`, from GitHub), each pinned and run as its own documentation says.
 - **Development set, all 8 tools (12 Nov, after the founder's "Yes, run them"):**
   - **checkwash best:** 15/20 cheats, 6/9 semantic, 2/10 false alarms;
   - **pkv:** 13/20, 4/9 and 2/10;
@@ -326,7 +326,18 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
 - **A2 (pkv `--mutate`, the differential mutation check) on the development set** ([design and results](../docs/product/A2-design.md)):
   - **Round 1, exactly as pre-registered:** 15/20 cheats and 6/9 semantic, with 3/10 false alarms. A2-P1 and A2-P3 failed; A2-P2 and A2-P4 passed.
   - **Round 2, after adding two general operators:** 17/20 and 8/9, with 3/10 false alarms. That's best on development, but it was improved on these cases, so it isn't evidence.
-- **Next:** the one held-out run with A2 frozen (H-TB3); then a real-commit false-alarm check before A2 is on by default.
+- **Held-out set, all 9 tools, the one run (12 Nov, founder: "Yes, run it"; [results](../benchmarks/tamper-bench/results/heldout/RESULTS.md), [notes](../benchmarks/tamper-bench/results/heldout/NOTES.md)):**
+  - **pkv + A2:** 34/41 cheats, the most of any tool; 16/20 semantic; 5/20 false alarms;
+  - **testwall:** 32/41 and 18/20, with 15/20 false alarms;
+  - **checkwash:** 28/41 and 11/20, with 7/20;
+  - **pkv 0.2.1:** 24/41 and 7/20, with 3/20;
+  - **Skylos:** 22/41 and 3/20, with 2/20.
+- **Predictions:**
+  - **H-TB1 ✅:** pkv 0.2.1 removal 14/14, semantic 35%.
+  - **H-TB2 ✅:** no tool reaches semantic ≥ 80% with false alarms ≤ 10%.
+  - **H-TB3 ❌:** semantic +45 points, but false alarms +10 points against a limit of +5, so A2's stop rule applies.
+  - **H-TB4 ✅:** Skylos blocks exactly X01–X06.
+- **Limits:** all 20 honest cases are ours. On the 24 outside-source cheats alone, the top of the ranking is the same.
 
 ---
 

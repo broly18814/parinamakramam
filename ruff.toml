@@ -26,6 +26,9 @@ ignore = [
 # kept on one line so each case reads like the diff it is.
 "benchmarks/tamper-bench/tamperbench/dev.py" = ["E501"]
 "benchmarks/tamper-bench/tamperbench/projects.py" = ["E501"]
+# The held-out set is published byte for byte as sealed (SEAL.md), so it is never reformatted.
+"benchmarks/tamper-bench/tamperbench/heldout.py" = ["E501"]
 "benchmarks/tamper-bench/tests/test_tamperbench.py" = ["E501"]
 # The results tables use typographic dashes and the multiplication sign on purpose.
 "benchmarks/tamper-bench/tamperbench/run.py" = ["RUF001", "RUF002"]
+"benchmarks/tamper-bench/tamperbench/score.py" = ["RUF001", "RUF002"]

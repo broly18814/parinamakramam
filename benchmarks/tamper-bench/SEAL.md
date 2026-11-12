@@ -61,3 +61,18 @@ Rates are on the held-out set, using blocking verdicts.
 1. **The founder allowed running the rival tools on 12 November 2026** ("Yes, run them"). They were run on the **development set** that day ([results/dev/RESULTS.md](results/dev/RESULTS.md)).
 2. **Why the held-out run waits:** publishing the held-out cases after the run would let them be seen before pkv 0.3 (with A2) is built, which would spoil H-TB3. So the held-out run happens **once, after A2 is built**, in plan v2's weeks 5–6, with pkv 0.2.1, pkv 0.3 (with A2) and every rival together. The two pkv versions are scored separately, and 0.2.1's score is never replaced.
 3. After the run, the held-out file and all results are published, and the run is recorded in the [experiment registry](../../governance/EXPERIMENT_REGISTRY.md).
+
+## After the run (12 November 2026)
+
+**The held-out run is done, once**, after the founder's "Yes, run it", with pkv+A2 frozen. The case file is now published as [`tamperbench/heldout.py`](tamperbench/heldout.py), byte for byte. Its SHA-256 is the one above, and a self-check (`test_published_held_out_file_matches_the_seal`) confirms it.
+
+| ID | Result |
+|---|---|
+| H-TB1 | ✅ pass: removal 14/14, semantic 7/20 (35%) |
+| H-TB2 | ✅ pass: no tool has semantic ≥ 80% with false alarms ≤ 10% |
+| H-TB3 | ❌ **fail**: semantic +45 points (met), but false alarms +10 points (limit +5). **A2's stop rule applies** |
+| H-TB4 | ✅ pass: Skylos 5.6.0 blocks exactly X01–X06 |
+
+Results: [results/heldout/RESULTS.md](results/heldout/RESULTS.md). What they mean, and every pkv error read case by case: [results/heldout/NOTES.md](results/heldout/NOTES.md). The predictions are scored by [`tamperbench/score.py`](tamperbench/score.py), which applies the rules above. It was written while the run was in progress, before any held-out result was seen.
+
+**Rule from now on:** these 61 cases are public. They can be used for building, like the development set, but a tool changed after today can't claim a held-out score on them. That needs a new sealed set.

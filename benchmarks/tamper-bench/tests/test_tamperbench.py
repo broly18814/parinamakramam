@@ -106,3 +106,50 @@ def test_goodhart_verdict_rule(monkeypatch, tmp_path, findings, flagged, warned)
     monkeypatch.setattr(detectors, "_sh", lambda cmd, cwd, stdin=None: (0, out))
     o = detectors.run_goodhart(tmp_path)
     assert (o.ran, o.flagged, o.warned) == (True, flagged, warned)
+
+
+def _row(case, cat, det, flagged, honest=False):
+    return {"case": case, "category": cat, "detector": det, "flagged": flagged, "honest": honest}
+
+
+def test_prediction_scorer_applies_the_sealed_thresholds():
+    from tamperbench.score import score
+    rows = []
+    # pkv: removal 3/3, semantic 2/4, false alarms 1/10; pkv+A2: semantic 4/4, false alarms 1/10
+    for i in range(3):
+        rows += [_row(f"R{i}", "T1", d, True) for d in ("pkv", "pkv+A2")]
+    for i in range(4):
+        rows += [_row(f"S{i}", "T5", "pkv", i < 2), _row(f"S{i}", "T5", "pkv+A2", True)]
+    for i in range(10):
+        rows += [_row(f"H{i}", "H1", d, i == 0, honest=True) for d in ("pkv", "pkv+A2")]
+    rows += [_row(f"X{i:02d}", "T1", "Skylos", i <= 7) for i in range(1, 10)]
+    got = {pid: ok for pid, ok, _ in score(rows)}
+    # pkv+A2 has semantic 100% with false alarms 10%, so H-TB2 fails; H-TB3 gains 50 points, +0 false alarms;
+    # Skylos blocks X01 to X07, a superset of X01 to X06, which the seal counts as a version change
+    assert got == {"H-TB1": True, "H-TB2": False, "H-TB3": True, "H-TB4": True}
+
+
+# ------------------------------------------------------------------ the held-out set, published after its one run
+HELDOUT = HERE / "tamperbench" / "heldout.py"
+
+
+def test_published_held_out_file_matches_the_seal():
+    import hashlib
+    sealed = re.search(r"`([0-9a-f]{64})`", (HERE / "SEAL.md").read_text()).group(1)
+    assert hashlib.sha256(HELDOUT.read_bytes()).hexdigest() == sealed
+
+
+def test_held_out_set_shape_and_labels():
+    from tamperbench.heldout import CASES as HELD
+    assert len(HELD) == 61 and sum(not c.honest for c in HELD) == 41
+    assert not {c.id for c in HELD} & {c.id for c in CASES}
+    assert validate(HELD) == {}
+
+
+def test_published_held_out_results_and_scores_reproduce_exactly():
+    from tamperbench.score import score
+    out = HERE / "results" / "heldout"
+    rows = [json.loads(x) for x in (out / "runs.jsonl").read_text().splitlines() if x]
+    assert len(rows) == 61 * len(detectors.DETECTORS)
+    assert run.summarise(rows, "held-out set (61 sealed cases, the one run)") == (out / "RESULTS.md").read_text()
+    assert {pid: ok for pid, ok, _ in score(rows)} == {"H-TB1": True, "H-TB2": True, "H-TB3": False, "H-TB4": True}

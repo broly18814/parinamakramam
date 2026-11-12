@@ -128,14 +128,24 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
 1. **Founder: decide on Telangana's TISC 2026** (a challenge, not a grant; reportedly closes **20 November**, from a secondary source). Enter or skip.
 2. ✅ **Track C, C1 done (12 Nov):** all four sizes inside their predictions. In bfloat16: 61k, 33k, 16k and 6.9k tokens/s, so a full run takes about 1 hour, 4 hours, 17 hours and 4.2 days. EXP-M1 uses 10M–50M ([results](../experiments/C1-throughput/README.md)).
 3. 🟡 **Track C, C2: dataset registry**, widened on 12 Nov at the founder's request (D-050) to about 45 datasets in seven groups, in [DATASET_REGISTRY.md](DATASET_REGISTRY.md) (brief §16): every source with licence, version and hash. Versions and fingerprints are filled in at first download; the items marked unverified must be resolved first. Downloading The Stack v1 needs its terms accepted on Hugging Face, which is a founder step. Text: FineWeb-Edu, IndicCorp v2, Sangraha; code: a permissive subset of The Stack v1 dedup. Excluded: Samanantar, The Stack v2, Python-Edu.
-4. 🔒 **Track A, A1: TAMPER-BENCH built and sealed (12 Nov)**, in [benchmarks/tamper-bench/](../benchmarks/tamper-bench/README.md): 30 public development cases and 61 sealed held-out cases, every label confirmed by running it; predictions in [SEAL.md](../benchmarks/tamper-bench/SEAL.md). pkv 0.2.1 on the development set: 13/20 cheats caught, 4/9 semantic ones, 2/10 false alarms.
-   - **The held-out file lives only on this Mac**, in `private/tamper-bench-heldout/heldout.py` (SHA-256 `150155fa…`). **Don't open it while working on pkv**, and keep a backup: if it's lost, the seal is lost.
-   - **All 8 tools run on the development set (12 Nov, founder: "Yes, run them").** checkwash did best (15/20, 6/9 subtle, 2/10 false alarms), ahead of pkv (13/20, 4/9, 2/10). Edited expected values, rigged tests and hard-coded answers are caught by almost nothing: that's A2's target ([notes](../benchmarks/tamper-bench/results/dev/NOTES.md)). The held-out run waits until A2 is built.
-   - ✅ **A2 built (12 Nov): `pkv check --mutate`**, a differential mutation check. It makes small mistakes in the old version of the changed lines; a mistake the old tests caught but the new tests don't means checks were removed.
-     - **Round 1, as pre-registered:** 15/20 cheats, 6/9 semantic. Two of four predictions failed, and that's recorded.
-     - **Round 2, two general operators added:** 17/20 and 8/9, with 3/10 false alarms ([A2 design and results](../docs/product/A2-design.md)).
-     - **REAL-003 (12 Nov), A2 on 120 unseen real commits:** with an environment from the commits' own era, A2 acted on 25 and raised 2 alarms. Both were right (one a public function left untested), with 0 wrong claims and 0 crashes. But 25 is short of the pre-registered 30, so the study is **inconclusive** and A2 **stays opt-in** ([REAL-003](../docs/product/REAL-003-design.md)).
-     - **Next:** the sealed TAMPER-BENCH held-out run (H-TB3), with A2 frozen. (absorbs BENCH-004 and the known misses in OI-8 and OI-13).
+4. ✅ **Track A, A1: TAMPER-BENCH built, sealed and run (12 Nov)**, in [benchmarks/tamper-bench/](../benchmarks/tamper-bench/README.md): 30 development cases and 61 held-out cases, every label confirmed by running it.
+   - **The held-out run is done, once (founder: "Yes, run it").** The seal held, and the 61 cases are now published (`tamperbench/heldout.py`, same SHA-256). The copy in `private/tamper-bench-heldout/` is no longer secret.
+   - **Result** ([notes](../benchmarks/tamper-bench/results/heldout/NOTES.md)): pkv + A2 caught the most cheats (34/41, 16/20 semantic), but with 5/20 false alarms; pkv 0.2.1 had 24/41 with 3/20.
+     - **H-TB3 failed** (false alarms +10 points; the limit was +5).
+     - H-TB1, H-TB2 and H-TB4 passed.
+   - **The stop rule applies (D-051):**
+     - A2 stays opt-in and is **not presented as an advantage**;
+     - **before the launch (A6), the founder chooses Track A's differentiator.** The candidates:
+       - (a) **the sealed, reproducible benchmark itself:** the only public one that runs every rival under fixed rules, ours included;
+       - (b) **the evidence bundle (A3) and the Claude Code hook (A4):** "every AI change comes with a receipt", with pkv 0.2.1's blocking rules (24/41 cheats, 3/20 false alarms; Skylos had 22/41 and 2/20);
+       - (c) **TAMPER-BENCH v2:** a fix for A2's documented-change alarms, judged on a new sealed set before any claim.
+   - **Earlier steps:** A2 was built (two development rounds, [A2 design](../docs/product/A2-design.md)). REAL-003, on 120 real commits, was inconclusive (A2 acted on 25, with 2 correct alarms), so A2 stays opt-in ([REAL-003](../docs/product/REAL-003-design.md)).
+   - **New misses, understood but not fixed:**
+     - code-side cheats with untouched tests;
+     - one table row edited;
+     - swapped return values.
+
+     These join OI-8.
 5. 🟡 **Track C, new architecture (D-050):** [A001](../docs/research/A001-evolving-architecture.md) proposes an architecture that keeps learning and evolves its own building blocks, with experiments EXP-A1 to EXP-A4, each against its simple baseline. Order: EXP-M1 first (data pipeline and baseline), then EXP-A2, A1, A3.
 5. 🟡 **Track B: EXP-007**, design committed before any code in [EXP-007-design.md](../docs/research/EXP-007-design.md) (H23, library × guidance, 7 distinct cells, on rich and pyparsing, with a date split against model memorisation). Next: build it and calibrate on tomli.
 6. **Watch adoption weekly, with no interviews (D-002)**, including the Marketplace listing (D-047). Next reading: 17 November ([ADOPTION.md](ADOPTION.md)).

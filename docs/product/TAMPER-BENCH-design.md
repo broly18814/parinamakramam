@@ -1,7 +1,7 @@
 # TAMPER-BENCH: a fair public test of tools that catch weakened tests
 
 **Plan v2, Track A, step A1** ([PLAN-v2.md](../../governance/PLAN-v2.md), section 3). It replaces BENCH-004 (D-049).
-**Status:** built and sealed, 12 November 2026. The code is in [`benchmarks/tamper-bench/`](../../benchmarks/tamper-bench/): 30 public development cases and 61 sealed held-out cases, every label confirmed by running it. The fingerprint, the verdict rules and the predictions are in [SEAL.md](../../benchmarks/tamper-bench/SEAL.md), all committed **before** any detector runs on the held-out cases. Changes from this design while building: 91 cases instead of about 90; every label is now confirmed automatically by running the case (see the benchmark's README); goodhart not run yet (it needs the founder's permission).
+**Status:** built, sealed and run, 12 November 2026. The one held-out run is done, and the held-out cases and results are published ([results](../../benchmarks/tamper-bench/results/heldout/RESULTS.md), [notes](../../benchmarks/tamper-bench/results/heldout/NOTES.md)); H-TB1, H-TB2 and H-TB4 pass, and H-TB3 fails. The code is in [`benchmarks/tamper-bench/`](../../benchmarks/tamper-bench/): 30 public development cases and 61 sealed held-out cases, every label confirmed by running it. The fingerprint, the verdict rules and the predictions are in [SEAL.md](../../benchmarks/tamper-bench/SEAL.md), all committed **before** any detector runs on the held-out cases. Changes from this design while building: 91 cases instead of about 90; every label is now confirmed automatically by running the case (see the benchmark's README); goodhart not run yet (it needs the founder's permission).
 
 ## In plain words
 
