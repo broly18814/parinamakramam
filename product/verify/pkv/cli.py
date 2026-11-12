@@ -11,6 +11,9 @@
         --rerun repeats its tests in a clean copy and compares every outcome.
     pkv fingerprint [--repo PATH]
         The exact fingerprint (tree hash) of the code on disk right now.
+    pkv hook install [--scope project|local|user] / pkv hook uninstall
+        Add (or remove) pkv as a Claude Code Stop hook (A4). Claude Code then runs
+        `pkv hook claude-stop`, which checks the work whenever Claude says it's done.
 
 Exit codes:
     affected / fingerprint: 0 = worked, 2 = could not do the job.
@@ -194,6 +197,25 @@ def _rerun(args: argparse.Namespace, root: Path, ev: dict[str, Any], skip: tuple
     return 4
 
 
+def _hook(args: argparse.Namespace) -> int:
+    from . import hook
+
+    if args.hook_command == "claude-stop":
+        code, out = hook.claude_stop(sys.stdin.read(), base=args.base, timeout=args.timeout, python=args.python)
+        if out:
+            print(out)
+        return code
+    path = hook.settings_path(args.scope, hook.install_root(args.repo))
+    if args.hook_command == "install":
+        changed = hook.install(path)
+        print(f"pkv's Stop hook {'added to' if changed else 'is already in'} {path}. "
+              "Claude Code will now check the work with pkv whenever Claude says it's done.")
+    else:
+        changed = hook.uninstall(path)
+        print(f"pkv's Stop hook {'removed from' if changed else 'was not in'} {path}.")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="pkv", description="Independent checks for AI-written (or any) code changes."
@@ -232,7 +254,22 @@ def main(argv: list[str] | None = None) -> int:
                     help="pass this environment variable to the tests (repeatable)")
     f = sub.add_parser("fingerprint", help="fingerprint of the code on disk now")
     f.add_argument("--repo", default=".")
+    h = sub.add_parser("hook", help="use pkv as a Claude Code hook (A4)")
+    hsub = h.add_subparsers(dest="hook_command", required=True)
+    for name, text in (("install", "add pkv's Stop hook to Claude Code's settings"),
+                       ("uninstall", "remove pkv's Stop hook from Claude Code's settings")):
+        hp = hsub.add_parser(name, help=text)
+        hp.add_argument("--scope", choices=["project", "local", "user"], default="project",
+                        help="project: .claude/settings.json (shared); local: .claude/settings.local.json; "
+                             "user: ~/.claude/settings.json")
+        hp.add_argument("--repo", default=".")
+    cs = hsub.add_parser("claude-stop", help="what Claude Code runs when Claude stops (reads its JSON on stdin)")
+    cs.add_argument("--base", default=None)
+    cs.add_argument("--timeout", type=float, default=300)
+    cs.add_argument("--python", default=None)
     args = parser.parse_args(argv)
+    if args.command == "hook":
+        return _hook(args)
 
     try:
         if args.command == "fingerprint":
