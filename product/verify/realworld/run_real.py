@@ -50,9 +50,12 @@ HERE = Path(__file__).resolve().parent
 PKV_DIR = HERE.parent
 PROJECTS = json.loads((HERE / "projects.json").read_text())
 RESULTS = HERE / "results"
-SETS = {"study": (0, 30), "heldout": (30, 60), "fresh": (60, 90), "a2": (90, 120)}  # positions in the commit list
+SETS = {"study": (0, 30), "heldout": (30, 60), "fresh": (60, 90), "a2": (90, 120),
+        "a3": (120, 150)}  # positions in the commit list
 # "fresh" is REAL-002: read-only analysis of 120 further commits (docs/product/D4-design.md).
 # "a2" is REAL-003: pkv with --mutate (A2) on 120 further commits (docs/product/REAL-003-design.md).
+# "a3" is REAL-004: each commit checked in the working folder, then with --clean, then the clean receipt
+# re-run with `pkv fresh --rerun` (docs/product/A3-design.md).
 TIMEOUT_S = 600
 # The full-suite comparison runs with the same kind of minimal environment pkv uses.
 FULL_ENV = {"PATH": os.environ.get("PATH", "/usr/bin:/bin"), "HOME": os.environ.get("HOME", "/tmp"),
@@ -131,6 +134,8 @@ def slim(receipt: dict[str, Any]) -> dict[str, Any]:
         "failed_tests": run.get("failed_tests", [])[:20],
         "files_changed_during_run": run.get("files_changed_during_run"),
         "mutation": receipt.get("mutation"),
+        "where": run.get("where"),
+        "environment": receipt.get("environment"),
     }
 
 
@@ -166,7 +171,10 @@ def run(work: Path, which: str, only: str | None, results: str | None = None) ->
             else:
                 rec["verdict"] = "TOOL-ERROR"
                 rec["stderr_tail"] = r.stderr[-1500:]
-            if rec["verdict"] == "VERIFIED" and not rec.get("run_all"):
+            if which == "a3":
+                rec["clean"] = clean_and_rerun(repo, py, parent, local / f"{p['name']}-{sha[:12]}-clean.json", env,
+                                               receipt)
+            elif rec["verdict"] == "VERIFIED" and not rec.get("run_all"):
                 # The safety measurement: pkv ran only some tests and said VERIFIED.
                 # Does the *whole* suite agree? If not, that's a false all-clear.
                 t1 = time.monotonic()
@@ -178,6 +186,40 @@ def run(work: Path, which: str, only: str | None, results: str | None = None) ->
             print(f"{p['name']} #{i} {sha[:10]} {rec['verdict']} ({rec['wall_seconds']} s)", flush=True)
         git(repo, "checkout", "-q", "--detach", "-f", p["commit"])
         (out_dir / f"{p['name']}.json").write_text(json.dumps(records, indent=1) + "\n")
+
+
+def _outcomes(receipt: Path) -> dict[str, str]:
+    if not receipt.exists():
+        return {}
+    run = json.loads(receipt.read_text()).get("run") or {}
+    return {f"{c}::{n}": o for c, n, o in run.get("executed", [])}
+
+
+def clean_and_rerun(repo: Path, py: Path, parent: str, receipt: Path, env: dict[str, str],
+                    in_place: Path) -> dict[str, Any]:
+    """REAL-004: the same check with --clean, then `pkv fresh --rerun` on its receipt.
+    Only the tests whose outcome differs from the working-folder run are kept."""
+    receipt.unlink(missing_ok=True)
+    t0 = time.monotonic()
+    r = sh(sys.executable, "-m", "pkv", "check", "--repo", str(repo), "--base", parent, "--python", str(py),
+           "--timeout", str(TIMEOUT_S), "--json", str(receipt), "--clean", check=False, env=env,
+           timeout=TIMEOUT_S + 600)
+    out: dict[str, Any] = {"exit_code": r.returncode, "wall_seconds": round(time.monotonic() - t0, 2)}
+    if not receipt.exists():
+        out.update(verdict="TOOL-ERROR", stderr_tail=r.stderr[-1500:])
+        return out
+    out.update(slim(json.loads(receipt.read_text())))
+    a, b = _outcomes(in_place), _outcomes(receipt)
+    differ = sorted(k for k in a.keys() | b.keys() if a.get(k) != b.get(k))
+    out["tests_compared"] = len(a.keys() | b.keys())
+    out["tests_differ"] = [[k, a.get(k, "not run"), b.get(k, "not run")] for k in differ[:50]]
+    out["tests_differ_count"] = len(differ)
+    t1 = time.monotonic()
+    f = sh(sys.executable, "-m", "pkv", "fresh", str(receipt), "--repo", str(repo), "--rerun",
+           "--python", str(py), "--timeout", str(TIMEOUT_S), check=False, env=env, timeout=TIMEOUT_S + 600)
+    out["rerun"] = {"exit_code": f.returncode, "wall_seconds": round(time.monotonic() - t1, 2),
+                    "said": (f.stdout + f.stderr)[-1500:]}
+    return out
 
 
 def rescore(work: Path, which: str) -> None:

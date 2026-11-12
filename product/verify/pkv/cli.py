@@ -6,8 +6,9 @@
     pkv check [--repo PATH] [--base REF] [--json FILE] [--md FILE] [--no-run] ...
         The full check: pick the affected tests, run them, look for signs the
         tests were weakened, and print a receipt with one verdict.
-    pkv fresh EVIDENCE.json [--repo PATH]
-        Does a saved receipt still match the code on disk now?
+    pkv fresh EVIDENCE.json [--repo PATH] [--rerun]
+        Has the receipt been edited, and does it still match the code on disk now?
+        --rerun repeats its tests in a clean copy and compares every outcome.
     pkv fingerprint [--repo PATH]
         The exact fingerprint (tree hash) of the code on disk right now.
 
@@ -16,7 +17,9 @@ Exit codes:
     check: 0 VERIFIED, 1 FAILED, 3 UNVERIFIED, 4 SUSPICIOUS, 2 could not do the job.
         --mutate adds the mutation check: mistakes in the changed lines that the old tests
         caught but the new tests don't make the verdict SUSPICIOUS.
-    fresh: 0 still matches, 1 out of date (stale), 2 could not do the job.
+        --clean runs the tests in a clean copy of exactly the fingerprinted files (A3).
+    fresh: 0 still matches (and reproduced, with --rerun), 1 out of date (stale),
+        2 could not do the job, 3 the receipt was edited (tampered), 4 not reproduced.
 """
 
 from __future__ import annotations
@@ -26,14 +29,15 @@ import json
 import shlex
 import sys
 from pathlib import Path
+from typing import Any
 
 from . import __version__
 from .affected import Selection, select_tests
 from .gitdiff import GitError, changed_files, comparison_point, repo_root, tree_hash
 from .imports import build_graph
 from .mutate import MAX_MUTANTS, MutationReport, mutation_check
-from .report import EXIT_CODES, build_evidence, decide, render
-from .runner import run_tests
+from .report import EXIT_CODES, build_evidence, decide, render, seal, seal_status
+from .runner import describe_python, run_tests
 from .tamper import find_not_run, find_tampering
 
 
@@ -90,7 +94,7 @@ def _check(args: argparse.Namespace) -> int:
     run = None
     if sel.tests and not args.no_run:
         run = run_tests(root, sel.tests, timeout=args.timeout, python=args.python,
-                        keep_env=args.keep_env, exclude=tuple(receipts))
+                        keep_env=args.keep_env, exclude=tuple(receipts), clean=args.clean)
         # Only meaningful if pytest collected and ran tests normally. With "no tests
         # collected" pytest writes no per-file entries, and that case is already
         # UNVERIFIED for its own, more accurate reason.
@@ -108,6 +112,8 @@ def _check(args: argparse.Namespace) -> int:
                         else tree_hash(root, exclude=tuple(receipts)))
     ev["receipt_files"] = receipts
     ev["mutation"] = mutation.to_dict() if mutation else None
+    ev["environment"] = describe_python(run.python) if run else None
+    seal(ev)  # last: every field above is covered by the seal
     text = render(ev)
     print(text, end="")
     for f in (args.json, args.md):
@@ -138,19 +144,54 @@ def _fresh(args: argparse.Namespace) -> int:
     except (OSError, ValueError, KeyError) as e:
         print(f"pkv: cannot read the receipt {args.evidence}: {e}", file=sys.stderr)
         return 2
+    status = seal_status(ev)
+    if status == "tampered":
+        print("TAMPERED: this receipt was changed after pkv wrote it (its seal doesn't match its contents). "
+              "Don't trust it; run pkv check again.")
+        return 3
+    if status == "unsealed":
+        print("Note: this receipt has no seal (made by pkv 0.2 or older), so edits to it can't be detected.")
     root = repo_root(args.repo)
     skip = list(ev.get("receipt_files", []))
     own = _inside(root, args.evidence)
     if own:
         skip.append(own)
     now = tree_hash(root, exclude=tuple(skip))
-    if now == recorded:
-        print(f"FRESH: the receipt ({ev.get('verdict')}, made {ev.get('created_at')}) "
-              "matches the code exactly as it is now.")
+    if now != recorded:
+        print(f"STALE: the code has changed since this receipt was made ({ev.get('created_at')}). "
+              f"Its verdict ({ev.get('verdict')}) no longer applies. Run pkv check again.")
+        return 1
+    print(f"FRESH: the receipt ({ev.get('verdict')}, made {ev.get('created_at')}) "
+          "matches the code exactly as it is now" + (", and its seal is intact." if status == "intact" else "."))
+    if not args.rerun:
         return 0
-    print(f"STALE: the code has changed since this receipt was made ({ev.get('created_at')}). "
-          f"Its verdict ({ev.get('verdict')}) no longer applies. Run pkv check again.")
-    return 1
+    return _rerun(args, root, ev, tuple(skip))
+
+
+def _rerun(args: argparse.Namespace, root: Path, ev: dict[str, Any], skip: tuple[str, ...]) -> int:
+    """Repeat the receipt's tests in a clean copy of the recorded code; compare every outcome (A3)."""
+    old = ev.get("run")
+    tests = ev.get("selection", {}).get("tests", [])
+    if not old or not tests:
+        print("Nothing to re-run: this receipt records no test run.")
+        return 0
+    python = args.python or (old.get("python") if old.get("python") and Path(old["python"]).exists() else None)
+    new = run_tests(root, tests, timeout=args.timeout, python=python, keep_env=args.keep_env,
+                    exclude=skip, clean=True)
+    before = {(c, n): o for c, n, o in old.get("executed", [])}
+    after = {(c, n): o for c, n, o in new.executed}
+    differ = sorted(k for k in before.keys() | after.keys() if before.get(k) != after.get(k))
+    where = old.get("where", "working folder")
+    print(f"Re-ran {len(tests)} test file(s) in a clean copy (recorded run: {where}): "
+          f"recorded {old.get('outcome')}, now {new.outcome}.")
+    if not differ and new.outcome == old.get("outcome") and not new.changed_during_run:
+        print(f"REPRODUCED: all {len(after)} test outcomes are the same.")
+        return 0
+    print(f"NOT REPRODUCED: {len(differ)} test(s) ended differently"
+          + (" (and files changed during the re-run)" if new.changed_during_run else "") + ":")
+    for c, n in differ[:20]:
+        print(f"  {c}::{n}: recorded {before.get((c, n), 'not run')}, now {after.get((c, n), 'not run')}")
+    return 4
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -174,6 +215,8 @@ def main(argv: list[str] | None = None) -> int:
     c.add_argument("--python", default=None, help="Python to run the tests with")
     c.add_argument("--keep-env", action="append", default=[], metavar="NAME",
                    help="pass this environment variable to the tests (repeatable)")
+    c.add_argument("--clean", action="store_true",
+                   help="run the tests in a clean copy of exactly the fingerprinted files, outside the project")
     c.add_argument("--mutate", action="store_true",
                    help="also check the tests still catch small mistakes in the changed lines (slower)")
     c.add_argument("--mutants", type=int, default=MAX_MUTANTS, metavar="N",
@@ -181,6 +224,12 @@ def main(argv: list[str] | None = None) -> int:
     fr = sub.add_parser("fresh", help="does a saved receipt still match the code?")
     fr.add_argument("evidence")
     fr.add_argument("--repo", default=".")
+    fr.add_argument("--rerun", action="store_true",
+                    help="also repeat the receipt's tests in a clean copy and compare every outcome")
+    fr.add_argument("--python", default=None, help="Python to re-run the tests with")
+    fr.add_argument("--timeout", type=float, default=600, help="seconds before the re-run is stopped")
+    fr.add_argument("--keep-env", action="append", default=[], metavar="NAME",
+                    help="pass this environment variable to the tests (repeatable)")
     f = sub.add_parser("fingerprint", help="fingerprint of the code on disk now")
     f.add_argument("--repo", default=".")
     args = parser.parse_args(argv)

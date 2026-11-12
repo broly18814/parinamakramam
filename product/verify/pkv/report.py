@@ -16,6 +16,8 @@ Every sentence in the report comes from recorded data, never from an AI.
 
 from __future__ import annotations
 
+import hashlib
+import json
 import os
 from typing import Any
 
@@ -24,6 +26,31 @@ from .runner import RunRecord, now_iso
 from .tamper import Finding
 
 EXIT_CODES = {"VERIFIED": 0, "FAILED": 1, "UNVERIFIED": 3, "SUSPICIOUS": 4}
+SCHEMA = "pkv-evidence/1"
+
+
+def digest(ev: dict[str, Any]) -> str:
+    """The receipt's seal (A3): SHA-256 of the canonical JSON of every field except `digest`.
+
+    This makes a receipt *tamper-evident*, not signed: an edit is detected unless whoever made it
+    also recomputed this value. `pkv fresh --rerun` is the check that doesn't rely on trust.
+    """
+    body = {k: v for k, v in ev.items() if k != "digest"}
+    body = json.loads(json.dumps(body))  # the same values a reader gets back from the file
+    text = json.dumps(body, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    return "sha256:" + hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def seal(ev: dict[str, Any]) -> dict[str, Any]:
+    ev["digest"] = digest(ev)
+    return ev
+
+
+def seal_status(ev: dict[str, Any]) -> str:
+    """One of: intact, tampered, or unsealed (a receipt from pkv 0.2 or older)."""
+    if "digest" not in ev:
+        return "unsealed"
+    return "intact" if ev["digest"] == digest(ev) else "tampered"
 
 
 def decide(sel: Selection, run: RunRecord | None, findings: list[Finding],
@@ -81,6 +108,7 @@ def build_evidence(*, root: str | os.PathLike[str], base: str | None, ref: str |
                    sel: Selection, run: RunRecord | None, findings: list[Finding], verdict: str,
                    reasons: list[str], tree_hash_now: str) -> dict[str, Any]:
     return {
+        "schema": SCHEMA,
         "tool": "parinama-verify",
         "version": version,
         "created_at": now_iso(),
@@ -110,6 +138,8 @@ def render(ev: dict[str, Any]) -> str:
     L.append("")
     L.append(f"Checked by Parinama Verify {ev['version']} at {ev['created_at']}. "
              f"Compared with: {ev['compared_with']}. Code fingerprint: `{ev['tree_hash'][:12]}`.")
+    if ev.get("digest"):
+        L.append(f"Receipt seal: `{ev['digest'][:19]}`.")
 
     L.append("\n## What changed")
     if not sel["changes"]:
@@ -143,6 +173,16 @@ def render(ev: dict[str, Any]) -> str:
         L.append("\n## What actually ran")
         for cmd in run["commands"]:
             L.append(f"- Command: `{' '.join(cmd)}`")
+        where = run.get("where", "working folder")
+        if where == "clean copy":
+            L.append("- Where: **a clean copy** holding exactly the fingerprinted files, outside the project "
+                     "(files git ignores were not there)")
+        else:
+            L.append("- Where: the project folder itself (files git ignores were present; "
+                     "`--clean` runs in a clean copy instead)")
+        envd = ev.get("environment") or {}
+        if envd:
+            L.append(f"- Python {envd.get('python')}, pytest {envd.get('pytest')}, on {envd.get('platform')}")
         L.append(f"- Started {run['started_at']}, took {run['duration_s']} s, result: **{run['outcome']}**")
         L.append(f"- Passed {c.get('passed', 0)}, failed {c.get('failed', 0)}, errors {c.get('errors', 0)}, "
                  f"skipped {c.get('skipped', 0)}, expected-to-fail {c.get('xfailed', 0)}")
@@ -150,6 +190,9 @@ def render(ev: dict[str, Any]) -> str:
             L.append("- Failed: " + ", ".join(f"`{t}`" for t in run["failed_tests"][:20]))
         same = "unchanged" if not run["changed_during_run"] else "**CHANGED during the run**"
         L.append(f"- Code fingerprint before and after: {same}")
+        if run.get("working_folder_changed"):
+            L.append("- The project folder changed while the clean copy was being tested, so this receipt "
+                     "describes the code as it was when the check started")
         if run["outcome"] != "passed" and run["output_tail"]:
             L.append("\nLast lines of the test output:\n")
             L.append("```")
@@ -180,6 +223,6 @@ def render(ev: dict[str, Any]) -> str:
     if warn:
         L.append("\n## Limits of this check")
         L += [f"- {w}" for w in warn]
-    L.append("\n---\nTo confirm later that this receipt still matches the code: "
-             "`pkv fresh <this receipt's .json file>`")
+    L.append("\n---\nTo confirm later that this receipt still matches the code and hasn't been edited: "
+             "`pkv fresh <this receipt's .json file>`. To repeat the run yourself: add `--rerun`.")
     return "\n".join(L) + "\n"

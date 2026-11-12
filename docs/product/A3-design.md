@@ -26,7 +26,7 @@ A3 fixes each one:
 
 **Clean copy (`--clean`):**
 - **The copy:** `tree = tree_hash(root, exclude)`, the same fingerprint the receipt records. Then `git archive <tree>` is extracted into a temporary folder, with `tarfile`'s `data` filter.
-- **Imports:** tests run with `cwd` set to the copy and `PYTHONPATH` set to the copy plus its `src/`, ahead of site-packages. This beats an editable install pointing at the working folder, the same way A2's copies do.
+- **Imports:** tests run with `cwd` set to the copy and `PYTHONPATH` set to the copy plus its `src/`, ahead of site-packages. This beats an editable install pointing at the working folder, the same way A2's copies do (but see amendment 1).
 - **The Python:** still the project's own (`find_python(root)` or `--python`).
 - **Checks on the copy:**
   - before and after the run, its fingerprint is taken the same way, with `GIT_WORK_TREE` set to the copy and the project's object database;
@@ -86,6 +86,19 @@ These are acceptance tests, not predictions. All must pass in CI:
   - a fresh, passing receipt is REPRODUCED;
   - after the code changes, the receipt is STALE;
   - a receipt whose recorded outcome is edited, and its digest recomputed, is NOT REPRODUCED.
+
+### Amendment 1, found by the acceptance tests before REAL-004 (12 November 2026)
+
+**The editable-install test failed on the first build, and the failure was real.**
+- **What happened:** with `pip install -e .`, the copy's own package was imported, but a file *missing* from the copy (the git-ignored leftover) was still found in the working folder, through setuptools' editable-install finder. That's exactly the case the clean copy exists to rule out: a D-pkv defect in the design as written.
+- **The fix:** in a clean-copy run, pkv loads a small pytest plugin (`pkv/clean_copy_plugin.py`, run as `pytest -p _pkv_clean_copy`) before any project code is imported. It removes:
+  - editable-install finders and path hooks;
+  - import-path entries inside the working folder, except the running Python's own environment, which may live there (`.venv/`).
+- **Tests added:**
+  - the editable-install case;
+  - a `.venv` inside the project.
+
+Both pass. **None of this was tuned on REAL-004's commits, which haven't been run.**
 
 ## REAL-004: `--clean` and `--rerun` on real commits (pre-registered)
 

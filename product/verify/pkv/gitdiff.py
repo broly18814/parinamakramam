@@ -169,3 +169,37 @@ def tree_hash(repo: str | os.PathLike[str] = ".", exclude: tuple[str, ...] = ())
         for path in (PKV_DIR, *exclude):
             _git(root, "rm", "-r", "-q", "--cached", "--ignore-unmatch", "--", path, env=env)
         return _git(root, "write-tree", env=env).decode().strip()
+
+
+def copy_tree_hash(root: Path, folder: Path) -> str:
+    """The fingerprint of `folder`, a copy made by export_tree, taken exactly as tree_hash
+    takes it (same rules, same ignore files), using the project's own git database."""
+    git_dir = _git(root, "rev-parse", "--absolute-git-dir").decode().strip()
+    with tempfile.TemporaryDirectory() as td:
+        env = {**os.environ, "GIT_INDEX_FILE": str(Path(td) / "index"),
+               "GIT_DIR": git_dir, "GIT_WORK_TREE": str(folder)}
+        for args in (("add", "-A"), ("write-tree",)):
+            r = subprocess.run(["git", *args], cwd=folder, capture_output=True, env=env)
+            if r.returncode != 0:
+                raise GitError(f"git {' '.join(args)} failed in the clean copy: "
+                               f"{r.stderr.decode(errors='replace').strip()}")
+        return r.stdout.decode().strip()
+
+
+def has_object(root: Path, sha: str) -> bool:
+    return subprocess.run(["git", "-C", str(root), "cat-file", "-e", sha],
+                          capture_output=True).returncode == 0
+
+
+def export_tree(root: Path, tree: str, dest: Path) -> None:
+    """Write exactly the files of fingerprint `tree` into `dest`, and nothing else (A3)."""
+    import io
+    import tarfile
+
+    data = _git(root, "archive", "--format=tar", tree)
+    dest.mkdir(parents=True, exist_ok=True)
+    with tarfile.open(fileobj=io.BytesIO(data)) as tar:
+        if hasattr(tarfile, "data_filter"):
+            tar.extractall(dest, filter="data")
+        else:  # pragma: no cover - Python versions without extraction filters
+            tar.extractall(dest)  # an archive git just made from this repository

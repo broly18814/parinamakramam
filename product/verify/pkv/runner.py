@@ -22,7 +22,9 @@ code from the project on its own.
 
 from __future__ import annotations
 
+import json
 import os
+import shutil
 import signal
 import subprocess
 import sys
@@ -34,7 +36,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from .gitdiff import _git, tree_hash
+from .gitdiff import GitError, _git, copy_tree_hash, export_tree, tree_hash
 
 # Basic settings tests usually need. Everything else is left out.
 SAFE_ENV = ["PATH", "HOME", "LANG", "LC_ALL", "LC_CTYPE", "TMPDIR", "TEMP", "TMP",
@@ -92,6 +94,8 @@ class RunRecord:
     tree_hash_after: str = ""
     files_changed_during_run: list[str] = field(default_factory=list)
     output_tail: str = ""
+    where: str = "working folder"  # or "clean copy" (A3: only the fingerprinted files, in a fresh folder)
+    working_folder_changed: bool = False  # clean copy only: the project itself changed during the run
 
     @property
     def changed_during_run(self) -> bool:
@@ -194,12 +198,48 @@ def _run_one(root: Path, cmd: list[str], env: dict[str, str], timeout: float) ->
 def run_tests(root: str | os.PathLike[str], tests: list[str], *, timeout: float = 600,
               python: str | None = None, keep_env: list[str] | None = None,
               extra_args: list[str] | None = None,
-              exclude: tuple[str, ...] = ()) -> RunRecord:
-    """Run the tests (one pytest run per sub-project) within `timeout` seconds in total."""
+              exclude: tuple[str, ...] = (), clean: bool = False) -> RunRecord:
+    """Run the tests (one pytest run per sub-project) within `timeout` seconds in total.
+
+    clean=True (A3): copy exactly the fingerprinted files into a fresh folder outside the
+    project and run the tests there, so the result can't depend on files the fingerprint
+    leaves out (git-ignored leftovers, for example). The project folder isn't touched.
+    """
     root = Path(root)
     py = python or find_python(root)
     env = minimal_env(keep_env)
     before = tree_hash(root, exclude)
+    with tempfile.TemporaryDirectory() as copy_parent:
+        where = root
+        if clean:
+            where = Path(copy_parent) / root.name
+            export_tree(root, before, where)
+            if copy_tree_hash(root, where) != before:
+                raise GitError("the clean copy doesn't match the code's fingerprint; "
+                               "please report this as a pkv bug")
+            plugin_dir = Path(copy_parent) / ".pkv-plugin"
+            plugin_dir.mkdir()
+            shutil.copyfile(Path(__file__).with_name("clean_copy_plugin.py"), plugin_dir / "_pkv_clean_copy.py")
+            extra_path = [str(where), str(where / "src"), str(plugin_dir)]
+            env["PYTHONPATH"] = os.pathsep.join(extra_path + ([env["PYTHONPATH"]] if "PYTHONPATH" in env else []))
+            env["PKV_WORKING_FOLDER"], env["PKV_CLEAN_COPY"] = str(root), str(where)
+            # Cut routes back to the working folder (editable installs) before any project import.
+            extra_args = ["-p", "_pkv_clean_copy", *(extra_args or [])]
+        rec = _run_groups(where, tests, py, env, timeout, extra_args, before)
+        if clean:
+            rec.tree_hash_after = copy_tree_hash(root, where)
+            rec.where = "clean copy"
+            rec.working_folder_changed = tree_hash(root, exclude) != before
+        else:
+            rec.tree_hash_after = tree_hash(root, exclude)
+    if rec.tree_hash_before != rec.tree_hash_after:
+        diff = _git(root, "diff-tree", "-r", "--name-only", "-z", rec.tree_hash_before, rec.tree_hash_after)
+        rec.files_changed_during_run = [p for p in diff.decode().split("\0") if p]
+    return rec
+
+
+def _run_groups(root: Path, tests: list[str], py: str, env: dict[str, str], timeout: float,
+                extra_args: list[str] | None, before: str) -> RunRecord:
     started, t0 = now_iso(), time.monotonic()
     commands: list[list[str]] = []
     codes: list[int | None] = []
@@ -235,17 +275,26 @@ def run_tests(root: str | os.PathLike[str], tests: list[str], *, timeout: float 
             if hung:
                 break  # no time left for the other groups
     duration = round(time.monotonic() - t0, 3)
-    after = tree_hash(root, exclude)
-    changed: list[str] = []
-    if before != after:
-        diff = _git(root, "diff-tree", "-r", "--name-only", "-z", before, after)
-        changed = [p for p in diff.decode().split("\0") if p]
     # Show output from groups that did not pass; if all passed, the first one.
     bad = [t for t, o in zip(tails, outcomes, strict=True) if o != "passed"] if len(tails) > 1 else tails
     return RunRecord(
         commands=commands, exit_codes=codes, python=py, started_at=started,
         finished_at=now_iso(), duration_s=duration, outcome=_overall(outcomes),
         timed_out=timed_out, counts=counts, failed_tests=failed, executed=executed,
-        tree_hash_before=before, tree_hash_after=after, files_changed_during_run=changed,
+        tree_hash_before=before, tree_hash_after=before,
         output_tail="\n\n".join(bad or tails),
     )
+
+
+def describe_python(py: str) -> dict[str, str]:
+    """The test environment, for the receipt: Python, pytest and platform as the test Python sees them."""
+    code = ("import json, platform, sys\n"
+            "try:\n    import pytest; v = pytest.__version__\nexcept Exception:\n    v = 'not installed'\n"
+            "print(json.dumps({'python': platform.python_version(), 'pytest': v, "
+            "'platform': platform.platform()}))")
+    try:
+        r = subprocess.run([py, "-c", code], capture_output=True, text=True, timeout=60, env=minimal_env())
+        return dict(json.loads(r.stdout))
+    except (OSError, ValueError, subprocess.TimeoutExpired):
+        return {"python": "unknown", "pytest": "unknown", "platform": "unknown"}
+
