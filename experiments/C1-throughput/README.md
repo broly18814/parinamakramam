@@ -76,3 +76,47 @@ python3 experiments/C1-throughput/bench_throughput.py summarise experiments/C1-t
 ```
 
 The committed `results/*.md` tables must equal `summarise` applied to the committed `results/*.jsonl` files, character for character (checked in `research/pevo/tests/test_experiments.py`).
+
+---
+
+## Results (12 November 2026, measured after the predictions above were committed in `8b14f76`)
+
+Conditions: MacBook Pro, Apple M4 Pro, 48 GB, macOS 27.2.1, on AC power, `mlx` 0.31.2, Python 3.14.6. Raw records are in `results/run1.jsonl` and `results/run2.jsonl`; the tables are in `results/run1.md` and `results/run2.md`, made by `summarise`.
+
+### In plain words
+
+**Every size landed inside its predicted range.** The faster number format (bfloat16) is the one to use: it's 1.4 times as fast at the small sizes and about 3 times as fast at 125M. In exact 32-bit numbers, the 125M model needed 39 GB of the 48 GB, and its speed fell and wobbled. A complete 125M training run takes about **4.2 to 4.4 days** of the Mac; a 50M run takes about **17 hours**.
+
+| Size | Tokens/s, bfloat16 (median) | Predicted | Days to 20 tokens/parameter | Predicted days | Within prediction? |
+|---|---|---|---|---|---|
+| 10M | 61,173 | 50,000–100,000 | 0.04 (about 1 hour) | 0.03–0.05 | ✅ |
+| 25M | 32,868 | 20,000–40,000 | 0.17 (about 4 hours) | 0.14–0.27 | ✅ |
+| 50M | 16,311 | 10,000–20,000 | 0.69 (about 17 hours) | 0.6–1.2 | ✅ |
+| 125M | 6,941 | 4,000–8,000 | 4.17 | 3.6–7.2 | ✅ |
+
+float32, for comparison, in tokens per second (median) and peak memory:
+
+| Size | Tokens/s | Peak memory |
+|---|---|---|
+| 10M | 42,541 | 10.3 GB |
+| 25M | 23,176 | 14.1 GB |
+| 50M | 11,794 | 22.4 GB |
+| 125M | 2,372 | **39.2 GB**; the speed rose from 1,565 to 2,696 across windows, so likely memory pressure |
+
+**The heat test (run 2, 125M, bfloat16, 10 minutes):**
+- **Median:** 6,934 tokens/s.
+- **What happened:** steady at about 6,940 for the first 7 minutes, then a single step down to a steady **6,520** (−6%) for the rest. That started about 25 minutes into the whole session's continuous load, which is consistent with the laptop reaching a hotter, lower-power state. This is an inference; temperature wasn't recorded.
+
+### What the rules decide
+
+1. **EXP-M1's sizes: 10M, 25M and 50M.** Each single run takes 24 hours or less (50M: 0.69 days). 125M doesn't (4.2 days).
+2. **One 125M run is allowed** in the 90 days: 4.17 days at the median, 4.44 days at the sustained 6,520, both under 7.
+3. **No throttling adjustment:** the slowest window is 94% of the median, above the 80% limit. Even so, long runs are sized at the sustained **6,520** tokens/s rather than the median, because that's the speed after the step down (a choice made after seeing the data, stated here).
+4. **Number format:** use bfloat16 for speed. Whether it *trains as well* as float32 is checked on real text in EXP-M1's calibration.
+5. **Nothing fell below a prediction**, so nothing shrinks.
+
+### Limits
+
+- **Random tokens, one batch size (16 × 1,024), one vocabulary (32,768).** Real data loading and other vocabularies change the speed somewhat; EXP-M1's calibration measures its own.
+- **10 minutes isn't days.** A multi-day run may slow further; its speed is logged throughout.
+- **Two minutes per size** (one measurement each), so the medians carry no confidence interval. The 10-second windows are very stable (within ±1% for 25M and 50M).

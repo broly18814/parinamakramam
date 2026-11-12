@@ -298,7 +298,8 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
 
 ## C1: how fast can this Mac train small language models? (plan v2, Track C)
 
-- **Status:** pre-registered on 12 November 2026 (plan v2, D-049). A measurement, not a test of a research idea.
+- **Status:** ✅ measured on 12 November 2026, after the pre-registration `8b14f76`. **All four sizes fell inside their predicted ranges.** In bfloat16, tokens/s: 10M 61,173; 25M 32,868; 50M 16,311; 125M 6,941. A full run (20 tokens per parameter) takes about 1 hour, 4 hours, 17 hours and 4.2 days. The 10-minute heat test stepped down 6%, to a steady 6,520, after 7 minutes. By the written rules: EXP-M1 uses 10M–50M, and one 125M run is allowed. float32 at 125M used 39 GB and ran at about a third of the speed. Details: [README, Results](../experiments/C1-throughput/README.md#results-12-november-2026-measured-after-the-predictions-above-were-committed-in-8b14f76).
+- **History:** pre-registered on 12 November 2026 (plan v2, D-049). A measurement, not a test of a research idea.
 - **Design, predictions and decision rules:** [experiments/C1-throughput/README.md](../experiments/C1-throughput/README.md).
 - **The question:** tokens per second when training GPT-style models of 10M, 25M, 50M and 125M parameters in MLX on this M4 Pro, in float32 and bfloat16, and whether the speed drops as the laptop heats up.
 - **Why it comes first:** it sizes EXP-M1 (the tokenizer study) and IND-1 (Telugu and Hindi tasks) before either is pre-registered.

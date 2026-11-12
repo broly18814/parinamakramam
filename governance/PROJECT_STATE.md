@@ -126,10 +126,10 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
 > **12 November 2026:** [plan v2](PLAN-v2.md) is approved (D-049). The steps below follow its weeks 1–2; the full calendar is in its section 8.
 
 1. **Founder: decide on Telangana's TISC 2026** (a challenge, not a grant; reportedly closes **20 November**, from a secondary source). Enter or skip.
-2. **Track C, C1: measure this Mac's training speed** for 10M, 25M, 50M and 125M models in MLX. It replaces R002's estimates and sizes EXP-M1 and IND-1.
-3. **Track C, C2: dataset registry** (brief §16): every source with licence, version and hash. Text: FineWeb-Edu, IndicCorp v2, Sangraha; code: a permissive subset of The Stack v1 dedup. Excluded: Samanantar, The Stack v2, Python-Edu.
-4. **Track A, A1: pre-register TAMPER-BENCH** and collect its cases (absorbs BENCH-004 and the known misses in OI-8 and OI-13).
-5. **Track B: pre-register EXP-007** (H23, library × guidance), on rich and pyparsing, from EXP-006's machinery.
+2. ✅ **Track C, C1 done (12 Nov):** all four sizes inside their predictions. In bfloat16: 61k, 33k, 16k and 6.9k tokens/s, so a full run takes about 1 hour, 4 hours, 17 hours and 4.2 days. EXP-M1 uses 10M–50M ([results](../experiments/C1-throughput/README.md)).
+3. 🟡 **Track C, C2: dataset registry**, first draft in [DATASET_REGISTRY.md](DATASET_REGISTRY.md) (brief §16): every source with licence, version and hash. Versions and fingerprints are filled in at first download; the items marked unverified must be resolved first. Downloading The Stack v1 needs its terms accepted on Hugging Face, which is a founder step. Text: FineWeb-Edu, IndicCorp v2, Sangraha; code: a permissive subset of The Stack v1 dedup. Excluded: Samanantar, The Stack v2, Python-Edu.
+4. 🟡 **Track A, A1: TAMPER-BENCH**, design drafted in [TAMPER-BENCH-design.md](../docs/product/TAMPER-BENCH-design.md). Next: build the case builder, collect cases, seal the held-out fingerprint and thresholds (absorbs BENCH-004 and the known misses in OI-8 and OI-13).
+5. 🟡 **Track B: EXP-007**, design committed before any code in [EXP-007-design.md](../docs/research/EXP-007-design.md) (H23, library × guidance, 7 distinct cells, on rich and pyparsing, with a date split against model memorisation). Next: build it and calibrate on tomli.
 6. **Watch adoption weekly, with no interviews (D-002)**, including the Marketplace listing (D-047). Next reading: 17 November ([ADOPTION.md](ADOPTION.md)).
 7. **Founder: decide whether to restore the 14 deleted repositories on GitHub** while its 90-day window is open (OI-15, D-041; possible until about 6 February 2027).
 8. **Funding:** no applications to private foreign funders (D-048). No company or payments before there is use (D-010); plan v2 §7 has the route for later.

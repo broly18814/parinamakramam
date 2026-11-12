@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import contextlib
 import io
+import json
 import sys
 from pathlib import Path
 
@@ -66,3 +67,12 @@ def test_c1_days_to_twenty_tokens_per_parameter(monkeypatch):
     b = _c1(monkeypatch)
     # 125M parameters at 4,000 tokens/s: 2.5 billion tokens take about 7.2 days.
     assert abs(b.chinchilla_days(125_000_000, 4_000) - 7.234) < 0.001
+
+
+@pytest.mark.parametrize("run", ["run1", "run2"])
+def test_c1_published_tables_reproduce_exactly(run, monkeypatch):
+    """C1's committed result tables equal `summarise` applied to the committed raw records."""
+    b = _c1(monkeypatch)
+    results = ROOT / "experiments" / "C1-throughput" / "results"
+    records = [json.loads(line) for line in (results / f"{run}.jsonl").read_text().splitlines() if line]
+    assert b.summarise(records) == (results / f"{run}.md").read_text()
