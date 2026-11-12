@@ -20,7 +20,8 @@ Exit codes:
     check: 0 VERIFIED, 1 FAILED, 3 UNVERIFIED, 4 SUSPICIOUS, 2 could not do the job.
         --mutate adds the mutation check: mistakes in the changed lines that the old tests
         caught but the new tests don't make the verdict SUSPICIOUS.
-        --clean runs the tests in a clean copy of exactly the fingerprinted files (A3).
+        Tests run in a clean copy of exactly the fingerprinted files (A3); --in-place runs
+        them in the project folder itself, as pkv 0.2 did.
     fresh: 0 still matches (and reproduced, with --rerun), 1 out of date (stale),
         2 could not do the job, 3 the receipt was edited (tampered), 4 not reproduced.
 """
@@ -97,7 +98,7 @@ def _check(args: argparse.Namespace) -> int:
     run = None
     if sel.tests and not args.no_run:
         run = run_tests(root, sel.tests, timeout=args.timeout, python=args.python,
-                        keep_env=args.keep_env, exclude=tuple(receipts), clean=args.clean)
+                        keep_env=args.keep_env, exclude=tuple(receipts), clean=not args.in_place)
         # Only meaningful if pytest collected and ran tests normally. With "no tests
         # collected" pytest writes no per-file entries, and that case is already
         # UNVERIFIED for its own, more accurate reason.
@@ -237,8 +238,14 @@ def main(argv: list[str] | None = None) -> int:
     c.add_argument("--python", default=None, help="Python to run the tests with")
     c.add_argument("--keep-env", action="append", default=[], metavar="NAME",
                    help="pass this environment variable to the tests (repeatable)")
-    c.add_argument("--clean", action="store_true",
-                   help="run the tests in a clean copy of exactly the fingerprinted files, outside the project")
+    where = c.add_mutually_exclusive_group()
+    where.add_argument("--clean", dest="in_place", action="store_false",
+                       help="run the tests in a clean copy of exactly the fingerprinted files, outside the "
+                            "project (the default since 0.3)")
+    where.add_argument("--in-place", dest="in_place", action="store_true",
+                       help="run the tests in the project folder itself, as pkv 0.2 did (for projects whose "
+                            "tests need files git ignores, such as generated or compiled ones)")
+    c.set_defaults(in_place=False)  # explicit: with two flags on one setting, argparse would take the first's
     c.add_argument("--mutate", action="store_true",
                    help="also check the tests still catch small mistakes in the changed lines (slower)")
     c.add_argument("--mutants", type=int, default=MAX_MUTANTS, metavar="N",

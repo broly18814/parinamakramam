@@ -158,7 +158,9 @@ def run(work: Path, which: str, only: str | None, results: str | None = None) ->
             receipt = local / f"{p['name']}-{sha[:12]}.json"
             receipt.unlink(missing_ok=True)
             t0 = time.monotonic()
-            extra = ["--mutate"] if which == "a2" else []
+            # Every earlier study ran in the project folder; pkv 0.3 defaults to a clean copy (D-053),
+            # so --in-place keeps their results reproducible. REAL-004's clean run is separate.
+            extra = ["--in-place", *(["--mutate"] if which == "a2" else [])]
             r = sh(sys.executable, "-m", "pkv", "check", "--repo", str(repo), "--base", parent,
                    "--python", str(py), "--timeout", str(TIMEOUT_S), "--json", str(receipt), *extra,
                    check=False, env=env, timeout=TIMEOUT_S + 600)

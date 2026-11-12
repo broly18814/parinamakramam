@@ -149,6 +149,30 @@ pkv fresh .pkv/receipt.json
 
 Keep receipts in `.pkv/`: pkv never counts its own receipts as part of a change.
 
+## Coming in 0.3: receipts a reviewer can check (on GitHub now, not yet on PyPI)
+
+These are in the source on GitHub, not in release 0.2.1.
+
+- **Tests run in a clean copy by default.** pkv copies exactly the fingerprinted files, and nothing git ignores, into a fresh folder outside the project, and runs the tests there. A pass can't depend on a leftover file the receipt doesn't cover. Measured on 120 real commits (REAL-004), it gave the same verdict on all 120, with no extra time. `--in-place` runs in the project folder, as 0.2 did: use it if your tests need git-ignored generated or compiled files.
+- **Receipts are sealed.** `pkv fresh` answers **TAMPERED** if a receipt was edited after pkv wrote it. The seal shows edits but isn't a signature, and it says so.
+- **`pkv fresh --rerun` repeats the run** in a clean copy, and answers **REPRODUCED** or **NOT REPRODUCED**, listing each test that ended differently. A reviewer doesn't have to trust the receipt at all.
+- **A Claude Code hook:** `pkv hook install`. When Claude says it's done, pkv checks the change and saves a sealed receipt in `.pkv/receipt.json`.
+  - If the verdict isn't VERIFIED, Claude is told why and keeps working.
+  - If Claude stops again without changing anything, it may stop, but you're shown the verdict.
+  - A broken pkv never blocks Claude.
+
+  `pkv hook uninstall` removes only pkv's entry. `--scope local` or `--scope user` chooses which Claude Code settings file to use ([design](../../docs/product/A4-design.md)).
+
+`pkv fresh` exit codes:
+
+| Code | Meaning |
+|---|---|
+| 0 | fresh, and reproduced if `--rerun` was asked |
+| 1 | stale |
+| 2 | could not do the job |
+| 3 | tampered |
+| 4 | not reproduced |
+
 ## Use it on GitHub (GitHub Action)
 
 Add these steps to a workflow (`.github/workflows/*.yml`). The project's dependencies and pytest must be installed first:

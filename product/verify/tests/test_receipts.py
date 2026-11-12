@@ -90,7 +90,7 @@ def test_an_old_unsealed_receipt_still_works_with_a_note(repo, tmp_path, capsys)
 
 def test_a_pass_that_needs_an_ignored_leftover_fails_in_a_clean_copy(repo, tmp_path, capsys):
     leftover_project(repo)
-    assert check(repo) == 0  # the working folder has the ignored file, so it passes
+    assert check(repo, "--in-place") == 0  # the working folder has the ignored file, so it passes
     receipt = tmp_path / "clean.json"
     assert check(repo, "--clean", "--json", str(receipt)) == 1  # the fingerprinted files alone don't
     out = capsys.readouterr().out
@@ -129,7 +129,7 @@ def test_clean_copy_imports_its_own_code_even_with_an_editable_install(repo, tmp
     py = venv / "bin" / "python"
     subprocess.run(["uv", "pip", "install", "-q", "--python", str(py), "-e", str(repo), "pytest"], check=True)
     # The editable install points `app` at the working folder, which has the ignored file.
-    assert check(repo, "--python", str(py)) == 0
+    assert check(repo, "--python", str(py), "--in-place") == 0
     # In the clean copy, the copy's own `app` (without it) must be the one imported.
     assert check(repo, "--python", str(py), "--clean") == 1
 
@@ -147,10 +147,20 @@ def test_clean_copy_keeps_a_project_environment_that_lives_inside_the_project(re
     subprocess.run(["uv", "venv", "-q", "--python", sys.executable, str(repo / ".venv")], check=True)
     py = repo / ".venv" / "bin" / "python"
     subprocess.run(["uv", "pip", "install", "-q", "--python", str(py), "-e", str(repo), "pytest"], check=True)
-    assert check(repo) == 0  # pkv finds .venv itself
+    assert check(repo, "--in-place") == 0  # pkv finds .venv itself
     assert check(repo, "--clean") == 1  # same environment, but the leftover is out of reach
     write(repo, {"app/_generated.py": "VALUE = 'a'\n", ".gitignore": ".venv/\n*.egg-info/\n"})
     assert check(repo, "--clean") == 0  # once the file is part of the change, the clean copy passes
+
+
+def test_the_clean_copy_is_the_default_and_in_place_is_the_old_way(repo, tmp_path):
+    """D-053: by REAL-004's pre-registered rule, pkv 0.3 runs in a clean copy unless told otherwise."""
+    write(repo, GOOD)
+    default, old = tmp_path / "default.json", tmp_path / "old.json"
+    assert check(repo, "--json", str(default)) == 0
+    assert check(repo, "--in-place", "--json", str(old)) == 0
+    assert json.loads(default.read_text())["run"]["where"] == "clean copy"
+    assert json.loads(old.read_text())["run"]["where"] == "working folder"
 
 
 # ---------- --rerun ----------
@@ -186,7 +196,7 @@ def test_an_edited_outcome_with_a_recomputed_seal_is_not_reproduced(repo, tmp_pa
 def test_rerun_exposes_a_working_folder_pass_that_needed_a_leftover(repo, tmp_path, capsys):
     leftover_project(repo)
     receipt = tmp_path / "receipt.json"
-    assert check(repo, "--json", str(receipt)) == 0
+    assert check(repo, "--in-place", "--json", str(receipt)) == 0
     assert fresh(receipt, repo, "--rerun") == 4
     out = capsys.readouterr().out
     assert "recorded run: working folder" in out and "NOT REPRODUCED" in out

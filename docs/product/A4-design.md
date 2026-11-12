@@ -53,3 +53,17 @@ Installing it takes one command: `pkv hook install`.
 - **pkv crashing:** allowed, with a message, never blocked.
 - **`pkv hook install`, run twice:** gives one entry, and keeps unrelated settings. `uninstall` restores the original file.
 - **Overhead:** the fast path takes under 1 s on the self-check project.
+
+---
+
+## Results (12 November 2026)
+
+**Built:** `pkv/hook.py`, plus the CLI commands `pkv hook install | uninstall | claude-stop`.
+- **14 self-checks pass** (`tests/test_hook.py`): every item under "When it's done", plus one added while building, below. They feed the hook the Stop input exactly as the hooks reference documents it.
+- **The fast path:** under 1 s, measured by the self-check.
+
+**Two dangers found while building, and closed:**
+1. **An old receipt read by mistake.** If `pkv check` failed to write a receipt, the hook could have read the previous one, and its verdict. The receipt is now deleted before each check, and a self-check covers this.
+2. **The wrong `pkv`.** If the installed command were plain `pkv`, and an older pkv without the `hook` command came first on `PATH`, it would exit 2 with a usage error. Claude Code reads exit 2 from a Stop hook as "block", so the user would be stuck. `pkv hook install` now writes plain `pkv` only when that is the same installation, and otherwise names its own Python exactly. A self-check covers this too.
+
+**Not yet done: a live Claude Code session.** The attempt on this Mac stopped before anything ran: the `claude` command's sign-in had expired ("OAuth session expired"). Signing in is the founder's step. Until it's done, the hook is verified only against the documented input and output format, not in a live session.

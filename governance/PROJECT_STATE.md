@@ -139,9 +139,16 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
        - (a) **the sealed, reproducible benchmark itself:** the only public one that runs every rival under fixed rules, ours included;
        - (b) **the evidence bundle (A3) and the Claude Code hook (A4):** "every AI change comes with a receipt", with pkv 0.2.1's blocking rules (24/41 cheats, 3/20 false alarms; Skylos had 22/41 and 2/20);
        - (c) **TAMPER-BENCH v2:** a fix for A2's documented-change alarms, judged on a new sealed set before any claim.
-   - **Founder's choice (D-052): receipts (A3 + A4).** Next:
-     - **A3:** a clean-copy run, a sealed receipt and `pkv fresh --rerun`. The design and predictions came before the code ([A3 design](../docs/product/A3-design.md)); REAL-004 decides the default.
-     - **Then A4:** the Claude Code hook.
+   - **Founder's choice (D-052): receipts (A3 + A4). Both built on 12 Nov.**
+     - ✅ **A3** ([design and results](../docs/product/A3-design.md)):
+       - tests run in a clean copy of exactly the fingerprinted code;
+       - receipts are sealed (TAMPERED if edited);
+       - `pkv fresh --rerun` repeats the run.
+
+       **REAL-004** on 120 unseen real commits: the same verdict on 120 of 120, 0 of 49,869 test outcomes different, all 112 receipts reproduced, no extra time. So **the clean copy is the default from 0.3** (D-053).
+     - ✅ **A4** ([design and results](../docs/product/A4-design.md)): `pkv hook install` adds a Claude Code Stop hook. Claude can't finish silently on work that failed or looks weakened. 14 self-checks pass.
+       - 🔑 **Founder:** sign in to the `claude` command on this Mac (run `claude` once). The live-session test of the hook needs it.
+     - **Next:** A5 (`pkv map`), then pkv 0.3 for the founder to approve, then the launch (A6), posted by the founder.
    - **Earlier steps:** A2 was built (two development rounds, [A2 design](../docs/product/A2-design.md)). REAL-003, on 120 real commits, was inconclusive (A2 acted on 25, with 2 correct alarms), so A2 stays opt-in ([REAL-003](../docs/product/REAL-003-design.md)).
    - **New misses, understood but not fixed:**
      - code-side cheats with untouched tests;
