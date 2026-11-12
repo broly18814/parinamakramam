@@ -73,9 +73,13 @@ def paths(work: Path, p: dict[str, Any]) -> tuple[Path, Path]:
     return work / "src" / p["name"], work / "venvs" / p["name"] / "bin" / "python"
 
 
-def setup(work: Path) -> None:
-    """Clone each project, pin it, install it with pytest, and run its full suite once (rule E5)."""
+def setup(work: Path, python: str | None = None, packages: list[str] | None = None) -> None:
+    """Clone each project, pin it, install it with pytest, and run its full suite once (rule E5).
+
+    `python` and `packages` override projects.json (REAL-003b: an environment from the commits' own era)."""
     for p in PROJECTS:
+        p = {**p, "python": python or p["python"],
+             "test_packages": packages or p["test_packages"]}
         repo, py = paths(work, p)
         if not repo.exists():
             sh("git", "clone", "-q", "--filter=blob:none", p["url"], str(repo))
@@ -130,9 +134,9 @@ def slim(receipt: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def run(work: Path, which: str, only: str | None) -> None:
+def run(work: Path, which: str, only: str | None, results: str | None = None) -> None:
     lo, hi = SETS[which]
-    out_dir = RESULTS / which
+    out_dir = RESULTS / (results or which)
     out_dir.mkdir(parents=True, exist_ok=True)
     local = work / "receipts" / which  # full receipts, kept outside the repository
     local.mkdir(parents=True, exist_ok=True)
@@ -290,6 +294,9 @@ def main() -> None:
     ap.add_argument("--set", choices=list(SETS), default="study")
     ap.add_argument("--only")
     ap.add_argument("--dir", help="results sub-folder to summarise (default: the set's own)")
+    ap.add_argument("--python-version", help="for setup: Python to create the environments with")
+    ap.add_argument("--test-packages", nargs="*", help="for setup: test packages, e.g. 'pytest>=8.3,<8.4'")
+    ap.add_argument("--results", help="for run: results sub-folder (default: the set's name)")
     ap.add_argument("--pkv-dir", type=Path, help="for static: the product/verify folder of the pkv to use")
     a = ap.parse_args()
     if a.command != "summary":
@@ -299,7 +306,7 @@ def main() -> None:
         if work == PKV_DIR.parents[1] or PKV_DIR.parents[1] in work.parents:
             sys.exit("--work must be outside this repository")
     if a.command == "setup":
-        setup(work)
+        setup(work, a.python_version, a.test_packages)
     elif a.command == "list":
         lo, hi = SETS[a.set]
         for p in PROJECTS:
@@ -307,7 +314,7 @@ def main() -> None:
             cs = commits(repo, p["commit"])[lo:hi]
             print(f"{p['name']}: {len(cs)} commits, newest {cs[0][:10]}, oldest {cs[-1][:10]}")
     elif a.command == "run":
-        run(work, a.set, a.only)
+        run(work, a.set, a.only, a.results)
     elif a.command == "rescore":
         rescore(work, a.set)
     elif a.command == "static":

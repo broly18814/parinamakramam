@@ -55,3 +55,49 @@ Also recorded:
 - Four well-maintained libraries, 120 commits, Python 3.14.
 - Old commits can fail on today's Python (REAL-001's F-env). A2 needs the old tests to pass on the old code, so on those commits it simply doesn't act, and that's reported.
 - We run each project's own tests, unchanged, in their own environments. Nothing of theirs is copied into this repository except facts about pkv's verdicts.
+
+---
+
+## Round A results: Python 3.14 and today's pytest, exactly as pre-registered (12 November 2026)
+
+Raw records: [`product/verify/realworld/results/a2/`](../../product/verify/realworld/results/a2/).
+
+### In plain words
+
+**This round is too small to judge A2, and we say so.**
+- 68 of the 120 commits FAILED. They're older code, and today's tools reject it: today's pytest refuses some old test code, and tomli's 2021 tests need a package (`python-dateutil`) that pytest alone doesn't bring.
+- A2 needs the old tests to pass on the old code, so it acted on **only 6 commits**.
+
+### Numbers
+
+| | Count |
+|---|---|
+| Verdicts | VERIFIED 31, FAILED 68, UNVERIFIED 14, SUSPICIOUS 7 |
+| A2 acted | 6 |
+| A2 didn't act: tests didn't pass | 88 |
+| A2 didn't act: the change didn't touch tests | 19 |
+| A2 didn't act: no changed lines of existing code | 7 |
+| Commits with a `checks-lost` alarm | **1** |
+| Tool errors | 0 |
+| A2's time where it acted | median 38 s |
+
+**The one alarm, classified (rubric above).** more-itertools #92, "Set minimum version to 3.10", is **L-intended**. The change deliberately removed old-Python compatibility code (a version check and a warning) together with the tests of that code. The claim is true: the old tests checked that code and the new ones don't. But the change meant it.
+
+**What this suggests, for later:** A2 could leave out lines that the change *removed outright*, rather than modified, since checks on deleted code are expected to go. That's **not** made now: A2 stays frozen until this study is complete.
+
+**Against the predictions (with n = 6, none of these means much):**
+- **RA-1:** 0 L-false. Pass.
+- **RA-2:** 1 of 6, 17%, above the 15% limit. Fail, on one commit.
+- **RA-3:** 0 tool errors. Pass.
+- **RA-4:** median 38 s. Pass.
+
+**pkv's own safety check (REAL-001's R3), reported:** 3 click commits got VERIFIED from pkv's selected tests while the full suite failed. In all three, the full suite fails to *load* `tests/test_basic.py`, a file the change couldn't affect, because today's pytest rejects its old code (`PytestRemovedIn10Warning`). That's the same environment problem REAL-001 found, not a selection miss, but it's counted and shown.
+
+## Amendment, round B (written before round B runs)
+
+The same 120 commits, the same frozen A2 and the same rubric and predictions, in an environment from the commits' own era:
+- **Python 3.12**;
+- **`pytest>=8.3,<8.4`**;
+- **`python-dateutil`**, which tomli's 2021 tests need.
+
+The reason is round A's: today's tools reject much of this older code, which left A2 nothing to measure. Round B's numbers are reported **beside** round A's, never instead of them. If round B also leaves A2 acting on fewer than 30 commits, the study is recorded as **inconclusive**, and A2 stays opt-in.

@@ -1,0 +1,1390 @@
+[
+ {
+  "project": "click",
+  "position": 91,
+  "commit": "e27b307462b725722f620c69dd1d5509c032d18a",
+  "parent": "a92c573f3195c9da3058eadf1735d38af186d22c",
+  "exit_code": 1,
+  "wall_seconds": 0.94,
+  "subject": "Make `uv run --all-extras pyright --verifytypes click` pass (#3072)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": true,
+  "run_all_reasons": [
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.618,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 92,
+  "commit": "a92c573f3195c9da3058eadf1735d38af186d22c",
+  "parent": "0b5c6b75f617e6ee2f9f6dcd071b8a4bf183d1ed",
+  "exit_code": 0,
+  "wall_seconds": 1.43,
+  "subject": "Fix test_edit to work with BSD sed (#3129)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 147 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 147,
+   "skipped": 21,
+   "xfailed": 0
+  },
+  "test_seconds": 0.365,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  },
+  "full_suite_exit": 2,
+  "full_suite_seconds": 0.61
+ },
+ {
+  "project": "click",
+  "position": 93,
+  "commit": "8d4051e9e57be1bfb5421e3eb5a93b4b42077b0c",
+  "parent": "06f52a45782a0bd2cb9aa5f289afb68ac3b2b2e5",
+  "exit_code": 1,
+  "wall_seconds": 2.45,
+  "subject": "Ensure that `type_cast_value` never gets `UNSET` (#3090)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.613,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 94,
+  "commit": "8533c966b84783718e74286aa7b098f3ff1e9221",
+  "parent": "5f86603a84e12bdec1584c15c9f982740e613c45",
+  "exit_code": 1,
+  "wall_seconds": 1.67,
+  "subject": "Fix rendering when `prompt_suffix` is empty (#3021)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_utils.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_echo_writing_to_standard_error (tests/test_utils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_echo_writing_to_standard_error"
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.609,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 95,
+  "commit": "5f86603a84e12bdec1584c15c9f982740e613c45",
+  "parent": "413f76f37dcdb2c475a800870d3f8c1c623238d6",
+  "exit_code": 1,
+  "wall_seconds": 0.89,
+  "subject": "Fix _pipepager()/_tempfilepage() to work with multi-call binaries (#2944)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.597,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 96,
+  "commit": "27aaed3fe5bcd6adedd6e91de234914af9859cf1",
+  "parent": "2ed395b0b5ac4d56553ff715335f456f812cdc78",
+  "exit_code": 1,
+  "wall_seconds": 1.62,
+  "subject": "Fix default handling to defer `UNSET` normalization (#3079)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.592,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 97,
+  "commit": "6a1c0d077311f180b356965914e2de5b9e0fdb44",
+  "parent": "7d7183604158f064390539d83d4a19a978c6b08a",
+  "exit_code": 1,
+  "wall_seconds": 1.65,
+  "subject": "Hide `Sentinel.UNSET` values for defaults processed by `Context.invoke` (#3068)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_commands.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_other_command_invoke_with_defaults (tests/test_commands.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_other_command_invoke_with_defaults"
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.595,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 98,
+  "commit": "7d7183604158f064390539d83d4a19a978c6b08a",
+  "parent": "35e6a78646c58a8cc1ba3cda603a6bd4fb87f9d5",
+  "exit_code": 1,
+  "wall_seconds": 0.92,
+  "subject": "`Popen()` list-argument pager process without shell=True (#3055)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.609,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 99,
+  "commit": "81a482fbfdd5a553cf4704f822ade04c3b102fbc",
+  "parent": "23780fa3efcc471137aca7c6b4624164f760a647",
+  "exit_code": 4,
+  "wall_seconds": 6.57,
+  "subject": "Merge branch 'main' into stable",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "12 sign(s) that the tests were weakened",
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_arguments.py",
+    "kind": "test-removed",
+    "message": "the test test_argument_unbounded_nargs_cant_have_default was removed from tests/test_arguments.py.",
+    "severity": "suspicious",
+    "test": "test_argument_unbounded_nargs_cant_have_default"
+   },
+   {
+    "file": "tests/test_arguments.py",
+    "kind": "test-removed",
+    "message": "the test test_defaults_for_nargs was removed from tests/test_arguments.py.",
+    "severity": "suspicious",
+    "test": "test_defaults_for_nargs"
+   },
+   {
+    "file": "tests/test_arguments.py",
+    "kind": "test-removed",
+    "message": "the test test_missing_argument_string_cast was removed from tests/test_arguments.py.",
+    "severity": "suspicious",
+    "test": "test_missing_argument_string_cast"
+   },
+   {
+    "file": "tests/test_arguments.py",
+    "kind": "test-removed",
+    "message": "the test test_nargs_bad_default was removed from tests/test_arguments.py.",
+    "severity": "suspicious",
+    "test": "test_nargs_bad_default"
+   },
+   {
+    "file": "tests/test_arguments.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_stdout_default (tests/test_arguments.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_stdout_default"
+   },
+   {
+    "file": "tests/test_basic.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_choice_argument_none (tests/test_basic.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_choice_argument_none"
+   },
+   {
+    "file": "tests/test_chain.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_pipeline (tests/test_chain.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_pipeline"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_bool_flag_auto_detection was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_bool_flag_auto_detection"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_boolean_envvar_normalization was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_boolean_envvar_normalization"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_default_type_error_raises was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_default_type_error_raises"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_envvar_flag_value was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_envvar_flag_value"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_init_bad_default_list was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_init_bad_default_list"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_init_good_default_list was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_init_good_default_list"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_missing_option_string_cast was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_missing_option_string_cast"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_usage_show_choices was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_usage_show_choices"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_flag_value_and_default (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_flag_value_and_default"
+   }
+  ],
+  "changed_files": 15,
+  "run_all": true,
+  "run_all_reasons": [
+   "pyproject.toml is a project settings file; it can change how every test behaves",
+   "uv.lock is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.591,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 100,
+  "commit": "701b313160be12752e49b3f7cea32402c0969a69",
+  "parent": "3be1f33c8e0b13295853f6aa64d1f7412b5312df",
+  "exit_code": 1,
+  "wall_seconds": 1.62,
+  "subject": "Fix completions for quoted/escaped parameters in Fish (#3013)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.573,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 101,
+  "commit": "1f4002096439d6661f1df5ceff7eccd3862153ac",
+  "parent": "4f936ac1981645488f396953bc59e50445de00b6",
+  "exit_code": 1,
+  "wall_seconds": 1.66,
+  "subject": "Properly lazily import shutil (#3023)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.575,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 102,
+  "commit": "4f936ac1981645488f396953bc59e50445de00b6",
+  "parent": "1c68e531ef5e45f6facdb777c720d0f984614b81",
+  "exit_code": 1,
+  "wall_seconds": 1.64,
+  "subject": "show correct auto complete value for nargs option in combination with flag option (#2816)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.576,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 103,
+  "commit": "c096a10e8b59e48f77c65372a9c17f8226c128c5",
+  "parent": "0be2bd385064053bb75f92db317de128db729d52",
+  "exit_code": 0,
+  "wall_seconds": 2.39,
+  "subject": "test: add two new tests for `Parameter.__init__` (recreation of #2861) (#3012)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 344 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 344,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.448,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  },
+  "full_suite_exit": 2,
+  "full_suite_seconds": 0.57
+ },
+ {
+  "project": "click",
+  "position": 104,
+  "commit": "0be2bd385064053bb75f92db317de128db729d52",
+  "parent": "c88f333de440c5066ff563f784a6561f4713cf78",
+  "exit_code": 1,
+  "wall_seconds": 1.7,
+  "subject": "Don't include envvar in error hint when envvar not configured (#2972)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_options.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_missing_envvar (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_missing_envvar"
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.574,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 105,
+  "commit": "44fd6394b72c1186feae31e793cd1196e1024fe2",
+  "parent": "737bfbd3122d96d41924323a3f45a8021c30d4c8",
+  "exit_code": 0,
+  "wall_seconds": 1.46,
+  "subject": "Merge branch 'main' into stable",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 39 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 39,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 0.293,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  },
+  "full_suite_exit": 2,
+  "full_suite_seconds": 0.56
+ },
+ {
+  "project": "click",
+  "position": 106,
+  "commit": "737bfbd3122d96d41924323a3f45a8021c30d4c8",
+  "parent": "7b72bfb8cd3a0cec38197f6786ed583b5b3737e7",
+  "exit_code": 1,
+  "wall_seconds": 1.64,
+  "subject": "fix a race in `click.testing.StreamMixer`'s finalization, seen in a multi-threaded context (#2991)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.578,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 107,
+  "commit": "7b72bfb8cd3a0cec38197f6786ed583b5b3737e7",
+  "parent": "eaf33a957975e7d0943fad8d2b4b905b6bd98cb9",
+  "exit_code": 1,
+  "wall_seconds": 0.87,
+  "subject": "Using correct typing for `param_hint` (#2990)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.577,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 108,
+  "commit": "eaf33a957975e7d0943fad8d2b4b905b6bd98cb9",
+  "parent": "a1235aacb1be55dc66ddcfefbf64dec44b6ab54d",
+  "exit_code": 1,
+  "wall_seconds": 1.6,
+  "subject": "Fix rendering of Enum choices' default (#3004)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.565,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 109,
+  "commit": "a1235aacb1be55dc66ddcfefbf64dec44b6ab54d",
+  "parent": "565f36d5bc4a15d304337b749e113fb4477b1843",
+  "exit_code": 1,
+  "wall_seconds": 1.68,
+  "subject": "Fix Zsh completions with colons (#2846)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.56,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 110,
+  "commit": "565f36d5bc4a15d304337b749e113fb4477b1843",
+  "parent": "5c1239b0116b66492cdd0848144ab3c78a04495a",
+  "exit_code": 4,
+  "wall_seconds": 4.28,
+  "subject": "Fix reconciliation of envvar with `default`, `flag_value` and `type` parameters for flag options (#2956)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "3 sign(s) that the tests were weakened",
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_arguments.py",
+    "kind": "test-removed",
+    "message": "the test test_envvar_flag_value was removed from tests/test_arguments.py.",
+    "severity": "suspicious",
+    "test": "test_envvar_flag_value"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_flag_value_is_correctly_set was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_flag_value_is_correctly_set"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-moved",
+    "message": "the test test_is_bool_flag_is_correctly_set in tests/test_options.py was removed, but every check it lost reappears unchanged in tests/test_options.py::test_bool_flag_auto_detection, a test pytest runs: moved, renamed or reorganised, nothing lost.",
+    "severity": "notice",
+    "test": "test_is_bool_flag_is_correctly_set"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_trailing_blanks_boolean_envvar was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_trailing_blanks_boolean_envvar"
+   }
+  ],
+  "changed_files": 8,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.574,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 111,
+  "commit": "28650344c54dd54e673d3e9a35e76bf9f4bedf8d",
+  "parent": "316d58ef45d29eb9865679260a52315647d259ca",
+  "exit_code": 3,
+  "wall_seconds": 0.92,
+  "subject": "svg logo",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: docs/conf.py"
+  ],
+  "findings": [],
+  "changed_files": 8,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 20,
+  "untested_changes": [
+   "docs/conf.py"
+  ],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 112,
+  "commit": "d2e0fb5cde8dddfdeeea91cf942aa7432def0b24",
+  "parent": "5e2e191026c16ede856afbea941c0c3f90d62298",
+  "exit_code": 3,
+  "wall_seconds": 1.09,
+  "subject": "new logo (#2974)",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: docs/conf.py"
+  ],
+  "findings": [],
+  "changed_files": 10,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 20,
+  "untested_changes": [
+   "docs/conf.py"
+  ],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 113,
+  "commit": "d1a80aa95cc207f50da1c438af742b7edad02267",
+  "parent": "499bbeea64fbc251ece62188bcee185bfcec2316",
+  "exit_code": 1,
+  "wall_seconds": 0.87,
+  "subject": "update dev dependencies",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 7,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/pre-commit.yaml is not Python code, so we can't trace what uses it",
+   ".github/workflows/publish.yaml is not Python code, so we can't trace what uses it",
+   ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+   ".pre-commit-config.yaml is not Python code, so we can't trace what uses it",
+   "uv.lock is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.567,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 114,
+  "commit": "262bdf02288daf9a37b9e815b44acafd62b5c6fe",
+  "parent": "cfa6f4ad3e0078db43f866246b483544afa33ed3",
+  "exit_code": 4,
+  "wall_seconds": 2.52,
+  "subject": "Raise an exception on end of input in CliRunner (#2934)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened",
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_chain.py",
+    "kind": "fewer-checks",
+    "message": "the test test_pipeline in tests/test_chain.py now checks less: 2 checks before, 1 now.",
+    "severity": "suspicious",
+    "test": "test_pipeline"
+   }
+  ],
+  "changed_files": 5,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.57,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 115,
+  "commit": "cfa6f4ad3e0078db43f866246b483544afa33ed3",
+  "parent": "b7cf06970e40a3144eb963ff34ed7c38934afb40",
+  "exit_code": 1,
+  "wall_seconds": 1.59,
+  "subject": "Flush sys.stderr when CliRunner finalizes (#2933)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.568,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 116,
+  "commit": "b7cf06970e40a3144eb963ff34ed7c38934afb40",
+  "parent": "884af5c20fdc95c9c7352df35c37273391464fb9",
+  "exit_code": 1,
+  "wall_seconds": 1.6,
+  "subject": "fix shell completion for nested groups (#2935)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.56,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 117,
+  "commit": "884af5c20fdc95c9c7352df35c37273391464fb9",
+  "parent": "011b9f9d190c71310264e6c54bae6259f5e38a9f",
+  "exit_code": 1,
+  "wall_seconds": 1.63,
+  "subject": "Fix flag value set when is_flag=True and type is provided (#2930)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.549,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 118,
+  "commit": "2e1c74264b8f8966b31a3d713358f753d6ea1b13",
+  "parent": "af73ce4793bf38edf11a16e959ef0d8a0dbf6c1f",
+  "exit_code": 1,
+  "wall_seconds": 2.35,
+  "subject": "use uv (#2918)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 21,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/lock.yaml is not Python code, so we can't trace what uses it",
+   ".github/workflows/pre-commit.yaml is not Python code, so we can't trace what uses it",
+   ".github/workflows/publish.yaml is not Python code, so we can't trace what uses it",
+   ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+   ".pre-commit-config.yaml is not Python code, so we can't trace what uses it",
+   ".readthedocs.yaml is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves",
+   "requirements/build.in is not Python code, so we can't trace what uses it",
+   "requirements/dev.in is not Python code, so we can't trace what uses it",
+   "requirements/docs.in is not Python code, so we can't trace what uses it",
+   "requirements/tests.in is not Python code, so we can't trace what uses it",
+   "requirements/typing.in is not Python code, so we can't trace what uses it",
+   "tox.ini is a project settings file; it can change how every test behaves",
+   "uv.lock is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.547,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 119,
+  "commit": "af73ce4793bf38edf11a16e959ef0d8a0dbf6c1f",
+  "parent": "b88c4841ad53247e9ca6f9fd39d510e99d6c18f7",
+  "exit_code": 1,
+  "wall_seconds": 0.87,
+  "subject": "Fix compatibility with pyright 1.1.394 (#2855)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.564,
+  "failed_tests": [
+   "::tests.test_basic"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 120,
+  "commit": "b88c4841ad53247e9ca6f9fd39d510e99d6c18f7",
+  "parent": "e3abce688d2ee999196a459442a8a0f2a3725ddf",
+  "exit_code": 3,
+  "wall_seconds": 0.25,
+  "subject": "Organize docs along diatxis categories. (#2898)",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: docs/conf.py"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 20,
+  "untested_changes": [
+   "docs/conf.py"
+  ],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null
+ }
+]

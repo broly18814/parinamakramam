@@ -1,0 +1,1156 @@
+[
+ {
+  "project": "tomli",
+  "position": 91,
+  "commit": "20b1427bf8a2ecacdfef8d0935e7e7bd65e55307",
+  "parent": "326d64eb262b866c3b655fd24b6ff3ae6dab69ce",
+  "exit_code": 1,
+  "wall_seconds": 0.57,
+  "subject": "Fuzzer: Remove string conversion needless with tomli-w>=0.2.2",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran",
+   "changed code that no test checks: fuzzer/fuzz.py"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": true,
+  "run_all_reasons": [
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [
+   "fuzzer/fuzz.py"
+  ],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.289,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 92,
+  "commit": "1f2590744834295c0e53b77a4d690bde9271f85b",
+  "parent": "51aa28a960a0e6afcc114f67f039eda50f2ad1b1",
+  "exit_code": 1,
+  "wall_seconds": 0.55,
+  "subject": "Add fuzzer (#90)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran",
+   "changed code that no test checks: fuzzer/fuzz.py"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": true,
+  "run_all_reasons": [
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [
+   "fuzzer/fuzz.py"
+  ],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.293,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 93,
+  "commit": "b85f3673c08638bf384b1df164367581b8e0887e",
+  "parent": "2a4a7bcf83c52c7ee4739cf6223c2987e662bdd6",
+  "exit_code": 1,
+  "wall_seconds": 0.54,
+  "subject": "Ensure error msg contains *first* invalid char",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.284,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 94,
+  "commit": "853d4a47747d45fc850f0bc840ec89a643818061",
+  "parent": "727b16644419a9d86821ba49b285e3f50f27b1a6",
+  "exit_code": 1,
+  "wall_seconds": 0.55,
+  "subject": "Slice less when parsing times",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.292,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 95,
+  "commit": "44e16f40b641651be214ab096a0105ffa5158fea",
+  "parent": "3906e2b1259c41b41e074f88637b64e197549ae9",
+  "exit_code": 1,
+  "wall_seconds": 0.55,
+  "subject": "Merge pull request #82 from hukkin/vers-1.0.4",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 5,
+  "run_all": true,
+  "run_all_reasons": [
+   ".bumpversion.cfg is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.294,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 96,
+  "commit": "3906e2b1259c41b41e074f88637b64e197549ae9",
+  "parent": "4f0299ebba75a637f2c9f7ddb3f81a91f8bef09f",
+  "exit_code": 1,
+  "wall_seconds": 0.55,
+  "subject": "Avoid list->tuple conversion",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.293,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 97,
+  "commit": "63dca16be492cfb9dd7cd9244d897e290fc40702",
+  "parent": "5aecb99eb663fa4c8c68cdbfc3506c9b0cd44962",
+  "exit_code": 1,
+  "wall_seconds": 0.55,
+  "subject": "Move `header` away from `Output` structure",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.293,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 98,
+  "commit": "5aecb99eb663fa4c8c68cdbfc3506c9b0cd44962",
+  "parent": "620ad70f49e7b7365218f69e63f0cc2fc2300e20",
+  "exit_code": 1,
+  "wall_seconds": 0.52,
+  "subject": "Cache timezone objects",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.284,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 99,
+  "commit": "620ad70f49e7b7365218f69e63f0cc2fc2300e20",
+  "parent": "a98fdbb9794fca2b252267a85ea3fe51af1685a9",
+  "exit_code": 1,
+  "wall_seconds": 0.55,
+  "subject": "Improve performance of character hex escapes",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": true,
+  "run_all_reasons": [
+   "benchmark/data.toml is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.293,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 100,
+  "commit": "a98fdbb9794fca2b252267a85ea3fe51af1685a9",
+  "parent": "0d7824d84931d3b524fa894b2a59dc5bb97c2772",
+  "exit_code": 1,
+  "wall_seconds": 0.52,
+  "subject": "Combine number regexes",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.285,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 101,
+  "commit": "c26d81469b3a95e6949c2eb63dfc247ffcb562c0",
+  "parent": "fab4dc7f2fabb44e55a453fd14acb226f73b0ba8",
+  "exit_code": 1,
+  "wall_seconds": 0.56,
+  "subject": "Use `src.startswith(..., pos)`",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.296,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 102,
+  "commit": "c1207978e5cea154a176ee0d2e9cce33ad2bec51",
+  "parent": "8d34a6011584cfa607bd6716d34ea11a980b513a",
+  "exit_code": 1,
+  "wall_seconds": 0.54,
+  "subject": "Merge pull request #68 from hukkin/version-1.0.3",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": true,
+  "run_all_reasons": [
+   ".bumpversion.cfg is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.285,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 103,
+  "commit": "8d34a6011584cfa607bd6716d34ea11a980b513a",
+  "parent": "b0691ff9c998878176cab8cf26a864ab71ae39e1",
+  "exit_code": 1,
+  "wall_seconds": 0.55,
+  "subject": "Fix exception type given invalid date or datetime",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": true,
+  "run_all_reasons": [
+   "tests/data/extras/invalid/dates-and-times/invalid-day.toml is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.294,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 104,
+  "commit": "43ebd670bd974d0fe2347079228f4ea7dcc568c6",
+  "parent": "fee966aec05ae322697d35f4c7f04b9558513a59",
+  "exit_code": 1,
+  "wall_seconds": 0.55,
+  "subject": "Remove needless break statements",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.29,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 105,
+  "commit": "c01d95bc90c5a80de2c99c1268ad892c379a5501",
+  "parent": "7bd474f3186d7e0eaf415bbad4204175a9164ced",
+  "exit_code": 1,
+  "wall_seconds": 0.55,
+  "subject": "Parse multiline literals with `str.index()`",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": true,
+  "run_all_reasons": [
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.294,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 106,
+  "commit": "7bd474f3186d7e0eaf415bbad4204175a9164ced",
+  "parent": "e2426abde6fc6b1e3c8e99309b617131e81a2dae",
+  "exit_code": 1,
+  "wall_seconds": 0.55,
+  "subject": "Add regex groups for datetime offset indicators",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.294,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 107,
+  "commit": "e2426abde6fc6b1e3c8e99309b617131e81a2dae",
+  "parent": "acbbf3c46874d44a25e3aa5a89919924690f6c79",
+  "exit_code": 1,
+  "wall_seconds": 0.53,
+  "subject": "Consistent regex naming",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.293,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 108,
+  "commit": "acbbf3c46874d44a25e3aa5a89919924690f6c79",
+  "parent": "935b43fe76530e82ccb4bfe42725fbc243cdd662",
+  "exit_code": 1,
+  "wall_seconds": 0.55,
+  "subject": "Move re.Match converter funcs to _re module",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": true,
+  "run_all_reasons": [
+   ".pre-commit-config.yaml is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.295,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 109,
+  "commit": "fc2218b634d2fc5a34389ed8fe92ad42494611f5",
+  "parent": "9af551b578d0bfa9823e986572735a7429ffdf79",
+  "exit_code": 1,
+  "wall_seconds": 0.52,
+  "subject": "Merge pull request #56 from hukkin/version-1.0.2",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": true,
+  "run_all_reasons": [
+   ".bumpversion.cfg is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.285,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 110,
+  "commit": "9af551b578d0bfa9823e986572735a7429ffdf79",
+  "parent": "ca8e97a3c2c4506b02cf3ac11775a7ebed966898",
+  "exit_code": 1,
+  "wall_seconds": 1.41,
+  "subject": "Use flit and PEP 621 metadata",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_misc.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_own_pyproject (tests/test_misc.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_own_pyproject"
+   }
+  ],
+  "changed_files": 5,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+   "poetry.lock is a project settings file; it can change how every test behaves",
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.293,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 111,
+  "commit": "ca8e97a3c2c4506b02cf3ac11775a7ebed966898",
+  "parent": "ac7bc05138e67ee7f910b9b8051a0d53d0ddc618",
+  "exit_code": 1,
+  "wall_seconds": 0.53,
+  "subject": "Reduce the amount of func calls made handling comments (#54)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": true,
+  "run_all_reasons": [
+   "tests/data/extras/invalid/table/eof-after-opening.toml is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.294,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 112,
+  "commit": "ac7bc05138e67ee7f910b9b8051a0d53d0ddc618",
+  "parent": "d70c8682c40223654c42a25392529d450d463d2a",
+  "exit_code": 1,
+  "wall_seconds": 0.55,
+  "subject": "Improve `skip_until` performance",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.294,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 113,
+  "commit": "303f1b522d97c905a947fcacce0e32263a23eea6",
+  "parent": "3ff04eb2108cfd38edadae088973e53c1d392825",
+  "exit_code": 3,
+  "wall_seconds": 0.19,
+  "subject": "Update benchmark results",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: benchmark/run.py"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 6,
+  "untested_changes": [
+   "benchmark/run.py"
+  ],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 114,
+  "commit": "3ff04eb2108cfd38edadae088973e53c1d392825",
+  "parent": "43932f37ac3ee16d0c0a5f89266a0d865789236d",
+  "exit_code": 1,
+  "wall_seconds": 0.55,
+  "subject": "Merge pull request #50 from hukkin/version-1.0.1",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": true,
+  "run_all_reasons": [
+   ".bumpversion.cfg is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.295,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 115,
+  "commit": "43932f37ac3ee16d0c0a5f89266a0d865789236d",
+  "parent": "07d42793d73dca8cac1b3201da50ceb7f8d25fa7",
+  "exit_code": 1,
+  "wall_seconds": 0.54,
+  "subject": "Access char via int index, not slice (#49)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.292,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 116,
+  "commit": "1852743c1662806e24e79fdd007e542d9d237d1e",
+  "parent": "ea5bbee9475c93083268e45fcf1abe30c1922c2a",
+  "exit_code": 1,
+  "wall_seconds": 0.55,
+  "subject": "Move `src` and `pos` out of `State` for ~10% performance boost (#46)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.295,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 117,
+  "commit": "21061b96e058534960a5f03d04d141a40b5cd7e6",
+  "parent": "05fafa52d70852b81254cae19066c236bbb31abb",
+  "exit_code": 1,
+  "wall_seconds": 0.55,
+  "subject": "Defer EOF checks for performance",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.296,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 118,
+  "commit": "05fafa52d70852b81254cae19066c236bbb31abb",
+  "parent": "c8302207228eb45467d8544f488744a15f7633c2",
+  "exit_code": 1,
+  "wall_seconds": 0.54,
+  "subject": "Defer two error checks for performance (#41)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+   "poetry.lock is a project settings file; it can change how every test behaves",
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.291,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 119,
+  "commit": "c8302207228eb45467d8544f488744a15f7633c2",
+  "parent": "ce0a6953b42121f83ab3dd2320a887cd4eb0f6c2",
+  "exit_code": 1,
+  "wall_seconds": 0.55,
+  "subject": "Merge pull request #40 from hukkin/version-1",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": true,
+  "run_all_reasons": [
+   ".bumpversion.cfg is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.293,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ },
+ {
+  "project": "tomli",
+  "position": 120,
+  "commit": "ce0a6953b42121f83ab3dd2320a887cd4eb0f6c2",
+  "parent": "45b74a1adf9926290ecaa19293d625b1a9f0539f",
+  "exit_code": 1,
+  "wall_seconds": 0.52,
+  "subject": "Unify variable naming (#39)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "2 test file(s) could not even be loaded (an import or syntax error), so their tests never ran"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 6,
+  "all_test_files": 6,
+  "untested_changes": [],
+  "dynamic_imports": [],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 2,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.286,
+  "failed_tests": [
+   "::tests.test_extras",
+   "::tests.test_toml_compliance"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null
+ }
+]
