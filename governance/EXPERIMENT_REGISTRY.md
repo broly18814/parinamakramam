@@ -358,7 +358,8 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
 
 ## REAL-004: A3's clean-copy run and re-run on real commits
 
-- **Status:** 📝 pre-registered on 12 November 2026, before any A3 code ([A3 design](../docs/product/A3-design.md)).
+- **Status:** ✅ run on 12 November 2026. All three predictions pass, so `--clean` becomes pkv 0.3's default (D-053). Pre-registered before any A3 code ([A3 design and results](../docs/product/A3-design.md)).
+- **Result:** the same verdict on 120 of 120 commits; 0 of 49,869 test outcomes different; `--rerun` reproduced 112 of 112; median extra time −0.02 s; 0 defects. These were fresh checkouts with no leftovers, so this measures the cost (none), not the benefit.
 - **The question:**
   - Does running the tests in a clean copy of exactly the fingerprinted code (`pkv check --clean`) give the same verdict as the working folder on ordinary commits?
   - Do sealed receipts reproduce with `pkv fresh --rerun`?

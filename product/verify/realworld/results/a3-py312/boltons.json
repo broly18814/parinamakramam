@@ -1,0 +1,2584 @@
+[
+ {
+  "project": "boltons",
+  "position": 121,
+  "commit": "fca74549b19303864c00f1029fee4d3d14dc34ed",
+  "parent": "33ae1b14e56c37864b90c44c0f6f9ca24601f07e",
+  "exit_code": 3,
+  "wall_seconds": 0.27,
+  "subject": "bump version for 23.1.0 release",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: setup.py"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 29,
+  "untested_changes": [
+   "setup.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null,
+  "where": null,
+  "environment": null,
+  "clean": {
+   "exit_code": 3,
+   "wall_seconds": 0.25,
+   "verdict": "UNVERIFIED",
+   "verdict_reasons": [
+    "changed code that no test checks: setup.py"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 0,
+   "all_test_files": 29,
+   "untested_changes": [
+    "setup.py"
+   ],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": null,
+   "counts": null,
+   "test_seconds": null,
+   "failed_tests": [],
+   "files_changed_during_run": null,
+   "mutation": null,
+   "where": null,
+   "environment": null,
+   "tests_compared": 0,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.1,
+    "said": "FRESH: the receipt (UNVERIFIED, made 2026-11-12T13:40:13+00:00) matches the code exactly as it is now, and its seal is intact.\nNothing to re-run: this receipt records no test run.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 122,
+  "commit": "3bbb9487aaa1e6d95a8d93aca7b58a4d0e9db966",
+  "parent": "4815fc8dd1768da5f2d903846d2ab994aa57b0cf",
+  "exit_code": 0,
+  "wall_seconds": 1.47,
+  "subject": "Adding fill parameters to pairwise and windowed (#350)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 40 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 40,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.233,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 0.75,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 40 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 2,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 1,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 40,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 0.223,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 40,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.47,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:40:16+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 1 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 40 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 123,
+  "commit": "4815fc8dd1768da5f2d903846d2ab994aa57b0cf",
+  "parent": "46599bc0d498dd8adc3aea833ce1445feed349dd",
+  "exit_code": 0,
+  "wall_seconds": 2.61,
+  "subject": "Test and fix for #348 (#349)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 415 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 29,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 415,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.286,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.83,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 415 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 3,
+   "run_all": true,
+   "run_all_reasons": [
+    ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it"
+   ],
+   "selected_test_files": 29,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 415,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 1.267,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 415,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.52,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:40:21+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 29 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 415 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 124,
+  "commit": "46599bc0d498dd8adc3aea833ce1445feed349dd",
+  "parent": "c2b04b4cb16410d7bf9ff781c78dee3ca908dc32",
+  "exit_code": 0,
+  "wall_seconds": 1.53,
+  "subject": "Support `ior` for `dictutils.OMD` (#341)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 189 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 189,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.288,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 0.83,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 189 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 2,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 3,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 189,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 0.297,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 189,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.55,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:40:26+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 3 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 189 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 125,
+  "commit": "c2b04b4cb16410d7bf9ff781c78dee3ca908dc32",
+  "parent": "0341ab3d79e6430c0e6a4149df9c92679988a534",
+  "exit_code": 0,
+  "wall_seconds": 1.73,
+  "subject": "fix: make copy_function work with keyword-only defaults (#336)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 42 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 4,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 42,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.508,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.04,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 42 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 2,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 4,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 42,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 0.516,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 42,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.79,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:40:30+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 4 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 42 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 126,
+  "commit": "0341ab3d79e6430c0e6a4149df9c92679988a534",
+  "parent": "475462811ea4f9dea23c8af4cc2b6ead2dc03845",
+  "exit_code": 0,
+  "wall_seconds": 1.64,
+  "subject": "Make OMD picklable under py3, fixes #337 (#338)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 188 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 188,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.287,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 0.83,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 188 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 2,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 3,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 188,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 0.296,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 188,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.55,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:40:34+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 3 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 188 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 127,
+  "commit": "475462811ea4f9dea23c8af4cc2b6ead2dc03845",
+  "parent": "f892a2b46e7fd31c639723d1d9bf4d9ad63752d6",
+  "exit_code": 0,
+  "wall_seconds": 1.34,
+  "subject": "Update tbutils.py to parse tracebacks with anchor lines (#332)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 5 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 5,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.158,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 0.67,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 5 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 2,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 5,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 0.166,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 5,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.42,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:40:38+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 5 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 128,
+  "commit": "f892a2b46e7fd31c639723d1d9bf4d9ad63752d6",
+  "parent": "2adf15c735396b10e5050072babba0c319766726",
+  "exit_code": 3,
+  "wall_seconds": 0.25,
+  "subject": "bump version for 23.0.1dev release",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: setup.py"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 29,
+  "untested_changes": [
+   "setup.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null,
+  "where": null,
+  "environment": null,
+  "clean": {
+   "exit_code": 3,
+   "wall_seconds": 0.25,
+   "verdict": "UNVERIFIED",
+   "verdict_reasons": [
+    "changed code that no test checks: setup.py"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 0,
+   "all_test_files": 29,
+   "untested_changes": [
+    "setup.py"
+   ],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": null,
+   "counts": null,
+   "test_seconds": null,
+   "failed_tests": [],
+   "files_changed_during_run": null,
+   "mutation": null,
+   "where": null,
+   "environment": null,
+   "tests_compared": 0,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.1,
+    "said": "FRESH: the receipt (UNVERIFIED, made 2026-11-12T13:40:39+00:00) matches the code exactly as it is now, and its seal is intact.\nNothing to re-run: this receipt records no test run.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 129,
+  "commit": "17ca25956b7c78ba74ceb1f1aec1415e9ff2ce77",
+  "parent": "5292dd2a21d74704a7d7dbc6e282b88fefd7c3b2",
+  "exit_code": 3,
+  "wall_seconds": 0.25,
+  "subject": "bump docs for 23.0.0",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: docs/conf.py"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 29,
+  "untested_changes": [
+   "docs/conf.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null,
+  "where": null,
+  "environment": null,
+  "clean": {
+   "exit_code": 3,
+   "wall_seconds": 0.25,
+   "verdict": "UNVERIFIED",
+   "verdict_reasons": [
+    "changed code that no test checks: docs/conf.py"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 0,
+   "all_test_files": 29,
+   "untested_changes": [
+    "docs/conf.py"
+   ],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": null,
+   "counts": null,
+   "test_seconds": null,
+   "failed_tests": [],
+   "files_changed_during_run": null,
+   "mutation": null,
+   "where": null,
+   "environment": null,
+   "tests_compared": 0,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.1,
+    "said": "FRESH: the receipt (UNVERIFIED, made 2026-11-12T13:40:41+00:00) matches the code exactly as it is now, and its seal is intact.\nNothing to re-run: this receipt records no test run.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 130,
+  "commit": "5292dd2a21d74704a7d7dbc6e282b88fefd7c3b2",
+  "parent": "243de3fb2c9c59c660800f786ddc875628b34027",
+  "exit_code": 3,
+  "wall_seconds": 0.25,
+  "subject": "bump version for 23.0.0 release",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: setup.py"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 29,
+  "untested_changes": [
+   "setup.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null,
+  "where": null,
+  "environment": null,
+  "clean": {
+   "exit_code": 3,
+   "wall_seconds": 0.25,
+   "verdict": "UNVERIFIED",
+   "verdict_reasons": [
+    "changed code that no test checks: setup.py"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 0,
+   "all_test_files": 29,
+   "untested_changes": [
+    "setup.py"
+   ],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": null,
+   "counts": null,
+   "test_seconds": null,
+   "failed_tests": [],
+   "files_changed_during_run": null,
+   "mutation": null,
+   "where": null,
+   "environment": null,
+   "tests_compared": 0,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.1,
+    "said": "FRESH: the receipt (UNVERIFIED, made 2026-11-12T13:40:42+00:00) matches the code exactly as it is now, and its seal is intact.\nNothing to re-run: this receipt records no test run.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 131,
+  "commit": "243de3fb2c9c59c660800f786ddc875628b34027",
+  "parent": "40a7b47c6e8235a1b2a4600d0ceec4f7ea0f9bb0",
+  "exit_code": 0,
+  "wall_seconds": 1.45,
+  "subject": "add chunk_ranges function to iterutils (#312)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 38 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 38,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.207,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 0.75,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 38 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 3,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 1,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 38,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 0.217,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 38,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.47,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:40:45+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 1 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 38 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 132,
+  "commit": "40a7b47c6e8235a1b2a4600d0ceec4f7ea0f9bb0",
+  "parent": "895f7c49e2737aad250e51c2d999639536054b64",
+  "exit_code": 0,
+  "wall_seconds": 1.38,
+  "subject": "bugfix in mathutils.Bits.as_list (#315)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 11 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 11,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.157,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 0.68,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 11 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 2,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 1,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 11,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 0.166,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 11,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.42,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:40:48+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 1 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 11 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 133,
+  "commit": "895f7c49e2737aad250e51c2d999639536054b64",
+  "parent": "75cd86b3ea6534d5bd8d3c83c3cf1b493e7c9102",
+  "exit_code": 3,
+  "wall_seconds": 4.47,
+  "subject": "Add Python 3.11 to docs/build matrix. (#327)",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: docs/conf.py, setup.py"
+  ],
+  "findings": [],
+  "changed_files": 6,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+   "tox.ini is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 29,
+  "all_test_files": 29,
+  "untested_changes": [
+   "docs/conf.py",
+   "setup.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 408,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.242,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 3,
+   "wall_seconds": 1.84,
+   "verdict": "UNVERIFIED",
+   "verdict_reasons": [
+    "changed code that no test checks: docs/conf.py, setup.py"
+   ],
+   "findings": [],
+   "changed_files": 6,
+   "run_all": true,
+   "run_all_reasons": [
+    ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+    "tox.ini is a project settings file; it can change how every test behaves"
+   ],
+   "selected_test_files": 29,
+   "all_test_files": 29,
+   "untested_changes": [
+    "docs/conf.py",
+    "setup.py"
+   ],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 408,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 1.26,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 408,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.51,
+    "said": "FRESH: the receipt (UNVERIFIED, made 2026-11-12T13:40:56+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 29 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 408 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 134,
+  "commit": "75cd86b3ea6534d5bd8d3c83c3cf1b493e7c9102",
+  "parent": "1372434369025e6ace5ba0925b8fa88f0f55469b",
+  "exit_code": 0,
+  "wall_seconds": 1.31,
+  "subject": "Add __getstate__ to through_methods (bpo-26579) (#323)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 25 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 25,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.177,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 0.71,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 25 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 1,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 25,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 0.188,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 25,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.44,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:41:01+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 1 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 25 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 135,
+  "commit": "1372434369025e6ace5ba0925b8fa88f0f55469b",
+  "parent": "843d6757301ba3b234dde37b4dbecb4cce99f09e",
+  "exit_code": 1,
+  "wall_seconds": 1.51,
+  "subject": "Switch to explicit relative imports (#303)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test(s) failed"
+  ],
+  "findings": [],
+  "changed_files": 11,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 14,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "failed",
+  "counts": {
+   "errors": 0,
+   "failed": 1,
+   "passed": 271,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.058,
+  "failed_tests": [
+   "tests.test_dictutils::test_frozendict_api"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 1,
+   "wall_seconds": 1.6,
+   "verdict": "FAILED",
+   "verdict_reasons": [
+    "1 test(s) failed"
+   ],
+   "findings": [],
+   "changed_files": 11,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 14,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "failed",
+   "counts": {
+    "errors": 0,
+    "failed": 1,
+    "passed": 271,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 1.069,
+   "failed_tests": [
+    "tests.test_dictutils::test_frozendict_api"
+   ],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 272,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.33,
+    "said": "FRESH: the receipt (FAILED, made 2026-11-12T13:41:04+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 14 test file(s) in a clean copy (recorded run: clean copy): recorded failed, now failed.\nREPRODUCED: all 272 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 136,
+  "commit": "843d6757301ba3b234dde37b4dbecb4cce99f09e",
+  "parent": "93185b224ebd60df01df88d64e574a3f651987c5",
+  "exit_code": 0,
+  "wall_seconds": 0.65,
+  "subject": "Update iterutils.py (#313)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 37 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 37,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.205,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 0.72,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 37 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 1,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 37,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 0.215,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 37,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.47,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:41:08+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 1 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 37 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 137,
+  "commit": "93185b224ebd60df01df88d64e574a3f651987c5",
+  "parent": "6505c6b5565275d484e0e3907a471944441f0c57",
+  "exit_code": 0,
+  "wall_seconds": 1.35,
+  "subject": "Fix infinite daterange issue when start and stop is same (#302)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 5 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 5,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.153,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 0.68,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 5 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 2,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 1,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 5,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 0.163,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 5,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.42,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:41:11+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 1 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 5 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 138,
+  "commit": "6505c6b5565275d484e0e3907a471944441f0c57",
+  "parent": "9420cfeb3b1eb270fad876d002bf92567e619b0c",
+  "exit_code": 0,
+  "wall_seconds": 1.31,
+  "subject": "Fixes and improvements to SpooledBytesIO & SpooledStringIO (#305)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 82 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 82,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.184,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 0.71,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 82 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 2,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 1,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 82,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 0.194,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 82,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.45,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:41:14+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 1 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 82 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 139,
+  "commit": "9420cfeb3b1eb270fad876d002bf92567e619b0c",
+  "parent": "d35693e87553c97a7e1819741b5290ea857aded0",
+  "exit_code": 0,
+  "wall_seconds": 0.58,
+  "subject": "Add more documentation to multi_replace (#306)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 14 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 14,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.162,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 0.67,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 14 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 1,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 14,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 0.171,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 14,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.43,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:41:17+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 1 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 14 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 140,
+  "commit": "d35693e87553c97a7e1819741b5290ea857aded0",
+  "parent": "8ba3a7fa0d99b73f7f43c1aed82c571b941eecea",
+  "exit_code": 1,
+  "wall_seconds": 4.68,
+  "subject": "Refresh CI matrix (#320)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test(s) failed"
+  ],
+  "findings": [],
+  "changed_files": 6,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+   "requirements-test.txt is a project settings file; it can change how every test behaves",
+   "tox.ini is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 29,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "failed",
+  "counts": {
+   "errors": 0,
+   "failed": 1,
+   "passed": 398,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.256,
+  "failed_tests": [
+   "tests.test_dictutils::test_frozendict_api"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 1,
+   "wall_seconds": 1.85,
+   "verdict": "FAILED",
+   "verdict_reasons": [
+    "1 test(s) failed"
+   ],
+   "findings": [],
+   "changed_files": 6,
+   "run_all": true,
+   "run_all_reasons": [
+    ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+    "requirements-test.txt is a project settings file; it can change how every test behaves",
+    "tox.ini is a project settings file; it can change how every test behaves"
+   ],
+   "selected_test_files": 29,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "failed",
+   "counts": {
+    "errors": 0,
+    "failed": 1,
+    "passed": 398,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 1.263,
+   "failed_tests": [
+    "tests.test_dictutils::test_frozendict_api"
+   ],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 399,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.52,
+    "said": "FRESH: the receipt (FAILED, made 2026-11-12T13:41:24+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 29 test file(s) in a clean copy (recorded run: clean copy): recorded failed, now failed.\nREPRODUCED: all 399 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 141,
+  "commit": "8ba3a7fa0d99b73f7f43c1aed82c571b941eecea",
+  "parent": "6c7fa3e05659fac6515f661153c89d4ad02df168",
+  "exit_code": 0,
+  "wall_seconds": 1.3,
+  "subject": "test and fix year step and december handling in date_range, fixes #319",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 4 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 4,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.153,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 0.67,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 4 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 2,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 1,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 4,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 0.162,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 4,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.42,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:41:29+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 1 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 4 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 142,
+  "commit": "6c7fa3e05659fac6515f661153c89d4ad02df168",
+  "parent": "395f690f4a24331c4554e2169ac18a15955a4eab",
+  "exit_code": 0,
+  "wall_seconds": 2.91,
+  "subject": "Fix typos (#308)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 110 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 5,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 8,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 110,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.839,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.41,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 110 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 5,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 8,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 110,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 0.854,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 110,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.12,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:41:34+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 8 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 110 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 143,
+  "commit": "395f690f4a24331c4554e2169ac18a15955a4eab",
+  "parent": "270e974975984f662f998c8f6eb0ebebd964de82",
+  "exit_code": 0,
+  "wall_seconds": 1.42,
+  "subject": "Chaining `boltons.urlutils.URL.navigate()` results in `TypeError` (#298)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 124 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 124,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.194,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 0.73,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 124 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 2,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 1,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 124,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 0.204,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 124,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.47,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:41:38+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 1 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 124 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 144,
+  "commit": "270e974975984f662f998c8f6eb0ebebd964de82",
+  "parent": "d818b4a5f35ee88431814cc8ccd8fbac73ee9533",
+  "exit_code": 0,
+  "wall_seconds": 0.61,
+  "subject": "address ecoutils import issue, fixes #294",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 2 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 2,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.182,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 0.7,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 2 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 1,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 2,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 0.194,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 2,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.45,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:41:41+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 1 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 2 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 145,
+  "commit": "1bc49196fd45d5538991fcf1f34cbdfcfa6ce962",
+  "parent": "add51b1d8326f6e46fca9e3abee269bf4ba6817d",
+  "exit_code": 3,
+  "wall_seconds": 0.25,
+  "subject": "bump version for 21.0.1dev",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: setup.py"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 29,
+  "untested_changes": [
+   "setup.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null,
+  "where": null,
+  "environment": null,
+  "clean": {
+   "exit_code": 3,
+   "wall_seconds": 0.24,
+   "verdict": "UNVERIFIED",
+   "verdict_reasons": [
+    "changed code that no test checks: setup.py"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 0,
+   "all_test_files": 29,
+   "untested_changes": [
+    "setup.py"
+   ],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": null,
+   "counts": null,
+   "test_seconds": null,
+   "failed_tests": [],
+   "files_changed_during_run": null,
+   "mutation": null,
+   "where": null,
+   "environment": null,
+   "tests_compared": 0,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.1,
+    "said": "FRESH: the receipt (UNVERIFIED, made 2026-11-12T13:41:43+00:00) matches the code exactly as it is now, and its seal is intact.\nNothing to re-run: this receipt records no test run.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 146,
+  "commit": "35b6e63418f29aa4e93c6b5581613e3c42e643b4",
+  "parent": "321e8ce99bc996d71e6fb598edd1ac197d9c99ff",
+  "exit_code": 3,
+  "wall_seconds": 0.25,
+  "subject": "bump docs version",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: docs/conf.py"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 29,
+  "untested_changes": [
+   "docs/conf.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null,
+  "where": null,
+  "environment": null,
+  "clean": {
+   "exit_code": 3,
+   "wall_seconds": 0.24,
+   "verdict": "UNVERIFIED",
+   "verdict_reasons": [
+    "changed code that no test checks: docs/conf.py"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 0,
+   "all_test_files": 29,
+   "untested_changes": [
+    "docs/conf.py"
+   ],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": null,
+   "counts": null,
+   "test_seconds": null,
+   "failed_tests": [],
+   "files_changed_during_run": null,
+   "mutation": null,
+   "where": null,
+   "environment": null,
+   "tests_compared": 0,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.1,
+    "said": "FRESH: the receipt (UNVERIFIED, made 2026-11-12T13:41:44+00:00) matches the code exactly as it is now, and its seal is intact.\nNothing to re-run: this receipt records no test run.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 147,
+  "commit": "321e8ce99bc996d71e6fb598edd1ac197d9c99ff",
+  "parent": "1885ed64006982cdd08a70c2cba193e1fe2eb693",
+  "exit_code": 3,
+  "wall_seconds": 0.25,
+  "subject": "bump version for 21.0.0 release",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: setup.py"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 29,
+  "untested_changes": [
+   "setup.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null,
+  "where": null,
+  "environment": null,
+  "clean": {
+   "exit_code": 3,
+   "wall_seconds": 0.24,
+   "verdict": "UNVERIFIED",
+   "verdict_reasons": [
+    "changed code that no test checks: setup.py"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 0,
+   "all_test_files": 29,
+   "untested_changes": [
+    "setup.py"
+   ],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": null,
+   "counts": null,
+   "test_seconds": null,
+   "failed_tests": [],
+   "files_changed_during_run": null,
+   "mutation": null,
+   "where": null,
+   "environment": null,
+   "tests_compared": 0,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.1,
+    "said": "FRESH: the receipt (UNVERIFIED, made 2026-11-12T13:41:46+00:00) matches the code exactly as it is now, and its seal is intact.\nNothing to re-run: this receipt records no test run.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 148,
+  "commit": "1885ed64006982cdd08a70c2cba193e1fe2eb693",
+  "parent": "8177b933b418d91c7280909690f45589fbe004d2",
+  "exit_code": 1,
+  "wall_seconds": 0.89,
+  "subject": "Add license statement at start of every module (#276)",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran",
+   "changed code that no test checks: boltons/deprutils.py, boltons/easterutils.py, boltons/excutils.py, boltons/mboxutils.py, boltons/pathutils.py"
+  ],
+  "findings": [],
+  "changed_files": 29,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 29,
+  "all_test_files": 29,
+  "untested_changes": [
+   "boltons/deprutils.py",
+   "boltons/easterutils.py",
+   "boltons/excutils.py",
+   "boltons/mboxutils.py",
+   "boltons/pathutils.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "interrupted",
+  "counts": {
+   "errors": 1,
+   "failed": 0,
+   "passed": 0,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.474,
+  "failed_tests": [
+   "::tests.test_ecoutils"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 1,
+   "wall_seconds": 0.98,
+   "verdict": "FAILED",
+   "verdict_reasons": [
+    "1 test file(s) could not even be loaded (an import or syntax error), so their tests never ran",
+    "changed code that no test checks: boltons/deprutils.py, boltons/easterutils.py, boltons/excutils.py, boltons/mboxutils.py, boltons/pathutils.py"
+   ],
+   "findings": [],
+   "changed_files": 29,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 29,
+   "all_test_files": 29,
+   "untested_changes": [
+    "boltons/deprutils.py",
+    "boltons/easterutils.py",
+    "boltons/excutils.py",
+    "boltons/mboxutils.py",
+    "boltons/pathutils.py"
+   ],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "interrupted",
+   "counts": {
+    "errors": 1,
+    "failed": 0,
+    "passed": 0,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 0.487,
+   "failed_tests": [
+    "::tests.test_ecoutils"
+   ],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 1,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.73,
+    "said": "FRESH: the receipt (FAILED, made 2026-11-12T13:41:48+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 29 test file(s) in a clean copy (recorded run: clean copy): recorded interrupted, now interrupted.\nREPRODUCED: all 1 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 149,
+  "commit": "8177b933b418d91c7280909690f45589fbe004d2",
+  "parent": "2c51dddb869eb7c0d05b4739d34406e20a0e03b8",
+  "exit_code": 1,
+  "wall_seconds": 1.55,
+  "subject": "improve OMD.addlist empty list handling, fixes #284",
+  "verdict": "FAILED",
+  "verdict_reasons": [
+   "1 test(s) failed"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_dictutils.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_pop_all (tests/test_dictutils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_pop_all"
+   },
+   {
+    "file": "tests/test_dictutils.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_setdefault (tests/test_dictutils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_setdefault"
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "failed",
+  "counts": {
+   "errors": 0,
+   "failed": 1,
+   "passed": 179,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.292,
+  "failed_tests": [
+   "tests.test_dictutils::test_frozendict_api"
+  ],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 1,
+   "wall_seconds": 0.83,
+   "verdict": "FAILED",
+   "verdict_reasons": [
+    "1 test(s) failed"
+   ],
+   "findings": [
+    {
+     "file": "tests/test_dictutils.py",
+     "kind": "expected-values-changed",
+     "message": "the expected values in test_pop_all (tests/test_dictutils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+     "severity": "notice",
+     "test": "test_pop_all"
+    },
+    {
+     "file": "tests/test_dictutils.py",
+     "kind": "expected-values-changed",
+     "message": "the expected values in test_setdefault (tests/test_dictutils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+     "severity": "notice",
+     "test": "test_setdefault"
+    }
+   ],
+   "changed_files": 2,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 3,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "failed",
+   "counts": {
+    "errors": 0,
+    "failed": 1,
+    "passed": 179,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 0.302,
+   "failed_tests": [
+    "tests.test_dictutils::test_frozendict_api"
+   ],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 180,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.55,
+    "said": "FRESH: the receipt (FAILED, made 2026-11-12T13:41:52+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 3 test file(s) in a clean copy (recorded run: clean copy): recorded failed, now failed.\nREPRODUCED: all 180 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 150,
+  "commit": "285c4984d80ea45d03cc03451656508becc8ee72",
+  "parent": "16a258e3750063d874ec85c5fb5bc21358206c5c",
+  "exit_code": 0,
+  "wall_seconds": 0.97,
+  "subject": "more robust module name retrieval",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 59 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 6,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 59,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.54,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.07,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 59 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 6,
+   "all_test_files": 29,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "docs/conf.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 59,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 0.552,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 59,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.81,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:41:55+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 6 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 59 test outcomes are the same.\n"
+   }
+  }
+ }
+]

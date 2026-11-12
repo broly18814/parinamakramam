@@ -137,3 +137,51 @@ Both pass. **None of this was tuned on REAL-004's commits, which haven't been ru
 - **A3-P2 and A3-P3 pass:** `--clean` becomes the default in pkv 0.3. `--in-place` keeps the old behaviour.
 - **A3-P2 fails, mostly D-needs-build:** `--clean` stays opt-in, recommended for CI and the hook (A4). The reason is published.
 - **Any D-pkv:** it's fixed, and REAL-004 is re-run on further commits (151–180) before any default changes.
+
+---
+
+## REAL-004 results (12 November 2026)
+
+Raw records: [`product/verify/realworld/results/a3-py312/`](../../product/verify/realworld/results/a3-py312/). pkv was at commit `23db941` (A3 with amendment 1) and wasn't changed during the run.
+
+### In plain words
+
+**Running the tests in a clean copy changed nothing on ordinary work, and every receipt repeated exactly.**
+- On 120 real commits, the clean copy gave **the same verdict every time**.
+- Across the 112 commits that ran tests, **49,869 individual test results** were compared, and **not one** differed.
+- Asked to repeat the run, `pkv fresh --rerun` reproduced all 112 receipts, including the 4 that failed: their failures came back exactly.
+- It cost no measurable time.
+
+So by the rule written before the run, **`--clean` becomes the default in pkv 0.3.**
+
+**What this does *not* show.** These commits come from fresh checkouts, which have no leftover files, so the clean copy had nothing to catch. REAL-004 measures the clean copy's **cost**, which turned out to be none. Its **benefit** (a pass that needed a git-ignored leftover now fails) is shown only by the acceptance tests.
+
+### Numbers
+
+| | Result |
+|---|---|
+| Commits | 120 (30 per project, positions 121–150) |
+| Verdicts, working folder | VERIFIED 100 · UNVERIFIED 13 · FAILED 4 · SUSPICIOUS 3 |
+| Verdicts, clean copy | VERIFIED 100 · UNVERIFIED 13 · FAILED 4 · SUSPICIOUS 3 |
+| Same verdict | **120 / 120** |
+| Commits that ran tests | 112; the other 8 changed no code that any test reaches |
+| Test outcomes compared / different | 49,869 / **0** |
+| Disagreements by label | D-leftover 0 · D-needs-build 0 · D-flaky 0 · **D-pkv 0** |
+| `pkv fresh --rerun` | **REPRODUCED 112 / 112**, 0 crashes |
+| Extra time of `--clean` (whole pkv run) | median −0.02 s, largest +0.23 s |
+| Tool errors | 0 |
+
+The largest gaps went the other way: the clean run was up to 9.6 s *faster*. Each of those was the first working-folder run of a project, where pkv's own start-up took longer. The test time itself was the same (for example 1.23 s and 1.20 s).
+
+### Against the predictions
+
+| | Result |
+|---|---|
+| **A3-P2** (the same verdict on ≥ 95%, 0 D-pkv) | ✅ 100%, 0 |
+| **A3-P3** (REPRODUCED on ≥ 95%, 0 crashes) | ✅ 100%, 0 |
+| **A3-P4** (median extra time ≤ 3 s) | ✅ −0.02 s |
+
+### What this decides
+
+- **`--clean` becomes pkv 0.3's default.** `--in-place` keeps the old behaviour, for projects that need git-ignored generated files to run their tests (D-053).
+- **The cost side is settled for these four projects** only. Projects with compiled extensions or generated version files weren't in the sample, so `--in-place` stays documented as the way out.

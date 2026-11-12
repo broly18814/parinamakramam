@@ -1,0 +1,2620 @@
+[
+ {
+  "project": "more-itertools",
+  "position": 121,
+  "commit": "32dc4272e5661d4d17286553ef14125bc29e5923",
+  "parent": "599c0e7293b1321295f69b2bb41a27112d2ce7af",
+  "exit_code": 0,
+  "wall_seconds": 5.99,
+  "subject": "Merge pull request #1002 from rhettinger/nth_prime_approx",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 678 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": true,
+  "run_all_reasons": [
+   "more_itertools/more.pyi is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 678,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.504,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 6.09,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 678 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 2,
+   "run_all": true,
+   "run_all_reasons": [
+    "more_itertools/more.pyi is not Python code, so we can't trace what uses it"
+   ],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 678,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.532,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 679,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.86,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:31:35+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 679 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 122,
+  "commit": "599c0e7293b1321295f69b2bb41a27112d2ce7af",
+  "parent": "590c5f503e8baff78e4d430a4368c4ab907aa11f",
+  "exit_code": 0,
+  "wall_seconds": 6.05,
+  "subject": "Reformat docstring",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 678 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 678,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.556,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 6.1,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 678 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 678,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.553,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 679,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.83,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:31:54+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 679 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 123,
+  "commit": "590c5f503e8baff78e4d430a4368c4ab907aa11f",
+  "parent": "0f9237f394914d7bd2b455b1dd169a5d3ae167ac",
+  "exit_code": 0,
+  "wall_seconds": 5.98,
+  "subject": "Merge branch 'rhettinger-mixmax_link'",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 678 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 678,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.503,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 6.1,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 678 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 678,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.542,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 679,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.74,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:32:13+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 679 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 124,
+  "commit": "0f9237f394914d7bd2b455b1dd169a5d3ae167ac",
+  "parent": "9c4b99c848cd759efb17ead1ef413b34aa61f340",
+  "exit_code": 0,
+  "wall_seconds": 6.13,
+  "subject": "More minmax docstring changes",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 678 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 678,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.627,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 6.11,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 678 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 678,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.53,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 679,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.9,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:32:32+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 679 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 125,
+  "commit": "9c4b99c848cd759efb17ead1ef413b34aa61f340",
+  "parent": "569e0ad654a85c77581b318305edc2eb7c4068ae",
+  "exit_code": 0,
+  "wall_seconds": 6.03,
+  "subject": "Merge branch 'rhettinger-minmax_doc'",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 678 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 678,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.549,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 6.15,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 678 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 678,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.589,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 679,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.89,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:32:51+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 679 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 126,
+  "commit": "569e0ad654a85c77581b318305edc2eb7c4068ae",
+  "parent": "88e0c664f7cd0f3075caf54580cc7a93089077a3",
+  "exit_code": 0,
+  "wall_seconds": 6.84,
+  "subject": "Merge pull request #998 from rhettinger/sample_simplification",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 678 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 678,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.544,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 6.17,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 678 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 2,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 678,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.546,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 679,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.79,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:33:10+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 679 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 127,
+  "commit": "88e0c664f7cd0f3075caf54580cc7a93089077a3",
+  "parent": "5ae2f2bcd01914ad2ee5c6efb626d88bae89bb06",
+  "exit_code": 0,
+  "wall_seconds": 6.03,
+  "subject": "Merge pull request #997 from rhettinger/convolve_doc",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 677 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 677,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.547,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 6.05,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 677 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 677,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.516,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 678,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.74,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:33:29+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 678 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 128,
+  "commit": "5ae2f2bcd01914ad2ee5c6efb626d88bae89bb06",
+  "parent": "6950f63572fea3c0f2da4e57507183ce709e3269",
+  "exit_code": 0,
+  "wall_seconds": 2.53,
+  "subject": "Merge pull request #996 from ben42code/u/ben42code/islice_extended_unittest",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 542 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 542,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.188,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.76,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 542 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 1,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 542,
+    "skipped": 0,
+    "xfailed": 0
+   },
+   "test_seconds": 1.201,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 542,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.42,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:33:40+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 1 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 542 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 129,
+  "commit": "6950f63572fea3c0f2da4e57507183ce709e3269",
+  "parent": "2b42a8d95d32466916eecaf18b25916d8a711abb",
+  "exit_code": 0,
+  "wall_seconds": 5.91,
+  "subject": "Merge pull request #995 from ben42code/u/ben42code/islice_extended_memory_usage",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 676 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 676,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.472,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 5.96,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 676 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 676,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.455,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 677,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.72,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:33:53+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 677 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 130,
+  "commit": "c88870a027e3ef4c54d19ddabf23e6400f89bcb9",
+  "parent": "b6f3f95123af28a201c6769eb0d9c1373dcf5d67",
+  "exit_code": 0,
+  "wall_seconds": 5.9,
+  "subject": "Merge pull request #991 from rhettinger/spelling_grammar_punctuation_usage",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 676 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 676,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.464,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 5.96,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 676 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 2,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 676,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.463,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 677,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.7,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:34:12+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 677 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 131,
+  "commit": "67180f89ad1147a530aa8f7a829e64a81624e774",
+  "parent": "54776467f1d7bd8c39c6fb2584ccd5ea71ec9913",
+  "exit_code": 0,
+  "wall_seconds": 5.91,
+  "subject": "Merge pull request #989 from rhettinger/argmin_max_docstring",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 676 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 676,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.461,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 5.98,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 676 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 676,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.478,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 677,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.74,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:34:30+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 677 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 132,
+  "commit": "54776467f1d7bd8c39c6fb2584ccd5ea71ec9913",
+  "parent": "e922b86d1629b38610e2db6748574be543c34115",
+  "exit_code": 0,
+  "wall_seconds": 6.76,
+  "subject": "Merge pull request #988 from more-itertools/issue-986-argmin-argmax",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 676 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": true,
+  "run_all_reasons": [
+   "more_itertools/more.pyi is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 676,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.497,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 6.03,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 676 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 4,
+   "run_all": true,
+   "run_all_reasons": [
+    "more_itertools/more.pyi is not Python code, so we can't trace what uses it"
+   ],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 676,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.476,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 677,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.78,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:34:50+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 677 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 133,
+  "commit": "e922b86d1629b38610e2db6748574be543c34115",
+  "parent": "f22895f939736785e94068827a895b009f7941c4",
+  "exit_code": 0,
+  "wall_seconds": 6.76,
+  "subject": "Merge pull request #985 from more-itertools/derangements-alone",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 674 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": true,
+  "run_all_reasons": [
+   "more_itertools/more.pyi is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 674,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.476,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 6.02,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 674 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 3,
+   "run_all": true,
+   "run_all_reasons": [
+    "more_itertools/more.pyi is not Python code, so we can't trace what uses it"
+   ],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 674,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.467,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 675,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.71,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:35:09+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 675 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 134,
+  "commit": "f22895f939736785e94068827a895b009f7941c4",
+  "parent": "3250ca5e073469751dd323a42aaf99be28e9f3c7",
+  "exit_code": 0,
+  "wall_seconds": 0.23,
+  "subject": "Merge pull request #979 from cdce8p/remove-setup-py",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "nothing that tests could check was changed"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null,
+  "where": null,
+  "environment": null,
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 0.23,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "nothing that tests could check was changed"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 0,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": null,
+   "counts": null,
+   "test_seconds": null,
+   "failed_tests": [],
+   "files_changed_during_run": null,
+   "mutation": null,
+   "where": null,
+   "environment": null,
+   "tests_compared": 0,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 0.1,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:35:16+00:00) matches the code exactly as it is now, and its seal is intact.\nNothing to re-run: this receipt records no test run.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 135,
+  "commit": "ee1b2fe5d8cea8710ca45388e8239500e84a4488",
+  "parent": "2d1b859b9e3c03578807d7750730526f784b1ffd",
+  "exit_code": 0,
+  "wall_seconds": 5.89,
+  "subject": "Merge pull request #984 from more-itertools/polynomial-endianness",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 670 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 670,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.452,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 5.91,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 670 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 670,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.411,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 671,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.66,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:35:29+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 671 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 136,
+  "commit": "2d1b859b9e3c03578807d7750730526f784b1ffd",
+  "parent": "72c8d97c017fce09cff5c1b87b4e60cae4a58c8c",
+  "exit_code": 0,
+  "wall_seconds": 5.87,
+  "subject": "Merge pull request #983 from rhettinger/docstring_improvements",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 670 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 670,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.433,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 5.97,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 670 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 2,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 670,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.472,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 671,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.64,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:35:47+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 671 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 137,
+  "commit": "72c8d97c017fce09cff5c1b87b4e60cae4a58c8c",
+  "parent": "4c231ce895fd18ed0f0bb7634770d0f79abac68c",
+  "exit_code": 0,
+  "wall_seconds": 5.86,
+  "subject": "Merge pull request #982 from rhettinger/iterable_vs_iterator",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 670 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 670,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.419,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 5.94,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 670 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 670,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.436,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 671,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.66,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:36:05+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 671 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 138,
+  "commit": "28ab73678adc39eacc2610bd67c1c4a37def6c28",
+  "parent": "8988de66332ef26f0873ed80f2f466f525b46b0a",
+  "exit_code": 0,
+  "wall_seconds": 6.56,
+  "subject": "Merge pull request #977 from more-itertools/version-10.7.0",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 670 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": true,
+  "run_all_reasons": [
+   "setup.cfg is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 670,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.372,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 5.93,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 670 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 3,
+   "run_all": true,
+   "run_all_reasons": [
+    "setup.cfg is a project settings file; it can change how every test behaves"
+   ],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 670,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.417,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 671,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.65,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:36:24+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 671 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 139,
+  "commit": "3742de96f864666a0360dfcb20ee645491bb6494",
+  "parent": "6d0fe022dc744e785026c63977190d6ba5d164e2",
+  "exit_code": 0,
+  "wall_seconds": 5.82,
+  "subject": "Merge pull request #972 from ricbit/master",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 670 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 670,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.385,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 5.91,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 670 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 670,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.413,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 671,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.64,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:36:42+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 671 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 140,
+  "commit": "6d0fe022dc744e785026c63977190d6ba5d164e2",
+  "parent": "edcafcfa58b1f2edc4b8588e98fba3f41784b746",
+  "exit_code": 0,
+  "wall_seconds": 5.81,
+  "subject": "Merge pull request #971 from rhettinger/small_doc_edits",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 670 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 670,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.374,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 5.91,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 670 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 2,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 670,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.415,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 671,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.67,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:37:00+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 671 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 141,
+  "commit": "8f051d14c3dc07c3fa9707601c30501bd3f22c42",
+  "parent": "af8a56df44e277ddc4abd770b8e0cc6190f1f77c",
+  "exit_code": 3,
+  "wall_seconds": 7.43,
+  "subject": "Merge pull request #968 from AA-Turner/furo",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: docs/conf.py"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": true,
+  "run_all_reasons": [
+   ".readthedocs.yaml is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [
+   "docs/conf.py"
+  ],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 670,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.367,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 3,
+   "wall_seconds": 5.92,
+   "verdict": "UNVERIFIED",
+   "verdict_reasons": [
+    "changed code that no test checks: docs/conf.py"
+   ],
+   "findings": [],
+   "changed_files": 4,
+   "run_all": true,
+   "run_all_reasons": [
+    ".readthedocs.yaml is not Python code, so we can't trace what uses it"
+   ],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [
+    "docs/conf.py"
+   ],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 670,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.401,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 671,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.64,
+    "said": "FRESH: the receipt (UNVERIFIED, made 2026-11-12T13:37:20+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 671 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 142,
+  "commit": "af8a56df44e277ddc4abd770b8e0cc6190f1f77c",
+  "parent": "c8b31a48b02af86099f43d6cb04411c40edc8050",
+  "exit_code": 0,
+  "wall_seconds": 5.79,
+  "subject": "Merge pull request #969 from lpulley/patch-1",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 670 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 670,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.355,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 5.95,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 670 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 670,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.424,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 671,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.7,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:37:38+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 671 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 143,
+  "commit": "c8b31a48b02af86099f43d6cb04411c40edc8050",
+  "parent": "e30390f415c4ca93eafe12c0557f29d3658df775",
+  "exit_code": 0,
+  "wall_seconds": 5.95,
+  "subject": "Merge pull request #966 from rhettinger/private_prng",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 670 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 670,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.471,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 6.05,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 670 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 670,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.48,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 671,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.73,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:37:57+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 671 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 144,
+  "commit": "e30390f415c4ca93eafe12c0557f29d3658df775",
+  "parent": "391d8fbbc3eeab024f1289605c1d2bbd0ff05f1d",
+  "exit_code": 0,
+  "wall_seconds": 5.84,
+  "subject": "Merge pull request #965 from rhettinger/simplify_powerset_of_sets",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 670 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 670,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.398,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 5.94,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 670 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 670,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.435,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 671,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.71,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:38:15+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 671 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 145,
+  "commit": "391d8fbbc3eeab024f1289605c1d2bbd0ff05f1d",
+  "parent": "c11941e817286ed4a2743bfbbdd56a981abf5951",
+  "exit_code": 0,
+  "wall_seconds": 5.85,
+  "subject": "Merge pull request #964 from rhettinger/sync_up",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 670 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 670,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.409,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 5.94,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 670 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 670,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.434,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 671,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.63,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:38:33+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 671 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 146,
+  "commit": "c11941e817286ed4a2743bfbbdd56a981abf5951",
+  "parent": "c3cfc508573812eb9fc5a8f5233056bf925a3e3c",
+  "exit_code": 0,
+  "wall_seconds": 6.53,
+  "subject": "Merge pull request #963 from rhettinger/multinomial",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 670 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 6,
+  "run_all": true,
+  "run_all_reasons": [
+   "more_itertools/recipes.pyi is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 670,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.332,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 5.93,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 670 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 6,
+   "run_all": true,
+   "run_all_reasons": [
+    "more_itertools/recipes.pyi is not Python code, so we can't trace what uses it"
+   ],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 670,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.416,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 671,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.58,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:38:52+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 671 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 147,
+  "commit": "c3cfc508573812eb9fc5a8f5233056bf925a3e3c",
+  "parent": "af995fcd80112b456057cdbe9f65046a6cc43f71",
+  "exit_code": 0,
+  "wall_seconds": 5.74,
+  "subject": "Merge pull request #962 from rhettinger/pollard_nits",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 669 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 669,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.3,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 5.8,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 669 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 669,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.298,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 670,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.59,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:39:10+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 670 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 148,
+  "commit": "af995fcd80112b456057cdbe9f65046a6cc43f71",
+  "parent": "f2c328030d1c6753d6368d0ab17dd31088672b85",
+  "exit_code": 0,
+  "wall_seconds": 5.72,
+  "subject": "Merge pull request #961 from rhettinger/unnecessary_yield_from",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 669 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 669,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.287,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 5.82,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 669 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 2,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 669,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.312,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 670,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.54,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:39:28+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 670 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 149,
+  "commit": "f2c328030d1c6753d6368d0ab17dd31088672b85",
+  "parent": "593d89dd24387c8f2aa19649fa5a158b5a813a4a",
+  "exit_code": 0,
+  "wall_seconds": 5.8,
+  "subject": "Merge pull request #960 from rhettinger/fsumprod",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 669 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 669,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.361,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 5.83,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 669 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 669,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.328,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 670,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.53,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:39:46+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 670 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 150,
+  "commit": "593d89dd24387c8f2aa19649fa5a158b5a813a4a",
+  "parent": "b7b4e7892fa4c837f2754c7244b659ceff14b90e",
+  "exit_code": 0,
+  "wall_seconds": 5.73,
+  "subject": "Merge pull request #954 from rhettinger/only",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 669 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 669,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.298,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 5.82,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 669 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 1,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 2,
+   "all_test_files": 2,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "more_itertools/more.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 669,
+    "skipped": 1,
+    "xfailed": 0
+   },
+   "test_seconds": 5.317,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 670,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 5.58,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:40:04+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 2 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 670 test outcomes are the same.\n"
+   }
+  }
+ }
+]

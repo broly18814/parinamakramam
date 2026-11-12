@@ -1,0 +1,2918 @@
+[
+ {
+  "project": "click",
+  "position": 121,
+  "commit": "498f8826040fd6644d0f410c4d574df09c35d4b2",
+  "parent": "f14b75063fb36b9208b13a920326926363616b39",
+  "exit_code": 0,
+  "wall_seconds": 11.49,
+  "subject": "drop end of life python versions (#2893)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 719 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 17,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves",
+   "tox.ini is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 719,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.232,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.94,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 719 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 17,
+   "run_all": true,
+   "run_all_reasons": [
+    ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+    "pyproject.toml is a project settings file; it can change how every test behaves",
+    "tox.ini is a project settings file; it can change how every test behaves"
+   ],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 719,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 1.195,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 742,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.93,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:28:17+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 742 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 122,
+  "commit": "f14b75063fb36b9208b13a920326926363616b39",
+  "parent": "9982faee85f2715a9cde03639f8c0382561c09ce",
+  "exit_code": 0,
+  "wall_seconds": 6.96,
+  "subject": "update dev dependencies",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 719 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 15,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/pre-commit.yaml is not Python code, so we can't trace what uses it",
+   ".github/workflows/publish.yaml is not Python code, so we can't trace what uses it",
+   ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+   ".pre-commit-config.yaml is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 719,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.058,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.83,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 719 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 15,
+   "run_all": true,
+   "run_all_reasons": [
+    ".github/workflows/pre-commit.yaml is not Python code, so we can't trace what uses it",
+    ".github/workflows/publish.yaml is not Python code, so we can't trace what uses it",
+    ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+    ".pre-commit-config.yaml is not Python code, so we can't trace what uses it"
+   ],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 719,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 1.113,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 742,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.39,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:28:29+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 742 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 123,
+  "commit": "b7c0ab471c339488766d9413349947b2a7b21543",
+  "parent": "ab21233fc8f9e29d4194956d643af8bc180c7153",
+  "exit_code": 3,
+  "wall_seconds": 8.81,
+  "subject": "Merge `stable` into `main`; Release 8.2.0 (#2873)",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: tests/typing/typing_aliased_group.py, tests/typing/typing_confirmation_option.py, tests/typing/typing_options.py, tests/typing/typing_version_option.py"
+  ],
+  "findings": [],
+  "changed_files": 26,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/publish.yaml is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [
+   "tests/typing/typing_aliased_group.py",
+   "tests/typing/typing_confirmation_option.py",
+   "tests/typing/typing_options.py",
+   "tests/typing/typing_version_option.py"
+  ],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 719,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.039,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 3,
+   "wall_seconds": 1.81,
+   "verdict": "UNVERIFIED",
+   "verdict_reasons": [
+    "changed code that no test checks: tests/typing/typing_aliased_group.py, tests/typing/typing_confirmation_option.py, tests/typing/typing_options.py, tests/typing/typing_version_option.py"
+   ],
+   "findings": [],
+   "changed_files": 26,
+   "run_all": true,
+   "run_all_reasons": [
+    ".github/workflows/publish.yaml is not Python code, so we can't trace what uses it",
+    "pyproject.toml is a project settings file; it can change how every test behaves"
+   ],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [
+    "tests/typing/typing_aliased_group.py",
+    "tests/typing/typing_confirmation_option.py",
+    "tests/typing/typing_options.py",
+    "tests/typing/typing_version_option.py"
+   ],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 719,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 1.066,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 742,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.38,
+    "said": "FRESH: the receipt (UNVERIFIED, made 2026-11-12T13:28:41+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 742 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 124,
+  "commit": "f84395c517c3c3c9e793f7988fd3f954da293ec6",
+  "parent": "c9f7d9d8a02f0cf9b24db6210b083e687a5cf020",
+  "exit_code": 0,
+  "wall_seconds": 1.26,
+  "subject": "Minimal fix to CI (#2884)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 634 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/pre-commit.yaml is not Python code, so we can't trace what uses it",
+   ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+   ".pre-commit-config.yaml is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 634,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.747,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.4,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 634 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 4,
+   "run_all": true,
+   "run_all_reasons": [
+    ".github/workflows/pre-commit.yaml is not Python code, so we can't trace what uses it",
+    ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+    ".pre-commit-config.yaml is not Python code, so we can't trace what uses it"
+   ],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 634,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.762,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 657,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.07,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:28:46+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 657 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 125,
+  "commit": "c9f7d9d8a02f0cf9b24db6210b083e687a5cf020",
+  "parent": "0bf333e1b77b4ae0e85d387531b38930fc657f12",
+  "exit_code": 0,
+  "wall_seconds": 2.13,
+  "subject": "Move `--help` option defaults from its class to its decorator (#2840)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 634 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 5,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 634,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.748,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.42,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 634 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 5,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 634,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.762,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 657,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.08,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:28:52+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 657 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 126,
+  "commit": "854cfb14c68fd6aadd56ecf454758115cb4d83eb",
+  "parent": "5dd628854c0b61bbdc07f22004c5da8fa8ee9481",
+  "exit_code": 3,
+  "wall_seconds": 3.5,
+  "subject": "Rewrite testing docs and move from rst to myst (#2857)",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: docs/conf.py"
+  ],
+  "findings": [],
+  "changed_files": 8,
+  "run_all": true,
+  "run_all_reasons": [
+   "requirements/dev.in is not Python code, so we can't trace what uses it",
+   "requirements/docs.in is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [
+   "docs/conf.py"
+  ],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 628,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.746,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 3,
+   "wall_seconds": 1.41,
+   "verdict": "UNVERIFIED",
+   "verdict_reasons": [
+    "changed code that no test checks: docs/conf.py"
+   ],
+   "findings": [],
+   "changed_files": 8,
+   "run_all": true,
+   "run_all_reasons": [
+    "requirements/dev.in is not Python code, so we can't trace what uses it",
+    "requirements/docs.in is not Python code, so we can't trace what uses it"
+   ],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [
+    "docs/conf.py"
+   ],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 628,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.757,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 651,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.07,
+    "said": "FRESH: the receipt (UNVERIFIED, made 2026-11-12T13:28:59+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 651 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 127,
+  "commit": "4ece17a107d7b2e8bc3bd14356c2b53038fe41cf",
+  "parent": "8a47580a00f3404e7071b9ecfec3692a1e18309f",
+  "exit_code": 0,
+  "wall_seconds": 5.01,
+  "subject": "Expand `Choice` token normalization + make generic (#2796)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 628 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_normalization.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_choice_normalization (tests/test_normalization.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_choice_normalization"
+   }
+  ],
+  "changed_files": 10,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 628,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.737,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.45,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 628 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [
+    {
+     "file": "tests/test_normalization.py",
+     "kind": "expected-values-changed",
+     "message": "the expected values in test_choice_normalization (tests/test_normalization.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+     "severity": "notice",
+     "test": "test_choice_normalization"
+    }
+   ],
+   "changed_files": 10,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 628,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.755,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 651,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.08,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:29:07+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 651 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 128,
+  "commit": "45f89cd5d39db37b9aa1a014da000f12da532ddc",
+  "parent": "4ffa1ef3b6d23208f65ac54f688f02856aa0d660",
+  "exit_code": 0,
+  "wall_seconds": 1.95,
+  "subject": "Improve typing on Windows (#2803)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 625 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": true,
+  "run_all_reasons": [
+   "tox.ini is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 625,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.739,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.42,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 625 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 4,
+   "run_all": true,
+   "run_all_reasons": [
+    "tox.ini is a project settings file; it can change how every test behaves"
+   ],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 625,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.754,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 648,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.06,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:29:12+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 648 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 129,
+  "commit": "4ffa1ef3b6d23208f65ac54f688f02856aa0d660",
+  "parent": "b5464b7e065bdfd952b1532880941f1be07e4e2b",
+  "exit_code": 0,
+  "wall_seconds": 1.26,
+  "subject": "Correct click.edit typing (#2804)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 625 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 625,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.738,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.4,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 625 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 3,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 625,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.761,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 648,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.07,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:29:17+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 648 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 130,
+  "commit": "b5464b7e065bdfd952b1532880941f1be07e4e2b",
+  "parent": "88328fc8743d43566081d9f17acad5f5552f5a87",
+  "exit_code": 0,
+  "wall_seconds": 2.03,
+  "subject": "Only try to set flag_value if is_flag is true (#2829)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 625 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 625,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.746,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.4,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 625 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 3,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 625,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.749,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 648,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.07,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:29:22+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 648 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 131,
+  "commit": "88328fc8743d43566081d9f17acad5f5552f5a87",
+  "parent": "5961d31fb566f089ad468a5b26a32f1ebfa7f63e",
+  "exit_code": 0,
+  "wall_seconds": 1.98,
+  "subject": "Add CliRunner default `catch_exceptions` parameter (#2818)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 625 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 625,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.742,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.42,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 625 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 3,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 625,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.761,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 648,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.08,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:29:28+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 648 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 132,
+  "commit": "5961d31fb566f089ad468a5b26a32f1ebfa7f63e",
+  "parent": "fde47b4b4f978f179b9dff34583cb2b99021f482",
+  "exit_code": 0,
+  "wall_seconds": 3.4,
+  "subject": "Introduce Parameter.deprecated + Command.deprecated message customization (#2271)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 624 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_commands.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_deprecated_in_help_messages (tests/test_commands.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_deprecated_in_help_messages"
+   }
+  ],
+  "changed_files": 5,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 624,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.732,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.42,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 624 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [
+    {
+     "file": "tests/test_commands.py",
+     "kind": "expected-values-changed",
+     "message": "the expected values in test_deprecated_in_help_messages (tests/test_commands.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+     "severity": "notice",
+     "test": "test_deprecated_in_help_messages"
+    }
+   ],
+   "changed_files": 5,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 624,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.745,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 647,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.04,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:29:34+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 647 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 133,
+  "commit": "fde47b4b4f978f179b9dff34583cb2b99021f482",
+  "parent": "3b06e0b75aaa68533c7fbd4f89053309f2e4ed8a",
+  "exit_code": 0,
+  "wall_seconds": 1.23,
+  "subject": "Fix issues previously type ignored.",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 611 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 611,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.725,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.35,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 611 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 2,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 611,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.738,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 634,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.03,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:29:39+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 634 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 134,
+  "commit": "3b06e0b75aaa68533c7fbd4f89053309f2e4ed8a",
+  "parent": "2cabbe3175026695210fe0bf9b179fd62d52634f",
+  "exit_code": 4,
+  "wall_seconds": 2.01,
+  "subject": "Improve echo_via_pager behaviour in face of errors (#2775)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_utils.py",
+    "kind": "fewer-cases",
+    "message": "the test test_echo_via_pager in tests/test_utils.py now runs fewer cases: 15 before, 10 now (rows were removed from its parametrize table).",
+    "severity": "suspicious",
+    "test": "test_echo_via_pager"
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 611,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.722,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 4,
+   "wall_seconds": 1.37,
+   "verdict": "SUSPICIOUS",
+   "verdict_reasons": [
+    "1 sign(s) that the tests were weakened"
+   ],
+   "findings": [
+    {
+     "file": "tests/test_utils.py",
+     "kind": "fewer-cases",
+     "message": "the test test_echo_via_pager in tests/test_utils.py now runs fewer cases: 15 before, 10 now (rows were removed from its parametrize table).",
+     "severity": "suspicious",
+     "test": "test_echo_via_pager"
+    }
+   ],
+   "changed_files": 3,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 611,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.741,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 634,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.04,
+    "said": "FRESH: the receipt (SUSPICIOUS, made 2026-11-12T13:29:44+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 634 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 135,
+  "commit": "2cabbe3175026695210fe0bf9b179fd62d52634f",
+  "parent": "0d69b6ce8b25fe31ea580c608adb8e45df3805bb",
+  "exit_code": 3,
+  "wall_seconds": 1.26,
+  "subject": "specialize progressbar(length=...) as ProgressBar[int] (#2630)",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: tests/typing/typing_progressbar.py"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [
+   "tests/typing/typing_progressbar.py"
+  ],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 616,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.752,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 3,
+   "wall_seconds": 1.38,
+   "verdict": "UNVERIFIED",
+   "verdict_reasons": [
+    "changed code that no test checks: tests/typing/typing_progressbar.py"
+   ],
+   "findings": [],
+   "changed_files": 3,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [
+    "tests/typing/typing_progressbar.py"
+   ],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 616,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.769,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 639,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.06,
+    "said": "FRESH: the receipt (UNVERIFIED, made 2026-11-12T13:29:48+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 639 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 136,
+  "commit": "0d69b6ce8b25fe31ea580c608adb8e45df3805bb",
+  "parent": "d791537317947448a3960662d00acf160eff2602",
+  "exit_code": 0,
+  "wall_seconds": 2.0,
+  "subject": "Adds support for editing multiple files (#2068)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 616 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_termui.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_edit in tests/test_termui.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_edit"
+   }
+  ],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 616,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.777,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.42,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 616 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [
+    {
+     "file": "tests/test_termui.py",
+     "kind": "skip-in-new-test",
+     "message": "the new test test_edit in tests/test_termui.py is marked to be skipped.",
+     "severity": "notice",
+     "test": "test_edit"
+    }
+   ],
+   "changed_files": 4,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 616,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.784,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 639,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.09,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:29:54+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 639 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 137,
+  "commit": "d791537317947448a3960662d00acf160eff2602",
+  "parent": "0ef55fda47bb3d0dece21197d81d8d72a4250e73",
+  "exit_code": 0,
+  "wall_seconds": 2.64,
+  "subject": "Merge stable into main (#2799)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 615 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_utils.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_echo_color_flag (tests/test_utils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_echo_color_flag"
+   }
+  ],
+  "changed_files": 15,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 615,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.752,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.44,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 615 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [
+    {
+     "file": "tests/test_utils.py",
+     "kind": "expected-values-changed",
+     "message": "the expected values in test_echo_color_flag (tests/test_utils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+     "severity": "notice",
+     "test": "test_echo_color_flag"
+    }
+   ],
+   "changed_files": 15,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 615,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.777,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 638,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.08,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:30:00+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 638 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 138,
+  "commit": "0ef55fda47bb3d0dece21197d81d8d72a4250e73",
+  "parent": "d8763b93021c416549b5f8b4b5497234619410db",
+  "exit_code": 0,
+  "wall_seconds": 1.96,
+  "subject": "Close contexts created during shell completion #2644. (#2800)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 614 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 614,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.755,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.42,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 614 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 4,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 614,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.772,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 637,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.08,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:30:05+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 637 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 139,
+  "commit": "d8763b93021c416549b5f8b4b5497234619410db",
+  "parent": "4271fe283dc9365563aebb369ada8d20eee015a8",
+  "exit_code": 4,
+  "wall_seconds": 2.0,
+  "subject": "Help shown via no_args_is_help results in exit code 2, was 0 (#1489)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_commands.py",
+    "kind": "test-removed",
+    "message": "the test test_no_args_is_help was removed from tests/test_commands.py.",
+    "severity": "suspicious",
+    "test": "test_no_args_is_help"
+   }
+  ],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 613,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.755,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 4,
+   "wall_seconds": 1.44,
+   "verdict": "SUSPICIOUS",
+   "verdict_reasons": [
+    "1 sign(s) that the tests were weakened"
+   ],
+   "findings": [
+    {
+     "file": "tests/test_commands.py",
+     "kind": "test-removed",
+     "message": "the test test_no_args_is_help was removed from tests/test_commands.py.",
+     "severity": "suspicious",
+     "test": "test_no_args_is_help"
+    }
+   ],
+   "changed_files": 4,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 613,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.774,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 636,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.08,
+    "said": "FRESH: the receipt (SUSPICIOUS, made 2026-11-12T13:30:11+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 636 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 140,
+  "commit": "4271fe283dc9365563aebb369ada8d20eee015a8",
+  "parent": "1787497713fa389435ed732c9b26274c3cdc458d",
+  "exit_code": 0,
+  "wall_seconds": 1.97,
+  "subject": "feat: new method for choice fail (#2622)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 613 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 613,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.749,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.39,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 613 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 4,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 613,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.762,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 636,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.09,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:30:16+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 636 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 141,
+  "commit": "1787497713fa389435ed732c9b26274c3cdc458d",
+  "parent": "380008389b32ca2b7de7c73f670a9eee1562004e",
+  "exit_code": 0,
+  "wall_seconds": 2.09,
+  "subject": "Added functionality to set flag_value correctly when using envvar (#2788)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 612 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 612,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.772,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.43,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 612 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 3,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 612,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.762,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 635,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.08,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:30:21+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 635 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 142,
+  "commit": "380008389b32ca2b7de7c73f670a9eee1562004e",
+  "parent": "fcd85032cff78aa536a6d2b455fb83bfcc02b228",
+  "exit_code": 0,
+  "wall_seconds": 2.71,
+  "subject": "Give a UserWarning when Parameter is overriden by name (#2397)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 611 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 611,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.753,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.42,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 611 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 4,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 611,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.759,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 634,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.07,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:30:27+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 634 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 143,
+  "commit": "fcd85032cff78aa536a6d2b455fb83bfcc02b228",
+  "parent": "c326df95e9e3da0425360e030413f6a3ee25fdee",
+  "exit_code": 0,
+  "wall_seconds": 2.02,
+  "subject": "Add functionality to hide the progress bar #2609 (#2727)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 608 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_termui.py",
+    "kind": "test-moved",
+    "message": "the test test_progressbar_hidden in tests/test_termui.py was removed, but every check it lost reappears unchanged in tests/test_termui.py::test_progressbar_no_tty, a test pytest runs: moved, renamed or reorganised, nothing lost.",
+    "severity": "notice",
+    "test": "test_progressbar_hidden"
+   }
+  ],
+  "changed_files": 5,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 608,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.745,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.44,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 608 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [
+    {
+     "file": "tests/test_termui.py",
+     "kind": "test-moved",
+     "message": "the test test_progressbar_hidden in tests/test_termui.py was removed, but every check it lost reappears unchanged in tests/test_termui.py::test_progressbar_no_tty, a test pytest runs: moved, renamed or reorganised, nothing lost.",
+     "severity": "notice",
+     "test": "test_progressbar_hidden"
+    }
+   ],
+   "changed_files": 5,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 608,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.763,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 631,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.08,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:30:33+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 631 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 144,
+  "commit": "c326df95e9e3da0425360e030413f6a3ee25fdee",
+  "parent": "a8c05427602d12842c53ce48b03b5d6b5c0c6693",
+  "exit_code": 0,
+  "wall_seconds": 2.05,
+  "subject": "Fix closing of callbacks on CLI exit (#2680)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 607 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 607,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.762,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.4,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 607 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 4,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 607,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.769,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 630,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.09,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:30:38+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 630 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 145,
+  "commit": "1b524bb30d0bd39528369c7029b9296e7663cf19",
+  "parent": "0e0c00324a5af35f8995c7ff88df67b0f5594a58",
+  "exit_code": 0,
+  "wall_seconds": 1.98,
+  "subject": "show env var in error hint (#2696)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 603 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 603,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.749,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.43,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 603 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 3,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 603,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.763,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 626,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.08,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:30:43+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 626 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 146,
+  "commit": "0e0c00324a5af35f8995c7ff88df67b0f5594a58",
+  "parent": "948d7a707a0abda8ce0a1b39ba87390f11ffcd5e",
+  "exit_code": 4,
+  "wall_seconds": 2.77,
+  "subject": "Keep track of `<stderr>` and `<stdout>` mix in `CliRunner` results (#2523)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_testing.py",
+    "kind": "fewer-checks",
+    "message": "the test test_stderr in tests/test_testing.py now checks less: 10 checks before, 6 now.",
+    "severity": "suspicious",
+    "test": "test_stderr"
+   }
+  ],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 602,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.751,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 4,
+   "wall_seconds": 1.49,
+   "verdict": "SUSPICIOUS",
+   "verdict_reasons": [
+    "1 sign(s) that the tests were weakened"
+   ],
+   "findings": [
+    {
+     "file": "tests/test_testing.py",
+     "kind": "fewer-checks",
+     "message": "the test test_stderr in tests/test_testing.py now checks less: 10 checks before, 6 now.",
+     "severity": "suspicious",
+     "test": "test_stderr"
+    }
+   ],
+   "changed_files": 4,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 602,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.758,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 625,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.08,
+    "said": "FRESH: the receipt (SUSPICIOUS, made 2026-11-12T13:30:50+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 625 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 147,
+  "commit": "948d7a707a0abda8ce0a1b39ba87390f11ffcd5e",
+  "parent": "a6e0d2936891030f5092c9869c7391104f6721d9",
+  "exit_code": 0,
+  "wall_seconds": 1.97,
+  "subject": "Split generation of help extra items and rendering (#2517)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 602 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_options.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_dynamic_default_help_special_method (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_dynamic_default_help_special_method"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_file_type_help_default (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_file_type_help_default"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_intrange_default_help_text (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_intrange_default_help_text"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_show_default_boolean_flag_name (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_show_default_boolean_flag_name"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_show_default_string (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_show_default_string"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_show_true_default_boolean_flag_value (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_show_true_default_boolean_flag_value"
+   }
+  ],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 602,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.749,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.43,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 602 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [
+    {
+     "file": "tests/test_options.py",
+     "kind": "expected-values-changed",
+     "message": "the expected values in test_dynamic_default_help_special_method (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+     "severity": "notice",
+     "test": "test_dynamic_default_help_special_method"
+    },
+    {
+     "file": "tests/test_options.py",
+     "kind": "expected-values-changed",
+     "message": "the expected values in test_file_type_help_default (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+     "severity": "notice",
+     "test": "test_file_type_help_default"
+    },
+    {
+     "file": "tests/test_options.py",
+     "kind": "expected-values-changed",
+     "message": "the expected values in test_intrange_default_help_text (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+     "severity": "notice",
+     "test": "test_intrange_default_help_text"
+    },
+    {
+     "file": "tests/test_options.py",
+     "kind": "expected-values-changed",
+     "message": "the expected values in test_show_default_boolean_flag_name (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+     "severity": "notice",
+     "test": "test_show_default_boolean_flag_name"
+    },
+    {
+     "file": "tests/test_options.py",
+     "kind": "expected-values-changed",
+     "message": "the expected values in test_show_default_string (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+     "severity": "notice",
+     "test": "test_show_default_string"
+    },
+    {
+     "file": "tests/test_options.py",
+     "kind": "expected-values-changed",
+     "message": "the expected values in test_show_true_default_boolean_flag_value (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+     "severity": "notice",
+     "test": "test_show_true_default_boolean_flag_value"
+    }
+   ],
+   "changed_files": 4,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 602,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.773,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 625,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.06,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:30:55+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 625 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 148,
+  "commit": "a6e0d2936891030f5092c9869c7391104f6721d9",
+  "parent": "1a4d8c1bb1e8f8e214ede7223bd2c05dc2ce006a",
+  "exit_code": 0,
+  "wall_seconds": 2.03,
+  "subject": "Hide default value when show_default is False (#2509)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 602 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 602,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.734,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.43,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 602 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 3,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 602,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.773,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 625,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.08,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:31:00+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 625 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 149,
+  "commit": "1a4d8c1bb1e8f8e214ede7223bd2c05dc2ce006a",
+  "parent": "02046e7a19480f85fff7e4577486518abe47e401",
+  "exit_code": 0,
+  "wall_seconds": 2.04,
+  "subject": "Fix metavar for Choice options when show_choices=False (#2365)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 601 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 601,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.752,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 0,
+   "wall_seconds": 1.43,
+   "verdict": "VERIFIED",
+   "verdict_reasons": [
+    "all 601 test(s) affected by the change passed, on exactly this code"
+   ],
+   "findings": [],
+   "changed_files": 3,
+   "run_all": false,
+   "run_all_reasons": [],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 601,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.775,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 624,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.09,
+    "said": "FRESH: the receipt (VERIFIED, made 2026-11-12T13:31:05+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 624 test outcomes are the same.\n"
+   }
+  }
+ },
+ {
+  "project": "click",
+  "position": 150,
+  "commit": "99015e1456b6952054fda8312b40ea646737168d",
+  "parent": "e16088a8569597c55f108ea89af6245898249ec2",
+  "exit_code": 3,
+  "wall_seconds": 10.45,
+  "subject": "Merge branch '8.1.x'",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: docs/conf.py"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_types.py",
+    "kind": "skip-in-new-test",
+    "message": "the new test test_invalid_path_with_esc_sequence in tests/test_types.py is marked to be skipped.",
+    "severity": "notice",
+    "test": "test_invalid_path_with_esc_sequence"
+   }
+  ],
+  "changed_files": 24,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/dependabot.yml is not Python code, so we can't trace what uses it",
+   ".github/workflows/publish.yaml is not Python code, so we can't trace what uses it",
+   ".pre-commit-config.yaml is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves",
+   "tox.ini is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [
+   "docs/conf.py"
+  ],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 596,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 0.736,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": null,
+  "where": "working folder",
+  "environment": {
+   "platform": "macOS-27.2.1-arm64-arm-64bit",
+   "pytest": "8.3.5",
+   "python": "3.12.11"
+  },
+  "clean": {
+   "exit_code": 3,
+   "wall_seconds": 1.49,
+   "verdict": "UNVERIFIED",
+   "verdict_reasons": [
+    "changed code that no test checks: docs/conf.py"
+   ],
+   "findings": [
+    {
+     "file": "tests/test_types.py",
+     "kind": "skip-in-new-test",
+     "message": "the new test test_invalid_path_with_esc_sequence in tests/test_types.py is marked to be skipped.",
+     "severity": "notice",
+     "test": "test_invalid_path_with_esc_sequence"
+    }
+   ],
+   "changed_files": 24,
+   "run_all": true,
+   "run_all_reasons": [
+    ".github/dependabot.yml is not Python code, so we can't trace what uses it",
+    ".github/workflows/publish.yaml is not Python code, so we can't trace what uses it",
+    ".pre-commit-config.yaml is not Python code, so we can't trace what uses it",
+    "pyproject.toml is a project settings file; it can change how every test behaves",
+    "tox.ini is a project settings file; it can change how every test behaves"
+   ],
+   "selected_test_files": 20,
+   "all_test_files": 20,
+   "untested_changes": [
+    "docs/conf.py"
+   ],
+   "dynamic_imports": [
+    "examples/complex/complex/cli.py"
+   ],
+   "unreadable": {},
+   "outcome": "passed",
+   "counts": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 596,
+    "skipped": 22,
+    "xfailed": 1
+   },
+   "test_seconds": 0.749,
+   "failed_tests": [],
+   "files_changed_during_run": [],
+   "mutation": null,
+   "where": "clean copy",
+   "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "pytest": "8.3.5",
+    "python": "3.12.11"
+   },
+   "tests_compared": 619,
+   "tests_differ": [],
+   "tests_differ_count": 0,
+   "rerun": {
+    "exit_code": 0,
+    "wall_seconds": 1.04,
+    "said": "FRESH: the receipt (UNVERIFIED, made 2026-11-12T13:31:19+00:00) matches the code exactly as it is now, and its seal is intact.\nRe-ran 20 test file(s) in a clean copy (recorded run: clean copy): recorded passed, now passed.\nREPRODUCED: all 619 test outcomes are the same.\n"
+   }
+  }
+ }
+]
