@@ -1,0 +1,1769 @@
+[
+ {
+  "project": "boltons",
+  "position": 91,
+  "commit": "827f193775a793716bc2615e939340c398ecd042",
+  "parent": "6a363e6c4837a2cca606eba5903ea6f4ae83d745",
+  "exit_code": 0,
+  "wall_seconds": 0.46,
+  "subject": "fix timeutils import warning on Python 3.12+ by removing EPOCH_NAIVE",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 4 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 4,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.159,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.24
+ },
+ {
+  "project": "boltons",
+  "position": 92,
+  "commit": "6a363e6c4837a2cca606eba5903ea6f4ae83d745",
+  "parent": "859cfefaf9c44b2e97d92c74e6d7d8989f82e764",
+  "exit_code": 0,
+  "wall_seconds": 2.25,
+  "subject": "skip exact tb formatting comparison in python3.13+ and document the divergence",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 5 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 5,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.165,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.23
+ },
+ {
+  "project": "boltons",
+  "position": 93,
+  "commit": "859cfefaf9c44b2e97d92c74e6d7d8989f82e764",
+  "parent": "2d904513f5a9b00bb0023ea6ca0bb234325cc69b",
+  "exit_code": 0,
+  "wall_seconds": 0.81,
+  "subject": "slightly more forward-looking fix for partial methods",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 42 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 42,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.517,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.24
+ },
+ {
+  "project": "boltons",
+  "position": 94,
+  "commit": "2d904513f5a9b00bb0023ea6ca0bb234325cc69b",
+  "parent": "1dc1423b5e43203a0dd0fd3cb453ac82525b42e2",
+  "exit_code": 0,
+  "wall_seconds": 0.82,
+  "subject": "fix partial method test error for py3.13+",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 42 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 42,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.515,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.23
+ },
+ {
+  "project": "boltons",
+  "position": 95,
+  "commit": "57fbaa9b673ed85b32458b31baeeae230520e4a0",
+  "parent": "992a58c1036fcf4d52cbf3313b6217b7c07b11d9",
+  "exit_code": 3,
+  "wall_seconds": 0.25,
+  "subject": "bump version for 24.0.1dev",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: setup.py"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 28,
+  "untested_changes": [
+   "setup.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null
+ },
+ {
+  "project": "boltons",
+  "position": 96,
+  "commit": "e02543685f3f5a937b521557b6599505676bf38c",
+  "parent": "90afd0a3a89a27dd1759438e5dc77ab6238c69bd",
+  "exit_code": 3,
+  "wall_seconds": 0.27,
+  "subject": "bump docs version for 24.0",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: docs/conf.py"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 28,
+  "untested_changes": [
+   "docs/conf.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null
+ },
+ {
+  "project": "boltons",
+  "position": 97,
+  "commit": "90afd0a3a89a27dd1759438e5dc77ab6238c69bd",
+  "parent": "bad37fdf3e46169588beb21d2488f9a227e7264e",
+  "exit_code": 3,
+  "wall_seconds": 0.26,
+  "subject": "bump version for 24.0.0 release",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: setup.py"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 28,
+  "untested_changes": [
+   "setup.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null
+ },
+ {
+  "project": "boltons",
+  "position": 98,
+  "commit": "f850eb6b4c47e546b56cca14603dadd9614b2f3e",
+  "parent": "263652b5b6ad7f6cd30d4e7e573b22dda59087bd",
+  "exit_code": 3,
+  "wall_seconds": 0.27,
+  "subject": "fix rtd theme",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: docs/conf.py"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 28,
+  "untested_changes": [
+   "docs/conf.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null
+ },
+ {
+  "project": "boltons",
+  "position": 99,
+  "commit": "0e4dc6a7edb544612557950ee1d558df7298f8ad",
+  "parent": "59dc6be731ae9760f32ba998e3e6a2f7e6808a93",
+  "exit_code": 0,
+  "wall_seconds": 12.46,
+  "subject": "a few more py3 improvements",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 86 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_fileutils.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_fileperms (tests/test_fileutils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_fileperms"
+   },
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 7 small deliberate mistakes in the changed lines of the old code; the old tests caught 5, the new tests caught 5.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 5,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 7,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 86,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.596,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 10.768,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 5,
+   "killed_by_old": 5,
+   "lost": [],
+   "mutants": 7,
+   "new_tests": [
+    "tests/test_fileutils.py",
+    "tests/test_funcutils.py",
+    "tests/test_funcutils_fb.py",
+    "tests/test_funcutils_fb_py3.py",
+    "tests/test_iterutils.py",
+    "tests/test_statsutils.py",
+    "tests/test_statsutils_histogram.py"
+   ],
+   "old_tests": [
+    "tests/test_fileutils.py",
+    "tests/test_funcutils.py",
+    "tests/test_funcutils_fb.py",
+    "tests/test_funcutils_fb_py3.py",
+    "tests/test_iterutils.py",
+    "tests/test_statsutils.py",
+    "tests/test_statsutils_histogram.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.23
+ },
+ {
+  "project": "boltons",
+  "position": 100,
+  "commit": "59dc6be731ae9760f32ba998e3e6a2f7e6808a93",
+  "parent": "65e0354c94ad524d4576c535eb97ed4d7d7e1560",
+  "exit_code": 0,
+  "wall_seconds": 1.49,
+  "subject": "final batch of py3 typing errors, etc., in the core package",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 372 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 7,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 18,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 372,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.139,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.23
+ },
+ {
+  "project": "boltons",
+  "position": 101,
+  "commit": "65e0354c94ad524d4576c535eb97ed4d7d7e1560",
+  "parent": "23635529c6d3abbbf3818248ea1bd590f06a0f1b",
+  "exit_code": 0,
+  "wall_seconds": 0.54,
+  "subject": "fix tiny cornercase iterutils hostname issue",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 40 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 40,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.219,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.24
+ },
+ {
+  "project": "boltons",
+  "position": 102,
+  "commit": "23635529c6d3abbbf3818248ea1bd590f06a0f1b",
+  "parent": "e745b4827958b6563af6328a37b5b6bb57009104",
+  "exit_code": 0,
+  "wall_seconds": 0.99,
+  "subject": "clean up all the inaccurate basestring translations",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 107 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 6,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 8,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 107,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.66,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.23
+ },
+ {
+  "project": "boltons",
+  "position": 103,
+  "commit": "e745b4827958b6563af6328a37b5b6bb57009104",
+  "parent": "459817bff6186d2eaaca62e8cf7f4b6442dd5310",
+  "exit_code": 0,
+  "wall_seconds": 0.5,
+  "subject": "couple cacheutils py3 fixups",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 18 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 18,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.179,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.25
+ },
+ {
+  "project": "boltons",
+  "position": 104,
+  "commit": "459817bff6186d2eaaca62e8cf7f4b6442dd5310",
+  "parent": "54224994ab63b490e149a108bcce9c5e27c27a33",
+  "exit_code": 0,
+  "wall_seconds": 0.45,
+  "subject": "fix up fileutils py3 issues",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 1 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.156,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.24
+ },
+ {
+  "project": "boltons",
+  "position": 105,
+  "commit": "54224994ab63b490e149a108bcce9c5e27c27a33",
+  "parent": "f96caf2c4e0a7c7db82dacf118dcb0030a2a9bb7",
+  "exit_code": 0,
+  "wall_seconds": 0.47,
+  "subject": "ecoutils py37+ prep",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 2 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 2,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.185,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.24
+ },
+ {
+  "project": "boltons",
+  "position": 106,
+  "commit": "f96caf2c4e0a7c7db82dacf118dcb0030a2a9bb7",
+  "parent": "b47faae2d93f334df0d7d6888f47c209a13085b6",
+  "exit_code": 0,
+  "wall_seconds": 2.32,
+  "subject": "combine py3 funcutils tests",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 22 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_funcutils_fb_py37.py",
+    "kind": "test-file-moved",
+    "message": "the test file tests/test_funcutils_fb_py37.py was deleted, but all 2 of its tests reappear unchanged in tests pytest runs (tests/test_funcutils_fb_py3.py::test_wraps_async, tests/test_funcutils_fb_py3.py::test_wraps_hide_wrapped): moved, renamed or reorganised, nothing lost.",
+    "severity": "notice",
+    "test": null
+   },
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 28,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 22,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.497,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.23
+ },
+ {
+  "project": "boltons",
+  "position": 107,
+  "commit": "b47faae2d93f334df0d7d6888f47c209a13085b6",
+  "parent": "0191550807779a1d8a477adc4a36d7e410613b3e",
+  "exit_code": 0,
+  "wall_seconds": 0.44,
+  "subject": "Apply suggestions from code review",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 5 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 5,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.156,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 0.89
+ },
+ {
+  "project": "boltons",
+  "position": 108,
+  "commit": "7bd0d48663d5b61a0d4e5568604dbb3de92fcbae",
+  "parent": "9214bd77cee700b5947fd8206e012f145d6885dd",
+  "exit_code": 3,
+  "wall_seconds": 95.59,
+  "subject": "Upgrade Python syntax with pyupgrade --py37-plus",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: misc/bench_omd.py, misc/linkify_changelog.py"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 30 small deliberate mistakes in the changed lines of the old code; the old tests caught 13, the new tests caught 13.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 22,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 24,
+  "all_test_files": 29,
+  "untested_changes": [
+   "misc/bench_omd.py",
+   "misc/linkify_changelog.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 406,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.206,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 92.645,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 13,
+   "killed_by_old": 13,
+   "lost": [],
+   "mutants": 30,
+   "new_tests": [
+    "tests/test_cacheutils.py",
+    "tests/test_debugutils_trace.py",
+    "tests/test_dictutils.py",
+    "tests/test_ecoutils.py",
+    "tests/test_fileutils.py",
+    "tests/test_formatutils.py",
+    "tests/test_funcutils.py",
+    "tests/test_funcutils_fb.py",
+    "tests/test_funcutils_fb_py3.py",
+    "tests/test_funcutils_fb_py37.py",
+    "tests/test_ioutils.py",
+    "tests/test_iterutils.py",
+    "tests/test_listutils.py",
+    "tests/test_mathutils.py",
+    "tests/test_queueutils.py",
+    "tests/test_setutils.py",
+    "tests/test_socketutils.py",
+    "tests/test_strutils.py",
+    "tests/test_tableutils.py",
+    "tests/test_tbutils.py",
+    "tests/test_tbutils_parsed_exc.py",
+    "tests/test_timeutils.py",
+    "tests/test_typeutils.py",
+    "tests/test_urlutils.py"
+   ],
+   "old_tests": [
+    "tests/test_cacheutils.py",
+    "tests/test_debugutils_trace.py",
+    "tests/test_dictutils.py",
+    "tests/test_ecoutils.py",
+    "tests/test_fileutils.py",
+    "tests/test_formatutils.py",
+    "tests/test_funcutils.py",
+    "tests/test_funcutils_fb.py",
+    "tests/test_funcutils_fb_py3.py",
+    "tests/test_funcutils_fb_py37.py",
+    "tests/test_ioutils.py",
+    "tests/test_iterutils.py",
+    "tests/test_listutils.py",
+    "tests/test_mathutils.py",
+    "tests/test_queueutils.py",
+    "tests/test_setutils.py",
+    "tests/test_socketutils.py",
+    "tests/test_strutils.py",
+    "tests/test_tableutils.py",
+    "tests/test_tbutils.py",
+    "tests/test_tbutils_parsed_exc.py",
+    "tests/test_timeutils.py",
+    "tests/test_typeutils.py",
+    "tests/test_urlutils.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 109,
+  "commit": "9214bd77cee700b5947fd8206e012f145d6885dd",
+  "parent": "675afd8a9213a67f2dc114aeee5573d8a2ca1221",
+  "exit_code": 0,
+  "wall_seconds": 0.86,
+  "subject": "Drop support for EOL Python <= 3.6",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 42 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 4,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 42,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.527,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 0.88
+ },
+ {
+  "project": "boltons",
+  "position": 110,
+  "commit": "675afd8a9213a67f2dc114aeee5573d8a2ca1221",
+  "parent": "a8fad5e5dea6cb39c522100392493d66611f1427",
+  "exit_code": 3,
+  "wall_seconds": 129.27,
+  "subject": "Upgrade Python syntax with pyupgrade --py3-plus",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: boltons/deprutils.py, boltons/easterutils.py, boltons/excutils.py, boltons/mboxutils.py, boltons/pathutils.py, docs/conf.py, misc/bench_omd.py, misc/linkify_changelog.py, misc/table_html_app.py"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 30 small deliberate mistakes in the changed lines of the old code; the old tests caught 13, the new tests caught 13.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 62,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 29,
+  "all_test_files": 29,
+  "untested_changes": [
+   "boltons/deprutils.py",
+   "boltons/easterutils.py",
+   "boltons/excutils.py",
+   "boltons/mboxutils.py",
+   "boltons/pathutils.py",
+   "docs/conf.py",
+   "misc/bench_omd.py",
+   "misc/linkify_changelog.py",
+   "misc/table_html_app.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 416,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.271,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 104.875,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 13,
+   "killed_by_old": 13,
+   "lost": [],
+   "mutants": 30,
+   "new_tests": [
+    "tests/test_cacheutils.py",
+    "tests/test_debugutils_trace.py",
+    "tests/test_dictutils.py",
+    "tests/test_ecoutils.py",
+    "tests/test_fileutils.py",
+    "tests/test_formatutils.py",
+    "tests/test_funcutils.py",
+    "tests/test_funcutils_fb.py",
+    "tests/test_funcutils_fb_py3.py",
+    "tests/test_funcutils_fb_py37.py",
+    "tests/test_gcutils.py",
+    "tests/test_ioutils.py",
+    "tests/test_iterutils.py",
+    "tests/test_jsonutils.py",
+    "tests/test_listutils.py",
+    "tests/test_mathutils.py",
+    "tests/test_namedutils.py",
+    "tests/test_queueutils.py",
+    "tests/test_setutils.py",
+    "tests/test_socketutils.py",
+    "tests/test_statsutils.py",
+    "tests/test_statsutils_histogram.py",
+    "tests/test_strutils.py",
+    "tests/test_tableutils.py",
+    "tests/test_tbutils.py",
+    "tests/test_tbutils_parsed_exc.py",
+    "tests/test_timeutils.py",
+    "tests/test_typeutils.py",
+    "tests/test_urlutils.py"
+   ],
+   "old_tests": [
+    "tests/test_cacheutils.py",
+    "tests/test_debugutils_trace.py",
+    "tests/test_dictutils.py",
+    "tests/test_ecoutils.py",
+    "tests/test_fileutils.py",
+    "tests/test_formatutils.py",
+    "tests/test_funcutils.py",
+    "tests/test_funcutils_fb.py",
+    "tests/test_funcutils_fb_py3.py",
+    "tests/test_funcutils_fb_py37.py",
+    "tests/test_gcutils.py",
+    "tests/test_ioutils.py",
+    "tests/test_iterutils.py",
+    "tests/test_jsonutils.py",
+    "tests/test_listutils.py",
+    "tests/test_mathutils.py",
+    "tests/test_namedutils.py",
+    "tests/test_queueutils.py",
+    "tests/test_setutils.py",
+    "tests/test_socketutils.py",
+    "tests/test_statsutils.py",
+    "tests/test_statsutils_histogram.py",
+    "tests/test_strutils.py",
+    "tests/test_tableutils.py",
+    "tests/test_tbutils.py",
+    "tests/test_tbutils_parsed_exc.py",
+    "tests/test_timeutils.py",
+    "tests/test_typeutils.py",
+    "tests/test_urlutils.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 111,
+  "commit": "a8fad5e5dea6cb39c522100392493d66611f1427",
+  "parent": "93c955a43127082392b012f689779324346c441f",
+  "exit_code": 4,
+  "wall_seconds": 104.46,
+  "subject": "Drop support for EOL Python 2.6 and 2.7",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "2 sign(s) that the tests were weakened",
+   "changed code that no test checks: boltons/deprutils.py, misc/bench_omd.py, misc/table_html_app.py, setup.py"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_timeutils.py",
+    "kind": "test-removed",
+    "message": "the test test_float_total_seconds was removed from tests/test_timeutils.py.",
+    "severity": "suspicious",
+    "test": "test_float_total_seconds"
+   },
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 30 small deliberate mistakes in the changed lines of the old code; the old tests caught 9, the new tests caught 8.",
+    "severity": "notice",
+    "test": null
+   },
+   {
+    "file": "boltons/timeutils.py",
+    "kind": "checks-lost",
+    "message": "1 mistake(s) in the changed code that the old tests caught are no longer caught by the new tests, so the change removed checks: boltons/timeutils.py line 76: `*` \u2192 `/`",
+    "severity": "suspicious",
+    "test": null
+   }
+  ],
+  "changed_files": 35,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+   "setup.cfg is a project settings file; it can change how every test behaves",
+   "tox.ini is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 29,
+  "all_test_files": 29,
+  "untested_changes": [
+   "boltons/deprutils.py",
+   "misc/bench_omd.py",
+   "misc/table_html_app.py",
+   "setup.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 416,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.269,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 93.111,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 8,
+   "killed_by_old": 9,
+   "lost": [
+    {
+     "change": "`*` \u2192 `/`",
+     "file": "boltons/timeutils.py",
+     "line": 76
+    }
+   ],
+   "mutants": 30,
+   "new_tests": [
+    "tests/test_cacheutils.py",
+    "tests/test_debugutils_trace.py",
+    "tests/test_dictutils.py",
+    "tests/test_ecoutils.py",
+    "tests/test_fileutils.py",
+    "tests/test_formatutils.py",
+    "tests/test_funcutils.py",
+    "tests/test_funcutils_fb.py",
+    "tests/test_funcutils_fb_py3.py",
+    "tests/test_funcutils_fb_py37.py",
+    "tests/test_gcutils.py",
+    "tests/test_ioutils.py",
+    "tests/test_iterutils.py",
+    "tests/test_jsonutils.py",
+    "tests/test_listutils.py",
+    "tests/test_mathutils.py",
+    "tests/test_namedutils.py",
+    "tests/test_queueutils.py",
+    "tests/test_setutils.py",
+    "tests/test_socketutils.py",
+    "tests/test_statsutils.py",
+    "tests/test_statsutils_histogram.py",
+    "tests/test_strutils.py",
+    "tests/test_tableutils.py",
+    "tests/test_tbutils.py",
+    "tests/test_tbutils_parsed_exc.py",
+    "tests/test_timeutils.py",
+    "tests/test_typeutils.py",
+    "tests/test_urlutils.py"
+   ],
+   "old_tests": [
+    "tests/test_cacheutils.py",
+    "tests/test_debugutils_trace.py",
+    "tests/test_dictutils.py",
+    "tests/test_ecoutils.py",
+    "tests/test_fileutils.py",
+    "tests/test_formatutils.py",
+    "tests/test_funcutils.py",
+    "tests/test_funcutils_fb.py",
+    "tests/test_funcutils_fb_py3.py",
+    "tests/test_funcutils_fb_py37.py",
+    "tests/test_gcutils.py",
+    "tests/test_ioutils.py",
+    "tests/test_iterutils.py",
+    "tests/test_jsonutils.py",
+    "tests/test_listutils.py",
+    "tests/test_mathutils.py",
+    "tests/test_namedutils.py",
+    "tests/test_queueutils.py",
+    "tests/test_setutils.py",
+    "tests/test_socketutils.py",
+    "tests/test_statsutils.py",
+    "tests/test_statsutils_histogram.py",
+    "tests/test_strutils.py",
+    "tests/test_tableutils.py",
+    "tests/test_tbutils.py",
+    "tests/test_tbutils_parsed_exc.py",
+    "tests/test_timeutils.py",
+    "tests/test_typeutils.py",
+    "tests/test_urlutils.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 112,
+  "commit": "4b1d728f31a8378b193be9c966c853be0a57527d",
+  "parent": "8191b0ff3c56f1389a860f0c5124611c53c7f595",
+  "exit_code": 0,
+  "wall_seconds": 0.56,
+  "subject": "document string splitting in iterutils.get_path, fixes #363",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 40 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 40,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.22,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 0.88
+ },
+ {
+  "project": "boltons",
+  "position": 113,
+  "commit": "8191b0ff3c56f1389a860f0c5124611c53c7f595",
+  "parent": "47c8046492d4db49f163bb977d20d5942e4ddb25",
+  "exit_code": 3,
+  "wall_seconds": 3.24,
+  "subject": "Add support for Python 3.12 (#361)",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: setup.py"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 5,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+   "tox.ini is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 29,
+  "all_test_files": 29,
+  "untested_changes": [
+   "setup.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 417,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 1.297,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  }
+ },
+ {
+  "project": "boltons",
+  "position": 114,
+  "commit": "469bb2679433b1229ba3978bdbc0e5bad5aac3ee",
+  "parent": "6cac49ce4eba506a3582e8089bcc347c6b2fa70f",
+  "exit_code": 0,
+  "wall_seconds": 0.48,
+  "subject": "Fix boltons.strutils.__all__ missing names (#356)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 14 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 14,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.164,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 0.89
+ },
+ {
+  "project": "boltons",
+  "position": 115,
+  "commit": "6cac49ce4eba506a3582e8089bcc347c6b2fa70f",
+  "parent": "985df86bbf511b244ce6acf7a9c3b8a0d09d0fb3",
+  "exit_code": 0,
+  "wall_seconds": 2.26,
+  "subject": "fix OneToOne.update behavior with empty iterables",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 191 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 3,
+  "all_test_files": 29,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 191,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.298,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 0.91
+ },
+ {
+  "project": "boltons",
+  "position": 116,
+  "commit": "985df86bbf511b244ce6acf7a9c3b8a0d09d0fb3",
+  "parent": "9005642440e1479dd26c2c5d64c27f596445aaac",
+  "exit_code": 3,
+  "wall_seconds": 0.27,
+  "subject": "bump version for 23.1.2dev",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: setup.py"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 29,
+  "untested_changes": [
+   "setup.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null
+ },
+ {
+  "project": "boltons",
+  "position": 117,
+  "commit": "9005642440e1479dd26c2c5d64c27f596445aaac",
+  "parent": "d82ecc45035ac4d2e71501e79e8e99eba09ffbb9",
+  "exit_code": 3,
+  "wall_seconds": 0.25,
+  "subject": "changelog for 23.1.1",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: docs/conf.py"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 29,
+  "untested_changes": [
+   "docs/conf.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null
+ },
+ {
+  "project": "boltons",
+  "position": 118,
+  "commit": "d82ecc45035ac4d2e71501e79e8e99eba09ffbb9",
+  "parent": "dfb4c8dea71ec3777819bc10183908da876f0cc9",
+  "exit_code": 3,
+  "wall_seconds": 0.27,
+  "subject": "bump version for 23.1.1 release",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: setup.py"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 29,
+  "untested_changes": [
+   "setup.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null
+ },
+ {
+  "project": "boltons",
+  "position": 119,
+  "commit": "b8103e630783d9654033b138e13843a9e363264c",
+  "parent": "2b6f7aa3e361aaf034d9209f0934d015a19a9688",
+  "exit_code": 3,
+  "wall_seconds": 0.27,
+  "subject": "bump version for 23.1.1dev",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: setup.py"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 29,
+  "untested_changes": [
+   "setup.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null
+ },
+ {
+  "project": "boltons",
+  "position": 120,
+  "commit": "77bd8e99b2aef1fbc3391afebbed58346ea2a76c",
+  "parent": "fca74549b19303864c00f1029fee4d3d14dc34ed",
+  "exit_code": 3,
+  "wall_seconds": 0.25,
+  "subject": "bump docs version",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: docs/conf.py"
+  ],
+  "findings": [],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 29,
+  "untested_changes": [
+   "docs/conf.py"
+  ],
+  "dynamic_imports": [
+   "docs/conf.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null
+ }
+]

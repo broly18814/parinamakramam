@@ -101,3 +101,55 @@ The same 120 commits, the same frozen A2 and the same rubric and predictions, in
 - **`python-dateutil`**, which tomli's 2021 tests need.
 
 The reason is round A's: today's tools reject much of this older code, which left A2 nothing to measure. Round B's numbers are reported **beside** round A's, never instead of them. If round B also leaves A2 acting on fewer than 30 commits, the study is recorded as **inconclusive**, and A2 stays opt-in.
+
+## Round B results: Python 3.12, pytest 8.3 and python-dateutil (12 November 2026)
+
+Raw records: [`product/verify/realworld/results/a2-py312/`](../../product/verify/realworld/results/a2-py312/). A2 is unchanged from round A.
+
+### In plain words
+
+With tools from the commits' own time, **every commit's tests ran properly**: 0 FAILED, against 68 in round A.
+- **Where A2 acted:** 25 commits.
+- **Alarms:** 2 of those 25 (8%).
+- **Both alarms are true:** one is a real lost check, the other a deliberate removal.
+- **Wrong claims:** none. **Crashes:** none.
+
+**By the rule written before this round, the study is still inconclusive.** A2 acted on 25 commits, fewer than the 30 required. So **A2 stays opt-in** (`--mutate`) for now. The direction is encouraging, but 25 commits are too few to promise anything.
+
+### Numbers
+
+| | Round A (3.14, today's pytest) | Round B (3.12, pytest 8.3) |
+|---|---|---|
+| Verdicts | VERIFIED 31 · FAILED 68 · UNVERIFIED 14 · SUSPICIOUS 7 | VERIFIED 96 · FAILED 0 · UNVERIFIED 19 · SUSPICIOUS 5 |
+| A2 acted | 6 | **25** (click 10, more-itertools 6, tomli 5, boltons 4) |
+| A2 didn't act: the change didn't touch tests | 19 | 54 |
+| A2 didn't act: no changed lines of existing code | 7 | 25 |
+| A2 didn't act: the tests didn't pass, or the new tests can't run on the old code | 88 | 14 + 2 |
+| Commits with `checks-lost` | 1 | **2** |
+| Tool errors | 0 | 0 |
+| A2's time where it acted | median 38 s | median 23 s; longest 303 s (just over the 300 s budget, which is checked between mutants) |
+| pkv false all-clears (full suite fails after VERIFIED) | 3 (environment) | **0** |
+
+### Every alarm, classified
+
+| Commit | What A2 said | Label | Why |
+|---|---|---|---|
+| more-itertools #92 `8fa3b81c8d`, "Set minimum version to 3.10" | 8 mistakes in old-Python compatibility code (a version check, a warning, a fallback) are caught by the old tests, not the new | **L-intended** | That code was deleted together with its tests: the behaviour itself was removed on purpose |
+| boltons #111 `a8fad5e5de`, "Drop support for EOL Python 2.6 and 2.7" | `td.days * 86400` → `/` in `total_seconds` is caught by the old tests, not the new | **L-weakened** (a true alarm) | `total_seconds` is **kept** ("For compatibility"), now as a one-line call to the standard library, but `test_float_total_seconds`, its only test, was deleted. A public function is now untested. That's honest maintenance, and still exactly what a reviewer should be told |
+
+### Against the predictions (round B)
+
+| | Result |
+|---|---|
+| **RA-1** (L-false ≤ 2 and ≤ 10%) | ✅ 0 of 2 |
+| **RA-2** (alarms on ≤ 15% of commits where A2 acts) | ✅ 2 of 25 = 8% |
+| **RA-3** (no tool errors from `--mutate`) | ✅ 0 |
+| **RA-4** (median extra time ≤ 60 s) | ✅ 23 s |
+| **Amendment rule** (A2 must act on ≥ 30 commits) | ❌ 25, so the study is **inconclusive** |
+
+### What this decides
+
+- **A2 stays opt-in** (`pkv check --mutate`), by the amendment's rule.
+- **Being on by default needs more evidence:** a further real-commit set, run so that A2 acts on at least 30 commits, pre-registered before it runs.
+- **No artefacts were found** (RA-1), so nothing in A2 needs fixing before TAMPER-BENCH's held-out run. A2 stays frozen as it is.
+- **The idea from round A** (skip lines the change deleted outright) would have removed the more-itertools alarm but **not** the boltons one, which is the true alarm. It remains a candidate, not a change.

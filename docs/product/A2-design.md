@@ -122,5 +122,5 @@ Both are standard in mutation testing, and neither is aimed at a particular case
 
 **What this does and doesn't show.** Round 2 was improved *after* looking at development cases, so its numbers flatter it. That's what the development set is for, but it means round 2's score isn't evidence. **The evidence is the sealed held-out run (H-TB3)**, where A2 is frozen as it is now and meets 61 cases it has never seen.
 
-**Before deciding the default:** a false-alarm check on real commits (REAL-001 style), because real feature work edits expected values far more often than TAMPER-BENCH's honest cases do.
+**Before deciding the default:** a false-alarm check on real commits (REAL-001 style), because real feature work edits expected values far more often than TAMPER-BENCH's honest cases do. **Done as [REAL-003](REAL-003-design.md):** 2 alarms in 25 commits where A2 acted, both correct, none wrong. That's inconclusive by its rule (fewer than 30), so A2 stays opt-in.
 

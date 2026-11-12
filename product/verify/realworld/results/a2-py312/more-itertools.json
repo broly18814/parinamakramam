@@ -1,0 +1,1842 @@
+[
+ {
+  "project": "more-itertools",
+  "position": 91,
+  "commit": "b26c5b3a8d44a6bc026b49190cc423db72f91b63",
+  "parent": "8fa3b81c8dd90c3b3f6648add2228aaaebb42884",
+  "exit_code": 0,
+  "wall_seconds": 5.81,
+  "subject": "Merge pull request #1077 from rhettinger/dotproduct_indirection",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 689 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 689,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 5.505,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.47
+ },
+ {
+  "project": "more-itertools",
+  "position": 92,
+  "commit": "8fa3b81c8dd90c3b3f6648add2228aaaebb42884",
+  "parent": "8c1a6ef241b51ff055e89219f050ccf4f15f37f6",
+  "exit_code": 4,
+  "wall_seconds": 312.97,
+  "subject": "Merge pull request #1076 from more-itertools/rhettinger-update_3_10",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 26 small deliberate mistakes in the changed lines of the old code; the old tests caught 23, the new tests caught 15.",
+    "severity": "notice",
+    "test": null
+   },
+   {
+    "file": "more_itertools/more.py",
+    "kind": "checks-lost",
+    "message": "8 mistake(s) in the changed code that the old tests caught are no longer caught by the new tests, so the change removed checks: more_itertools/more.py line 1874: condition negated; more_itertools/more.py line 1874: `50987174` \u2192 `101974348`; more_itertools/more.py line 1875: `\u2026.warn(\u2026)` call removed; more_itertools/recipes.py line 349: `return \u2026` \u2192 `return None`; more_itertools/recipes.py line 368: `\u2026.format(\u2026)` call removed (and 3 more)",
+    "severity": "suspicious",
+    "test": null
+   }
+  ],
+  "changed_files": 11,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/python-app.yml is not Python code, so we can't trace what uses it",
+   "more_itertools/more.pyi is not Python code, so we can't trace what uses it",
+   "more_itertools/recipes.pyi is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves",
+   "tox.ini is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 689,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 5.466,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 303.346,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 15,
+   "killed_by_old": 23,
+   "lost": [
+    {
+     "change": "condition negated",
+     "file": "more_itertools/more.py",
+     "line": 1874
+    },
+    {
+     "change": "`50987174` \u2192 `101974348`",
+     "file": "more_itertools/more.py",
+     "line": 1874
+    },
+    {
+     "change": "`\u2026.warn(\u2026)` call removed",
+     "file": "more_itertools/more.py",
+     "line": 1875
+    },
+    {
+     "change": "`return \u2026` \u2192 `return None`",
+     "file": "more_itertools/recipes.py",
+     "line": 349
+    },
+    {
+     "change": "`\u2026.format(\u2026)` call removed",
+     "file": "more_itertools/recipes.py",
+     "line": 368
+    },
+    {
+     "change": "`\u2026.__init__(\u2026)` call removed",
+     "file": "more_itertools/recipes.py",
+     "line": 372
+    },
+    {
+     "change": "`1` \u2192 `2`",
+     "file": "more_itertools/recipes.py",
+     "line": 387
+    },
+    {
+     "change": "`return \u2026` \u2192 `return None`",
+     "file": "more_itertools/recipes.py",
+     "line": 392
+    }
+   ],
+   "mutants": 26,
+   "new_tests": [
+    "tests/test_more.py",
+    "tests/test_recipes.py"
+   ],
+   "old_tests": [
+    "tests/test_more.py",
+    "tests/test_recipes.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 93,
+  "commit": "8c1a6ef241b51ff055e89219f050ccf4f15f37f6",
+  "parent": "a80f1c56f513a2758445372f263efae6f7337561",
+  "exit_code": 0,
+  "wall_seconds": 8.36,
+  "subject": "Merge pull request #1071 from more-itertools/version-10.8.0",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 695 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 6,
+  "run_all": true,
+  "run_all_reasons": [
+   "setup.cfg is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 695,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.489,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 94,
+  "commit": "a80f1c56f513a2758445372f263efae6f7337561",
+  "parent": "57015894e4f043f33b98d5565b720054e926bc14",
+  "exit_code": 0,
+  "wall_seconds": 5.81,
+  "subject": "Merge pull request #1068 from rhettinger/cleanup_tail",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 695 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 695,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.476,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.49
+ },
+ {
+  "project": "more-itertools",
+  "position": 95,
+  "commit": "57015894e4f043f33b98d5565b720054e926bc14",
+  "parent": "58e0331c4e542ea950aa0e55bfecd2eeb9e641d8",
+  "exit_code": 0,
+  "wall_seconds": 5.85,
+  "subject": "Merge pull request #1067 from rhettinger/reshape_beautification",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 695 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 695,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.514,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.48
+ },
+ {
+  "project": "more-itertools",
+  "position": 96,
+  "commit": "58e0331c4e542ea950aa0e55bfecd2eeb9e641d8",
+  "parent": "0b34b647a42ed950a35ceee43b8806e8a159f696",
+  "exit_code": 0,
+  "wall_seconds": 5.81,
+  "subject": "Merge pull request #1069 from rhettinger/derangements_doc",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 695 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 695,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.481,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.5
+ },
+ {
+  "project": "more-itertools",
+  "position": 97,
+  "commit": "0b34b647a42ed950a35ceee43b8806e8a159f696",
+  "parent": "77127219254573f77448bfba6655b20307bfaad7",
+  "exit_code": 0,
+  "wall_seconds": 5.85,
+  "subject": "Merge pull request #1066 from rhettinger/count_cyle",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 695 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 695,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.518,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.46
+ },
+ {
+  "project": "more-itertools",
+  "position": 98,
+  "commit": "77127219254573f77448bfba6655b20307bfaad7",
+  "parent": "21d3d88359437146a6d8882328df4bd73edd685c",
+  "exit_code": 0,
+  "wall_seconds": 52.06,
+  "subject": "Merge pull request #1065 from rhettinger/improve_coverage",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 695 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 3 small deliberate mistakes in the changed lines of the old code; the old tests caught 1, the new tests caught 1.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 695,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.478,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 44.639,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 1,
+   "killed_by_old": 1,
+   "lost": [],
+   "mutants": 3,
+   "new_tests": [
+    "tests/test_more.py",
+    "tests/test_recipes.py"
+   ],
+   "old_tests": [
+    "tests/test_more.py",
+    "tests/test_recipes.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.47
+ },
+ {
+  "project": "more-itertools",
+  "position": 99,
+  "commit": "21d3d88359437146a6d8882328df4bd73edd685c",
+  "parent": "5e0a7f46d69156389511d61314e3d737ab2d6b82",
+  "exit_code": 0,
+  "wall_seconds": 41.59,
+  "subject": "Issue 1003: Multidimensional reshape() (#1062)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 694 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 2 small deliberate mistakes in the changed lines of the old code; the old tests caught 2, the new tests caught 2.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 3,
+  "run_all": true,
+  "run_all_reasons": [
+   "more_itertools/recipes.pyi is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 694,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.647,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 34.68,
+   "excluded_new": [
+    "tests.test_recipes.ReshapeTests::test_multidimensional"
+   ],
+   "excluded_old": [],
+   "killed_by_new": 2,
+   "killed_by_old": 2,
+   "lost": [],
+   "mutants": 2,
+   "new_tests": [
+    "tests/test_more.py",
+    "tests/test_recipes.py"
+   ],
+   "old_tests": [
+    "tests/test_more.py",
+    "tests/test_recipes.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 100,
+  "commit": "5e0a7f46d69156389511d61314e3d737ab2d6b82",
+  "parent": "145a73ffc552ffad08b552380dba70ff73a8325f",
+  "exit_code": 0,
+  "wall_seconds": 7.49,
+  "subject": "Merge pull request #1048 from ktbarrett/interleave-randomly",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 693 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 3,
+  "run_all": true,
+  "run_all_reasons": [
+   "more_itertools/more.pyi is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 693,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.483,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 101,
+  "commit": "145a73ffc552ffad08b552380dba70ff73a8325f",
+  "parent": "030a6c62daaf91c5a40ca3e93039a51a1c0840ab",
+  "exit_code": 0,
+  "wall_seconds": 5.9,
+  "subject": "Merge pull request #1059 from pochmann3/patch-5",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 688 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 688,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.564,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.47
+ },
+ {
+  "project": "more-itertools",
+  "position": 102,
+  "commit": "be5078036ce823c66cfc464d7f04beb705877caf",
+  "parent": "b1178c1bbca0dd8f6bae8be11d68f413c99e68e0",
+  "exit_code": 0,
+  "wall_seconds": 7.74,
+  "subject": "Merge pull request #1056 from rhettinger/extract",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 688 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 5,
+  "run_all": true,
+  "run_all_reasons": [
+   "more_itertools/more.pyi is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 688,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.582,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 103,
+  "commit": "9d134e58814fa6a47e509b1339fe6fa8d06e6604",
+  "parent": "53091c9d226269423a36c687287421742b7bedd3",
+  "exit_code": 3,
+  "wall_seconds": 0.26,
+  "subject": "Merge pull request #1045 from moreati/pygments-dark",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: docs/conf.py"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 2,
+  "untested_changes": [
+   "docs/conf.py"
+  ],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null
+ },
+ {
+  "project": "more-itertools",
+  "position": 104,
+  "commit": "aea2ffbcf909e8e5538a8904bc1eccafc3e99634",
+  "parent": "306aa37b5134096822d221741eab9da08d8779ef",
+  "exit_code": 0,
+  "wall_seconds": 51.67,
+  "subject": "Merge pull request #1040 from rhettinger/windowed_median",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 682 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 3 small deliberate mistakes in the changed lines of the old code; the old tests caught 3, the new tests caught 3.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 3,
+  "run_all": true,
+  "run_all_reasons": [
+   "more_itertools/recipes.pyi is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 682,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.563,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 44.977,
+   "excluded_new": [
+    "tests.test_recipes.RunningMedianTests::test_error_cases",
+    "tests.test_recipes.RunningMedianTests::test_vs_statistics_median_windowed"
+   ],
+   "excluded_old": [],
+   "killed_by_new": 3,
+   "killed_by_old": 3,
+   "lost": [],
+   "mutants": 3,
+   "new_tests": [
+    "tests/test_more.py",
+    "tests/test_recipes.py"
+   ],
+   "old_tests": [
+    "tests/test_more.py",
+    "tests/test_recipes.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 105,
+  "commit": "306aa37b5134096822d221741eab9da08d8779ef",
+  "parent": "95d91e4e905053e2c0db17bf659ab5d5046d61fb",
+  "exit_code": 0,
+  "wall_seconds": 7.37,
+  "subject": "Merge pull request #1039 from rhettinger/running_median",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 681 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 5,
+  "run_all": true,
+  "run_all_reasons": [
+   "more_itertools/recipes.pyi is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 681,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.469,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 106,
+  "commit": "95d91e4e905053e2c0db17bf659ab5d5046d61fb",
+  "parent": "e048f12741c15e18d64203bfa2319ef8bdb5d75a",
+  "exit_code": 0,
+  "wall_seconds": 5.67,
+  "subject": "Merge pull request #1038 from rhettinger/line_spacing",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 679 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 679,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.339,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.31
+ },
+ {
+  "project": "more-itertools",
+  "position": 107,
+  "commit": "e048f12741c15e18d64203bfa2319ef8bdb5d75a",
+  "parent": "622dcf468680cfe18a49b8f3a494f5509ebcebea",
+  "exit_code": 0,
+  "wall_seconds": 5.64,
+  "subject": "Merge pull request #1036 from rhettinger/nth_prime_comment_typo",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 679 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 679,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.308,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.29
+ },
+ {
+  "project": "more-itertools",
+  "position": 108,
+  "commit": "622dcf468680cfe18a49b8f3a494f5509ebcebea",
+  "parent": "181edb003ade7e371a1ec90f5eaa119cf99dcf05",
+  "exit_code": 0,
+  "wall_seconds": 5.6,
+  "subject": "Merge pull request #1037 from rhettinger/sample_usage_note",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 679 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 679,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.267,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.32
+ },
+ {
+  "project": "more-itertools",
+  "position": 109,
+  "commit": "181edb003ade7e371a1ec90f5eaa119cf99dcf05",
+  "parent": "89172166167a5323c19ecb45fee49f191ea49bcd",
+  "exit_code": 0,
+  "wall_seconds": 5.73,
+  "subject": "Merge pull request #1035 from pochmann3/patch-3",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 679 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 679,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.398,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.27
+ },
+ {
+  "project": "more-itertools",
+  "position": 110,
+  "commit": "89172166167a5323c19ecb45fee49f191ea49bcd",
+  "parent": "7de169f7ad39eb1f95f8358225476e6f1a59d3d7",
+  "exit_code": 0,
+  "wall_seconds": 5.71,
+  "subject": "Merge pull request #1031 from inventshah/fix-batched-docstr",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 679 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 2,
+  "run_all": true,
+  "run_all_reasons": [
+   "more_itertools/recipes.pyi is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 679,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.376,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 111,
+  "commit": "7de169f7ad39eb1f95f8358225476e6f1a59d3d7",
+  "parent": "c834d6e4a0c4280b7b7750cb0de8dd8acb3d4c2c",
+  "exit_code": 0,
+  "wall_seconds": 29.17,
+  "subject": "Merge pull request #1028 from inventshah/fix-1001",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 679 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 1 small deliberate mistakes in the changed lines of the old code; the old tests caught 1, the new tests caught 1.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 679,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.295,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 22.711,
+   "excluded_new": [
+    "tests.test_more.LastTests::test_reversed_is_none"
+   ],
+   "excluded_old": [],
+   "killed_by_new": 1,
+   "killed_by_old": 1,
+   "lost": [],
+   "mutants": 1,
+   "new_tests": [
+    "tests/test_more.py",
+    "tests/test_recipes.py"
+   ],
+   "old_tests": [
+    "tests/test_more.py",
+    "tests/test_recipes.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.31
+ },
+ {
+  "project": "more-itertools",
+  "position": 112,
+  "commit": "f7476246b401b6d13bc9a0a4b3ea98ad78aae1ac",
+  "parent": "626ee86a376a366bb831c441b6f722ed8a4cfef0",
+  "exit_code": 0,
+  "wall_seconds": 5.62,
+  "subject": "Fix up operator imports",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 678 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 678,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.284,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.3
+ },
+ {
+  "project": "more-itertools",
+  "position": 113,
+  "commit": "626ee86a376a366bb831c441b6f722ed8a4cfef0",
+  "parent": "5ad93fe65df7aab9273aff82d532cceaaae133c1",
+  "exit_code": 0,
+  "wall_seconds": 5.72,
+  "subject": "Update derangements implementation and docstring",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 678 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 678,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.391,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.28
+ },
+ {
+  "project": "more-itertools",
+  "position": 114,
+  "commit": "5ad93fe65df7aab9273aff82d532cceaaae133c1",
+  "parent": "c59208ff92a4730ece4813b6319370f514c3bd1b",
+  "exit_code": 0,
+  "wall_seconds": 5.62,
+  "subject": "Merge pull request #1027 from pochmann3/patch-4",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 678 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 678,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.288,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.25
+ },
+ {
+  "project": "more-itertools",
+  "position": 115,
+  "commit": "c59208ff92a4730ece4813b6319370f514c3bd1b",
+  "parent": "1557c9394306948ada870e4ac4f709c299b1640d",
+  "exit_code": 0,
+  "wall_seconds": 5.67,
+  "subject": "Merge pull request #1021 from rhettinger/minmax_doc_1009",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 678 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 678,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.343,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.31
+ },
+ {
+  "project": "more-itertools",
+  "position": 116,
+  "commit": "22199b46bbd09ad06066632c51143fc763413eed",
+  "parent": "cea037c7863034f6db912880878fcc6c733c64c2",
+  "exit_code": 0,
+  "wall_seconds": 5.65,
+  "subject": "Merge pull request #1020 from rhettinger/derangements_doc",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 678 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 678,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.345,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.31
+ },
+ {
+  "project": "more-itertools",
+  "position": 117,
+  "commit": "cea037c7863034f6db912880878fcc6c733c64c2",
+  "parent": "61de5d2332b818f8cf6f880d177572273d77fe95",
+  "exit_code": 0,
+  "wall_seconds": 28.86,
+  "subject": "Merge pull request #999 from ben42code/u/ben42code/islice_extended_memory_usage2",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 678 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 1 small deliberate mistakes in the changed lines of the old code; the old tests caught 1, the new tests caught 1.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 678,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.282,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 22.402,
+   "excluded_new": [
+    "tests.test_more.IsliceExtendedTests::test_elements_lifecycle"
+   ],
+   "excluded_old": [],
+   "killed_by_new": 1,
+   "killed_by_old": 1,
+   "lost": [],
+   "mutants": 1,
+   "new_tests": [
+    "tests/test_more.py",
+    "tests/test_recipes.py"
+   ],
+   "old_tests": [
+    "tests/test_more.py",
+    "tests/test_recipes.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.37
+ },
+ {
+  "project": "more-itertools",
+  "position": 118,
+  "commit": "61de5d2332b818f8cf6f880d177572273d77fe95",
+  "parent": "cefdc5d5bf8cfe2901c56f3effc1e6465dfbe7b9",
+  "exit_code": 0,
+  "wall_seconds": 5.64,
+  "subject": "Merge pull request #1000 from rhettinger/faster_complex_sumprod",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 678 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 678,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.312,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.36
+ },
+ {
+  "project": "more-itertools",
+  "position": 119,
+  "commit": "cefdc5d5bf8cfe2901c56f3effc1e6465dfbe7b9",
+  "parent": "fc39c9a11a2ed28f4d7d0a56fd0896f0ee8f3c99",
+  "exit_code": 0,
+  "wall_seconds": 5.7,
+  "subject": "Merge pull request #1018 from rhettinger/eliminate_identity",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 678 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 2,
+  "run_all": true,
+  "run_all_reasons": [
+   "more_itertools/more.pyi is not Python code, so we can't trace what uses it"
+  ],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 678,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.369,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  }
+ },
+ {
+  "project": "more-itertools",
+  "position": 120,
+  "commit": "fc39c9a11a2ed28f4d7d0a56fd0896f0ee8f3c99",
+  "parent": "32dc4272e5661d4d17286553ef14125bc29e5923",
+  "exit_code": 0,
+  "wall_seconds": 5.7,
+  "subject": "Merge pull request #1012 from pochmann3/patch-1",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 678 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 2,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "more_itertools/more.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 678,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 5.372,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 5.35
+ }
+]

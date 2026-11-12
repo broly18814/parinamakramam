@@ -328,3 +328,17 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
   - **Round 2, after adding two general operators:** 17/20 and 8/9, with 3/10 false alarms. That's best on development, but it was improved on these cases, so it isn't evidence.
 - **Next:** the one held-out run with A2 frozen (H-TB3); then a real-commit false-alarm check before A2 is on by default.
 
+---
+
+## REAL-003: A2's false alarms on real commits
+
+- **Status:** ✅ run on 12 November 2026. **Inconclusive by its own rule:** A2 acted on 25 of 120 commits, short of the 30 required. A2 stays opt-in.
+- **Design, both rounds and every alarm classified:** [REAL-003-design.md](../docs/product/REAL-003-design.md).
+- **The question:** on 120 real commits from click, more-itertools, boltons and tomli (positions 91–120, never run before), how often does `pkv check --mutate` raise an alarm, and is it right?
+- **Round A** (Python 3.14, today's pytest, as pre-registered): 68 commits failed on today's tools, so A2 acted on only 6, with 1 alarm (L-intended).
+- **Round B** (Python 3.12, pytest 8.3; an amendment written before it ran):
+  - 0 failed, 96 verified, 0 false all-clears;
+  - A2 acted on 25, with 2 alarms (8%), both true: one L-intended and one L-weakened (a kept public function lost its only test);
+  - 0 wrong claims, 0 crashes, median 23 s;
+  - RA-1 to RA-4 all pass.
+

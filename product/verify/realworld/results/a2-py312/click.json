@@ -1,0 +1,2476 @@
+[
+ {
+  "project": "click",
+  "position": 91,
+  "commit": "e27b307462b725722f620c69dd1d5509c032d18a",
+  "parent": "a92c573f3195c9da3058eadf1735d38af186d22c",
+  "exit_code": 0,
+  "wall_seconds": 6.3,
+  "subject": "Make `uv run --all-extras pyright --verifytypes click` pass (#3072)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 1312 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 1 small deliberate mistakes in the changed lines of the old code; the old tests caught 1, the new tests caught 1.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 2,
+  "run_all": true,
+  "run_all_reasons": [
+   "pyproject.toml is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1312,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.13,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 4.064,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 1,
+   "killed_by_old": 1,
+   "lost": [],
+   "mutants": 1,
+   "new_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "old_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  }
+ },
+ {
+  "project": "click",
+  "position": 92,
+  "commit": "a92c573f3195c9da3058eadf1735d38af186d22c",
+  "parent": "0b5c6b75f617e6ee2f9f6dcd071b8a4bf183d1ed",
+  "exit_code": 0,
+  "wall_seconds": 1.42,
+  "subject": "Fix test_edit to work with BSD sed (#3129)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 147 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 147,
+   "skipped": 21,
+   "xfailed": 0
+  },
+  "test_seconds": 0.245,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.05
+ },
+ {
+  "project": "click",
+  "position": 93,
+  "commit": "8d4051e9e57be1bfb5421e3eb5a93b4b42077b0c",
+  "parent": "06f52a45782a0bd2cb9aa5f289afb68ac3b2b2e5",
+  "exit_code": 0,
+  "wall_seconds": 92.64,
+  "subject": "Ensure that `type_cast_value` never gets `UNSET` (#3090)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 1312 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 12 small deliberate mistakes in the changed lines of the old code; the old tests caught 11, the new tests caught 11.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1312,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.093,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 89.643,
+   "excluded_new": [
+    "tests.test_arguments::test_argument_custom_class_can_override_type_cast_value_and_never_sees_unset[argument_kwargs1-pass_argv1]",
+    "tests.test_arguments::test_argument_custom_class_can_override_type_cast_value_and_never_sees_unset[argument_kwargs4-pass_argv4]",
+    "tests.test_options::test_option_custom_class_can_override_type_cast_value_and_never_sees_unset[--opt-option_kwargs0-pass_argv0]",
+    "tests.test_options::test_option_custom_class_can_override_type_cast_value_and_never_sees_unset[--opt-option_kwargs1-pass_argv1]"
+   ],
+   "excluded_old": [],
+   "killed_by_new": 11,
+   "killed_by_old": 11,
+   "lost": [],
+   "mutants": 12,
+   "new_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "old_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.07
+ },
+ {
+  "project": "click",
+  "position": 94,
+  "commit": "8533c966b84783718e74286aa7b098f3ff1e9221",
+  "parent": "5f86603a84e12bdec1584c15c9f982740e613c45",
+  "exit_code": 0,
+  "wall_seconds": 40.75,
+  "subject": "Fix rendering when `prompt_suffix` is empty (#3021)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 1301 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_utils.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_echo_writing_to_standard_error (tests/test_utils.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_echo_writing_to_standard_error"
+   },
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 7 small deliberate mistakes in the changed lines of the old code; the old tests caught 5, the new tests caught 5.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1301,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.095,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 38.474,
+   "excluded_new": [
+    "tests.test_utils::test_echo_writing_to_standard_error"
+   ],
+   "excluded_old": [],
+   "killed_by_new": 5,
+   "killed_by_old": 5,
+   "lost": [],
+   "mutants": 7,
+   "new_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "old_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.06
+ },
+ {
+  "project": "click",
+  "position": 95,
+  "commit": "5f86603a84e12bdec1584c15c9f982740e613c45",
+  "parent": "413f76f37dcdb2c475a800870d3f8c1c623238d6",
+  "exit_code": 0,
+  "wall_seconds": 1.5,
+  "subject": "Fix _pipepager()/_tempfilepage() to work with multi-call binaries (#2944)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 1301 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1301,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.116,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.05
+ },
+ {
+  "project": "click",
+  "position": 96,
+  "commit": "27aaed3fe5bcd6adedd6e91de234914af9859cf1",
+  "parent": "2ed395b0b5ac4d56553ff715335f456f812cdc78",
+  "exit_code": 0,
+  "wall_seconds": 31.0,
+  "subject": "Fix default handling to defer `UNSET` normalization (#3079)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 1301 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 2 small deliberate mistakes in the changed lines of the old code; the old tests caught 2, the new tests caught 2.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1301,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.094,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 28.737,
+   "excluded_new": [
+    "tests.test_defaults::test_shared_param_prefers_first_default"
+   ],
+   "excluded_old": [],
+   "killed_by_new": 2,
+   "killed_by_old": 2,
+   "lost": [],
+   "mutants": 2,
+   "new_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "old_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.05
+ },
+ {
+  "project": "click",
+  "position": 97,
+  "commit": "6a1c0d077311f180b356965914e2de5b9e0fdb44",
+  "parent": "7d7183604158f064390539d83d4a19a978c6b08a",
+  "exit_code": 0,
+  "wall_seconds": 8.74,
+  "subject": "Hide `Sentinel.UNSET` values for defaults processed by `Context.invoke` (#3068)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 1300 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_commands.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_other_command_invoke_with_defaults (tests/test_commands.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_other_command_invoke_with_defaults"
+   },
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 1 small deliberate mistakes in the changed lines of the old code; the old tests caught 1, the new tests caught 1.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1300,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.082,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 6.07,
+   "excluded_new": [
+    "tests.test_commands::test_other_command_invoke_with_defaults[opt_params10-None]",
+    "tests.test_commands::test_other_command_invoke_with_defaults[opt_params4-None]"
+   ],
+   "excluded_old": [],
+   "killed_by_new": 1,
+   "killed_by_old": 1,
+   "lost": [],
+   "mutants": 1,
+   "new_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "old_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.07
+ },
+ {
+  "project": "click",
+  "position": 98,
+  "commit": "7d7183604158f064390539d83d4a19a978c6b08a",
+  "parent": "35e6a78646c58a8cc1ba3cda603a6bd4fb87f9d5",
+  "exit_code": 0,
+  "wall_seconds": 1.47,
+  "subject": "`Popen()` list-argument pager process without shell=True (#3055)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 1284 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1284,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.086,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.05
+ },
+ {
+  "project": "click",
+  "position": 99,
+  "commit": "81a482fbfdd5a553cf4704f822ade04c3b102fbc",
+  "parent": "23780fa3efcc471137aca7c6b4624164f760a647",
+  "exit_code": 4,
+  "wall_seconds": 13.75,
+  "subject": "Merge branch 'main' into stable",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "12 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_arguments.py",
+    "kind": "test-removed",
+    "message": "the test test_argument_unbounded_nargs_cant_have_default was removed from tests/test_arguments.py.",
+    "severity": "suspicious",
+    "test": "test_argument_unbounded_nargs_cant_have_default"
+   },
+   {
+    "file": "tests/test_arguments.py",
+    "kind": "test-removed",
+    "message": "the test test_defaults_for_nargs was removed from tests/test_arguments.py.",
+    "severity": "suspicious",
+    "test": "test_defaults_for_nargs"
+   },
+   {
+    "file": "tests/test_arguments.py",
+    "kind": "test-removed",
+    "message": "the test test_missing_argument_string_cast was removed from tests/test_arguments.py.",
+    "severity": "suspicious",
+    "test": "test_missing_argument_string_cast"
+   },
+   {
+    "file": "tests/test_arguments.py",
+    "kind": "test-removed",
+    "message": "the test test_nargs_bad_default was removed from tests/test_arguments.py.",
+    "severity": "suspicious",
+    "test": "test_nargs_bad_default"
+   },
+   {
+    "file": "tests/test_arguments.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_stdout_default (tests/test_arguments.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_stdout_default"
+   },
+   {
+    "file": "tests/test_basic.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_choice_argument_none (tests/test_basic.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_choice_argument_none"
+   },
+   {
+    "file": "tests/test_chain.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_pipeline (tests/test_chain.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_pipeline"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_bool_flag_auto_detection was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_bool_flag_auto_detection"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_boolean_envvar_normalization was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_boolean_envvar_normalization"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_default_type_error_raises was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_default_type_error_raises"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_envvar_flag_value was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_envvar_flag_value"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_init_bad_default_list was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_init_bad_default_list"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_init_good_default_list was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_init_good_default_list"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_missing_option_string_cast was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_missing_option_string_cast"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_usage_show_choices was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_usage_show_choices"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_flag_value_and_default (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_flag_value_and_default"
+   },
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the new tests can't run on the old code (for example, they use a renamed module or a new function), so there is nothing to compare.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 15,
+  "run_all": true,
+  "run_all_reasons": [
+   "pyproject.toml is a project settings file; it can change how every test behaves",
+   "uv.lock is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 1284,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.208,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [
+    "::tests.test_arguments",
+    "::tests.test_basic",
+    "::tests.test_options",
+    "::tests.test_utils"
+   ],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "old_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "partial": false,
+   "ran": false,
+   "reason": "the new tests can't run on the old code (for example, they use a renamed module or a new function), so there is nothing to compare"
+  }
+ },
+ {
+  "project": "click",
+  "position": 100,
+  "commit": "701b313160be12752e49b3f7cea32402c0969a69",
+  "parent": "3be1f33c8e0b13295853f6aa64d1f7412b5312df",
+  "exit_code": 0,
+  "wall_seconds": 3.07,
+  "subject": "Fix completions for quoted/escaped parameters in Fish (#3013)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 901 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 901,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.063,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.06
+ },
+ {
+  "project": "click",
+  "position": 101,
+  "commit": "1f4002096439d6661f1df5ceff7eccd3862153ac",
+  "parent": "4f936ac1981645488f396953bc59e50445de00b6",
+  "exit_code": 0,
+  "wall_seconds": 4.72,
+  "subject": "Properly lazily import shutil (#3023)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 900 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 4,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 900,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.103,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.02
+ },
+ {
+  "project": "click",
+  "position": 102,
+  "commit": "4f936ac1981645488f396953bc59e50445de00b6",
+  "parent": "1c68e531ef5e45f6facdb777c720d0f984614b81",
+  "exit_code": 0,
+  "wall_seconds": 2.94,
+  "subject": "show correct auto complete value for nargs option in combination with flag option (#2816)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 900 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 900,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.102,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.06
+ },
+ {
+  "project": "click",
+  "position": 103,
+  "commit": "c096a10e8b59e48f77c65372a9c17f8226c128c5",
+  "parent": "0be2bd385064053bb75f92db317de128db729d52",
+  "exit_code": 0,
+  "wall_seconds": 2.26,
+  "subject": "test: add two new tests for `Parameter.__init__` (recreation of #2861) (#3012)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 344 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 2,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 344,
+   "skipped": 0,
+   "xfailed": 0
+  },
+  "test_seconds": 0.34,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.06
+ },
+ {
+  "project": "click",
+  "position": 104,
+  "commit": "0be2bd385064053bb75f92db317de128db729d52",
+  "parent": "c88f333de440c5066ff563f784a6561f4713cf78",
+  "exit_code": 0,
+  "wall_seconds": 8.66,
+  "subject": "Don't include envvar in error hint when envvar not configured (#2972)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 896 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_options.py",
+    "kind": "expected-values-changed",
+    "message": "the expected values in test_missing_envvar (tests/test_options.py) changed in the same change as the code. Check the new expected values are right, not just made to match.",
+    "severity": "notice",
+    "test": "test_missing_envvar"
+   },
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 1 small deliberate mistakes in the changed lines of the old code; the old tests caught 1, the new tests caught 1.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 896,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.103,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 6.391,
+   "excluded_new": [
+    "tests.test_options::test_missing_envvar"
+   ],
+   "excluded_old": [],
+   "killed_by_new": 1,
+   "killed_by_old": 1,
+   "lost": [],
+   "mutants": 1,
+   "new_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "old_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.03
+ },
+ {
+  "project": "click",
+  "position": 105,
+  "commit": "44fd6394b72c1186feae31e793cd1196e1024fe2",
+  "parent": "737bfbd3122d96d41924323a3f45a8021c30d4c8",
+  "exit_code": 0,
+  "wall_seconds": 1.27,
+  "subject": "Merge branch 'main' into stable",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 39 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 1,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 39,
+   "skipped": 1,
+   "xfailed": 0
+  },
+  "test_seconds": 0.194,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.02
+ },
+ {
+  "project": "click",
+  "position": 106,
+  "commit": "737bfbd3122d96d41924323a3f45a8021c30d4c8",
+  "parent": "7b72bfb8cd3a0cec38197f6786ed583b5b3737e7",
+  "exit_code": 0,
+  "wall_seconds": 3.07,
+  "subject": "fix a race in `click.testing.StreamMixer`'s finalization, seen in a multi-threaded context (#2991)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 896 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 896,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.098,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.06
+ },
+ {
+  "project": "click",
+  "position": 107,
+  "commit": "7b72bfb8cd3a0cec38197f6786ed583b5b3737e7",
+  "parent": "eaf33a957975e7d0943fad8d2b4b905b6bd98cb9",
+  "exit_code": 0,
+  "wall_seconds": 1.44,
+  "subject": "Using correct typing for `param_hint` (#2990)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 896 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 896,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.074,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.05
+ },
+ {
+  "project": "click",
+  "position": 108,
+  "commit": "eaf33a957975e7d0943fad8d2b4b905b6bd98cb9",
+  "parent": "a1235aacb1be55dc66ddcfefbf64dec44b6ab54d",
+  "exit_code": 0,
+  "wall_seconds": 3.18,
+  "subject": "Fix rendering of Enum choices' default (#3004)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 896 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 896,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.089,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.02
+ },
+ {
+  "project": "click",
+  "position": 109,
+  "commit": "a1235aacb1be55dc66ddcfefbf64dec44b6ab54d",
+  "parent": "565f36d5bc4a15d304337b749e113fb4477b1843",
+  "exit_code": 0,
+  "wall_seconds": 8.18,
+  "subject": "Fix Zsh completions with colons (#2846)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 873 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 1 small deliberate mistakes in the changed lines of the old code; the old tests caught 1, the new tests caught 1.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 873,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.062,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 6.042,
+   "excluded_new": [
+    "tests.test_shell_completion::test_zsh_full_complete_with_colons[env0-plain\\na\\n_\\nplain\\nb\\nbee\\nplain\\nc\\\\:d\\ncee:dee\\nplain\\nc:e\\n_\\n]",
+    "tests.test_shell_completion::test_zsh_full_complete_with_colons[env1-plain\\nc\\\\:d\\ncee:dee\\nplain\\nc:e\\n_\\n]",
+    "tests.test_shell_completion::test_zsh_full_complete_with_colons[env2-plain\\nc\\\\:d\\ncee:dee\\nplain\\nc:e\\n_\\n]"
+   ],
+   "excluded_old": [],
+   "killed_by_new": 1,
+   "killed_by_old": 1,
+   "lost": [],
+   "mutants": 1,
+   "new_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "old_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.04
+ },
+ {
+  "project": "click",
+  "position": 110,
+  "commit": "565f36d5bc4a15d304337b749e113fb4477b1843",
+  "parent": "5c1239b0116b66492cdd0848144ab3c78a04495a",
+  "exit_code": 4,
+  "wall_seconds": 115.63,
+  "subject": "Fix reconciliation of envvar with `default`, `flag_value` and `type` parameters for flag options (#2956)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "3 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_arguments.py",
+    "kind": "test-removed",
+    "message": "the test test_envvar_flag_value was removed from tests/test_arguments.py.",
+    "severity": "suspicious",
+    "test": "test_envvar_flag_value"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_flag_value_is_correctly_set was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_flag_value_is_correctly_set"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-moved",
+    "message": "the test test_is_bool_flag_is_correctly_set in tests/test_options.py was removed, but every check it lost reappears unchanged in tests/test_options.py::test_bool_flag_auto_detection, a test pytest runs: moved, renamed or reorganised, nothing lost.",
+    "severity": "notice",
+    "test": "test_is_bool_flag_is_correctly_set"
+   },
+   {
+    "file": "tests/test_options.py",
+    "kind": "test-removed",
+    "message": "the test test_trailing_blanks_boolean_envvar was removed from tests/test_options.py.",
+    "severity": "suspicious",
+    "test": "test_trailing_blanks_boolean_envvar"
+   },
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 30 small deliberate mistakes in the changed lines of the old code; the old tests caught 24, the new tests caught 28.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 8,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 870,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.093,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 111.015,
+   "excluded_new": [
+    "tests.test_basic::test_boolean_flag[True-args0-True]",
+    "tests.test_options::test_boolean_envvar_bad_values[SHOUT-00]",
+    "tests.test_options::test_boolean_envvar_bad_values[SHOUT-01]",
+    "tests.test_options::test_boolean_envvar_bad_values[SHOUT-10]",
+    "tests.test_options::test_boolean_envvar_bad_values[SHOUT-11]",
+    "tests.test_options::test_boolean_envvar_bad_values[SHOUT-None]",
+    "tests.test_options::test_boolean_envvar_bad_values[SHOUT-randomstring]",
+    "tests.test_options::test_boolean_envvar_bad_values[SHOUT-tr ue]",
+    "tests.test_options::test_boolean_envvar_normalization[SHOUT-       -False]",
+    "tests.test_options::test_boolean_envvar_normalization[SHOUT- -False]",
+    "tests.test_options::test_boolean_envvar_normalization[SHOUT- false -False]",
+    "tests.test_options::test_boolean_envvar_normalization[SHOUT- false-False]",
+    "tests.test_options::test_boolean_envvar_normalization[SHOUT-0-False]",
+    "tests.test_options::test_boolean_envvar_normalization[SHOUT-FALSE-False]",
+    "tests.test_options::test_boolean_envvar_normalization[SHOUT-FaLsE-False]",
+    "tests.test_options::test_boolean_envvar_normalization[SHOUT-False-False]",
+    "tests.test_options::test_boolean_envvar_normalization[SHOUT-f-False]",
+    "tests.test_options::test_boolean_envvar_normalization[SHOUT-falsE-False]",
+    "tests.test_options::test_boolean_envvar_normalization[SHOUT-false -False]",
+    "tests.test_options::test_boolean_envvar_normalization[SHOUT-false-False]",
+    "tests.test_options::test_boolean_envvar_normalization[SHOUT-n-False]",
+    "tests.test_options::test_boolean_envvar_normalization[SHOUT-no-False]",
+    "tests.test_options::test_boolean_envvar_normalization[SHOUT-off-False]",
+    "tests.test_options::test_envvar_flag_value[ bar -BAR-False]",
+    "tests.test_options::test_envvar_flag_value[ bar -bar-False]",
+    "tests.test_options::test_envvar_flag_value[BAR-bar-False]",
+    "tests.test_options::test_envvar_flag_value[bar- bar -False]",
+    "tests.test_options::test_envvar_flag_value[bar--False]",
+    "tests.test_options::test_envvar_flag_value[bar-0-False]",
+    "tests.test_options::test_envvar_flag_value[bar-BAR-False]",
+    "tests.test_options::test_envvar_flag_value[bar-False-False]",
+    "tests.test_options::test_envvar_flag_value[bar-bar random-False]",
+    "tests.test_options::test_envvar_flag_value[bar-f-False]",
+    "tests.test_options::test_envvar_flag_value[bar-random bar-False]",
+    "tests.test_options::test_envvar_flag_value[bar-random-False]",
+    "tests.test_options::test_flag_value_and_default[opt_params10-False-False]",
+    "tests.test_options::test_flag_value_and_default[opt_params13-True-True]",
+    "tests.test_options::test_flag_value_and_default[opt_params16-False-False]",
+    "tests.test_options::test_flag_value_and_default[opt_params18-False-True]",
+    "tests.test_options::test_flag_value_and_default[opt_params19-True-True]",
+    "tests.test_options::test_flag_value_and_default[opt_params20-False-False]",
+    "tests.test_options::test_flag_value_and_default[opt_params22-False-foo]",
+    "tests.test_options::test_flag_value_and_default[opt_params23-True-foo]",
+    "tests.test_options::test_flag_value_and_default[opt_params24-False-False]",
+    "tests.test_options::test_flag_value_and_default[opt_params38-False-False]",
+    "tests.test_options::test_flag_value_and_default[opt_params4-False-False]",
+    "tests.test_options::test_flag_value_and_default[opt_params40-False-False]",
+    "tests.test_options::test_flag_value_and_default[opt_params42-False-False]",
+    "tests.test_options::test_flag_value_and_default[opt_params44-False-False]",
+    "tests.test_options::test_flag_value_and_default[opt_params50-False-False]",
+    "tests.test_options::test_flag_value_and_default[opt_params51-False-False]",
+    "tests.test_options::test_flag_value_and_default[opt_params53-False-True]",
+    "tests.test_options::test_flag_value_and_default[opt_params54-False-False]",
+    "tests.test_options::test_flag_value_and_default[opt_params55-False-False]",
+    "tests.test_options::test_flag_value_and_default[opt_params56-False-foo]",
+    "tests.test_options::test_flag_value_and_default[opt_params57-False-foo]",
+    "tests.test_options::test_flag_value_and_default[opt_params58-False-foo]",
+    "tests.test_options::test_flag_value_and_default[opt_params59-False-foo]",
+    "tests.test_options::test_flag_value_and_default[opt_params60-False-False]",
+    "tests.test_options::test_flag_value_and_default[opt_params61-False-False]",
+    "tests.test_options::test_flag_value_and_default[opt_params7-True-True]",
+    "tests.test_options::test_flag_value_and_default[opt_params75-True-foo]",
+    "tests.test_options::test_invalid_flag_definition[opts0]",
+    "tests.test_options::test_invalid_flag_definition[opts2]"
+   ],
+   "excluded_old": [],
+   "killed_by_new": 28,
+   "killed_by_old": 24,
+   "lost": [],
+   "mutants": 30,
+   "new_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "old_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  }
+ },
+ {
+  "project": "click",
+  "position": 111,
+  "commit": "28650344c54dd54e673d3e9a35e76bf9f4bedf8d",
+  "parent": "316d58ef45d29eb9865679260a52315647d259ca",
+  "exit_code": 3,
+  "wall_seconds": 1.06,
+  "subject": "svg logo",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: docs/conf.py"
+  ],
+  "findings": [],
+  "changed_files": 8,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 20,
+  "untested_changes": [
+   "docs/conf.py"
+  ],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 112,
+  "commit": "d2e0fb5cde8dddfdeeea91cf942aa7432def0b24",
+  "parent": "5e2e191026c16ede856afbea941c0c3f90d62298",
+  "exit_code": 3,
+  "wall_seconds": 1.08,
+  "subject": "new logo (#2974)",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: docs/conf.py"
+  ],
+  "findings": [],
+  "changed_files": 10,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 20,
+  "untested_changes": [
+   "docs/conf.py"
+  ],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null
+ },
+ {
+  "project": "click",
+  "position": 113,
+  "commit": "d1a80aa95cc207f50da1c438af742b7edad02267",
+  "parent": "499bbeea64fbc251ece62188bcee185bfcec2316",
+  "exit_code": 0,
+  "wall_seconds": 2.24,
+  "subject": "update dev dependencies",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 738 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 7,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/pre-commit.yaml is not Python code, so we can't trace what uses it",
+   ".github/workflows/publish.yaml is not Python code, so we can't trace what uses it",
+   ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+   ".pre-commit-config.yaml is not Python code, so we can't trace what uses it",
+   "uv.lock is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 738,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.041,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  }
+ },
+ {
+  "project": "click",
+  "position": 114,
+  "commit": "262bdf02288daf9a37b9e815b44acafd62b5c6fe",
+  "parent": "cfa6f4ad3e0078db43f866246b483544afa33ed3",
+  "exit_code": 4,
+  "wall_seconds": 606.48,
+  "subject": "Raise an exception on end of input in CliRunner (#2934)",
+  "verdict": "SUSPICIOUS",
+  "verdict_reasons": [
+   "1 sign(s) that the tests were weakened"
+  ],
+  "findings": [
+   {
+    "file": "tests/test_chain.py",
+    "kind": "fewer-checks",
+    "message": "the test test_pipeline in tests/test_chain.py now checks less: 2 checks before, 1 now.",
+    "severity": "suspicious",
+    "test": "test_pipeline"
+   },
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the new tests can't run on the old code (for example, they use a renamed module or a new function), so there is nothing to compare.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 5,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 738,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.046,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "old_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "partial": false,
+   "ran": false,
+   "reason": "the new tests can't run on the old code (for example, they use a renamed module or a new function), so there is nothing to compare"
+  }
+ },
+ {
+  "project": "click",
+  "position": 115,
+  "commit": "cfa6f4ad3e0078db43f866246b483544afa33ed3",
+  "parent": "b7cf06970e40a3144eb963ff34ed7c38934afb40",
+  "exit_code": 0,
+  "wall_seconds": 3.03,
+  "subject": "Flush sys.stderr when CliRunner finalizes (#2933)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 737 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 737,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.05,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 0.98
+ },
+ {
+  "project": "click",
+  "position": 116,
+  "commit": "b7cf06970e40a3144eb963ff34ed7c38934afb40",
+  "parent": "884af5c20fdc95c9c7352df35c37273391464fb9",
+  "exit_code": 0,
+  "wall_seconds": 8.19,
+  "subject": "fix shell completion for nested groups (#2935)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 736 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 1 small deliberate mistakes in the changed lines of the old code; the old tests caught 1, the new tests caught 1.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 736,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.012,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 5.962,
+   "excluded_new": [
+    "tests.test_shell_completion::test_nested_group[args2--expect2]",
+    "tests.test_shell_completion::test_nested_group[args3---expect3]",
+    "tests.test_shell_completion::test_nested_group[args4--expect4]",
+    "tests.test_shell_completion::test_nested_group[args5---expect5]"
+   ],
+   "excluded_old": [],
+   "killed_by_new": 1,
+   "killed_by_old": 1,
+   "lost": [],
+   "mutants": 1,
+   "new_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "old_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.01
+ },
+ {
+  "project": "click",
+  "position": 117,
+  "commit": "884af5c20fdc95c9c7352df35c37273391464fb9",
+  "parent": "011b9f9d190c71310264e6c54bae6259f5e38a9f",
+  "exit_code": 0,
+  "wall_seconds": 10.74,
+  "subject": "Fix flag value set when is_flag=True and type is provided (#2930)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 730 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check: 3 small deliberate mistakes in the changed lines of the old code; the old tests caught 3, the new tests caught 3.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 3,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 730,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.018,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 8.517,
+   "excluded_new": [
+    "tests.test_options::test_flag_value_is_correctly_set[opts1-True-True]",
+    "tests.test_options::test_flag_value_is_correctly_set[opts3-True-False]",
+    "tests.test_options::test_flag_value_is_correctly_set[opts5-True-True]",
+    "tests.test_options::test_flag_value_is_correctly_set[opts7-True-False]",
+    "tests.test_options::test_flag_value_is_correctly_set[opts9-True-True]"
+   ],
+   "excluded_old": [],
+   "killed_by_new": 3,
+   "killed_by_old": 3,
+   "lost": [],
+   "mutants": 3,
+   "new_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "old_tests": [
+    "tests/test_arguments.py",
+    "tests/test_basic.py",
+    "tests/test_chain.py",
+    "tests/test_command_decorators.py",
+    "tests/test_commands.py",
+    "tests/test_compat.py",
+    "tests/test_context.py",
+    "tests/test_custom_classes.py",
+    "tests/test_defaults.py",
+    "tests/test_formatting.py",
+    "tests/test_imports.py",
+    "tests/test_info_dict.py",
+    "tests/test_normalization.py",
+    "tests/test_options.py",
+    "tests/test_parser.py",
+    "tests/test_shell_completion.py",
+    "tests/test_termui.py",
+    "tests/test_testing.py",
+    "tests/test_types.py",
+    "tests/test_utils.py"
+   ],
+   "partial": false,
+   "ran": true,
+   "reason": ""
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 0.99
+ },
+ {
+  "project": "click",
+  "position": 118,
+  "commit": "2e1c74264b8f8966b31a3d713358f753d6ea1b13",
+  "parent": "af73ce4793bf38edf11a16e959ef0d8a0dbf6c1f",
+  "exit_code": 0,
+  "wall_seconds": 3.74,
+  "subject": "use uv (#2918)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 719 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: no changed lines of existing code to make mistakes in.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 21,
+  "run_all": true,
+  "run_all_reasons": [
+   ".github/workflows/lock.yaml is not Python code, so we can't trace what uses it",
+   ".github/workflows/pre-commit.yaml is not Python code, so we can't trace what uses it",
+   ".github/workflows/publish.yaml is not Python code, so we can't trace what uses it",
+   ".github/workflows/tests.yaml is not Python code, so we can't trace what uses it",
+   ".pre-commit-config.yaml is not Python code, so we can't trace what uses it",
+   ".readthedocs.yaml is not Python code, so we can't trace what uses it",
+   "pyproject.toml is a project settings file; it can change how every test behaves",
+   "requirements/build.in is not Python code, so we can't trace what uses it",
+   "requirements/dev.in is not Python code, so we can't trace what uses it",
+   "requirements/docs.in is not Python code, so we can't trace what uses it",
+   "requirements/tests.in is not Python code, so we can't trace what uses it",
+   "requirements/typing.in is not Python code, so we can't trace what uses it",
+   "tox.ini is a project settings file; it can change how every test behaves",
+   "uv.lock is a project settings file; it can change how every test behaves"
+  ],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 719,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.038,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "no changed lines of existing code to make mistakes in"
+  }
+ },
+ {
+  "project": "click",
+  "position": 119,
+  "commit": "af73ce4793bf38edf11a16e959ef0d8a0dbf6c1f",
+  "parent": "b88c4841ad53247e9ca6f9fd39d510e99d6c18f7",
+  "exit_code": 0,
+  "wall_seconds": 1.4,
+  "subject": "Fix compatibility with pyright 1.1.394 (#2855)",
+  "verdict": "VERIFIED",
+  "verdict_reasons": [
+   "all 719 test(s) affected by the change passed, on exactly this code"
+  ],
+  "findings": [
+   {
+    "file": "",
+    "kind": "mutation-check",
+    "message": "Mutation check not run: the change didn't touch tests or test settings, so no check can have been lost.",
+    "severity": "notice",
+    "test": null
+   }
+  ],
+  "changed_files": 1,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 20,
+  "all_test_files": 20,
+  "untested_changes": [],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": "passed",
+  "counts": {
+   "errors": 0,
+   "failed": 0,
+   "passed": 719,
+   "skipped": 22,
+   "xfailed": 1
+  },
+  "test_seconds": 1.041,
+  "failed_tests": [],
+  "files_changed_during_run": [],
+  "mutation": {
+   "duration_s": 0.0,
+   "excluded_new": [],
+   "excluded_old": [],
+   "killed_by_new": 0,
+   "killed_by_old": 0,
+   "lost": [],
+   "mutants": 0,
+   "new_tests": [],
+   "old_tests": [],
+   "partial": false,
+   "ran": false,
+   "reason": "the change didn't touch tests or test settings, so no check can have been lost"
+  },
+  "full_suite_exit": 0,
+  "full_suite_seconds": 1.01
+ },
+ {
+  "project": "click",
+  "position": 120,
+  "commit": "b88c4841ad53247e9ca6f9fd39d510e99d6c18f7",
+  "parent": "e3abce688d2ee999196a459442a8a0f2a3725ddf",
+  "exit_code": 3,
+  "wall_seconds": 0.26,
+  "subject": "Organize docs along diatxis categories. (#2898)",
+  "verdict": "UNVERIFIED",
+  "verdict_reasons": [
+   "changed code that no test checks: docs/conf.py"
+  ],
+  "findings": [],
+  "changed_files": 2,
+  "run_all": false,
+  "run_all_reasons": [],
+  "selected_test_files": 0,
+  "all_test_files": 20,
+  "untested_changes": [
+   "docs/conf.py"
+  ],
+  "dynamic_imports": [
+   "examples/complex/complex/cli.py"
+  ],
+  "unreadable": {},
+  "outcome": null,
+  "counts": null,
+  "test_seconds": null,
+  "failed_tests": [],
+  "files_changed_during_run": null,
+  "mutation": null
+ }
+]
