@@ -108,8 +108,9 @@ def test_the_command_line_entry_reads_stdin_and_prints_json(repo, monkeypatch, c
     monkeypatch.setattr("sys.stdin", io.StringIO(json.dumps({"cwd": str(repo), "hook_event_name": "Stop"})))
     assert main(["hook", "claude-stop"]) == 0
     out = json.loads(capsys.readouterr().out)
-    assert out["hookSpecificOutput"]["hookEventName"] == "Stop" and "pkv check says FAILED" in \
-        out["hookSpecificOutput"]["additionalContext"]
+    assert list(out) == ["hookSpecificOutput"]
+    assert out["hookSpecificOutput"]["hookEventName"] == "Stop"
+    assert out["hookSpecificOutput"]["additionalContext"].splitlines()[0] == "pkv check says FAILED for this change:"
 
 
 # ------------------------------------------------------------------ install / uninstall
