@@ -22,7 +22,12 @@ The design says *what* is compared. Building it showed three things it doesn't s
 
 ## S2. Turning a guess into a comparable piece
 
-1. **Clean the text:** strip a surrounding code fence; keep the first logical line for an expression, or the first statement for a statement.
+1. **Clean the text:** strip a surrounding code fence. For a statement, keep the first statement.
+   For an expression, keep **the longest run of leading lines that reads as one expression when bracketed.**
+   - **Why bracketed:** that's where a guess goes back (step 2). A bracketed expression may span lines, and adjacent strings on separate lines join.
+   - **A slice** (`a:b`) exists only inside a subscript, so it's read as `_[a:b]`.
+
+   *Refined on 14 November 2026, from the round-trip self-check on tomli's calibration tasks (S8).* The first rule, "the first logical line", cut multi-line calls and joined strings. With the refinement, **all 260 of 260** tomli calibration tasks round-trip exactly. No model guess had been seen.
 2. **Put it back:** replace `__HOLE__` in the prompt's function text with the guess, dedent, and `ast.parse` it.
 3. **Normalise the completed function** exactly as EXP-005 does (`normalise`), so local names get numbered consistently, including names the guess introduces.
 4. **Find the piece:** the node of the hole's kind (expression or statement) whose start position equals the hole's. Its `shape()` is the guess's piece.

@@ -160,7 +160,13 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
 
      These join OI-8.
 5. 🟡 **Track C, new architecture (D-050):** [A001](../docs/research/A001-evolving-architecture.md) proposes an architecture that keeps learning and evolves its own building blocks, with experiments EXP-A1 to EXP-A4, each against its simple baseline. Order: EXP-M1 first (data pipeline and baseline), then EXP-A2, A1, A3.
-5. 🟡 **Track B: EXP-007**, design committed before any code in [EXP-007-design.md](../docs/research/EXP-007-design.md) (H23, library × guidance, 7 distinct cells, on rich and pyparsing, with a date split against model memorisation). Next: build it and calibrate on tomli.
+5. 🟡 **Track B: EXP-007** ([design](../docs/research/EXP-007-design.md), H23: library × guidance).
+   - **Build specification** (14 Nov, [spec](../docs/research/EXP-007-build-spec.md)): it fixes, before any data, how the model sees the code, how its guesses are compared, the exact G3 grammar, block names, and the missing two-level grammar with blocks.
+   - ✅ **Prompt and guess-reading code built** (`pevo/llmguide.py`, 10 self-checks). All 260 of tomli's calibration tasks round-trip exactly.
+   - **Next:**
+     - the two-level grammar with blocks (S5) and the G3 grammar (S3);
+     - 🔑 **founder:** allow installing `mlx-lm` and downloading the model `mlx-community/Qwen3.6-35B-A3B-4bit` (20.4 GB, Apache-2.0);
+     - then calibration on tomli.
 6. **Watch adoption weekly, with no interviews (D-002)**, including the Marketplace listing (D-047). Next reading: 17 November ([ADOPTION.md](ADOPTION.md)).
 7. **Founder: decide whether to restore the 14 deleted repositories on GitHub** while its 90-day window is open (OI-15, D-041; possible until about 6 February 2027).
 8. **Funding:** no applications to private foreign funders (D-048). No company or payments before there is use (D-010); plan v2 §7 has the route for later.
