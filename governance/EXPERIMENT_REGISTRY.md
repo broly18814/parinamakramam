@@ -369,3 +369,18 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
   - **A3-P3:** REPRODUCED on ≥ 95%;
   - **A3-P4:** median extra time ≤ 3 s.
 - **What it decides:** whether `--clean` becomes pkv 0.3's default.
+
+---
+
+## REAL-005: is `pkv map` right? (A5)
+
+- **Status:** 📝 pre-registered on 13 November 2026, before any A5 code ([A5 design](../docs/product/A5-design.md)).
+- **The question:** does the map pkv builds without running anything match what Python really loads when each test file runs?
+- **Projects:** six, reported separately:
+  - **seen:** click, more-itertools, boltons and tomli (pkv's import rules were partly tuned on these);
+  - **unseen:** toolz and sortedcontainers.
+- **Predictions:**
+  - **A5-P1:** recall ≥ 99%, with pkv defects ≤ 1%, in both groups;
+  - **A5-P2:** ≤ 2 files wrongly called untested;
+  - **A5-P3:** precision ≥ 80%;
+  - **A5-P4:** ≤ 5 s per project.
