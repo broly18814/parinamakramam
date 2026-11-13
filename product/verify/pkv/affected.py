@@ -53,6 +53,27 @@ def _under(path: str, folder: str) -> bool:
     return folder in ("", ".") or path == folder or path.startswith(folder + "/")
 
 
+def uses_all(graph: ImportGraph, start: str) -> set[str]:
+    """Every file `start` depends on, directly or through others (following imports forwards)."""
+    seen, todo = {start}, [start]
+    while todo:
+        for d in graph.deps.get(todo.pop(), ()):
+            if d not in seen:
+                seen.add(d)
+                todo.append(d)
+    return seen
+
+
+def test_reach(graph: ImportGraph, test: str) -> set[str]:
+    """Every file a test depends on: through its own imports, and through the shared test settings
+    (conftest.py) in its folder and above. One definition, used by test selection and `pkv map`."""
+    reach = uses_all(graph, test)
+    for cf in graph.files:
+        if PurePosixPath(cf).name == "conftest.py" and _under(test, str(PurePosixPath(cf).parent)):
+            reach |= uses_all(graph, cf)
+    return reach
+
+
 @dataclass
 class Selection:
     """The answer, with every reason recorded so a report can show its work."""
@@ -177,23 +198,9 @@ def select_tests(root: str | os.PathLike[str], changes: list[Change],
     # roads *forwards* from the test (and from the shared test settings that
     # apply to it). A test can depend on several changed files; the reason
     # above shows one route, so we add how many others there are.
-    conftests = [f for f in graph.files if PurePosixPath(f).name == "conftest.py"]
-
-    def uses_all(start: str) -> set[str]:
-        seen, todo = {start}, [start]
-        while todo:
-            for d in graph.deps.get(todo.pop(), ()):
-                if d not in seen:
-                    seen.add(d)
-                    todo.append(d)
-        return seen
-
     covered: set[str] = set()
     for t in list(chosen):
-        reach = uses_all(t)
-        for cf in conftests:
-            if _under(t, str(PurePosixPath(cf).parent)):
-                reach |= uses_all(cf)
+        reach = test_reach(graph, t)
         hit = reach & set(why_seed)
         covered |= hit
         if len(hit) > 1:

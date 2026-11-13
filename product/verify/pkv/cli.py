@@ -11,6 +11,9 @@
         --rerun repeats its tests in a clean copy and compares every outcome.
     pkv fingerprint [--repo PATH]
         The exact fingerprint (tree hash) of the code on disk right now.
+    pkv map [--repo PATH] [--module FILE] [--json] [--md FILE]
+        A map of the project, read without running it: its parts, the most-used code, code no
+        test reaches, and (--module) one file's links and the tests that reach it (A5).
     pkv hook install [--scope project|local|user] / pkv hook uninstall
         Add (or remove) pkv as a Claude Code Stop hook (A4). Claude Code then runs
         `pkv hook claude-stop`, which checks the work whenever Claude says it's done.
@@ -198,6 +201,32 @@ def _rerun(args: argparse.Namespace, root: Path, ev: dict[str, Any], skip: tuple
     return 4
 
 
+def _map(args: argparse.Namespace) -> int:
+    from .map import build_map, render, render_module
+
+    try:
+        root = repo_root(args.repo)
+    except GitError:
+        root = Path(args.repo).resolve()  # a map doesn't need git
+    m = build_map(root)
+    if args.json:
+        print(json.dumps(m.to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.module:
+        rel = _inside(root, args.module) if Path(args.module).exists() else args.module
+        try:
+            text = render_module(m, rel or args.module)
+        except KeyError:
+            print(f"pkv: {args.module} is not a Python file in {root}", file=sys.stderr)
+            return 2
+    else:
+        text = render(m)
+    print(text, end="")
+    if args.md:
+        Path(args.md).write_text(text, encoding="utf-8")
+    return 0
+
+
 def _hook(args: argparse.Namespace) -> int:
     from . import hook
 
@@ -261,6 +290,11 @@ def main(argv: list[str] | None = None) -> int:
                     help="pass this environment variable to the tests (repeatable)")
     f = sub.add_parser("fingerprint", help="fingerprint of the code on disk now")
     f.add_argument("--repo", default=".")
+    mp = sub.add_parser("map", help="a map of the project: its parts, links, and which tests reach what")
+    mp.add_argument("--repo", default=".")
+    mp.add_argument("--module", metavar="FILE", help="show one file in detail")
+    mp.add_argument("--json", action="store_true", help="print the whole map as JSON")
+    mp.add_argument("--md", metavar="FILE", help="also save the map as Markdown")
     h = sub.add_parser("hook", help="use pkv as a Claude Code hook (A4)")
     hsub = h.add_subparsers(dest="hook_command", required=True)
     for name, text in (("install", "add pkv's Stop hook to Claude Code's settings"),
@@ -277,6 +311,8 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     if args.command == "hook":
         return _hook(args)
+    if args.command == "map":
+        return _map(args)
 
     try:
         if args.command == "fingerprint":
