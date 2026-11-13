@@ -47,10 +47,23 @@ def test_the_committed_marketplace_action_is_generated_from_the_original(b):
     assert b.main(["--check"]) == 0
 
 
+def _v(text):
+    return tuple(int(x) for x in text.split("."))
+
+
 def test_it_pins_the_version_being_released(b):
+    """The action pins the package's own version. During a release it can't yet: it pins the exact
+    PyPI file and its fingerprint, which exist only after the upload. So it may lag one release
+    behind, never ahead, and only while the README says so publicly (docs/product/releases/)."""
     pyproject = (ROOT / "product" / "verify" / "pyproject.toml").read_text()
     released = re.search(r'^version = "([^"]+)"$', pyproject, re.M)
-    assert released and released.group(1) == b.VERSION
+    assert released
+    package = released.group(1)
+    assert _v(package) >= _v(b.VERSION)  # never ahead of the package
+    if package != b.VERSION:
+        readme = (ROOT / "product" / "verify" / "README.md").read_text()
+        promise = f"The action still runs pkv {b.VERSION}** until its {package} version is published"
+        assert promise in readme
     assert f"parinama_verify-{b.VERSION}-py3-none-any.whl" in b.WHEEL_URL
     assert len(b.WHEEL_SHA256) == 64 and int(b.WHEEL_SHA256, 16) >= 0
 

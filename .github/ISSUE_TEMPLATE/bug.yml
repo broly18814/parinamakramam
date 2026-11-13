@@ -4,7 +4,7 @@ labels: ["bug"]
 body:
   - type: input
     id: version
-    attributes: {label: pkv version, placeholder: pkv 0.2.1}
+    attributes: {label: pkv version, placeholder: pkv 0.3.0}
     validations: {required: true}
   - type: input
     id: env

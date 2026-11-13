@@ -1,6 +1,6 @@
 [project]
 name = "parinama-verify"
-version = "0.2.1"
+version = "0.3.0"
 description = "Independent checker for code changes: runs the affected tests and flags weakened tests"
 readme = "PYPI_README.md"  # the PyPI page; README.md is the full guide on GitHub
 license = "Apache-2.0"

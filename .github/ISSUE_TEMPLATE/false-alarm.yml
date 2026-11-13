@@ -7,7 +7,7 @@ body:
       value: Thank you. False alarms are the main thing we measure and fix. Please don't paste private code; a small made-up example that shows the same thing is perfect.
   - type: input
     id: version
-    attributes: {label: pkv version, description: "Output of `pkv --version`", placeholder: pkv 0.2.1}
+    attributes: {label: pkv version, description: "Output of `pkv --version`", placeholder: pkv 0.3.0}
     validations: {required: true}
   - type: textarea
     id: finding

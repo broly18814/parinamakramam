@@ -25,7 +25,7 @@ An independent AI research and product company, started with ₹0 on one MacBook
 | Grants, free computing and incubators in India | [docs/business/F001…](docs/business/F001-grants-compute-and-incubators-india.md) |
 | See every important decision and why | [governance/DECISION_LOG.md](governance/DECISION_LOG.md) |
 | See every experiment: predictions, then results | [governance/EXPERIMENT_REGISTRY.md](governance/EXPERIMENT_REGISTRY.md) |
-| Use or read the checker tool (version 0.2.1, on PyPI as `parinama-verify`) | [product/verify/](product/verify/README.md) |
+| Use or read the checker tool (version 0.3.0, on PyPI as `parinama-verify`) | [product/verify/](product/verify/README.md) |
 | See every change, version by version | [CHANGELOG.md](CHANGELOG.md) |
 | Report a security problem | [SECURITY.md](SECURITY.md) |
 | Rules for changing the code | [CONTRIBUTING.md](CONTRIBUTING.md) |

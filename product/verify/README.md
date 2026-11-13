@@ -1,4 +1,4 @@
-# Parinama Verify (`pkv`): version 0.2.1
+# Parinama Verify (`pkv`): version 0.3.0
 
 An **independent checker** for code changes, whether an AI or a person made them. It works out which tests a change could break, **runs them itself**, looks for **signs the tests were weakened**, and gives a **receipt** with one verdict. Every sentence in the receipt comes from recorded data, never from an AI's opinion.
 
@@ -34,6 +34,30 @@ We replayed real commits from click, more-itertools, boltons and tomli through p
 
 See the [full results](../../docs/product/REAL-001-design.md), and every alarm classified for the [study set](realworld/results/study/CLASSIFICATION.md) and the [held-out set](realworld/results/heldout/CLASSIFICATION.md).
 - Scenario details and raw results are in [`benchmark/`](benchmark/).
+
+### Against other tools (TAMPER-BENCH, sealed held-out set)
+
+[TAMPER-BENCH](../../benchmarks/tamper-bench/README.md) is our public benchmark of tools that claim to catch weakened tests:
+- 41 hidden cheats and 20 honest changes;
+- the cases were sealed with a fingerprint before any tool saw them;
+- every tool was run once, at its defaults.
+
+pkv 0.3.0 gives the same verdict as 0.2.1 on all 61 cases.
+
+| Tool | Cheats caught | Subtle cheats (test loosened, edited, replaced or rigged) | False alarms |
+|---|---|---|---|
+| testwall 1.0.1 | 32 / 41 | **18 / 20** | 15 / 20 |
+| checkwash 0.12.0 | 28 / 41 | 11 / 20 | 7 / 20 |
+| **pkv** (default) | 24 / 41 | 7 / 20 | 3 / 20 |
+| Skylos 5.6.0 | 22 / 41 | 3 / 20 | **2 / 20** |
+| pkv with `--mutate` (optional) | **34 / 41** | 16 / 20 | 5 / 20 |
+
+**What this means:**
+- pkv catches every deleted or skipped test (14 / 14), but by default it misses most *subtle* weakening.
+- No tool catches subtle weakening without many false alarms.
+- `--mutate` catches far more, but it raised more false alarms than the limit we set before the run, so it stays optional and we don't claim it as an advantage.
+
+The other three tools, every case, and our own errors are in the [results](../../benchmarks/tamper-bench/results/heldout/NOTES.md).
 
 ## The four verdicts
 
@@ -97,21 +121,21 @@ Exit code 2 means pkv itself couldn't complete, for example because the folder i
 Install it into the same Python environment as your project's tests. It needs Python 3.10 or newer, and pytest:
 
 ```bash
-python -m pip install parinama-verify==0.2.1
+python -m pip install parinama-verify==0.3.0
 ```
 
 **If `python` isn't found** (common on macOS), use `python3`. **If pip refuses** with "externally-managed-environment", your system's Python is managed by another tool such as Homebrew: create a virtual environment first.
 
 ```bash
 python3 -m venv .venv
-.venv/bin/python -m pip install parinama-verify==0.2.1 pytest
+.venv/bin/python -m pip install parinama-verify==0.3.0 pytest
 .venv/bin/pkv --version
 ```
 
-This installs exactly release **0.2.1** from [PyPI](https://pypi.org/project/parinama-verify/). To install the same release straight from GitHub instead:
+This installs exactly release **0.3.0** from [PyPI](https://pypi.org/project/parinama-verify/). To install the same release straight from GitHub instead:
 
 ```bash
-python -m pip install "git+https://github.com/broly18814/parinamakramam@pkv-v0.2.1#subdirectory=product/verify"
+python -m pip install "git+https://github.com/broly18814/parinamakramam@pkv-v0.3.0#subdirectory=product/verify"
 ```
 
 Releases are listed on the project's [Releases page](https://github.com/broly18814/parinamakramam/releases). Each one also offers the ready-built package (a `.whl` file), the source archive, and a `SHA256SUMS` file. Check your download against it before installing:
@@ -149,9 +173,7 @@ pkv fresh .pkv/receipt.json
 
 Keep receipts in `.pkv/`: pkv never counts its own receipts as part of a change.
 
-## Coming in 0.3: receipts a reviewer can check (on GitHub now, not yet on PyPI)
-
-These are in the source on GitHub, not in release 0.2.1.
+## New in 0.3: receipts a reviewer can check, and a map of the project
 
 - **Tests run in a clean copy by default.** pkv copies exactly the fingerprinted files, and nothing git ignores, into a fresh folder outside the project, and runs the tests there. A pass can't depend on a leftover file the receipt doesn't cover. Measured on 120 real commits (REAL-004), it gave the same verdict on all 120, with no extra time. `--in-place` runs in the project folder, as 0.2 did: use it if your tests need git-ignored generated or compiled files.
 - **Receipts are sealed.** `pkv fresh` answers **TAMPERED** if a receipt was edited after pkv wrote it. The seal shows edits but isn't a signature, and it says so.
@@ -200,6 +222,7 @@ Add these steps to a workflow (`.github/workflows/*.yml`). The project's depende
 The receipt appears on the run's summary page and is kept as a downloadable file (`pkv-receipt`). The verdict is also available to later steps as `steps.<id>.outputs.verdict`.
 
 **Notes:**
+- **The action still runs pkv 0.2.1** until its 0.3.0 version is published, right after this release reaches PyPI: it pins the exact file and its fingerprint, and that file must exist first.
 - It is **listed on GitHub's Marketplace**: [Parinama Verify](https://github.com/marketplace/actions/parinama-verify). Its code is in [`broly18814/parinama-verify-action`](https://github.com/broly18814/parinama-verify-action), the action's own small public repository. Its first step downloads exactly pkv 0.2.1 from PyPI and refuses to run it unless its SHA-256 fingerprint matches the release's `SHA256SUMS` ([how it's built](../action/PUBLISHING.md)).
 - For the strongest guarantee, pin to the release's full commit hash instead of the tag name: `broly18814/parinama-verify-action@57ada4841218a46d4166f3e0bc8de18ebe1912dd  # v0.2.1`. That's GitHub's own security advice for third-party actions.
 - The older address, `broly18814/parinamakramam/product/verify@pkv-v0.2.1`, still works. It runs pkv straight from this repository, with no download.

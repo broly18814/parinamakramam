@@ -295,7 +295,7 @@ def main(argv: list[str] | None = None) -> int:
     mp.add_argument("--module", metavar="FILE", help="show one file in detail")
     mp.add_argument("--json", action="store_true", help="print the whole map as JSON")
     mp.add_argument("--md", metavar="FILE", help="also save the map as Markdown")
-    h = sub.add_parser("hook", help="use pkv as a Claude Code hook (A4)")
+    h = sub.add_parser("hook", help="use pkv as a Claude Code hook: check the work whenever Claude says it's done")
     hsub = h.add_subparsers(dest="hook_command", required=True)
     for name, text in (("install", "add pkv's Stop hook to Claude Code's settings"),
                        ("uninstall", "remove pkv's Stop hook from Claude Code's settings")):

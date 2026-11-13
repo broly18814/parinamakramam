@@ -11,6 +11,10 @@ Before version 1.0, anything may still change.
 
 ### [Unreleased]
 
+### [0.3.0]: 2026-11-13
+
+Receipts a reviewer can check, a Claude Code hook, and a map of the project. **One change of default:** tests now run in a clean copy (use `--in-place` for 0.2's behaviour). The blocking rules are unchanged: on TAMPER-BENCH's 61 sealed cases, 0.3.0 gives the same verdict as 0.2.1 on every one.
+
 #### Added
 - **`pkv map`: a map of a Python project, read without running it and without any AI model** (A5, [design and results](docs/product/A5-design.md)):
   - **What it shows:** the project's parts and which depend on which, the most-used code, the code no test reaches, and git-ignored files left out, as from a receipt;
@@ -36,6 +40,9 @@ Before version 1.0, anything may still change.
 - **The GitHub Action in its own public repository**, [`broly18814/parinama-verify-action`](https://github.com/broly18814/parinama-verify-action), tag `v0.2.1` (commit `57ada48`), [listed on GitHub's Marketplace](https://github.com/marketplace/actions/parinama-verify). It downloads exactly pkv 0.2.1 from PyPI and refuses to run it unless the file's SHA-256 fingerprint matches the published one. Nothing is installed into the user's Python environment. Its `action.yml` is generated from `product/verify/action.yml` by `product/action/build_action.py`, so the two can't drift. Five self-checks (an offline install test, a wrong-fingerprint refusal, generation and version pinning) and a CI job (`marketplace-action`, which runs the real download) guard it. `scripts/publish-action.sh` published it, and a second CI job (`published-action`) uses the published copy, pinned to its commit (D-045, D-046).
 
 #### Changed
+- **`pkv check` runs the tests in a clean copy by default** (D-053). Use `--in-place` for 0.2's behaviour, for tests that need git-ignored generated or compiled files.
+- **JSON receipts gain new fields:** `schema`, `environment`, `digest`, `run.where` and `run.working_folder_changed`. Existing fields are unchanged. Receipts from 0.2 still work with `pkv fresh`, which reports them as unsealed.
+- **`pkv fresh` has two new exit codes:** 3 (tampered) and 4 (not reproduced, with `--rerun`). Codes 0, 1 and 2 mean what they did.
 - The install instructions now say what to do when `python` isn't found (use `python3`) and when pip refuses to install into a system-managed Python (use a virtual environment). Found by the first real install. The PyPI page shows this from the next release, because a published version's page can't be changed.
 
 ### [0.2.1]: 2026-11-09

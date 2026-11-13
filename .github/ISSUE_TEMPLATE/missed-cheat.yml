@@ -7,7 +7,7 @@ body:
       value: Thank you. If the trick could be used to fool pkv on purpose, please use the private security report instead (see the links on the previous page).
   - type: input
     id: version
-    attributes: {label: pkv version, placeholder: pkv 0.2.1}
+    attributes: {label: pkv version, placeholder: pkv 0.3.0}
     validations: {required: true}
   - type: textarea
     id: trick
