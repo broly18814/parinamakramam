@@ -228,8 +228,10 @@ def test_two_level_contexts_extend_the_one_level_ones():
     kids, total = g2.child_slots(("ROOT", "", "FunctionDef", "body"), r)
     assert [k for k, _h in kids] == [("FunctionDef", "body", "If", f) for f in r.slot_fields]
     assert total == pytest.approx(sum(h for _k, h in kids))
-    with pytest.raises(ValueError):
-        Grammar2(Grammar(TREES, BLOCKS), TREES)
+    # EXP-006 refused blocks here; EXP-007 (build spec S5) allows them. EXP-006 never combined
+    # the two, and without blocks the grammar is unchanged (checked on all 260 tomli tasks).
+    g2b = Grammar2(Grammar(TREES, BLOCKS), TREES)
+    assert any(r.is_block for rs in g2b.e2.values() for r, _cost in rs)
 
 
 def test_task_sampling_follows_the_registered_rule():

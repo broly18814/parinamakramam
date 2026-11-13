@@ -392,15 +392,22 @@ class Grammar:
 class Grammar2:
     """Condition CTX2. Context c2 = (grandparent type, its field, parent type, field);
     P2(r | c2) = (n(r, c2) + alpha * P(r | c)) / (n(c2) + alpha), backing off to the
-    one-level grammar `g1` (which must have no blocks), with c = the last two parts of c2."""
+    one-level grammar `g1`, with c = the last two parts of c2.
+
+    With blocks in `g1` (EXP-007, build spec S5), the past is rewritten with them exactly as
+    `g1` rewrites it: a block use counts once in the two-level context of its root, and the
+    nodes it covers count nothing. A block's holes are always direct children of its root
+    (EXP-005 cuts holes only there), so a hole's two-level context is formed exactly like a
+    base rule's child's. Without blocks, every step is EXP-006's."""
 
     def __init__(self, g1: Grammar, past: Sequence[ast.AST], alpha: float = ALPHA):
-        if g1.blocks:
-            raise ValueError("CTX2 backs off to the grammar without blocks")
+        for b in g1.blocks:
+            if any(t != b.type for t, _f in b.child_ctxs):
+                raise ValueError("a block's holes must be direct children of its root")
         self.g1, self.alpha = g1, alpha
         n2: Counter = Counter()
         for tree in past:
-            self._count(tree, ROOT_CTX2, n2)
+            self._count(tree, ROOT_CTX2, n2, rewrite_plan(tree, g1.blocks) if g1.blocks else {})
         self.n2c: Counter = Counter()
         explicit: dict[tuple, list] = defaultdict(list)
         for (r, c2), n in n2.items():
@@ -417,11 +424,18 @@ class Grammar2:
         self._cands: dict[tuple, Cands] = {}
         self._slots: dict[tuple, tuple[tuple, float]] = {}
 
-    def _count(self, node: ast.AST, c2: tuple, n2: Counter) -> None:
+    def _count(self, node: ast.AST, c2: tuple, n2: Counter, plan: dict) -> None:
+        use = plan.get(id(node))
+        if use is not None:
+            b, holes = use
+            n2[(b, c2)] += 1
+            for h, (t, f) in zip(holes, b.child_ctxs, strict=True):
+                self._count(h, (c2[2], c2[3], t, f), n2, plan)
+            return
         r = self.g1.base[template(node)[0]]
         n2[(r, c2)] += 1
         for f, _i, c in _children(node):
-            self._count(c, (c2[2], c2[3], r.type, f), n2)
+            self._count(c, (c2[2], c2[3], r.type, f), n2, plan)
 
     def _one_level(self, c: tuple) -> None:
         g1 = self.g1
@@ -431,7 +445,7 @@ class Grammar2:
         for r, ec in g1.ecost[c]:
             cost[r.kpos] = ec
         self.cost1[c] = cost
-        self.kids2[c] = [tuple((c[0], c[1], r.type, f) for f in r.slot_fields) for r in rs]
+        self.kids2[c] = [tuple((c[0], c[1], t, f) for t, f in r.child_ctxs) for r in rs]
 
     def _get(self, c2: tuple) -> float:
         v = self.h2.get(c2)
