@@ -30,7 +30,7 @@ The `marketplace-action` job in `.github/workflows/self-checks.yml` runs this ex
 
 ## The founder's one-time step on GitHub's website (needs your sign-in)
 
-1. Open **https://github.com/broly18814/parinama-verify-action/releases/new?tag=v0.2.1**.
+1. Open **https://github.com/broly18814/parinama-verify-action/releases/new?tag=v0.2.1** (for later releases, the new tag: v0.3.0 was published on 13 November 2026).
 2. Tick **"Publish this Action to the GitHub Marketplace"**. If GitHub asks, read and accept the **Marketplace Developer Agreement** and turn on two-factor sign-in. Only you can accept the agreement: it binds you, not the assistant.
 3. Choose the categories **Testing** (primary) and **Continuous integration** (secondary).
 4. Release title: `Parinama Verify 0.2.1`. Then click **Publish release**.

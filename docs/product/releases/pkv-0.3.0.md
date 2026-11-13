@@ -1,6 +1,14 @@
 # Release pkv 0.3.0: notes and checklist
 
-**Status:** prepared on 13 November 2026 on branch `release-pkv-0.3.0`. **Not released.** Publishing is the founder's decision: a PyPI version can never be replaced once it's published.
+**Status:** ✅ **released on 13 November 2026** (founder: "Release 0.3.0", then "Approved").
+- **GitHub release** [`pkv-v0.3.0`](https://github.com/broly18814/parinamakramam/releases/tag/pkv-v0.3.0), on commit `5913715`.
+- **On PyPI:** https://pypi.org/project/parinama-verify/0.3.0/
+  - wheel SHA-256 `9397776d87c1f439e69f5b923fb4d040399eee9451acffabd007434be9310121`;
+  - sdist SHA-256 `4e03ffdb2936317d71615bf74072fb211cb00691efdcf5f49729c2af7cafba1b`.
+
+  Both equal the release's `SHA256SUMS`.
+- **A fresh `pip install parinama-verify==0.3.0` works end to end:** VERIFIED in a clean copy, the receipt REPRODUCED, and `pkv map` runs.
+- **The Marketplace action** downloads exactly this wheel. It's published as [`v0.3.0`](https://github.com/broly18814/parinama-verify-action/tree/v0.3.0) (commit `098df0b`). Listing it on the Marketplace is the founder's click (step 4).
 
 ## The release notes (the text for the GitHub release)
 

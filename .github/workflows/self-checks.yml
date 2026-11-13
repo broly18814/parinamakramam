@@ -132,4 +132,4 @@ jobs:
       - run: |
           git config --global user.name "ci"
           git config --global user.email "ci@example.invalid"
-      - uses: broly18814/parinama-verify-action@57ada4841218a46d4166f3e0bc8de18ebe1912dd  # v0.2.1
+      - uses: broly18814/parinama-verify-action@098df0bba1f4e66be2519f0a9b167a6e182e9393  # v0.3.0
