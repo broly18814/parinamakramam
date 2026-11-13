@@ -6,8 +6,16 @@ import ast
 
 import pytest
 from pevo.codeblocks import build_corpus, functions, learn, shape
-from pevo.grammarsearch import Grammar, Grammar2, assemble, complete_trees, library_blocks, positions, \
-    rules_used, search
+from pevo.grammarsearch import (
+    Grammar,
+    Grammar2,
+    assemble,
+    complete_trees,
+    library_blocks,
+    positions,
+    rules_used,
+    search,
+)
 
 PAST = '''
 def a(xs, out):

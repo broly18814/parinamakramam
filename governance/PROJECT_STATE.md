@@ -163,10 +163,13 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
 5. 🟡 **Track B: EXP-007** ([design](../docs/research/EXP-007-design.md), H23: library × guidance).
    - **Build specification** (14 Nov, [spec](../docs/research/EXP-007-build-spec.md)): it fixes, before any data, how the model sees the code, how its guesses are compared, the exact G3 grammar, block names, and the missing two-level grammar with blocks.
    - ✅ **Prompt and guess-reading code built** (`pevo/llmguide.py`, 10 self-checks). All 260 of tomli's calibration tasks round-trip exactly.
+   - ✅ **The two-level grammar with blocks (S5) is built.** It's identical to EXP-006's on all 260 tomli tasks when there are no blocks, and every context sums to probability 1, with blocks or without.
+   - ✅ **The model is downloaded (14 Nov; the founder: "ok proceed but download only in this folder"):** `mlx-community/Qwen3.6-35B-A3B-4bit`, revision `38740b8`, all 17 files matching Hugging Face's SHA-256.
+     - **Where everything is:** `mlx-lm` 0.32.2, its download caches and the model are all in `/Volumes/projects/hope/work/mlx` (about 20 GB), outside the git repository. Nothing was written to the home folder. Deleting that folder removes all of it.
+     - **First run:** loads in 9 s, with thinking switched off; about 1.5 s per guess, one at a time.
    - **Next:**
-     - the two-level grammar with blocks (S5) and the G3 grammar (S3);
-     - 🔑 **founder:** allow installing `mlx-lm` and downloading the model `mlx-community/Qwen3.6-35B-A3B-4bit` (20.4 GB, Apache-2.0);
-     - then calibration on tomli.
+     - the G3 grammar (S3);
+     - then calibration on tomli. Its first step measures batched sampling speed against the design's 2-hour model rule (one at a time would take about 5 hours).
 6. **Watch adoption weekly, with no interviews (D-002)**, including the Marketplace listing (D-047). Next reading: 17 November ([ADOPTION.md](ADOPTION.md)).
 7. **Founder: decide whether to restore the 14 deleted repositories on GitHub** while its 90-day window is open (OI-15, D-041; possible until about 6 February 2027).
 8. **Funding:** no applications to private foreign funders (D-048). No company or payments before there is use (D-010); plan v2 §7 has the route for later.
