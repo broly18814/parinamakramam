@@ -121,9 +121,11 @@ def measure(work: Path, p: dict[str, Any], group: str) -> dict[str, Any]:
             "false_untested": false_untested, "tests": rows}
 
 
-def run(work: Path) -> None:
+def run(work: Path, only: str | None = None) -> None:
     RESULTS.mkdir(parents=True, exist_ok=True)
     for group, projects in (("seen", SEEN), ("unseen", UNSEEN)):
+        if only and group != only:
+            continue
         for p in projects:
             res = measure(work, p, group)
             (RESULTS / f"{p['name']}.json").write_text(json.dumps(res, indent=1) + "\n")
@@ -137,8 +139,9 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("command", choices=["setup", "run"])
     ap.add_argument("--work", type=Path, required=True)
+    ap.add_argument("--group", choices=["seen", "unseen"], help="run only this group of projects")
     a = ap.parse_args()
-    setup(a.work) if a.command == "setup" else run(a.work)
+    setup(a.work) if a.command == "setup" else run(a.work, a.group)
 
 
 if __name__ == "__main__":

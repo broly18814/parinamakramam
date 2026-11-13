@@ -1,0 +1,40 @@
+{
+ "project": "more-itertools",
+ "group": "seen",
+ "commit": "f42daddf205f335fea6e200dad46049f33e71221",
+ "licence": "MIT",
+ "map_seconds": 0.09,
+ "test_files": 2,
+ "code_files": 5,
+ "dynamic_import_files": [
+  "more_itertools/more.py"
+ ],
+ "runtime": 10,
+ "map": 10,
+ "both": 10,
+ "recall": 1.0,
+ "precision": 1.0,
+ "false_untested": [],
+ "tests": [
+  {
+   "test": "tests/test_more.py",
+   "pytest_exit": 0,
+   "runtime": 5,
+   "map": 5,
+   "both": 5,
+   "misses": [],
+   "extras": 0,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_recipes.py",
+   "pytest_exit": 0,
+   "runtime": 5,
+   "map": 5,
+   "both": 5,
+   "misses": [],
+   "extras": 0,
+   "ignored_loaded": []
+  }
+ ]
+}

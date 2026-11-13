@@ -86,3 +86,24 @@ The environment is REAL-003 round B's (Python 3.12, pytest 8.3), plus each proje
 - **A map of imports, not of calls.** "a.py uses b.py" means a imports b, not which functions it calls.
 - **The runtime set is per test file, not per test.** It also includes modules loaded at import time that a test never actually calls. So the ground truth is "what this test file *loads*", which is also exactly what pkv's selection needs.
 - **Python and pytest only,** like the rest of pkv.
+
+---
+
+## REAL-005 results, part 1: the four seen projects (13 November 2026)
+
+Raw records: [`product/verify/realworld/results/map/`](../../product/verify/realworld/results/map/). pkv was at commit `3f3b0cf`.
+
+| Project | Test files | Real links (runtime) | Map links | Found | Recall | Precision | False "untested" | `pkv map` time |
+|---|---|---|---|---|---|---|---|---|
+| click | 43 | 685 | 840 | 685 | **100%** | 81.5% | 0 | 0.14 s |
+| more-itertools | 2 | 10 | 10 | 10 | **100%** | 100% | 0 | 0.09 s |
+| boltons | 30 | 169 | 169 | 169 | **100%** | 100% | 0 | 0.11 s |
+| tomli | 3 | 17 | 19 | 17 | **100%** | 89.5% | 0 | 0.02 s |
+| **Seen, total** | 78 | 881 | 1,038 | 881 | **100%** | **84.9%** | **0** | ≤ 0.14 s |
+
+- **Every file Python really loaded was in pkv's map,** with 0 misses of any kind, so M-pkv is 0.
+- **The extra links** (157 in click, 2 in tomli) are imports the code contains that weren't loaded in these runs. They make test selection run a little more, which is safe.
+- **No git-ignored file was loaded** by any test.
+- **One click test file failed its own test** at that commit (exit 1). It still loaded its modules normally, so it's counted.
+
+**This half doesn't decide anything on its own.** pkv's import rules were partly tuned on these four projects, so the pre-registered rule also requires the **unseen** projects (toolz, sortedcontainers). Cloning and installing them needs the founder's go-ahead, because it runs outside code that hasn't been run here before. Until then, A5-P1 and A5-P2 are open, A5-P3 holds for the seen group (84.9% ≥ 80%), and A5-P4 holds (≤ 0.14 s).

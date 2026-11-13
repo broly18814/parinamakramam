@@ -1,0 +1,450 @@
+{
+ "project": "click",
+ "group": "seen",
+ "commit": "8abb77a8432e03ed14a95f972b44f905279415a7",
+ "licence": "BSD-3-Clause",
+ "map_seconds": 0.14,
+ "test_files": 43,
+ "code_files": 47,
+ "dynamic_import_files": [
+  "examples/complex/complex/cli.py"
+ ],
+ "runtime": 685,
+ "map": 840,
+ "both": 685,
+ "recall": 1.0,
+ "precision": 0.8155,
+ "false_untested": [],
+ "tests": [
+  {
+   "test": "tests/test_abort_interrupt.py",
+   "pytest_exit": 0,
+   "runtime": 15,
+   "map": 19,
+   "both": 15,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_arguments.py",
+   "pytest_exit": 0,
+   "runtime": 17,
+   "map": 20,
+   "both": 17,
+   "misses": [],
+   "extras": 3,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_basic.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 19,
+   "both": 16,
+   "misses": [],
+   "extras": 3,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_chain.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 19,
+   "both": 16,
+   "misses": [],
+   "extras": 3,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_command_decorators.py",
+   "pytest_exit": 0,
+   "runtime": 15,
+   "map": 19,
+   "both": 15,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_commands.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 19,
+   "both": 16,
+   "misses": [],
+   "extras": 3,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_compat.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 19,
+   "both": 16,
+   "misses": [],
+   "extras": 3,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_context.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 19,
+   "both": 16,
+   "misses": [],
+   "extras": 3,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_custom_classes.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 19,
+   "both": 16,
+   "misses": [],
+   "extras": 3,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_defaults.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 19,
+   "both": 16,
+   "misses": [],
+   "extras": 3,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_deprecations.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 19,
+   "both": 16,
+   "misses": [],
+   "extras": 3,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_exceptions/test_FileError.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_formatting.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 19,
+   "both": 16,
+   "misses": [],
+   "extras": 3,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_imports.py",
+   "pytest_exit": 0,
+   "runtime": 15,
+   "map": 19,
+   "both": 15,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_info_dict.py",
+   "pytest_exit": 0,
+   "runtime": 15,
+   "map": 19,
+   "both": 15,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_normalization.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 19,
+   "both": 16,
+   "misses": [],
+   "extras": 3,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_options.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 19,
+   "both": 16,
+   "misses": [],
+   "extras": 3,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_parser.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 19,
+   "both": 16,
+   "misses": [],
+   "extras": 3,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_shell_completion.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 19,
+   "both": 16,
+   "misses": [],
+   "extras": 3,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_stream_lifecycle.py",
+   "pytest_exit": 0,
+   "runtime": 15,
+   "map": 19,
+   "both": 15,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_termui.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 19,
+   "both": 16,
+   "misses": [],
+   "extras": 3,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_testing.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 19,
+   "both": 16,
+   "misses": [],
+   "extras": 3,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_types/test_Choice.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_types/test_File.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_types/test_FloatRange.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_types/test_FuncParamType.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_types/test_IntRange.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_types/test_ParamType.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_types/test_Path.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_types/test_convert_type.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_utils/test_KeepOpenFile.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_utils/test_LazyFile.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_utils/test__detect_program_name.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_utils/test__expand_args.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_utils/test_confirm.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_utils/test_echo.py",
+   "pytest_exit": 0,
+   "runtime": 17,
+   "map": 20,
+   "both": 17,
+   "misses": [],
+   "extras": 3,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_utils/test_echo_via_pager.py",
+   "pytest_exit": 1,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_utils/test_format_filename.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_utils/test_make_default_short_help.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_utils/test_open_file.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_utils/test_prompt.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_utils/test_sentinel.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_utils/test_style.py",
+   "pytest_exit": 0,
+   "runtime": 16,
+   "map": 20,
+   "both": 16,
+   "misses": [],
+   "extras": 4,
+   "ignored_loaded": []
+  }
+ ]
+}

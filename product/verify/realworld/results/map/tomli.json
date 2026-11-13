@@ -1,0 +1,50 @@
+{
+ "project": "tomli",
+ "group": "seen",
+ "commit": "43a86ade8b795c6ef9b4ec53372a607cd1ed426f",
+ "licence": "MIT",
+ "map_seconds": 0.02,
+ "test_files": 3,
+ "code_files": 11,
+ "dynamic_import_files": [
+  "tests/test_misc.py"
+ ],
+ "runtime": 17,
+ "map": 19,
+ "both": 17,
+ "recall": 1.0,
+ "precision": 0.8947,
+ "false_untested": [],
+ "tests": [
+  {
+   "test": "tests/test_data.py",
+   "pytest_exit": 0,
+   "runtime": 6,
+   "map": 7,
+   "both": 6,
+   "misses": [],
+   "extras": 1,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_error.py",
+   "pytest_exit": 0,
+   "runtime": 5,
+   "map": 6,
+   "both": 5,
+   "misses": [],
+   "extras": 1,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_misc.py",
+   "pytest_exit": 0,
+   "runtime": 6,
+   "map": 6,
+   "both": 6,
+   "misses": [],
+   "extras": 0,
+   "ignored_loaded": []
+  }
+ ]
+}
