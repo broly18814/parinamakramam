@@ -162,7 +162,7 @@ These are in the source on GitHub, not in release 0.2.1.
   - **the code no test reaches**;
   - with `--module FILE`, one file's links and the tests that reach it.
 
-  Checked against what Python really loads on four real projects, it found 881 of 881 real links.
+  Checked against what Python really loads on six real projects (REAL-005), the map contained 1,358 of 1,358 real links, including two projects pkv had never seen; 89.6% of its links were real.
 - **A Claude Code hook:** `pkv hook install`. When Claude says it's done, pkv checks the change and saves a sealed receipt in `.pkv/receipt.json`.
   - If the verdict isn't VERIFIED, Claude is told why and keeps working.
   - If Claude stops again without changing anything, it may stop, but you're shown the verdict.

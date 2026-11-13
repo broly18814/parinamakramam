@@ -107,3 +107,40 @@ Raw records: [`product/verify/realworld/results/map/`](../../product/verify/real
 - **One click test file failed its own test** at that commit (exit 1). It still loaded its modules normally, so it's counted.
 
 **This half doesn't decide anything on its own.** pkv's import rules were partly tuned on these four projects, so the pre-registered rule also requires the **unseen** projects (toolz, sortedcontainers). Cloning and installing them needs the founder's go-ahead, because it runs outside code that hasn't been run here before. Until then, A5-P1 and A5-P2 are open, A5-P3 holds for the seen group (84.9% ≥ 80%), and A5-P4 holds (≤ 0.14 s).
+
+## REAL-005 results, part 2: the two unseen projects, and the verdict (13 November 2026)
+
+The founder gave the go-ahead to clone and run them ("Yes, run them"). pkv is unchanged since part 1.
+
+| Project | Test files | Real links (runtime) | Map links | Found | Recall | Precision | False "untested" | `pkv map` time |
+|---|---|---|---|---|---|---|---|---|
+| toolz `451af60` | 29 | 423 | 424 | 423 | **100%** | 99.8% | 0 | 0.05 s |
+| sortedcontainers `3ac3586` | 9 | 54 | 54 | 54 | **100%** | 100% | 0 | 0.06 s |
+| **Unseen, total** | 38 | 477 | 478 | 477 | **100%** | **99.8%** | **0** | ≤ 0.06 s |
+| **All six projects** | 116 | 1,358 | 1,516 | 1,358 | **100%** | **89.6%** | **0** | ≤ 0.14 s |
+
+- **Every test file passed** in both unseen projects.
+- **toolz has four files that load code by name at run time,** which pkv flags as "dynamic", and the map still missed nothing.
+
+### In plain words
+
+**Across six real projects, every file Python actually loaded when a test file ran was on pkv's map: 1,358 of 1,358, including two projects pkv had never seen.**
+- No file was wrongly called "untested".
+- Nine in ten of the map's links really happened; the rest are imports the code contains that these runs didn't load, which only makes pkv run a few extra tests.
+- Each map took under a fifth of a second.
+
+### Against the predictions
+
+| | Result |
+|---|---|
+| **A5-P1** (recall ≥ 99% and M-pkv ≤ 1%, in seen and unseen separately) | ✅ 100% and 0 in both |
+| **A5-P2** (≤ 2 files wrongly called untested) | ✅ 0 |
+| **A5-P3** (precision ≥ 80%) | ✅ 89.6% (seen 84.9%, unseen 99.8%) |
+| **A5-P4** (≤ 5 s per project) | ✅ ≤ 0.14 s |
+
+**What this decides (rule above):** `pkv map` ships in 0.3, with its measured recall and precision stated in the README (D-054).
+
+**Limits of this result:**
+- Six well-kept, pure-Python libraries; nothing with compiled extensions, plugins loaded through entry points, or heavy dynamic loading.
+- The ground truth is what each test *file* loads, not what each test calls.
+- Perfect recall here doesn't prove it everywhere. It means no counter-example turned up in 1,358 real links.

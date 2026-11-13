@@ -148,7 +148,8 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
        **REAL-004** on 120 unseen real commits: the same verdict on 120 of 120, 0 of 49,869 test outcomes different, all 112 receipts reproduced, no extra time. So **the clean copy is the default from 0.3** (D-053).
      - ✅ **A4** ([design and results](../docs/product/A4-design.md)): `pkv hook install` adds a Claude Code Stop hook. Claude can't finish silently on work that failed or looks weakened. 14 self-checks pass.
        - 🔑 **Founder:** sign in to the `claude` command on this Mac (run `claude` once). The live-session test of the hook needs it.
-     - **Next:** A5 (`pkv map`), then pkv 0.3 for the founder to approve, then the launch (A6), posted by the founder.
+     - ✅ **A5, `pkv map` (13 Nov)** ([design and results](../docs/product/A5-design.md)): a map of a Python project, read without running it. **REAL-005:** on six real projects, two of them unseen, the map contained 1,358 of 1,358 files Python really loaded, wrongly called 0 files untested, and had 89.6% of its links real (D-054).
+     - **Next:** pkv 0.3 (A2 opt-in; A3, A4, A5) for the founder to approve, then the launch (A6), posted by the founder.
    - **Earlier steps:** A2 was built (two development rounds, [A2 design](../docs/product/A2-design.md)). REAL-003, on 120 real commits, was inconclusive (A2 acted on 25, with 2 correct alarms), so A2 stays opt-in ([REAL-003](../docs/product/REAL-003-design.md)).
    - **New misses, understood but not fixed:**
      - code-side cheats with untouched tests;

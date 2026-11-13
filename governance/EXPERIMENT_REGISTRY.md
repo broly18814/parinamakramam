@@ -374,9 +374,8 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
 
 ## REAL-005: is `pkv map` right? (A5)
 
-- **Status:** 🟡 half run, 13 November 2026 ([A5 design and results](../docs/product/A5-design.md)).
-  - **Seen projects:** recall 100% (881 of 881 real links), 0 misses, 0 files wrongly called untested, precision 84.9%, ≤ 0.14 s.
-  - **The unseen projects** (toolz, sortedcontainers) wait for the founder's go-ahead to clone and run them.
+- **Status:** ✅ run on 13 November 2026; all four predictions pass (D-054) ([A5 design and results](../docs/product/A5-design.md)).
+- **Result:** recall 100% on all six projects (1,358 of 1,358 real links; seen 881, unseen 477), 0 pkv defects, 0 files wrongly called untested, precision 89.6%, ≤ 0.14 s per map.
 - **The question:** does the map pkv builds without running anything match what Python really loads when each test file runs?
 - **Projects:** six, reported separately:
   - **seen:** click, more-itertools, boltons and tomli (pkv's import rules were partly tuned on these);

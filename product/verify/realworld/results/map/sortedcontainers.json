@@ -1,0 +1,108 @@
+{
+ "project": "sortedcontainers",
+ "group": "unseen",
+ "commit": "3ac358631f58c1347f1d6d2d92784117db0f38ed",
+ "licence": "Apache-2.0",
+ "map_seconds": 0.06,
+ "test_files": 9,
+ "code_files": 17,
+ "dynamic_import_files": [],
+ "runtime": 54,
+ "map": 54,
+ "both": 54,
+ "recall": 1.0,
+ "precision": 1.0,
+ "false_untested": [],
+ "tests": [
+  {
+   "test": "tests/test_coverage_sorteddict.py",
+   "pytest_exit": 0,
+   "runtime": 6,
+   "map": 6,
+   "both": 6,
+   "misses": [],
+   "extras": 0,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_coverage_sortedkeylist_modulo.py",
+   "pytest_exit": 0,
+   "runtime": 6,
+   "map": 6,
+   "both": 6,
+   "misses": [],
+   "extras": 0,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_coverage_sortedkeylist_negate.py",
+   "pytest_exit": 0,
+   "runtime": 6,
+   "map": 6,
+   "both": 6,
+   "misses": [],
+   "extras": 0,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_coverage_sortedlist.py",
+   "pytest_exit": 0,
+   "runtime": 6,
+   "map": 6,
+   "both": 6,
+   "misses": [],
+   "extras": 0,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_coverage_sortedset.py",
+   "pytest_exit": 0,
+   "runtime": 6,
+   "map": 6,
+   "both": 6,
+   "misses": [],
+   "extras": 0,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_stress_sorteddict.py",
+   "pytest_exit": 0,
+   "runtime": 6,
+   "map": 6,
+   "both": 6,
+   "misses": [],
+   "extras": 0,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_stress_sortedkeylist.py",
+   "pytest_exit": 0,
+   "runtime": 6,
+   "map": 6,
+   "both": 6,
+   "misses": [],
+   "extras": 0,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_stress_sortedlist.py",
+   "pytest_exit": 0,
+   "runtime": 6,
+   "map": 6,
+   "both": 6,
+   "misses": [],
+   "extras": 0,
+   "ignored_loaded": []
+  },
+  {
+   "test": "tests/test_stress_sortedset.py",
+   "pytest_exit": 0,
+   "runtime": 6,
+   "map": 6,
+   "both": 6,
+   "misses": [],
+   "extras": 0,
+   "ignored_loaded": []
+  }
+ ]
+}
