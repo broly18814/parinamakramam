@@ -159,6 +159,12 @@ def _parse_function(text: str, indented: bool, name: str) -> ast.AST | None:
 
 def piece_shape(hole: Hole, guess: str) -> tuple | None:
     """The shape of the piece a guess puts in the hole, or None if it can't be read (S2)."""
+    node = piece_node(hole, guess)
+    return None if node is None else shape(node)
+
+
+def piece_node(hole: Hole, guess: str) -> ast.AST | None:
+    """The normalised node a guess puts in the hole (its rules are what G3 counts, S3), or None."""
     g = clean_guess(guess, hole.is_stmt, hole.is_slice)
     if g is None:
         return None
@@ -173,7 +179,7 @@ def piece_shape(hole: Hole, guess: str) -> tuple | None:
             continue
         piece = node_at(normalise(fn), hole.path)
         if piece is not None and isinstance(piece, ast.stmt) == hole.is_stmt:
-            return shape(piece)
+            return piece
     return None
 
 
