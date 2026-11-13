@@ -8,8 +8,15 @@ Take a reading with `scripts/adoption.sh` (dates are UTC) and add the row below.
 |---|---|---|---|---|---|---|---|---|
 | 2026-11-08 | not available yet (pypistats updates daily) | 2, both our own release checks | 0 | 0 | 0 (0 unique) | 0 (0 unique) | 0 | — (not yet created) |
 | 2026-11-10 | 12 / 99 / 0 (the month counter hasn't caught up yet) | 3 | 0 | 0 | 29 (20 unique) | 472 (67 unique) | 0 | — (not yet created) |
+| 2026-11-13 | 2 / 111 / 111 | 4 | 0 | 0 | 47 (21 unique) | 1135 (186 unique) | 0 | 0, 11 (3 unique) |
 
 ## Notes on each reading
+
+- **2026-11-13: the baseline before the launch** (pkv 0.3.0 released today).
+  - **Downloads:** many of the 111 this week are robots, plus our own release and install checks.
+  - **Clones:** the 1,135 follow from about 80 uploads, each running several CI jobs.
+  - **Users:** a public code search for workflows using `broly18814/parinama-verify-action` or `broly18814/parinamakramam/product/verify` found **0** repositories other than ours.
+  - **What it's for:** the launch (A6) is judged against this row.
 
 - **2026-11-10 (day 3).** No sign of real use yet, as expected two days after publishing.
   - PyPI, not counting mirrors: 87 downloads on 8 November and 12 on 9 November. The first-day spike followed by a sharp drop is the usual pattern of scanners and mirrors picking up a new package, plus our own install checks (D-032).
