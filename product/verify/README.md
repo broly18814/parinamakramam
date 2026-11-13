@@ -156,6 +156,13 @@ These are in the source on GitHub, not in release 0.2.1.
 - **Tests run in a clean copy by default.** pkv copies exactly the fingerprinted files, and nothing git ignores, into a fresh folder outside the project, and runs the tests there. A pass can't depend on a leftover file the receipt doesn't cover. Measured on 120 real commits (REAL-004), it gave the same verdict on all 120, with no extra time. `--in-place` runs in the project folder, as 0.2 did: use it if your tests need git-ignored generated or compiled files.
 - **Receipts are sealed.** `pkv fresh` answers **TAMPERED** if a receipt was edited after pkv wrote it. The seal shows edits but isn't a signature, and it says so.
 - **`pkv fresh --rerun` repeats the run** in a clean copy, and answers **REPRODUCED** or **NOT REPRODUCED**, listing each test that ended differently. A reviewer doesn't have to trust the receipt at all.
+- **`pkv map`** prints a map of the project, read without running it:
+  - its parts;
+  - the most-used code;
+  - **the code no test reaches**;
+  - with `--module FILE`, one file's links and the tests that reach it.
+
+  Checked against what Python really loads on four real projects, it found 881 of 881 real links.
 - **A Claude Code hook:** `pkv hook install`. When Claude says it's done, pkv checks the change and saves a sealed receipt in `.pkv/receipt.json`.
   - If the verdict isn't VERIFIED, Claude is told why and keeps working.
   - If Claude stops again without changing anything, it may stop, but you're shown the verdict.
