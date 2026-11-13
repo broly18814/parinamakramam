@@ -18,7 +18,7 @@ Add these steps to a workflow (`.github/workflows/*.yml`):
   with:
     python-version: "3.12"
 - run: pip install pytest -r requirements.txt     # your project's test dependencies
-- uses: broly18814/parinama-verify-action@v0.2.1
+- uses: broly18814/parinama-verify-action@v0.3.0
   with:
     fail-on: FAILED,SUSPICIOUS,UNVERIFIED   # the default
 ```
@@ -57,7 +57,7 @@ The scenarios are small, and the same author wrote them and pkv. In a replay of 
 
 ## Security
 
-- **What it downloads.** The first step downloads exactly pkv 0.2.1 from PyPI. It refuses to run the file unless its SHA-256 fingerprint is `010ae72465c3c6c4d48d4b47c463c00acb58f7a70c8fc47c04c17c0e3024dbae`, the same as in the [GitHub release's `SHA256SUMS`](https://github.com/broly18814/parinamakramam/releases/tag/pkv-v0.2.1). The package is unpacked into the runner's temporary folder; nothing is installed into your Python environment.
+- **What it downloads.** The first step downloads exactly pkv 0.3.0 from PyPI. It refuses to run the file unless its SHA-256 fingerprint is `9397776d87c1f439e69f5b923fb4d040399eee9451acffabd007434be9310121`, the same as in the [GitHub release's `SHA256SUMS`](https://github.com/broly18814/parinamakramam/releases/tag/pkv-v0.3.0). Since 0.3, pkv runs the tests in a clean copy of exactly the checked code, and seals its receipt. The package is unpacked into the runner's temporary folder; nothing is installed into your Python environment.
 - **Inputs are never pasted into commands.** Every input reaches the shell through environment variables, so a crafted branch name can't inject commands.
 - **Pin to a full commit hash.** For the strongest guarantee, use the full commit hash of a release instead of the tag (GitHub's own advice for third-party actions).
 - **Reporting a problem:** see [SECURITY.md](https://github.com/broly18814/parinamakramam/blob/main/SECURITY.md).

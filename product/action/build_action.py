@@ -11,7 +11,7 @@ loaded from.
 
 Engineering: a pure text transformation of product/verify/action.yml (standard
 library only, no YAML parser needed). The wheel is pinned by URL and SHA-256; the
-same hash is in the GitHub release's SHA256SUMS for tag pkv-v0.2.1. A self-check
+same hash is in the GitHub release's SHA256SUMS for tag pkv-v0.3.0. A self-check
 (product/verify/tests/test_marketplace_action.py) requires the committed
 product/action/action.yml to equal this script's output, and VERSION to equal the
 package version, so a release can't forget to update the Marketplace copy.
@@ -25,10 +25,10 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-VERSION = "0.2.1"
-WHEEL_URL = ("https://files.pythonhosted.org/packages/3a/7d/bd51de17b1a1c70ac371eeaa502d48360aadec6cbdc04ae496228f46d07b/"
-             "parinama_verify-0.2.1-py3-none-any.whl")
-WHEEL_SHA256 = "010ae72465c3c6c4d48d4b47c463c00acb58f7a70c8fc47c04c17c0e3024dbae"
+VERSION = "0.3.0"
+WHEEL_URL = ("https://files.pythonhosted.org/packages/1c/74/f615cd4cd9d9d7ec256ee80b2de44301ea50a9bbeb72b4ad2cc9b8923ae5/"
+             "parinama_verify-0.3.0-py3-none-any.whl")
+WHEEL_SHA256 = "9397776d87c1f439e69f5b923fb4d040399eee9451acffabd007434be9310121"
 
 HERE = Path(__file__).resolve().parent
 SOURCE = HERE.parent / "verify" / "action.yml"
