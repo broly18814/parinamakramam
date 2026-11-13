@@ -7,7 +7,7 @@ again without changing anything, it may stop, but *you* are told the verdict. So
 finish silently on work that failed or looks weakened.
 
 The hook rules used here are Claude Code's documented ones (https://code.claude.com/docs/en/hooks):
-the Stop input on stdin (`cwd`, `stop_hook_active`), output `{"decision": "block", "reason": ...}`
+the Stop input on stdin (`cwd`, `stop_hook_active`), output `hookSpecificOutput.additionalContext`
 to keep Claude working, `{"systemMessage": ...}` to tell the user, and exit 0. A broken checker
 never blocks: blocking on our own error would trap the user (docs/product/A4-design.md).
 """
@@ -15,6 +15,7 @@ never blocks: blocking on our own error would trap the user (docs/product/A4-des
 from __future__ import annotations
 
 import contextlib
+import hashlib
 import io
 import json
 import os
@@ -25,6 +26,7 @@ from pathlib import Path
 from typing import Any
 
 from .gitdiff import PKV_DIR, GitError, repo_root, tree_hash
+from .imports import python_files
 
 RECEIPT = f"{PKV_DIR}/receipt.json"
 STATE = f"{PKV_DIR}/hook-state.json"
@@ -90,10 +92,48 @@ def claude_stop(stdin_text: str, *, base: str | None = None, timeout: float = 30
         return 0, json.dumps({"systemMessage": f"pkv: the check couldn't run ({type(e).__name__}: {e}); "
                                                 "this stop wasn't checked."})
     verdict = ev["verdict"]
-    _save(state_path, {"tree": ev["tree_hash"], "verdict": verdict, "blocked": verdict != "VERIFIED"})
+    sig, code = signature(ev), code_fingerprint(root)
+    _save(state_path, {"tree": ev["tree_hash"], "verdict": verdict, "blocked": verdict != "VERIFIED",
+                       "signature": sig, "code": code})
     if verdict == "VERIFIED":
         return 0, json.dumps({"systemMessage": f"pkv: VERIFIED. Sealed receipt saved in {RECEIPT}."})
-    return 0, json.dumps({"decision": "block", "reason": _reason(ev)})
+    if (data.get("stop_hook_active") and state.get("blocked") and state.get("signature") == sig
+            and state.get("code") == code):
+        # The second loop guard. Claude Code says it's already continuing because of a stop hook,
+        # no Python file or test setting changed, and the result is exactly what Claude was told.
+        # Found by the first live test: a file that changes on its own (a log) made every stop
+        # look like new code to the fingerprint guard above, and Claude was blocked again and
+        # again on the same failure. An edit to the code is still checked and blocked.
+        msg = (f"pkv: this change is still {verdict} (receipt: {RECEIPT}). Claude was told why and "
+               "stopped again with the same result.")
+        return 0, json.dumps({"systemMessage": msg})
+    return 0, json.dumps(keep_working(_reason(ev)))
+
+
+def keep_working(reason: str) -> dict[str, Any]:
+    """Claude Code's documented way for a Stop hook to keep Claude working on purpose:
+    `additionalContext`, shown as "Stop hook feedback". `decision: "block"` would do the same, but
+    Claude Code labels it a hook *error*, which made users think pkv had broken (live test, 13 Nov)."""
+    return {"hookSpecificOutput": {"hookEventName": "Stop", "additionalContext": reason}}
+
+
+SETTINGS = ("pyproject.toml", "setup.cfg", "tox.ini", "pytest.ini", "setup.py")
+
+
+def code_fingerprint(root: Path) -> str:
+    """SHA-256 of every Python file and test-settings file pkv reads: what can change a test's result."""
+    h = hashlib.sha256()
+    for rel in sorted({*python_files(root), *(s for s in SETTINGS if (root / s).is_file())}):
+        h.update(rel.encode() + b"\0" + (root / rel).read_bytes() + b"\0")
+    return h.hexdigest()
+
+
+def signature(ev: dict[str, Any]) -> str:
+    """What Claude was told: the verdict, its reasons, the failing tests and the warnings."""
+    run = ev.get("run") or {}
+    suspicious = sorted(f.get("message", "") for f in ev.get("findings", []) if f.get("severity") == "suspicious")
+    return json.dumps([ev.get("verdict"), ev.get("verdict_reasons", []), sorted(run.get("failed_tests", [])),
+                       suspicious], sort_keys=True)
 
 
 # ------------------------------------------------------------------ install / uninstall
