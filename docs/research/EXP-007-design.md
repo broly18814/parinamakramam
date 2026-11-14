@@ -245,7 +245,11 @@ Run on 14–15 November 2026 from the frozen code `02e2a34`; every result file r
   Against doubling the search, it's +1.1 [0.0, +2.2] at G1, −1.8 [−2.9, −0.8] at G2, and −1.6 [−3.4, +0.1] at G3. Only at the plainest level does the library match double the search.
 - **Buildable from the past's rules:** 53.2% of fastapi's tasks and 86.0% of black's. A model guess can bring in rules the past never had: L0·G3 found 13.0% of fastapi's tasks (3.7% of black's) that no other condition could build at all. This is part of G3's gain.
 - **The model alone, top-1:** fastapi 25.0, black 26.0 (L0 prompt).
-- **Contamination check:** see below.
+- **Contamination check** (design section 3; `experiments/EXP-007/contamination.txt`): **no sign of memorisation.** The model alone, on 100 tasks from code written *before* its release, against all the tasks written after:
+  - fastapi: 36.0 against 38.9 (any of 16);
+  - black: 47.0 against 43.9.
+
+  The gaps (−2.9 and +3.1 points) are within chance for 100 tasks: one standard error is about 5 points. The check was missed by the build spec, so it ran after the evaluation, by a rule committed first (`cc74171`). It read nothing from the searches.
 
 ### What this means, honestly
 

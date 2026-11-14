@@ -171,7 +171,7 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
    - ✅ **G3 built (S3)**, identical to EXP-006 with no guesses on all 260 tomli tasks.
    - ✅ **Calibrated and frozen (D-057):** the model is Qwen3.6-35B-A3B, λ = 0.5 and k = 16. The evaluation projects are **fastapi and black**: rich and pyparsing had too few functions after the model's release date (amendment 1), and documentation examples and copied code are left out (amendment 2).
    - ✅ **Run once and scored (15 Nov, D-058):** H24 ✅ and H25 ✅ (guidance helps a lot, and search adds to the model's guesses); H23 ❌, H26 ❌ and H27 ❌ (blocks and names add nothing under guidance). By the stop rule's closest branch, the library line pauses and EXP-008 isn't designed.
-   - **Contamination check** (reported, not tested): it was missed by the build spec, so it runs after the evaluation, by a rule committed first (`cc74171`).
+   - **Contamination check** (reported, not tested; run after the evaluation by a rule committed first, `cc74171`): no sign of memorisation. The model alone scored 36.0 and 47.0 on code from before its release, against 38.9 and 43.9 after.
    - **Next for Track B:** guidance, not blocks. A design for a model's guesses checked by a project's tests is the natural follow-up, but none is written yet.
 6. **Watch adoption weekly, with no interviews (D-002)**, including the Marketplace listing (D-047). Next reading: 17 November ([ADOPTION.md](ADOPTION.md)).
 7. **Founder: decide whether to restore the 14 deleted repositories on GitHub** while its 90-day window is open (OI-15, D-041; possible until about 6 February 2027).

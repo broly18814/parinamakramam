@@ -1,0 +1,5 @@
+EXP-007 contamination check (reported, not tested): the model alone, plain prompt (L0)
+
+project     before: any16   top1   after: any16   top1   gap (any16)
+fastapi              36.0   22.0           38.9   25.0          -2.9
+black                47.0   30.0           43.9   26.0          +3.1

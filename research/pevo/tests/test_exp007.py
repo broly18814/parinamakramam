@@ -31,3 +31,16 @@ def test_the_published_hypothesis_tests_reproduce_from_the_saved_results():
 
 def test_the_published_supplement_reproduces_from_the_saved_results():
     assert _run("supplement.py") == (ROOT / "experiments" / "EXP-007" / "supplement.txt").read_text()
+
+
+def test_the_contamination_check_reproduces_from_the_saved_guesses():
+    """Scoring rebuilds the before-split tasks from the projects' git history, so it needs the clones
+    (outside the repository); without them, this check is skipped."""
+    import pytest
+
+    work = Path("/Volumes/projects/hope/work/exp007")
+    if not (work / "src" / "fastapi").exists():
+        pytest.skip("the study clones of fastapi and black aren't on this machine")
+    out = subprocess.run([sys.executable, "-W", "ignore", str(ROOT / "experiments" / "EXP-007" / "contamination.py"),
+                          "--work", str(work), "--score"], capture_output=True, text=True, check=True).stdout
+    assert out == (ROOT / "experiments" / "EXP-007" / "contamination.txt").read_text()

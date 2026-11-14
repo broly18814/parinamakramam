@@ -306,6 +306,7 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
 - **Data:** fastapi (1,006 tasks) and black (642 tasks), split at the model's release date (15 April 2026), so the hidden code was written after the model was trained. tomli for calibration only.
 - **Model:** Qwen3.6-35B-A3B (MLX 4-bit, Apache-2.0), on this Mac. 16 guesses per task and prompt, about 12 s per task for all three prompts.
 - **Cost:** 5.4 hours of sampling and about 4 minutes of search, ₹0.
+- **Contamination check** (reported, not tested): no sign of memorisation. The model alone scored 36.0 and 47.0 on code from before its release, against 38.9 and 43.9 after ([output](../experiments/EXP-007/contamination.txt)).
 
 ---
 
