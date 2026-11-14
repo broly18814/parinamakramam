@@ -125,7 +125,7 @@ Every run is on this Mac, in bfloat16, on data from the [dataset registry](../..
 
 1. **EXP-M1 first.** It builds the data pipeline (from the registry) and the tokenizer every later experiment uses, and the baseline model the proposals must beat.
 2. **Then EXP-A2**, overnight, because evolution needs no new data, only the pipeline. **EXP-A1** follows, then EXP-A3.
-3. **IND-1** (Telugu and Hindi coding tasks) shares the same nights. If the Mac is over-booked, IND-1 moves to the next 90 days, as plan v2's risk 4 already says. That's a cost of this change, recorded in D-050.
+3. ~~**IND-1** (Telugu and Hindi coding tasks)~~ was removed by the founder (D-056), so it no longer shares these nights. Originally: it shares the same nights. If the Mac is over-booked, IND-1 moves to the next 90 days, as plan v2's risk 4 already says. That's a cost of this change, recorded in D-050.
 
 ## 6. Limits known in advance
 

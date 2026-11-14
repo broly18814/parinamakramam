@@ -114,7 +114,7 @@ The founder restated the full brief on 10 November 2026. Checked against it, the
 | 14. Own-model roadmap for the MacBook | not started | A small baseline model can be trained on this Mac at no cost, and later architecture work needs that baseline. |
 | 8. Three discovery algorithms, compared in writing | partly | Four have been *tested* (EXP-001, 002, 002b, 005) but never set side by side with pseudocode and costs. |
 | 9 and 11. Three architecture proposals, and how blocks could shape an architecture | not started | Better written after EXP-006, so they build on evidence about whether blocks help search at all. |
-| 15. Languages: English, Telugu, Hindi | not started | Needs dataset licences checked one by one. |
+| 15. Languages: English, Telugu, Hindi | Telugu and Hindi coding tasks (Track D) **removed** by the founder (D-056) | Whether Telugu and Hindi also leave the model work (EXP-M1, datasets) is asked separately. |
 | 12. An automated research assistant | not started | The manual version (pre-register, run, analyse, self-check) is the specification; automate it once it has stopped changing. |
 | 3 and 16. Full competitor and pricing table; three-part business model | partly | P001 covers the checker's competitors and a first view of earning. Prices should be re-read from official pages at the time a paid offer is designed (D-010). |
 | 7. The full engine design document | partly | `research/pevo` implements a first version; the formal definitions are in R001's appendix. |
@@ -125,7 +125,7 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
 
 > **12 November 2026:** [plan v2](PLAN-v2.md) is approved (D-049). The steps below follow its weeks 1–2; the full calendar is in its section 8.
 
-1. **Founder: decide on Telangana's TISC 2026** (a challenge, not a grant; reportedly closes **20 November**, from a secondary source). Enter or skip.
+1. ~~Founder: decide on Telangana's TISC 2026~~. **Skipped** (D-056).
 2. ✅ **Track C, C1 done (12 Nov):** all four sizes inside their predictions. In bfloat16: 61k, 33k, 16k and 6.9k tokens/s, so a full run takes about 1 hour, 4 hours, 17 hours and 4.2 days. EXP-M1 uses 10M–50M ([results](../experiments/C1-throughput/README.md)).
 3. 🟡 **Track C, C2: dataset registry**, widened on 12 Nov at the founder's request (D-050) to about 45 datasets in seven groups, in [DATASET_REGISTRY.md](DATASET_REGISTRY.md) (brief §16): every source with licence, version and hash. Versions and fingerprints are filled in at first download; the items marked unverified must be resolved first. Downloading The Stack v1 needs its terms accepted on Hugging Face, which is a founder step. Text: FineWeb-Edu, IndicCorp v2, Sangraha; code: a permissive subset of The Stack v1 dedup. Excluded: Samanantar, The Stack v2, Python-Edu.
 4. ✅ **Track A, A1: TAMPER-BENCH built, sealed and run (12 Nov)**, in [benchmarks/tamper-bench/](../benchmarks/tamper-bench/README.md): 30 development cases and 61 held-out cases, every label confirmed by running it.

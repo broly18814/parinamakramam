@@ -158,7 +158,10 @@ First we measure what this Mac can really do: a 10-minute training test at each 
 
 ---
 
-## 6. Track D, Telugu and Hindi on real tasks
+## 6. Track D, Telugu and Hindi on real tasks: ❌ removed on 14 November 2026 (D-056)
+
+> **Removed by the founder** (D-056). Kept below only as the record of what was planned.
+
 
 ### In plain words
 
@@ -226,5 +229,5 @@ A fixed small set of real-project coding tasks, with the instructions in English
 ## 11. Decisions this plan needs from the founder
 
 1. ~~**Approve plan v2**, or ask for changes.~~ **Done:** approved on 12 November 2026 (D-049).
-2. **TISC 2026** (Telangana, closes 20 Nov; the date is from a secondary source): enter or skip.
+2. **TISC 2026** (Telangana, closes 20 Nov; the date is from a secondary source): enter or skip. **Skipped** (D-056).
 3. Later, at week 11: **write and post the launch yourself.**
