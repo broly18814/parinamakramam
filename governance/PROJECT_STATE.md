@@ -1,6 +1,6 @@
 # Project state: read this first
 
-**Last updated:** 12 November 2026 · **Stage:** week 1 of [plan v2](PLAN-v2.md), approved on 12 November 2026 (D-049), which replaces the original [90-day roadmap](ROADMAP.md) from day 5 onward.
+**Last updated:** 15 November 2026 · **Stage:** week 1 of [plan v2](PLAN-v2.md), approved on 12 November 2026 (D-049), which replaces the original [90-day roadmap](ROADMAP.md) from day 5 onward.
 
 This file says where everything stands right now, so anyone (you, or a new Claude session) can continue without guessing. Words are explained in the [Glossary](../docs/GLOSSARY.md). To learn every idea from zero, use the [course](../docs/LEARN.md) (38 lessons).
 
@@ -23,6 +23,7 @@ This file says where everything stands right now, so anyone (you, or a new Claud
 ## Done so far
 
 ### Research
+- **EXP-007 (completed, 15 Nov; the library line pauses, D-058):** a language model on this Mac, guiding the search, lifted it from 23 to **53** hidden pieces found out of 100, and the search beat the model's own 16 guesses (41). But the learned phrase book added **nothing** under guidance (53.0), and its small gain shrank as the guesser got better. Tested on fastapi and black, on code written after the model was released ([design and results](../docs/research/EXP-007-design.md)).
 - **Prior work** reviewed and a critique given ([R001](../docs/research/R001-primitive-evolution-prior-art-and-thesis.md)).
 - **EXP-006 (completed; stop rule applies, D-044):** the phrase book made search a little cheaper (+4.1 of 100), but no more than doubling the search, and sharper habits with no phrase book did better (+8.4). The question was: does a phrase book of blocks learned from a project's past let a search *find* its future code with fewer guesses? Tested on three projects nobody here has analysed (packaging, urllib3, httpx), against double the search and against sharper habits with no blocks ([design](../docs/research/EXP-006-design.md), D-039).
 - **EXP-001 (completed):** the right building blocks are worth about 15× more thinking, but discovering them failed. The tidied code reproduces all 200 results exactly.
@@ -169,7 +170,9 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
      - **First run:** loads in 9 s, with thinking switched off; about 1.5 s per guess, one at a time.
    - ✅ **G3 built (S3)**, identical to EXP-006 with no guesses on all 260 tomli tasks.
    - ✅ **Calibrated and frozen (D-057):** the model is Qwen3.6-35B-A3B, λ = 0.5 and k = 16. The evaluation projects are **fastapi and black**: rich and pyparsing had too few functions after the model's release date (amendment 1), and documentation examples and copied code are left out (amendment 2).
-   - **Next:** the one evaluation run (about 5–6 h of sampling, then the searches), then `analysis.py` scores H23–H27.
+   - ✅ **Run once and scored (15 Nov, D-058):** H24 ✅ and H25 ✅ (guidance helps a lot, and search adds to the model's guesses); H23 ❌, H26 ❌ and H27 ❌ (blocks and names add nothing under guidance). By the stop rule's closest branch, the library line pauses and EXP-008 isn't designed.
+   - **Contamination check** (reported, not tested): it was missed by the build spec, so it runs after the evaluation, by a rule committed first (`cc74171`).
+   - **Next for Track B:** guidance, not blocks. A design for a model's guesses checked by a project's tests is the natural follow-up, but none is written yet.
 6. **Watch adoption weekly, with no interviews (D-002)**, including the Marketplace listing (D-047). Next reading: 17 November ([ADOPTION.md](ADOPTION.md)).
 7. **Founder: decide whether to restore the 14 deleted repositories on GitHub** while its 90-day window is open (OI-15, D-041; possible until about 6 February 2027).
 8. **Funding:** no applications to private foreign funders (D-048). No company or payments before there is use (D-010); plan v2 §7 has the route for later.

@@ -296,6 +296,19 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
 
 ---
 
+## EXP-007 (the number reused): do building blocks help only when the search is guided?
+
+- **Status:** ✅ finished on 15 November 2026. **H24 and H25 passed; H23 (primary), H26 and H27 failed (D-058).** With a local language model guiding it, the search found **53.3** of 100 hidden pieces within 5,000 tries, against **22.6** for sharper habits and **41.4** for the model's own 16 guesses. The learned blocks added nothing under guidance (**53.0**), names added nothing (52.5), and doubling the search did more (54.6). The library gain shrank as the guesser improved: +4.0, +1.1 and −0.3 points at the three guidance levels. Details: [design section 9](../docs/research/EXP-007-design.md#9-results-evaluation-projects-run-once-after-the-freeze-in-d-057).
+- **Stop rule:** no branch matched exactly (the library gain is still positive under the two weaker guessers), so the closest reading is recorded as a judgement: **the library line pauses, EXP-008 isn't designed, and research moves to guidance and to own models** (D-058).
+- **History:** designed on 12 November 2026 (plan v2, Track B); build spec on 14 November; calibrated on tomli only and frozen with its analysis script (D-057); evaluation projects chosen by amendments 1 and 2. One evaluation run on 14–15 November from code `02e2a34`. A defect in block naming crashed the first start before any evaluation data existed; it was fixed and the run restarted.
+- **Design and predictions:** [EXP-007-design.md](../docs/research/EXP-007-design.md); build spec: [EXP-007-build-spec.md](../docs/research/EXP-007-build-spec.md).
+- **The question:** a 3 × 3 crossing of phrase book (none, learned, learned and named) with guesser (plain, sharper habits, a language model's guesses). Does the phrase book help more when the guesser is better?
+- **Data:** fastapi (1,006 tasks) and black (642 tasks), split at the model's release date (15 April 2026), so the hidden code was written after the model was trained. tomli for calibration only.
+- **Model:** Qwen3.6-35B-A3B (MLX 4-bit, Apache-2.0), on this Mac. 16 guesses per task and prompt, about 12 s per task for all three prompts.
+- **Cost:** 5.4 hours of sampling and about 4 minutes of search, ₹0.
+
+---
+
 ## C1: how fast can this Mac train small language models? (plan v2, Track C)
 
 - **Status:** ✅ measured on 12 November 2026, after the pre-registration `8b14f76`. **All four sizes fell inside their predicted ranges.** In bfloat16, tokens/s: 10M 61,173; 25M 32,868; 50M 16,311; 125M 6,941. A full run (20 tokens per parameter) takes about 1 hour, 4 hours, 17 hours and 4.2 days. The 10-minute heat test stepped down 6%, to a steady 6,520, after 7 minutes. By the written rules: EXP-M1 uses 10M–50M, and one 125M run is allowed. float32 at 125M used 39 GB and ran at about a third of the speed. Details: [README, Results](../experiments/C1-throughput/README.md#results-12-november-2026-measured-after-the-predictions-above-were-committed-in-8b14f76).

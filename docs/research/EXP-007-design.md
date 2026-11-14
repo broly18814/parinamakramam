@@ -1,7 +1,7 @@
 # EXP-007 design: do building blocks help only when the search is guided? (pre-registration draft)
 
 **Plan v2, Track B** ([PLAN-v2.md](../../governance/PLAN-v2.md), section 4; D-049).
-**Status:** design draft, 12 November 2026. Committed **before any code** for it is written. It's frozen, like EXP-006, only after calibration on tomli, by the rules in section 6. The evaluation projects are searched once, after the freeze.
+**Status:** design draft, 12 November 2026; frozen 14 November (D-057); **run once on 14–15 November, results in section 9 (D-058).** Committed **before any code** for it is written. It's frozen, like EXP-006, only after calibration on tomli, by the rules in section 6. The evaluation projects are searched once, after the freeze.
 **Name:** this reuses the number EXP-007. The earlier EXP-007 (a test-checked search) was closed unrun by D-044. This is a different experiment.
 
 ## 1. The question
@@ -194,3 +194,76 @@ EXP-005's inclusion rule leaves out a top folder named exactly `docs`, but not `
 These apply to the past and the future alike, at both the split and the pin. **Amendment 1's list is then applied again from the top**, with the same thresholds.
 
 **Why this is a correction, not tuning.** It was prompted only by function counts and file paths, never by any search, compression or model result. The rule is general (it names no project), and it applies equally to the calibration project. The calibration run is checked under it: if tomli changes, the calibration is repeated.
+
+---
+
+## 9. Results (evaluation projects, run once after the freeze in D-057)
+
+Run on 14–15 November 2026 from the frozen code `02e2a34`; every result file records the commit. Sampling took 3.4 h for fastapi (1,006 tasks) and 2.0 h for black (642 tasks), about 12 s per task for all three prompts. The searches took about 4 minutes (19 minutes of processor time, spread across the cores). Source: `experiments/EXP-007/results/` (the model's guesses and every search's effort) and `experiments/EXP-007/hypothesis_tests.txt`. Reproduce with `python3 experiments/EXP-007/analysis.py`; a self-check requires that output to match exactly, and the guesses are saved, so it never needs the model again.
+
+### In plain words first
+
+- **The model's guidance is a big step.** When a language model running on this Mac reads the code around the hidden piece and makes 16 guesses, and the search leans towards those guesses, the search found **53 of 100** hidden pieces within 5,000 tries. The best guesser without the model (EXP-006's sharper habits) found **23**.
+- **The search adds to the model's own guesses.** The model's 16 guesses alone contained the exact answer **41** times in 100. Its single likeliest guess was right about **26** times.
+- **The phrase book adds nothing once the model guides.** With the learned blocks, the guided search found 53.0, against 53.3 without them. Naming the blocks for the model didn't help either (52.5).
+- **Guessing twice as long still beats the phrase book:** 54.6.
+- So learned building blocks helped only the weakest guesser, and the better the guesser, the less they mattered. That's the opposite of what H23 predicted.
+
+### Found, out of 100 hidden pieces, within 5,000 tries
+
+| Cell | fastapi | black | **Average** |
+|---|---|---|---|
+| L0·G1, no blocks, plain habits | 9.4 | 21.7 | 15.5 |
+| L1·G1, blocks, plain habits | 13.5 | 25.5 | 19.5 |
+| L0·G2, no blocks, sharper habits | 14.1 | 31.0 | 22.6 |
+| L1·G2, blocks, sharper habits | 16.2 | 31.2 | 23.7 |
+| **L0·G3, no blocks, model-guided** | 47.2 | 59.3 | **53.3** |
+| L1·G3, blocks, model-guided | 48.7 | 57.3 | 53.0 |
+| L2·G3, named blocks, model-guided | 47.6 | 57.3 | 52.5 |
+| L0·G3 with 10,000 tries | 48.2 | 61.1 | 54.6 |
+| The model alone, any of 16 (L0 prompt) | 38.9 | 43.9 | 41.4 |
+| The model alone, any of 16 (L1 prompt) | 41.2 | 41.0 | 41.1 |
+| The model alone, any of 16 (L2 prompt) | 40.2 | 39.7 | 39.9 |
+
+### Pre-registered tests
+
+| | Result (points, [95% range]) | Verdict | My prior |
+|---|---|---|---|
+| **H23** the library gain grows with guidance (primary) | **−4.3** [−6.3, −2.3]; the library gain under G3 is −0.3 [−2.1, +1.5], against the +3 required | ❌ FAIL: the gain *shrinks* with guidance | 35% |
+| **H24** the model's guidance beats sharper habits | **+30.7** [+27.5, +34.0] | ✅ PASS | 70% |
+| **H25** the search adds to the model's own guesses | **+11.9** [+10.0, +13.8] (best G3 cell: L0·G3) | ✅ PASS | 50% |
+| **H26** names help the model use blocks | −0.5 [−2.0, +0.9] | ❌ FAIL | 30% |
+| **H27** under guidance, the library beats doubling the search | −1.6 [−3.4, +0.1] | ❌ FAIL | 25% |
+
+### Reported, not tested (design 4.4, 4.5; `experiments/EXP-007/supplement.txt`, written after the run)
+
+- **The library gain at each guidance level:**
+  - G1: **+4.0** [+2.8, +5.3];
+  - G2: +1.1 [+0.3, +1.9];
+  - G3: −0.3 [−2.1, +1.5].
+
+  Against doubling the search, it's +1.1 [0.0, +2.2] at G1, −1.8 [−2.9, −0.8] at G2, and −1.6 [−3.4, +0.1] at G3. Only at the plainest level does the library match double the search.
+- **Buildable from the past's rules:** 53.2% of fastapi's tasks and 86.0% of black's. A model guess can bring in rules the past never had: L0·G3 found 13.0% of fastapi's tasks (3.7% of black's) that no other condition could build at all. This is part of G3's gain.
+- **The model alone, top-1:** fastapi 25.0, black 26.0 (L0 prompt).
+- **Contamination check:** see below.
+
+### What this means, honestly
+
+- **Search and the model's guesses aren't compared at equal checking.** A search "finds" a piece by checking up to 5,000 candidates against the exact answer. The model alone gets 16 checks. The design reports this cost and doesn't trade it (4.4), so H25 means: *with a checker that recognises the right answer*, searching around the model's guesses beats keeping only its guesses. In a coding tool that checker would be the project's tests, and running tests 5,000 times costs far more than running them 16 times.
+- **G3 also sees more** (the whole surrounding function), as section 8 says. H24's size mixes better habits with more information. H23 compares library gains *within* a guidance level, so this doesn't bias it.
+- **Calibration and evaluation differ a lot:** L0·G3 found 79.2 in tomli but 53.3 here. tomli is smaller and more regular, and its calibration numbers were never evidence.
+- **Two projects, one model, one prompt, Python only, exact match.** These are section 8's limits.
+
+### How the stop rule reads
+
+None of the three written branches matches exactly:
+- **Branch 1 (H23 and H27 pass): no.**
+- **Branch 3 (H24 passes, H25 fails): no.** H25 passed.
+- **Branch 2: half.** H23 fails, but its second condition, "`L1`−`L0` isn't positive under any guidance level", isn't met: the gain is +4.0 under G1 and +1.1 under G2, with ranges above 0.
+
+The rule didn't foresee a library that helps weak guessers a little and strong guessers not at all. The closest reading, and the one recorded (D-058), is branch 2's consequence:
+- **the library line pauses;**
+- **EXP-008 isn't designed;**
+- **research moves to guidance and to own models (Track C).**
+
+That's a judgement, not the rule's mechanical output, and it's recorded as one.

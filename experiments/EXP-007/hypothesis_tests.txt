@@ -1,0 +1,25 @@
+EXP-007 results: fastapi, black; B = 5,000; lambda = 0.5; 10,000 resamples, seed 0
+
+Solve rate at B, out of 100:
+cell                 fastapi       black    pooled
+L0G1                     9.4        21.7      15.5
+L1G1                    13.5        25.5      19.5
+L0G2                    14.1        31.0      22.6
+L1G2                    16.2        31.2      23.7
+L0G3@0.5                47.2        59.3      53.3
+L1G3@0.5                48.7        57.3      53.0
+L2G3@0.5                47.6        57.3      52.5
+L0G3@0.5 at 2B          48.2        61.1      54.6
+model L0                38.9        43.9      41.4
+model L1                41.2        41.0      41.1
+model L2                40.2        39.7      39.9
+
+Best G3 cell (for H25): L0G3@0.5
+
+Predictions (pooled difference [95% range]):
+  H23           -4.3  [  -6.3,   -2.3]  FAIL
+  H23_gain_G3   -0.3  [  -2.1,   +1.5]
+  H24          +30.7  [ +27.5,  +34.0]  PASS
+  H25          +11.9  [ +10.0,  +13.8]  PASS
+  H26           -0.5  [  -2.0,   +0.9]  FAIL
+  H27           -1.6  [  -3.4,   +0.1]  FAIL

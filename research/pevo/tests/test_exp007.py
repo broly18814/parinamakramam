@@ -15,3 +15,19 @@ def test_the_calibration_decisions_reproduce_from_the_saved_run():
                          capture_output=True, text=True, check=True).stdout
     assert out == (RUN / "CALIBRATION.txt").read_text()
     assert "lambda = 0.5" in out and "k = 16" in out and "Qwen3.6-35B-A3B qualifies" in out
+
+
+def _run(script: str) -> str:
+    return subprocess.run([sys.executable, str(ROOT / "experiments" / "EXP-007" / script)],
+                          capture_output=True, text=True, check=True).stdout
+
+
+def test_the_published_hypothesis_tests_reproduce_from_the_saved_results():
+    """Design 6.5: the published output reproduces exactly from the saved evaluation results."""
+    out = _run("analysis.py")
+    assert out == (ROOT / "experiments" / "EXP-007" / "hypothesis_tests.txt").read_text()
+    assert "Best G3 cell (for H25): L0G3@0.5" in out
+
+
+def test_the_published_supplement_reproduces_from_the_saved_results():
+    assert _run("supplement.py") == (ROOT / "experiments" / "EXP-007" / "supplement.txt").read_text()

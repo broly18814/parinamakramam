@@ -1,0 +1,29 @@
+EXP-007 supplement (exploratory, written after the run; not a test of any prediction)
+
+Pooled differences, points out of 100 [95% range]:
+  L1-L0 G1            +4.0  [  +2.8,   +5.3]
+  L1@B-L0@2B G1       +1.1  [  +0.0,   +2.2]
+  L1-L0 G2            +1.1  [  +0.3,   +1.9]
+  L1@B-L0@2B G2       -1.8  [  -2.9,   -0.8]
+  L1-L0 G3            -0.3  [  -2.1,   +1.5]
+  L1@B-L0@2B G3       -1.6  [  -3.4,   +0.1]
+
+                                           fastapi     black
+model alone L0, any of 16                     38.9      43.9
+model alone L0, top-1                         25.0      26.0
+model alone L1, any of 16                     41.2      41.0
+model alone L1, top-1                         27.0      28.8
+model alone L2, any of 16                     40.2      39.7
+model alone L2, top-1                         25.4      27.7
+buildable from the past's rules               53.2      86.0
+found within 5B, L0G1                         13.5      31.9
+found within 5B, L1G1                         16.9      34.6
+found within 5B, L0G2                         17.8      38.8
+found within 5B, L1G2                         19.4      38.5
+found within 5B, L0G3@0.5                     49.3      64.5
+found within 5B, L1G3@0.5                     50.8      62.8
+found within 5B, L2G3@0.5                     49.2      62.5
+found, not buildable before, L0G3@0.5         13.0       3.7
+found, not buildable before, L1G3@0.5         12.9       3.9
+tasks                                         1006       642
+sampling, seconds per task (3 prompts)        12.0      11.4
