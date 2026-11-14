@@ -44,8 +44,18 @@ K_SAMPLES, TEMP, TOP_P, MAX_NEW = 16, 0.8, 0.95, 64   # design 4.2 and 4.3
 LAMBDAS = (0.5, 0.9)                 # calibrated by design 6.2; the evaluation uses the frozen one
 VARIANTS = ("L0", "L1", "L2")        # the prompt: no library, numbered library, named library
 CELLS = ["L0G1", "L1G1", "L0G2", "L1G2"]   # L2 equals L1 under G1 and G2 by construction (design 4.1)
-SETS = {"calibration": ["tomli"], "evaluation": []}   # evaluation projects are added at the freeze
-PROJECTS = {"tomli": r6.PROJECTS["tomli"]}
+SETS = {"calibration": ["tomli"], "evaluation": ["fastapi", "black"]}
+# Evaluation projects: chosen by the design's amendments 1 and 2 (function counts and licence files
+# only); the split is section 3's: the last first-parent commit before the model's release, 15 April 2026.
+PROJECTS = {
+    "tomli": r6.PROJECTS["tomli"],
+    "fastapi": {"url": "https://github.com/fastapi/fastapi.git", "licence": "MIT",
+                "pin": "5758a9c8347d911444dca97a55b708cc4a8de4f8",
+                "split": "9653034b8d459607a4b7f761e6c23a6f287fa5fa"},
+    "black": {"url": "https://github.com/psf/black.git", "licence": "MIT",
+              "pin": "b10cbe43b8169e688ab86989ddcc8ad2a53ff2cd",
+              "split": "c7fc2438cbd8ef66f2b9899e6b5094a8c89af63c"},
+}
 
 
 LIMIT: int | None = None             # --limit, for a quick end-to-end test only

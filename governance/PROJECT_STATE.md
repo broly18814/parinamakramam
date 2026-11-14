@@ -167,9 +167,9 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
    - ✅ **The model is downloaded (14 Nov; the founder: "ok proceed but download only in this folder"):** `mlx-community/Qwen3.6-35B-A3B-4bit`, revision `38740b8`, all 17 files matching Hugging Face's SHA-256.
      - **Where everything is:** `mlx-lm` 0.32.2, its download caches and the model are all in `/Volumes/projects/hope/work/mlx` (about 20 GB), outside the git repository. Nothing was written to the home folder. Deleting that folder removes all of it.
      - **First run:** loads in 9 s, with thinking switched off; about 1.5 s per guess, one at a time.
-   - **Next:**
-     - the G3 grammar (S3);
-     - then calibration on tomli. Its first step measures batched sampling speed against the design's 2-hour model rule (one at a time would take about 5 hours).
+   - ✅ **G3 built (S3)**, identical to EXP-006 with no guesses on all 260 tomli tasks.
+   - ✅ **Calibrated and frozen (D-057):** the model is Qwen3.6-35B-A3B, λ = 0.5 and k = 16. The evaluation projects are **fastapi and black**: rich and pyparsing had too few functions after the model's release date (amendment 1), and documentation examples and copied code are left out (amendment 2).
+   - **Next:** the one evaluation run (about 5–6 h of sampling, then the searches), then `analysis.py` scores H23–H27.
 6. **Watch adoption weekly, with no interviews (D-002)**, including the Marketplace listing (D-047). Next reading: 17 November ([ADOPTION.md](ADOPTION.md)).
 7. **Founder: decide whether to restore the 14 deleted repositories on GitHub** while its 90-day window is open (OI-15, D-041; possible until about 6 February 2027).
 8. **Funding:** no applications to private foreign funders (D-048). No company or payments before there is use (D-010); plan v2 §7 has the route for later.

@@ -1,0 +1,10131 @@
+{
+ "project": "tomli",
+ "url": "https://github.com/hukkin/tomli.git",
+ "licence": "MIT",
+ "pinned": "43a86ade8b795c6ef9b4ec53372a607cd1ed426f",
+ "split": "c00fbc1f82d31292c21c65cb252c5e6e5b05d3b1",
+ "past_functions": 42,
+ "future_functions": 40,
+ "set": "calibration",
+ "budget": 5000,
+ "budget_max": 25000,
+ "max_target_size": 12,
+ "k_library": 50,
+ "k_samples": 16,
+ "lambdas": [
+  0.5,
+  0.9
+ ],
+ "cells": [
+  "L0G1",
+  "L1G1",
+  "L0G2",
+  "L1G2",
+  "L0G3@0.5",
+  "L0G3@0.9",
+  "L1G3@0.5",
+  "L1G3@0.9",
+  "L2G3@0.5",
+  "L2G3@0.9"
+ ],
+ "block_names": [
+  [
+   "suffixed_err_2",
+   "calls `suffixed_err` with 3 argument(s)"
+  ],
+  [
+   "aug_assign_0",
+   "an in-place update with `+`"
+  ],
+  [
+   "bin_op_1",
+   "arithmetic with `+`"
+  ],
+  [
+   "startswith_0",
+   "calls `startswith` with 2 argument(s)"
+  ],
+  [
+   "compare_1",
+   "a comparison using `==`"
+  ],
+  [
+   "skip_comment_1",
+   "calls `skip_comment` with 2 argument(s)"
+  ],
+  [
+   "ann_assign_1",
+   "an annotated assignment"
+  ],
+  [
+   "subscript_0",
+   "indexes or slices a value"
+  ],
+  [
+   "assign_1",
+   "an assignment"
+  ],
+  [
+   "subscript_1",
+   "indexes or slices a value"
+  ],
+  [
+   "assign_1_2",
+   "an assignment"
+  ],
+  [
+   "subscript_1_2",
+   "indexes or slices a value"
+  ],
+  [
+   "compare_1_2",
+   "a comparison using `!=`"
+  ],
+  [
+   "compare_2",
+   "a comparison using `in`"
+  ],
+  [
+   "assign_1_3",
+   "an assignment"
+  ],
+  [
+   "skip_chars_2",
+   "calls `skip_chars` with 3 argument(s)"
+  ],
+  [
+   "subscript_1_3",
+   "indexes or slices a value"
+  ],
+  [
+   "assign_1_4",
+   "an assignment"
+  ],
+  [
+   "is__2",
+   "calls `is_` with 2 argument(s)"
+  ],
+  [
+   "bin_op_1_2",
+   "arithmetic with `+`"
+  ],
+  [
+   "assign_1_5",
+   "an assignment"
+  ],
+  [
+   "set_0",
+   "a statement that calls `set`"
+  ],
+  [
+   "count_1",
+   "calls `count` with 3 argument(s)"
+  ],
+  [
+   "isinstance_1",
+   "calls `isinstance` with 2 argument(s)"
+  ],
+  [
+   "subscript_0_2",
+   "indexes or slices a value"
+  ],
+  [
+   "try_0",
+   "a try statement"
+  ],
+  [
+   "aug_assign_2",
+   "an in-place update with `+`"
+  ],
+  [
+   "subscript_0_3",
+   "indexes or slices a value"
+  ],
+  [
+   "if_stmt_0",
+   "an if statement"
+  ],
+  [
+   "assign_1_6",
+   "an assignment"
+  ],
+  [
+   "assign_1_7",
+   "an assignment"
+  ],
+  [
+   "unary_op_1",
+   "applies `not`"
+  ],
+  [
+   "raise_1",
+   "raises an exception"
+  ],
+  [
+   "joined_str_1",
+   "an f-string"
+  ],
+  [
+   "print_err_0",
+   "a statement that calls `print_err`"
+  ],
+  [
+   "assign_1_8",
+   "an assignment"
+  ],
+  [
+   "compare_2_2",
+   "a comparison using `not in`"
+  ],
+  [
+   "slice_1",
+   "a Slice pattern"
+  ],
+  [
+   "flush_0",
+   "a statement that calls `flush`"
+  ],
+  [
+   "bin_op_2",
+   "arithmetic with `+`"
+  ],
+  [
+   "subscript_1_4",
+   "indexes or slices a value"
+  ],
+  [
+   "isinstance_2",
+   "calls `isinstance` with 2 argument(s)"
+  ],
+  [
+   "tuple_1",
+   "a tuple"
+  ],
+  [
+   "set_2",
+   "calls `set` with 3 argument(s)"
+  ],
+  [
+   "tuple_1_2",
+   "a tuple"
+  ],
+  [
+   "compare_1_3",
+   "a comparison using `!=`"
+  ],
+  [
+   "parse_basic_str_escape_1",
+   "calls `parse_basic_str_escape` with 3 argument(s)"
+  ],
+  [
+   "bin_op_1_3",
+   "arithmetic with `*`"
+  ],
+  [
+   "compare_1_4",
+   "a comparison using `<=`"
+  ],
+  [
+   "write_1",
+   "calls `write` with 1 argument(s)"
+  ]
+ ],
+ "sampling_seconds": 3009.7,
+ "search_seconds": {
+  "L0G1": 6.84,
+  "L1G1": 5.78,
+  "L0G2": 5.78,
+  "L1G2": 5.87,
+  "L0G3@0.5": 9.61,
+  "L0G3@0.9": 10.87,
+  "L1G3@0.5": 11.0,
+  "L1G3@0.9": 11.51,
+  "L2G3@0.5": 11.03,
+  "L2G3@0.9": 10.92
+ },
+ "tasks_total": 260,
+ "python": "3.14.6",
+ "code_commit": "7ca63404c8f8b6926d9c09240ecd3fdb5a7fd365",
+ "tasks": [
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.__init__",
+   "size": 7,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.__init__",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 18285,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 23663,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.__init__",
+   "size": 12,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.__init__",
+   "size": 9,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.__init__",
+   "size": 7,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 1852,
+    "L1G2": 422,
+    "L0G3@0.5": 15844,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 1680,
+    "L1G3@0.9": 7124,
+    "L2G3@0.5": 3690,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 15,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.__init__",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 394,
+    "L1G2": 139,
+    "L0G3@0.5": 147,
+    "L0G3@0.9": 89,
+    "L1G3@0.5": 71,
+    "L1G3@0.9": 46,
+    "L2G3@0.5": 168,
+    "L2G3@0.9": 354
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.add_pending",
+   "size": 7,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": 10650,
+    "L0G3@0.5": 2184,
+    "L0G3@0.9": 518,
+    "L1G3@0.5": 251,
+    "L1G3@0.9": 245,
+    "L2G3@0.5": 539,
+    "L2G3@0.9": 600
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 2,
+    "L1": 9,
+    "L2": 11
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.add_pending",
+   "size": 8,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": 6186,
+    "L1G3@0.5": 1232,
+    "L1G3@0.9": 842,
+    "L2G3@0.5": 1088,
+    "L2G3@0.9": 950
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.finalize_pending",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 19734,
+    "L1G1": 16577,
+    "L0G2": 5827,
+    "L1G2": 2067,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 14,
+    "L1": 15,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.finalize_pending",
+   "size": 7,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 3150,
+    "L1G2": 11655,
+    "L0G3@0.5": 582,
+    "L0G3@0.9": 1838,
+    "L1G3@0.5": 59,
+    "L1G3@0.9": 47,
+    "L2G3@0.5": 86,
+    "L2G3@0.9": 104
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 8,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.finalize_pending",
+   "size": 5,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": 19112,
+    "L0G3@0.5": 5,
+    "L0G3@0.9": 5,
+    "L1G3@0.5": 5,
+    "L1G3@0.9": 5,
+    "L2G3@0.5": 5,
+    "L2G3@0.9": 5
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.finalize_pending",
+   "size": 8,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 15621,
+    "L1G2": null,
+    "L0G3@0.5": 1358,
+    "L0G3@0.9": 3730,
+    "L1G3@0.5": 127,
+    "L1G3@0.9": 72,
+    "L2G3@0.5": 109,
+    "L2G3@0.9": 72
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.is_",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 211,
+    "L1G1": 77,
+    "L0G2": 277,
+    "L1G2": 66,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 3,
+    "L1G3@0.9": 3,
+    "L2G3@0.5": 3,
+    "L2G3@0.9": 3
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.is_",
+   "size": 7,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 5675,
+    "L1G1": 776,
+    "L0G2": 3464,
+    "L1G2": 848,
+    "L0G3@0.5": 7,
+    "L0G3@0.9": 7,
+    "L1G3@0.5": 3,
+    "L1G3@0.9": 3,
+    "L2G3@0.5": 3,
+    "L2G3@0.9": 3
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.is_",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 320,
+    "L1G1": 99,
+    "L0G2": 408,
+    "L1G2": 12,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 3,
+    "L1G3@0.9": 3,
+    "L2G3@0.5": 3,
+    "L2G3@0.9": 3
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.is_",
+   "size": 4,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 106,
+    "L1G1": 137,
+    "L0G2": 21,
+    "L1G2": 33,
+    "L0G3@0.5": 22,
+    "L0G3@0.9": 51,
+    "L1G3@0.5": 7,
+    "L1G3@0.9": 7,
+    "L2G3@0.5": 5,
+    "L2G3@0.9": 7
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 14,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.is_",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 2098,
+    "L0G2": 109,
+    "L1G2": 39,
+    "L0G3@0.5": 6,
+    "L0G3@0.9": 6,
+    "L1G3@0.5": 5,
+    "L1G3@0.9": 5,
+    "L2G3@0.5": 5,
+    "L2G3@0.9": 5
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.is_",
+   "size": 7,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 17785,
+    "L1G1": 8682,
+    "L0G2": null,
+    "L1G2": 2165,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 2749,
+    "L1G3@0.9": 2754,
+    "L2G3@0.5": 3063,
+    "L2G3@0.9": 3150
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.is_",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 222,
+    "L1G1": 30,
+    "L0G2": 123,
+    "L1G2": 31,
+    "L0G3@0.5": 5,
+    "L0G3@0.9": 5,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 2
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.is_",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 2098,
+    "L0G2": 109,
+    "L1G2": 39,
+    "L0G3@0.5": 6,
+    "L0G3@0.9": 6,
+    "L1G3@0.5": 5,
+    "L1G3@0.9": 5,
+    "L2G3@0.5": 5,
+    "L2G3@0.9": 5
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.set",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 21969,
+    "L0G2": 155,
+    "L1G2": 66,
+    "L0G3@0.5": 7,
+    "L0G3@0.9": 5,
+    "L1G3@0.5": 5,
+    "L1G3@0.9": 5,
+    "L2G3@0.5": 9,
+    "L2G3@0.9": 8
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 5,
+    "L1": 15,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.set",
+   "size": 12,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 136,
+    "L0G3@0.9": 139,
+    "L1G3@0.5": 398,
+    "L1G3@0.9": 104,
+    "L2G3@0.5": 148,
+    "L2G3@0.9": 73
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.set",
+   "size": 9,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 1585,
+    "L1G2": 1115,
+    "L0G3@0.5": 105,
+    "L0G3@0.9": 122,
+    "L1G3@0.5": 138,
+    "L1G3@0.9": 129,
+    "L2G3@0.5": 317,
+    "L2G3@0.9": 420
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 15,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.set",
+   "size": 8,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 117,
+    "L1G2": 108,
+    "L0G3@0.5": 36,
+    "L0G3@0.9": 33,
+    "L1G3@0.5": 34,
+    "L1G3@0.9": 19,
+    "L2G3@0.5": 34,
+    "L2G3@0.9": 19
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.set",
+   "size": 9,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 31,
+    "L1G2": null,
+    "L0G3@0.5": 15,
+    "L0G3@0.9": 13,
+    "L1G3@0.5": 188,
+    "L1G3@0.9": 13,
+    "L2G3@0.5": 188,
+    "L2G3@0.9": 13
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.set",
+   "size": 11,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 39,
+    "L0G3@0.9": 13,
+    "L1G3@0.5": 77,
+    "L1G3@0.9": 36,
+    "L2G3@0.5": 96,
+    "L2G3@0.9": 63
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 13,
+    "L1": 10,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.set",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 312,
+    "L1G1": 40,
+    "L0G2": 16,
+    "L1G2": 2,
+    "L0G3@0.5": 5,
+    "L0G3@0.9": 9,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 2
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.set",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 581,
+    "L1G1": 176,
+    "L0G2": 495,
+    "L1G2": 34,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 3,
+    "L1G3@0.9": 3,
+    "L2G3@0.5": 3,
+    "L2G3@0.9": 3
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.unset_all",
+   "size": 10,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": 6186,
+    "L2G3@0.9": 6602
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.unset_all",
+   "size": 9,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": 2412,
+    "L2G3@0.9": 3118
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 1,
+    "L1": 0,
+    "L2": 2
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.unset_all",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 27,
+    "L1G1": null,
+    "L0G2": 4,
+    "L1G2": null,
+    "L0G3@0.5": 7,
+    "L0G3@0.9": 7,
+    "L1G3@0.5": 73,
+    "L1G3@0.9": 50,
+    "L2G3@0.5": 26,
+    "L2G3@0.9": 9
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 13,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.unset_all",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 414,
+    "L1G1": 4,
+    "L0G2": 10,
+    "L1G2": 3,
+    "L0G3@0.5": 8,
+    "L0G3@0.9": 6,
+    "L1G3@0.5": 3,
+    "L1G3@0.9": 31,
+    "L2G3@0.5": 3,
+    "L2G3@0.9": 8
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 15,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.unset_all",
+   "size": 7,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 1810,
+    "L1G2": 834,
+    "L0G3@0.5": 982,
+    "L0G3@0.9": 1717,
+    "L1G3@0.5": 228,
+    "L1G3@0.9": 660,
+    "L2G3@0.5": 228,
+    "L2G3@0.9": 660
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.unset_all",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 782,
+    "L1G1": 65,
+    "L0G2": 30,
+    "L1G2": 15,
+    "L0G3@0.5": 6,
+    "L0G3@0.9": 5,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 2
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.unset_all",
+   "size": 6,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 21986,
+    "L1G1": 10641,
+    "L0G2": 3550,
+    "L1G2": 226,
+    "L0G3@0.5": 5118,
+    "L0G3@0.9": 6872,
+    "L1G3@0.5": 355,
+    "L1G3@0.9": 395,
+    "L2G3@0.5": 396,
+    "L2G3@0.9": 1327
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Flags.unset_all",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 12084,
+    "L0G2": 239,
+    "L1G2": 92,
+    "L0G3@0.5": 350,
+    "L0G3@0.9": 716,
+    "L1G3@0.5": 127,
+    "L1G3@0.9": 338,
+    "L2G3@0.5": 132,
+    "L2G3@0.9": 467
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.__init__",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 8184,
+    "L1G1": 4,
+    "L0G2": 39,
+    "L1G2": 4,
+    "L0G3@0.5": 11,
+    "L0G3@0.9": 7,
+    "L1G3@0.5": 1,
+    "L1G3@0.9": 1,
+    "L2G3@0.5": 1,
+    "L2G3@0.9": 1
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 11,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.__init__",
+   "size": 9,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 9448,
+    "L0G2": null,
+    "L1G2": 1436,
+    "L0G3@0.5": 3476,
+    "L0G3@0.9": 5298,
+    "L1G3@0.5": 200,
+    "L1G3@0.9": 293,
+    "L2G3@0.5": 89,
+    "L2G3@0.9": 105
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.append_nest_to_list",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 1835,
+    "L1G2": 1436,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.append_nest_to_list",
+   "size": 6,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 17192,
+    "L0G2": 290,
+    "L1G2": 537,
+    "L0G3@0.5": 6,
+    "L0G3@0.9": 6,
+    "L1G3@0.5": 6,
+    "L1G3@0.9": 6,
+    "L2G3@0.5": 6,
+    "L2G3@0.9": 6
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.append_nest_to_list",
+   "size": 11,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 17569,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.append_nest_to_list",
+   "size": 7,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 2374,
+    "L1G1": 204,
+    "L0G2": 988,
+    "L1G2": 243,
+    "L0G3@0.5": 7,
+    "L0G3@0.9": 7,
+    "L1G3@0.5": 3,
+    "L1G3@0.9": 3,
+    "L2G3@0.5": 3,
+    "L2G3@0.9": 3
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.append_nest_to_list",
+   "size": 11,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.append_nest_to_list",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 14,
+    "L0G3@0.9": 7,
+    "L1G3@0.5": 11,
+    "L1G3@0.9": 6,
+    "L2G3@0.5": 19,
+    "L2G3@0.9": 6
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.append_nest_to_list",
+   "size": 5,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 20479,
+    "L1G2": 17860,
+    "L0G3@0.5": 5,
+    "L0G3@0.9": 5,
+    "L1G3@0.5": 5,
+    "L1G3@0.9": 5,
+    "L2G3@0.5": 5,
+    "L2G3@0.9": 5
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.append_nest_to_list",
+   "size": 5,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 2251,
+    "L1G1": 3885,
+    "L0G2": 1323,
+    "L1G2": 3654,
+    "L0G3@0.5": 5,
+    "L0G3@0.9": 5,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.get_or_create_nest",
+   "size": 5,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 2006,
+    "L1G1": 997,
+    "L0G2": 62,
+    "L1G2": 8,
+    "L0G3@0.5": 5,
+    "L0G3@0.9": 5,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.get_or_create_nest",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 8535,
+    "L0G2": 40,
+    "L1G2": 49,
+    "L0G3@0.5": 8,
+    "L0G3@0.9": 6,
+    "L1G3@0.5": 3,
+    "L1G3@0.9": 3,
+    "L2G3@0.5": 3,
+    "L2G3@0.9": 3
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.get_or_create_nest",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 320,
+    "L1G1": 99,
+    "L0G2": 408,
+    "L1G2": 12,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 3,
+    "L1G3@0.9": 3,
+    "L2G3@0.5": 3,
+    "L2G3@0.9": 3
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.get_or_create_nest",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 4549,
+    "L1G1": 7,
+    "L0G2": 80,
+    "L1G2": 6,
+    "L0G3@0.5": 24,
+    "L0G3@0.9": 24,
+    "L1G3@0.5": 1,
+    "L1G3@0.9": 1,
+    "L2G3@0.5": 1,
+    "L2G3@0.9": 1
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.get_or_create_nest",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 17545,
+    "L1G1": 1906,
+    "L0G2": 137,
+    "L1G2": 22,
+    "L0G3@0.5": 9,
+    "L0G3@0.9": 6,
+    "L1G3@0.5": 3,
+    "L1G3@0.9": 3,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 3
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 14,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.get_or_create_nest",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 7471,
+    "L0G2": 1346,
+    "L1G2": 354,
+    "L0G3@0.5": 11,
+    "L0G3@0.9": 8,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.get_or_create_nest",
+   "size": 7,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 4775,
+    "L1G1": 268,
+    "L0G2": 249,
+    "L1G2": 77,
+    "L0G3@0.5": 33,
+    "L0G3@0.9": 17,
+    "L1G3@0.5": 19,
+    "L1G3@0.9": 14,
+    "L2G3@0.5": 42,
+    "L2G3@0.9": 48
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "NestedDict.get_or_create_nest",
+   "size": 5,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 2389,
+    "L1G2": 1333,
+    "L0G3@0.5": 5,
+    "L0G3@0.9": 5,
+    "L1G3@0.5": 5,
+    "L1G3@0.9": 5,
+    "L2G3@0.5": 5,
+    "L2G3@0.9": 5
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Output.__init__",
+   "size": 5,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "Output.__init__",
+   "size": 5,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "TOMLDecodeError.__init__",
+   "size": 4,
+   "kind": "stmt",
+   "derivable": false,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "TOMLDecodeError.__init__",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 16463,
+    "L1G2": null,
+    "L0G3@0.5": 221,
+    "L0G3@0.9": 179,
+    "L1G3@0.5": 474,
+    "L1G3@0.9": 297,
+    "L2G3@0.5": 603,
+    "L2G3@0.9": 403
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "TOMLDecodeError.__init__",
+   "size": 5,
+   "kind": "expr",
+   "derivable": false,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 20,
+    "L0G3@0.9": 7,
+    "L1G3@0.5": 35,
+    "L1G3@0.9": 21,
+    "L2G3@0.5": 26,
+    "L2G3@0.9": 11
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 9
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "TOMLDecodeError.__init__",
+   "size": 4,
+   "kind": "expr",
+   "derivable": false,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 5,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 5,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "TOMLDecodeError.__init__",
+   "size": 6,
+   "kind": "stmt",
+   "derivable": false,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 26,
+    "L0G3@0.9": 10,
+    "L1G3@0.5": 22,
+    "L1G3@0.9": 9,
+    "L2G3@0.5": 22,
+    "L2G3@0.9": 9
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "TOMLDecodeError.__init__",
+   "size": 4,
+   "kind": "stmt",
+   "derivable": false,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "TOMLDecodeError.__init__",
+   "size": 7,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 1222,
+    "L0G3@0.9": 237,
+    "L1G3@0.5": 713,
+    "L1G3@0.9": 247,
+    "L2G3@0.5": 596,
+    "L2G3@0.9": 136
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "TOMLDecodeError.__init__",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 7121,
+    "L1G2": null,
+    "L0G3@0.5": 109,
+    "L0G3@0.9": 103,
+    "L1G3@0.5": 142,
+    "L1G3@0.9": 73,
+    "L2G3@0.5": 264,
+    "L2G3@0.9": 213
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_dict_rule",
+   "size": 9,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 10997,
+    "L1G2": null,
+    "L0G3@0.5": 847,
+    "L0G3@0.9": 623,
+    "L1G3@0.5": 38,
+    "L1G3@0.9": 15,
+    "L2G3@0.5": 36,
+    "L2G3@0.9": 16
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_dict_rule",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 298,
+    "L1G1": 300,
+    "L0G2": 74,
+    "L1G2": 61,
+    "L0G3@0.5": 16,
+    "L0G3@0.9": 14,
+    "L1G3@0.5": 20,
+    "L1G3@0.9": 22,
+    "L2G3@0.5": 17,
+    "L2G3@0.9": 13
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_dict_rule",
+   "size": 10,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 2,
+    "L0G2": null,
+    "L1G2": 4,
+    "L0G3@0.5": 1077,
+    "L0G3@0.9": 771,
+    "L1G3@0.5": 1,
+    "L1G3@0.9": 1,
+    "L2G3@0.5": 1,
+    "L2G3@0.9": 1
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_dict_rule",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 1387,
+    "L1G2": 849,
+    "L0G3@0.5": 2618,
+    "L0G3@0.9": 16189,
+    "L1G3@0.5": 4421,
+    "L1G3@0.9": null,
+    "L2G3@0.5": 5835,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 2,
+    "L2": 4
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_dict_rule",
+   "size": 6,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 7818,
+    "L1G2": 2396,
+    "L0G3@0.5": 592,
+    "L0G3@0.9": 698,
+    "L1G3@0.5": 9343,
+    "L1G3@0.9": null,
+    "L2G3@0.5": 6989,
+    "L2G3@0.9": 11713
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_dict_rule",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 5693,
+    "L1G1": null,
+    "L0G2": 17476,
+    "L1G2": null,
+    "L0G3@0.5": 43,
+    "L0G3@0.9": 30,
+    "L1G3@0.5": 86,
+    "L1G3@0.9": 32,
+    "L2G3@0.5": 67,
+    "L2G3@0.9": 28
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 9,
+    "L2": 4
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_dict_rule",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 4701,
+    "L1G1": 156,
+    "L0G2": 487,
+    "L1G2": 27,
+    "L0G3@0.5": 4089,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 76,
+    "L1G3@0.9": 354,
+    "L2G3@0.5": 6,
+    "L2G3@0.9": 17
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 15,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_dict_rule",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 5693,
+    "L1G1": null,
+    "L0G2": 17803,
+    "L1G2": null,
+    "L0G3@0.5": 48,
+    "L0G3@0.9": 67,
+    "L1G3@0.5": 79,
+    "L1G3@0.9": 33,
+    "L2G3@0.5": 73,
+    "L2G3@0.9": 29
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_list_rule",
+   "size": 7,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 14339,
+    "L1G1": 13,
+    "L0G2": 414,
+    "L1G2": 7,
+    "L0G3@0.5": 591,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 21,
+    "L1G3@0.9": 41,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 7
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 14,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_list_rule",
+   "size": 8,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 1801,
+    "L0G2": null,
+    "L1G2": 654,
+    "L0G3@0.5": 3343,
+    "L0G3@0.9": 780,
+    "L1G3@0.5": 2946,
+    "L1G3@0.9": 11760,
+    "L2G3@0.5": 6149,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 15,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_list_rule",
+   "size": 7,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 18074,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 223,
+    "L0G3@0.9": 714,
+    "L1G3@0.5": 107,
+    "L1G3@0.9": 31,
+    "L2G3@0.5": 96,
+    "L2G3@0.9": 39
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_list_rule",
+   "size": 9,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 10997,
+    "L1G2": null,
+    "L0G3@0.5": 3560,
+    "L0G3@0.9": 8093,
+    "L1G3@0.5": 38,
+    "L1G3@0.9": 15,
+    "L2G3@0.5": 50,
+    "L2G3@0.9": 18
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_list_rule",
+   "size": 9,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 5019,
+    "L0G3@0.9": 3152,
+    "L1G3@0.5": 6650,
+    "L1G3@0.9": 2876,
+    "L2G3@0.5": 5114,
+    "L2G3@0.9": 1424
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_list_rule",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 1411,
+    "L1G2": 877,
+    "L0G3@0.5": 3596,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 877,
+    "L1G3@0.9": 877,
+    "L2G3@0.5": 877,
+    "L2G3@0.9": 877
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 5,
+    "L1": 0,
+    "L2": 0
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_list_rule",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 4701,
+    "L1G1": 156,
+    "L0G2": 487,
+    "L1G2": 27,
+    "L0G3@0.5": 855,
+    "L0G3@0.9": 5683,
+    "L1G3@0.5": 49,
+    "L1G3@0.9": 215,
+    "L2G3@0.5": 6,
+    "L2G3@0.9": 6
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "create_list_rule",
+   "size": 7,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 10387,
+    "L0G2": 11143,
+    "L1G2": 274,
+    "L0G3@0.5": 1428,
+    "L0G3@0.9": 5306,
+    "L1G3@0.5": 12,
+    "L1G3@0.9": 8,
+    "L2G3@0.5": 193,
+    "L2G3@0.9": 885
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "is_unicode_scalar_value",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 51,
+    "L0G2": 317,
+    "L1G2": 4,
+    "L0G3@0.5": 65,
+    "L0G3@0.9": 30,
+    "L1G3@0.5": 9,
+    "L1G3@0.9": 312,
+    "L2G3@0.5": 3,
+    "L2G3@0.9": 9
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "is_unicode_scalar_value",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 52,
+    "L0G2": 320,
+    "L1G2": 5,
+    "L0G3@0.5": 13,
+    "L0G3@0.9": 8,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 2
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "key_value_rule",
+   "size": 7,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 22695,
+    "L1G3@0.9": 16222,
+    "L2G3@0.5": 18377,
+    "L2G3@0.9": 11983
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "key_value_rule",
+   "size": 11,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 15,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "key_value_rule",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 786,
+    "L1G1": 68,
+    "L0G2": 24,
+    "L1G2": 7,
+    "L0G3@0.5": 5,
+    "L0G3@0.9": 5,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 2
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "key_value_rule",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 1940,
+    "L1G1": 69,
+    "L0G2": 61,
+    "L1G2": 8,
+    "L0G3@0.5": 6,
+    "L0G3@0.9": 6,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 2
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "key_value_rule",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 954,
+    "L1G1": 242,
+    "L0G2": 31,
+    "L1G2": 20,
+    "L0G3@0.5": 31,
+    "L0G3@0.9": 31,
+    "L1G3@0.5": 43,
+    "L1G3@0.9": 189,
+    "L2G3@0.5": 43,
+    "L2G3@0.9": 169
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "key_value_rule",
+   "size": 8,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 376,
+    "L0G3@0.9": 115,
+    "L1G3@0.5": 1561,
+    "L1G3@0.9": 480,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 8,
+    "L2": 0
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "key_value_rule",
+   "size": 8,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 313,
+    "L0G3@0.9": 145,
+    "L1G3@0.5": 340,
+    "L1G3@0.9": 64,
+    "L2G3@0.5": 2430,
+    "L2G3@0.9": 696
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 11,
+    "L2": 4
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "key_value_rule",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 5693,
+    "L1G1": null,
+    "L0G2": 17476,
+    "L1G2": null,
+    "L0G3@0.5": 40,
+    "L0G3@0.9": 28,
+    "L1G3@0.5": 67,
+    "L1G3@0.9": 28,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 2,
+    "L2": 0
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "load",
+   "size": 6,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 14,
+    "L0G3@0.9": 6,
+    "L1G3@0.5": 8,
+    "L1G3@0.9": 6,
+    "L2G3@0.5": 11,
+    "L2G3@0.9": 6
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "load",
+   "size": 5,
+   "kind": "stmt",
+   "derivable": false,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 18,
+    "L0G3@0.9": 42,
+    "L1G3@0.5": 18,
+    "L1G3@0.9": 6,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "load",
+   "size": 5,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 21034,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 5,
+    "L0G3@0.9": 5,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "load",
+   "size": 5,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 9,
+    "L0G3@0.9": 9,
+    "L1G3@0.5": 11,
+    "L1G3@0.9": 8,
+    "L2G3@0.5": 7,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "load",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 17,
+    "L0G3@0.9": 18,
+    "L1G3@0.5": 32,
+    "L1G3@0.9": 17,
+    "L2G3@0.5": 35,
+    "L2G3@0.9": 17
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "load",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 4549,
+    "L1G1": 7,
+    "L0G2": 80,
+    "L1G2": 6,
+    "L0G3@0.5": 19,
+    "L0G3@0.9": 12,
+    "L1G3@0.5": 1,
+    "L1G3@0.9": 1,
+    "L2G3@0.5": 1,
+    "L2G3@0.9": 1
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "loads",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 68,
+    "L0G3@0.9": 23,
+    "L1G3@0.5": 69,
+    "L1G3@0.9": 27,
+    "L2G3@0.5": 147,
+    "L2G3@0.9": 39
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 5
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "loads",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 5634,
+    "L1G2": null,
+    "L0G3@0.5": 99,
+    "L0G3@0.9": 41,
+    "L1G3@0.5": 56,
+    "L1G3@0.9": 27,
+    "L2G3@0.5": 61,
+    "L2G3@0.9": 27
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 12,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "loads",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": 18788,
+    "L0G3@0.5": 20,
+    "L0G3@0.9": 6,
+    "L1G3@0.5": 5,
+    "L1G3@0.9": 5,
+    "L2G3@0.5": 5,
+    "L2G3@0.9": 5
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 15,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "loads",
+   "size": 5,
+   "kind": "expr",
+   "derivable": false,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 0,
+    "L1": 0,
+    "L2": 0
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "loads",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 27,
+    "L1G1": 9,
+    "L0G2": 20,
+    "L1G2": 17,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 2
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "loads",
+   "size": 10,
+   "kind": "expr",
+   "derivable": false,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "loads",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 1311,
+    "L0G3@0.9": 323,
+    "L1G3@0.5": 6191,
+    "L1G3@0.9": 6749,
+    "L2G3@0.5": 4671,
+    "L2G3@0.9": 3415
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "loads",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 24,
+    "L1G1": 8,
+    "L0G2": 13,
+    "L1G2": 6,
+    "L0G3@0.5": 6,
+    "L0G3@0.9": 19,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 16,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 19
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 12,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float",
+   "size": 11,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 365,
+    "L0G3@0.9": 42,
+    "L1G3@0.5": 10,
+    "L1G3@0.9": 7,
+    "L2G3@0.5": 8,
+    "L2G3@0.9": 7
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float",
+   "size": 4,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 15,
+    "L1G3@0.9": 8,
+    "L2G3@0.5": 15,
+    "L2G3@0.9": 8
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float",
+   "size": 5,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 5,
+    "L0G3@0.9": 5,
+    "L1G3@0.5": 5,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 5,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float",
+   "size": 7,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 23,
+    "L0G3@0.9": 8,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": 31,
+    "L2G3@0.9": 8
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 15,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 39,
+    "L0G2": null,
+    "L1G2": 818,
+    "L0G3@0.5": 59,
+    "L0G3@0.9": 15,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 2
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float.safe_parse_float",
+   "size": 4,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 18,
+    "L0G3@0.9": 35,
+    "L1G3@0.5": 19,
+    "L1G3@0.9": 37,
+    "L2G3@0.5": 22,
+    "L2G3@0.9": 59
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float.safe_parse_float",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 54,
+    "L0G2": 2172,
+    "L1G2": 1098,
+    "L0G3@0.5": 132,
+    "L0G3@0.9": 39,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 2
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 11
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float.safe_parse_float",
+   "size": 11,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 3272,
+    "L1G3@0.9": 2069,
+    "L2G3@0.5": 4422,
+    "L2G3@0.9": 4420
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 13,
+    "L1": 15,
+    "L2": 14
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "make_safe_parse_float.safe_parse_float",
+   "size": 5,
+   "kind": "stmt",
+   "derivable": false,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_array",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 43,
+    "L0G3@0.9": 29,
+    "L1G3@0.5": 18,
+    "L1G3@0.9": 7,
+    "L2G3@0.5": 21,
+    "L2G3@0.9": 7
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 14,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_array",
+   "size": 6,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 24,
+    "L0G3@0.9": 9,
+    "L1G3@0.5": 15,
+    "L1G3@0.9": 8,
+    "L2G3@0.5": 15,
+    "L2G3@0.9": 8
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_array",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 898,
+    "L0G3@0.9": 663,
+    "L1G3@0.5": 477,
+    "L1G3@0.9": 196,
+    "L2G3@0.5": 642,
+    "L2G3@0.9": 206
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_array",
+   "size": 10,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 7795,
+    "L0G3@0.9": 827,
+    "L1G3@0.5": 15205,
+    "L1G3@0.9": 825,
+    "L2G3@0.5": 17028,
+    "L2G3@0.9": 851
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_array",
+   "size": 6,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 7366,
+    "L1G1": 185,
+    "L0G2": 352,
+    "L1G2": 49,
+    "L0G3@0.5": 13,
+    "L0G3@0.9": 9,
+    "L1G3@0.5": 3,
+    "L1G3@0.9": 3,
+    "L2G3@0.5": 3,
+    "L2G3@0.9": 3
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_array",
+   "size": 12,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 375,
+    "L1G3@0.9": 527,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 9,
+    "L1": 4,
+    "L2": 2
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_array",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 995,
+    "L1G1": 72,
+    "L0G2": 108,
+    "L1G2": 18,
+    "L0G3@0.5": 7,
+    "L0G3@0.9": 7,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 2
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_array",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 1350,
+    "L1G1": 1,
+    "L0G2": 103,
+    "L1G2": 1,
+    "L0G3@0.5": 45,
+    "L0G3@0.9": 25,
+    "L1G3@0.5": 1,
+    "L1G3@0.9": 1,
+    "L2G3@0.5": 1,
+    "L2G3@0.9": 1
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 12
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str",
+   "size": 9,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 2911,
+    "L0G3@0.9": 1066,
+    "L1G3@0.5": 6085,
+    "L1G3@0.9": 3701,
+    "L2G3@0.5": 4099,
+    "L2G3@0.9": 3680
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 15,
+    "L2": 10
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 191,
+    "L1G1": 51,
+    "L0G2": 24,
+    "L1G2": 7,
+    "L0G3@0.5": 6,
+    "L0G3@0.9": 5,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str",
+   "size": 4,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 4,
+    "L1G1": 1,
+    "L0G2": 4,
+    "L1G2": 1,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 1,
+    "L1G3@0.9": 1,
+    "L2G3@0.5": 1,
+    "L2G3@0.9": 1
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 27,
+    "L1G1": 9,
+    "L0G2": 16,
+    "L1G2": 7,
+    "L0G3@0.5": 6,
+    "L0G3@0.9": 21,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 5,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 2
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 13,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str",
+   "size": 4,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 4,
+    "L1G1": 1,
+    "L0G2": 5,
+    "L1G2": 6,
+    "L0G3@0.5": 7,
+    "L0G3@0.9": 20,
+    "L1G3@0.5": 8,
+    "L1G3@0.9": 132,
+    "L2G3@0.5": 8,
+    "L2G3@0.9": 84
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str",
+   "size": 8,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 317,
+    "L0G3@0.9": 43,
+    "L1G3@0.5": 10,
+    "L1G3@0.9": 5,
+    "L2G3@0.5": 819,
+    "L2G3@0.9": 1009
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str",
+   "size": 8,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 8417,
+    "L1G1": 2112,
+    "L0G2": 831,
+    "L1G2": 192,
+    "L0G3@0.5": 15,
+    "L0G3@0.9": 8,
+    "L1G3@0.5": 5,
+    "L1G3@0.9": 5,
+    "L2G3@0.5": 6,
+    "L2G3@0.9": 5
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str",
+   "size": 5,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 1454,
+    "L1G1": 581,
+    "L0G2": 245,
+    "L1G2": 32,
+    "L0G3@0.5": 5,
+    "L0G3@0.9": 5,
+    "L1G3@0.5": 6,
+    "L1G3@0.9": 6,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape",
+   "size": 4,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 12,
+    "L1G1": 29,
+    "L0G2": 7,
+    "L1G2": 7,
+    "L0G3@0.5": 32,
+    "L0G3@0.9": 197,
+    "L1G3@0.5": 34,
+    "L1G3@0.9": 124,
+    "L2G3@0.5": 33,
+    "L2G3@0.9": 211
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 10,
+    "L2": 12
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape",
+   "size": 10,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 13235,
+    "L0G2": 7980,
+    "L1G2": 2370,
+    "L0G3@0.5": 9052,
+    "L0G3@0.9": 8731,
+    "L1G3@0.5": 1200,
+    "L1G3@0.9": 6247,
+    "L2G3@0.5": 2238,
+    "L2G3@0.9": 1799
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 14,
+    "L1G1": 4,
+    "L0G2": 9,
+    "L1G2": 4,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 2
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape",
+   "size": 4,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 2692,
+    "L1G1": 701,
+    "L0G2": 701,
+    "L1G2": 104,
+    "L0G3@0.5": 12,
+    "L0G3@0.9": 6,
+    "L1G3@0.5": 15,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 3,
+    "L2G3@0.9": 3
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 49,
+    "L0G3@0.9": 25,
+    "L1G3@0.5": 3,
+    "L1G3@0.9": 3,
+    "L2G3@0.5": 3,
+    "L2G3@0.9": 3
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 685,
+    "L1G1": 2,
+    "L0G2": 10,
+    "L1G2": 2,
+    "L0G3@0.5": 13,
+    "L0G3@0.9": 13,
+    "L1G3@0.5": 1,
+    "L1G3@0.9": 1,
+    "L2G3@0.5": 1,
+    "L2G3@0.9": 1
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape",
+   "size": 4,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 4,
+    "L1G1": 1,
+    "L0G2": 4,
+    "L1G2": 1,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 1,
+    "L1G3@0.9": 1,
+    "L2G3@0.5": 1,
+    "L2G3@0.9": 1
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape",
+   "size": 6,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 19033,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 128,
+    "L0G3@0.9": 93,
+    "L1G3@0.5": 650,
+    "L1G3@0.9": 217,
+    "L2G3@0.5": 609,
+    "L2G3@0.9": 181
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape_multiline",
+   "size": 7,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 5632,
+    "L0G2": null,
+    "L1G2": 417,
+    "L0G3@0.5": 18115,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 269,
+    "L1G3@0.9": 540,
+    "L2G3@0.5": 6,
+    "L2G3@0.9": 5
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 15,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape_multiline",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 1035,
+    "L0G2": 4733,
+    "L1G2": 58,
+    "L0G3@0.5": 9858,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 11,
+    "L2G3@0.9": 9
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_basic_str_escape_multiline",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 685,
+    "L1G1": 2,
+    "L0G2": 10,
+    "L1G2": 2,
+    "L0G3@0.5": 8,
+    "L0G3@0.9": 17,
+    "L1G3@0.5": 1,
+    "L1G3@0.9": 1,
+    "L2G3@0.5": 1,
+    "L2G3@0.9": 1
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_hex_char",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 685,
+    "L1G1": 2,
+    "L0G2": 10,
+    "L1G2": 2,
+    "L0G3@0.5": 13,
+    "L0G3@0.9": 12,
+    "L1G3@0.5": 1,
+    "L1G3@0.9": 1,
+    "L2G3@0.5": 1,
+    "L2G3@0.9": 1
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_hex_char",
+   "size": 12,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 6,
+    "L1": 15,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_hex_char",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 5693,
+    "L1G1": null,
+    "L0G2": 17476,
+    "L1G2": null,
+    "L0G3@0.5": 43,
+    "L0G3@0.9": 28,
+    "L1G3@0.5": 75,
+    "L1G3@0.9": 28,
+    "L2G3@0.5": 67,
+    "L2G3@0.9": 27
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 14,
+    "L1": 15,
+    "L2": 9
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_hex_char",
+   "size": 8,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 8996,
+    "L1G1": 959,
+    "L0G2": 357,
+    "L1G2": 99,
+    "L0G3@0.5": 8,
+    "L0G3@0.9": 8,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_hex_char",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 11989,
+    "L0G2": 1958,
+    "L1G2": 663,
+    "L0G3@0.5": 17,
+    "L0G3@0.9": 10,
+    "L1G3@0.5": 8,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_hex_char",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 367,
+    "L1G1": 48,
+    "L0G2": 29,
+    "L1G2": 15,
+    "L0G3@0.5": 6,
+    "L0G3@0.9": 6,
+    "L1G3@0.5": 3,
+    "L1G3@0.9": 3,
+    "L2G3@0.5": 3,
+    "L2G3@0.9": 3
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_hex_char",
+   "size": 10,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 9705,
+    "L0G2": 3470,
+    "L1G2": 953,
+    "L0G3@0.5": 10,
+    "L0G3@0.9": 10,
+    "L1G3@0.5": 5,
+    "L1G3@0.9": 5,
+    "L2G3@0.5": 5,
+    "L2G3@0.9": 5
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_hex_char",
+   "size": 6,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 19033,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 32,
+    "L0G3@0.9": 29,
+    "L1G3@0.5": 264,
+    "L1G3@0.9": 72,
+    "L2G3@0.5": 205,
+    "L2G3@0.9": 77
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_inline_table",
+   "size": 4,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 3360,
+    "L1G1": 3830,
+    "L0G2": 1532,
+    "L1G2": 1975,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 7,
+    "L1G3@0.9": 5,
+    "L2G3@0.5": 249,
+    "L2G3@0.9": 786
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_inline_table",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 328,
+    "L0G2": null,
+    "L1G2": 1039,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 5684,
+    "L1G3@0.9": null,
+    "L2G3@0.5": 6102,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 14,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_inline_table",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 24,
+    "L1G1": 8,
+    "L0G2": 13,
+    "L1G2": 6,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 2
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_inline_table",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 3060,
+    "L0G2": 9186,
+    "L1G2": 1440,
+    "L0G3@0.5": 5,
+    "L0G3@0.9": 9,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 2
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_inline_table",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 1350,
+    "L1G1": 1,
+    "L0G2": 103,
+    "L1G2": 1,
+    "L0G3@0.5": 143,
+    "L0G3@0.9": 357,
+    "L1G3@0.5": 1,
+    "L1G3@0.9": 1,
+    "L2G3@0.5": 3,
+    "L2G3@0.9": 3
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_inline_table",
+   "size": 7,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 23628,
+    "L1G1": 6500,
+    "L0G2": 5294,
+    "L1G2": 2833,
+    "L0G3@0.5": 29,
+    "L0G3@0.9": 20,
+    "L1G3@0.5": 8,
+    "L1G3@0.9": 8,
+    "L2G3@0.5": 8,
+    "L2G3@0.9": 8
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 13,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_inline_table",
+   "size": 9,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 1079,
+    "L0G3@0.9": 640,
+    "L1G3@0.5": 9,
+    "L1G3@0.9": 6,
+    "L2G3@0.5": 9,
+    "L2G3@0.9": 6
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_inline_table",
+   "size": 6,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 7366,
+    "L1G1": 185,
+    "L0G2": 352,
+    "L1G2": 49,
+    "L0G3@0.5": 37,
+    "L0G3@0.9": 53,
+    "L1G3@0.5": 3,
+    "L1G3@0.9": 3,
+    "L2G3@0.5": 3,
+    "L2G3@0.9": 3
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key",
+   "size": 7,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 1233,
+    "L0G2": 4283,
+    "L1G2": 134,
+    "L0G3@0.5": 387,
+    "L0G3@0.9": 141,
+    "L1G3@0.5": 213,
+    "L1G3@0.9": 143,
+    "L2G3@0.5": 1477,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 89,
+    "L1G1": 200,
+    "L0G2": 4,
+    "L1G2": 4,
+    "L0G3@0.5": 5,
+    "L0G3@0.9": 6,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 8
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key",
+   "size": 8,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 2452,
+    "L0G2": null,
+    "L1G2": 768,
+    "L0G3@0.5": 68,
+    "L0G3@0.9": 28,
+    "L1G3@0.5": 3,
+    "L1G3@0.9": 3,
+    "L2G3@0.5": 3,
+    "L2G3@0.9": 3
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key",
+   "size": 7,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 473,
+    "L0G2": 452,
+    "L1G2": 15,
+    "L0G3@0.5": 40,
+    "L0G3@0.9": 31,
+    "L1G3@0.5": 6,
+    "L1G3@0.9": 6,
+    "L2G3@0.5": 18,
+    "L2G3@0.9": 33
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 51,
+    "L1G1": 18,
+    "L0G2": 30,
+    "L1G2": 11,
+    "L0G3@0.5": 11,
+    "L0G3@0.9": 12,
+    "L1G3@0.5": 11,
+    "L1G3@0.9": 94,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 28
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 14,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 4701,
+    "L1G1": 156,
+    "L0G2": 487,
+    "L1G2": 27,
+    "L0G3@0.5": 33,
+    "L0G3@0.9": 25,
+    "L1G3@0.5": 6,
+    "L1G3@0.9": 3,
+    "L2G3@0.5": 5,
+    "L2G3@0.9": 5
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 14,
+    "L1": 11,
+    "L2": 14
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key",
+   "size": 5,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 12525,
+    "L1G1": 9609,
+    "L0G2": 1116,
+    "L1G2": 1476,
+    "L0G3@0.5": 3323,
+    "L0G3@0.9": 4887,
+    "L1G3@0.5": 30,
+    "L1G3@0.9": 8,
+    "L2G3@0.5": 10,
+    "L2G3@0.9": 8
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key",
+   "size": 4,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 107,
+    "L1G1": 37,
+    "L0G2": 341,
+    "L1G2": 168,
+    "L0G3@0.5": 342,
+    "L0G3@0.9": 342,
+    "L1G3@0.5": 169,
+    "L1G3@0.9": 169,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_part",
+   "size": 10,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": 4329,
+    "L0G3@0.5": 222,
+    "L0G3@0.9": 156,
+    "L1G3@0.5": 11509,
+    "L1G3@0.9": null,
+    "L2G3@0.5": 45,
+    "L2G3@0.9": 43
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 4,
+    "L1": 7,
+    "L2": 6
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_part",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 685,
+    "L1G1": 2,
+    "L0G2": 10,
+    "L1G2": 2,
+    "L0G3@0.5": 13,
+    "L0G3@0.9": 13,
+    "L1G3@0.5": 1,
+    "L1G3@0.9": 1,
+    "L2G3@0.5": 1,
+    "L2G3@0.9": 1
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_part",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 5693,
+    "L1G1": null,
+    "L0G2": 17251,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_part",
+   "size": 7,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": 3157,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 5915,
+    "L1G3@0.9": null,
+    "L2G3@0.5": 14502,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_part",
+   "size": 9,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 2,
+    "L0G2": 9,
+    "L1G2": 2,
+    "L0G3@0.5": 16,
+    "L0G3@0.9": 75,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 5,
+    "L2G3@0.9": 11
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_part",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 451,
+    "L1G1": 144,
+    "L0G2": 648,
+    "L1G2": 184,
+    "L0G3@0.5": 349,
+    "L0G3@0.9": 2312,
+    "L1G3@0.5": 124,
+    "L1G3@0.9": 2958,
+    "L2G3@0.5": 131,
+    "L2G3@0.9": 2920
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 15,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_part",
+   "size": 5,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 6593,
+    "L1G1": 395,
+    "L0G2": 560,
+    "L1G2": 40,
+    "L0G3@0.5": 55,
+    "L0G3@0.9": 50,
+    "L1G3@0.5": 9,
+    "L1G3@0.9": 10,
+    "L2G3@0.5": 14,
+    "L2G3@0.9": 35
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_part",
+   "size": 8,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 17191,
+    "L0G2": null,
+    "L1G2": 1254,
+    "L0G3@0.5": 31,
+    "L0G3@0.9": 15,
+    "L1G3@0.5": 6,
+    "L1G3@0.9": 6,
+    "L2G3@0.5": 6,
+    "L2G3@0.9": 6
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_value_pair",
+   "size": 5,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 50,
+    "L0G3@0.9": 26,
+    "L1G3@0.5": 59,
+    "L1G3@0.9": 23,
+    "L2G3@0.5": 55,
+    "L2G3@0.9": 28
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_value_pair",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 349,
+    "L1G2": 207,
+    "L0G3@0.5": 194,
+    "L0G3@0.9": 421,
+    "L1G3@0.5": 75,
+    "L1G3@0.9": 47,
+    "L2G3@0.5": 55,
+    "L2G3@0.9": 26
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_value_pair",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 353,
+    "L0G3@0.9": 199,
+    "L1G3@0.5": 445,
+    "L1G3@0.9": 196,
+    "L2G3@0.5": 475,
+    "L2G3@0.9": 205
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_value_pair",
+   "size": 8,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 886,
+    "L0G3@0.9": 2296,
+    "L1G3@0.5": 782,
+    "L1G3@0.9": 160,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_value_pair",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 181,
+    "L1G2": 145,
+    "L0G3@0.5": 149,
+    "L0G3@0.9": 204,
+    "L1G3@0.5": 76,
+    "L1G3@0.9": 64,
+    "L2G3@0.5": 77,
+    "L2G3@0.9": 55
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_value_pair",
+   "size": 6,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 19033,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 43,
+    "L0G3@0.9": 30,
+    "L1G3@0.5": 1047,
+    "L1G3@0.9": 230,
+    "L2G3@0.5": 2598,
+    "L2G3@0.9": 722
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_value_pair",
+   "size": 4,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 4,
+    "L1G1": 1,
+    "L0G2": 4,
+    "L1G2": 1,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 1,
+    "L1G3@0.9": 1,
+    "L2G3@0.5": 1,
+    "L2G3@0.9": 1
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_key_value_pair",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 4701,
+    "L1G1": 156,
+    "L0G2": 487,
+    "L1G2": 27,
+    "L0G3@0.5": 2339,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 90,
+    "L1G3@0.9": 386,
+    "L2G3@0.5": 6,
+    "L2G3@0.9": 16
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 14,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_literal_str",
+   "size": 10,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": 6040,
+    "L0G3@0.5": 45,
+    "L0G3@0.9": 23,
+    "L1G3@0.5": 59,
+    "L1G3@0.9": 24,
+    "L2G3@0.5": 65,
+    "L2G3@0.9": 25
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_literal_str",
+   "size": 9,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 9,
+    "L1": 13,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_literal_str",
+   "size": 11,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_literal_str",
+   "size": 4,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 4,
+    "L1G1": 1,
+    "L0G2": 4,
+    "L1G2": 1,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 1,
+    "L1G3@0.9": 1,
+    "L2G3@0.5": 1,
+    "L2G3@0.9": 1
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_literal_str",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 685,
+    "L1G1": 2,
+    "L0G2": 10,
+    "L1G2": 2,
+    "L0G3@0.5": 10,
+    "L0G3@0.9": 15,
+    "L1G3@0.5": 1,
+    "L1G3@0.9": 1,
+    "L2G3@0.5": 1,
+    "L2G3@0.9": 1
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_literal_str",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 925,
+    "L1G1": 407,
+    "L0G2": 997,
+    "L1G2": 73,
+    "L0G3@0.5": 6,
+    "L0G3@0.9": 5,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_literal_str",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 20,
+    "L1G1": 4,
+    "L0G2": 6,
+    "L1G2": 2,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 23,
+    "L1G3@0.5": 7,
+    "L1G3@0.9": 10,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 13
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_literal_str",
+   "size": 11,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_multiline_str",
+   "size": 7,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 21631,
+    "L1G1": 7691,
+    "L0G2": 183,
+    "L1G2": 100,
+    "L0G3@0.5": 10,
+    "L0G3@0.9": 9,
+    "L1G3@0.5": 5,
+    "L1G3@0.9": 5,
+    "L2G3@0.5": 5,
+    "L2G3@0.9": 5
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_multiline_str",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 1220,
+    "L0G2": 9753,
+    "L1G2": 60,
+    "L0G3@0.5": 16250,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 162,
+    "L1G3@0.9": 6316,
+    "L2G3@0.5": 44,
+    "L2G3@0.9": 344
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 14,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_multiline_str",
+   "size": 7,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 21631,
+    "L1G1": 7691,
+    "L0G2": 183,
+    "L1G2": 100,
+    "L0G3@0.5": 194,
+    "L0G3@0.9": 987,
+    "L1G3@0.5": 7,
+    "L1G3@0.9": 9,
+    "L2G3@0.5": 57,
+    "L2G3@0.9": 1519
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_multiline_str",
+   "size": 9,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_multiline_str",
+   "size": 7,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 21762,
+    "L0G2": 1834,
+    "L1G2": 1172,
+    "L0G3@0.5": 292,
+    "L0G3@0.9": 411,
+    "L1G3@0.5": 11,
+    "L1G3@0.9": 5,
+    "L2G3@0.5": 59,
+    "L2G3@0.9": 42
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_multiline_str",
+   "size": 11,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_multiline_str",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 583,
+    "L1G1": 300,
+    "L0G2": 125,
+    "L1G2": 151,
+    "L0G3@0.5": 7,
+    "L0G3@0.9": 5,
+    "L1G3@0.5": 152,
+    "L1G3@0.9": 152,
+    "L2G3@0.5": 152,
+    "L2G3@0.9": 152
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_multiline_str",
+   "size": 6,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 11230,
+    "L1G1": 6109,
+    "L0G2": 2720,
+    "L1G2": 2283,
+    "L0G3@0.5": 3821,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 4770,
+    "L1G3@0.9": 15709,
+    "L2G3@0.5": 7172,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_one_line_basic_str",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 4679,
+    "L1G2": null,
+    "L0G3@0.5": 10114,
+    "L0G3@0.9": 22628,
+    "L1G3@0.5": 1637,
+    "L1G3@0.9": 868,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_one_line_basic_str",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 685,
+    "L1G1": 2,
+    "L0G2": 10,
+    "L1G2": 2,
+    "L0G3@0.5": 10,
+    "L0G3@0.9": 9,
+    "L1G3@0.5": 1,
+    "L1G3@0.9": 1,
+    "L2G3@0.5": 1,
+    "L2G3@0.9": 1
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_one_line_basic_str",
+   "size": 7,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 19594,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 14,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_one_line_basic_str",
+   "size": 4,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 4,
+    "L1G1": 1,
+    "L0G2": 4,
+    "L1G2": 1,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 99,
+    "L1G3@0.5": 7,
+    "L1G3@0.9": 63,
+    "L2G3@0.5": 5,
+    "L2G3@0.9": 82
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_value",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 23,
+    "L1G1": 14,
+    "L0G2": 7,
+    "L1G2": 3,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 2
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 11,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_value",
+   "size": 7,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 14,
+    "L0G3@0.9": 10,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_value",
+   "size": 5,
+   "kind": "expr",
+   "derivable": false,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 32,
+    "L0G3@0.9": 22,
+    "L1G3@0.5": 391,
+    "L1G3@0.9": 910,
+    "L2G3@0.5": 52,
+    "L2G3@0.9": 41
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_value",
+   "size": 8,
+   "kind": "stmt",
+   "derivable": false,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_value",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 2326,
+    "L1G1": 135,
+    "L0G2": 232,
+    "L1G2": 12,
+    "L0G3@0.5": 94,
+    "L0G3@0.9": 73,
+    "L1G3@0.5": 5,
+    "L1G3@0.9": 20,
+    "L2G3@0.5": 5,
+    "L2G3@0.9": 35
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 12,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_value",
+   "size": 10,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 13017,
+    "L0G2": 18349,
+    "L1G2": 4066,
+    "L0G3@0.5": 10,
+    "L0G3@0.9": 10,
+    "L1G3@0.5": 6,
+    "L1G3@0.9": 6,
+    "L2G3@0.5": 6,
+    "L2G3@0.9": 6
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_value",
+   "size": 7,
+   "kind": "expr",
+   "derivable": false,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 8
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "parse_value",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 118,
+    "L1G1": 34,
+    "L0G2": 84,
+    "L1G2": 20,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 2
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 14,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_chars",
+   "size": 11,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 263,
+    "L1G2": 26,
+    "L0G3@0.5": 20,
+    "L0G3@0.9": 11,
+    "L1G3@0.5": 80,
+    "L1G3@0.9": 101,
+    "L2G3@0.5": 47,
+    "L2G3@0.9": 127
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_chars",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 3822,
+    "L1G1": 691,
+    "L0G2": 8,
+    "L1G2": 5,
+    "L0G3@0.5": 6,
+    "L0G3@0.9": 6,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_chars",
+   "size": 4,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 4,
+    "L1G1": 1,
+    "L0G2": 4,
+    "L1G2": 1,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 1,
+    "L1G3@0.9": 1,
+    "L2G3@0.5": 1,
+    "L2G3@0.9": 1
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comment",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 61,
+    "L1G1": 45,
+    "L0G2": 18,
+    "L1G2": 16,
+    "L0G3@0.5": 18,
+    "L0G3@0.9": 18,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 3,
+    "L2G3@0.5": 3,
+    "L2G3@0.9": 2
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comment",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 89,
+    "L1G1": 200,
+    "L0G2": 4,
+    "L1G2": 4,
+    "L0G3@0.5": 5,
+    "L0G3@0.9": 6,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 15,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comment",
+   "size": 12,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 14,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comment",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 11,
+    "L1G1": 3,
+    "L0G2": 15,
+    "L1G2": 8,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 2
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comment",
+   "size": 9,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 2,
+    "L0G2": 9,
+    "L1G2": 2,
+    "L0G3@0.5": 30,
+    "L0G3@0.9": 59,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 5,
+    "L2G3@0.9": 11
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comments_and_array_ws",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 180,
+    "L1G1": 852,
+    "L0G2": 169,
+    "L1G2": 546,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comments_and_array_ws",
+   "size": 7,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 10371,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 441,
+    "L0G3@0.9": 184,
+    "L1G3@0.5": 13,
+    "L1G3@0.9": 8,
+    "L2G3@0.5": 10,
+    "L2G3@0.9": 8
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 10,
+    "L1": 12,
+    "L2": 14
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comments_and_array_ws",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 929,
+    "L0G2": 1183,
+    "L1G2": 40,
+    "L0G3@0.5": 3717,
+    "L0G3@0.9": 16673,
+    "L1G3@0.5": 128,
+    "L1G3@0.9": 406,
+    "L2G3@0.5": 32,
+    "L2G3@0.9": 37
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comments_and_array_ws",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 1598,
+    "L1G1": 99,
+    "L0G2": 218,
+    "L1G2": 24,
+    "L0G3@0.5": 400,
+    "L0G3@0.9": 908,
+    "L1G3@0.5": 41,
+    "L1G3@0.9": 63,
+    "L2G3@0.5": 8,
+    "L2G3@0.9": 8
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comments_and_array_ws",
+   "size": 6,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 11350,
+    "L1G1": 254,
+    "L0G2": 634,
+    "L1G2": 89,
+    "L0G3@0.5": 64,
+    "L0G3@0.9": 57,
+    "L1G3@0.5": 504,
+    "L1G3@0.9": 6944,
+    "L2G3@0.5": 13,
+    "L2G3@0.9": 22
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 7,
+    "L2": 14
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_comments_and_array_ws",
+   "size": 7,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": 3002,
+    "L0G2": 4006,
+    "L1G2": 199,
+    "L0G3@0.5": 6159,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 261,
+    "L1G3@0.9": 1055,
+    "L2G3@0.5": 25,
+    "L2G3@0.9": 23
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_until",
+   "size": 7,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 31,
+    "L0G3@0.9": 10,
+    "L1G3@0.5": 25,
+    "L1G3@0.9": 9,
+    "L2G3@0.5": 22,
+    "L2G3@0.9": 9
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_until",
+   "size": 12,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_until",
+   "size": 10,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 13823,
+    "L1G3@0.9": null,
+    "L2G3@0.5": 7907,
+    "L2G3@0.9": 7618
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 11
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_until",
+   "size": 5,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": 10598,
+    "L1G1": null,
+    "L0G2": 3734,
+    "L1G2": 6410,
+    "L0G3@0.5": 13,
+    "L0G3@0.9": 5,
+    "L1G3@0.5": 5,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 36,
+    "L2G3@0.9": 10
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_until",
+   "size": 11,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 871,
+    "L1G2": 160,
+    "L0G3@0.5": 1701,
+    "L0G3@0.9": 5975,
+    "L1G3@0.5": 247,
+    "L1G3@0.9": 465,
+    "L2G3@0.5": 308,
+    "L2G3@0.9": 772
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_until",
+   "size": 11,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 2379,
+    "L0G3@0.9": 307,
+    "L1G3@0.5": 2412,
+    "L1G3@0.9": 307,
+    "L2G3@0.5": 8407,
+    "L2G3@0.9": 2063
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_until",
+   "size": 8,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 2736,
+    "L0G3@0.9": 733,
+    "L1G3@0.5": 6885,
+    "L1G3@0.9": 7342,
+    "L2G3@0.5": 5953,
+    "L2G3@0.9": 6606
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_parser.py",
+   "function": "skip_until",
+   "size": 8,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": 3593,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 5479,
+    "L1G3@0.9": null,
+    "L2G3@0.5": 4162,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "cached_tz",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 13,
+    "L1G1": 5,
+    "L0G2": 6,
+    "L1G2": 4,
+    "L0G3@0.5": 4,
+    "L0G3@0.9": 4,
+    "L1G3@0.5": 2,
+    "L1G3@0.9": 2,
+    "L2G3@0.5": 2,
+    "L2G3@0.9": 2
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "cached_tz",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 7015,
+    "L1G1": 437,
+    "L0G2": 22,
+    "L1G2": 14,
+    "L0G3@0.5": 8,
+    "L0G3@0.9": 6,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 43,
+    "L2G3@0.9": 478
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "cached_tz",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 6196,
+    "L1G1": 423,
+    "L0G2": 15,
+    "L1G2": 13,
+    "L0G3@0.5": 6,
+    "L0G3@0.9": 6,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 4,
+    "L2G3@0.9": 4
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "cached_tz",
+   "size": 11,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 5496,
+    "L1G2": 4211,
+    "L0G3@0.5": 15,
+    "L0G3@0.9": 11,
+    "L1G3@0.5": 8,
+    "L1G3@0.9": 8,
+    "L2G3@0.5": 8,
+    "L2G3@0.9": 8
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "cached_tz",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 17998,
+    "L1G1": 10985,
+    "L0G2": 15,
+    "L1G2": 7,
+    "L0G3@0.5": 21,
+    "L0G3@0.9": 43,
+    "L1G3@0.5": 5,
+    "L1G3@0.9": 5,
+    "L2G3@0.5": 8,
+    "L2G3@0.9": 8
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "cached_tz",
+   "size": 9,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 625,
+    "L1G2": 312,
+    "L0G3@0.5": 9,
+    "L0G3@0.9": 9,
+    "L1G3@0.5": 7,
+    "L1G3@0.9": 7,
+    "L2G3@0.5": 7,
+    "L2G3@0.9": 7
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_datetime",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 5067,
+    "L1G2": 3463,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": 422,
+    "L2G3@0.9": 1539
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_datetime",
+   "size": 4,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 1505,
+    "L1G2": 884,
+    "L0G3@0.5": 12,
+    "L0G3@0.9": 6,
+    "L1G3@0.5": 15,
+    "L1G3@0.9": 5,
+    "L2G3@0.5": 144,
+    "L2G3@0.9": 137
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_datetime",
+   "size": 11,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 330,
+    "L0G3@0.9": 55,
+    "L1G3@0.5": 204,
+    "L1G3@0.9": 55,
+    "L2G3@0.5": 204,
+    "L2G3@0.9": 55
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_datetime",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 14469,
+    "L1G1": 362,
+    "L0G2": 48,
+    "L1G2": 16,
+    "L0G3@0.5": 6,
+    "L0G3@0.9": 117,
+    "L1G3@0.5": 4,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 7,
+    "L2G3@0.9": 12
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_datetime",
+   "size": 11,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 14,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_datetime",
+   "size": 8,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 15,
+    "L0G3@0.9": 8,
+    "L1G3@0.5": 13,
+    "L1G3@0.9": 10,
+    "L2G3@0.5": 18,
+    "L2G3@0.9": 10
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_datetime",
+   "size": 10,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 199,
+    "L0G3@0.9": 56,
+    "L1G3@0.5": 190,
+    "L1G3@0.9": 50,
+    "L2G3@0.5": 159,
+    "L2G3@0.9": 45
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_datetime",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 340,
+    "L1G1": 211,
+    "L0G2": 7,
+    "L1G2": 7,
+    "L0G3@0.5": 13,
+    "L0G3@0.9": 15,
+    "L1G3@0.5": 7,
+    "L1G3@0.9": 7,
+    "L2G3@0.5": 10,
+    "L2G3@0.9": 15
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 13,
+    "L2": 15
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_localtime",
+   "size": 10,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 9362,
+    "L0G3@0.9": 328,
+    "L1G3@0.5": 24568,
+    "L1G3@0.9": 788,
+    "L2G3@0.5": 7817,
+    "L2G3@0.9": 305
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_localtime",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": 24484,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 8,
+    "L1G3@0.9": 4,
+    "L2G3@0.5": 10,
+    "L2G3@0.9": 6
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_localtime",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 19,
+    "L0G3@0.9": 17,
+    "L1G3@0.5": 33,
+    "L1G3@0.9": 46,
+    "L2G3@0.5": 10,
+    "L2G3@0.9": 7
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_localtime",
+   "size": 9,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 2983,
+    "L0G3@0.9": 670,
+    "L1G3@0.5": 3379,
+    "L1G3@0.9": 591,
+    "L2G3@0.5": 3024,
+    "L2G3@0.9": 591
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_localtime",
+   "size": 7,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 27,
+    "L0G3@0.9": 30,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": 225,
+    "L2G3@0.9": 164
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_localtime",
+   "size": 11,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": 710,
+    "L1G3@0.5": 11752,
+    "L1G3@0.9": 315,
+    "L2G3@0.5": 7597,
+    "L2G3@0.9": 303
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_localtime",
+   "size": 12,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": 1735,
+    "L1G3@0.9": 790,
+    "L2G3@0.5": 177,
+    "L2G3@0.9": 37
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_localtime",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": 13183,
+    "L1G2": 10212,
+    "L0G3@0.5": 245,
+    "L0G3@0.9": 196,
+    "L1G3@0.5": 10212,
+    "L1G3@0.9": 10212,
+    "L2G3@0.5": 10212,
+    "L2G3@0.9": 10212
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 14,
+    "L1": 0,
+    "L2": 0
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_number",
+   "size": 5,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": 17934,
+    "L0G3@0.5": 5,
+    "L0G3@0.9": 5,
+    "L1G3@0.5": 8,
+    "L1G3@0.9": 9,
+    "L2G3@0.5": 5,
+    "L2G3@0.9": 5
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_number",
+   "size": 6,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 6,
+    "L0G3@0.9": 6,
+    "L1G3@0.5": 10,
+    "L1G3@0.9": 6,
+    "L2G3@0.5": 10,
+    "L2G3@0.9": 6
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": true
+    },
+    "L1": {
+     "any": true,
+     "top1": true
+    },
+    "L2": {
+     "any": true,
+     "top1": true
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_number",
+   "size": 11,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 12,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_number",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": 24484,
+    "L0G3@0.5": 24,
+    "L0G3@0.9": 11,
+    "L1G3@0.5": 14,
+    "L1G3@0.9": 7,
+    "L2G3@0.5": 14,
+    "L2G3@0.9": 6
+   },
+   "direct": {
+    "L0": {
+     "any": true,
+     "top1": false
+    },
+    "L1": {
+     "any": true,
+     "top1": false
+    },
+    "L2": {
+     "any": true,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_number",
+   "size": 6,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": null,
+    "L0G3@0.9": null,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_number",
+   "size": 4,
+   "kind": "expr",
+   "derivable": true,
+   "effort": {
+    "L0G1": 11447,
+    "L1G1": 5267,
+    "L0G2": 1365,
+    "L1G2": 695,
+    "L0G3@0.5": 158,
+    "L0G3@0.9": 506,
+    "L1G3@0.5": 1191,
+    "L1G3@0.9": 18208,
+    "L2G3@0.5": 757,
+    "L2G3@0.9": 10064
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 15,
+    "L1": 16,
+    "L2": 16
+   }
+  },
+  {
+   "path": "src/tomli/_re.py",
+   "function": "match_to_number",
+   "size": 7,
+   "kind": "stmt",
+   "derivable": true,
+   "effort": {
+    "L0G1": null,
+    "L1G1": null,
+    "L0G2": null,
+    "L1G2": null,
+    "L0G3@0.5": 16783,
+    "L0G3@0.9": 15295,
+    "L1G3@0.5": null,
+    "L1G3@0.9": null,
+    "L2G3@0.5": null,
+    "L2G3@0.9": null
+   },
+   "direct": {
+    "L0": {
+     "any": false,
+     "top1": false
+    },
+    "L1": {
+     "any": false,
+     "top1": false
+    },
+    "L2": {
+     "any": false,
+     "top1": false
+    }
+   },
+   "readable": {
+    "L0": 16,
+    "L1": 16,
+    "L2": 16
+   }
+  }
+ ]
+}

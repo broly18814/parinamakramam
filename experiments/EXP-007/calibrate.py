@@ -39,7 +39,8 @@ for c in d["cells"]:
 print("\nmodel alone (any of 16 / top-1):")
 for v in ("L0", "L1", "L2"):
     readable = sum(t["readable"][v] for t in tasks) / (16 * len(tasks))
-    print(f"  {v}: {direct(v, 'any') * 100:5.1f} / {direct(v, 'top1') * 100:5.1f}   readable guesses {readable * 100:.0f}%")
+    print(f"  {v}: {direct(v, 'any') * 100:5.1f} / {direct(v, 'top1') * 100:5.1f}"
+          f"   readable guesses {readable * 100:.0f}%")
 
 hours = d["sampling_seconds"] / 3600
 print(f"\nRule (model): sampling all tomli tasks took {hours:.2f} h (limit 2 h)  ->  "
