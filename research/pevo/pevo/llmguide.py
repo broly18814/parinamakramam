@@ -117,6 +117,9 @@ def clean_guess(text: str, is_stmt: bool, is_slice: bool = False) -> str | None:
     m = _FENCE.match(text)
     if m:
         text = m.group(1)
+    bare = text.strip()
+    if len(bare) > 2 and bare[0] == bare[-1] == "`" and not bare.startswith("``"):
+        text = bare[1:-1]                     # inline code: `x + 1` (S2, second refinement)
     text = text.strip("\n")
     if not text.strip():
         return None
@@ -214,3 +217,80 @@ def direct_scores(target: tuple, pieces: list[tuple | None], mean_logprobs: list
         return False, False
     best = max(range(len(pieces)), key=lambda i: (mean_logprobs[i], -i))
     return any_k, pieces[best] == target
+
+
+# ---------------------------------------------------------------- names for the library (S4)
+
+_DESCRIBE = {
+    "Call": "calls {callee} with {n} argument(s)",
+    "Expr": "a statement that calls {callee}",
+    "Compare": "a comparison using {op}",
+    "BoolOp": "combines conditions with {op}",
+    "BinOp": "arithmetic with {op}",
+    "UnaryOp": "applies {op}",
+    "Attribute": "reads the attribute .{attr}",
+    "Subscript": "indexes or slices a value",
+    "Assign": "an assignment",
+    "AugAssign": "an in-place update with {op}",
+    "AnnAssign": "an annotated assignment",
+    "Return": "returns a value",
+    "If": "an if statement",
+    "For": "a for loop",
+    "While": "a while loop",
+    "Raise": "raises an exception",
+    "Try": "a try statement",
+    "With": "a with statement",
+    "IfExp": "a conditional expression",
+    "Tuple": "a tuple", "List": "a list", "Dict": "a dict", "Set": "a set",
+    "ListComp": "a list comprehension", "DictComp": "a dict comprehension", "GeneratorExp": "a generator",
+    "Lambda": "a lambda", "JoinedStr": "an f-string", "Starred": "an unpacking",
+}
+_OPS = {"Eq": "==", "NotEq": "!=", "Lt": "<", "LtE": "<=", "Gt": ">", "GtE": ">=", "Is": "is", "IsNot": "is not",
+        "In": "in", "NotIn": "not in", "And": "and", "Or": "or", "Add": "+", "Sub": "-", "Mult": "*",
+        "Div": "/", "FloorDiv": "//", "Mod": "%", "Not": "not", "USub": "unary -", "BitOr": "|", "BitAnd": "&"}
+
+
+def _snake(name: str) -> str:
+    return re.sub(r"(?<!^)(?=[A-Z])", "_", name).lower()
+
+
+def _callee(node: ast.AST) -> str | None:
+    call = node.value if isinstance(node, ast.Expr) and isinstance(node.value, ast.Call) else node
+    if not isinstance(call, ast.Call):
+        return None
+    f = call.func
+    return f.attr if isinstance(f, ast.Attribute) else getattr(f, "id", None)
+
+
+def _first_op(node: ast.AST) -> str:
+    for n in ast.walk(node):
+        for v in ([n.op] if hasattr(n, "op") else []) + list(getattr(n, "ops", [])):
+            return _OPS.get(type(v).__name__, type(v).__name__)
+    return "an operator"
+
+
+def block_names(examples: list[tuple[ast.AST, int]]) -> list[tuple[str, str]]:
+    """(name, description) for each block, in library order, by S4's fixed rule. `examples` holds
+    each block's example node (from EXP-005's corpus) and its number of holes. Deterministic."""
+    out, seen = [], {}
+    for node, holes in examples:
+        t = type(node).__name__
+        callee = _callee(node)
+        stem = _snake(callee) if callee else ("if_stmt" if t == "If" else _snake(t))
+        name = f"{stem}_{holes}"
+        seen[name] = seen.get(name, 0) + 1
+        if seen[name] > 1:
+            name = f"{name}_{seen[name]}"
+        call = node.value if isinstance(node, ast.Expr) else node
+        desc = _DESCRIBE.get(t, f"a {t} pattern").format(
+            callee=f"`{callee}`" if callee else "a function", op=f"`{_first_op(node)}`",
+            attr=getattr(node, "attr", ""), n=len(getattr(call, "args", [])) + len(getattr(call, "keywords", [])))
+        out.append((name, desc))
+    return out
+
+
+def library_lines(examples: list[str], names: list[tuple[str, str]] | None) -> list[str]:
+    """How the library is listed in the prompt: numbered code (L1), or named and described (L2)."""
+    if names is None:
+        return [f"{i + 1}. {ex}" for i, ex in enumerate(examples)]
+    return [f"{n}: {ex}  # {d}" for ex, (n, d) in zip(examples, names, strict=True)]

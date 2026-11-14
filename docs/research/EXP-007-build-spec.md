@@ -27,7 +27,9 @@ The design says *what* is compared. Building it showed three things it doesn't s
    - **Why bracketed:** that's where a guess goes back (step 2). A bracketed expression may span lines, and adjacent strings on separate lines join.
    - **A slice** (`a:b`) exists only inside a subscript, so it's read as `_[a:b]`.
 
-   *Refined on 14 November 2026, from the round-trip self-check on tomli's calibration tasks (S8).* The first rule, "the first logical line", cut multi-line calls and joined strings. With the refinement, **all 260 of 260** tomli calibration tasks round-trip exactly. No model guess had been seen.
+   *Second refinement, 14 November 2026:* a guess wrapped in single backticks (`` `x + 1` ``) is unwrapped. This was noticed in a two-guess check of the sampling interface, which isn't a calibration task, and it's a common model habit. Building and debugging on tomli is allowed (design, section 6).
+
+   *First refinement, 14 November 2026, from the round-trip self-check on tomli's calibration tasks (S8):* The first rule, "the first logical line", cut multi-line calls and joined strings. With the refinement, **all 260 of 260** tomli calibration tasks round-trip exactly. No model guess had been seen.
 2. **Put it back:** replace `__HOLE__` in the prompt's function text with the guess, dedent, and `ast.parse` it.
 3. **Normalise the completed function** exactly as EXP-005 does (`normalise`), so local names get numbered consistently, including names the guess introduces.
 4. **Find the piece:** the node of the hole's kind (expression or statement) whose start position equals the hole's. Its `shape()` is the guess's piece.
@@ -79,6 +81,10 @@ It's G2's definition applied to the rewritten past, as G1 with blocks is G1's de
 - **Settings:** MLX-LM; temperature 0.8, top-p 0.95, 64 new tokens; *k* = 16.
 - **The seed:** a fixed seed per (task, library) pair, derived from the task's index.
 - **The record:** every raw guess text, its token count and its log-probability are saved, so the whole analysis can be re-run without the model.
+- **Speed, decided 14 November 2026, before any calibration sampling.** The start of the prompt that every task shares (the instructions, and under `L1`/`L2` the 50-block library) is read **once per prompt type**, and reused through a prompt cache. All 16 guesses of a task start from it.
+  - **Why:** in a 4-task check this was 12 times faster, 77.6 s against 6.3 s.
+  - **What it changes:** only how fast the guesses are made, not what the model is asked. Readable guesses: 62 of 64 against 64 of 64; the exact texts differ because the random draws come in a different order.
+  - **The alternative:** without it, tomli's sampling would take about 2.6 hours, against the design's 2-hour model rule.
 
 ## S8. Self-checks (written alongside the code)
 

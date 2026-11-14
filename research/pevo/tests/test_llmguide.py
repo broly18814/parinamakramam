@@ -77,6 +77,7 @@ def test_guesses_are_cleaned_of_fences_and_chatter():
     assert clean_guess("x = 1\ny = 2", True) == "x = 1"
     assert clean_guess("   ", False) is None
     assert clean_guess("a:b", False, is_slice=True) == "a:b"
+    assert clean_guess("`x + 1`", False) == "x + 1"          # inline code, as the model often writes it
 
 
 def test_a_different_guess_gives_a_different_shape_and_nonsense_is_dropped():
