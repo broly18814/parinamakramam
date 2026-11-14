@@ -51,9 +51,30 @@ PROJECTS = {"tomli": r6.PROJECTS["tomli"]}
 LIMIT: int | None = None             # --limit, for a quick end-to-end test only
 
 
+_VENDOR = {"_vendor", "vendor", "vendored", "_vendored", "third_party"}
+_LICENCE = ("LICENSE", "LICENCE", "COPYING")
+
+
+def kept(path: str, licensed_dirs: set[str]) -> bool:
+    """Design amendment 2: leave out documentation examples and copied third-party code."""
+    parts = path.split("/")
+    if parts[0].startswith("docs") or parts[0] in ("examples", "example"):
+        return False
+    if any(x in _VENDOR for x in parts[:-1]):
+        return False
+    return not any("/".join(parts[:k]) in licensed_dirs for k in range(1, len(parts)))
+
+
+def snapshot(repo: Path, rev: str) -> dict:
+    """EXP-005's snapshot, without amendment 2's documentation examples and copied code."""
+    names = r5.git(repo, "ls-tree", "-r", "--name-only", rev).split()
+    licensed = {n.rsplit("/", 1)[0] for n in names if "/" in n and n.rsplit("/", 1)[1].upper().startswith(_LICENCE)}
+    return {k: t for k, t in r5.snapshot(repo, rev).items() if kept(k[0], licensed)}
+
+
 def prepare(name: str, src: Path) -> dict:
     p, repo = PROJECTS[name], src / name
-    past, now = r5.snapshot(repo, p["split"]), r5.snapshot(repo, p["pin"])
+    past, now = snapshot(repo, p["split"]), snapshot(repo, p["pin"])
     future = {k: t for k, t in now.items() if k not in past}
     past_trees = list(past.values())
     corpus = build_corpus(past_trees, MAX_PATTERN)

@@ -178,3 +178,19 @@ All are widely used Python libraries or tools with permissive licences, from sev
 **Why this keeps the test fair.** The list and the rule are committed before any candidate's history is read. Only function counts and licence files are used to choose, never any search, compression or model result. The candidates are chosen for activity, because the date split needs new code written after the model was trained.
 
 **Honest note:** the order reflects my expectation of which projects are active and mostly pure Python. That's a judgement made before measuring, not a measurement.
+
+## Amendment 2: leave out documentation examples and copied code (14 November 2026, before any search or model result on an evaluation project)
+
+**What happened.** Applying amendment 1 mechanically chose **fastapi** and **typer**, but their "new functions" aren't the new library code the design means to test:
+- **fastapi:** 658 of its 818 functions added after the split are documentation examples (`docs_src/`).
+- **typer:** 359 of its 757 are documentation examples, and **269** are a copy of Click (`typer/_click/`, "Code taken and adapted from Click", with Click's own licence file). That code wasn't written after the split. Click is also a project the model has surely read, so it could recall the code instead of predicting it, which is exactly what section 3's date split exists to prevent.
+
+EXP-005's inclusion rule leaves out a top folder named exactly `docs`, but not `docs_src`, and it has no rule for copied code.
+
+**The rule, for EXP-007 only.** EXP-005's rules apply, plus two:
+1. **Documentation examples are left out:** any file whose top folder starts with `docs` (for example `docs_src`), or is `examples` or `example`.
+2. **Copied third-party code is left out:** any file inside a folder, other than the repository's top, that holds its own licence file (`LICENSE*`, `LICENCE*` or `COPYING*`), or inside a folder named `_vendor`, `vendor`, `vendored`, `_vendored` or `third_party`.
+
+These apply to the past and the future alike, at both the split and the pin. **Amendment 1's list is then applied again from the top**, with the same thresholds.
+
+**Why this is a correction, not tuning.** It was prompted only by function counts and file paths, never by any search, compression or model result. The rule is general (it names no project), and it applies equally to the calibration project. The calibration run is checked under it: if tomli changes, the calibration is repeated.
