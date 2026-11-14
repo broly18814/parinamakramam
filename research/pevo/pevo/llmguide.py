@@ -284,7 +284,8 @@ def block_names(examples: list[tuple[ast.AST, int]]) -> list[tuple[str, str]]:
         call = node.value if isinstance(node, ast.Expr) else node
         desc = _DESCRIBE.get(t, f"a {t} pattern").format(
             callee=f"`{callee}`" if callee else "a function", op=f"`{_first_op(node)}`",
-            attr=getattr(node, "attr", ""), n=len(getattr(call, "args", [])) + len(getattr(call, "keywords", [])))
+            attr=getattr(node, "attr", ""),
+            n=len(call.args) + len(call.keywords) if isinstance(call, ast.Call) else 0)
         out.append((name, desc))
     return out
 

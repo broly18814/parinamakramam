@@ -66,3 +66,12 @@ The output is in [`run1/CALIBRATION.txt`](run1/CALIBRATION.txt), made by `calibr
 - the model alone found the exact piece among its 16 guesses on 54 to 60 tasks in 100.
 
 The analysis script was dry-run on these calibration numbers, which aren't evidence, to check that it works.
+
+## 14 November 2026: a crash fix after the freeze, before any evaluation data
+
+The first start of the evaluation run stopped **before sampling anything**. S4's naming code crashed on a block whose root is a `lambda`: its `args` is Python's `arguments` object, not a list.
+- **The fix:** count arguments only for function calls.
+- **What it changes:** nothing that already worked. tomli's 50 names are identical (checked against the saved calibration run).
+- **A self-check covers it:** `test_block_names_are_deterministic_and_handle_any_root`.
+
+No evaluation guess, search or count other than function and task counts had been produced.

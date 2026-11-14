@@ -103,3 +103,14 @@ def test_local_names_in_a_guess_are_numbered_like_the_original():
 ])
 def test_model_alone_scores(pieces, logp, expected):
     assert direct_scores(("T",), pieces, logp) == expected
+
+
+def test_block_names_are_deterministic_and_handle_any_root():
+    """S4. A `lambda` root has an `arguments` object, not a list (found when the evaluation started)."""
+    from pevo.llmguide import block_names
+    nodes = [ast.parse(src).body[0] for src in ("out.append(x)", "f = lambda a, b: a + b", "if x is None:\n    pass",
+                                                  "out.append(y)")]
+    names = block_names([(n, 1) for n in nodes])
+    assert names == block_names([(n, 1) for n in nodes])
+    assert [n for n, _d in names] == ["append_1", "assign_1", "if_stmt_1", "append_1_2"]
+    assert names[0][1] == "a statement that calls `append`"
