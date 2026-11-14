@@ -145,3 +145,36 @@ All differences are pooled at B.
 - **G3 sees more than G1 and G2:** it reads the whole surrounding function. That's what guidance means here, but G3's absolute gains mix *better habits* with *more information*. H23 compares library gains *within* each guidance level, which this doesn't bias.
 - **Memorisation** is reduced by the date split, but not ruled out; the contamination check reports it.
 - **One model, one prompt, no fine-tuning.** A failure doesn't show that no LLM guidance helps.
+
+---
+
+## Amendment 1: replacement evaluation projects (14 November 2026, before any candidate is downloaded)
+
+**What happened.** Applying section 3's split to the chosen model (Qwen3.6-35B-A3B, released **15 April 2026**):
+- **rich:** the last commit before the date is `46cebbb032` (12 April 2026), and **0** functions were added after it;
+- **pyparsing:** the split is `0f46383d06` (9 April 2026), with **10** added after it.
+
+Both are below the minimum of 40, so each needs a replacement. Section 3 points to EXP-006's written project rule, but **EXP-006's ordered list is used up**: packaging, urllib3 and httpx are EXP-006's own projects, attrs was excluded for size, and rich and pyparsing fail here. Only function counts were read from rich and pyparsing; no search was run on them.
+
+**The rule, fixed before any candidate below is downloaded or measured.** Go down this ordered list, and take the **first two** projects that meet all of these:
+- a permissive licence (MIT, BSD or Apache-2.0), checked in the project's own licence file;
+- **section 3's split** (the last first-parent commit before 15 April 2026) leaves at least **40** functions added by the pin, the tip of the main branch on the day it's downloaded;
+- at least **200** and at most **3,000** functions in the past. The upper limit is new. It's a cost limit, not a quality judgement: G3 recomputes the grammar's completion bounds for every task, and that cost grows with the size of the past.
+
+**The ordered list:**
+1. starlette
+2. fastapi
+3. typer
+4. black
+5. hatch
+6. werkzeug
+7. jinja
+8. flask
+9. poetry
+10. textual
+
+All are widely used Python libraries or tools with permissive licences, from several maintainers. **None** has been used by any earlier experiment or by any pkv study.
+
+**Why this keeps the test fair.** The list and the rule are committed before any candidate's history is read. Only function counts and licence files are used to choose, never any search, compression or model result. The candidates are chosen for activity, because the date split needs new code written after the model was trained.
+
+**Honest note:** the order reflects my expectation of which projects are active and mostly pure Python. That's a judgement made before measuring, not a measurement.
