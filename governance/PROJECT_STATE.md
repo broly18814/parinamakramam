@@ -160,7 +160,8 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
      - swapped return values.
 
      These join OI-8.
-5. 🟡 **Track C, new architecture (D-050):** [A001](../docs/research/A001-evolving-architecture.md) proposes an architecture that keeps learning and evolves its own building blocks, with experiments EXP-A1 to EXP-A4, each against its simple baseline. Order: EXP-M1 first (data pipeline and baseline), then EXP-A2, A1, A3. **Next: EXP-M1's design**, a tokenizer comparison for English text and Python code (D-059), written and committed before any of its code.
+5. 🟡 **Track C, new architecture (D-050):** [A001](../docs/research/A001-evolving-architecture.md) proposes an architecture that keeps learning and evolves its own building blocks, with experiments EXP-A1 to EXP-A4, each against its simple baseline. Order: EXP-M1 first (data pipeline and baseline), then EXP-A2, A1, A3. ✅ **EXP-M1 designed (16 Nov, [design](../docs/research/EXP-M1-design.md)):** 9 tokenizer arms × 3 seeds at 10M, with equal training time; the baseline and the two best confirmed at 25M; scored in bits per byte on English and Python, H28–H33. **Next:** build it and calibrate it on the validation split.
+   - 🔑 **Founder:** accept The Stack v1 dedup's terms on Hugging Face (https://huggingface.co/datasets/bigcode/the-stack-dedup), or say no, and the design's fallback (GitHub-code-clean) is used.
 5. 🟡 **Track B: EXP-007** ([design](../docs/research/EXP-007-design.md), H23: library × guidance).
    - **Build specification** (14 Nov, [spec](../docs/research/EXP-007-build-spec.md)): it fixes, before any data, how the model sees the code, how its guesses are compared, the exact G3 grammar, block names, and the missing two-level grammar with blocks.
    - ✅ **Prompt and guess-reading code built** (`pevo/llmguide.py`, 10 self-checks). All 260 of tomli's calibration tasks round-trip exactly.

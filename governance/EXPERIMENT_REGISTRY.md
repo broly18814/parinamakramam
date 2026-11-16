@@ -321,6 +321,27 @@ Blend learned "what to try first" habits with "try everything equally". Later, p
 
 ---
 
+## EXP-M1: which tokenizer should the project's own small models use? (plan v2, Track C, C3)
+
+- **Status:** 📝 designed on 16 November 2026, before any code or download. Not yet calibrated or frozen.
+- **Design and predictions:** [EXP-M1-design.md](../docs/research/EXP-M1-design.md).
+- **The question:** for models this Mac can train (10M and 25M), which word-splitter makes a model best at predicting English and Python, given exactly the same training time? It also asks whether splitting code the way programmers write it helps Python.
+- **Scope:** English text and Python code only (D-059).
+- **Arms:** bytes; byte-level BPE at 4k, 8k, 16k, **32k (the baseline)** and 64k pieces; code-aware BPE at 8k and 32k; GPT-2's own tokenizer (reported only).
+- **Metric:** bits per byte on held-out English and Python, 3 seeds, paired.
+- **Data:** FineWeb-Edu and the permissively licensed Python of The Stack v1 dedup; held out by repository and by document.
+- **Primary (H28):** at 10M, some tokenizer beats the baseline by more than seed noise. Also: small vocabularies win at 10M (H29); code-aware splitting helps Python (H30); bytes alone come last (H31); the winner still wins at 25M (H32); the ranking holds (H33).
+- **Stop rule:**
+  - **H28 fails:** the baseline is kept, and tokenizer work stops.
+  - **H28 passes but H32 fails:** the baseline is used from 25M up.
+  - **Both pass:** the winner becomes the project's tokenizer.
+
+  In every case, the pipeline and the 25M model become the yardstick for EXP-A1 to EXP-A3.
+- **Cost (estimate):** about 71 hours of the Mac over about a week, and about 10 GB of downloads outside the repository, ₹0.
+- **Founder step:** accept The Stack v1 dedup's terms on Hugging Face, or decline, and the design's fallback is used.
+
+---
+
 ## TAMPER-BENCH: a fair public test of tools that catch weakened tests (plan v2, Track A, A1)
 
 - **Status:** ✅ built, sealed and run on 12 November 2026: the one held-out run is done, and the held-out cases are published with the sealed fingerprint. **H-TB1, H-TB2 and H-TB4 pass; H-TB3 fails** (D-051). It replaces BENCH-004 (D-049).
