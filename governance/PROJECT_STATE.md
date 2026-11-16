@@ -115,7 +115,7 @@ The founder restated the full brief on 10 November 2026. Checked against it, the
 | 14. Own-model roadmap for the MacBook | not started | A small baseline model can be trained on this Mac at no cost, and later architecture work needs that baseline. |
 | 8. Three discovery algorithms, compared in writing | partly | Four have been *tested* (EXP-001, 002, 002b, 005) but never set side by side with pseudocode and costs. |
 | 9 and 11. Three architecture proposals, and how blocks could shape an architecture | not started | Better written after EXP-006, so they build on evidence about whether blocks help search at all. |
-| 15. Languages: English, Telugu, Hindi | Telugu and Hindi coding tasks (Track D) **removed** by the founder (D-056) | Whether Telugu and Hindi also leave the model work (EXP-M1, datasets) is asked separately. |
+| 15. Languages: English, Telugu, Hindi | **English only.** Telugu and Hindi coding tasks (Track D) removed (D-056), and the model work too (D-059) | The founder's choice. The Telugu and Hindi licence readings stay in the dataset registry as a record. |
 | 12. An automated research assistant | not started | The manual version (pre-register, run, analyse, self-check) is the specification; automate it once it has stopped changing. |
 | 3 and 16. Full competitor and pricing table; three-part business model | partly | P001 covers the checker's competitors and a first view of earning. Prices should be re-read from official pages at the time a paid offer is designed (D-010). |
 | 7. The full engine design document | partly | `research/pevo` implements a first version; the formal definitions are in R001's appendix. |
@@ -128,7 +128,7 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
 
 1. ~~Founder: decide on Telangana's TISC 2026~~. **Skipped** (D-056).
 2. ✅ **Track C, C1 done (12 Nov):** all four sizes inside their predictions. In bfloat16: 61k, 33k, 16k and 6.9k tokens/s, so a full run takes about 1 hour, 4 hours, 17 hours and 4.2 days. EXP-M1 uses 10M–50M ([results](../experiments/C1-throughput/README.md)).
-3. 🟡 **Track C, C2: dataset registry**, widened on 12 Nov at the founder's request (D-050) to about 45 datasets in seven groups, in [DATASET_REGISTRY.md](DATASET_REGISTRY.md) (brief §16): every source with licence, version and hash. Versions and fingerprints are filled in at first download; the items marked unverified must be resolved first. Downloading The Stack v1 needs its terms accepted on Hugging Face, which is a founder step. Text: FineWeb-Edu, IndicCorp v2, Sangraha; code: a permissive subset of The Stack v1 dedup. Excluded: Samanantar, The Stack v2, Python-Edu.
+3. 🟡 **Track C, C2: dataset registry**, widened on 12 Nov at the founder's request (D-050) to about 45 datasets in seven groups, in [DATASET_REGISTRY.md](DATASET_REGISTRY.md) (brief §16): every source with licence, version and hash. Versions and fingerprints are filled in at first download; the items marked unverified must be resolved first. Downloading The Stack v1 needs its terms accepted on Hugging Face, which is a founder step. Text: FineWeb-Edu (IndicCorp v2 and Sangraha no longer used: English and code only, D-059); code: a permissive subset of The Stack v1 dedup. Excluded: Samanantar, The Stack v2, Python-Edu.
 4. ✅ **Track A, A1: TAMPER-BENCH built, sealed and run (12 Nov)**, in [benchmarks/tamper-bench/](../benchmarks/tamper-bench/README.md): 30 development cases and 61 held-out cases, every label confirmed by running it.
    - **The held-out run is done, once (founder: "Yes, run it").** The seal held, and the 61 cases are now published (`tamperbench/heldout.py`, same SHA-256). The copy in `private/tamper-bench-heldout/` is no longer secret.
    - **Result** ([notes](../benchmarks/tamper-bench/results/heldout/NOTES.md)): pkv + A2 caught the most cheats (34/41, 16/20 semantic), but with 5/20 false alarms; pkv 0.2.1 had 24/41 with 3/20.
@@ -160,7 +160,7 @@ Done and current: 1 and 19 to 21 (strategy and plans, in the roadmap and decisio
      - swapped return values.
 
      These join OI-8.
-5. 🟡 **Track C, new architecture (D-050):** [A001](../docs/research/A001-evolving-architecture.md) proposes an architecture that keeps learning and evolves its own building blocks, with experiments EXP-A1 to EXP-A4, each against its simple baseline. Order: EXP-M1 first (data pipeline and baseline), then EXP-A2, A1, A3.
+5. 🟡 **Track C, new architecture (D-050):** [A001](../docs/research/A001-evolving-architecture.md) proposes an architecture that keeps learning and evolves its own building blocks, with experiments EXP-A1 to EXP-A4, each against its simple baseline. Order: EXP-M1 first (data pipeline and baseline), then EXP-A2, A1, A3. **Next: EXP-M1's design**, a tokenizer comparison for English text and Python code (D-059), written and committed before any of its code.
 5. 🟡 **Track B: EXP-007** ([design](../docs/research/EXP-007-design.md), H23: library × guidance).
    - **Build specification** (14 Nov, [spec](../docs/research/EXP-007-build-spec.md)): it fixes, before any data, how the model sees the code, how its guesses are compared, the exact G3 grammar, block names, and the missing two-level grammar with blocks.
    - ✅ **Prompt and guess-reading code built** (`pevo/llmguide.py`, 10 self-checks). All 260 of tomli's calibration tasks round-trip exactly.

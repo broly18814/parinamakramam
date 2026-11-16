@@ -18,7 +18,7 @@
 The models trained so far (C1) are ordinary GPT-style models, the same design as GPT-2. That's deliberate. A new design is only "better" if it beats the ordinary one, trained the same way, on the same data, for the same time on the same Mac. So the ordinary model is the **yardstick** (the baseline). It's not the goal.
 
 **The goal** is a model that does two things ordinary models don't:
-1. **It keeps learning.** It learns from new material after training, such as a new codebase, Telugu text or a new library, without forgetting what it already knew. Ordinary models are frozen after training. If you train them further on something new, they forget the old ("catastrophic forgetting").
+1. **It keeps learning.** It learns from new material after training, such as a new codebase, a new programming language or a new library, without forgetting what it already knew. Ordinary models are frozen after training. If you train them further on something new, they forget the old ("catastrophic forgetting").
 2. **Its structure evolves.** The model's *building blocks*, the small calculations it's made of, aren't fixed by us. They're discovered by an evolutionary search, and the model can grow new parts when it needs them. This is the brief's "primitive-substrate evolution" applied to the model itself.
 
 ### In engineering terms
@@ -61,7 +61,7 @@ The models trained so far (C1) are ordinary GPT-style models, the same design as
 
 ### Proposal 2: **A growing library of modules** (the model keeps learning)
 
-**Plain words.** The model has a shared core plus a shelf of small add-on modules. When it meets a new kind of material (Telugu, maths, a new codebase), it adds a new module and trains mostly that, so the old knowledge isn't overwritten. A small "router" learns which modules to use for each piece of text. Modules that turn out useless are removed. The shelf grows and gets pruned: it evolves.
+**Plain words.** The model has a shared core plus a shelf of small add-on modules. When it meets a new kind of material (maths, a new programming language, a new codebase), it adds a new module and trains mostly that, so the old knowledge isn't overwritten. A small "router" learns which modules to use for each piece of text. Modules that turn out useless are removed. The shelf grows and gets pruned: it evolves.
 
 **Engineering terms (design):**
 - **Core:** the baseline or Proposal 1's best block.
@@ -107,8 +107,8 @@ Every run is on this Mac, in bfloat16, on data from the [dataset registry](../..
 
 | ID | Question | Design | Compute (from C1) | Baseline it must beat |
 |---|---|---|---|---|
-| **EXP-M1** (already planned) | Which tokenizer for English, Telugu and Hindi? | 10M–50M, bits per byte | hours per run | — (it *makes* the baseline and the data pipeline the others need) |
-| **EXP-A1** | Does Proposal 2 keep learning without forgetting? | A 25M model trained on a stream of 5 domains in order: English web → maths → code → Telugu → Hindi. Arms: plain fine-tuning; plain + replay (the simple fix); growing modules; growing modules + replay. Equal total compute | about 5 × 1 hour per arm at 25M; about a day in all | **plain + replay**: the simpler system must lose, or we say so |
+| **EXP-M1** (already planned) | Which tokenizer for English text and Python code? (D-059; originally English, Telugu and Hindi) | 10M–50M, bits per byte | hours per run | — (it *makes* the baseline and the data pipeline the others need) |
+| **EXP-A1** | Does Proposal 2 keep learning without forgetting? | A 25M model trained on a stream of 5 domains in order: English web → maths → code, with further code domains in place of the original Telugu and Hindi stages (D-059); the exact stream is fixed in its pre-registration. Arms: plain fine-tuning; plain + replay (the simple fix); growing modules; growing modules + replay. Equal total compute | about 5 × 1 hour per arm at 25M; about a day in all | **plain + replay**: the simpler system must lose, or we say so |
 | **EXP-A2** | Can evolution find a better block at this scale? | Proposal 1: about 300 candidates at 10M × 10 minutes, over about 6 nights; the top 5 re-run at 25M and 50M × 3 seeds | about 50 hours search + about 30 hours confirmation | the standard block, same time budget |
 | **EXP-A3** | Does fast memory help within a session, and does sleep keep it? | Proposal 3 on 25M, on long documents and codebases held out from training | about a day | the same model without memory, plus a longer context window |
 | **EXP-A4** (only if two of A1–A3 pass) | Do the parts combine? | The best block + modules + memory at 50M, against the 50M baseline, in one continual stream | about 3 days | 50M baseline + replay |

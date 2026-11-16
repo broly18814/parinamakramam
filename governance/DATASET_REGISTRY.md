@@ -3,6 +3,7 @@
 **Plan v2, Track C, step C2** (brief §16). Every dataset the project trains or evaluates on is listed here **before** it's used. Each entry gives its licence, what we owe in return, and the exact version. A dataset not on this page may not be used.
 
 **Status:** second draft, 12 November 2026, widened at the founder's request ("don't only pick FineWeb-Edu, IndicCorp v2, Sangraha and The Stack v1; pick others too"). Nothing is downloaded yet.
+**16 November 2026 (D-059): Track C is English and code only.** Every Telugu and Hindi source below is marked **not used**. They stay listed, with their licence readings, as a record.
 - **Where the licences come from:** each dataset's Hugging Face record (`cardData.license`, the gating flag and the current commit, read through the public API on 12 November 2026), or its README where the record has no licence field. Earlier licence reading is in R002 ([training notes](../docs/research/R002-fresh-plan/notes/small_model_training_mac.md), [Indic notes](../docs/research/R002-fresh-plan/notes/indic_languages_coding.md)).
 - **The "commit" column** is the dataset's version on 12 November 2026. The exact commit and SHA-256 fingerprints are fixed in a manifest when files are downloaded.
 
@@ -73,10 +74,10 @@ These teach how code is *changed*, and how changes are checked. That's exactly w
 | **OpenCoder SFT** (`OpenCoder-LLM/opc-sft-stage2`) | Curated coding instructions | MIT | Use with conditions: as above | `7d28f40d579e` |
 | **Self-OSS-Instruct** (`bigcode/self-oss-instruct-sc2-exec-filter-50k`) | Instructions written by StarCoder2, kept only if the code ran | ODC-By | Use with conditions: StarCoder2's OpenRAIL-M use restrictions are read first | `356bb069eee8` |
 | **Tülu 3 SFT mix** (`allenai/tulu-3-sft-mixture`) | AI2's open general instruction mix | ODC-By (subsets carry their own terms) | Use with conditions: per subset | `b14afda60f1b` |
-| **IndicAlign** (`ai4bharat/indic-align`) | Instructions in 15 Indian languages, Telugu and Hindi included | CC-BY-4.0 | Use | `032b6a9070e7` |
-| **Samvaad Hindi** (`sarvamai/samvaad-hi-v1`) | Hindi conversations | Apache-2.0 | Use with conditions: which model wrote it is read first | `6439910cc994` |
+| **IndicAlign** (`ai4bharat/indic-align`) | Instructions in 15 Indian languages, Telugu and Hindi included | CC-BY-4.0 | **Not used (D-059)** | `032b6a9070e7` |
+| **Samvaad Hindi** (`sarvamai/samvaad-hi-v1`) | Hindi conversations | Apache-2.0 | **Not used (D-059)** | `6439910cc994` |
 
-## 6. Telugu and Hindi text
+## 6. Telugu and Hindi text: not used (D-059), kept as a record
 
 | Dataset | Why it's good | Licence | Mark | Commit |
 |---|---|---|---|---|
@@ -94,13 +95,13 @@ These teach how code is *changed*, and how changes are checked. That's exactly w
 
 | Dataset | Used for | Licence | Commit |
 |---|---|---|---|
-| **indic-swe-bench** | IND-1 | Apache-2.0 (per R002) | pinned on download |
+| **indic-swe-bench** | IND-1, **not used** (D-056) | Apache-2.0 (per R002) | pinned on download |
 | **SWE-bench** | real-repository tasks | MIT | `e48e2bd1e9fe` |
 | **HumanEval** (`openai/openai_humaneval`) | small code models | MIT | `7dce6050a7d6` |
 | **MBPP** (`google-research-datasets/mbpp`) | small code models | CC-BY-4.0 | `4bb6404fdc6c` |
 | **APPS** (`codeparrot/apps`) | harder programming problems | MIT | `21e74ddf8de1` |
-| **MILU** (`ai4bharat/MILU`) | Indic knowledge, Telugu and Hindi | CC-BY-4.0, gated (auto) | `846d7016558b` |
-| **FLORES+** (`openlanguagedata/flores_plus`) | translation and bits-per-byte across languages on parallel text (EXP-M1) | CC-BY-SA-4.0, gated (auto) | `1147e2dc59f3` |
+| **MILU** (`ai4bharat/MILU`) | Indic knowledge, Telugu and Hindi; **not used** (D-059) | CC-BY-4.0, gated (auto) | `846d7016558b` |
+| **FLORES+** (`openlanguagedata/flores_plus`) | translation and bits-per-byte across languages on parallel text; **not used** now that EXP-M1 is English and code (D-059) | CC-BY-SA-4.0, gated (auto) | `1147e2dc59f3` |
 
 ## Excluded
 
@@ -118,8 +119,8 @@ These teach how code is *changed*, and how changes are checked. That's exactly w
 
 1. **Deduplicate across sources:** near-duplicate removal over the combined mix, because FineWeb, FineWeb-Edu and DCLM overlap.
 2. **Decontaminate:** remove any document overlapping an evaluation set in section 7, before training.
-3. **Language check:** Telugu and Hindi documents are re-checked with a language identifier, and the script share is reported.
-4. **Mixture chosen by measurement, not taste:** EXP-M1's calibration compares candidate mixes on small models (DataDecide-style ranking at 10M–50M), and picks by bits per byte on held-out text from each language.
+3. **Language check:** English text sources are re-checked with a language identifier, and the share that isn't English is reported and removed (D-059; originally for Telugu and Hindi).
+4. **Mixture chosen by measurement, not taste:** EXP-M1's calibration compares candidate mixes on small models (DataDecide-style ranking at 10M–50M), and picks by bits per byte on held-out English text and code (D-059).
 
 ## Rules
 

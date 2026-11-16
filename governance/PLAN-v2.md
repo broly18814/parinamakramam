@@ -22,7 +22,7 @@
 |---|---|---|
 | Research: building blocks, experiments, honest results (days 41–70) | Five experiments done, ahead of schedule | **Yes.** The next experiment follows directly from our results |
 | Own small models (days 71–90, year 1) | Not started | **Yes**, at small sizes. This Mac is an M4 Pro (checked today), and the research gives realistic speeds |
-| Telugu and Hindi (year 1) | Not started | **Yes**, on a narrow task where nobody has published results |
+| Telugu and Hindi (year 1) | Not started | **Yes**, on a narrow task where nobody has published results. *Later removed by the founder: Track D on 14 Nov (D-056), the model work on 16 Nov (D-059).* |
 | **The first product: a full AI coding assistant** (days 11–25: repository search, code explanation, code changes, editor extension) | **Never built.** On day 1, decision D-009 narrowed it to the checker. That was a change of direction you were never asked about. | **Not as written.** See below |
 | Paid offers, activation, retention (days 71–90) | Not started; no users yet | Only after people use something |
 | Grants and compute (days 71–90) | Researched (F001, R002) | Yes, using only the brief's own sources |
@@ -145,6 +145,8 @@ EXP-006 found the phrase book helped no more than guessing twice as long, while 
 
 First we measure what this Mac can really do: a 10-minute training test at each model size. Then the first model experiment has to be useful, not just a demo. We compare how well different "word-splitters" (tokenizers) handle English, Telugu and Hindi, on small models trained from scratch, using only data whose licence allows it. Today's common tokenizers spend about 3 times as many tokens on Telugu as on Hindi, which makes Telugu slower and costlier.
 
+**Changed on 16 November 2026 (D-059): Track C is English and code only.** The founder removed Telugu and Hindi from the model work too. EXP-M1 now compares tokenizers for English text and Python code.
+
 ### In engineering terms
 
 - **C1, week 1: measure.** A throughput benchmark for 10M, 25M, 50M and 125M models in MLX on this M4 Pro. It replaces R002's estimates; for 125M the estimate was about 4,000–8,000 tokens a second, meaning a 4–7 day run.
@@ -152,7 +154,7 @@ First we measure what this Mac can really do: a 10-minute training test at each 
   - **text:** FineWeb-Edu (ODC-By), IndicCorp v2 (CC0), Sangraha (CC-BY-4.0);
   - **code:** a permissive-licence subset of The Stack v1 dedup, keeping provenance;
   - **excluded:** Samanantar (non-commercial). Also The Stack v2 and Python-Edu, because of the open-model principle.
-- **C3, EXP-M1:** a tokenizer comparison at 10–50M parameters, scored in bits per byte across English, Telugu and Hindi, with equal compute for every tokenizer.
+- **C3, EXP-M1:** a tokenizer comparison at 10–50M parameters, scored in bits per byte on held-out English text and Python code (D-059; originally English, Telugu and Hindi), with equal compute for every tokenizer.
   - **Claim allowed:** rankings only. DataDecide shows rankings at small scale predict about 80% of larger-scale ones.
   - **Stop rule:** if no tokenizer beats the baseline by more than seed noise, report it and stop.
 
